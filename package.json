@@ -1,0 +1,27 @@
+{
+  "name": "llm-ts-example",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "lint": "pnpm -r lint",
+    "lint-fix": "pnpm -r lint-fix",
+    "build": "pnpm -r --if-present build"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "@eslint/compat": "^1.1.1",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.8.0",
+    "@stylistic/eslint-plugin": "^2.6.1",
+    "@stylistic/eslint-plugin-js": "^2.6.1",
+    "@stylistic/eslint-plugin-plus": "^2.6.1",
+    "@stylistic/eslint-plugin-ts": "^2.6.1",
+    "eslint": "^9.8.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-promise": "^7.0.0",
+    "eslint-plugin-solid": "^0.14.1"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e"
+}
