@@ -1,0 +1,35 @@
+{
+  "name": "@llm-ts-example/app",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "eslint:check": "eslint",
+    "eslint:fix": "eslint --fix",
+    "lint": "pnpm run --parallel /^.*:check/",
+    "lint-fix": "pnpm run /^.*:fix/",
+    "test": "poku --parallel ."
+  },
+  "dependencies": {
+    "solid-js": "^1.8.19"
+  },
+  "devDependencies": {
+    "@solidjs/router": "^0.14.1",
+    "@solidjs/testing-library": "^0.8.9",
+    "@testing-library/jest-dom": "^6.4.8",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/crypto-js": "^4.2.2",
+    "crypto-js": "^4.2.0",
+    "jsdom": "^24.1.1",
+    "poku": "^2.3.0",
+    "solid-refresh": "^0.7.5",
+    "tsx": "^4.16.5",
+    "typescript-eslint": "^7.18.0",
+    "vite": "^5.3.5",
+    "vite-plugin-pages": "^0.32.3",
+    "vite-plugin-solid": "^2.10.2"
+  }
+}
