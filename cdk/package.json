@@ -13,10 +13,10 @@
     "lint": "pnpm /^.*-check$/"
   },
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.142",
+    "@types/aws-lambda": "^8.10.143",
     "@types/node": "^22.1.0",
     "aws-cdk": "^2.151.0",
-    "poku": "^2.4.0",
+    "poku": "^2.4.1",
     "ts-node": "^10.9.2",
     "tsx": "^4.16.5",
     "typescript": "^5.5.4",
@@ -27,9 +27,9 @@
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.6.0",
-    "@langchain/community": "^0.2.23",
-    "@langchain/core": "^0.2.20",
-    "@langchain/openai": "^0.2.5",
+    "@langchain/community": "^0.2.24",
+    "@langchain/core": "^0.2.21",
+    "@langchain/openai": "^0.2.6",
     "aws-cdk-lib": "^2.151.0",
     "constructs": "^10.3.0",
     "esbuild": "^0.23.0",
