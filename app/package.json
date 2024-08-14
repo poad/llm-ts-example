@@ -14,7 +14,7 @@
     "test": "poku --parallel ."
   },
   "dependencies": {
-    "solid-js": "^1.8.20"
+    "solid-js": "^1.8.21"
   },
   "devDependencies": {
     "@solidjs/router": "^0.14.2",
