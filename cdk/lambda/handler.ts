@@ -7,6 +7,7 @@ import { CallbackHandler } from 'langfuse-langchain';
 
 
 const TEMPLATE = `Answer the user's question to the best of your ability.
+However, please keep your answers brief.
 
 {question}`;
 

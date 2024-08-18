@@ -140,6 +140,7 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
           },),
           {
             originPath: apiRootPath,
+            readTimeout: cdk.Duration.minutes(1),
           },),
           allowedMethods: cloudfront.AllowedMethods.ALLOW_ALL,
           originRequestPolicy: cloudfront.OriginRequestPolicy.ALL_VIEWER_EXCEPT_HOST_HEADER,
