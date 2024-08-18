@@ -39,8 +39,13 @@ function App() {
       }).then((resp) => {
       return readAll(resp.body);
     });
-  },
-  );
+  });
+  const [history, setHistory] = createSignal<string[]>([]);
+
+
+  if (!data.error && !data.loading) {
+    setHistory((prev) => prev.concat([data()?.map((item) => new TextDecoder().decode(item)).reduce((acc, cur) => acc.concat(cur)) ?? '']));
+  }
 
   return (
     <>
@@ -60,8 +65,8 @@ function App() {
           <span>Error: {data.error}</span>
         </Show>
         <Show when={!data.error && !data.loading}>
-          <For each={data()}>
-            {(item) => <>{new TextDecoder().decode(item)}</>}
+          <For each={history()}>
+            {(item) => <p>{item}</p>}
           </For>
         </Show>
       </div>
