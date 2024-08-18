@@ -36,16 +36,13 @@ function App() {
           'Content-Type': 'application/json',
           'x-amz-content-sha256': hash.toString(),
         },
-      }).then((resp) => {
-      return readAll(resp.body);
+      }).then(async (resp) => {
+      const result = await readAll(resp.body);
+      setHistory((prev) => prev.concat([result.map((item) => new TextDecoder().decode(item)).reduce((acc, cur) => acc.concat(cur)) ?? '']));
+      return result;
     });
   });
   const [history, setHistory] = createSignal<string[]>([]);
-
-
-  if (!data.error && !data.loading) {
-    setHistory((prev) => prev.concat([data()?.map((item) => new TextDecoder().decode(item)).reduce((acc, cur) => acc.concat(cur)) ?? '']));
-  }
 
   return (
     <>
