@@ -20,6 +20,7 @@ export async function handle(sessionId: string, question: string, output: NodeJS
     azureOpenAIApiVersion: process.env.AZURE_OPENAI_API_VERSION,
     azureOpenAIApiInstanceName: process.env.AZURE_OPENAI_API_INSTANCE_NAME,
     azureOpenAIApiDeploymentName: process.env.AZURE_OPENAI_API_DEPLOYMENT_NAME,
+    streaming: true,
   });
 
   // Initialize Langfuse callback handler

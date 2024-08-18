@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.143",
-    "@types/node": "^22.3.0",
+    "@types/node": "^22.4.0",
     "aws-cdk": "^2.152.0",
     "poku": "^2.4.4",
     "ts-node": "^10.9.2",
@@ -28,11 +28,11 @@
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.7.0",
     "@langchain/community": "^0.2.28",
-    "@langchain/core": "^0.2.25",
-    "@langchain/openai": "^0.2.6",
+    "@langchain/core": "^0.2.27",
+    "@langchain/openai": "^0.2.7",
     "aws-cdk-lib": "^2.152.0",
     "constructs": "^10.3.0",
-    "esbuild": "^0.23.0",
+    "esbuild": "^0.23.1",
     "langfuse": "^3.19.0",
     "langfuse-langchain": "^3.19.0",
     "source-map-support": "^0.5.21"

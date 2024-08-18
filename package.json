@@ -19,7 +19,7 @@
     "eslint": "^9.9.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-promise": "^7.1.0",
-    "eslint-plugin-solid": "^0.14.1"
+    "eslint-plugin-solid": "^0.14.2"
   },
   "author": "",
   "license": "UNLICENSED",
