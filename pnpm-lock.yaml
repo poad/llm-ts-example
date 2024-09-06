@@ -23,6 +23,9 @@ importers:
       '@stylistic/eslint-plugin-js':
         specifier: ^2.7.2
         version: 2.7.2(eslint@9.9.1)
+      '@stylistic/eslint-plugin-jsx':
+        specifier: ^2.7.2
+        version: 2.7.2(eslint@9.9.1)
       '@stylistic/eslint-plugin-plus':
         specifier: ^2.7.2
         version: 2.7.2(eslint@9.9.1)
@@ -1135,6 +1138,12 @@ packages:
 
   '@stylistic/eslint-plugin-js@2.7.2':
     resolution: {integrity: sha512-PkwTDduCY6+ILlHNEfVT3BtShrtqrDJmyW3BW53PvCb+SHu7z88iReXbN+/uCr39fcP6qH49RA7RFsKRlpyMEQ==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    peerDependencies:
+      eslint: '>=8.40.0'
+
+  '@stylistic/eslint-plugin-jsx@2.7.2':
+    resolution: {integrity: sha512-xe6scY5B4P0/eZIb9R5nAVjaP7UhNPYH3GE8pojrJIvJiRZ54rZwSBrFWHREP+EN4snCN/bKzNQMaFmQ7+OZbw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: '>=8.40.0'
@@ -3737,6 +3746,15 @@ snapshots:
       eslint: 9.9.1
       eslint-visitor-keys: 4.0.0
       espree: 10.1.0
+
+  '@stylistic/eslint-plugin-jsx@2.7.2(eslint@9.9.1)':
+    dependencies:
+      '@types/eslint': 9.6.1
+      eslint: 9.9.1
+      eslint-visitor-keys: 4.0.0
+      espree: 10.1.0
+      estraverse: 5.3.0
+      picomatch: 4.0.2
 
   '@stylistic/eslint-plugin-plus@2.7.2(eslint@9.9.1)':
     dependencies:
