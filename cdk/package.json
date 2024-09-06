@@ -15,7 +15,7 @@
   "devDependencies": {
     "@types/aws-lambda": "^8.10.145",
     "@types/node": "^22.5.4",
-    "aws-cdk": "^2.155.0",
+    "aws-cdk": "^2.156.0",
     "poku": "^2.6.0",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.0",
@@ -30,11 +30,11 @@
     "@langchain/community": "^0.2.32",
     "@langchain/core": "^0.2.31",
     "@langchain/openai": "^0.2.10",
-    "aws-cdk-lib": "^2.155.0",
+    "aws-cdk-lib": "^2.156.0",
     "constructs": "^10.3.0",
     "esbuild": "^0.23.1",
-    "langfuse": "^3.21.0",
-    "langfuse-langchain": "^3.21.0",
+    "langfuse": "^3.22.0",
+    "langfuse-langchain": "^3.22.0",
     "source-map-support": "^0.5.21"
   }
 }
