@@ -16,7 +16,7 @@
     "@types/aws-lambda": "^8.10.145",
     "@types/node": "^22.5.4",
     "aws-cdk": "^2.155.0",
-    "poku": "^2.5.0",
+    "poku": "^2.6.0",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.0",
     "typescript": "^5.5.4",
@@ -33,8 +33,8 @@
     "aws-cdk-lib": "^2.155.0",
     "constructs": "^10.3.0",
     "esbuild": "^0.23.1",
-    "langfuse": "^3.20.0",
-    "langfuse-langchain": "^3.20.0",
+    "langfuse": "^3.21.0",
+    "langfuse-langchain": "^3.21.0",
     "source-map-support": "^0.5.21"
   }
 }
