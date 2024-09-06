@@ -73,8 +73,8 @@ importers:
         specifier: ^25.0.0
         version: 25.0.0
       poku:
-        specifier: ^2.5.0
-        version: 2.5.0
+        specifier: ^2.6.0
+        version: 2.6.0
       solid-refresh:
         specifier: ^0.7.5
         version: 0.7.5(solid-js@1.8.22)
@@ -118,11 +118,11 @@ importers:
         specifier: ^0.23.1
         version: 0.23.1
       langfuse:
-        specifier: ^3.20.0
-        version: 3.20.0
+        specifier: ^3.21.0
+        version: 3.21.0
       langfuse-langchain:
-        specifier: ^3.20.0
-        version: 3.20.0(langchain@0.2.17(@langchain/anthropic@0.2.10(langchain@0.2.17)(openai@4.57.3(zod@3.23.8)))(@langchain/community@0.2.32(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.57.3(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.57.3(zod@3.23.8))(ws@8.18.0))
+        specifier: ^3.21.0
+        version: 3.21.0(langchain@0.2.17(@langchain/anthropic@0.2.10(langchain@0.2.17)(openai@4.57.3(zod@3.23.8)))(@langchain/community@0.2.32(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.57.3(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.57.3(zod@3.23.8))(ws@8.18.0))
       source-map-support:
         specifier: ^0.5.21
         version: 0.5.21
@@ -137,8 +137,8 @@ importers:
         specifier: ^2.155.0
         version: 2.155.0
       poku:
-        specifier: ^2.5.0
-        version: 2.5.0
+        specifier: ^2.6.0
+        version: 2.6.0
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@22.5.4)(typescript@5.5.4)
@@ -2379,18 +2379,18 @@ packages:
       youtubei.js:
         optional: true
 
-  langfuse-core@3.20.0:
-    resolution: {integrity: sha512-MnVpHZNcCCyMNbyZvJnRs3f6iKMgT9/Vf2wcVdmiOWIL+kIoP5i4bALGSheAojmer2DvoqdqGodQ1hZo828IcQ==}
+  langfuse-core@3.21.0:
+    resolution: {integrity: sha512-+qvKWHSKb/mo+muDOcytKVEP0aw2cLdaqHfLF3Jy7BClfytniDdY94Oc+NNT5iQ1ZglROrUxnaZxuJxtupY8Vw==}
     engines: {node: '>=18'}
 
-  langfuse-langchain@3.20.0:
-    resolution: {integrity: sha512-gE9g3PFo7fa3UynFPCk4tqtCv3yC35uTyaoKGVujwaRKvPS9sgcNQqPANq2OefYkHsLNLxpFwVLqx02LSxUixQ==}
+  langfuse-langchain@3.21.0:
+    resolution: {integrity: sha512-yBPU24CiBRWbHx8SRiQSUOxZzUhpGzh5Wj5F2M2uNcZDrm4X2mEUj8oB/HpCl0MOEYe0Fq4DGMygmw3TOmVtPA==}
     engines: {node: '>=18'}
     peerDependencies:
       langchain: '>=0.0.157 <0.3.0'
 
-  langfuse@3.20.0:
-    resolution: {integrity: sha512-5Jlzg9+gtln4pFNW7QPmRkI7dTnKY7Jf4RKbbTinTvB6YTo7lLNW6oh//auNte4aNqafBgKHOQZojWO4QM89+w==}
+  langfuse@3.21.0:
+    resolution: {integrity: sha512-zgCbg4BGHqFGVZnVHRNgFiPTRXo3DVBCEXQJxZXKkBsiihygN+4d6+xz9rm6LyZM8wi029y8WGg2gTe9QFBKVA==}
     engines: {node: '>=18'}
 
   langsmith@0.1.48:
@@ -2641,8 +2641,8 @@ packages:
   pkg-types@1.2.0:
     resolution: {integrity: sha512-+ifYuSSqOQ8CqP4MbZA5hDpb97n3E8SVWdJe+Wms9kj745lmd3b7EZJiqvmLwAlmRfjrI7Hi5z3kdBJ93lFNPA==}
 
-  poku@2.5.0:
-    resolution: {integrity: sha512-aeFn5H4oQXAXkph1NuzGxkq57WzqBlJAyXxLGTo156DMgiLARdtCOkzLSGtq/xLl9yJiZpZ25xJqFWmyWcTk/w==}
+  poku@2.6.0:
+    resolution: {integrity: sha512-slK5sItg7d8x9fY+/QOvGb7jww/ukPSCIZYyeTweRWtCDiklsb7mN7vEkV1wGMUIDCo2H42JGdgYSfmf72z0Ig==}
     engines: {bun: '>=1.0.0', deno: '>=1.30.0', node: '>=8.17.0', typescript: '>=4.7.2'}
     hasBin: true
 
@@ -5027,19 +5027,19 @@ snapshots:
       - encoding
       - openai
 
-  langfuse-core@3.20.0:
+  langfuse-core@3.21.0:
     dependencies:
       mustache: 4.2.0
 
-  langfuse-langchain@3.20.0(langchain@0.2.17(@langchain/anthropic@0.2.10(langchain@0.2.17)(openai@4.57.3(zod@3.23.8)))(@langchain/community@0.2.32(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.57.3(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.57.3(zod@3.23.8))(ws@8.18.0)):
+  langfuse-langchain@3.21.0(langchain@0.2.17(@langchain/anthropic@0.2.10(langchain@0.2.17)(openai@4.57.3(zod@3.23.8)))(@langchain/community@0.2.32(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.57.3(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.57.3(zod@3.23.8))(ws@8.18.0)):
     dependencies:
       langchain: 0.2.17(@langchain/anthropic@0.2.10(langchain@0.2.17)(openai@4.57.3(zod@3.23.8)))(@langchain/community@0.2.32(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.57.3(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.57.3(zod@3.23.8))(ws@8.18.0)
-      langfuse: 3.20.0
-      langfuse-core: 3.20.0
+      langfuse: 3.21.0
+      langfuse-core: 3.21.0
 
-  langfuse@3.20.0:
+  langfuse@3.21.0:
     dependencies:
-      langfuse-core: 3.20.0
+      langfuse-core: 3.21.0
 
   langsmith@0.1.48(@langchain/core@0.2.31(langchain@0.2.17(@langchain/anthropic@0.2.10(langchain@0.2.17)(openai@4.57.3(zod@3.23.8)))(@langchain/community@0.2.32(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.57.3(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.57.3(zod@3.23.8))(ws@8.18.0))(openai@4.57.3(zod@3.23.8)))(langchain@0.2.17(@langchain/anthropic@0.2.10(langchain@0.2.17)(openai@4.57.3(zod@3.23.8)))(@langchain/community@0.2.32(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.57.3(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.57.3(zod@3.23.8))(ws@8.18.0))(openai@4.57.3(zod@3.23.8)):
     dependencies:
@@ -5271,7 +5271,7 @@ snapshots:
       mlly: 1.7.1
       pathe: 1.1.2
 
-  poku@2.5.0: {}
+  poku@2.6.0: {}
 
   possible-typed-array-names@1.0.0: {}
 
