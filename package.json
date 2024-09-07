@@ -11,13 +11,13 @@
   "devDependencies": {
     "@eslint/compat": "^1.1.1",
     "@eslint/eslintrc": "^3.1.0",
-    "@eslint/js": "^9.9.1",
+    "@eslint/js": "^9.10.0",
     "@stylistic/eslint-plugin": "^2.7.2",
     "@stylistic/eslint-plugin-js": "^2.7.2",
     "@stylistic/eslint-plugin-jsx": "^2.7.2",
     "@stylistic/eslint-plugin-plus": "^2.7.2",
     "@stylistic/eslint-plugin-ts": "^2.7.2",
-    "eslint": "^9.9.1",
+    "eslint": "^9.10.0",
     "eslint-plugin-import": "^2.30.0",
     "eslint-plugin-promise": "^7.1.0",
     "eslint-plugin-solid": "^0.14.3"
