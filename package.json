@@ -18,9 +18,11 @@
     "@stylistic/eslint-plugin-plus": "^2.7.2",
     "@stylistic/eslint-plugin-ts": "^2.7.2",
     "eslint": "^9.10.0",
+    "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-import": "^2.30.0",
     "eslint-plugin-promise": "^7.1.0",
-    "eslint-plugin-solid": "^0.14.3"
+    "eslint-plugin-solid": "^0.14.3",
+    "typescript-eslint": "^8.4.0"
   },
   "author": "",
   "license": "UNLICENSED",
