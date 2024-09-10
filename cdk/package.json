@@ -13,9 +13,17 @@
     "lint": "pnpm /^.*-check$/"
   },
   "devDependencies": {
+    "@stylistic/eslint-plugin": "^2.8.0",
+    "@stylistic/eslint-plugin-js": "^2.8.0",
+    "@stylistic/eslint-plugin-plus": "^2.8.0",
+    "@stylistic/eslint-plugin-ts": "^2.8.0",
     "@types/aws-lambda": "^8.10.145",
     "@types/node": "^22.5.4",
     "aws-cdk": "^2.157.0",
+    "eslint": "^9.10.0",
+    "eslint-import-resolver-typescript": "^3.6.3",
+    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-promise": "^7.1.0",
     "poku": "^2.6.1",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.0",

@@ -1,12 +1,20 @@
 // @ts-check
 
+// @ts-expect-error ignore type errors
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import stylisticTs from '@stylistic/eslint-plugin-ts';
+import stylisticJsx from '@stylistic/eslint-plugin-jsx';
 import tseslint from 'typescript-eslint';
+// @ts-expect-error ignore type errors
+import eslintImport from "eslint-plugin-import";
+
+import solid from 'eslint-plugin-solid';
+
 export default tseslint.config(
   eslint.configs.recommended,
-  ...tseslint.configs.recommended,
+  ...tseslint.configs.strict,
+  ...tseslint.configs.stylistic,
   {
     ignores: [
       '**/*.d.ts',
@@ -15,36 +23,41 @@ export default tseslint.config(
       'src/stories',
       '**/*.css',
       'node_modules/**/*',
+      './.next/*',
       'out',
-      'cdk.out',
+      '.storybook',
       'dist',
-      '!awslambda.d.ts'
+      '.vinxi',
+      '.output',
     ],
   },
   {
-    files: [
-      'bin/*.ts',
-      'bin/**/*.ts',
-      'lib/*.ts',
-      'lib/**/*.ts',
-      'lambda/*.ts',
-      'lambda/**/*.ts',
-    ],
-  },
-  {
+    files: ['src/**/*.{ts,tsx}'],
+    ...eslintImport.flatConfigs.recommended,
+    ...eslintImport.flatConfigs.typescript,
     plugins: {
       '@stylistic': stylistic,
       '@stylistic/ts': stylisticTs,
+      '@stylistic/jsx': stylisticJsx,
+      solid,
     },
-  },
-  {
+    settings: {
+      'import/internal-regex': '^~/',
+      'import/resolver': {
+        node: {
+          extensions: ['.ts', '.tsx'],
+        },
+        typescript: {
+          alwaysTryTypes: true,
+        },
+      },
+    },
     rules: {
-      semi: 'error',
-      quotes: ['error', 'single'],
       '@stylistic/semi': 'error',
       '@stylistic/ts/indent': ['error', 2],
-      // 'comma-dangle': ['error', 'as-needed'],
-      'arrow-parens': ['error', 'always'],
+      '@stylistic/jsx/jsx-indent': ['error', 2],
+      "comma-dangle": ["error", "always-multiline"],
+      semi: ["error", "always"],
     },
-  }
+  },
 );
