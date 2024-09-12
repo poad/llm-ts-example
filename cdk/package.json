@@ -26,7 +26,7 @@
     "eslint-plugin-promise": "^7.1.0",
     "poku": "^2.6.2",
     "ts-node": "^10.9.2",
-    "tsx": "^4.19.0",
+    "tsx": "^4.19.1",
     "typescript": "^5.6.2",
     "typescript-eslint": "^8.5.0",
     "vite": "^5.4.4",
@@ -41,8 +41,8 @@
     "aws-cdk-lib": "^2.158.0",
     "constructs": "^10.3.0",
     "esbuild": "^0.23.1",
-    "langfuse": "^3.23.2",
-    "langfuse-langchain": "^3.23.2",
+    "langfuse": "^3.23.3",
+    "langfuse-langchain": "^3.23.3",
     "source-map-support": "^0.5.21"
   }
 }
