@@ -37,16 +37,16 @@ importers:
         version: 9.10.0
       eslint-import-resolver-typescript:
         specifier: ^3.6.3
-        version: 3.6.3(eslint-plugin-import@2.30.0)(eslint@9.10.0)
+        version: 3.6.3(@typescript-eslint/parser@8.5.0(eslint@9.10.0)(typescript@5.6.2))(eslint-plugin-import@2.30.0)(eslint@9.10.0)
       eslint-plugin-import:
         specifier: ^2.30.0
-        version: 2.30.0(eslint-import-resolver-typescript@3.6.3)(eslint@9.10.0)
+        version: 2.30.0(@typescript-eslint/parser@8.5.0(eslint@9.10.0)(typescript@5.6.2))(eslint-import-resolver-typescript@3.6.3)(eslint@9.10.0)
       eslint-plugin-promise:
         specifier: ^7.1.0
         version: 7.1.0(eslint@9.10.0)
       eslint-plugin-solid:
         specifier: ^0.14.3
-        version: 0.14.3(eslint@9.10.0)
+        version: 0.14.3(eslint@9.10.0)(typescript@5.6.2)
       typescript-eslint:
         specifier: ^8.5.0
         version: 8.5.0(eslint@9.10.0)(typescript@5.6.2)
@@ -91,14 +91,14 @@ importers:
         specifier: ^4.19.1
         version: 4.19.1
       vite:
-        specifier: ^5.4.4
-        version: 5.4.4(@types/node@22.5.4)
+        specifier: ^5.4.5
+        version: 5.4.5(@types/node@22.5.4)
       vite-plugin-pages:
         specifier: ^0.32.3
-        version: 0.32.3(@solidjs/router@0.14.3(solid-js@1.8.22))(vite@5.4.4(@types/node@22.5.4))
+        version: 0.32.3(@solidjs/router@0.14.3(solid-js@1.8.22))(vite@5.4.5(@types/node@22.5.4))
       vite-plugin-solid:
         specifier: ^2.10.2
-        version: 2.10.2(@testing-library/jest-dom@6.5.0)(solid-js@1.8.22)(vite@5.4.4(@types/node@22.5.4))
+        version: 2.10.2(@testing-library/jest-dom@6.5.0)(solid-js@1.8.22)(vite@5.4.5(@types/node@22.5.4))
 
   cdk:
     dependencies:
@@ -107,13 +107,13 @@ importers:
         version: 2.7.0
       '@langchain/community':
         specifier: ^0.2.33
-        version: 0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0)
+        version: 0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0)
       '@langchain/core':
         specifier: ^0.2.32
-        version: 0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(openai@4.59.0(zod@3.23.8))
+        version: 0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(openai@4.60.1(zod@3.23.8))
       '@langchain/openai':
         specifier: ^0.2.11
-        version: 0.2.11(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))
+        version: 0.2.11(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))
       aws-cdk-lib:
         specifier: ^2.158.0
         version: 2.158.0(constructs@10.3.0)
@@ -128,7 +128,7 @@ importers:
         version: 3.24.0
       langfuse-langchain:
         specifier: ^3.24.0
-        version: 3.24.0(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))
+        version: 3.24.0(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))
       source-map-support:
         specifier: ^0.5.21
         version: 0.5.21
@@ -182,11 +182,11 @@ importers:
         specifier: ^8.5.0
         version: 8.5.0(eslint@9.10.0)(typescript@5.6.2)
       vite:
-        specifier: ^5.4.4
-        version: 5.4.4(@types/node@22.5.4)
+        specifier: ^5.4.5
+        version: 5.4.5(@types/node@22.5.4)
       vite-tsconfig-paths:
         specifier: ^5.0.1
-        version: 5.0.1(typescript@5.6.2)(vite@5.4.4(@types/node@22.5.4))
+        version: 5.0.1(typescript@5.6.2)(vite@5.4.5(@types/node@22.5.4))
       vitest:
         specifier: ^2.1.0
         version: 2.1.0(@types/node@22.5.4)(jsdom@25.0.0)
@@ -1433,6 +1433,10 @@ packages:
   aria-query@5.3.0:
     resolution: {integrity: sha512-b0P0sZPKtyu8HkeRAfCq0IfURZK+SuwMjY1UXGBU27wpAiTwQAIlq56IbIO+ytk/JjS1fMR14ee5WBBfKi5J6A==}
 
+  aria-query@5.3.1:
+    resolution: {integrity: sha512-Z/ZeOgVl7bcSYZ/u/rh0fOpvEpq//LZmdbkXyc7syVzjPAhfOa9ebsdTSjEBDU4vs5nC98Kfduj1uFo0qyET3g==}
+    engines: {node: '>= 0.4'}
+
   array-buffer-byte-length@1.0.1:
     resolution: {integrity: sha512-ahC5W1xgou+KTXix4sAO8Ki12Q+jf4i0+tmk3sC+zgcynshkHxzpXdImBehiUYKKKDwvfFiJl1tZt6ewscS1Mg==}
     engines: {node: '>= 0.4'}
@@ -1702,8 +1706,8 @@ packages:
   double-ended-queue@2.1.0-0:
     resolution: {integrity: sha512-+BNfZ+deCo8hMNpDqDnvT+c0XpJ5cUa6mqYq89bho2Ifze4URTqRkcwR399hWoTrTkbZ/XJYDgP6rc7pRgffEQ==}
 
-  electron-to-chromium@1.5.20:
-    resolution: {integrity: sha512-74mdl6Fs1HHzK9SUX4CKFxAtAe3nUns48y79TskHNAG6fGOlLfyKA4j855x+0b5u8rWJIrlaG9tcTPstMlwjIw==}
+  electron-to-chromium@1.5.22:
+    resolution: {integrity: sha512-tKYm5YHPU1djz0O+CGJ+oJIvimtsCcwR2Z9w7Skh08lUdyzXY5djods3q+z2JkWdb7tCcmM//eVavSRAiaPRNg==}
 
   enhanced-resolve@5.17.1:
     resolution: {integrity: sha512-LMHl3dXhTcfv8gM4kEzIUeTQ+7fpdA0l2tUf34BddXPkz2A5xJ5L/Pchd5BL6rdccM9QGvu0sWZzK1Z1t4wwyg==}
@@ -2584,8 +2588,8 @@ packages:
     resolution: {integrity: sha512-yBYjY9QX2hnRmZHAjG/f13MzmBzxzYgQhFrke06TTyKY5zSTEqkOeukBzIdVA3j3ulu8Qa3MbVFShV7T2RmGtQ==}
     engines: {node: '>= 0.4'}
 
-  openai@4.59.0:
-    resolution: {integrity: sha512-3bn7FypMt2R1ZDuO0+GcXgBEnVFhIzrpUkb47pQRoYvyfdZ2fQXcuP14aOc4C8F9FvCtZ/ElzJmVzVqnP4nHNg==}
+  openai@4.60.1:
+    resolution: {integrity: sha512-j7aZOpgN0MtflPgNaBlSnOyok4jwto0GVOxVC5g0jCfa0lvywYx+LhlFim/dXzPtyi8MjKozyLshSj93617vNQ==}
     hasBin: true
     peerDependencies:
       zod: ^3.23.8
@@ -3082,8 +3086,8 @@ packages:
       vite:
         optional: true
 
-  vite@5.4.4:
-    resolution: {integrity: sha512-RHFCkULitycHVTtelJ6jQLd+KSAAzOgEYorV32R2q++M6COBjKJR6BxqClwp5sf0XaBDjVMuJ9wnNfyAJwjMkA==}
+  vite@5.4.5:
+    resolution: {integrity: sha512-pXqR0qtb2bTwLkev4SE3r4abCNioP3GkjvIDLlzziPpXtHgiJIjuKl+1GN6ESOT3wMjG3JTeARopj2SwYaHTOA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -3627,10 +3631,10 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8))':
+  '@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8))':
     dependencies:
       '@anthropic-ai/sdk': 0.22.0
-      '@langchain/core': 0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(openai@4.59.0(zod@3.23.8))
+      '@langchain/core': 0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(openai@4.60.1(zod@3.23.8))
       fast-xml-parser: 4.4.0
       zod: 3.23.8
       zod-to-json-schema: 3.23.3(zod@3.23.8)
@@ -3640,16 +3644,16 @@ snapshots:
       - openai
     optional: true
 
-  '@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0)':
+  '@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0)':
     dependencies:
-      '@langchain/core': 0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(openai@4.59.0(zod@3.23.8))
-      '@langchain/openai': 0.2.11(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))
+      '@langchain/core': 0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(openai@4.60.1(zod@3.23.8))
+      '@langchain/openai': 0.2.11(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))
       binary-extensions: 2.3.0
       expr-eval: 2.0.2
       flat: 5.0.2
       js-yaml: 4.1.0
-      langchain: 0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0)
-      langsmith: 0.1.55(@langchain/core@0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(openai@4.59.0(zod@3.23.8)))(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(openai@4.59.0(zod@3.23.8))
+      langchain: 0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0)
+      langsmith: 0.1.55(@langchain/core@0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(openai@4.60.1(zod@3.23.8)))(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(openai@4.60.1(zod@3.23.8))
       uuid: 10.0.0
       zod: 3.23.8
       zod-to-json-schema: 3.23.3(zod@3.23.8)
@@ -3679,13 +3683,13 @@ snapshots:
       - peggy
       - pyodide
 
-  '@langchain/core@0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(openai@4.59.0(zod@3.23.8))':
+  '@langchain/core@0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(openai@4.60.1(zod@3.23.8))':
     dependencies:
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.14
-      langsmith: 0.1.55(@langchain/core@0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(openai@4.59.0(zod@3.23.8)))(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(openai@4.59.0(zod@3.23.8))
+      langsmith: 0.1.55(@langchain/core@0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(openai@4.60.1(zod@3.23.8)))(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(openai@4.60.1(zod@3.23.8))
       mustache: 4.2.0
       p-queue: 6.6.2
       p-retry: 4.6.2
@@ -3696,35 +3700,35 @@ snapshots:
       - langchain
       - openai
 
-  '@langchain/langgraph-checkpoint@0.0.5(@langchain/core@0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(openai@4.59.0(zod@3.23.8)))':
+  '@langchain/langgraph-checkpoint@0.0.5(@langchain/core@0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(openai@4.60.1(zod@3.23.8)))':
     dependencies:
-      '@langchain/core': 0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(openai@4.59.0(zod@3.23.8))
+      '@langchain/core': 0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(openai@4.60.1(zod@3.23.8))
       uuid: 10.0.0
     optional: true
 
   '@langchain/langgraph@0.2.2(@langchain/core@0.2.32)':
     dependencies:
-      '@langchain/core': 0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(openai@4.59.0(zod@3.23.8))
-      '@langchain/langgraph-checkpoint': 0.0.5(@langchain/core@0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(openai@4.59.0(zod@3.23.8)))
+      '@langchain/core': 0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(openai@4.60.1(zod@3.23.8))
+      '@langchain/langgraph-checkpoint': 0.0.5(@langchain/core@0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(openai@4.60.1(zod@3.23.8)))
       double-ended-queue: 2.1.0-0
       uuid: 10.0.0
       zod: 3.23.8
     optional: true
 
-  '@langchain/openai@0.2.11(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))':
+  '@langchain/openai@0.2.11(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))':
     dependencies:
-      '@langchain/core': 0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(openai@4.59.0(zod@3.23.8))
+      '@langchain/core': 0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(openai@4.60.1(zod@3.23.8))
       js-tiktoken: 1.0.14
-      openai: 4.59.0(zod@3.23.8)
+      openai: 4.60.1(zod@3.23.8)
       zod: 3.23.8
       zod-to-json-schema: 3.23.3(zod@3.23.8)
     transitivePeerDependencies:
       - encoding
       - langchain
 
-  '@langchain/textsplitters@0.0.3(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(openai@4.59.0(zod@3.23.8))':
+  '@langchain/textsplitters@0.0.3(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(openai@4.60.1(zod@3.23.8))':
     dependencies:
-      '@langchain/core': 0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(openai@4.59.0(zod@3.23.8))
+      '@langchain/core': 0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(openai@4.60.1(zod@3.23.8))
       js-tiktoken: 1.0.14
     transitivePeerDependencies:
       - langchain
@@ -3859,7 +3863,7 @@ snapshots:
   '@testing-library/jest-dom@6.5.0':
     dependencies:
       '@adobe/css-tools': 4.4.0
-      aria-query: 5.3.0
+      aria-query: 5.3.1
       chalk: 3.0.0
       css.escape: 1.5.1
       dom-accessibility-api: 0.6.3
@@ -4022,13 +4026,13 @@ snapshots:
       chai: 5.1.1
       tinyrainbow: 1.2.0
 
-  '@vitest/mocker@2.1.0(@vitest/spy@2.1.0)(vite@5.4.4(@types/node@22.5.4))':
+  '@vitest/mocker@2.1.0(@vitest/spy@2.1.0)(vite@5.4.5(@types/node@22.5.4))':
     dependencies:
       '@vitest/spy': 2.1.0
       estree-walker: 3.0.3
       magic-string: 0.30.11
     optionalDependencies:
-      vite: 5.4.4(@types/node@22.5.4)
+      vite: 5.4.5(@types/node@22.5.4)
 
   '@vitest/pretty-format@2.1.0':
     dependencies:
@@ -4105,6 +4109,8 @@ snapshots:
   aria-query@5.3.0:
     dependencies:
       dequal: 2.0.3
+
+  aria-query@5.3.1: {}
 
   array-buffer-byte-length@1.0.1:
     dependencies:
@@ -4210,7 +4216,7 @@ snapshots:
   browserslist@4.23.3:
     dependencies:
       caniuse-lite: 1.0.30001660
-      electron-to-chromium: 1.5.20
+      electron-to-chromium: 1.5.22
       node-releases: 2.0.18
       update-browserslist-db: 1.1.0(browserslist@4.23.3)
 
@@ -4370,7 +4376,7 @@ snapshots:
   double-ended-queue@2.1.0-0:
     optional: true
 
-  electron-to-chromium@1.5.20: {}
+  electron-to-chromium@1.5.22: {}
 
   enhanced-resolve@5.17.1:
     dependencies:
@@ -4540,25 +4546,6 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-import-resolver-typescript@3.6.3(eslint-plugin-import@2.30.0)(eslint@9.10.0):
-    dependencies:
-      '@nolyfill/is-core-module': 1.0.39
-      debug: 4.3.7
-      enhanced-resolve: 5.17.1
-      eslint: 9.10.0
-      eslint-module-utils: 2.11.0(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.3(eslint-plugin-import@2.30.0)(eslint@9.10.0))(eslint@9.10.0)
-      fast-glob: 3.3.2
-      get-tsconfig: 4.8.1
-      is-bun-module: 1.2.1
-      is-glob: 4.0.3
-    optionalDependencies:
-      eslint-plugin-import: 2.30.0(eslint-import-resolver-typescript@3.6.3)(eslint@9.10.0)
-    transitivePeerDependencies:
-      - '@typescript-eslint/parser'
-      - eslint-import-resolver-node
-      - eslint-import-resolver-webpack
-      - supports-color
-
   eslint-module-utils@2.11.0(@typescript-eslint/parser@8.5.0(eslint@9.10.0)(typescript@5.6.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.3(@typescript-eslint/parser@8.5.0(eslint@9.10.0)(typescript@5.6.2))(eslint-plugin-import@2.30.0)(eslint@9.10.0))(eslint@9.10.0):
     dependencies:
       debug: 3.2.7
@@ -4567,16 +4554,6 @@ snapshots:
       eslint: 9.10.0
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 3.6.3(@typescript-eslint/parser@8.5.0(eslint@9.10.0)(typescript@5.6.2))(eslint-plugin-import@2.30.0)(eslint@9.10.0)
-    transitivePeerDependencies:
-      - supports-color
-
-  eslint-module-utils@2.11.0(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.3(eslint-plugin-import@2.30.0)(eslint@9.10.0))(eslint@9.10.0):
-    dependencies:
-      debug: 3.2.7
-    optionalDependencies:
-      eslint: 9.10.0
-      eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.6.3(eslint-plugin-import@2.30.0)(eslint@9.10.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -4608,37 +4585,11 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-plugin-import@2.30.0(eslint-import-resolver-typescript@3.6.3)(eslint@9.10.0):
-    dependencies:
-      '@rtsao/scc': 1.1.0
-      array-includes: 3.1.8
-      array.prototype.findlastindex: 1.2.5
-      array.prototype.flat: 1.3.2
-      array.prototype.flatmap: 1.3.2
-      debug: 3.2.7
-      doctrine: 2.1.0
-      eslint: 9.10.0
-      eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.11.0(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.3(eslint-plugin-import@2.30.0)(eslint@9.10.0))(eslint@9.10.0)
-      hasown: 2.0.2
-      is-core-module: 2.15.1
-      is-glob: 4.0.3
-      minimatch: 3.1.2
-      object.fromentries: 2.0.8
-      object.groupby: 1.0.3
-      object.values: 1.2.0
-      semver: 6.3.1
-      tsconfig-paths: 3.15.0
-    transitivePeerDependencies:
-      - eslint-import-resolver-typescript
-      - eslint-import-resolver-webpack
-      - supports-color
-
   eslint-plugin-promise@7.1.0(eslint@9.10.0):
     dependencies:
       eslint: 9.10.0
 
-  eslint-plugin-solid@0.14.3(eslint@9.10.0):
+  eslint-plugin-solid@0.14.3(eslint@9.10.0)(typescript@5.6.2):
     dependencies:
       '@typescript-eslint/utils': 8.5.0(eslint@9.10.0)(typescript@5.6.2)
       eslint: 9.10.0
@@ -5084,16 +5035,16 @@ snapshots:
 
   known-css-properties@0.30.0: {}
 
-  langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0):
+  langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0):
     dependencies:
-      '@langchain/core': 0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(openai@4.59.0(zod@3.23.8))
-      '@langchain/openai': 0.2.11(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))
-      '@langchain/textsplitters': 0.0.3(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(openai@4.59.0(zod@3.23.8))
+      '@langchain/core': 0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(openai@4.60.1(zod@3.23.8))
+      '@langchain/openai': 0.2.11(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))
+      '@langchain/textsplitters': 0.0.3(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(openai@4.60.1(zod@3.23.8))
       binary-extensions: 2.3.0
       js-tiktoken: 1.0.14
       js-yaml: 4.1.0
       jsonpointer: 5.0.1
-      langsmith: 0.1.55(@langchain/core@0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(openai@4.59.0(zod@3.23.8)))(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(openai@4.59.0(zod@3.23.8))
+      langsmith: 0.1.55(@langchain/core@0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(openai@4.60.1(zod@3.23.8)))(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(openai@4.60.1(zod@3.23.8))
       openapi-types: 12.1.3
       p-retry: 4.6.2
       uuid: 10.0.0
@@ -5101,8 +5052,8 @@ snapshots:
       zod: 3.23.8
       zod-to-json-schema: 3.23.3(zod@3.23.8)
     optionalDependencies:
-      '@langchain/anthropic': 0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8))
-      '@langchain/community': 0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0)
+      '@langchain/anthropic': 0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8))
+      '@langchain/community': 0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0)
       fast-xml-parser: 4.4.0
       ignore: 5.3.2
       jsdom: 25.0.0
@@ -5115,9 +5066,9 @@ snapshots:
     dependencies:
       mustache: 4.2.0
 
-  langfuse-langchain@3.24.0(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0)):
+  langfuse-langchain@3.24.0(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0)):
     dependencies:
-      langchain: 0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0)
+      langchain: 0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0)
       langfuse: 3.24.0
       langfuse-core: 3.24.0
 
@@ -5125,7 +5076,7 @@ snapshots:
     dependencies:
       langfuse-core: 3.24.0
 
-  langsmith@0.1.55(@langchain/core@0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(openai@4.59.0(zod@3.23.8)))(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(openai@4.59.0(zod@3.23.8)):
+  langsmith@0.1.55(@langchain/core@0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(openai@4.60.1(zod@3.23.8)))(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(openai@4.60.1(zod@3.23.8)):
     dependencies:
       '@types/uuid': 10.0.0
       commander: 10.0.1
@@ -5134,9 +5085,9 @@ snapshots:
       semver: 7.6.3
       uuid: 10.0.0
     optionalDependencies:
-      '@langchain/core': 0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(openai@4.59.0(zod@3.23.8))
-      langchain: 0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.59.0(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.59.0(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.59.0(zod@3.23.8))(ws@8.18.0)
-      openai: 4.59.0(zod@3.23.8)
+      '@langchain/core': 0.2.32(langchain@0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(openai@4.60.1(zod@3.23.8))
+      langchain: 0.2.19(@langchain/anthropic@0.2.10(langchain@0.2.19)(openai@4.60.1(zod@3.23.8)))(@langchain/community@0.2.33(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10)(@langchain/langgraph@0.2.2)(crypto-js@4.2.0)(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.60.1(zod@3.23.8))(ws@8.18.0))(fast-xml-parser@4.4.0)(ignore@5.3.2)(jsdom@25.0.0)(openai@4.60.1(zod@3.23.8))(ws@8.18.0)
+      openai: 4.60.1(zod@3.23.8)
 
   levn@0.4.1:
     dependencies:
@@ -5256,7 +5207,7 @@ snapshots:
       define-properties: 1.2.1
       es-object-atoms: 1.0.0
 
-  openai@4.59.0(zod@3.23.8):
+  openai@4.60.1(zod@3.23.8):
     dependencies:
       '@types/node': 18.19.50
       '@types/node-fetch': 2.6.11
@@ -5736,7 +5687,7 @@ snapshots:
       cac: 6.7.14
       debug: 4.3.7
       pathe: 1.1.2
-      vite: 5.4.4(@types/node@22.5.4)
+      vite: 5.4.5(@types/node@22.5.4)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -5748,7 +5699,7 @@ snapshots:
       - supports-color
       - terser
 
-  vite-plugin-pages@0.32.3(@solidjs/router@0.14.3(solid-js@1.8.22))(vite@5.4.4(@types/node@22.5.4)):
+  vite-plugin-pages@0.32.3(@solidjs/router@0.14.3(solid-js@1.8.22))(vite@5.4.5(@types/node@22.5.4)):
     dependencies:
       '@types/debug': 4.1.12
       debug: 4.3.7
@@ -5758,14 +5709,14 @@ snapshots:
       json5: 2.2.3
       local-pkg: 0.5.0
       picocolors: 1.1.0
-      vite: 5.4.4(@types/node@22.5.4)
+      vite: 5.4.5(@types/node@22.5.4)
       yaml: 2.5.1
     optionalDependencies:
       '@solidjs/router': 0.14.3(solid-js@1.8.22)
     transitivePeerDependencies:
       - supports-color
 
-  vite-plugin-solid@2.10.2(@testing-library/jest-dom@6.5.0)(solid-js@1.8.22)(vite@5.4.4(@types/node@22.5.4)):
+  vite-plugin-solid@2.10.2(@testing-library/jest-dom@6.5.0)(solid-js@1.8.22)(vite@5.4.5(@types/node@22.5.4)):
     dependencies:
       '@babel/core': 7.25.2
       '@types/babel__core': 7.20.5
@@ -5773,25 +5724,25 @@ snapshots:
       merge-anything: 5.1.7
       solid-js: 1.8.22
       solid-refresh: 0.6.3(solid-js@1.8.22)
-      vite: 5.4.4(@types/node@22.5.4)
-      vitefu: 0.2.5(vite@5.4.4(@types/node@22.5.4))
+      vite: 5.4.5(@types/node@22.5.4)
+      vitefu: 0.2.5(vite@5.4.5(@types/node@22.5.4))
     optionalDependencies:
       '@testing-library/jest-dom': 6.5.0
     transitivePeerDependencies:
       - supports-color
 
-  vite-tsconfig-paths@5.0.1(typescript@5.6.2)(vite@5.4.4(@types/node@22.5.4)):
+  vite-tsconfig-paths@5.0.1(typescript@5.6.2)(vite@5.4.5(@types/node@22.5.4)):
     dependencies:
       debug: 4.3.7
       globrex: 0.1.2
       tsconfck: 3.1.3(typescript@5.6.2)
     optionalDependencies:
-      vite: 5.4.4(@types/node@22.5.4)
+      vite: 5.4.5(@types/node@22.5.4)
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  vite@5.4.4(@types/node@22.5.4):
+  vite@5.4.5(@types/node@22.5.4):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.45
@@ -5800,14 +5751,14 @@ snapshots:
       '@types/node': 22.5.4
       fsevents: 2.3.3
 
-  vitefu@0.2.5(vite@5.4.4(@types/node@22.5.4)):
+  vitefu@0.2.5(vite@5.4.5(@types/node@22.5.4)):
     optionalDependencies:
-      vite: 5.4.4(@types/node@22.5.4)
+      vite: 5.4.5(@types/node@22.5.4)
 
   vitest@2.1.0(@types/node@22.5.4)(jsdom@25.0.0):
     dependencies:
       '@vitest/expect': 2.1.0
-      '@vitest/mocker': 2.1.0(@vitest/spy@2.1.0)(vite@5.4.4(@types/node@22.5.4))
+      '@vitest/mocker': 2.1.0(@vitest/spy@2.1.0)(vite@5.4.5(@types/node@22.5.4))
       '@vitest/pretty-format': 2.1.0
       '@vitest/runner': 2.1.0
       '@vitest/snapshot': 2.1.0
@@ -5822,7 +5773,7 @@ snapshots:
       tinyexec: 0.3.0
       tinypool: 1.0.1
       tinyrainbow: 1.2.0
-      vite: 5.4.4(@types/node@22.5.4)
+      vite: 5.4.5(@types/node@22.5.4)
       vite-node: 2.1.0(@types/node@22.5.4)
       why-is-node-running: 2.3.0
     optionalDependencies:
