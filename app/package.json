@@ -17,12 +17,12 @@
     "solid-js": "^1.8.22"
   },
   "devDependencies": {
-    "@solidjs/router": "^0.14.3",
+    "@solidjs/router": "^0.14.5",
     "@solidjs/testing-library": "^0.8.9",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/user-event": "^14.5.2",
     "@types/crypto-js": "^4.2.2",
-    "@types/node": "^22.5.4",
+    "@types/node": "^22.5.5",
     "crypto-js": "^4.2.0",
     "jsdom": "^25.0.0",
     "poku": "^2.6.2",
