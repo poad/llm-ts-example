@@ -35,9 +35,9 @@
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.7.0",
-    "@langchain/community": "^0.2.33",
-    "@langchain/core": "^0.2.32",
-    "@langchain/openai": "^0.2.11",
+    "@langchain/community": "^0.3.0",
+    "@langchain/core": "^0.3.1",
+    "@langchain/openai": "^0.3.0",
     "aws-cdk-lib": "^2.158.0",
     "constructs": "^10.3.0",
     "esbuild": "^0.23.1",
