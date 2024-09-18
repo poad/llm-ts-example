@@ -37,16 +37,16 @@ importers:
         version: 9.10.0
       eslint-import-resolver-typescript:
         specifier: ^3.6.3
-        version: 3.6.3(@typescript-eslint/parser@8.6.0(eslint@9.10.0)(typescript@5.6.2))(eslint-plugin-import@2.30.0)(eslint@9.10.0)
+        version: 3.6.3(eslint-plugin-import@2.30.0)(eslint@9.10.0)
       eslint-plugin-import:
         specifier: ^2.30.0
-        version: 2.30.0(@typescript-eslint/parser@8.6.0(eslint@9.10.0)(typescript@5.6.2))(eslint-import-resolver-typescript@3.6.3)(eslint@9.10.0)
+        version: 2.30.0(eslint-import-resolver-typescript@3.6.3)(eslint@9.10.0)
       eslint-plugin-promise:
         specifier: ^7.1.0
         version: 7.1.0(eslint@9.10.0)
       eslint-plugin-solid:
         specifier: ^0.14.3
-        version: 0.14.3(eslint@9.10.0)(typescript@5.6.2)
+        version: 0.14.3(eslint@9.10.0)
       typescript-eslint:
         specifier: ^8.6.0
         version: 8.6.0(eslint@9.10.0)(typescript@5.6.2)
@@ -82,8 +82,8 @@ importers:
         specifier: ^25.0.0
         version: 25.0.0
       poku:
-        specifier: ^2.6.2
-        version: 2.6.2
+        specifier: ^2.7.0
+        version: 2.7.0
       solid-refresh:
         specifier: ^0.7.5
         version: 0.7.5(solid-js@1.8.22)
@@ -106,14 +106,14 @@ importers:
         specifier: ^2.8.0
         version: 2.8.0
       '@langchain/community':
-        specifier: ^0.3.0
-        version: 0.3.0(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10(openai@4.61.1(zod@3.23.8)))(@langchain/core@0.3.1(openai@4.61.1(zod@3.23.8)))(crypto-js@4.2.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.61.1(zod@3.23.8))(ws@8.18.0)
-      '@langchain/core':
         specifier: ^0.3.1
-        version: 0.3.1(openai@4.61.1(zod@3.23.8))
+        version: 0.3.1(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10(openai@4.61.1(zod@3.23.8)))(@langchain/core@0.3.2(openai@4.61.1(zod@3.23.8)))(crypto-js@4.2.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.61.1(zod@3.23.8))(ws@8.18.0)
+      '@langchain/core':
+        specifier: ^0.3.2
+        version: 0.3.2(openai@4.61.1(zod@3.23.8))
       '@langchain/openai':
         specifier: ^0.3.0
-        version: 0.3.0(@langchain/core@0.3.1(openai@4.61.1(zod@3.23.8)))
+        version: 0.3.0(@langchain/core@0.3.2(openai@4.61.1(zod@3.23.8)))
       aws-cdk-lib:
         specifier: ^2.158.0
         version: 2.158.0(constructs@10.3.0)
@@ -124,11 +124,11 @@ importers:
         specifier: ^0.23.1
         version: 0.23.1
       langfuse:
-        specifier: ^3.24.0
-        version: 3.24.0
+        specifier: ^3.25.0
+        version: 3.25.0
       langfuse-langchain:
-        specifier: ^3.24.0
-        version: 3.24.0(langchain@0.3.2(@langchain/anthropic@0.2.10(openai@4.61.1(zod@3.23.8)))(@langchain/core@0.3.1(openai@4.61.1(zod@3.23.8)))(openai@4.61.1(zod@3.23.8)))
+        specifier: ^3.25.0
+        version: 3.25.0(langchain@0.3.2(@langchain/anthropic@0.2.10(openai@4.61.1(zod@3.23.8)))(@langchain/core@0.3.2(openai@4.61.1(zod@3.23.8)))(openai@4.61.1(zod@3.23.8)))
       source-map-support:
         specifier: ^0.5.21
         version: 0.5.21
@@ -167,8 +167,8 @@ importers:
         specifier: ^7.1.0
         version: 7.1.0(eslint@9.10.0)
       poku:
-        specifier: ^2.6.2
-        version: 2.6.2
+        specifier: ^2.7.0
+        version: 2.7.0
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@22.5.5)(typescript@5.6.2)
@@ -679,8 +679,8 @@ packages:
     resolution: {integrity: sha512-Tb0k8/oUitFzupSxPAmKNnKr28IxZYrF0K7vZUcHLlRA2tljBbUiU9hFnuSiN0VBTttrrFkNQ1VsltBbOL79eQ==}
     engines: {node: '>=18'}
 
-  '@langchain/community@0.3.0':
-    resolution: {integrity: sha512-JUmXn4wt/STMJVN0ZiQGjOF2MMrhv9sJ78KG+7hwSKlxTl1QfhPFO1jr5psls4Ok4TDKaLw/ULziNGEN5cCR/Q==}
+  '@langchain/community@0.3.1':
+    resolution: {integrity: sha512-V6n4kkv3isYoiU2ciLNhcqBT96IwxpMNt5K/KxkzOfGNJIWQcsPzTccuWZXdDOQ40kelCg+S8YKGVy8X4mkgtg==}
     engines: {node: '>=18'}
     peerDependencies:
       '@arcjet/redact': ^v1.0.0-alpha.23
@@ -1049,12 +1049,12 @@ packages:
       youtubei.js:
         optional: true
 
-  '@langchain/core@0.2.33':
-    resolution: {integrity: sha512-8WMied0Y5c4YDUjvoQqr/M63jAuZ3e+YqCAaszeGeBJbsHFoCdj8Ppr/yP6moAvsLImntxUXC6BxqAIDYkpGkg==}
+  '@langchain/core@0.2.34':
+    resolution: {integrity: sha512-Hkveq1UcOjUj1DVn5erbqElyRj1t04NORSuSIZAJCtPO7EDkIqomjAarJ5+I5NUpQeIONgbOdnY9TkJ6cKUSVA==}
     engines: {node: '>=18'}
 
-  '@langchain/core@0.3.1':
-    resolution: {integrity: sha512-xYdTAgS9hYPt+h0/OwpyRcMB5HKR40LXutbSr2jw3hMVIOwD1DnvhnUEnWgBK4lumulVW2jrosNPyBKMhRZAZg==}
+  '@langchain/core@0.3.2':
+    resolution: {integrity: sha512-FeoDOStP8l1YdxgykpXnVoEnl4lxGNSOdYzUJN/EdFtkc6cIjDDS5+xewajme0+egaUsO4tGLezKaFpoWxAyQA==}
     engines: {node: '>=18'}
 
   '@langchain/openai@0.3.0':
@@ -2288,22 +2288,22 @@ packages:
       typeorm:
         optional: true
 
-  langfuse-core@3.24.0:
-    resolution: {integrity: sha512-/s4qurtsAxV1tVxb0+W7XMMWxR9F/aP5f2wm431WCBfsseXYKRh9prrsQsIzjIGhltIQyhkfBllLVxWEm+aN5A==}
+  langfuse-core@3.25.0:
+    resolution: {integrity: sha512-f2F2rw6C+L1uwmuO26MUpSo7/YfmANKjw3xlegGWAQkDtx4DEEec+qi+H3I9Vd25UosFTX1hjnNWR16CUc/Ajg==}
     engines: {node: '>=18'}
 
-  langfuse-langchain@3.24.0:
-    resolution: {integrity: sha512-wYuQ3tEWzNxlOEBXWHb8+kC0GqEQ/18TU+V5bwoMyLSBzhtca+AEsNf6AkwAuvrNX4Z5Qwar76Jzy5CyYmXPSg==}
+  langfuse-langchain@3.25.0:
+    resolution: {integrity: sha512-wNEEe8uzUGd1s4gQZbo9InYmp2e7eE3UvONoQCHlhWOsCILgoP6ICxCwd0KOFiroAkvR2ak9/lRhqvzQUD8zWw==}
     engines: {node: '>=18'}
     peerDependencies:
       langchain: '>=0.0.157 <0.3.0'
 
-  langfuse@3.24.0:
-    resolution: {integrity: sha512-7TM21vMGES8Iyc0TcCIvKj3mcyL4btW3g4gYJGEGIYpmPwBcUb6m591DPkE5zH2lWdahx6rKlbCPVaFBpV5vkQ==}
+  langfuse@3.25.0:
+    resolution: {integrity: sha512-C5ha3VCTAD5cbiTCvfU6oQMO8YskoRXzlsfNVHJDx1uCy6WcvZ2GJcUmklG6bgWj7INd78ieY9oe0P//8+OC8g==}
     engines: {node: '>=18'}
 
-  langsmith@0.1.56:
-    resolution: {integrity: sha512-uli1q9zm0tCCPh4iQShjoI+642QGcGL8r1xcKl+/5dO6OzOxtsF7m7UiSkGMs410tWcAHIuQq257AxYB50NslA==}
+  langsmith@0.1.57:
+    resolution: {integrity: sha512-mHzZgKW+bQdyGAGx/QlcfB1mgMMsakzceN44L0CHLYVaI4j1t50PG8m5YfzSiqBisIdq/Xi2jWZTWEGZ3BR9zA==}
     peerDependencies:
       openai: '*'
     peerDependenciesMeta:
@@ -2522,8 +2522,8 @@ packages:
   pkg-types@1.2.0:
     resolution: {integrity: sha512-+ifYuSSqOQ8CqP4MbZA5hDpb97n3E8SVWdJe+Wms9kj745lmd3b7EZJiqvmLwAlmRfjrI7Hi5z3kdBJ93lFNPA==}
 
-  poku@2.6.2:
-    resolution: {integrity: sha512-qoqVaj6pVhqVTsgQGGbT653Xzy8IUpbTT4He9B26TRgEWcb7EC0hz0qIHyY8eiR8A8YtryTROgoJFt808KnXaA==}
+  poku@2.7.0:
+    resolution: {integrity: sha512-iCXNzQ7AYBBEkGdDZdcIa9KzQluHSqWmV+i+rGyrQF35Yj5r5Ap/TmnZ15c7c+V3KMOT/gN8ZTWkPZ3BvO9gqQ==}
     engines: {bun: '>=1.0.0', deno: '>=1.30.0', node: '>=8.17.0', typescript: '>=4.7.2'}
     hasBin: true
 
@@ -3485,7 +3485,7 @@ snapshots:
   '@langchain/anthropic@0.2.10(openai@4.61.1(zod@3.23.8))':
     dependencies:
       '@anthropic-ai/sdk': 0.22.0
-      '@langchain/core': 0.2.33(openai@4.61.1(zod@3.23.8))
+      '@langchain/core': 0.2.34(openai@4.61.1(zod@3.23.8))
       fast-xml-parser: 4.5.0
       zod: 3.23.8
       zod-to-json-schema: 3.23.3(zod@3.23.8)
@@ -3494,16 +3494,16 @@ snapshots:
       - openai
     optional: true
 
-  '@langchain/community@0.3.0(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10(openai@4.61.1(zod@3.23.8)))(@langchain/core@0.3.1(openai@4.61.1(zod@3.23.8)))(crypto-js@4.2.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.61.1(zod@3.23.8))(ws@8.18.0)':
+  '@langchain/community@0.3.1(@huggingface/inference@2.8.0)(@langchain/anthropic@0.2.10(openai@4.61.1(zod@3.23.8)))(@langchain/core@0.3.2(openai@4.61.1(zod@3.23.8)))(crypto-js@4.2.0)(ignore@5.3.2)(jsdom@25.0.0)(lodash@4.17.21)(openai@4.61.1(zod@3.23.8))(ws@8.18.0)':
     dependencies:
-      '@langchain/core': 0.3.1(openai@4.61.1(zod@3.23.8))
-      '@langchain/openai': 0.3.0(@langchain/core@0.3.1(openai@4.61.1(zod@3.23.8)))
+      '@langchain/core': 0.3.2(openai@4.61.1(zod@3.23.8))
+      '@langchain/openai': 0.3.0(@langchain/core@0.3.2(openai@4.61.1(zod@3.23.8)))
       binary-extensions: 2.3.0
       expr-eval: 2.0.2
       flat: 5.0.2
       js-yaml: 4.1.0
-      langchain: 0.3.2(@langchain/anthropic@0.2.10(openai@4.61.1(zod@3.23.8)))(@langchain/core@0.3.1(openai@4.61.1(zod@3.23.8)))(openai@4.61.1(zod@3.23.8))
-      langsmith: 0.1.56(openai@4.61.1(zod@3.23.8))
+      langchain: 0.3.2(@langchain/anthropic@0.2.10(openai@4.61.1(zod@3.23.8)))(@langchain/core@0.3.2(openai@4.61.1(zod@3.23.8)))(openai@4.61.1(zod@3.23.8))
+      langsmith: 0.1.57(openai@4.61.1(zod@3.23.8))
       uuid: 10.0.0
       zod: 3.23.8
       zod-to-json-schema: 3.23.3(zod@3.23.8)
@@ -3529,13 +3529,13 @@ snapshots:
       - openai
       - peggy
 
-  '@langchain/core@0.2.33(openai@4.61.1(zod@3.23.8))':
+  '@langchain/core@0.2.34(openai@4.61.1(zod@3.23.8))':
     dependencies:
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.14
-      langsmith: 0.1.56(openai@4.61.1(zod@3.23.8))
+      langsmith: 0.1.57(openai@4.61.1(zod@3.23.8))
       mustache: 4.2.0
       p-queue: 6.6.2
       p-retry: 4.6.2
@@ -3546,13 +3546,13 @@ snapshots:
       - openai
     optional: true
 
-  '@langchain/core@0.3.1(openai@4.61.1(zod@3.23.8))':
+  '@langchain/core@0.3.2(openai@4.61.1(zod@3.23.8))':
     dependencies:
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.14
-      langsmith: 0.1.56(openai@4.61.1(zod@3.23.8))
+      langsmith: 0.1.57(openai@4.61.1(zod@3.23.8))
       mustache: 4.2.0
       p-queue: 6.6.2
       p-retry: 4.6.2
@@ -3562,9 +3562,9 @@ snapshots:
     transitivePeerDependencies:
       - openai
 
-  '@langchain/openai@0.3.0(@langchain/core@0.3.1(openai@4.61.1(zod@3.23.8)))':
+  '@langchain/openai@0.3.0(@langchain/core@0.3.2(openai@4.61.1(zod@3.23.8)))':
     dependencies:
-      '@langchain/core': 0.3.1(openai@4.61.1(zod@3.23.8))
+      '@langchain/core': 0.3.2(openai@4.61.1(zod@3.23.8))
       js-tiktoken: 1.0.14
       openai: 4.61.1(zod@3.23.8)
       zod: 3.23.8
@@ -3572,9 +3572,9 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@langchain/textsplitters@0.1.0(@langchain/core@0.3.1(openai@4.61.1(zod@3.23.8)))':
+  '@langchain/textsplitters@0.1.0(@langchain/core@0.3.2(openai@4.61.1(zod@3.23.8)))':
     dependencies:
-      '@langchain/core': 0.3.1(openai@4.61.1(zod@3.23.8))
+      '@langchain/core': 0.3.2(openai@4.61.1(zod@3.23.8))
       js-tiktoken: 1.0.14
 
   '@nodelib/fs.scandir@2.1.5':
@@ -4386,6 +4386,25 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
+  eslint-import-resolver-typescript@3.6.3(eslint-plugin-import@2.30.0)(eslint@9.10.0):
+    dependencies:
+      '@nolyfill/is-core-module': 1.0.39
+      debug: 4.3.7
+      enhanced-resolve: 5.17.1
+      eslint: 9.10.0
+      eslint-module-utils: 2.11.0(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.3(eslint-plugin-import@2.30.0)(eslint@9.10.0))(eslint@9.10.0)
+      fast-glob: 3.3.2
+      get-tsconfig: 4.8.1
+      is-bun-module: 1.2.1
+      is-glob: 4.0.3
+    optionalDependencies:
+      eslint-plugin-import: 2.30.0(eslint-import-resolver-typescript@3.6.3)(eslint@9.10.0)
+    transitivePeerDependencies:
+      - '@typescript-eslint/parser'
+      - eslint-import-resolver-node
+      - eslint-import-resolver-webpack
+      - supports-color
+
   eslint-module-utils@2.11.0(@typescript-eslint/parser@8.6.0(eslint@9.10.0)(typescript@5.6.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.3(@typescript-eslint/parser@8.6.0(eslint@9.10.0)(typescript@5.6.2))(eslint-plugin-import@2.30.0)(eslint@9.10.0))(eslint@9.10.0):
     dependencies:
       debug: 3.2.7
@@ -4394,6 +4413,16 @@ snapshots:
       eslint: 9.10.0
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 3.6.3(@typescript-eslint/parser@8.6.0(eslint@9.10.0)(typescript@5.6.2))(eslint-plugin-import@2.30.0)(eslint@9.10.0)
+    transitivePeerDependencies:
+      - supports-color
+
+  eslint-module-utils@2.11.0(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.3(eslint-plugin-import@2.30.0)(eslint@9.10.0))(eslint@9.10.0):
+    dependencies:
+      debug: 3.2.7
+    optionalDependencies:
+      eslint: 9.10.0
+      eslint-import-resolver-node: 0.3.9
+      eslint-import-resolver-typescript: 3.6.3(eslint-plugin-import@2.30.0)(eslint@9.10.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -4425,11 +4454,37 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
+  eslint-plugin-import@2.30.0(eslint-import-resolver-typescript@3.6.3)(eslint@9.10.0):
+    dependencies:
+      '@rtsao/scc': 1.1.0
+      array-includes: 3.1.8
+      array.prototype.findlastindex: 1.2.5
+      array.prototype.flat: 1.3.2
+      array.prototype.flatmap: 1.3.2
+      debug: 3.2.7
+      doctrine: 2.1.0
+      eslint: 9.10.0
+      eslint-import-resolver-node: 0.3.9
+      eslint-module-utils: 2.11.0(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.3(eslint-plugin-import@2.30.0)(eslint@9.10.0))(eslint@9.10.0)
+      hasown: 2.0.2
+      is-core-module: 2.15.1
+      is-glob: 4.0.3
+      minimatch: 3.1.2
+      object.fromentries: 2.0.8
+      object.groupby: 1.0.3
+      object.values: 1.2.0
+      semver: 6.3.1
+      tsconfig-paths: 3.15.0
+    transitivePeerDependencies:
+      - eslint-import-resolver-typescript
+      - eslint-import-resolver-webpack
+      - supports-color
+
   eslint-plugin-promise@7.1.0(eslint@9.10.0):
     dependencies:
       eslint: 9.10.0
 
-  eslint-plugin-solid@0.14.3(eslint@9.10.0)(typescript@5.6.2):
+  eslint-plugin-solid@0.14.3(eslint@9.10.0):
     dependencies:
       '@typescript-eslint/utils': 8.6.0(eslint@9.10.0)(typescript@5.6.2)
       eslint: 9.10.0
@@ -4875,15 +4930,15 @@ snapshots:
 
   known-css-properties@0.30.0: {}
 
-  langchain@0.3.2(@langchain/anthropic@0.2.10(openai@4.61.1(zod@3.23.8)))(@langchain/core@0.3.1(openai@4.61.1(zod@3.23.8)))(openai@4.61.1(zod@3.23.8)):
+  langchain@0.3.2(@langchain/anthropic@0.2.10(openai@4.61.1(zod@3.23.8)))(@langchain/core@0.3.2(openai@4.61.1(zod@3.23.8)))(openai@4.61.1(zod@3.23.8)):
     dependencies:
-      '@langchain/core': 0.3.1(openai@4.61.1(zod@3.23.8))
-      '@langchain/openai': 0.3.0(@langchain/core@0.3.1(openai@4.61.1(zod@3.23.8)))
-      '@langchain/textsplitters': 0.1.0(@langchain/core@0.3.1(openai@4.61.1(zod@3.23.8)))
+      '@langchain/core': 0.3.2(openai@4.61.1(zod@3.23.8))
+      '@langchain/openai': 0.3.0(@langchain/core@0.3.2(openai@4.61.1(zod@3.23.8)))
+      '@langchain/textsplitters': 0.1.0(@langchain/core@0.3.2(openai@4.61.1(zod@3.23.8)))
       js-tiktoken: 1.0.14
       js-yaml: 4.1.0
       jsonpointer: 5.0.1
-      langsmith: 0.1.56(openai@4.61.1(zod@3.23.8))
+      langsmith: 0.1.57(openai@4.61.1(zod@3.23.8))
       openapi-types: 12.1.3
       p-retry: 4.6.2
       uuid: 10.0.0
@@ -4896,21 +4951,21 @@ snapshots:
       - encoding
       - openai
 
-  langfuse-core@3.24.0:
+  langfuse-core@3.25.0:
     dependencies:
       mustache: 4.2.0
 
-  langfuse-langchain@3.24.0(langchain@0.3.2(@langchain/anthropic@0.2.10(openai@4.61.1(zod@3.23.8)))(@langchain/core@0.3.1(openai@4.61.1(zod@3.23.8)))(openai@4.61.1(zod@3.23.8))):
+  langfuse-langchain@3.25.0(langchain@0.3.2(@langchain/anthropic@0.2.10(openai@4.61.1(zod@3.23.8)))(@langchain/core@0.3.2(openai@4.61.1(zod@3.23.8)))(openai@4.61.1(zod@3.23.8))):
     dependencies:
-      langchain: 0.3.2(@langchain/anthropic@0.2.10(openai@4.61.1(zod@3.23.8)))(@langchain/core@0.3.1(openai@4.61.1(zod@3.23.8)))(openai@4.61.1(zod@3.23.8))
-      langfuse: 3.24.0
-      langfuse-core: 3.24.0
+      langchain: 0.3.2(@langchain/anthropic@0.2.10(openai@4.61.1(zod@3.23.8)))(@langchain/core@0.3.2(openai@4.61.1(zod@3.23.8)))(openai@4.61.1(zod@3.23.8))
+      langfuse: 3.25.0
+      langfuse-core: 3.25.0
 
-  langfuse@3.24.0:
+  langfuse@3.25.0:
     dependencies:
-      langfuse-core: 3.24.0
+      langfuse-core: 3.25.0
 
-  langsmith@0.1.56(openai@4.61.1(zod@3.23.8)):
+  langsmith@0.1.57(openai@4.61.1(zod@3.23.8)):
     dependencies:
       '@types/uuid': 10.0.0
       commander: 10.0.1
@@ -5122,7 +5177,7 @@ snapshots:
       mlly: 1.7.1
       pathe: 1.1.2
 
-  poku@2.6.2: {}
+  poku@2.7.0: {}
 
   possible-typed-array-names@1.0.0: {}
 
