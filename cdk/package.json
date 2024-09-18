@@ -24,7 +24,7 @@
     "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-import": "^2.30.0",
     "eslint-plugin-promise": "^7.1.0",
-    "poku": "^2.6.2",
+    "poku": "^2.7.0",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.1",
     "typescript": "^5.6.2",
@@ -35,14 +35,14 @@
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.8.0",
-    "@langchain/community": "^0.3.0",
-    "@langchain/core": "^0.3.1",
+    "@langchain/community": "^0.3.1",
+    "@langchain/core": "^0.3.2",
     "@langchain/openai": "^0.3.0",
     "aws-cdk-lib": "^2.158.0",
     "constructs": "^10.3.0",
     "esbuild": "^0.23.1",
-    "langfuse": "^3.24.0",
-    "langfuse-langchain": "^3.24.0",
+    "langfuse": "^3.25.0",
+    "langfuse-langchain": "^3.25.0",
     "source-map-support": "^0.5.21"
   }
 }
