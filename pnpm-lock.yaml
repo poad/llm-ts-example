@@ -115,8 +115,8 @@ importers:
         specifier: ^0.3.0
         version: 0.3.0(@langchain/core@0.3.2(openai@4.61.1(zod@3.23.8)))
       aws-cdk-lib:
-        specifier: ^2.158.0
-        version: 2.158.0(constructs@10.3.0)
+        specifier: ^2.159.0
+        version: 2.159.0(constructs@10.3.0)
       constructs:
         specifier: ^10.3.0
         version: 10.3.0
@@ -152,8 +152,8 @@ importers:
         specifier: ^22.5.5
         version: 22.5.5
       aws-cdk:
-        specifier: ^2.158.0
-        version: 2.158.0
+        specifier: ^2.159.0
+        version: 2.159.0
       eslint:
         specifier: ^9.10.0
         version: 9.10.0
@@ -1469,8 +1469,8 @@ packages:
     resolution: {integrity: sha512-wvUjBtSGN7+7SjNpq/9M2Tg350UZD3q62IFZLbRAR1bSMlCo1ZaeW+BJ+D090e4hIIZLBcTDWe4Mh4jvUDajzQ==}
     engines: {node: '>= 0.4'}
 
-  aws-cdk-lib@2.158.0:
-    resolution: {integrity: sha512-Pl9CCLM+XRTy6nyyRJM1INEMtwIlZOib0FWyq9i9E388vurw7sNVJ6tAsfLpGIOLHsFQCbF4f6OZ0KSVxmMaiA==}
+  aws-cdk-lib@2.159.0:
+    resolution: {integrity: sha512-OzcOuwK11i4xfrcAdDfnALOEBk4tyL257xU9AYTywG7nxQBO7QdawgODcDQV2bXTtNZGZGTH6wwcESNvKk4n8g==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
       constructs: ^10.0.0
@@ -1487,8 +1487,8 @@ packages:
       - yaml
       - mime-types
 
-  aws-cdk@2.158.0:
-    resolution: {integrity: sha512-UcrxBG02RACrnTvfuyZiTuOz8gqOpnqjCMTdVmdpExv5qk9hddhtRAubNaC4xleHuNJnvskYqqVW+Y3Abh6zGQ==}
+  aws-cdk@2.159.0:
+    resolution: {integrity: sha512-hqKIhfdrUouLDkDH2/kXb4Y5Jjj5CZ+y9ePbi+MBpEns+5xxwIgdONRNSfhRiHq3B07AtDm7Zt9z3sZMw7FG6w==}
     engines: {node: '>= 14.15.0'}
     hasBin: true
 
@@ -2304,6 +2304,14 @@ packages:
 
   langsmith@0.1.57:
     resolution: {integrity: sha512-mHzZgKW+bQdyGAGx/QlcfB1mgMMsakzceN44L0CHLYVaI4j1t50PG8m5YfzSiqBisIdq/Xi2jWZTWEGZ3BR9zA==}
+    peerDependencies:
+      openai: '*'
+    peerDependenciesMeta:
+      openai:
+        optional: true
+
+  langsmith@0.1.59:
+    resolution: {integrity: sha512-dW+z6s538zBswFFP2w/xzvVef7y2+yNt6GkmRCeLtwfpbMaM4di7JboK3vmnZ+0/LjNb2ukiMmgsTNKu/Y43cg==}
     peerDependencies:
       openai: '*'
     peerDependenciesMeta:
@@ -3535,7 +3543,7 @@ snapshots:
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.14
-      langsmith: 0.1.57(openai@4.61.1(zod@3.23.8))
+      langsmith: 0.1.59(openai@4.61.1(zod@3.23.8))
       mustache: 4.2.0
       p-queue: 6.6.2
       p-retry: 4.6.2
@@ -4011,7 +4019,7 @@ snapshots:
     dependencies:
       possible-typed-array-names: 1.0.0
 
-  aws-cdk-lib@2.158.0(constructs@10.3.0):
+  aws-cdk-lib@2.159.0(constructs@10.3.0):
     dependencies:
       '@aws-cdk/asset-awscli-v1': 2.2.202
       '@aws-cdk/asset-kubectl-v20': 2.1.2
@@ -4019,7 +4027,7 @@ snapshots:
       '@aws-cdk/cloud-assembly-schema': 36.0.25
       constructs: 10.3.0
 
-  aws-cdk@2.158.0:
+  aws-cdk@2.159.0:
     optionalDependencies:
       fsevents: 2.3.2
 
@@ -4975,6 +4983,18 @@ snapshots:
       uuid: 10.0.0
     optionalDependencies:
       openai: 4.61.1(zod@3.23.8)
+
+  langsmith@0.1.59(openai@4.61.1(zod@3.23.8)):
+    dependencies:
+      '@types/uuid': 10.0.0
+      commander: 10.0.1
+      p-queue: 6.6.2
+      p-retry: 4.6.2
+      semver: 7.6.3
+      uuid: 10.0.0
+    optionalDependencies:
+      openai: 4.61.1(zod@3.23.8)
+    optional: true
 
   levn@0.4.1:
     dependencies:
