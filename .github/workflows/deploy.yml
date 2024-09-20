@@ -63,6 +63,6 @@ jobs:
           -c oai-deploy=${{ secrets.AZURE_OPENAI_API_DEPLOYMENT_NAME }} \
           -c oai-api-version=${{ vars.AZURE_OPENAI_API_VERSION }} \
           -c langfuse-endpoint=${{ secrets.LANGFUSE_ENDPOINT }} \
-          -c angfuse-public-key=${{ secrets.LANGFUSE_PUBLIC_KEY }} \
+          -c langfuse-public-key=${{ secrets.LANGFUSE_PUBLIC_KEY }} \
           -c langfuse-secret-key=${{ secrets.LANGFUSE_SECRET_KEY }} \
 
