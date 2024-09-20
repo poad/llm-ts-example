@@ -24,6 +24,11 @@ interface CloudfrontCdnTemplateStackProps extends Config {
   apiKey: string;
   deployName: string;
   apiVersion: string;
+  langfuse?: {
+    sk: string;
+    pk: string;
+    endpoint?: string;
+  };
 }
 
 export class CloudfrontCdnTemplateStack extends cdk.Stack {
@@ -43,6 +48,7 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
       apiKey,
       deployName,
       apiVersion,
+      langfuse,
     } = props;
 
     buildFrontend();
@@ -69,6 +75,14 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
 
     const apiRootPath = '/api/';
 
+    const langfuseEnv = langfuse ? {
+      LANGFUSE_SECRET_KEY: langfuse.pk,
+      LANGFUSE_PUBLIC_KEY: langfuse.sk,
+      ...(langfuse.endpoint ? {
+        LANGFUSE_BASEURL: langfuse.endpoint,
+      } : {}),
+    } : {};
+
     const fn = new nodejs.NodejsFunction(this, 'Lambda', {
       runtime: lambda.Runtime.NODEJS_20_X,
       architecture: lambda.Architecture.ARM_64,
@@ -82,6 +96,7 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
         AZURE_OPENAI_API_DEPLOYMENT_NAME: deployName,
         AZURE_OPENAI_API_KEY: apiKey,
         AZURE_OPENAI_API_VERSION: apiVersion,
+        ...langfuseEnv,
       },
       bundling: {
         minify: true,

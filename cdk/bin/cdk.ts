@@ -18,6 +18,16 @@ const apiKey = app.node.tryGetContext('oai-api-key',);
 const deployName = app.node.tryGetContext('oai-deploy',);
 const apiVersion = app.node.tryGetContext('oai-api-version',);
 
+const langfuseEndpoint: string | undefined = app.node.tryGetContext('langfuse-endpoint',);
+const langfusePk: string | undefined = app.node.tryGetContext('langfuse-public-key',);
+const langfuseSk: string | undefined = app.node.tryGetContext('langfuse-secret-key',);
+
+const langfuse = langfuseSk && langfusePk ? {
+  sk: langfuseSk,
+  pk: langfusePk,
+  endpoint: langfuseEndpoint
+} : undefined;
+
 new CloudfrontCdnTemplateStack(app, config.stackName, {
   ...config,
   appName: 'llm-ts-example',
@@ -26,6 +36,7 @@ new CloudfrontCdnTemplateStack(app, config.stackName, {
   apiKey,
   deployName,
   apiVersion,
+  langfuse,
   env: {
     account: app.account,
     region: app.region,
