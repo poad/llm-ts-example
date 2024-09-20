@@ -102,6 +102,7 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
         minify: true,
         ...devOptions.bundling,
       },
+      memorySize: 512,
       timeout: cdk.Duration.minutes(1),
       role: new iam.Role(this, 'ApolloLambdaFunctionExecutionRole', {
         assumedBy: new iam.ServicePrincipal('lambda.amazonaws.com',),
@@ -138,12 +139,17 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
       encryption: s3.BucketEncryption.S3_MANAGED,
     },);
 
+    const oac = new cloudfront.S3OriginAccessControl(this, 'OAC', {
+      originAccessControlName: `OAC for Lambda Functions URL (${functionName})`,
+      signing: cloudfront.Signing.SIGV4_NO_OVERRIDE,
+    });
+
     const cf = new cloudfront.Distribution(this, 'CloudFront', {
       comment,
       defaultBehavior: {
-        origin: new origins.HttpOrigin(s3bucket.bucketWebsiteDomainName, {
-          protocolPolicy: cloudfront.OriginProtocolPolicy.HTTP_ONLY,
-        },),
+        origin: origins.S3BucketOrigin.withOriginAccessControl(s3bucket, {
+          originAccessControl: oac,
+        }),
         cachePolicy: cloudfront.CachePolicy.CACHING_DISABLED,
         viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
       },
@@ -191,29 +197,6 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
       retainOnDelete: false,
       role: deployRole,
     },);
-
-    // OAC
-    const cfnOriginAccessControl =
-      new cdk.aws_cloudfront.CfnOriginAccessControl(
-        this,
-        'OriginAccessControl',
-        {
-          originAccessControlConfig: {
-            name: `OAC for Lambda Functions URL (${functionName})`,
-            originAccessControlOriginType: 'lambda',
-            signingBehavior: 'always',
-            signingProtocol: 'sigv4',
-          },
-        },
-      );
-
-    const cfnDistribution = cf.node.defaultChild as cdk.aws_cloudfront.CfnDistribution;
-
-    // Set OAC
-    cfnDistribution.addPropertyOverride(
-      'DistributionConfig.Origins.1.OriginAccessControlId',
-      cfnOriginAccessControl.attrId,
-    );
 
     // Add permission Lambda Function URLs
     fn.addPermission('AllowCloudFrontServicePrincipal', {
