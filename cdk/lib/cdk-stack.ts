@@ -139,8 +139,21 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
       encryption: s3.BucketEncryption.S3_MANAGED,
     },);
 
+    const websiteIndexPageForwardFunction = new cloudfront.Function(this, 'WebsiteIndexPageForwardFunction', {
+      functionName: 'llm-ts-example-api-index-forword',
+      code: cloudfront.FunctionCode.fromFile({
+        filePath: 'function/index.js',
+      }),
+      runtime: cloudfront.FunctionRuntime.JS_2_0,
+    });
+    const functionAssociations = [
+      {
+        eventType: cloudfront.FunctionEventType.VIEWER_REQUEST,
+        function: websiteIndexPageForwardFunction,
+      },
+    ];
     const s3oac = new cloudfront.S3OriginAccessControl(this, 'S3OAC', {
-      originAccessControlName: `OAC for S3`,
+      originAccessControlName: `OAC for S3 (llm-ts-example-api)`,
       signing: cloudfront.Signing.SIGV4_NO_OVERRIDE,
     });
 
@@ -151,6 +164,7 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
           originAccessControl: s3oac,
           originAccessLevels: [cloudfront.AccessLevel.READ, cloudfront.AccessLevel.WRITE],
         }),
+        functionAssociations,
         cachePolicy: cloudfront.CachePolicy.CACHING_DISABLED,
         viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
       },
