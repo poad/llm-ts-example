@@ -139,8 +139,8 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
       encryption: s3.BucketEncryption.S3_MANAGED,
     },);
 
-    const oac = new cloudfront.S3OriginAccessControl(this, 'OAC', {
-      originAccessControlName: `OAC for Lambda Functions URL (${functionName})`,
+    const s3oac = new cloudfront.S3OriginAccessControl(this, 'S3OAC', {
+      originAccessControlName: `OAC for S3`,
       signing: cloudfront.Signing.SIGV4_NO_OVERRIDE,
     });
 
@@ -148,7 +148,8 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
       comment,
       defaultBehavior: {
         origin: origins.S3BucketOrigin.withOriginAccessControl(s3bucket, {
-          originAccessControl: oac,
+          originAccessControl: s3oac,
+          originAccessLevels: [cloudfront.AccessLevel.READ, cloudfront.AccessLevel.WRITE],
         }),
         cachePolicy: cloudfront.CachePolicy.CACHING_DISABLED,
         viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
@@ -197,6 +198,27 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
       retainOnDelete: false,
       role: deployRole,
     },);
+
+      // OAC for Lambda
+      const cfnOriginAccessControl =
+      new cdk.aws_cloudfront.CfnOriginAccessControl(
+        this,
+        'OriginAccessControl',
+        {
+          originAccessControlConfig: {
+            name: `OAC for Lambda Functions URL (${functionName})`,
+            originAccessControlOriginType: 'lambda',
+            signingBehavior: 'always',
+            signingProtocol: 'sigv4',
+          },
+        },
+      );
+      const cfnDistribution = cf.node.defaultChild as cdk.aws_cloudfront.CfnDistribution;
+      // Set OAC for Lambda
+      cfnDistribution.addPropertyOverride(
+        'DistributionConfig.Origins.1.OriginAccessControlId',
+        cfnOriginAccessControl.attrId,
+      );
 
     // Add permission Lambda Function URLs
     fn.addPermission('AllowCloudFrontServicePrincipal', {
