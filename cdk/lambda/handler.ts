@@ -17,11 +17,8 @@ export async function handle(sessionId: string, question: string, output: NodeJS
 
   const model = new AzureChatOpenAI({
     temperature: 0,
-    azureOpenAIApiKey: process.env.AZURE_OPENAI_API_KEY,
-    azureOpenAIApiVersion: process.env.AZURE_OPENAI_API_VERSION,
-    azureOpenAIApiInstanceName: process.env.AZURE_OPENAI_API_INSTANCE_NAME,
-    azureOpenAIApiDeploymentName: process.env.AZURE_OPENAI_API_DEPLOYMENT_NAME,
     streaming: true,
+    modelName: 'gpt-4o',
   });
 
   // Initialize Langfuse callback handler

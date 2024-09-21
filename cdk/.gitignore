@@ -13,3 +13,4 @@ cdk.out
 !lambda/index.d.ts
 !lambda/awslambda.d.ts
 !*.config.js
+.env*

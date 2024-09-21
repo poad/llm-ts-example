@@ -81,9 +81,6 @@ importers:
       jsdom:
         specifier: ^25.0.0
         version: 25.0.0
-      poku:
-        specifier: ^2.7.0
-        version: 2.7.0
       solid-refresh:
         specifier: ^0.7.5
         version: 0.7.5(solid-js@1.8.22)
@@ -99,6 +96,9 @@ importers:
       vite-plugin-solid:
         specifier: ^2.10.2
         version: 2.10.2(@testing-library/jest-dom@6.5.0)(solid-js@1.8.22)(vite@5.4.7(@types/node@22.5.5))
+      vitest:
+        specifier: ^2.1.1
+        version: 2.1.1(@types/node@22.5.5)(jsdom@25.0.0)
 
   cdk:
     dependencies:
@@ -154,6 +154,9 @@ importers:
       aws-cdk:
         specifier: ^2.159.1
         version: 2.159.1
+      dotenv:
+        specifier: ^16.4.5
+        version: 16.4.5
       eslint:
         specifier: ^9.11.0
         version: 9.11.0
@@ -166,9 +169,6 @@ importers:
       eslint-plugin-promise:
         specifier: ^7.1.0
         version: 7.1.0(eslint@9.11.0)
-      poku:
-        specifier: ^2.7.0
-        version: 2.7.0
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@22.5.5)(typescript@5.6.2)
@@ -1700,6 +1700,10 @@ packages:
   dom-accessibility-api@0.6.3:
     resolution: {integrity: sha512-7ZgogeTnjuHbo+ct10G9Ffp0mif17idi0IyWNVA/wcwcm7NPOD/WEHVP3n7n3MhXqxoIYm8d6MuZohYWIZ4T3w==}
 
+  dotenv@16.4.5:
+    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
+    engines: {node: '>=12'}
+
   electron-to-chromium@1.5.27:
     resolution: {integrity: sha512-o37j1vZqCoEgBuWWXLHQgTN/KDKe7zwpiY5CPeq2RvUqOyJw9xnrULzZAEVQ5p4h+zjMk7hgtOoPdnLxr7m/jw==}
 
@@ -2521,11 +2525,6 @@ packages:
 
   pkg-types@1.2.0:
     resolution: {integrity: sha512-+ifYuSSqOQ8CqP4MbZA5hDpb97n3E8SVWdJe+Wms9kj745lmd3b7EZJiqvmLwAlmRfjrI7Hi5z3kdBJ93lFNPA==}
-
-  poku@2.7.0:
-    resolution: {integrity: sha512-iCXNzQ7AYBBEkGdDZdcIa9KzQluHSqWmV+i+rGyrQF35Yj5r5Ap/TmnZ15c7c+V3KMOT/gN8ZTWkPZ3BvO9gqQ==}
-    engines: {bun: '>=1.0.0', deno: '>=1.30.0', node: '>=8.17.0', typescript: '>=4.7.2'}
-    hasBin: true
 
   possible-typed-array-names@1.0.0:
     resolution: {integrity: sha512-d7Uw+eZoloe0EHDIYoe+bQ5WXnGMOpmiZFTuMWCwpjzzkL2nTjcKiAk4hh8TjnGye2TwWOk3UXucZ+3rbmBa8Q==}
@@ -4212,6 +4211,8 @@ snapshots:
 
   dom-accessibility-api@0.6.3: {}
 
+  dotenv@16.4.5: {}
+
   electron-to-chromium@1.5.27: {}
 
   enhanced-resolve@5.17.1:
@@ -5115,8 +5116,6 @@ snapshots:
       confbox: 0.1.7
       mlly: 1.7.1
       pathe: 1.1.2
-
-  poku@2.7.0: {}
 
   possible-typed-array-names@1.0.0: {}
 
