@@ -76,8 +76,8 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
     const apiRootPath = '/api/';
 
     const langfuseEnv = langfuse ? {
-      LANGFUSE_SECRET_KEY: langfuse.pk,
-      LANGFUSE_PUBLIC_KEY: langfuse.sk,
+      LANGFUSE_SECRET_KEY: langfuse.sk,
+      LANGFUSE_PUBLIC_KEY: langfuse.pk,
       ...(langfuse.endpoint ? {
         LANGFUSE_BASEURL: langfuse.endpoint,
       } : {}),
