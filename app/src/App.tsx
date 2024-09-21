@@ -63,6 +63,11 @@ function App() {
           setInput(() => '');
           return question;
         })}>聞く</button>
+        <select onChange={(e) => setModel(() => e.target.value)}>
+          <option value='gpt' selected>GPT-4o</option>
+          <option value='aws'>Cohere Command R+ v1 (AWS Bedrock)</option>
+          <option value='anthropic'>Anthropic Claude 3.5 Sonnet</option>
+        </select>
       </div>
       <div style={{ width: '40vw', 'text-align': 'left', margin: 'auto' }}>
         <Show when={data.loading}>
