@@ -13,7 +13,7 @@ However, please keep your answers brief.
 
 export async function handle(sessionId: string, question: string, output: NodeJS.WritableStream) {
 
-  const langfuseEnabled = process.env.LANGFUSE_SECRET_KEY && process.env.LANGFUSE_PUBLIC_KEY && process.env.LANGFUSE_BASEURL;
+  const langfuseEnabled = process.env.LANGFUSE_SECRET_KEY && process.env.LANGFUSE_PUBLIC_KEY;
 
   const model = new AzureChatOpenAI({
     temperature: 0,
