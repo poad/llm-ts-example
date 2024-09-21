@@ -1,5 +1,5 @@
 import * as cdk from 'aws-cdk-lib';
-import { Construct, } from 'constructs';
+import { Construct } from 'constructs';
 import * as s3 from 'aws-cdk-lib/aws-s3';
 import * as cloudfront from 'aws-cdk-lib/aws-cloudfront';
 import * as origins from 'aws-cdk-lib/aws-cloudfront-origins';
@@ -7,7 +7,7 @@ import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as nodejs from 'aws-cdk-lib/aws-lambda-nodejs';
 import * as awslogs from 'aws-cdk-lib/aws-logs';
 import * as iam from 'aws-cdk-lib/aws-iam';
-import { buildFrontend, } from './process/setup';
+import { buildFrontend } from './process/setup';
 import * as deployment from 'aws-cdk-lib/aws-s3-deployment';
 
 export interface Config extends cdk.StackProps {
@@ -29,6 +29,8 @@ interface CloudfrontCdnTemplateStackProps extends Config {
     pk: string;
     endpoint?: string;
   };
+  anthoropicApiKey: string;
+  claudeModel: string;
 }
 
 export class CloudfrontCdnTemplateStack extends cdk.Stack {
@@ -37,28 +39,30 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
     id: string,
     props: CloudfrontCdnTemplateStackProps,
   ) {
-    super(scope, id, props,);
+    super(scope, id, props);
 
     const {
       bucketName,
       appName,
       environment,
-      cloudfront: { comment, },
+      cloudfront: { comment },
       endpoint,
       apiKey,
       deployName,
       apiVersion,
       langfuse,
+      anthoropicApiKey,
+      claudeModel,
     } = props;
 
     buildFrontend();
 
     const functionName = `${environment ? `${environment}-` : ''}llm-ts-example-api`;
-    const logs = new awslogs.LogGroup(this, 'ApolloLambdaFunctionLogGroup', {
+    new awslogs.LogGroup(this, 'ApolloLambdaFunctionLogGroup', {
       logGroupName: `/aws/lambda/${functionName}`,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
       retention: awslogs.RetentionDays.ONE_DAY,
-    },);
+    });
 
     const devOptions = {
       environment: {
@@ -69,7 +73,6 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
         sourceMapMode: nodejs.SourceMapMode.BOTH,
         sourcesContent: true,
         keepNames: true,
-
       },
     };
 
@@ -97,6 +100,8 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
         AZURE_OPENAI_API_KEY: apiKey,
         AZURE_OPENAI_API_VERSION: apiVersion,
         ...langfuseEnv,
+        ANTHROPIC_API_KEY: anthoropicApiKey,
+        CLAUDE_MODEL: claudeModel,
       },
       bundling: {
         minify: true,
@@ -105,39 +110,36 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
       memorySize: 512,
       timeout: cdk.Duration.minutes(1),
       role: new iam.Role(this, 'ApolloLambdaFunctionExecutionRole', {
-        assumedBy: new iam.ServicePrincipal('lambda.amazonaws.com',),
+        assumedBy: new iam.ServicePrincipal('lambda.amazonaws.com'),
+        managedPolicies: [
+          iam.ManagedPolicy.fromAwsManagedPolicyName('AWSLambdaExecute'),
+          iam.ManagedPolicy.fromAwsManagedPolicyName('CloudFrontReadOnlyAccess'),
+        ],
         inlinePolicies: {
-          'logs-policy': new iam.PolicyDocument({
+          'bedrock-policy': new iam.PolicyDocument({
             statements: [
               new iam.PolicyStatement({
                 effect: iam.Effect.ALLOW,
                 actions: [
-                  'logs:CreateLogStream',
+                  'bedrock:InvokeModel*',
                   'logs:PutLogEvents',
                 ],
-                resources: [`${logs.logGroupArn}:*`,],
-              },),
+                resources: ['*'],
+              }),
             ],
-          },),
+          }),
         },
-      },),
-    },);
+      }),
+      loggingFormat: lambda.LoggingFormat.JSON,
+    });
 
     const s3bucket = new s3.Bucket(this, 'S3Bucket', {
       bucketName,
       versioned: false,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
       autoDeleteObjects: true,
-      websiteIndexDocument: 'index.html',
-      publicReadAccess: true,
-      blockPublicAccess: {
-        blockPublicAcls: false,
-        blockPublicPolicy: false,
-        ignorePublicAcls: false,
-        restrictPublicBuckets: false,
-      },
       encryption: s3.BucketEncryption.S3_MANAGED,
-    },);
+    });
 
     const websiteIndexPageForwardFunction = new cloudfront.Function(this, 'WebsiteIndexPageForwardFunction', {
       functionName: 'llm-ts-example-api-index-forword',
@@ -152,8 +154,8 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
         function: websiteIndexPageForwardFunction,
       },
     ];
-    const s3oac = new cloudfront.S3OriginAccessControl(this, 'S3OAC', {
-      originAccessControlName: `OAC for S3 (llm-ts-example-api)`,
+    const originAccessControl = new cloudfront.S3OriginAccessControl(this, 'S3OAC', {
+      originAccessControlName: 'OAC for S3 (llm-ts-example-api)',
       signing: cloudfront.Signing.SIGV4_NO_OVERRIDE,
     });
 
@@ -161,60 +163,61 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
       comment,
       defaultBehavior: {
         origin: origins.S3BucketOrigin.withOriginAccessControl(s3bucket, {
-          originAccessControl: s3oac,
-          originAccessLevels: [cloudfront.AccessLevel.READ, cloudfront.AccessLevel.WRITE],
+          originAccessControl,
+          originAccessLevels: [cloudfront.AccessLevel.READ],
+          originId: 's3',
         }),
-        functionAssociations,
         cachePolicy: cloudfront.CachePolicy.CACHING_DISABLED,
         viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+        functionAssociations,
       },
       additionalBehaviors: {
         [`${apiRootPath}*`]: {
           origin: new origins.FunctionUrlOrigin(fn.addFunctionUrl({
             authType: cdk.aws_lambda.FunctionUrlAuthType.AWS_IAM,
             invokeMode: cdk.aws_lambda.InvokeMode.RESPONSE_STREAM,
-          },),
+          }),
           {
-            originPath: apiRootPath,
+            originId: 'lambda',
             readTimeout: cdk.Duration.minutes(1),
-          },),
-          allowedMethods: cloudfront.AllowedMethods.ALLOW_ALL,
-          originRequestPolicy: cloudfront.OriginRequestPolicy.ALL_VIEWER_EXCEPT_HOST_HEADER,
+          }),
           viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
           cachePolicy: cloudfront.CachePolicy.CACHING_DISABLED,
+          allowedMethods: cloudfront.AllowedMethods.ALLOW_ALL,
+          originRequestPolicy: cloudfront.OriginRequestPolicy.ALL_VIEWER_EXCEPT_HOST_HEADER,
         },
       },
       httpVersion: cloudfront.HttpVersion.HTTP2_AND_3,
-    },);
+    });
 
     const deployRole = new iam.Role(this, 'DeployWebsiteRole', {
       roleName: `${appName}-deploy-role`,
-      assumedBy: new iam.ServicePrincipal('lambda.amazonaws.com',),
+      assumedBy: new iam.ServicePrincipal('lambda.amazonaws.com'),
       inlinePolicies: {
         's3-policy': new iam.PolicyDocument({
           statements: [
             new iam.PolicyStatement({
               effect: iam.Effect.ALLOW,
-              actions: ['s3:*',],
-              resources: [`${s3bucket.bucketArn}/`, `${s3bucket.bucketArn}/*`,],
-            },),
+              actions: ['s3:*'],
+              resources: [`${s3bucket.bucketArn}/`, `${s3bucket.bucketArn}/*`],
+            }),
           ],
-        },),
+        }),
       },
-    },);
+    });
 
     new deployment.BucketDeployment(this, 'DeployWebsite', {
-      sources: [deployment.Source.asset(`${process.cwd()}/../app/dist`,),],
+      sources: [deployment.Source.asset(`${process.cwd()}/../app/dist`)],
       destinationBucket: s3bucket,
       destinationKeyPrefix: '/',
-      exclude: ['.DS_Store', '*/.DS_Store',],
+      exclude: ['.DS_Store', '*/.DS_Store'],
       prune: true,
       retainOnDelete: false,
       role: deployRole,
-    },);
+    });
 
-      // OAC for Lambda
-      const cfnOriginAccessControl =
+    // OAC for Lambda
+    const cfnOriginAccessControl =
       new cdk.aws_cloudfront.CfnOriginAccessControl(
         this,
         'OriginAccessControl',
@@ -227,22 +230,24 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
           },
         },
       );
-      const cfnDistribution = cf.node.defaultChild as cdk.aws_cloudfront.CfnDistribution;
-      // Set OAC for Lambda
-      cfnDistribution.addPropertyOverride(
-        'DistributionConfig.Origins.1.OriginAccessControlId',
-        cfnOriginAccessControl.attrId,
-      );
+
+    const cfnDistribution = cf.node.defaultChild as cdk.aws_cloudfront.CfnDistribution;
+
+    // Set OAC for Lambda
+    cfnDistribution.addPropertyOverride(
+      'DistributionConfig.Origins.1.OriginAccessControlId',
+      cfnOriginAccessControl.attrId,
+    );
 
     // Add permission Lambda Function URLs
     fn.addPermission('AllowCloudFrontServicePrincipal', {
-      principal: new cdk.aws_iam.ServicePrincipal('cloudfront.amazonaws.com',),
+      principal: new iam.ServicePrincipal('cloudfront.amazonaws.com'),
       action: 'lambda:InvokeFunctionUrl',
-      sourceArn: `arn:aws:cloudfront::${cdk.Stack.of(this,).account}:distribution/${cf.distributionId}`,
-    },);
+      sourceArn: `arn:aws:cloudfront::${cdk.Stack.of(this).account}:distribution/${cf.distributionId}`,
+    });
 
     new cdk.CfnOutput(this, 'AccessURLOutput', {
       value: `https://${cf.distributionDomainName}`,
-    },);
+    });
   }
 }

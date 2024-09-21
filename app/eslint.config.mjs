@@ -59,7 +59,7 @@ export default tseslint.config(
       '@stylistic/ts/indent': ['error', 2],
       '@stylistic/jsx/jsx-indent': ['error', 2],
       "comma-dangle": ["error", "always-multiline"],
-      "quotes": ["error", "single"],
+      quotes: ["error", "single"],
       semi: ["error", "always"],
     }
   },

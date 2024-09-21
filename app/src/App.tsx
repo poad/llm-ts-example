@@ -1,4 +1,4 @@
-import { createResource, createSignal, For, Show } from 'solid-js';
+import { createResource, createSignal, For, Setter, Show } from 'solid-js';
 import sha256 from 'crypto-js/sha256';
 import './App.css';
 
@@ -21,26 +21,31 @@ async function readAll(source: ReadableStream<Uint8Array> | null) {
   return await read(reader, []);
 }
 
+async function fetchApi(question: string, model: string, setHistory: Setter<string[]>) {
+  const body = JSON.stringify({ question, model });
+  const hash = sha256(body);
+  return fetch(
+    '/api/',
+    {
+      method: 'post',
+      body,
+      headers: {
+        'Content-Type': 'application/json',
+        'x-amz-content-sha256': hash.toString(),
+      },
+    }).then(async (resp) => {
+    const result = await readAll(resp.body);
+    setHistory((prev) => prev.concat([result.map((item) => new TextDecoder().decode(item)).reduce((acc, cur) => acc.concat(cur)) ?? '']));
+    return result;
+  });
+}
+
 function App() {
   const [input, setInput] = createSignal<string>();
+  const [model, setModel] = createSignal<string>('gpt');
   const [prompt, setPrompt] = createSignal<string>();
   const [data] = createResource(prompt, (question) => {
-    const body = JSON.stringify({ question });
-    const hash = sha256(body);
-    return fetch(
-      '/api/',
-      {
-        method: 'post',
-        body: JSON.stringify({ question }),
-        headers: {
-          'Content-Type': 'application/json',
-          'x-amz-content-sha256': hash.toString(),
-        },
-      }).then(async (resp) => {
-      const result = await readAll(resp.body);
-      setHistory((prev) => prev.concat([result.map((item) => new TextDecoder().decode(item)).reduce((acc, cur) => acc.concat(cur)) ?? '']));
-      return result;
-    });
+    return fetchApi(question, model(), setHistory);
   });
   const [history, setHistory] = createSignal<string[]>([]);
 
@@ -48,6 +53,11 @@ function App() {
     <>
       <div>
         <input type='text' onChange={(event) => setInput(() => event.target.value)} style={{ 'margin-right': '0.5rem' }} />
+        <select onChange={(e) => setModel(() => e.target.value)}>
+          <option value='gpt' selected>GPT-4o</option>
+          <option value='aws'>Cohere Command R+ v1 (AWS Bedrock)</option>
+          <option value='anthropic'>Anthropic Claude 3.5 Sonnet</option>
+        </select>
         <button onClick={() => setPrompt(() => {
           const question = input();
           setInput(() => '');

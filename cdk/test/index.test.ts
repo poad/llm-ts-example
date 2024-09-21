@@ -7,6 +7,6 @@ import { stdout } from 'node:process';
 // console.log(import.meta.env.AZURE_OPENAI_API_DEPLOYMENT_NAME);
 // console.log(import.meta.env.AZURE_OPENAI_API_VERSION);
 
-it('test', async () => {
-  await handle(new Date().getTime().toString(), {question: 'あなたは誰？'}, stdout);
+it('test', { retry: 0 }, async () => {
+  await handle(new Date().getTime().toString(), {question: 'あなたは誰？', model: 'aws'}, stdout);
 });

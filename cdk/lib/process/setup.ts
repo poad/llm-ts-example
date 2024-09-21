@@ -18,7 +18,7 @@ export const buildFrontend = () => {
           });
         }
       });
-    ['pnpm install', 'pnpm build',].forEach((cmd) => {
+    ['pnpm install', 'pnpm build'].forEach((cmd) => {
       childProcess.execSync(cmd, {
         cwd: `${process.cwd()}/${f}/`,
         stdio: ['ignore', 'inherit', 'inherit'],
@@ -28,22 +28,22 @@ export const buildFrontend = () => {
     });
   });
 
-  [`${process.cwd()}/../app/dist`,].forEach(
-    (dir,) => {
-      if (fs.existsSync(dir,)) {
+  [`${process.cwd()}/../app/dist`].forEach(
+    (dir) => {
+      if (fs.existsSync(dir)) {
         fs.rmSync(dir, {
           recursive: true,
-        },);
+        });
       }
     },
   );
 
-  ['pnpm build',].forEach((cmd,) => {
+  ['pnpm build'].forEach((cmd) => {
     childProcess.execSync(cmd, {
       cwd: `${process.cwd()}/../app`,
-      stdio: ['ignore', 'inherit', 'inherit',],
-      env: { ...process.env, },
+      stdio: ['ignore', 'inherit', 'inherit'],
+      env: { ...process.env },
       shell: 'bash',
-    },);
-  },);
+    });
+  });
 };

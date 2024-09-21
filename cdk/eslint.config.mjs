@@ -1,6 +1,5 @@
 // @ts-check
 
-// @ts-expect-error ignore type errors
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import stylisticTs from '@stylistic/eslint-plugin-ts';
@@ -10,6 +9,9 @@ import tseslint from 'typescript-eslint';
 import eslintImport from "eslint-plugin-import";
 
 import solid from 'eslint-plugin-solid';
+
+import vitest from "@vitest/eslint-plugin";
+
 
 export default tseslint.config(
   eslint.configs.recommended,
@@ -32,7 +34,7 @@ export default tseslint.config(
     ],
   },
   {
-    files: ['src/**/*.{ts,tsx}'],
+    files: ['{bin,lib,lambda}/**/*.{ts,tsx}'],
     ...eslintImport.flatConfigs.recommended,
     ...eslintImport.flatConfigs.typescript,
     plugins: {
@@ -53,11 +55,22 @@ export default tseslint.config(
       },
     },
     rules: {
-      '@stylistic/semi': 'error',
+      '@stylistic/semi': ["error", "always"],
       '@stylistic/ts/indent': ['error', 2],
       '@stylistic/jsx/jsx-indent': ['error', 2],
       "comma-dangle": ["error", "always-multiline"],
       semi: ["error", "always"],
+      quotes: ["error", "single"],
+    },
+  },
+  {
+    files: ["test/**"], // or any other pattern
+    plugins: {
+      vitest
+    },
+    rules: {
+      ...vitest.configs.recommended.rules, // you can also use vitest.configs.all.rules to enable all rules
+      "vitest/max-nested-describe": ["error", { "max": 3 }] // you can also modify rules' behavior using option like this
     },
   },
 );
