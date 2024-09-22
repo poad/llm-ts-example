@@ -128,18 +128,6 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
               }),
             ],
           }),
-          'bedrock-policy': new iam.PolicyDocument({
-            statements: [
-              new iam.PolicyStatement({
-                effect: iam.Effect.ALLOW,
-                actions: [
-                  'bedrock:InvokeModel*',
-                  'logs:PutLogEvents',
-                ],
-                resources: ['*'],
-              }),
-            ],
-          }),
         },
       }),
       loggingFormat: lambda.LoggingFormat.JSON,
