@@ -44,7 +44,7 @@
     "@smithy/eventstream-codec": "^3.1.5",
     "aws-cdk-lib": "^2.159.1",
     "constructs": "^10.3.0",
-    "esbuild": "^0.23.1",
+    "esbuild": "^0.24.0",
     "langfuse": "^3.25.0",
     "langfuse-langchain": "^3.25.0",
     "source-map-support": "^0.5.21"
