@@ -13,3 +13,4 @@ cdk.out
 !lambda/awslambda.d.ts
 !*.config.js
 .env*
+vite.config.js
