@@ -10,7 +10,6 @@ cdk.out
 !eslint.config.js
 
 !types/*.d.ts
-!lambda/index.d.ts
 !lambda/awslambda.d.ts
 !*.config.js
 .env*
