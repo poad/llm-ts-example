@@ -1710,8 +1710,8 @@ packages:
     resolution: {integrity: sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==}
     engines: {node: '>=10'}
 
-  caniuse-lite@1.0.30001663:
-    resolution: {integrity: sha512-o9C3X27GLKbLeTYZ6HBOLU1tsAcBZsLis28wrVzddShCS16RujjHp9GDHKZqrB3meE0YjhawvMFsGb/igqiPzA==}
+  caniuse-lite@1.0.30001664:
+    resolution: {integrity: sha512-AmE7k4dXiNKQipgn7a2xg558IRqPN3jMQY/rOsbxDhrd0tyChwbITBfiwtnqz8bi2M5mIWbxAYBvk7W7QBUS2g==}
 
   chai@5.1.1:
     resolution: {integrity: sha512-pT1ZgP8rPNqUgieVaEY+ryQr6Q4HXNg8Ei9UnLUrjN4IA7dvQC5JB+/kxVcPNDHyBcc/26CXPkbNzq3qwrOEKA==}
@@ -2484,8 +2484,8 @@ packages:
     resolution: {integrity: sha512-zG5BxI0NOtqxG71/fDFr6AXJ1Uggnv6768v/aZF40VH+epAysom2f9uX0ppvA4U6xFY0WyBUk9P+uF6xIFZyqw==}
     engines: {node: '>=18'}
 
-  langsmith@0.1.60:
-    resolution: {integrity: sha512-xchy/7PynZTkYXhismEYc+0XuDNDTzreKIyc/V3ohq4vnG79Iu+nPjDifvtICLHPCXTU8KSVno+PJX39XwhSjg==}
+  langsmith@0.1.61:
+    resolution: {integrity: sha512-XQE4KPScwPmdaT0mWDzhNxj9gvqXUR+C7urLA0QFi27XeoQdm17eYpudenn4wxC0gIyUJutQCyuYJpfwlT5JnQ==}
     peerDependencies:
       openai: '*'
     peerDependenciesMeta:
@@ -4239,7 +4239,7 @@ snapshots:
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.14
-      langsmith: 0.1.60(openai@4.64.0(zod@3.23.8))
+      langsmith: 0.1.61(openai@4.64.0(zod@3.23.8))
       mustache: 4.2.0
       p-queue: 6.6.2
       p-retry: 4.6.2
@@ -5066,7 +5066,7 @@ snapshots:
 
   browserslist@4.24.0:
     dependencies:
-      caniuse-lite: 1.0.30001663
+      caniuse-lite: 1.0.30001664
       electron-to-chromium: 1.5.29
       node-releases: 2.0.18
       update-browserslist-db: 1.1.0(browserslist@4.24.0)
@@ -5087,7 +5087,7 @@ snapshots:
 
   camelcase@6.3.0: {}
 
-  caniuse-lite@1.0.30001663: {}
+  caniuse-lite@1.0.30001664: {}
 
   chai@5.1.1:
     dependencies:
@@ -5933,7 +5933,7 @@ snapshots:
       js-tiktoken: 1.0.14
       js-yaml: 4.1.0
       jsonpointer: 5.0.1
-      langsmith: 0.1.60(openai@4.64.0(zod@3.23.8))
+      langsmith: 0.1.61(openai@4.64.0(zod@3.23.8))
       openapi-types: 12.1.3
       p-retry: 4.6.2
       uuid: 10.0.0
@@ -5961,7 +5961,7 @@ snapshots:
     dependencies:
       langfuse-core: 3.26.0
 
-  langsmith@0.1.60(openai@4.64.0(zod@3.23.8)):
+  langsmith@0.1.61(openai@4.64.0(zod@3.23.8)):
     dependencies:
       '@types/uuid': 10.0.0
       commander: 10.0.1
