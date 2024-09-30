@@ -39,7 +39,7 @@
     "@aws-sdk/credential-provider-node": "^3.658.1",
     "@langchain/anthropic": "^0.3.3",
     "@langchain/aws": "^0.1.0",
-    "@langchain/core": "^0.3.3",
+    "@langchain/core": "^0.3.4",
     "@langchain/openai": "^0.3.2",
     "@smithy/eventstream-codec": "^3.1.5",
     "aws-cdk-lib": "^2.160.0",
