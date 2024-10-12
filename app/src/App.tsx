@@ -1,6 +1,7 @@
-import { createResource, createSignal, For, Setter, Show } from 'solid-js';
+import { createResource, createSignal, For, Match, Setter, Switch } from 'solid-js';
 import sha256 from 'crypto-js/sha256';
 import './App.css';
+import ModelSelector from './features/Models';
 
 async function read(
   reader: ReadableStreamDefaultReader<Uint8Array>,
@@ -53,11 +54,7 @@ function App() {
     <>
       <div>
         <input type='text' onChange={(event) => setInput(() => event.target.value)} style={{ 'margin-right': '0.5rem' }} />
-        <select onChange={(e) => setModel(() => e.target.value)}>
-          <option value='gpt' selected>GPT-4o</option>
-          <option value='aws'>Cohere Command R+ v1 (AWS Bedrock)</option>
-          <option value='anthropic'>Anthropic Claude 3.5 Sonnet</option>
-        </select>
+        <ModelSelector onChange={(value) => setModel(() => value)} />
         <button onClick={() => setPrompt(() => {
           const question = input();
           setInput(() => '');
@@ -65,17 +62,19 @@ function App() {
         })}>聞く</button>
       </div>
       <div style={{ width: '40vw', 'text-align': 'left', margin: 'auto' }}>
-        <Show when={data.loading}>
-          <span>loading...</span>
-        </Show>
-        <Show when={data.error}>
-          <span>Error: {data.error}</span>
-        </Show>
-        <Show when={!data.error && !data.loading}>
-          <For each={history()}>
-            {(item) => <p>{item}</p>}
-          </For>
-        </Show>
+        <Switch>
+          <Match when={data.loading}>
+            <span>loading...</span>
+          </Match>
+          <Match when={data.error}>
+            <span>Error: {data.error}</span>
+          </Match>
+          <Match when={!data.error && !data.loading}>
+            <For each={history()}>
+              {(item) => <p>{item}</p>}
+            </For>
+          </Match>
+        </Switch>
       </div>
     </>
   );
