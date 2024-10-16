@@ -67,11 +67,11 @@ importers:
         specifier: ^9.12.0
         version: 9.12.0
       '@solidjs/router':
-        specifier: ^0.14.8
-        version: 0.14.8(solid-js@1.9.2)
+        specifier: ^0.14.9
+        version: 0.14.9(solid-js@1.9.2)
       '@solidjs/testing-library':
         specifier: ^0.8.10
-        version: 0.8.10(@solidjs/router@0.14.8(solid-js@1.9.2))(solid-js@1.9.2)
+        version: 0.8.10(@solidjs/router@0.14.9(solid-js@1.9.2))(solid-js@1.9.2)
       '@stylistic/eslint-plugin':
         specifier: ^2.9.0
         version: 2.9.0(eslint@9.12.0)(typescript@5.6.3)
@@ -134,7 +134,7 @@ importers:
         version: 5.4.9(@types/node@22.7.5)
       vite-plugin-pages:
         specifier: ^0.32.3
-        version: 0.32.3(@solidjs/router@0.14.8(solid-js@1.9.2))(vite@5.4.9(@types/node@22.7.5))
+        version: 0.32.3(@solidjs/router@0.14.9(solid-js@1.9.2))(vite@5.4.9(@types/node@22.7.5))
       vite-plugin-solid:
         specifier: ^2.10.2
         version: 2.10.2(@testing-library/jest-dom@6.5.0)(solid-js@1.9.2)(vite@5.4.9(@types/node@22.7.5))
@@ -1332,8 +1332,8 @@ packages:
     resolution: {integrity: sha512-rUeT12bxFnplYDe815GXbq/oixEGHfRFFtcTF3YdDi/JaENIM6aSYYLJydG83UNzLXeRI5K8abYd/8Sp/QM0kA==}
     engines: {node: '>=16.0.0'}
 
-  '@solidjs/router@0.14.8':
-    resolution: {integrity: sha512-S+rD5Twp0820cM03wEIYtb7/4KN7Cfr3BP+qPIqb7IXO/SZ72tWqHEMQsmcjDbr4yVfpA+5Sq0Y+xcq09y1gQA==}
+  '@solidjs/router@0.14.9':
+    resolution: {integrity: sha512-CnCi+oSGhTMAhk3Dtg6E29uRf9FoMIu9/awvrx6czbHcyXvGLxkyHsKm6CWErKUmKJBRSwdn8siRuV3qDrZOEg==}
     peerDependencies:
       solid-js: ^1.8.6
 
@@ -2517,6 +2517,14 @@ packages:
 
   langsmith@0.1.65:
     resolution: {integrity: sha512-+aBft8/jUQbVPv3MWVwFwW/rMxyyA8xSRIsjWl773Nc7LDniczuf2rxZEUslV02RB36EIBgCJPNX7jz2L5YsIQ==}
+    peerDependencies:
+      openai: '*'
+    peerDependenciesMeta:
+      openai:
+        optional: true
+
+  langsmith@0.1.66:
+    resolution: {integrity: sha512-ZhZ9g8t/qjj0oUWpvKLtUe3qxDL/N0wG0m+Ctkxf0keopYJkcMJg4/71jl6ZYyiSU8xlC27aixXOT0uvLhqcFA==}
     peerDependencies:
       openai: '*'
     peerDependenciesMeta:
@@ -4678,16 +4686,16 @@ snapshots:
       '@smithy/util-buffer-from': 3.0.0
       tslib: 2.7.0
 
-  '@solidjs/router@0.14.8(solid-js@1.9.2)':
+  '@solidjs/router@0.14.9(solid-js@1.9.2)':
     dependencies:
       solid-js: 1.9.2
 
-  '@solidjs/testing-library@0.8.10(@solidjs/router@0.14.8(solid-js@1.9.2))(solid-js@1.9.2)':
+  '@solidjs/testing-library@0.8.10(@solidjs/router@0.14.9(solid-js@1.9.2))(solid-js@1.9.2)':
     dependencies:
       '@testing-library/dom': 10.4.0
       solid-js: 1.9.2
     optionalDependencies:
-      '@solidjs/router': 0.14.8(solid-js@1.9.2)
+      '@solidjs/router': 0.14.9(solid-js@1.9.2)
 
   '@stylistic/eslint-plugin-js@2.9.0(eslint@9.12.0)':
     dependencies:
@@ -6061,7 +6069,7 @@ snapshots:
       js-tiktoken: 1.0.15
       js-yaml: 4.1.0
       jsonpointer: 5.0.1
-      langsmith: 0.1.65(openai@4.67.3(zod@3.23.8))
+      langsmith: 0.1.66(openai@4.67.3(zod@3.23.8))
       openapi-types: 12.1.3
       p-retry: 4.6.2
       uuid: 10.0.0
@@ -6090,6 +6098,17 @@ snapshots:
       langfuse-core: 3.27.0
 
   langsmith@0.1.65(openai@4.67.3(zod@3.23.8)):
+    dependencies:
+      '@types/uuid': 10.0.0
+      commander: 10.0.1
+      p-queue: 6.6.2
+      p-retry: 4.6.2
+      semver: 7.6.3
+      uuid: 10.0.0
+    optionalDependencies:
+      openai: 4.67.3(zod@3.23.8)
+
+  langsmith@0.1.66(openai@4.67.3(zod@3.23.8)):
     dependencies:
       '@types/uuid': 10.0.0
       commander: 10.0.1
@@ -6697,7 +6716,7 @@ snapshots:
       - supports-color
       - terser
 
-  vite-plugin-pages@0.32.3(@solidjs/router@0.14.8(solid-js@1.9.2))(vite@5.4.9(@types/node@22.7.5)):
+  vite-plugin-pages@0.32.3(@solidjs/router@0.14.9(solid-js@1.9.2))(vite@5.4.9(@types/node@22.7.5)):
     dependencies:
       '@types/debug': 4.1.12
       debug: 4.3.7
@@ -6710,7 +6729,7 @@ snapshots:
       vite: 5.4.9(@types/node@22.7.5)
       yaml: 2.6.0
     optionalDependencies:
-      '@solidjs/router': 0.14.8(solid-js@1.9.2)
+      '@solidjs/router': 0.14.9(solid-js@1.9.2)
     transitivePeerDependencies:
       - supports-color
 
