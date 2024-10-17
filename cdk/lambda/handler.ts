@@ -1,54 +1,15 @@
 'use strict';
 
 import { ChatPromptTemplate } from '@langchain/core/prompts';
-import { AzureChatOpenAI } from '@langchain/openai';
-import { ChatBedrockConverse } from '@langchain/aws';
-import { ChatAnthropic } from '@langchain/anthropic';
 import { StringOutputParser } from '@langchain/core/output_parsers';
 import { CallbackHandler } from 'langfuse-langchain';
-import { Logger } from '@aws-lambda-powertools/logger';
-
-const logger = new Logger();
+import { selectLlm } from './llm';
+import { logger } from './logger';
 
 const TEMPLATE = `Answer the user's question to the best of your ability.
-However, please keep your answers brief.
+However, please keep your answers brief and in the same language as the question.
 
 {question}`;
-
-function selectModel(modelType?: string) {
-  if (modelType === 'aws') {
-    logger.info('use: cohere.command-r-plus-v1:0 on AWS Bedrock');
-
-    return new ChatBedrockConverse({
-      model: 'cohere.command-r-plus-v1:0',
-      temperature: 0,
-      streaming: true,
-      metadata: {
-        tag: 'chat',
-      },
-    });
-  }
-  if (modelType === 'anthropic') {
-    logger.info('use: Anthropic Claude 3.5 Sonnet');
-    return new ChatAnthropic({
-      model: process.env.CLAUDE_MODEL ?? 'claude-3-5-sonnet-20240620',
-      streaming: true,
-      temperature: 0,
-      metadata: {
-        tag: 'chat',
-      },
-    });
-  }
-  logger.info('use: GPT-4o on Azure OpenAI Service');
-  return new AzureChatOpenAI({
-    modelName: 'gpt-4o',
-    temperature: 0,
-    streaming: true,
-    metadata: {
-      tag: 'chat',
-    },
-  });
-}
 
 export async function handle(
   sessionId: string,
@@ -64,27 +25,42 @@ export async function handle(
     flushAt: 1,
   };
 
-  const model = selectModel(modelType);
+  const model = selectLlm(modelType);
 
-  const prompt = ChatPromptTemplate.fromTemplate(TEMPLATE);
+  const prompt = ChatPromptTemplate.fromMessages([
+    ['system', TEMPLATE],
+    ['human', 'question'],
+  ]);
+
   try {
     const chain = prompt.pipe(model).pipe(new StringOutputParser());
 
     // Initialize Langfuse callback handler
     const langfuseHandler = langfuse.secretKey && langfuse.secretKey ? new CallbackHandler(langfuse) : undefined;
 
-    logger.info(`Langfuse: ${langfuseHandler ? 'enable' : 'disable'}`);
+    logger.debug(`Langfuse: ${langfuseHandler ? 'enable' : 'disable'}`);
 
-    const stream = await chain.stream(
+    const stream = await chain.streamEvents(
       {
         question,
       },
       {
-        callbacks: langfuseHandler ? [langfuseHandler] : [],
+        version: 'v1',
+        configurable: {
+          sessionId,
+          callbacks: langfuseHandler ? [langfuseHandler] : [],
+        },
       },
     );
-    for await (const chunk of stream) {
-      output.write(chunk);
+    for await (const sEvent of stream) {
+      logger.trace('event', sEvent);
+      if (sEvent.event === 'on_llm_stream') {
+        if (modelType === 'aws') {
+          output.write(sEvent.data.chunk.content ?? '');
+        } else {
+          output.write(sEvent.data.chunk.text ?? '');
+        }
+      }
     }
     output.write('\n');
   } catch (e) {

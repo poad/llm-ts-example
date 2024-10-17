@@ -13,7 +13,8 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     isolate: false,
-    env: dotenv.config({ path: '.env.test' }).parsed
+    env: dotenv.config({ path: '.env.test' }).parsed,
+    testTimeout: 30000,
   },
   build: {
     target: 'esnext',
