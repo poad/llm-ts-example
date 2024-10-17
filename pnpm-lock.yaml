@@ -88,8 +88,8 @@ importers:
         specifier: ^2.9.0
         version: 2.9.0(eslint@9.12.0)(typescript@5.6.3)
       '@testing-library/jest-dom':
-        specifier: ^6.5.0
-        version: 6.5.0
+        specifier: ^6.6.1
+        version: 6.6.1
       '@testing-library/user-event':
         specifier: ^14.5.2
         version: 14.5.2(@testing-library/dom@10.4.0)
@@ -97,8 +97,8 @@ importers:
         specifier: ^4.2.2
         version: 4.2.2
       '@types/node':
-        specifier: ^22.7.5
-        version: 22.7.5
+        specifier: ^22.7.6
+        version: 22.7.6
       crypto-js:
         specifier: ^4.2.0
         version: 4.2.0
@@ -131,16 +131,16 @@ importers:
         version: 8.9.0(eslint@9.12.0)(typescript@5.6.3)
       vite:
         specifier: ^5.4.9
-        version: 5.4.9(@types/node@22.7.5)
+        version: 5.4.9(@types/node@22.7.6)
       vite-plugin-pages:
         specifier: ^0.32.3
-        version: 0.32.3(@solidjs/router@0.14.9(solid-js@1.9.2))(vite@5.4.9(@types/node@22.7.5))
+        version: 0.32.3(@solidjs/router@0.14.9(solid-js@1.9.2))(vite@5.4.9(@types/node@22.7.6))
       vite-plugin-solid:
         specifier: ^2.10.2
-        version: 2.10.2(@testing-library/jest-dom@6.5.0)(solid-js@1.9.2)(vite@5.4.9(@types/node@22.7.5))
+        version: 2.10.2(@testing-library/jest-dom@6.6.1)(solid-js@1.9.2)(vite@5.4.9(@types/node@22.7.6))
       vitest:
         specifier: ^2.1.3
-        version: 2.1.3(@types/node@22.7.5)(jsdom@25.0.1)
+        version: 2.1.3(@types/node@22.7.6)(jsdom@25.0.1)
 
   cdk:
     dependencies:
@@ -151,17 +151,17 @@ importers:
         specifier: ^3.670.0
         version: 3.670.0(@aws-sdk/client-sso-oidc@3.670.0(@aws-sdk/client-sts@3.670.0))(@aws-sdk/client-sts@3.670.0)
       '@langchain/anthropic':
-        specifier: ^0.3.3
-        version: 0.3.3(@langchain/core@0.3.11(openai@4.67.3(zod@3.23.8)))
+        specifier: ^0.3.4
+        version: 0.3.4(@langchain/core@0.3.12(openai@4.67.3(zod@3.23.8)))
       '@langchain/aws':
         specifier: ^0.1.1
-        version: 0.1.1(@aws-sdk/client-sso-oidc@3.670.0(@aws-sdk/client-sts@3.670.0))(@aws-sdk/client-sts@3.670.0)(@langchain/core@0.3.11(openai@4.67.3(zod@3.23.8)))
+        version: 0.1.1(@aws-sdk/client-sso-oidc@3.670.0(@aws-sdk/client-sts@3.670.0))(@aws-sdk/client-sts@3.670.0)(@langchain/core@0.3.12(openai@4.67.3(zod@3.23.8)))
       '@langchain/core':
-        specifier: ^0.3.11
-        version: 0.3.11(openai@4.67.3(zod@3.23.8))
+        specifier: ^0.3.12
+        version: 0.3.12(openai@4.67.3(zod@3.23.8))
       '@langchain/openai':
         specifier: ^0.3.7
-        version: 0.3.7(@langchain/core@0.3.11(openai@4.67.3(zod@3.23.8)))
+        version: 0.3.7(@langchain/core@0.3.12(openai@4.67.3(zod@3.23.8)))
       '@smithy/eventstream-codec':
         specifier: ^3.1.6
         version: 3.1.6
@@ -179,7 +179,7 @@ importers:
         version: 3.27.0
       langfuse-langchain:
         specifier: ^3.27.0
-        version: 3.27.0(langchain@0.3.2(@langchain/anthropic@0.3.3(@langchain/core@0.3.11(openai@4.67.3(zod@3.23.8))))(@langchain/aws@0.1.1(@aws-sdk/client-sso-oidc@3.670.0(@aws-sdk/client-sts@3.670.0))(@aws-sdk/client-sts@3.670.0)(@langchain/core@0.3.11(openai@4.67.3(zod@3.23.8))))(@langchain/core@0.3.11(openai@4.67.3(zod@3.23.8)))(openai@4.67.3(zod@3.23.8)))
+        version: 3.27.0(langchain@0.3.2(@langchain/anthropic@0.3.4(@langchain/core@0.3.12(openai@4.67.3(zod@3.23.8))))(@langchain/aws@0.1.1(@aws-sdk/client-sso-oidc@3.670.0(@aws-sdk/client-sts@3.670.0))(@aws-sdk/client-sts@3.670.0)(@langchain/core@0.3.12(openai@4.67.3(zod@3.23.8))))(@langchain/core@0.3.12(openai@4.67.3(zod@3.23.8)))(openai@4.67.3(zod@3.23.8)))
       source-map-support:
         specifier: ^0.5.21
         version: 0.5.21
@@ -200,11 +200,11 @@ importers:
         specifier: ^8.10.145
         version: 8.10.145
       '@types/node':
-        specifier: ^22.7.5
-        version: 22.7.5
+        specifier: ^22.7.6
+        version: 22.7.6
       '@vitest/eslint-plugin':
         specifier: ^1.1.7
-        version: 1.1.7(@typescript-eslint/utils@8.9.0(eslint@9.12.0)(typescript@5.6.3))(eslint@9.12.0)(typescript@5.6.3)(vitest@2.1.3(@types/node@22.7.5)(jsdom@25.0.1))
+        version: 1.1.7(@typescript-eslint/utils@8.9.0(eslint@9.12.0)(typescript@5.6.3))(eslint@9.12.0)(typescript@5.6.3)(vitest@2.1.3(@types/node@22.7.6)(jsdom@25.0.1))
       aws-cdk:
         specifier: ^2.162.1
         version: 2.162.1
@@ -225,7 +225,7 @@ importers:
         version: 7.1.0(eslint@9.12.0)
       ts-node:
         specifier: ^10.9.2
-        version: 10.9.2(@types/node@22.7.5)(typescript@5.6.3)
+        version: 10.9.2(@types/node@22.7.6)(typescript@5.6.3)
       tsx:
         specifier: ^4.19.1
         version: 4.19.1
@@ -237,13 +237,13 @@ importers:
         version: 8.9.0(eslint@9.12.0)(typescript@5.6.3)
       vite:
         specifier: ^5.4.9
-        version: 5.4.9(@types/node@22.7.5)
+        version: 5.4.9(@types/node@22.7.6)
       vite-tsconfig-paths:
         specifier: ^5.0.1
-        version: 5.0.1(typescript@5.6.3)(vite@5.4.9(@types/node@22.7.5))
+        version: 5.0.1(typescript@5.6.3)(vite@5.4.9(@types/node@22.7.6))
       vitest:
         specifier: ^2.1.3
-        version: 2.1.3(@types/node@22.7.5)(jsdom@25.0.1)
+        version: 2.1.3(@types/node@22.7.6)(jsdom@25.0.1)
 
 packages:
 
@@ -1019,8 +1019,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
 
-  '@langchain/anthropic@0.3.3':
-    resolution: {integrity: sha512-OvnSV3Tjhb87n7CxWzIcJqcJEM4qoFDYYt6Rua7glQF/Ud5FBTurlzoMunLPTQeF5GdPiaOwP3nUw6I9gF7ppw==}
+  '@langchain/anthropic@0.3.4':
+    resolution: {integrity: sha512-K8cYh3Xa9y93sTVVB2+Dzt6q9i+bdALTHb8e4cT2Q3PN+mTngY8WYBycrEKIvoCcKs8QOYDCSQatEeGHFAsRbw==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': '>=0.2.21 <0.4.0'
@@ -1031,8 +1031,8 @@ packages:
     peerDependencies:
       '@langchain/core': '>=0.2.21 <0.4.0'
 
-  '@langchain/core@0.3.11':
-    resolution: {integrity: sha512-Mhwf0jkALxeQvEdcxEMD1IiNRhXF8pJqvvAh1LpvBTScTrprNVOYQHR4pujZ6z1SV54u4hULokDWJVVjfEf23w==}
+  '@langchain/core@0.3.12':
+    resolution: {integrity: sha512-dytB3VuAvGY2UHK2xQ32XzP35NcQqwP9GIqfvTB9jj4JShahwgldIqJ89EEmuW7NexX/PNaZvNeGPMP9wtHcsg==}
     engines: {node: '>=18'}
 
   '@langchain/openai@0.3.7':
@@ -1380,8 +1380,8 @@ packages:
     resolution: {integrity: sha512-pemlzrSESWbdAloYml3bAJMEfNh1Z7EduzqPKprCH5S341frlpYnUEW0H72dLxa6IsYr+mPno20GiSm+h9dEdQ==}
     engines: {node: '>=18'}
 
-  '@testing-library/jest-dom@6.5.0':
-    resolution: {integrity: sha512-xGGHpBXYSHUUr6XsKBfs85TWlYKpTc37cSBBVrXcib2MkHLboWlkClhWF37JKlDb9KEq3dHs+f2xR7XJEWGBxA==}
+  '@testing-library/jest-dom@6.6.1':
+    resolution: {integrity: sha512-mNYIiAuP4yJwV2zBRQCV7PHoQwbb6/8TfMpPcwSUzcSVDJHWOXt6hjNtIN1v5knDmimYnjJxKhsoVd4LVGIO+w==}
     engines: {node: '>=14', npm: '>=6', yarn: '>=1'}
 
   '@testing-library/user-event@14.5.2':
@@ -1444,8 +1444,8 @@ packages:
   '@types/node@18.19.55':
     resolution: {integrity: sha512-zzw5Vw52205Zr/nmErSEkN5FLqXPuKX/k5d1D7RKHATGqU7y6YfX9QxZraUzUrFGqH6XzOzG196BC35ltJC4Cw==}
 
-  '@types/node@22.7.5':
-    resolution: {integrity: sha512-jML7s2NAzMWc//QSJ1a3prpk78cOPchGvXJsC3C6R6PSMoooztvRVQEz89gmBTBY1SPMaqo5teB4uNHPdetShQ==}
+  '@types/node@22.7.6':
+    resolution: {integrity: sha512-/d7Rnj0/ExXDMcioS78/kf1lMzYk4BZV8MZGTBKzTGZ6/406ukkbYlIsZmMPhcR5KlkunDHQLrtAVmSq7r+mSw==}
 
   '@types/retry@0.12.0':
     resolution: {integrity: sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==}
@@ -2514,14 +2514,6 @@ packages:
   langfuse@3.27.0:
     resolution: {integrity: sha512-zYQae1ebHkZkSjGhDP64RtZrzMAadnUk5fcW63UHovKTSNDtlU6ed2h5rPSaKFv3SiXiHjhL8E5pnTh/wHhuvQ==}
     engines: {node: '>=18'}
-
-  langsmith@0.1.65:
-    resolution: {integrity: sha512-+aBft8/jUQbVPv3MWVwFwW/rMxyyA8xSRIsjWl773Nc7LDniczuf2rxZEUslV02RB36EIBgCJPNX7jz2L5YsIQ==}
-    peerDependencies:
-      openai: '*'
-    peerDependenciesMeta:
-      openai:
-        optional: true
 
   langsmith@0.1.66:
     resolution: {integrity: sha512-ZhZ9g8t/qjj0oUWpvKLtUe3qxDL/N0wG0m+Ctkxf0keopYJkcMJg4/71jl6ZYyiSU8xlC27aixXOT0uvLhqcFA==}
@@ -4268,23 +4260,23 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@langchain/anthropic@0.3.3(@langchain/core@0.3.11(openai@4.67.3(zod@3.23.8)))':
+  '@langchain/anthropic@0.3.4(@langchain/core@0.3.12(openai@4.67.3(zod@3.23.8)))':
     dependencies:
       '@anthropic-ai/sdk': 0.27.3
-      '@langchain/core': 0.3.11(openai@4.67.3(zod@3.23.8))
+      '@langchain/core': 0.3.12(openai@4.67.3(zod@3.23.8))
       fast-xml-parser: 4.5.0
       zod: 3.23.8
       zod-to-json-schema: 3.23.3(zod@3.23.8)
     transitivePeerDependencies:
       - encoding
 
-  '@langchain/aws@0.1.1(@aws-sdk/client-sso-oidc@3.670.0(@aws-sdk/client-sts@3.670.0))(@aws-sdk/client-sts@3.670.0)(@langchain/core@0.3.11(openai@4.67.3(zod@3.23.8)))':
+  '@langchain/aws@0.1.1(@aws-sdk/client-sso-oidc@3.670.0(@aws-sdk/client-sts@3.670.0))(@aws-sdk/client-sts@3.670.0)(@langchain/core@0.3.12(openai@4.67.3(zod@3.23.8)))':
     dependencies:
       '@aws-sdk/client-bedrock-agent-runtime': 3.670.0
       '@aws-sdk/client-bedrock-runtime': 3.670.0
       '@aws-sdk/client-kendra': 3.670.0
       '@aws-sdk/credential-provider-node': 3.670.0(@aws-sdk/client-sso-oidc@3.670.0(@aws-sdk/client-sts@3.670.0))(@aws-sdk/client-sts@3.670.0)
-      '@langchain/core': 0.3.11(openai@4.67.3(zod@3.23.8))
+      '@langchain/core': 0.3.12(openai@4.67.3(zod@3.23.8))
       zod: 3.23.8
       zod-to-json-schema: 3.23.3(zod@3.23.8)
     transitivePeerDependencies:
@@ -4292,13 +4284,13 @@ snapshots:
       - '@aws-sdk/client-sts'
       - aws-crt
 
-  '@langchain/core@0.3.11(openai@4.67.3(zod@3.23.8))':
+  '@langchain/core@0.3.12(openai@4.67.3(zod@3.23.8))':
     dependencies:
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.15
-      langsmith: 0.1.65(openai@4.67.3(zod@3.23.8))
+      langsmith: 0.1.66(openai@4.67.3(zod@3.23.8))
       mustache: 4.2.0
       p-queue: 6.6.2
       p-retry: 4.6.2
@@ -4308,9 +4300,9 @@ snapshots:
     transitivePeerDependencies:
       - openai
 
-  '@langchain/openai@0.3.7(@langchain/core@0.3.11(openai@4.67.3(zod@3.23.8)))':
+  '@langchain/openai@0.3.7(@langchain/core@0.3.12(openai@4.67.3(zod@3.23.8)))':
     dependencies:
-      '@langchain/core': 0.3.11(openai@4.67.3(zod@3.23.8))
+      '@langchain/core': 0.3.12(openai@4.67.3(zod@3.23.8))
       js-tiktoken: 1.0.15
       openai: 4.67.3(zod@3.23.8)
       zod: 3.23.8
@@ -4318,9 +4310,9 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@langchain/textsplitters@0.1.0(@langchain/core@0.3.11(openai@4.67.3(zod@3.23.8)))':
+  '@langchain/textsplitters@0.1.0(@langchain/core@0.3.12(openai@4.67.3(zod@3.23.8)))':
     dependencies:
-      '@langchain/core': 0.3.11(openai@4.67.3(zod@3.23.8))
+      '@langchain/core': 0.3.12(openai@4.67.3(zod@3.23.8))
       js-tiktoken: 1.0.15
 
   '@nodelib/fs.scandir@2.1.5':
@@ -4748,7 +4740,7 @@ snapshots:
       lz-string: 1.5.0
       pretty-format: 27.5.1
 
-  '@testing-library/jest-dom@6.5.0':
+  '@testing-library/jest-dom@6.6.1':
     dependencies:
       '@adobe/css-tools': 4.4.0
       aria-query: 5.3.2
@@ -4811,14 +4803,14 @@ snapshots:
 
   '@types/node-fetch@2.6.11':
     dependencies:
-      '@types/node': 22.7.5
+      '@types/node': 22.7.6
       form-data: 4.0.1
 
   '@types/node@18.19.55':
     dependencies:
       undici-types: 5.26.5
 
-  '@types/node@22.7.5':
+  '@types/node@22.7.6':
     dependencies:
       undici-types: 6.19.8
 
@@ -4945,13 +4937,13 @@ snapshots:
       '@typescript-eslint/types': 8.9.0
       eslint-visitor-keys: 3.4.3
 
-  '@vitest/eslint-plugin@1.1.7(@typescript-eslint/utils@8.9.0(eslint@9.12.0)(typescript@5.6.3))(eslint@9.12.0)(typescript@5.6.3)(vitest@2.1.3(@types/node@22.7.5)(jsdom@25.0.1))':
+  '@vitest/eslint-plugin@1.1.7(@typescript-eslint/utils@8.9.0(eslint@9.12.0)(typescript@5.6.3))(eslint@9.12.0)(typescript@5.6.3)(vitest@2.1.3(@types/node@22.7.6)(jsdom@25.0.1))':
     dependencies:
       '@typescript-eslint/utils': 8.9.0(eslint@9.12.0)(typescript@5.6.3)
       eslint: 9.12.0
     optionalDependencies:
       typescript: 5.6.3
-      vitest: 2.1.3(@types/node@22.7.5)(jsdom@25.0.1)
+      vitest: 2.1.3(@types/node@22.7.6)(jsdom@25.0.1)
 
   '@vitest/expect@2.1.3':
     dependencies:
@@ -4960,13 +4952,13 @@ snapshots:
       chai: 5.1.1
       tinyrainbow: 1.2.0
 
-  '@vitest/mocker@2.1.3(@vitest/spy@2.1.3)(vite@5.4.9(@types/node@22.7.5))':
+  '@vitest/mocker@2.1.3(@vitest/spy@2.1.3)(vite@5.4.9(@types/node@22.7.6))':
     dependencies:
       '@vitest/spy': 2.1.3
       estree-walker: 3.0.3
       magic-string: 0.30.12
     optionalDependencies:
-      vite: 5.4.9(@types/node@22.7.5)
+      vite: 5.4.9(@types/node@22.7.6)
 
   '@vitest/pretty-format@2.1.3':
     dependencies:
@@ -6061,11 +6053,11 @@ snapshots:
 
   known-css-properties@0.30.0: {}
 
-  langchain@0.3.2(@langchain/anthropic@0.3.3(@langchain/core@0.3.11(openai@4.67.3(zod@3.23.8))))(@langchain/aws@0.1.1(@aws-sdk/client-sso-oidc@3.670.0(@aws-sdk/client-sts@3.670.0))(@aws-sdk/client-sts@3.670.0)(@langchain/core@0.3.11(openai@4.67.3(zod@3.23.8))))(@langchain/core@0.3.11(openai@4.67.3(zod@3.23.8)))(openai@4.67.3(zod@3.23.8)):
+  langchain@0.3.2(@langchain/anthropic@0.3.4(@langchain/core@0.3.12(openai@4.67.3(zod@3.23.8))))(@langchain/aws@0.1.1(@aws-sdk/client-sso-oidc@3.670.0(@aws-sdk/client-sts@3.670.0))(@aws-sdk/client-sts@3.670.0)(@langchain/core@0.3.12(openai@4.67.3(zod@3.23.8))))(@langchain/core@0.3.12(openai@4.67.3(zod@3.23.8)))(openai@4.67.3(zod@3.23.8)):
     dependencies:
-      '@langchain/core': 0.3.11(openai@4.67.3(zod@3.23.8))
-      '@langchain/openai': 0.3.7(@langchain/core@0.3.11(openai@4.67.3(zod@3.23.8)))
-      '@langchain/textsplitters': 0.1.0(@langchain/core@0.3.11(openai@4.67.3(zod@3.23.8)))
+      '@langchain/core': 0.3.12(openai@4.67.3(zod@3.23.8))
+      '@langchain/openai': 0.3.7(@langchain/core@0.3.12(openai@4.67.3(zod@3.23.8)))
+      '@langchain/textsplitters': 0.1.0(@langchain/core@0.3.12(openai@4.67.3(zod@3.23.8)))
       js-tiktoken: 1.0.15
       js-yaml: 4.1.0
       jsonpointer: 5.0.1
@@ -6077,8 +6069,8 @@ snapshots:
       zod: 3.23.8
       zod-to-json-schema: 3.23.3(zod@3.23.8)
     optionalDependencies:
-      '@langchain/anthropic': 0.3.3(@langchain/core@0.3.11(openai@4.67.3(zod@3.23.8)))
-      '@langchain/aws': 0.1.1(@aws-sdk/client-sso-oidc@3.670.0(@aws-sdk/client-sts@3.670.0))(@aws-sdk/client-sts@3.670.0)(@langchain/core@0.3.11(openai@4.67.3(zod@3.23.8)))
+      '@langchain/anthropic': 0.3.4(@langchain/core@0.3.12(openai@4.67.3(zod@3.23.8)))
+      '@langchain/aws': 0.1.1(@aws-sdk/client-sso-oidc@3.670.0(@aws-sdk/client-sts@3.670.0))(@aws-sdk/client-sts@3.670.0)(@langchain/core@0.3.12(openai@4.67.3(zod@3.23.8)))
     transitivePeerDependencies:
       - encoding
       - openai
@@ -6087,26 +6079,15 @@ snapshots:
     dependencies:
       mustache: 4.2.0
 
-  langfuse-langchain@3.27.0(langchain@0.3.2(@langchain/anthropic@0.3.3(@langchain/core@0.3.11(openai@4.67.3(zod@3.23.8))))(@langchain/aws@0.1.1(@aws-sdk/client-sso-oidc@3.670.0(@aws-sdk/client-sts@3.670.0))(@aws-sdk/client-sts@3.670.0)(@langchain/core@0.3.11(openai@4.67.3(zod@3.23.8))))(@langchain/core@0.3.11(openai@4.67.3(zod@3.23.8)))(openai@4.67.3(zod@3.23.8))):
+  langfuse-langchain@3.27.0(langchain@0.3.2(@langchain/anthropic@0.3.4(@langchain/core@0.3.12(openai@4.67.3(zod@3.23.8))))(@langchain/aws@0.1.1(@aws-sdk/client-sso-oidc@3.670.0(@aws-sdk/client-sts@3.670.0))(@aws-sdk/client-sts@3.670.0)(@langchain/core@0.3.12(openai@4.67.3(zod@3.23.8))))(@langchain/core@0.3.12(openai@4.67.3(zod@3.23.8)))(openai@4.67.3(zod@3.23.8))):
     dependencies:
-      langchain: 0.3.2(@langchain/anthropic@0.3.3(@langchain/core@0.3.11(openai@4.67.3(zod@3.23.8))))(@langchain/aws@0.1.1(@aws-sdk/client-sso-oidc@3.670.0(@aws-sdk/client-sts@3.670.0))(@aws-sdk/client-sts@3.670.0)(@langchain/core@0.3.11(openai@4.67.3(zod@3.23.8))))(@langchain/core@0.3.11(openai@4.67.3(zod@3.23.8)))(openai@4.67.3(zod@3.23.8))
+      langchain: 0.3.2(@langchain/anthropic@0.3.4(@langchain/core@0.3.12(openai@4.67.3(zod@3.23.8))))(@langchain/aws@0.1.1(@aws-sdk/client-sso-oidc@3.670.0(@aws-sdk/client-sts@3.670.0))(@aws-sdk/client-sts@3.670.0)(@langchain/core@0.3.12(openai@4.67.3(zod@3.23.8))))(@langchain/core@0.3.12(openai@4.67.3(zod@3.23.8)))(openai@4.67.3(zod@3.23.8))
       langfuse: 3.27.0
       langfuse-core: 3.27.0
 
   langfuse@3.27.0:
     dependencies:
       langfuse-core: 3.27.0
-
-  langsmith@0.1.65(openai@4.67.3(zod@3.23.8)):
-    dependencies:
-      '@types/uuid': 10.0.0
-      commander: 10.0.1
-      p-queue: 6.6.2
-      p-retry: 4.6.2
-      semver: 7.6.3
-      uuid: 10.0.0
-    optionalDependencies:
-      openai: 4.67.3(zod@3.23.8)
 
   langsmith@0.1.66(openai@4.67.3(zod@3.23.8)):
     dependencies:
@@ -6581,14 +6562,14 @@ snapshots:
     dependencies:
       typescript: 5.6.3
 
-  ts-node@10.9.2(@types/node@22.7.5)(typescript@5.6.3):
+  ts-node@10.9.2(@types/node@22.7.6)(typescript@5.6.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 22.7.5
+      '@types/node': 22.7.6
       acorn: 8.12.1
       acorn-walk: 8.3.4
       arg: 4.1.3
@@ -6699,12 +6680,12 @@ snapshots:
 
   validate-html-nesting@1.2.2: {}
 
-  vite-node@2.1.3(@types/node@22.7.5):
+  vite-node@2.1.3(@types/node@22.7.6):
     dependencies:
       cac: 6.7.14
       debug: 4.3.7
       pathe: 1.1.2
-      vite: 5.4.9(@types/node@22.7.5)
+      vite: 5.4.9(@types/node@22.7.6)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -6716,7 +6697,7 @@ snapshots:
       - supports-color
       - terser
 
-  vite-plugin-pages@0.32.3(@solidjs/router@0.14.9(solid-js@1.9.2))(vite@5.4.9(@types/node@22.7.5)):
+  vite-plugin-pages@0.32.3(@solidjs/router@0.14.9(solid-js@1.9.2))(vite@5.4.9(@types/node@22.7.6)):
     dependencies:
       '@types/debug': 4.1.12
       debug: 4.3.7
@@ -6726,14 +6707,14 @@ snapshots:
       json5: 2.2.3
       local-pkg: 0.5.0
       picocolors: 1.1.0
-      vite: 5.4.9(@types/node@22.7.5)
+      vite: 5.4.9(@types/node@22.7.6)
       yaml: 2.6.0
     optionalDependencies:
       '@solidjs/router': 0.14.9(solid-js@1.9.2)
     transitivePeerDependencies:
       - supports-color
 
-  vite-plugin-solid@2.10.2(@testing-library/jest-dom@6.5.0)(solid-js@1.9.2)(vite@5.4.9(@types/node@22.7.5)):
+  vite-plugin-solid@2.10.2(@testing-library/jest-dom@6.6.1)(solid-js@1.9.2)(vite@5.4.9(@types/node@22.7.6)):
     dependencies:
       '@babel/core': 7.25.8
       '@types/babel__core': 7.20.5
@@ -6741,41 +6722,41 @@ snapshots:
       merge-anything: 5.1.7
       solid-js: 1.9.2
       solid-refresh: 0.6.3(solid-js@1.9.2)
-      vite: 5.4.9(@types/node@22.7.5)
-      vitefu: 0.2.5(vite@5.4.9(@types/node@22.7.5))
+      vite: 5.4.9(@types/node@22.7.6)
+      vitefu: 0.2.5(vite@5.4.9(@types/node@22.7.6))
     optionalDependencies:
-      '@testing-library/jest-dom': 6.5.0
+      '@testing-library/jest-dom': 6.6.1
     transitivePeerDependencies:
       - supports-color
 
-  vite-tsconfig-paths@5.0.1(typescript@5.6.3)(vite@5.4.9(@types/node@22.7.5)):
+  vite-tsconfig-paths@5.0.1(typescript@5.6.3)(vite@5.4.9(@types/node@22.7.6)):
     dependencies:
       debug: 4.3.7
       globrex: 0.1.2
       tsconfck: 3.1.4(typescript@5.6.3)
     optionalDependencies:
-      vite: 5.4.9(@types/node@22.7.5)
+      vite: 5.4.9(@types/node@22.7.6)
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  vite@5.4.9(@types/node@22.7.5):
+  vite@5.4.9(@types/node@22.7.6):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.47
       rollup: 4.24.0
     optionalDependencies:
-      '@types/node': 22.7.5
+      '@types/node': 22.7.6
       fsevents: 2.3.3
 
-  vitefu@0.2.5(vite@5.4.9(@types/node@22.7.5)):
+  vitefu@0.2.5(vite@5.4.9(@types/node@22.7.6)):
     optionalDependencies:
-      vite: 5.4.9(@types/node@22.7.5)
+      vite: 5.4.9(@types/node@22.7.6)
 
-  vitest@2.1.3(@types/node@22.7.5)(jsdom@25.0.1):
+  vitest@2.1.3(@types/node@22.7.6)(jsdom@25.0.1):
     dependencies:
       '@vitest/expect': 2.1.3
-      '@vitest/mocker': 2.1.3(@vitest/spy@2.1.3)(vite@5.4.9(@types/node@22.7.5))
+      '@vitest/mocker': 2.1.3(@vitest/spy@2.1.3)(vite@5.4.9(@types/node@22.7.6))
       '@vitest/pretty-format': 2.1.3
       '@vitest/runner': 2.1.3
       '@vitest/snapshot': 2.1.3
@@ -6790,11 +6771,11 @@ snapshots:
       tinyexec: 0.3.0
       tinypool: 1.0.1
       tinyrainbow: 1.2.0
-      vite: 5.4.9(@types/node@22.7.5)
-      vite-node: 2.1.3(@types/node@22.7.5)
+      vite: 5.4.9(@types/node@22.7.6)
+      vite-node: 2.1.3(@types/node@22.7.6)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 22.7.5
+      '@types/node': 22.7.6
       jsdom: 25.0.1
     transitivePeerDependencies:
       - less
