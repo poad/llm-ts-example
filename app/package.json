@@ -12,7 +12,8 @@
     "test": "poku --parallel ."
   },
   "dependencies": {
-    "solid-js": "^1.9.2"
+    "solid-js": "^1.9.2",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.1",
@@ -29,6 +30,7 @@
     "@testing-library/user-event": "^14.5.2",
     "@types/crypto-js": "^4.2.2",
     "@types/node": "^22.7.7",
+    "@types/uuid": "^10.0.0",
     "crypto-js": "^4.2.0",
     "eslint": "^9.13.0",
     "eslint-import-resolver-typescript": "^3.6.3",

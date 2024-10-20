@@ -2,6 +2,7 @@ import { createResource, createSignal, For, Match, Setter, Switch } from 'solid-
 import sha256 from 'crypto-js/sha256';
 import './App.css';
 import ModelSelector from './features/Models';
+import { v7 as uuidv7 } from 'uuid';
 
 async function read(
   reader: ReadableStreamDefaultReader<Uint8Array>,
@@ -22,8 +23,8 @@ async function readAll(source: ReadableStream<Uint8Array> | null) {
   return await read(reader, []);
 }
 
-async function fetchApi(question: string, model: string, setHistory: Setter<string[]>) {
-  const body = JSON.stringify({ question, model });
+async function fetchApi(question: string, model: string, sessionId: string, setHistory: Setter<string[]>) {
+  const body = JSON.stringify({ question, model, sessionId });
   const hash = sha256(body);
   return fetch(
     '/api/',
@@ -42,11 +43,14 @@ async function fetchApi(question: string, model: string, setHistory: Setter<stri
 }
 
 function App() {
+  const sessionId = uuidv7();
+
+
   const [input, setInput] = createSignal<string>();
   const [model, setModel] = createSignal<string>('gpt');
   const [prompt, setPrompt] = createSignal<string>();
   const [data] = createResource(prompt, (question) => {
-    return fetchApi(question, model(), setHistory);
+    return fetchApi(question, model(), sessionId, setHistory);
   });
   const [history, setHistory] = createSignal<string[]>([]);
 

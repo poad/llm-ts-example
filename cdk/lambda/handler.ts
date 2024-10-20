@@ -45,7 +45,7 @@ export async function handle(
         question,
       },
       {
-        version: 'v1',
+        version: 'v2',
         configurable: {
           sessionId,
           callbacks: langfuseHandler ? [langfuseHandler] : [],
@@ -55,10 +55,11 @@ export async function handle(
     for await (const sEvent of stream) {
       logger.trace('event', sEvent);
       if (sEvent.event === 'on_llm_stream') {
+        const chunk = sEvent.data.chunk;
         if (modelType === 'aws') {
-          output.write(sEvent.data.chunk.content ?? '');
+          output.write(chunk.content ?? '');
         } else {
-          output.write(sEvent.data.chunk.text ?? '');
+          output.write(chunk.text ?? '');
         }
       }
     }
