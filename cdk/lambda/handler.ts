@@ -36,7 +36,7 @@ export async function handle(
     const chain = prompt.pipe(model).pipe(new StringOutputParser());
 
     // Initialize Langfuse callback handler
-    const langfuseHandler = langfuse.secretKey && langfuse.secretKey ? new CallbackHandler(langfuse) : undefined;
+    const langfuseHandler = langfuse.publicKey && langfuse.secretKey ? new CallbackHandler(langfuse) : undefined;
 
     logger.debug(`Langfuse: ${langfuseHandler ? 'enable' : 'disable'}`);
 
