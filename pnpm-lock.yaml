@@ -37,10 +37,10 @@ importers:
         version: 9.14.0
       eslint-import-resolver-typescript:
         specifier: ^3.6.3
-        version: 3.6.3(@typescript-eslint/parser@8.13.0(eslint@9.14.0)(typescript@5.6.3))(eslint-plugin-import@2.31.0)(eslint@9.14.0)
+        version: 3.6.3(eslint-plugin-import@2.31.0)(eslint@9.14.0)
       eslint-plugin-import:
         specifier: ^2.31.0
-        version: 2.31.0(@typescript-eslint/parser@8.13.0(eslint@9.14.0)(typescript@5.6.3))(eslint-import-resolver-typescript@3.6.3)(eslint@9.14.0)
+        version: 2.31.0(eslint-import-resolver-typescript@3.6.3)(eslint@9.14.0)
       eslint-plugin-promise:
         specifier: ^7.1.0
         version: 7.1.0(eslint@9.14.0)
@@ -70,11 +70,11 @@ importers:
         specifier: ^9.14.0
         version: 9.14.0
       '@solidjs/router':
-        specifier: ^0.15.0
-        version: 0.15.0(solid-js@1.9.3)
+        specifier: ^0.15.1
+        version: 0.15.1(solid-js@1.9.3)
       '@solidjs/testing-library':
         specifier: ^0.8.10
-        version: 0.8.10(@solidjs/router@0.15.0(solid-js@1.9.3))(solid-js@1.9.3)
+        version: 0.8.10(@solidjs/router@0.15.1(solid-js@1.9.3))(solid-js@1.9.3)
       '@stylistic/eslint-plugin':
         specifier: ^2.10.1
         version: 2.10.1(eslint@9.14.0)(typescript@5.6.3)
@@ -140,7 +140,7 @@ importers:
         version: 5.4.10(@types/node@22.9.0)
       vite-plugin-pages:
         specifier: ^0.32.3
-        version: 0.32.3(@solidjs/router@0.15.0(solid-js@1.9.3))(vite@5.4.10(@types/node@22.9.0))
+        version: 0.32.3(@solidjs/router@0.15.1(solid-js@1.9.3))(vite@5.4.10(@types/node@22.9.0))
       vite-plugin-solid:
         specifier: ^2.10.2
         version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.10(@types/node@22.9.0))
@@ -160,8 +160,8 @@ importers:
         specifier: ^0.3.7
         version: 0.3.7(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8)))
       '@langchain/aws':
-        specifier: ^0.1.1
-        version: 0.1.1(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0))(@aws-sdk/client-sts@3.682.0)(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8)))
+        specifier: ^0.1.2
+        version: 0.1.2(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0))(@aws-sdk/client-sts@3.682.0)(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8)))
       '@langchain/core':
         specifier: ^0.3.17
         version: 0.3.17(openai@4.71.0(zod@3.23.8))
@@ -169,8 +169,8 @@ importers:
         specifier: ^0.2.20
         version: 0.2.20(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8)))
       '@langchain/openai':
-        specifier: ^0.3.11
-        version: 0.3.11(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8)))
+        specifier: ^0.3.12
+        version: 0.3.12(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8)))
       '@smithy/eventstream-codec':
         specifier: ^3.1.7
         version: 3.1.7
@@ -184,11 +184,11 @@ importers:
         specifier: ^0.24.0
         version: 0.24.0
       langfuse:
-        specifier: ^3.29.0
-        version: 3.29.0
+        specifier: ^3.29.1
+        version: 3.29.1
       langfuse-langchain:
-        specifier: ^3.29.0
-        version: 3.29.0(langchain@0.3.2(@langchain/anthropic@0.3.7(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8))))(@langchain/aws@0.1.1(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0))(@aws-sdk/client-sts@3.682.0)(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8))))(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8)))(openai@4.71.0(zod@3.23.8)))
+        specifier: ^3.29.1
+        version: 3.29.1(langchain@0.3.2(@langchain/anthropic@0.3.7(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8))))(@langchain/aws@0.1.2(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0))(@aws-sdk/client-sts@3.682.0)(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8))))(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8)))(openai@4.71.0(zod@3.23.8)))
       source-map-support:
         specifier: ^0.5.21
         version: 0.5.21
@@ -234,10 +234,10 @@ importers:
         version: 9.14.0
       eslint-import-resolver-typescript:
         specifier: ^3.6.3
-        version: 3.6.3(@typescript-eslint/parser@8.13.0(eslint@9.14.0)(typescript@5.6.3))(eslint-plugin-import@2.31.0)(eslint@9.14.0)
+        version: 3.6.3(eslint-plugin-import@2.31.0)(eslint@9.14.0)
       eslint-plugin-import:
         specifier: ^2.31.0
-        version: 2.31.0(@typescript-eslint/parser@8.13.0(eslint@9.14.0)(typescript@5.6.3))(eslint-import-resolver-typescript@3.6.3)(eslint@9.14.0)
+        version: 2.31.0(eslint-import-resolver-typescript@3.6.3)(eslint@9.14.0)
       eslint-plugin-promise:
         specifier: ^7.1.0
         version: 7.1.0(eslint@9.14.0)
@@ -1031,8 +1031,8 @@ packages:
     peerDependencies:
       '@langchain/core': '>=0.2.21 <0.4.0'
 
-  '@langchain/aws@0.1.1':
-    resolution: {integrity: sha512-6JoRoW/8nca+jJcklZ6kJ7qBUQoBskygGiF5Wf3A89JPyGCHDds8rPQFNJO5S7ki+kRRNWh5G5hcc2ahaqZjWQ==}
+  '@langchain/aws@0.1.2':
+    resolution: {integrity: sha512-1cQvv8XSbaZXceAbYexSm/8WLqfEJ4VF6qbf/XLwkpUKMFGqpSBA00+Bn5p8K/Ms+PyMguZrxVNqd6daqxhDBQ==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': '>=0.2.21 <0.4.0'
@@ -1056,8 +1056,8 @@ packages:
     peerDependencies:
       '@langchain/core': '>=0.2.36 <0.3.0 || >=0.3.9 < 0.4.0'
 
-  '@langchain/openai@0.3.11':
-    resolution: {integrity: sha512-mEFbpJ8w8NPArsquUlCwxvZTKNkXxqwzvTEYzv6Jb7gUoBDOZtwLg6AdcngTJ+w5VFh3wxgPy0g3zb9Aw0Qbpw==}
+  '@langchain/openai@0.3.12':
+    resolution: {integrity: sha512-z8y0zdKovjY6bB0D3D+K99bPAN+wFRQcrWDfHfX7yVmYwq1O8GOIzQgCBth0vbhbzeuaJ4dz3+oqN/4Q2PCpHg==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': '>=0.2.26 <0.4.0'
@@ -1363,8 +1363,8 @@ packages:
     resolution: {integrity: sha512-rUeT12bxFnplYDe815GXbq/oixEGHfRFFtcTF3YdDi/JaENIM6aSYYLJydG83UNzLXeRI5K8abYd/8Sp/QM0kA==}
     engines: {node: '>=16.0.0'}
 
-  '@solidjs/router@0.15.0':
-    resolution: {integrity: sha512-Q286eKFh9sY2OeSISqiNrZW5ZJ7M58fkxCfFeYg0KE15P9QMwhT9YqnInE/OdzavWzXU3ZYclV2NGVKz8pfqWg==}
+  '@solidjs/router@0.15.1':
+    resolution: {integrity: sha512-lb5BRBqQqii/1dQCglx2K68xLkgu7QcrcajWKuuEx6FHTsK/hp5IgVhjy6RzPMLj+SFyrrRi/ldirCFNxtzh0Q==}
     peerDependencies:
       solid-js: ^1.8.6
 
@@ -2477,18 +2477,18 @@ packages:
       typeorm:
         optional: true
 
-  langfuse-core@3.29.0:
-    resolution: {integrity: sha512-B5Ofo8mt+75dXlBe/vSt26OEtykVLyg/YkRbgHamRBZ0Wl5NWDrKIWuYZpboiQv1JjwLEUQkIvLQtzmfSEvQ+g==}
+  langfuse-core@3.29.1:
+    resolution: {integrity: sha512-sH+clcJA4xdhGxeJhJ/EqdZQk2z8zMwt1tw5zTyndUUaMfhNMIr5g4UR91nE37vbQtilWwXW0b3FInJJinriNw==}
     engines: {node: '>=18'}
 
-  langfuse-langchain@3.29.0:
-    resolution: {integrity: sha512-8qrCZyct/kWcfBtdzNV2xcrnObGbYrxgsqQm36Jippktn5GDaDOwyV4YWxOCIEC9abCOPjeuSsDgFXNSy/thoQ==}
+  langfuse-langchain@3.29.1:
+    resolution: {integrity: sha512-IuCDC8J9MajpjyJwkuAP0Jp3AqPMOlrAbUoRc0nRVbi9ltxWBZkrASZMORpI0Ocp1vUW4v4wt8py3I7LqE8LyQ==}
     engines: {node: '>=18'}
     peerDependencies:
       langchain: '>=0.0.157 <0.4.0'
 
-  langfuse@3.29.0:
-    resolution: {integrity: sha512-A3WL4a13Ij94282Xk3lRmBZN+hLFHZDCoViDj0lgfYoFVEWxEpY3BMIfEROGlWC06gq6HWcG8Gxj8QCPAQ5apw==}
+  langfuse@3.29.1:
+    resolution: {integrity: sha512-lGh/4yUdjpHcCnp2zNZiyAxgDHbFGD3te6ONjuL7I9REf++49k+gpycMTNEAo6sQHFbhiuB1FO345pAOR2+R8A==}
     engines: {node: '>=18'}
 
   langsmith@0.1.68:
@@ -4223,7 +4223,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@langchain/aws@0.1.1(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0))(@aws-sdk/client-sts@3.682.0)(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8)))':
+  '@langchain/aws@0.1.2(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0))(@aws-sdk/client-sts@3.682.0)(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8)))':
     dependencies:
       '@aws-sdk/client-bedrock-agent-runtime': 3.682.0
       '@aws-sdk/client-bedrock-runtime': 3.682.0
@@ -4273,7 +4273,7 @@ snapshots:
       uuid: 10.0.0
       zod: 3.23.8
 
-  '@langchain/openai@0.3.11(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8)))':
+  '@langchain/openai@0.3.12(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8)))':
     dependencies:
       '@langchain/core': 0.3.17(openai@4.71.0(zod@3.23.8))
       js-tiktoken: 1.0.15
@@ -4663,16 +4663,16 @@ snapshots:
       '@smithy/util-buffer-from': 3.0.0
       tslib: 2.8.1
 
-  '@solidjs/router@0.15.0(solid-js@1.9.3)':
+  '@solidjs/router@0.15.1(solid-js@1.9.3)':
     dependencies:
       solid-js: 1.9.3
 
-  '@solidjs/testing-library@0.8.10(@solidjs/router@0.15.0(solid-js@1.9.3))(solid-js@1.9.3)':
+  '@solidjs/testing-library@0.8.10(@solidjs/router@0.15.1(solid-js@1.9.3))(solid-js@1.9.3)':
     dependencies:
       '@testing-library/dom': 10.4.0
       solid-js: 1.9.3
     optionalDependencies:
-      '@solidjs/router': 0.15.0(solid-js@1.9.3)
+      '@solidjs/router': 0.15.1(solid-js@1.9.3)
 
   '@stylistic/eslint-plugin-js@2.10.1(eslint@9.14.0)':
     dependencies:
@@ -5430,6 +5430,25 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
+  eslint-import-resolver-typescript@3.6.3(eslint-plugin-import@2.31.0)(eslint@9.14.0):
+    dependencies:
+      '@nolyfill/is-core-module': 1.0.39
+      debug: 4.3.7
+      enhanced-resolve: 5.17.1
+      eslint: 9.14.0
+      eslint-module-utils: 2.12.0(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.3)(eslint@9.14.0)
+      fast-glob: 3.3.2
+      get-tsconfig: 4.8.1
+      is-bun-module: 1.2.1
+      is-glob: 4.0.3
+    optionalDependencies:
+      eslint-plugin-import: 2.31.0(eslint-import-resolver-typescript@3.6.3)(eslint@9.14.0)
+    transitivePeerDependencies:
+      - '@typescript-eslint/parser'
+      - eslint-import-resolver-node
+      - eslint-import-resolver-webpack
+      - supports-color
+
   eslint-module-utils@2.12.0(@typescript-eslint/parser@8.13.0(eslint@9.14.0)(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.3)(eslint@9.14.0):
     dependencies:
       debug: 3.2.7
@@ -5438,6 +5457,16 @@ snapshots:
       eslint: 9.14.0
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 3.6.3(@typescript-eslint/parser@8.13.0(eslint@9.14.0)(typescript@5.6.3))(eslint-plugin-import@2.31.0)(eslint@9.14.0)
+    transitivePeerDependencies:
+      - supports-color
+
+  eslint-module-utils@2.12.0(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.3)(eslint@9.14.0):
+    dependencies:
+      debug: 3.2.7
+    optionalDependencies:
+      eslint: 9.14.0
+      eslint-import-resolver-node: 0.3.9
+      eslint-import-resolver-typescript: 3.6.3(eslint-plugin-import@2.31.0)(eslint@9.14.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -5465,6 +5494,33 @@ snapshots:
       tsconfig-paths: 3.15.0
     optionalDependencies:
       '@typescript-eslint/parser': 8.13.0(eslint@9.14.0)(typescript@5.6.3)
+    transitivePeerDependencies:
+      - eslint-import-resolver-typescript
+      - eslint-import-resolver-webpack
+      - supports-color
+
+  eslint-plugin-import@2.31.0(eslint-import-resolver-typescript@3.6.3)(eslint@9.14.0):
+    dependencies:
+      '@rtsao/scc': 1.1.0
+      array-includes: 3.1.8
+      array.prototype.findlastindex: 1.2.5
+      array.prototype.flat: 1.3.2
+      array.prototype.flatmap: 1.3.2
+      debug: 3.2.7
+      doctrine: 2.1.0
+      eslint: 9.14.0
+      eslint-import-resolver-node: 0.3.9
+      eslint-module-utils: 2.12.0(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.3)(eslint@9.14.0)
+      hasown: 2.0.2
+      is-core-module: 2.15.1
+      is-glob: 4.0.3
+      minimatch: 3.1.2
+      object.fromentries: 2.0.8
+      object.groupby: 1.0.3
+      object.values: 1.2.0
+      semver: 6.3.1
+      string.prototype.trimend: 1.0.8
+      tsconfig-paths: 3.15.0
     transitivePeerDependencies:
       - eslint-import-resolver-typescript
       - eslint-import-resolver-webpack
@@ -5916,10 +5972,10 @@ snapshots:
 
   known-css-properties@0.30.0: {}
 
-  langchain@0.3.2(@langchain/anthropic@0.3.7(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8))))(@langchain/aws@0.1.1(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0))(@aws-sdk/client-sts@3.682.0)(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8))))(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8)))(openai@4.71.0(zod@3.23.8)):
+  langchain@0.3.2(@langchain/anthropic@0.3.7(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8))))(@langchain/aws@0.1.2(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0))(@aws-sdk/client-sts@3.682.0)(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8))))(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8)))(openai@4.71.0(zod@3.23.8)):
     dependencies:
       '@langchain/core': 0.3.17(openai@4.71.0(zod@3.23.8))
-      '@langchain/openai': 0.3.11(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8)))
+      '@langchain/openai': 0.3.12(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8)))
       '@langchain/textsplitters': 0.1.0(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8)))
       js-tiktoken: 1.0.15
       js-yaml: 4.1.0
@@ -5933,24 +5989,24 @@ snapshots:
       zod-to-json-schema: 3.23.5(zod@3.23.8)
     optionalDependencies:
       '@langchain/anthropic': 0.3.7(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8)))
-      '@langchain/aws': 0.1.1(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0))(@aws-sdk/client-sts@3.682.0)(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8)))
+      '@langchain/aws': 0.1.2(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0))(@aws-sdk/client-sts@3.682.0)(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8)))
     transitivePeerDependencies:
       - encoding
       - openai
 
-  langfuse-core@3.29.0:
+  langfuse-core@3.29.1:
     dependencies:
       mustache: 4.2.0
 
-  langfuse-langchain@3.29.0(langchain@0.3.2(@langchain/anthropic@0.3.7(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8))))(@langchain/aws@0.1.1(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0))(@aws-sdk/client-sts@3.682.0)(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8))))(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8)))(openai@4.71.0(zod@3.23.8))):
+  langfuse-langchain@3.29.1(langchain@0.3.2(@langchain/anthropic@0.3.7(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8))))(@langchain/aws@0.1.2(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0))(@aws-sdk/client-sts@3.682.0)(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8))))(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8)))(openai@4.71.0(zod@3.23.8))):
     dependencies:
-      langchain: 0.3.2(@langchain/anthropic@0.3.7(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8))))(@langchain/aws@0.1.1(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0))(@aws-sdk/client-sts@3.682.0)(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8))))(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8)))(openai@4.71.0(zod@3.23.8))
-      langfuse: 3.29.0
-      langfuse-core: 3.29.0
+      langchain: 0.3.2(@langchain/anthropic@0.3.7(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8))))(@langchain/aws@0.1.2(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0))(@aws-sdk/client-sts@3.682.0)(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8))))(@langchain/core@0.3.17(openai@4.71.0(zod@3.23.8)))(openai@4.71.0(zod@3.23.8))
+      langfuse: 3.29.1
+      langfuse-core: 3.29.1
 
-  langfuse@3.29.0:
+  langfuse@3.29.1:
     dependencies:
-      langfuse-core: 3.29.0
+      langfuse-core: 3.29.1
 
   langsmith@0.1.68(openai@4.71.0(zod@3.23.8)):
     dependencies:
@@ -6561,7 +6617,7 @@ snapshots:
       - supports-color
       - terser
 
-  vite-plugin-pages@0.32.3(@solidjs/router@0.15.0(solid-js@1.9.3))(vite@5.4.10(@types/node@22.9.0)):
+  vite-plugin-pages@0.32.3(@solidjs/router@0.15.1(solid-js@1.9.3))(vite@5.4.10(@types/node@22.9.0)):
     dependencies:
       '@types/debug': 4.1.12
       debug: 4.3.7
@@ -6574,7 +6630,7 @@ snapshots:
       vite: 5.4.10(@types/node@22.9.0)
       yaml: 2.6.0
     optionalDependencies:
-      '@solidjs/router': 0.15.0(solid-js@1.9.3)
+      '@solidjs/router': 0.15.1(solid-js@1.9.3)
     transitivePeerDependencies:
       - supports-color
 
