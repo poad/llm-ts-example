@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "solid-js": "^1.9.3",
-    "uuid": "^11.0.2"
+    "uuid": "^11.0.3"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.2",
