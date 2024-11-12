@@ -6,11 +6,6 @@ import { CallbackHandler } from 'langfuse-langchain';
 import { selectLlm } from './llm';
 import { logger } from './logger';
 
-const TEMPLATE = `Answer the user's question to the best of your ability.
-However, please keep your answers brief and in the same language as the question.
-
-{question}`;
-
 export async function handle(
   sessionId: string,
   { question, model: modelType }: { question: string, model?: string },
@@ -27,18 +22,23 @@ export async function handle(
 
   const { platform, model } = selectLlm(modelType);
 
+  const qaPrpmpt = `Answer the user's question to the best of your ability.
+  However, please keep your answers brief and in the same language as the question.
+
+  {question}`;
+
   const prompt = ChatPromptTemplate.fromMessages([
-    ['system', TEMPLATE],
+    ['system', qaPrpmpt],
     ['human', 'question'],
   ]);
 
   try {
-    const chain = prompt.pipe(model).pipe(new StringOutputParser());
-
     // Initialize Langfuse callback handler
     const langfuseHandler = langfuse.publicKey && langfuse.secretKey ? new CallbackHandler(langfuse) : undefined;
 
     logger.debug(`Langfuse: ${langfuseHandler ? 'enable' : 'disable'}`);
+
+    const chain = prompt.pipe(model).pipe(new StringOutputParser());
 
     const stream = await chain.streamEvents(
       {

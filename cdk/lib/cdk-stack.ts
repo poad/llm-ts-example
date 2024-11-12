@@ -74,6 +74,7 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
         sourcesContent: true,
         keepNames: true,
       },
+      applicationLogLevelV2: lambda.ApplicationLogLevel.DEBUG,
     };
 
     const apiRootPath = '/api/';
@@ -107,7 +108,7 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
         minify: true,
         ...devOptions.bundling,
       },
-      memorySize: 512,
+      memorySize: 256,
       timeout: cdk.Duration.minutes(1),
       role: new iam.Role(this, 'ApolloLambdaFunctionExecutionRole', {
         assumedBy: new iam.ServicePrincipal('lambda.amazonaws.com'),
@@ -131,6 +132,7 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
         },
       }),
       loggingFormat: lambda.LoggingFormat.JSON,
+      applicationLogLevelV2: devOptions.applicationLogLevelV2,
     });
 
     const s3bucket = new s3.Bucket(this, 'S3Bucket', {
