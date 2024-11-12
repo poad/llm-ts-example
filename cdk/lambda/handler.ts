@@ -25,7 +25,7 @@ export async function handle(
     flushAt: 1,
   };
 
-  const model = selectLlm(modelType);
+  const { platform, model } = selectLlm(modelType);
 
   const prompt = ChatPromptTemplate.fromMessages([
     ['system', TEMPLATE],
@@ -56,7 +56,7 @@ export async function handle(
       logger.trace('event', sEvent);
       if (sEvent.event === 'on_llm_stream') {
         const chunk = sEvent.data.chunk;
-        if (modelType === 'aws') {
+        if (platform === 'aws') {
           output.write(chunk.content ?? '');
         } else {
           output.write(chunk.text ?? '');
