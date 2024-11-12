@@ -23,7 +23,10 @@ async function readAll(source: ReadableStream<Uint8Array> | null) {
   return await read(reader, []);
 }
 
-async function fetchApi(question: string, model: string, sessionId: string, setHistory: Setter<string[]>) {
+async function fetchApi(question: string, model: string, sessionId: string, setHistory: Setter<{
+  type: 'system' | 'user';
+  message: string;
+}[]>) {
   const body = JSON.stringify({ question, model, sessionId });
   const hash = sha256(body);
   return fetch(
@@ -35,11 +38,17 @@ async function fetchApi(question: string, model: string, sessionId: string, setH
         'Content-Type': 'application/json',
         'x-amz-content-sha256': hash.toString(),
       },
-    }).then(async (resp) => {
-    const result = await readAll(resp.body);
-    setHistory((prev) => prev.concat([result.map((item) => new TextDecoder().decode(item)).reduce((acc, cur) => acc.concat(cur)) ?? '']));
-    return result;
-  });
+    },
+  ).then(
+    async (resp) => {
+      const result = await readAll(resp.body);
+      setHistory((prev) => prev.concat([{
+        type: 'system',
+        message: result.map((item) => new TextDecoder().decode(item)).reduce((acc, cur) => acc.concat(cur)) ?? '',
+      }]));
+      return result;
+    },
+  ).catch((e) => setHistory((prev) => prev.concat([{ type: 'system', message: `Error: ${JSON.stringify(e)}` }])));
 }
 
 function App() {
@@ -52,33 +61,41 @@ function App() {
   const [data] = createResource(prompt, (question) => {
     return fetchApi(question, model(), sessionId, setHistory);
   });
-  const [history, setHistory] = createSignal<string[]>([]);
+  const [history, setHistory] = createSignal<{
+    type: 'system' | 'user';
+    message: string;
+  }[]>([]);
 
   return (
     <>
-      <div>
-        <input type='text' onChange={(event) => setInput(() => event.target.value)} style={{ 'margin-right': '0.5rem' }} />
-        <ModelSelector onChange={(value) => setModel(() => value)} />
-        <button onClick={() => setPrompt(() => {
-          const question = input();
-          setInput(() => '');
-          return question;
-        })}>聞く</button>
-      </div>
-      <div style={{ width: '40vw', 'text-align': 'left', margin: 'auto' }}>
-        <Switch>
-          <Match when={data.loading}>
-            <span>loading...</span>
-          </Match>
-          <Match when={data.error}>
-            <span>Error: {data.error}</span>
-          </Match>
-          <Match when={!data.error && !data.loading}>
-            <For each={history()}>
-              {(item) => <p>{item}</p>}
-            </For>
-          </Match>
-        </Switch>
+      <div id='container'>
+        <div id='history-container'>
+          <For each={history()}>
+            {(item) => (
+              <div class={`history history-${item.type}`}>
+                <span class='role'>{item.type === 'user' ? 'あなた' : 'AI' }:</span>{item.message}
+              </div>
+            )}
+          </For>
+          <Switch>
+            <Match when={data.loading}>
+              <div class='history history-system'>loading...</div>
+            </Match>
+            <Match when={data.error}>
+              <div class='history history-system'>Error: {data.error}</div>
+            </Match>
+          </Switch>
+        </div>
+        <div id='input-bar'>
+          <input type='text' onChange={(event) => setInput(() => event.target.value)} id='input-box' placeholder='質問を入力してください。' />
+          <ModelSelector id='model-selector' onChange={(value) => setModel(() => value)} />
+          <button id='send-button' onClick={() => setPrompt(() => {
+            const question = input();
+            setInput(() => '');
+            setHistory((prev) => prev.concat([{type: 'user', message: question ?? ''}]));
+            return question;
+          })}>聞く</button>
+        </div>
       </div>
     </>
   );
