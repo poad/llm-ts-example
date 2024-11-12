@@ -3,6 +3,7 @@ import sha256 from 'crypto-js/sha256';
 import './App.css';
 import ModelSelector from './features/Models';
 import { v7 as uuidv7 } from 'uuid';
+import { SolidMarkdown } from 'solid-markdown';
 
 async function read(
   reader: ReadableStreamDefaultReader<Uint8Array>,
@@ -55,7 +56,7 @@ function App() {
   const sessionId = uuidv7();
 
 
-  const [input, setInput] = createSignal<string>();
+  const [input, setInput] = createSignal<string>('');
   const [model, setModel] = createSignal<string>('gpt');
   const [prompt, setPrompt] = createSignal<string>();
   const [data] = createResource(prompt, (question) => {
@@ -73,7 +74,8 @@ function App() {
           <For each={history()}>
             {(item) => (
               <div class={`history history-${item.type}`}>
-                <span class='role'>{item.type === 'user' ? 'あなた' : 'AI' }:</span>{item.message}
+                <div class='role'>{item.type === 'user' ? 'あなた' : 'AI' }</div>
+                <div class='message'><SolidMarkdown children={item.message} /></div>
               </div>
             )}
           </For>
@@ -87,7 +89,7 @@ function App() {
           </Switch>
         </div>
         <div id='input-bar'>
-          <input type='text' onChange={(event) => setInput(() => event.target.value)} id='input-box' placeholder='質問を入力してください。' />
+          <input type='text' onChange={(event) => setInput(() => event.target.value)} value={input()} id='input-box' placeholder='質問を入力してください。' />
           <ModelSelector id='model-selector' onChange={(value) => setModel(() => value)} />
           <button id='send-button' onClick={() => setPrompt(() => {
             const question = input();

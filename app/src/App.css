@@ -24,26 +24,31 @@
   height: 100%;
   text-align: left;
   margin: auto;
+  margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 }
 
 .history {
-  border-bottom: 1px solid #666;
-  margin-top: 0.5rem;
+  border-radius: 15px;
   padding: 0.5rem;
+  width: 90%;
+  text-align: left;
+  margin-bottom: 1rem;
 }
 
 .history-user {
-  text-align: left;
+  background-color: #ccf0f0;
 }
 
 .history-system {
-  text-align: right;
+  background-color: #f0f0cc;
+  margin-left: 5%;
 }
 
-.role {
-  padding-right: 0.75rem;
+.message {
+  padding-left: 1rem;
 }
 
 #input-bar {
