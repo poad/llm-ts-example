@@ -47,6 +47,10 @@
   margin-left: 5%;
 }
 
+.role {
+  padding-left: 0.25rem;
+}
+
 .message {
   padding-left: 1rem;
 }

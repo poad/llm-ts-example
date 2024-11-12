@@ -1,16 +1,22 @@
+import { For } from 'solid-js/web';
+
 export function ModelSelector(props: {
+  models: {
+    id: string;
+    name: string;
+    selected: boolean;
+  }[],
   onChange: (model: string) => void
   class?: string;
   id?: string;
 }) {
   return (<>
     <select onChange={(e) => props.onChange(e.target.value)} id={props.id} class={props.class}>
-      <option value='llama32-3b' selected>Meta LLama 3.2 3B Instruct (AWS Bedrock)</option>
-      <option value='llama32-1b'>Meta LLama 3.2 1B Instruct (AWS Bedrock)</option>
-      <option value='gpt-4o' >GPT-4o</option>
-      <option value='gpt-4o-mini'>GPT-4o mini</option>
-      <option value='cohere'>Cohere Command R+ v1 (AWS Bedrock)</option>
-      <option value='anthropic'>Anthropic Claude 3.5 Sonnet</option>
+      <For each={props.models}>
+        {(item) => (
+          <option value={item.id} selected={item.selected}>{item.name}</option>
+        )}
+      </For>
     </select>
 
   </>);
