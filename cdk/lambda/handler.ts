@@ -54,7 +54,7 @@ export async function handle(
     );
     for await (const sEvent of stream) {
       logger.trace('event', sEvent);
-      if (sEvent.event === 'on_llm_stream') {
+      if (sEvent.event === 'on_chat_model_stream') {
         const chunk = sEvent.data.chunk;
         if (platform === 'aws') {
           output.write(chunk.content ?? '');
