@@ -6,11 +6,6 @@ import { CallbackHandler } from 'langfuse-langchain';
 import { selectLlm } from './llm';
 import { logger } from './logger';
 
-const TEMPLATE = `Answer the user's question to the best of your ability.
-However, please keep your answers brief and in the same language as the question.
-
-{question}`;
-
 export async function handle(
   sessionId: string,
   { question, model: modelType }: { question: string, model?: string },
@@ -25,20 +20,25 @@ export async function handle(
     flushAt: 1,
   };
 
-  const model = selectLlm(modelType);
+  const { platform, model } = selectLlm(modelType);
+
+  const qaPrpmpt = `Answer the user's question to the best of your ability.
+  However, please keep your answers brief and in the same language as the question.
+
+  {question}`;
 
   const prompt = ChatPromptTemplate.fromMessages([
-    ['system', TEMPLATE],
+    ['system', qaPrpmpt],
     ['human', 'question'],
   ]);
 
   try {
-    const chain = prompt.pipe(model).pipe(new StringOutputParser());
-
     // Initialize Langfuse callback handler
     const langfuseHandler = langfuse.publicKey && langfuse.secretKey ? new CallbackHandler(langfuse) : undefined;
 
     logger.debug(`Langfuse: ${langfuseHandler ? 'enable' : 'disable'}`);
+
+    const chain = prompt.pipe(model).pipe(new StringOutputParser());
 
     const stream = await chain.streamEvents(
       {
@@ -54,9 +54,9 @@ export async function handle(
     );
     for await (const sEvent of stream) {
       logger.trace('event', sEvent);
-      if (sEvent.event === 'on_llm_stream') {
+      if (sEvent.event === 'on_chat_model_stream') {
         const chunk = sEvent.data.chunk;
-        if (modelType === 'aws') {
+        if (platform === 'aws') {
           output.write(chunk.content ?? '');
         } else {
           output.write(chunk.text ?? '');
