@@ -23,7 +23,7 @@
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-promise": "^7.1.0",
     "eslint-plugin-solid": "^0.14.4",
-    "typescript-eslint": "^8.14.0"
+    "typescript-eslint": "^8.15.0"
   },
   "author": "",
   "license": "UNLICENSED",
