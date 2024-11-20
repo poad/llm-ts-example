@@ -48,8 +48,8 @@
     "aws-cdk-lib": "^2.167.2",
     "constructs": "^10.4.2",
     "esbuild": "^0.24.0",
-    "langfuse": "^3.29.1",
-    "langfuse-langchain": "^3.29.1",
+    "langfuse": "^3.30.1",
+    "langfuse-langchain": "^3.30.1",
     "source-map-support": "^0.5.21",
     "uuid": "^11.0.3"
   }
