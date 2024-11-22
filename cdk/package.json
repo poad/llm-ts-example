@@ -22,7 +22,7 @@
     "@types/node": "^22.9.1",
     "@types/uuid": "^10.0.0",
     "@vitest/eslint-plugin": "^1.1.10",
-    "aws-cdk": "^2.168.0",
+    "aws-cdk": "^2.169.0",
     "dotenv": "^16.4.5",
     "eslint": "^9.15.0",
     "eslint-import-resolver-typescript": "^3.6.3",
@@ -45,11 +45,11 @@
     "@langchain/langgraph": "^0.2.22",
     "@langchain/openai": "^0.3.14",
     "@smithy/eventstream-codec": "^3.1.9",
-    "aws-cdk-lib": "^2.168.0",
+    "aws-cdk-lib": "^2.169.0",
     "constructs": "^10.4.2",
     "esbuild": "^0.24.0",
-    "langfuse": "^3.30.1",
-    "langfuse-langchain": "^3.30.1",
+    "langfuse": "^3.30.2",
+    "langfuse-langchain": "^3.30.2",
     "source-map-support": "^0.5.21",
     "uuid": "^11.0.3"
   }
