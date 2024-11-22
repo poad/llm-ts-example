@@ -6,13 +6,10 @@ import * as dotenv from 'dotenv';
 
 export default defineConfig({
   root: '.',
-  esbuild: {
-    tsconfigRaw: '{}',
-  },
   test: {
-    environment: 'jsdom',
+    environment: 'node',
     globals: true,
-    isolate: false,
+    isolate: true,
     env: dotenv.config({ path: '.env.test' }).parsed,
     testTimeout: 30000,
   },

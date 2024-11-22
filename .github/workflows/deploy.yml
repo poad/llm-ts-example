@@ -65,6 +65,8 @@ jobs:
           -c langfuse-endpoint=${{ secrets.LANGFUSE_ENDPOINT }} \
           -c langfuse-public-key=${{ secrets.LANGFUSE_PUBLIC_KEY }} \
           -c langfuse-secret-key=${{ secrets.LANGFUSE_SECRET_KEY }} \
+          -c langsmith-api-key=${{ secrets.LANGCHAIN_API_KEY }} \
+          -c langsmith-project=${{ secrets.LANGCHAIN_PROJECT }} \
           -c anthropic-api-key=${{ secrets.ANTHROPIC_API_KEY }} \
           -c claude-model=${{ vars.CLAUDE_MODEL }}
 

@@ -3,6 +3,14 @@ import { handle } from '../lambda/handler';
 import { stdout } from 'node:process';
 import { PassThrough } from 'node:stream';
 
+function sleep(time: number) {
+  return new Promise<void>((resolve) => {
+      setTimeout(() => {
+          resolve();
+      }, time);
+  });
+}
+
 // eslint-disable-next-line vitest/expect-expect
 it('test', { retry: 0 }, async () => {
 
@@ -12,4 +20,5 @@ it('test', { retry: 0 }, async () => {
   const question = process.env.QUESTION && process.env.QUESTION.length > 0 ? process.env.QUESTION : 'あなたは誰？';
 
   await handle(`local-${sessionId}`, {question, model}, output);
+  await sleep(1000);
 });

@@ -27,10 +27,15 @@ interface CloudfrontCdnTemplateStackProps extends Config {
   langfuse?: {
     sk: string;
     pk: string;
-    endpoint?: string;
+    endpoint: string;
   };
   anthoropicApiKey: string;
   claudeModel: string;
+  langsmith?: {
+    apiKey: string;
+    project: string;
+    endpoint: string;
+  };
 }
 
 export class CloudfrontCdnTemplateStack extends cdk.Stack {
@@ -53,6 +58,7 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
       langfuse,
       anthoropicApiKey,
       claudeModel,
+      langsmith,
     } = props;
 
     buildFrontend();
@@ -65,16 +71,16 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
     });
 
     const devOptions = {
-      environment: {
-        NODE_OPTIONS: '--enable-source-maps',
-      },
-      bundling: {
-        sourceMap: true,
-        sourceMapMode: nodejs.SourceMapMode.BOTH,
-        sourcesContent: true,
-        keepNames: true,
-      },
-      applicationLogLevelV2: lambda.ApplicationLogLevel.DEBUG,
+      // environment: {
+      //   NODE_OPTIONS: '--enable-source-maps',
+      // },
+      // bundling: {
+      //   sourceMap: true,
+      //   sourceMapMode: nodejs.SourceMapMode.BOTH,
+      //   sourcesContent: true,
+      //   keepNames: true,
+      // },
+      applicationLogLevelV2: lambda.ApplicationLogLevel.TRACE,
     };
 
     const apiRootPath = '/api/';
@@ -87,6 +93,13 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
       } : {}),
     } : {};
 
+    const langsmithEnv: Record<string, string> = langsmith ? {
+      LANGCHAIN_TRACING_V2: 'true',
+      LANGCHAIN_ENDPOINT: langsmith.endpoint,
+      LANGCHAIN_API_KEY: langsmith.apiKey,
+      LANGCHAIN_PROJECT: langsmith.project,
+    } : {};
+
     const fn = new nodejs.NodejsFunction(this, 'Lambda', {
       runtime: lambda.Runtime.NODEJS_20_X,
       architecture: lambda.Architecture.ARM_64,
@@ -94,19 +107,20 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
       functionName,
       retryAttempts: 0,
       environment: {
-        ...devOptions.environment,
+        // ...devOptions.environment,
         API_ROOT_PATH: apiRootPath,
         AZURE_OPENAI_API_INSTANCE_NAME: endpoint,
         AZURE_OPENAI_API_DEPLOYMENT_NAME: deployName,
         AZURE_OPENAI_API_KEY: apiKey,
         AZURE_OPENAI_API_VERSION: apiVersion,
-        ...langfuseEnv,
         ANTHROPIC_API_KEY: anthoropicApiKey,
         CLAUDE_MODEL: claudeModel,
+        ...langfuseEnv,
+        ...langsmithEnv,
       },
       bundling: {
         minify: true,
-        ...devOptions.bundling,
+        // ...devOptions.bundling,
       },
       memorySize: 256,
       timeout: cdk.Duration.minutes(1),

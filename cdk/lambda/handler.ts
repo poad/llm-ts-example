@@ -13,11 +13,8 @@ export async function handle(
 ) {
 
   const langfuse = {
-    sessionId,
     publicKey: process.env.LANGFUSE_PUBLIC_KEY,
     secretKey: process.env.LANGFUSE_SECRET_KEY,
-    baseUrl: process.env.LANGFUSE_BASEURL,
-    flushAt: 1,
   };
 
   const { platform, model } = selectLlm(modelType);
@@ -34,7 +31,11 @@ export async function handle(
 
   try {
     // Initialize Langfuse callback handler
-    const langfuseHandler = langfuse.publicKey && langfuse.secretKey ? new CallbackHandler(langfuse) : undefined;
+    const langfuseHandler = langfuse.publicKey && langfuse.secretKey ? new CallbackHandler({
+      sessionId,
+      flushInterval: 0,
+      flushAt: 1,
+    }) : undefined;
 
     logger.debug(`Langfuse: ${langfuseHandler ? 'enable' : 'disable'}`);
 
