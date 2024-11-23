@@ -19,7 +19,7 @@
     "@stylistic/eslint-plugin-plus": "^2.11.0",
     "@stylistic/eslint-plugin-ts": "^2.11.0",
     "@types/aws-lambda": "^8.10.145",
-    "@types/node": "^22.9.2",
+    "@types/node": "^22.9.3",
     "@types/uuid": "^10.0.0",
     "@vitest/eslint-plugin": "^1.1.10",
     "aws-cdk": "^2.170.0",

@@ -49,8 +49,8 @@ export async function handle(
         version: 'v2',
         configurable: {
           sessionId,
-          callbacks: langfuseHandler ? [langfuseHandler] : [],
         },
+        callbacks: langfuseHandler ? [langfuseHandler] : [],
       },
     );
     for await (const sEvent of stream) {
