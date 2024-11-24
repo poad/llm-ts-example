@@ -8,8 +8,6 @@ import tseslint from 'typescript-eslint';
 // @ts-expect-error ignore type errors
 import eslintImport from "eslint-plugin-import";
 
-import solid from 'eslint-plugin-solid';
-
 import vitest from "@vitest/eslint-plugin";
 
 
@@ -41,7 +39,6 @@ export default tseslint.config(
       '@stylistic': stylistic,
       '@stylistic/ts': stylisticTs,
       '@stylistic/jsx': stylisticJsx,
-      solid,
     },
     settings: {
       'import/internal-regex': '^~/',
@@ -58,9 +55,10 @@ export default tseslint.config(
       '@stylistic/semi': ["error", "always"],
       '@stylistic/ts/indent': ['error', 2],
       '@stylistic/jsx/jsx-indent': ['error', 2],
-      "comma-dangle": ["error", "always-multiline"],
+      'comma-dangle': ["error", "always-multiline"],
       semi: ["error", "always"],
       quotes: ["error", "single"],
+      indent: ['error', 2]
     },
   },
   {
