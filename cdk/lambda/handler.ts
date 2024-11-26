@@ -35,6 +35,7 @@ export async function handle(
       sessionId,
       flushInterval: 0,
       flushAt: 1,
+      tags: [modelName],
     }) : undefined;
 
     logger.debug(`Langfuse: ${langfuseHandler ? 'enable' : 'disable'}`);
