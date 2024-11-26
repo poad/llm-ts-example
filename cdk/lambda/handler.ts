@@ -17,7 +17,7 @@ export async function handle(
     secretKey: process.env.LANGFUSE_SECRET_KEY,
   };
 
-  const { platform, model } = selectLlm(modelType);
+  const { platform, model, modelName } = selectLlm(modelType);
 
   const qaPrpmpt = `Answer the user's question to the best of your ability.
   However, please keep your answers brief and in the same language as the question.
@@ -39,7 +39,9 @@ export async function handle(
 
     logger.debug(`Langfuse: ${langfuseHandler ? 'enable' : 'disable'}`);
 
-    const chain = prompt.pipe(model).pipe(new StringOutputParser());
+    const chain = prompt.pipe(model).pipe(new StringOutputParser()).withConfig({
+      tags: [modelName],
+    });
 
     const stream = await chain.streamEvents(
       {
