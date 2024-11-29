@@ -67,22 +67,7 @@ export function selectLlm(modelType?: string): {
       }),
     };
   }
-  if (modelType === 'anthropic') {
-    logger.debug('use: Anthropic Claude 3.5 Sonnet');
-    return {
-      platform: 'anthropic',
-      modelName: process.env.CLAUDE_MODEL ?? 'claude-3-5-sonnet-20240620',
-      model: new ChatAnthropic({
-        model: process.env.CLAUDE_MODEL ?? 'claude-3-5-sonnet-20240620',
-        streaming: true,
-        temperature: 0,
-        metadata: {
-          tag: 'chat',
-        },
-      }),
-    };
-  }
-  if (modelType === 'anthropic') {
+  if (modelType === 'gpt-4o-mini') {
     logger.debug('use: GPT-4o mini on Azure OpenAI Service');
     return {
       platform: 'azure',
