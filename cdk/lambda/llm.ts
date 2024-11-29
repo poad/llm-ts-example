@@ -1,6 +1,5 @@
 import { AzureChatOpenAI } from '@langchain/openai';
 import { ChatBedrockConverse } from '@langchain/aws';
-import { ChatAnthropic } from '@langchain/anthropic';
 import { logger } from './logger';
 import { BaseChatModel } from '@langchain/core/language_models/chat_models';
 
