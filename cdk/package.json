@@ -21,7 +21,7 @@
     "@types/aws-lambda": "^8.10.146",
     "@types/node": "^22.10.1",
     "@types/uuid": "^10.0.0",
-    "@vitest/eslint-plugin": "^1.1.12",
+    "@vitest/eslint-plugin": "^1.1.13",
     "aws-cdk": "^2.171.1",
     "dotenv": "^16.4.5",
     "eslint": "^9.16.0",
