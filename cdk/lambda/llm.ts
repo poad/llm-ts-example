@@ -8,13 +8,7 @@ export function selectLlm(modelType?: string): {
   modelName: string;
   model: BaseChatModel;
 } {
-  const bedrockRegion = process.env.BEDROCK_AWS_REGION;
-  const credentials = process.env.AWS_SECRET_ACCESS_KEY && process.env.AWS_ACCESS_KEY_ID ? {
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    sessionToken: process.env.AWS_SESSION_TOKEN,
-  } : undefined;
-
+  const region = process.env.BEDROCK_AWS_REGION;
   if (modelType === 'cohere') {
     logger.debug('use: cohere.command-r-plus-v1:0 on AWS Bedrock');
     return {
@@ -27,8 +21,7 @@ export function selectLlm(modelType?: string): {
         metadata: {
           tag: 'chat',
         },
-        region: bedrockRegion,
-        credentials,
+        region,
       }),
     };
   }
@@ -44,8 +37,7 @@ export function selectLlm(modelType?: string): {
         metadata: {
           tag: 'chat',
         },
-        region: bedrockRegion,
-        credentials,
+        region,
       }),
     };
   }
@@ -61,8 +53,55 @@ export function selectLlm(modelType?: string): {
         metadata: {
           tag: 'chat',
         },
-        region: bedrockRegion,
-        credentials,
+        region,
+      }),
+    };
+  }
+  if (modelType === 'nova-lite') {
+    logger.debug('use: amazon.nova-lite-v1:0 on AWS Bedrock');
+    return {
+      platform: 'aws',
+      modelName: 'us.amazon.nova-lite-v1:0',
+      model: new ChatBedrockConverse({
+        model: 'us.amazon.nova-lite-v1:0',
+        temperature: 0,
+        streaming: true,
+        metadata: {
+          tag: 'chat',
+        },
+        region,
+      }),
+    };
+  }
+  if (modelType === 'nova-micro') {
+    logger.debug('use: amazon.nova-micro-v1:0 on AWS Bedrock');
+    return {
+      platform: 'aws',
+      modelName: 'us.amazon.nova-micro-v1:0',
+      model: new ChatBedrockConverse({
+        model: 'us.amazon.nova-micro-v1:0',
+        temperature: 0,
+        streaming: true,
+        metadata: {
+          tag: 'chat',
+        },
+        region,
+      }),
+    };
+  }
+  if (modelType === 'nova-pro') {
+    logger.debug('use: amazon.nova-pro-v1:0 on AWS Bedrock');
+    return {
+      platform: 'aws',
+      modelName: 'us.amazon.nova-pro-v1:0',
+      model: new ChatBedrockConverse({
+        model: 'us.amazon.nova-pro-v1:0',
+        temperature: 0,
+        streaming: true,
+        metadata: {
+          tag: 'chat',
+        },
+        region,
       }),
     };
   }
