@@ -42,7 +42,7 @@
     "@langchain/anthropic": "^0.3.9",
     "@langchain/aws": "^0.1.2",
     "@langchain/core": "^0.3.23",
-    "@langchain/langgraph": "^0.2.32",
+    "@langchain/langgraph": "^0.2.33",
     "@langchain/openai": "^0.3.14",
     "@smithy/eventstream-codec": "^3.1.10",
     "aws-cdk-lib": "^2.173.0",
