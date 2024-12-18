@@ -151,3 +151,5 @@ dist-ssr
 *.suo
 *.sln
 *.sw?
+.env
+.env.*
