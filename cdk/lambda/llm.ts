@@ -57,6 +57,23 @@ export function selectLlm(modelType?: string): {
       }),
     };
   }
+  if (modelType === 'llama33-70b') {
+    logger.debug('use: Meta LLama 3.3 70B Instruct');
+    return {
+      platform: 'aws',
+      modelName: 'us.meta.llama3-3-70b-instruct-v1:0',
+      model: new ChatBedrockConverse({
+        model: 'us.meta.llama3-3-70b-instruct-v1:0',
+        temperature: 0,
+        streaming: true,
+        metadata: {
+          tag: 'chat',
+        },
+        region,
+      }),
+    };
+  }
+
   if (modelType === 'nova-lite') {
     logger.debug('use: amazon.nova-lite-v1:0 on AWS Bedrock');
     return {
