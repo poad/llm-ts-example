@@ -29,6 +29,11 @@ const models = [
     selected: false,
   },
   {
+    id: 'llama33-70b',
+    name: 'Meta LLama 3.3 70B Instruct (AWS Bedrock)',
+    selected: false,
+  },
+  {
     id: 'gpt-4o',
     name: 'GPT-4o',
     selected: false,
