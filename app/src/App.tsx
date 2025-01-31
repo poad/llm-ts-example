@@ -44,6 +44,11 @@ const models = [
     selected: false,
   },
   {
+    id: 'o1-mini',
+    name: 'GPT-o1 mini',
+    selected: false,
+  },
+  {
     id: 'cohere',
     name: 'Cohere Command R+ v1 (AWS Bedrock)',
     selected: false,

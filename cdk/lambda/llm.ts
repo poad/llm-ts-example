@@ -137,6 +137,21 @@ export function selectLlm(modelType?: string): {
       }),
     };
   }
+  if (modelType === 'o1-mini') {
+    logger.debug('use: GPT-o1 mini on Azure OpenAI Service');
+    return {
+      platform: 'azure',
+      modelName: 'o1-mini',
+      model: new AzureChatOpenAI({
+        modelName: 'o1-mini',
+        temperature: 0,
+        streaming: true,
+        metadata: {
+          tag: 'chat',
+        },
+      }),
+    };
+  }
   logger.debug('use: GPT-4o on Azure OpenAI Service');
   return {
     platform: 'azure',
