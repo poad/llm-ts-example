@@ -17,7 +17,7 @@
     "uuid": "^11.0.5"
   },
   "devDependencies": {
-    "@eslint/compat": "^1.2.5",
+    "@eslint/compat": "^1.2.6",
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.19.0",
     "@solidjs/router": "^0.15.3",
@@ -27,7 +27,7 @@
     "@stylistic/eslint-plugin-plus": "^2.13.0",
     "@stylistic/eslint-plugin-ts": "^2.13.0",
     "@types/crypto-js": "^4.2.2",
-    "@types/node": "^22.12.0",
+    "@types/node": "^22.13.0",
     "@types/uuid": "^10.0.0",
     "crypto-js": "^4.2.0",
     "eslint": "^9.19.0",
