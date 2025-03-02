@@ -152,54 +152,54 @@ export function selectLlm(modelType?: string): {
       }),
     };
   }
-  if (modelType === 'claude-3.7-sonnet-v1') {
-    logger.debug('use: Claude 3.7 Sonnet v1 on AWS Bedrock');
-    return {
-      platform: 'aws',
-      modelName: 'us.anthropic.claude-3-7-sonnet-20250219-v1:0',
-      model: new ChatBedrockConverse({
-        model: 'us.anthropic.claude-3-7-sonnet-20250219-v1:0',
-        temperature: 0,
-        streaming: true,
-        metadata: {
-          tag: 'chat',
-        },
-        region,
-      }),
-    };
-  }
-  if (modelType === 'claude-3.5-sonnet-v2') {
-    logger.debug('use: Claude 3.5 Sonnet v2 on AWS Bedrock');
-    return {
-      platform: 'aws',
-      modelName: 'us.anthropic.claude-3-5-sonnet-20241022-v2:0',
-      model: new ChatBedrockConverse({
-        model: 'us.anthropic.claude-3-5-sonnet-20241022-v2:0',
-        temperature: 0,
-        streaming: true,
-        metadata: {
-          tag: 'chat',
-        },
-        region,
-      }),
-    };
-  }
-  if (modelType === 'claude-3.5-sonnet-v1') {
-    logger.debug('use: Claude 3.5 Sonnet v1 on AWS Bedrock');
-    return {
-      platform: 'aws',
-      modelName: 'us.anthropic.claude-3-5-sonnet-20240620-v1:0',
-      model: new ChatBedrockConverse({
-        model: 'us.anthropic.claude-3-5-sonnet-20240620-v1:0',
-        temperature: 0,
-        streaming: true,
-        metadata: {
-          tag: 'chat',
-        },
-        region,
-      }),
-    };
-  }
+  // if (modelType === 'claude-3.7-sonnet-v1') {
+  //   logger.debug('use: Claude 3.7 Sonnet v1 on AWS Bedrock');
+  //   return {
+  //     platform: 'aws',
+  //     modelName: 'us.anthropic.claude-3-7-sonnet-20250219-v1:0',
+  //     model: new ChatBedrockConverse({
+  //       model: 'us.anthropic.claude-3-7-sonnet-20250219-v1:0',
+  //       temperature: 0,
+  //       streaming: true,
+  //       metadata: {
+  //         tag: 'chat',
+  //       },
+  //       region,
+  //     }),
+  //   };
+  // }
+  // if (modelType === 'claude-3.5-sonnet-v2') {
+  //   logger.debug('use: Claude 3.5 Sonnet v2 on AWS Bedrock');
+  //   return {
+  //     platform: 'aws',
+  //     modelName: 'us.anthropic.claude-3-5-sonnet-20241022-v2:0',
+  //     model: new ChatBedrockConverse({
+  //       model: 'us.anthropic.claude-3-5-sonnet-20241022-v2:0',
+  //       temperature: 0,
+  //       streaming: true,
+  //       metadata: {
+  //         tag: 'chat',
+  //       },
+  //       region,
+  //     }),
+  //   };
+  // }
+  // if (modelType === 'claude-3.5-sonnet-v1') {
+  //   logger.debug('use: Claude 3.5 Sonnet v1 on AWS Bedrock');
+  //   return {
+  //     platform: 'aws',
+  //     modelName: 'us.anthropic.claude-3-5-sonnet-20240620-v1:0',
+  //     model: new ChatBedrockConverse({
+  //       model: 'us.anthropic.claude-3-5-sonnet-20240620-v1:0',
+  //       temperature: 0,
+  //       streaming: true,
+  //       metadata: {
+  //         tag: 'chat',
+  //       },
+  //       region,
+  //     }),
+  //   };
+  // }
   logger.debug('use: GPT-4o on Azure OpenAI Service');
   return {
     platform: 'azure',

@@ -53,21 +53,21 @@ const models = [
     name: 'Cohere Command R+ v1 (AWS Bedrock)',
     selected: false,
   },
-  {
-    id: 'claude-3.7-sonnet-v1',
-    name: 'Claude 3.7 Sonnet v1 (AWS Bedrock)',
-    selected: false,
-  },
-  {
-    id: 'claude-3.5-sonnet-v2',
-    name: 'Claude 3.5 Sonnet v2 (AWS Bedrock)',
-    selected: false,
-  },
-  {
-    id: 'claude-3.5-sonnet-v1',
-    name: 'Claude 3.5 Sonnet v1 (AWS Bedrock)',
-    selected: false,
-  },
+  // {
+  //   id: 'claude-3.7-sonnet-v1',
+  //   name: 'Claude 3.7 Sonnet v1 (AWS Bedrock)',
+  //   selected: false,
+  // },
+  // {
+  //   id: 'claude-3.5-sonnet-v2',
+  //   name: 'Claude 3.5 Sonnet v2 (AWS Bedrock)',
+  //   selected: false,
+  // },
+  // {
+  //   id: 'claude-3.5-sonnet-v1',
+  //   name: 'Claude 3.5 Sonnet v1 (AWS Bedrock)',
+  //   selected: false,
+  // },
 ];
 
 function App() {
