@@ -45,7 +45,7 @@ const models = [
   },
   {
     id: 'o1-mini',
-    name: 'GPT-o1 mini',
+    name: 'o1 mini',
     selected: false,
   },
   {
@@ -68,6 +68,16 @@ const models = [
   //   name: 'Claude 3.5 Sonnet v1 (AWS Bedrock)',
   //   selected: false,
   // },
+  {
+    id: 'o3-mini',
+    name: 'o3 mini',
+    selected: false,
+  },
+  {
+    id: 'o1',
+    name: 'GPT-o1',
+    selected: false,
+  },
 ];
 
 function App() {

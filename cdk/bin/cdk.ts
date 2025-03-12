@@ -14,8 +14,8 @@ const config: Config & { stackName: string } = env
   : app.node.tryGetContext('default');
 
 const endpoint = app.node.tryGetContext('oai-endpoint');
+const instanceName = app.node.tryGetContext('oai-instance-name');
 const apiKey = app.node.tryGetContext('oai-api-key');
-const deployName = app.node.tryGetContext('oai-deploy');
 const apiVersion = app.node.tryGetContext('oai-api-version');
 
 const langfusePk: string | undefined = app.node.tryGetContext('langfuse-public-key');
@@ -42,12 +42,13 @@ const anthoropicApiKey = app.node.tryGetContext('anthropic-api-key');
 const claudeModel  = app.node.tryGetContext('claude-model');
 
 new CloudfrontCdnTemplateStack(app, config.stackName, {
-  ...config,
   appName: 'llm-ts-example',
+  bucketName: config.bucketName,
+  cloudfront: config.cloudfront,
   environment: env,
   endpoint,
+  instanceName,
   apiKey,
-  deployName,
   apiVersion,
   langfuse,
   anthoropicApiKey,

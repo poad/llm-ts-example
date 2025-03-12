@@ -12,9 +12,6 @@ import vitest from "@vitest/eslint-plugin";
 
 
 export default tseslint.config(
-  eslint.configs.recommended,
-  ...tseslint.configs.strict,
-  ...tseslint.configs.stylistic,
   {
     ignores: [
       '**/*.d.ts',
@@ -31,6 +28,9 @@ export default tseslint.config(
       '.output',
     ],
   },
+  eslint.configs.recommended,
+  ...tseslint.configs.strict,
+  ...tseslint.configs.stylistic,
   {
     files: ['{bin,lib,lambda}/**/*.{ts,tsx}'],
     ...eslintImport.flatConfigs.recommended,
@@ -52,13 +52,11 @@ export default tseslint.config(
       },
     },
     rules: {
-      '@stylistic/semi': ["error", "always"],
+      '@stylistic/semi': ['error', 'always'],
       '@stylistic/ts/indent': ['error', 2],
       '@stylistic/jsx/jsx-indent': ['error', 2],
       'comma-dangle': ["error", "always-multiline"],
-      semi: ["error", "always"],
-      quotes: ["error", "single"],
-      indent: ['error', 2]
+      '@stylistic/quotes': ['error', 'single'],
     },
   },
   {

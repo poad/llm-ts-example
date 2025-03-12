@@ -20,9 +20,9 @@ export interface Config extends cdk.StackProps {
 
 interface CloudfrontCdnTemplateStackProps extends Config {
   environment?: string;
-  endpoint: string;
+  endpoint?: string;
+  instanceName: string;
   apiKey: string;
-  deployName: string;
   apiVersion: string;
   langfuse?: {
     sk: string;
@@ -52,8 +52,8 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
       environment,
       cloudfront: { comment },
       endpoint,
+      instanceName,
       apiKey,
-      deployName,
       apiVersion,
       langfuse,
       anthoropicApiKey,
@@ -109,8 +109,8 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
       environment: {
         // ...devOptions.environment,
         API_ROOT_PATH: apiRootPath,
-        AZURE_OPENAI_API_INSTANCE_NAME: endpoint,
-        AZURE_OPENAI_API_DEPLOYMENT_NAME: deployName,
+        ...(endpoint ? {AZURE_OPENAI_API_ENDPOINT: endpoint} : {}),
+        AZURE_OPENAI_API_INSTANCE_NAME: instanceName,
         AZURE_OPENAI_API_KEY: apiKey,
         AZURE_OPENAI_API_VERSION: apiVersion,
         ANTHROPIC_API_KEY: anthoropicApiKey,
@@ -119,7 +119,10 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
         ...langsmithEnv,
       },
       bundling: {
+        target: 'node22',
         minify: true,
+        format: nodejs.OutputFormat.ESM,
+        banner: 'import { createRequire } from \'module\';const require = createRequire(import.meta.url);',
         // ...devOptions.bundling,
       },
       memorySize: 256,
