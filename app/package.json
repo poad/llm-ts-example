@@ -31,7 +31,7 @@
     "@types/uuid": "^10.0.0",
     "crypto-js": "^4.2.0",
     "eslint": "^9.22.0",
-    "eslint-import-resolver-typescript": "^3.8.6",
+    "eslint-import-resolver-typescript": "^3.9.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-promise": "^7.2.1",
     "eslint-plugin-solid": "^0.14.5",
@@ -39,7 +39,7 @@
     "solid-refresh": "^0.7.5",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.26.1",
-    "vite": "^6.2.1",
+    "vite": "^6.2.2",
     "vite-plugin-solid": "^2.11.6"
   }
 }
