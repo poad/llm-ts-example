@@ -32,7 +32,7 @@
     "tsx": "^4.19.3",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.28.0",
-    "vite": "^6.2.4",
+    "vite": "^6.2.5",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.0.9"
   },
@@ -45,7 +45,7 @@
     "@langchain/langgraph": "^0.2.61",
     "@langchain/openai": "^0.3.17",
     "@smithy/eventstream-codec": "^3.1.10",
-    "aws-cdk-lib": "^2.186.0",
+    "aws-cdk-lib": "^2.187.0",
     "constructs": "^10.4.2",
     "langfuse": "^3.37.0",
     "langfuse-langchain": "^3.37.0",
