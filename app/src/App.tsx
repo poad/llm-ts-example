@@ -44,6 +44,11 @@ const models = [
     selected: false,
   },
   {
+    id: 'gpt-4.1',
+    name: 'GPT-4o.1',
+    selected: false,
+  },
+  {
     id: 'o1-mini',
     name: 'o1 mini',
     selected: false,

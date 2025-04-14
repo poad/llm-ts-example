@@ -129,6 +129,20 @@ export function selectLlm(modelType?: string): {
           },
         }),
       };
+    case 'gpt-4.1':
+      logger.debug('use: GPT-4.1 on Azure OpenAI Service');
+      return {
+        platform: 'azure',
+        modelName: 'gpt-4.1',
+        model: new AzureChatOpenAI({
+          azureOpenAIApiDeploymentName: 'gpt-4.1',
+          temperature: 0,
+          streaming: true,
+          metadata: {
+            tag: 'chat',
+          },
+        }),
+      };
     case 'o1-mini':
       logger.debug('use: o1 mini on Azure OpenAI Service');
       return {
