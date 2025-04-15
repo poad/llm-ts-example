@@ -12,10 +12,10 @@ updates:
       - poad
 
   - package-ecosystem: npm
-    directories: 
-      - '/'
-      - '/cdk/'
-      - '/app/'
+    directories:
+      - '/basic/'
+      - '/basic/cdk/'
+      - '/basic/app/'
     schedule:
       interval: daily
       timezone: Asia/Tokyo

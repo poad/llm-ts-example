@@ -49,8 +49,10 @@ jobs:
     - uses: pnpm/action-setup@v4
       name: Install pnpm
       with:
+        package_json_file: basic/package.json
         run_install: |
           - recursive: true
+            cwd: basic
             args: [--no-frozen-lockfile]
           - args: [--global, aws-cdk, esbuild]
 
