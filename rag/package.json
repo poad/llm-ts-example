@@ -1,0 +1,17 @@
+{
+  "name": "rag-example",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "lint": "pnpm -r lint",
+    "lint-fix": "pnpm -r lint-fix",
+    "build": "pnpm -r --if-present build",
+    "dev": "pnpm --filter @llm-ts-example/app dev",
+    "clean": "pnpm -r --if-present clean"
+  },
+  "packageManager": "pnpm@10.8.1",
+  "devDependencies": {
+    "pnpm": "^10.8.1"
+  }
+}
