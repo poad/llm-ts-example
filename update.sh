@@ -21,7 +21,22 @@ if [ $result -ne 0 ]; then
 fi
 echo ""
 pwd
-npx pnpm@latest self-update && pnpm install && pnpm up -r && pnpm build
+npx pnpm@latest self-update && pnpm install -r && pnpm up -r && pnpm build
+result=$?
+if [ $result -ne 0 ]; then
+  cd "${CUR}" || exit
+  exit $result
+fi
+
+cd "${CURRENT}/rag" || exit
+result=$?
+if [ $result -ne 0 ]; then
+  cd "${CUR}" || exit
+  exit $result
+fi
+echo ""
+pwd
+npx pnpm@latest self-update && pnpm install -r && pnpm up -r && pnpm build
 result=$?
 if [ $result -ne 0 ]; then
   cd "${CUR}" || exit

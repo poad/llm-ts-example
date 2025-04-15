@@ -1,0 +1,9 @@
+{
+  "node_version": "22",
+  "dockerfile_lines": [],
+  "dependencies": ["."],
+  "graphs": {
+    "agent": "./lambda/graph.ts:graph"
+  },
+  "env": ".env.test"
+}

@@ -16,6 +16,10 @@ updates:
       - '/basic/'
       - '/basic/cdk/'
       - '/basic/app/'
+      - '/rag/'
+      - '/rag/cdk/'
+      - '/rag/batch/'
+      - '/rag/app/'
     schedule:
       interval: daily
       timezone: Asia/Tokyo
