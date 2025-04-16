@@ -15,6 +15,9 @@ jobs:
     strategy:
       matrix:
         node-version: [22.x]
+        path:
+          - agent-mastra
+          - node-llama-cpp
 
     runs-on: ubuntu-latest
     steps:
@@ -27,22 +30,21 @@ jobs:
         check-latest: true
 
     - uses: pnpm/action-setup@v4
-      name: Install pnpm
+      name: Install pnpm ${{ matrix.path }}
       with:
-        package_json_file: agent-mastra/package.json
+        package_json_file: ${{ matrix.path }}/package.json
         run_install: |
           - recursive: true
             cwd: agent-mastra
             args: [--no-frozen-lockfile]
           - args: [--global, esbuild]
 
-
     - uses: oven-sh/setup-bun@v2
 
-    - name: lint
-      working-directory: ./agent-mastra
+    - name: lint ${{ matrix.path }}
+      working-directory: ./${{ matrix.path }}
       run: bun run --bun lint
 
-    - name: build
-      working-directory: ./agent-mastra
+    - name: build ${{ matrix.path }}
+      working-directory: ./${{ matrix.path }}
       run: bun run --bun build

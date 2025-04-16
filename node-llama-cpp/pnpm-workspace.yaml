@@ -1,0 +1,7 @@
+packages:
+  - .
+
+onlyBuiltDependencies:
+  - node-llama-cpp
+  - protobufjs
+  - sharp
