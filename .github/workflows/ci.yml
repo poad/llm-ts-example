@@ -19,6 +19,7 @@ jobs:
           - agent-mastra
           - node-llama-cpp
           - graphrag-local
+          - webllm
 
     runs-on: ubuntu-latest
     steps:
