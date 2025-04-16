@@ -21,6 +21,7 @@ updates:
       - '/rag/batch/'
       - '/rag/app/'
       - '/agent-mastra/'
+      - '/node-llama-cpp/'
     schedule:
       interval: daily
       timezone: Asia/Tokyo

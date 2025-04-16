@@ -1,0 +1,44 @@
+{
+  "name": "node-llama-cpp-langchain-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "node index.js",
+    "clean": "tsc --build --clean",
+    "lint": "eslint index.ts",
+    "lint-fix": "eslint index.ts --fix"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.24.0",
+    "@stylistic/eslint-plugin": "^4.2.0",
+    "@stylistic/eslint-plugin-js": "^4.2.0",
+    "@stylistic/eslint-plugin-plus": "^4.2.0",
+    "@stylistic/eslint-plugin-ts": "^4.2.0",
+    "@types/async-retry": "^1.4.9",
+    "@types/html-to-text": "^9.0.4",
+    "@types/node": "^22.14.1",
+    "@types/uuid": "^10.0.0",
+    "eslint": "^9.24.0",
+    "eslint-import-resolver-typescript": "^4.3.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-promise": "^7.2.1",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.30.1"
+  },
+  "dependencies": {
+    "@langchain/community": "^0.3.40",
+    "@langchain/core": "^0.3.44",
+    "@langchain/langgraph": "^0.2.64",
+    "@xenova/transformers": "^2.17.2",
+    "html-to-text": "^9.0.5",
+    "jsdom": "^26.1.0",
+    "langchain": "^0.3.21",
+    "node-llama-cpp": "^3.7.0",
+    "uuid": "^11.1.0"
+  },
+  "packageManager": "pnpm@10.8.1"
+}
