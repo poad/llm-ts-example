@@ -1,0 +1,48 @@
+name: Build and Test
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+    - main
+
+  workflow_dispatch:
+
+jobs:
+  lint:
+    strategy:
+      matrix:
+        node-version: [22.x]
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        check-latest: true
+
+    - uses: pnpm/action-setup@v4
+      name: Install pnpm
+      with:
+        package_json_file: agent-mastra/package.json
+        run_install: |
+          - recursive: true
+            cwd: agent-mastra
+            args: [--no-frozen-lockfile]
+          - args: [--global, esbuild]
+
+
+    - uses: oven-sh/setup-bun@v2
+
+    - name: lint
+      working-directory: ./agent-mastra
+      run: bun run --bun lint
+
+    - name: build
+      working-directory: ./agent-mastra
+      run: bun run --bun build
