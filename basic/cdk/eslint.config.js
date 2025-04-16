@@ -3,28 +3,21 @@
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import stylisticTs from '@stylistic/eslint-plugin-ts';
-import stylisticJsx from '@stylistic/eslint-plugin-jsx';
 import tseslint from 'typescript-eslint';
 // @ts-expect-error ignore type errors
 import eslintImport from "eslint-plugin-import";
 
 import vitest from "@vitest/eslint-plugin";
 
-
-export default tseslint.config(
+const config = tseslint.config(
   {
     ignores: [
       '**/*.d.ts',
-      '*.{js,jsx}',
-      'src/tsconfig.json',
-      'src/stories',
-      '**/*.css',
+      '**/*.js',
       'node_modules/**/*',
-      './.next/*',
       'out',
-      '.storybook',
       'dist',
-      '.vinxi',
+      'cdk.out',
       '.output',
     ],
   },
@@ -38,7 +31,6 @@ export default tseslint.config(
     plugins: {
       '@stylistic': stylistic,
       '@stylistic/ts': stylisticTs,
-      '@stylistic/jsx': stylisticJsx,
     },
     settings: {
       'import/internal-regex': '^~/',
@@ -54,7 +46,6 @@ export default tseslint.config(
     rules: {
       '@stylistic/semi': ['error', 'always'],
       '@stylistic/ts/indent': ['error', 2],
-      '@stylistic/jsx/jsx-indent': ['error', 2],
       'comma-dangle': ["error", "always-multiline"],
       '@stylistic/quotes': ['error', 'single'],
     },
@@ -70,3 +61,5 @@ export default tseslint.config(
     },
   },
 );
+
+export default config;

@@ -1,8 +1,0 @@
-packages:
-  - './batch'
-  - './app'
-  - './cdk'
-
-overrides:
-  axios: '>=1.8.2'
-  esbuild: '>=0.25.0'

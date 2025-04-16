@@ -43,7 +43,7 @@
   "exclude": [
     "node_modules",
     "cdk.out",
-    "eslint.config.mjs",
+    "eslint.config.js",
     "vite.config.ts"
   ]
 }

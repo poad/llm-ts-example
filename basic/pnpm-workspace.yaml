@@ -1,4 +1,0 @@
-packages:
-  - './cdk'
-  - './app'
-  - './cdk/function'

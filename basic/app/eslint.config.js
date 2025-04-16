@@ -13,10 +13,6 @@ import pluginPromise from 'eslint-plugin-promise'
 import solid from 'eslint-plugin-solid';
 
 export default tseslint.config(
-  eslint.configs.recommended,
-  ...tseslint.configs.strict,
-  ...tseslint.configs.stylistic,
-  pluginPromise.configs['flat/recommended'],
   {
     ignores: [
       '**/*.d.ts',
@@ -28,6 +24,10 @@ export default tseslint.config(
       'dist',
     ],
   },
+  eslint.configs.recommended,
+  ...tseslint.configs.strict,
+  ...tseslint.configs.stylistic,
+  pluginPromise.configs['flat/recommended'],
   {
     files: ['src/**/*.{ts,tsx}'],
     ...importPlugin.flatConfigs.recommended,
