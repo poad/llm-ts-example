@@ -88,6 +88,21 @@ if [ $result -ne 0 ]; then
   exit $result
 fi
 
+cd "${CURRENT}/webllm" || exit
+result=$?
+if [ $result -ne 0 ]; then
+  cd "${CUR}" || exit
+  exit $result
+fi
+echo ""
+pwd
+npx pnpm@latest self-update && pnpm install -r && pnpm up -r && pnpm build
+result=$?
+if [ $result -ne 0 ]; then
+  cd "${CUR}" || exit
+  exit $result
+fi
+
 cd "${CURRENT}" || exit
 result=$?
 if [ $result -ne 0 ]; then

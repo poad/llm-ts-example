@@ -25,6 +25,7 @@ updates:
       - '/graphrag-local/'
       - '/graphrag-local/app/'
       - '/graphrag-local/batch/'
+      - '/webllm/'
     schedule:
       interval: daily
       timezone: Asia/Tokyo

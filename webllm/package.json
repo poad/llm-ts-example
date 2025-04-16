@@ -1,0 +1,52 @@
+{
+  "name": "webllm-example",
+  "version": "0.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "test": "vitest",
+    "lint": "eslint",
+    "lint-fix": "eslint --fix"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.24.0",
+    "@solidjs/testing-library": "^0.8.10",
+    "@stylistic/eslint-plugin": "^3.1.0",
+    "@stylistic/eslint-plugin-js": "^3.1.0",
+    "@stylistic/eslint-plugin-jsx": "^3.1.0",
+    "@stylistic/eslint-plugin-plus": "^3.1.0",
+    "@stylistic/eslint-plugin-ts": "^3.1.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@types/uuid": "^10.0.0",
+    "eslint": "^9.24.0",
+    "eslint-import-resolver-typescript": "^3.10.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-promise": "^7.2.1",
+    "eslint-plugin-solid": "^0.14.5",
+    "jsdom": "^25.0.1",
+    "pnpm": "^10.8.1",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.29.1",
+    "vite": "^6.2.6",
+    "vite-plugin-solid": "^2.11.6",
+    "vitest": "^3.1.1"
+  },
+  "dependencies": {
+    "@langchain/community": "^0.3.40",
+    "@langchain/core": "^0.3.44",
+    "@mlc-ai/web-llm": "^0.2.78",
+    "autoprefixer": "^10.4.21",
+    "langchain": "^0.3.21",
+    "langfuse-langchain": "^3.37.1",
+    "postcss": "^8.5.3",
+    "solid-js": "^1.9.5",
+    "tailwindcss": "^3.4.17",
+    "uuid": "^10.0.0"
+  },
+  "packageManager": "pnpm@10.8.1"
+}
