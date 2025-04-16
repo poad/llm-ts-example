@@ -39,6 +39,5 @@
     "langchain": "^0.3.21",
     "node-llama-cpp": "^3.7.0",
     "uuid": "^11.1.0"
-  },
-  "packageManager": "pnpm@10.8.1"
+  }
 }

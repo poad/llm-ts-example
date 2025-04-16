@@ -9,8 +9,8 @@
     "watch": "tsc -w",
     "test": "vitest run --passWithNoTests",
     "cdk": "cdk",
-    "lint": "eslint './{bin,lib,lambda}/**/*.ts'",
-    "lint-fix": "eslint --fix './{bin,lib,lambda}/**/*.ts'"
+    "lint": "eslint",
+    "lint-fix": "eslint --fix"
   },
   "devDependencies": {
     "@eslint/js": "^9.24.0",

@@ -5,12 +5,11 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "lint": "eslint *.ts ",
-    "style-check": "prettier --write ",
-    "format": "prettier --write ",
-    "fix": "prettier --write  && eslint --fix *.ts "
+    "lint": "eslint",
+    "lint-fix": "eslint --fix"
   },
   "devDependencies": {
+    "eslint": "^9.24.0",
     "typescript": "^5.8.3"
   }
 }

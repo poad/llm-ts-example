@@ -1,0 +1,17 @@
+packages:
+  - ./basic/cdk
+  - ./basic/app
+  - ./basic/cdk/function
+  - ./rag/batch
+  - ./rag/app
+  - ./rag/cdk
+  - ./rag/cdk/function
+  - ./webllm
+  - ./node-llama-cpp
+  - ./agent-mastra
+
+onlyBuiltDependencies:
+  - esbuild
+  - node-llama-cpp
+  - protobufjs
+  - sharp
