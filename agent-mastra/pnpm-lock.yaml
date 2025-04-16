@@ -12,14 +12,14 @@ importers:
         specifier: ^2.2.8
         version: 2.2.8(zod@3.24.2)
       '@ai-sdk/azure':
-        specifier: ^1.3.13
-        version: 1.3.13(zod@3.24.2)
+        specifier: ^1.3.14
+        version: 1.3.14(zod@3.24.2)
       '@mastra/core':
         specifier: ^0.8.3
         version: 0.8.3(react@19.0.0)
       langfuse-vercel:
         specifier: ^3.37.2
-        version: 3.37.2(ai@4.3.7(react@19.0.0)(zod@3.24.2))
+        version: 3.37.2(ai@4.3.8(react@19.0.0)(zod@3.24.2))
       mastra:
         specifier: ^0.4.9
         version: 0.4.9(@opentelemetry/api@1.9.0)(react@19.0.0)(typescript@5.8.3)
@@ -81,14 +81,14 @@ packages:
     peerDependencies:
       zod: ^3.0.0
 
-  '@ai-sdk/azure@1.3.13':
-    resolution: {integrity: sha512-PS96YEC3MOwpJHSC+mrMY31S7PA+outPmrFZljSbzdYf4/gd0rKQjHnqnV8K7/1GmxjkueoYRH2QfWLT5eaO8Q==}
+  '@ai-sdk/azure@1.3.14':
+    resolution: {integrity: sha512-XdyIzBbKfAn+TjSYmVtbVlgPBmbxgmc/BbsL2yWCfGawtsQ0aCMTOLYNTtYXxJUPF0mRMbLzsJHTQmnJmdmLMQ==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.0.0
 
-  '@ai-sdk/openai@1.3.12':
-    resolution: {integrity: sha512-ueAP69p8a/ZR2ns+pmlr9h/nyV2/DAwzfnPUGZiLpXbxWnLXd2g3a7l38CuEhBydH/nOfDb/byMgpS8+bnJHTg==}
+  '@ai-sdk/openai@1.3.13':
+    resolution: {integrity: sha512-t7l11mXI+VcmeAALX2iisURFOBxm2tCqBi6biciDaQZSdF1Az2Z4oOPowuRVmH+VZugXT0GRr4YSyo2mT/HAZA==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.0.0
@@ -699,8 +699,8 @@ packages:
     peerDependencies:
       '@mastra/core': ^0.8.3
 
-  '@napi-rs/wasm-runtime@0.2.8':
-    resolution: {integrity: sha512-OBlgKdX7gin7OIq4fadsjpg+cp2ZphvAIKucHsNfTdJiqdOmOEwQd/bHi0VwNrcw5xpBJyUw6cK/QilCqy1BSg==}
+  '@napi-rs/wasm-runtime@0.2.9':
+    resolution: {integrity: sha512-OKRBiajrrxB9ATokgEQoG87Z25c67pCpYcCwmXYX8PBftC9pBfN18gnm/fh1wurSLEKIAt+QRFLFCQISrb66Jg==}
 
   '@neon-rs/load@0.0.4':
     resolution: {integrity: sha512-kTPhdZyTQxB+2wpiRcFWrDcejc4JI6tkPuS7UZCG4l6Zvc5kU/gGQ/ozvHTh1XR5tS+UlfAfGuPajjzQjCiHCw==}
@@ -1844,8 +1844,8 @@ packages:
     resolution: {integrity: sha512-jRR5wdylq8CkOe6hei19GGZnxM6rBGwFl3Bg0YItGDimvjGtAvdZk4Pu6Cl4u4Igsws4a1fd1Vq3ezrhn4KmFw==}
     engines: {node: '>= 14'}
 
-  ai@4.3.7:
-    resolution: {integrity: sha512-lUwpDjv4neo/OBe092LYOZtFMoMtrBDf3/bKUuM8Tc+2MCpLNgD21NDT9+Zo6Z0g1vRzz2VIurNwH/FumVFG9g==}
+  ai@4.3.8:
+    resolution: {integrity: sha512-94iuXn+/I1X6v8I+9nycuHCv3RjtI9UqALw3UfANwaxOGEPtITfImfQg4DAR+3asnJViJ/IdCpWbTyzVXjHWPQ==}
     engines: {node: '>=18'}
     peerDependencies:
       react: ^18 || ^19 || ^19.0.0-rc
@@ -1972,8 +1972,8 @@ packages:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
 
-  caniuse-lite@1.0.30001713:
-    resolution: {integrity: sha512-wCIWIg+A4Xr7NfhTuHdX+/FKh3+Op3LBbSp2N5Pfx6T/LhdQy3GTyoTg48BReaW/MyMNZAkTadsBtai3ldWK0Q==}
+  caniuse-lite@1.0.30001714:
+    resolution: {integrity: sha512-mtgapdwDLSSBnCI3JokHM7oEQBLxiJKVRtg10AxM1AyeiKcM96f0Mkbqeq+1AbiCtvMcHRulAAEMu693JrSWqg==}
 
   ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
@@ -3804,14 +3804,14 @@ snapshots:
       aws4fetch: 1.0.20
       zod: 3.24.2
 
-  '@ai-sdk/azure@1.3.13(zod@3.24.2)':
+  '@ai-sdk/azure@1.3.14(zod@3.24.2)':
     dependencies:
-      '@ai-sdk/openai': 1.3.12(zod@3.24.2)
+      '@ai-sdk/openai': 1.3.13(zod@3.24.2)
       '@ai-sdk/provider': 1.1.3
       '@ai-sdk/provider-utils': 2.2.7(zod@3.24.2)
       zod: 3.24.2
 
-  '@ai-sdk/openai@1.3.12(zod@3.24.2)':
+  '@ai-sdk/openai@1.3.13(zod@3.24.2)':
     dependencies:
       '@ai-sdk/provider': 1.1.3
       '@ai-sdk/provider-utils': 2.2.7(zod@3.24.2)
@@ -4706,7 +4706,7 @@ snapshots:
       '@opentelemetry/sdk-trace-base': 1.30.1(@opentelemetry/api@1.9.0)
       '@opentelemetry/sdk-trace-node': 1.30.1(@opentelemetry/api@1.9.0)
       '@opentelemetry/semantic-conventions': 1.32.0
-      ai: 4.3.7(react@19.0.0)(zod@3.24.2)
+      ai: 4.3.8(react@19.0.0)(zod@3.24.2)
       cohere-ai: 7.17.0
       date-fns: 3.6.0
       dotenv: 16.5.0
@@ -4790,7 +4790,7 @@ snapshots:
     dependencies:
       '@mastra/core': 0.8.3(react@19.0.0)
 
-  '@napi-rs/wasm-runtime@0.2.8':
+  '@napi-rs/wasm-runtime@0.2.9':
     dependencies:
       '@emnapi/core': 1.4.3
       '@emnapi/runtime': 1.4.3
@@ -6206,7 +6206,7 @@ snapshots:
 
   '@unrs/resolver-binding-wasm32-wasi@1.5.0':
     dependencies:
-      '@napi-rs/wasm-runtime': 0.2.8
+      '@napi-rs/wasm-runtime': 0.2.9
     optional: true
 
   '@unrs/resolver-binding-win32-arm64-msvc@1.5.0':
@@ -6236,7 +6236,7 @@ snapshots:
 
   agent-base@7.1.3: {}
 
-  ai@4.3.7(react@19.0.0)(zod@3.24.2):
+  ai@4.3.8(react@19.0.0)(zod@3.24.2):
     dependencies:
       '@ai-sdk/provider': 1.1.3
       '@ai-sdk/provider-utils': 2.2.7(zod@3.24.2)
@@ -6362,7 +6362,7 @@ snapshots:
 
   browserslist@4.24.4:
     dependencies:
-      caniuse-lite: 1.0.30001713
+      caniuse-lite: 1.0.30001714
       electron-to-chromium: 1.5.137
       node-releases: 2.0.19
       update-browserslist-db: 1.1.3(browserslist@4.24.4)
@@ -6395,7 +6395,7 @@ snapshots:
 
   callsites@3.1.0: {}
 
-  caniuse-lite@1.0.30001713: {}
+  caniuse-lite@1.0.30001714: {}
 
   ccount@2.0.1: {}
 
@@ -7346,9 +7346,9 @@ snapshots:
     dependencies:
       mustache: 4.2.0
 
-  langfuse-vercel@3.37.2(ai@4.3.7(react@19.0.0)(zod@3.24.2)):
+  langfuse-vercel@3.37.2(ai@4.3.8(react@19.0.0)(zod@3.24.2)):
     dependencies:
-      ai: 4.3.7(react@19.0.0)(zod@3.24.2)
+      ai: 4.3.8(react@19.0.0)(zod@3.24.2)
       langfuse: 3.37.2
       langfuse-core: 3.37.2
 

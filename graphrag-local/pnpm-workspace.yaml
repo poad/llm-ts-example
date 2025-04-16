@@ -1,0 +1,9 @@
+packages:
+  - ./batch
+  - ./app
+
+onlyBuiltDependencies:
+  - node-llama-cpp
+  - onnxruntime-node
+  - protobufjs
+  - sharp

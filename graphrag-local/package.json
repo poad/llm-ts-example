@@ -1,0 +1,29 @@
+{
+  "name": "graphrag-local-example",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "lint": "pnpm -r lint",
+    "lint-fix": "pnpm -r lint-fix",
+    "build": "pnpm -r --if-present build",
+    "dev": "pnpm --filter @llm-ts-example/app dev",
+    "clean": "pnpm -r --if-present clean"
+  },
+  "packageManager": "pnpm@10.8.1",
+  "devDependencies": {
+    "@eslint/js": "^9.24.0",
+    "@stylistic/eslint-plugin": "^3.1.0",
+    "@stylistic/eslint-plugin-js": "^3.1.0",
+    "@stylistic/eslint-plugin-plus": "^3.1.0",
+    "@stylistic/eslint-plugin-ts": "^3.1.0",
+    "@types/node": "^22.14.1",
+    "eslint": "^9.24.0",
+    "eslint-import-resolver-typescript": "^3.10.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-promise": "^7.2.1",
+    "pnpm": "^10.8.1",
+    "typescript-eslint": "^8.30.1"
+  }
+}
