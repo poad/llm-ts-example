@@ -22,6 +22,9 @@ updates:
       - '/rag/app/'
       - '/agent-mastra/'
       - '/node-llama-cpp/'
+      - '/graphrag-local/'
+      - '/graphrag-local/app/'
+      - '/graphrag-local/batch/'
     schedule:
       interval: daily
       timezone: Asia/Tokyo
