@@ -20,6 +20,7 @@ updates:
       - '/rag/cdk/'
       - '/rag/batch/'
       - '/rag/app/'
+      - '/agent-mastra/'
     schedule:
       interval: daily
       timezone: Asia/Tokyo
