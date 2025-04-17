@@ -143,6 +143,34 @@ export function selectLlm(modelType?: string): {
           },
         }),
       };
+    case 'gpt-4.1-mini':
+      logger.debug('use: GPT-4.1-mini on Azure OpenAI Service');
+      return {
+        platform: 'azure',
+        modelName: 'gpt-4.1-mini',
+        model: new AzureChatOpenAI({
+          azureOpenAIApiDeploymentName: 'gpt-4.1-mini',
+          temperature: 0,
+          streaming: true,
+          metadata: {
+            tag: 'chat',
+          },
+        }),
+      };
+    case 'gpt-4.1-nano':
+      logger.debug('use: GPT-4.1-nano on Azure OpenAI Service');
+      return {
+        platform: 'azure',
+        modelName: 'gpt-4.1-nano',
+        model: new AzureChatOpenAI({
+          azureOpenAIApiDeploymentName: 'gpt-4.1-nano',
+          temperature: 0,
+          streaming: true,
+          metadata: {
+            tag: 'chat',
+          },
+        }),
+      };
     case 'o1-mini':
       logger.debug('use: o1 mini on Azure OpenAI Service');
       return {
@@ -163,6 +191,19 @@ export function selectLlm(modelType?: string): {
         modelName: 'o3-mini',
         model: new AzureChatOpenAI({
           azureOpenAIApiDeploymentName: 'o3-mini',
+          streaming: true,
+          metadata: {
+            tag: 'chat',
+          },
+        }),
+      };
+    case 'o4-mini':
+      logger.debug('use: o4 mini on Azure OpenAI Service');
+      return {
+        platform: 'azure',
+        modelName: 'o4-mini',
+        model: new AzureChatOpenAI({
+          azureOpenAIApiDeploymentName: 'o4-mini',
           streaming: true,
           metadata: {
             tag: 'chat',
