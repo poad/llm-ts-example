@@ -26,6 +26,8 @@ updates:
       - '/graphrag-local/app/'
       - '/graphrag-local/batch/'
       - '/webllm/'
+      - '/mpc/mcp-client-typescript/'
+      - '/mpc/weather/'
     schedule:
       interval: daily
       timezone: Asia/Tokyo
