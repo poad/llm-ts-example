@@ -45,17 +45,17 @@ const models = [
   },
   {
     id: 'gpt-4.1',
-    name: 'GPT-4o.1',
+    name: 'GPT-4.1',
     selected: false,
   },
   {
-    id: 'o1-mini',
-    name: 'o1 mini',
+    id: 'gpt-4.1-mini',
+    name: 'GPT-4.1-mini',
     selected: false,
   },
   {
-    id: 'cohere',
-    name: 'Cohere Command R+ v1 (AWS Bedrock)',
+    id: 'gpt-4.1-nano',
+    name: 'GPT-4.1-nano',
     selected: false,
   },
   // {
@@ -74,13 +74,28 @@ const models = [
   //   selected: false,
   // },
   {
+    id: 'o1-mini',
+    name: 'o1 mini',
+    selected: false,
+  },
+  {
     id: 'o3-mini',
     name: 'o3 mini',
     selected: false,
   },
   {
+    id: 'o4-mini',
+    name: 'o4 mini',
+    selected: false,
+  },
+  {
     id: 'o1',
     name: 'GPT-o1',
+    selected: false,
+  },
+  {
+    id: 'cohere',
+    name: 'Cohere Command R+ v1 (AWS Bedrock)',
     selected: false,
   },
 ];

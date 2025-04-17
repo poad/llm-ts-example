@@ -25,6 +25,16 @@ const models = [
     selected: false,
   },
   {
+    id: 'gpt-4.1-mini',
+    name: 'GPT-4.1-mini',
+    selected: false,
+  },
+  {
+    id: 'gpt-4.1-nano',
+    name: 'GPT-4.1-nano',
+    selected: false,
+  },
+  {
     id: 'gpt-4o-mini',
     name: 'GPT-4o mini',
     selected: false,
@@ -37,6 +47,11 @@ const models = [
   {
     id: 'o3-mini',
     name: 'o3 mini',
+    selected: false,
+  },
+  {
+    id: 'o4-mini',
+    name: 'o4 mini',
     selected: false,
   },
   {
