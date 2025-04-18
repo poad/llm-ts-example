@@ -17,8 +17,8 @@
   },
   "dependencies": {
     "@langchain/aws": "^0.1.8",
-    "@langchain/community": "^0.3.40",
-    "@langchain/core": "^0.3.44",
+    "@langchain/community": "^0.3.41",
+    "@langchain/core": "^0.3.45",
     "@langchain/langgraph": "^0.2.64",
     "@langchain/openai": "^0.3.17",
     "@neo4j-cypher/language-support": "2.0.0-next.6",
@@ -28,7 +28,7 @@
     "html-to-text": "^9.0.5",
     "iron-session": "^8.0.4",
     "jsdom": "^25.0.1",
-    "langchain": "^0.3.21",
+    "langchain": "^0.3.22",
     "neo4j-driver": "^5.28.1",
     "source-map-support": "^0.5.21"
   },
