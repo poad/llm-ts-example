@@ -11,6 +11,7 @@ packages:
   - ./agent-mastra
   - './mpc/weather'
   - './mpc/mcp-client-typescript'
+  - './mpc/langgraph-mpc-client'
 
 onlyBuiltDependencies:
   - esbuild
