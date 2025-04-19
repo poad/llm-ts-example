@@ -9,8 +9,8 @@
     "clean": "tsc --build --clean",
     "watch": "tsc -w",
     "test": "vitest run --passWithNoTests",
-    "lint": "eslint . --ignore-pattern 'cdk.out'",
-    "lint-fix": "eslint --fix . --ignore-pattern 'cdk.out'",
+    "lint": "eslint",
+    "lint-fix": "eslint --fix",
     "start": "node -r source-map-support/register build/index.js"
   },
   "devDependencies": {

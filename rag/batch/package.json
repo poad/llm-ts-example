@@ -9,8 +9,8 @@
     "clean": "rimraf dist",
     "watch": "tsc -w",
     "test": "vitest run --passWithNoTests",
-    "lint": "eslint . --ignore-pattern 'dist'",
-    "lint-fix": "eslint --fix . --ignore-pattern 'dist'",
+    "lint": "eslint",
+    "lint-fix": "eslint --fix",
     "start": "node dist/index.js"
   },
   "dependencies": {

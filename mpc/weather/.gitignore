@@ -5,3 +5,4 @@ neo4j
 .DS_Store
 .env
 dist
+build

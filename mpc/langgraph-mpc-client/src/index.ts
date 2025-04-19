@@ -1,7 +1,7 @@
-import { input } from "@inquirer/prompts";
-import dotenv from "dotenv";
+import { input } from '@inquirer/prompts';
+import dotenv from 'dotenv';
 import * as sourceMap from 'source-map-support';
-import { createAgent } from "./agent.js";
+import { createAgent } from './agent.js';
 sourceMap.install();
 
 dotenv.config();

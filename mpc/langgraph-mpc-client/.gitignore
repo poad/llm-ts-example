@@ -15,3 +15,4 @@ cdk.out
 .env*
 vite.config.js
 !.env.local.template
+build
