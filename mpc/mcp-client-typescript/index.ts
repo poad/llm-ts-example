@@ -11,7 +11,7 @@ class ConverseMcpClient {
   private bedrock: BedrockRuntimeClient
   private transport: StdioClientTransport | null = null; // from "@modelcontextprotocol/sdk/client/stdio.js"
   private tools: Tool[] = []
-  constructor(modelId: string) {
+  constructor() {
     const region = process.env.AWS_REGION ?? 'us-west-2';
 
     this.bedrock = new BedrockRuntimeClient({ region })
@@ -79,7 +79,7 @@ class ConverseMcpClient {
         const message = response.output.message
         conversation.push(message)
         const content = response.output?.message?.content
-        for (var contentBlock of content) {
+        for (const contentBlock of content) {
           if (contentBlock.toolUse?.name) {
             const toolName = contentBlock.toolUse.name
             const toolArguments = JSON.parse(JSON.stringify(contentBlock.toolUse.input))
@@ -155,6 +155,6 @@ const MODEL_ID = process.env.MODEL_ID ?? 'us.amazon.nova-micro-v1:0';
 const modelId = MODEL_ID;
 console.log(`use ${modelId}`);
 
-const client = new ConverseMcpClient(modelId)
+const client = new ConverseMcpClient()
 await client.connectToMcpServer('../weather/build/index.js')
 await client.chat()

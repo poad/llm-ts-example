@@ -1,11 +1,11 @@
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { z } from "zod";
+import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
+import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
+import { z } from 'zod';
 
 // Create server instance
 const server = new McpServer({
-  name: "weather",
-  version: "1.0.0",
+  name: 'weather',
+  version: '1.0.0',
   capabilities: {
     resources: {},
     tools: {},
@@ -33,8 +33,7 @@ interface Geocoding {
   }
 }
 
-interface GeocodingResponse extends Array<Geocoding> {
-}
+type GeocodingResponse = Geocoding[];
 
 async function getGeocoding(location: string): Promise<{
   longitude: number,
@@ -68,8 +67,8 @@ async function getGeocoding(location: string): Promise<{
 }
 
 server.tool(
-  "get-forecast",
-  "Get weather forecast for a location",
+  'get-forecast',
+  'Get weather forecast for a location',
   {
     location: z.string().describe('City name'),
   },
@@ -81,7 +80,7 @@ server.tool(
       return {
         content: [
           {
-            type: "text",
+            type: 'text',
             text: `Failed to retrieve grid point data for coordinates: ${location}. This location may not be supported by the NWS API (only US locations are supported).`,
           },
         ],
@@ -95,8 +94,8 @@ server.tool(
       return {
         content: [
           {
-            type: "text",
-            text: "Failed to get forecast URL from grid point data",
+            type: 'text',
+            text: 'Failed to get forecast URL from grid point data',
           },
         ],
       };
@@ -108,8 +107,8 @@ server.tool(
       return {
         content: [
           {
-            type: "text",
-            text: "Failed to retrieve forecast data",
+            type: 'text',
+            text: 'Failed to retrieve forecast data',
           },
         ],
       };
@@ -117,18 +116,18 @@ server.tool(
 
     // Format forecast periods
     const formattedForecast = [
-      `${name ?? "Unknown"}: Temperature: ${data.current.temperature_2m ?? "Unknown"}°C`,
-      `Wind: ${data.current.wind_speed_10m ?? "Unknown"} ${data.current.wind_gusts_10m ?? ""}`,
-      `${getWeatherCondition(data.current.weather_code) ?? "No forecast available"}`,
-      "---",
-    ].join("\n");
+      `${name ?? 'Unknown'}: Temperature: ${data.current.temperature_2m ?? 'Unknown'}°C`,
+      `Wind: ${data.current.wind_speed_10m ?? 'Unknown'} ${data.current.wind_gusts_10m ?? ''}`,
+      `${getWeatherCondition(data.current.weather_code) ?? 'No forecast available'}`,
+      '---',
+    ].join('\n');
 
     const forecastText = `Forecast for ${latitude}, ${longitude}:\n\n${formattedForecast}`;
 
     return {
       content: [
         {
-          type: "text",
+          type: 'text',
           text: forecastText,
         },
       ],
@@ -179,7 +178,7 @@ async function makeNWSRequest<T>(url: string): Promise<T | null> {
     }
     return (await response.json()) as T;
   } catch (error) {
-    console.error("Error making NWS request:", error);
+    console.error('Error making NWS request:', error);
     return null;
   }
 }
@@ -199,10 +198,10 @@ interface WeatherResponse {
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error("Weather MCP Server running on stdio");
+  console.error('Weather MCP Server running on stdio');
 }
 
 main().catch((error) => {
-  console.error("Fatal error in main():", error);
+  console.error('Fatal error in main():', error);
   process.exit(1);
 });

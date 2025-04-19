@@ -5,7 +5,9 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "build": "tsc && chmod 755 build/index.js"
+    "build": "tsc && chmod 755 build/index.js",
+    "lint": "eslint",
+    "lint-fix": "eslint --fix"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +21,18 @@
     "dotenv": "^16.5.0"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.2.8",
+    "@eslint/js": "^9.25.0",
+    "@stylistic/eslint-plugin": "^4.2.0",
+    "@stylistic/eslint-plugin-js": "^4.2.0",
+    "@stylistic/eslint-plugin-plus": "^4.2.0",
+    "@stylistic/eslint-plugin-ts": "^4.2.0",
     "@types/node": "^22.14.1",
-    "typescript": "^5.8.3"
+    "eslint": "^9.25.0",
+    "eslint-import-resolver-typescript": "^4.3.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-promise": "^7.2.1",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.30.1"
   }
 }

@@ -1,0 +1,7 @@
+node_modules
+**/models/**/*.*
+!models/.gitkeep
+neo4j
+.DS_Store
+.env
+dist
