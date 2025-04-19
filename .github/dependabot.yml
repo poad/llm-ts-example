@@ -27,6 +27,7 @@ updates:
       - '/graphrag-local/batch/'
       - '/webllm/'
       - '/mpc/mcp-client-typescript/'
+      - '/mpc/langgraph-mpc-client/'
       - '/mpc/weather/'
     schedule:
       interval: daily
