@@ -37,7 +37,7 @@ export default tseslint.config(
   ...tseslint.configs.stylistic,
   pluginPromise.configs['flat/recommended'],
   {
-    files: ['src/**/*.ts'],
+    files: ['**/*.ts'],
     ...importPlugin.flatConfigs.recommended,
     ...importPlugin.flatConfigs.typescript,
     languageOptions: {

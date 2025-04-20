@@ -39,7 +39,7 @@ export default tseslint.config(
   ...tseslint.configs.strict,
   ...tseslint.configs.stylistic,
   {
-    files: ['{bin,lib,lambda}/**/*.{ts,tsx}'],
+    files: ['src/**/*.ts'],
     ...eslintImport.flatConfigs.recommended,
     ...eslintImport.flatConfigs.typescript,
     plugins: {

@@ -9,8 +9,8 @@
     "watch": "tsc -w",
     "test": "vitest run --passWithNoTests",
     "cdk": "cdk",
-    "lint": "eslint . --ignore-pattern 'cdk.out'",
-    "lint-fix": "eslint --fix . --ignore-pattern 'cdk.out'"
+    "lint": "eslint",
+    "lint-fix": "eslint --fix"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.8",
