@@ -1,5 +1,5 @@
 {
-  "name": "weather",
+  "name": "weather-http",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,13 +10,15 @@
   "scripts": {
     "build": "tsc && chmod 755 build/index.js",
     "lint": "eslint",
-    "lint-fix": "eslint --fix"
+    "lint-fix": "eslint --fix",
+    "start": "tsx src/index.ts"
   },
   "files": [
     "build"
   ],
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.10.2",
+    "express": "^5.1.0",
     "zod": "^3.24.3"
   },
   "devDependencies": {
@@ -26,6 +28,7 @@
     "@stylistic/eslint-plugin-js": "^4.2.0",
     "@stylistic/eslint-plugin-plus": "^4.2.0",
     "@stylistic/eslint-plugin-ts": "^4.2.0",
+    "@types/express": "^5.0.1",
     "@types/node": "^22.14.1",
     "eslint": "^9.25.1",
     "eslint-import-resolver-typescript": "^4.3.4",
