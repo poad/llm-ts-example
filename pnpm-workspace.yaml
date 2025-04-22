@@ -10,7 +10,9 @@ packages:
   - ./node-llama-cpp
   - ./agent-mastra
   - './mpc/weather'
+  - './mpc/weather-http'
   - './mpc/mcp-client-typescript'
+  - './mpc/mcp-client-http'
   - './mpc/langgraph-mpc-client'
 
 onlyBuiltDependencies:
