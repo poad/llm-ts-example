@@ -19,7 +19,7 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.39.0",
     "@aws-sdk/client-bedrock-runtime": "^3.787.0",
-    "@inquirer/prompts": "^7.4.1",
+    "@inquirer/prompts": "^7.5.0",
     "@modelcontextprotocol/sdk": "^1.10.2",
     "dotenv": "^16.5.0"
   },
