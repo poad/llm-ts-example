@@ -18,7 +18,7 @@
   "dependencies": {
     "@langchain/aws": "^0.1.9",
     "@langchain/community": "^0.3.41",
-    "@langchain/core": "^0.3.48",
+    "@langchain/core": "^0.3.49",
     "@langchain/langgraph": "^0.2.67",
     "@langchain/openai": "^0.3.17",
     "@neo4j-cypher/language-support": "2.0.0-next.6",
