@@ -6,3 +6,4 @@
 - [node-llama-cpp by LangChain.js with LangGraph.js](./node-llama-cpp/)
 - [GraphRAG local](./graphrag-local/)
 - [WebLLM](./webllm/)
+- [MPC examples](./mpc/)

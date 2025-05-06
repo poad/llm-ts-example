@@ -100,6 +100,21 @@ export function selectLlm(modelType?: string): {
           region: bedrockRegion,
         }),
       };
+    case 'nova-premier':
+      logger.debug('use: amazon.nova-premier-v1:0 on AWS Bedrock');
+      return {
+        platform: 'aws',
+        modelName: 'us.amazon.nova-premier-v1:0',
+        model: new ChatBedrockConverse({
+          model: 'us.amazon.nova-premier-v1:0',
+          temperature: 0,
+          streaming: true,
+          metadata: {
+            tag: 'chat',
+          },
+          region: bedrockRegion,
+        }),
+      };
     case 'gpt-4o-mini':
       logger.debug('use: GPT-4o mini on Azure OpenAI Service');
       return {
