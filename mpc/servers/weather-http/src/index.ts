@@ -1,7 +1,6 @@
 import express, { Request, Response } from 'express';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
-// import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { z } from 'zod';
 
 const app = express();
@@ -117,10 +116,10 @@ async function getGeocoding(location: string): Promise<{
 }
 
 server.tool(
-  'get-forecast',
-  'Get weather forecast for a location',
+  'get_forecast',
+  '場所の天気予報を取得します',
   {
-    location: z.string().describe('City name'),
+    location: z.string().describe('街名'),
   },
   async ({ location }) => {
     // Get grid point data
@@ -131,7 +130,7 @@ server.tool(
         content: [
           {
             type: 'text',
-            text: `Failed to retrieve grid point data for coordinates: ${location}. This location may not be supported by the NWS API (only US locations are supported).`,
+            text: `Failed to retrieve grid point data for coordinates: ${location}. This location may not be supported by the NWS API (only Japan locations are supported).`,
           },
         ],
       };

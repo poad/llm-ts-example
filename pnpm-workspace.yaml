@@ -14,9 +14,15 @@ packages:
   - './mpc/clients/mcp-client-typescript'
   - './mpc/clients/mcp-client-http'
   - './mpc/clients/langgraph-mpc-client'
+  - './mpc/clients/mastra-mcp-client'
 
 onlyBuiltDependencies:
   - esbuild
   - node-llama-cpp
   - protobufjs
   - sharp
+
+enable-pre-post-scripts: true
+legacy-peer-deps: true
+auto-install-peers: true
+strict-peer-dependencies: false
