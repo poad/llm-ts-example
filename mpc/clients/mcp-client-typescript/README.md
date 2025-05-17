@@ -8,5 +8,5 @@ Make `.env` file.
 
 ```shell
 pnpm -r build
-node build/index.js 
+node build/index.js
 ```

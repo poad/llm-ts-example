@@ -1,42 +1,38 @@
 {
-  "name": "mcp-client-http",
+  "name": "weather",
   "version": "1.0.0",
   "description": "",
+  "main": "index.js",
   "type": "module",
-  "main": "build/index.js",
+  "bin": {
+    "weather": "./build/index.js"
+  },
   "scripts": {
     "build": "tsc && chmod 755 build/index.js",
     "lint": "eslint",
-    "lint-fix": "eslint --fix",
-    "start": "tsx src/index.ts"
+    "lint-fix": "eslint --fix"
   },
   "files": [
     "build"
   ],
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.39.0",
-    "@aws-sdk/client-bedrock-runtime": "^3.803.0",
-    "@inquirer/prompts": "^7.5.0",
-    "@modelcontextprotocol/sdk": "^1.11.0",
-    "dotenv": "^16.5.0"
+    "@modelcontextprotocol/sdk": "^1.11.4",
+    "zod": "^3.24.4"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.9",
-    "@eslint/js": "^9.26.0",
+    "@eslint/js": "^9.27.0",
     "@stylistic/eslint-plugin": "^4.2.0",
     "@stylistic/eslint-plugin-js": "^4.2.0",
     "@stylistic/eslint-plugin-plus": "^4.2.0",
     "@stylistic/eslint-plugin-ts": "^4.2.0",
-    "@types/node": "^22.15.12",
-    "eslint": "^9.26.0",
+    "@types/node": "^22.15.18",
+    "eslint": "^9.27.0",
     "eslint-import-resolver-typescript": "^4.3.4",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-promise": "^7.2.1",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.32.0"
+    "typescript-eslint": "^8.32.1"
   }
 }

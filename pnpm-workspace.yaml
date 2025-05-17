@@ -9,11 +9,11 @@ packages:
   - ./webllm
   - ./node-llama-cpp
   - ./agent-mastra
-  - './mpc/weather'
-  - './mpc/weather-http'
-  - './mpc/mcp-client-typescript'
-  - './mpc/mcp-client-http'
-  - './mpc/langgraph-mpc-client'
+  - './mpc/servers/weather'
+  - './mpc/servers/weather-http'
+  - './mpc/clients/mcp-client-typescript'
+  - './mpc/clients/mcp-client-http'
+  - './mpc/clients/langgraph-mpc-client'
 
 onlyBuiltDependencies:
   - esbuild
