@@ -156,5 +156,5 @@ const modelId = MODEL_ID;
 console.log(`use ${modelId}`);
 
 const client = new ConverseMcpClient();
-await client.connectToMcpServer('../weather/build/index.js');
+await client.connectToMcpServer('../../servers/weather/build/index.js');
 await client.chat();
