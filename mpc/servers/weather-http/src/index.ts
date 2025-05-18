@@ -26,7 +26,9 @@ app.post('/mcp', async (req: Request, res: Response) => {
       sessionIdGenerator: undefined,
     });
     await server.connect(transport);
-    await transport.handleRequest(req, res, req.body);
+    const body = req.body;
+    console.log('Received MCP request:', body);
+    await transport.handleRequest(req, res, body);
     res.on('close', () => {
       console.log('Request closed');
       transport.close();

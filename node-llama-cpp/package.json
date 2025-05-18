@@ -23,7 +23,7 @@
     "@types/node": "^22.15.18",
     "@types/uuid": "^10.0.0",
     "eslint": "^9.27.0",
-    "eslint-import-resolver-typescript": "^4.3.4",
+    "eslint-import-resolver-typescript": "^4.3.5",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-promise": "^7.2.1",
     "typescript": "^5.8.3",
@@ -37,7 +37,7 @@
     "html-to-text": "^9.0.5",
     "jsdom": "^26.1.0",
     "langchain": "^0.3.26",
-    "node-llama-cpp": "^3.7.0",
+    "node-llama-cpp": "^3.8.0",
     "uuid": "^11.1.0"
   }
 }
