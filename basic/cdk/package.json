@@ -21,7 +21,7 @@
     "@types/aws-lambda": "^8.10.149",
     "@types/node": "^22.15.21",
     "@types/uuid": "^10.0.0",
-    "@vitest/eslint-plugin": "^1.2.0",
+    "@vitest/eslint-plugin": "^1.2.1",
     "aws-cdk": "^2.1016.1",
     "dotenv": "^16.5.0",
     "eslint": "^9.27.0",
@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.20.0",
-    "@aws-sdk/credential-provider-node": "^3.816.0",
+    "@aws-sdk/credential-provider-node": "^3.817.0",
     "@langchain/anthropic": "^0.3.21",
     "@langchain/aws": "^0.1.10",
     "@langchain/core": "^0.3.57",

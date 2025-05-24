@@ -24,7 +24,7 @@
     "@types/node": "^22.15.21",
     "@types/source-map-support": "^0.5.10",
     "@types/uuid": "^10.0.0",
-    "@vitest/eslint-plugin": "^1.2.0",
+    "@vitest/eslint-plugin": "^1.2.1",
     "dotenv": "^16.5.0",
     "eslint": "^9.27.0",
     "eslint-import-resolver-typescript": "^3.10.1",
@@ -38,8 +38,8 @@
     "vitest": "^3.1.4"
   },
   "dependencies": {
-    "@aws-sdk/client-bedrock-runtime": "^3.816.0",
-    "@inquirer/prompts": "^7.5.1",
+    "@aws-sdk/client-bedrock-runtime": "^3.817.0",
+    "@inquirer/prompts": "^7.5.2",
     "@langchain/aws": "^0.1.10",
     "@langchain/core": "^0.3.57",
     "@langchain/langgraph": "^0.2.73",

@@ -52,13 +52,13 @@ importers:
         version: 3.5.1
       '@langchain/community':
         specifier: ^0.3.44
-        version: 0.3.44(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-bedrock-agent-runtime@3.816.0)(@aws-sdk/client-bedrock-runtime@3.816.0)(@aws-sdk/client-kendra@3.816.0)(@aws-sdk/credential-provider-node@3.816.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.51.1)(deepmerge@4.3.1)(dotenv@16.5.0)(openai@4.103.0(ws@8.18.2)(zod@3.25.23))(zod@3.25.23))(@huggingface/transformers@3.5.1)(@ibm-cloud/watsonx-ai@1.6.4(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23))))(@langchain/aws@0.1.10(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23))))(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))(@smithy/util-utf8@2.3.0)(axios@1.9.0)(cheerio@1.0.0)(fast-xml-parser@4.4.1)(html-to-text@9.0.5)(ibm-cloud-sdk-core@5.3.2)(ignore@5.3.2)(jsdom@25.0.1)(jsonwebtoken@9.0.2)(neo4j-driver@5.28.1)(openai@4.103.0(ws@8.18.2)(zod@3.25.23))(playwright@1.51.1)(weaviate-client@3.5.5)(ws@8.18.2)
+        version: 0.3.44(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-bedrock-agent-runtime@3.817.0)(@aws-sdk/client-bedrock-runtime@3.817.0)(@aws-sdk/client-kendra@3.817.0)(@aws-sdk/credential-provider-node@3.817.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.51.1)(deepmerge@4.3.1)(dotenv@16.5.0)(openai@4.103.0(ws@8.18.2)(zod@3.25.28))(zod@3.25.28))(@huggingface/transformers@3.5.1)(@ibm-cloud/watsonx-ai@1.6.4(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28))))(@langchain/aws@0.1.10(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28))))(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))(@smithy/util-utf8@2.3.0)(axios@1.9.0)(cheerio@1.0.0)(fast-xml-parser@4.4.1)(html-to-text@9.0.5)(ibm-cloud-sdk-core@5.3.2)(ignore@5.3.2)(jsdom@25.0.1)(jsonwebtoken@9.0.2)(neo4j-driver@5.28.1)(openai@4.103.0(ws@8.18.2)(zod@3.25.28))(playwright@1.51.1)(weaviate-client@3.5.5)(ws@8.18.2)
       '@langchain/core':
         specifier: ^0.3.57
-        version: 0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23))
+        version: 0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28))
       '@langchain/langgraph':
         specifier: ^0.2.73
-        version: 0.2.73(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))(zod-to-json-schema@3.24.5(zod@3.25.23))
+        version: 0.2.73(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))(zod-to-json-schema@3.24.5(zod@3.25.28))
       '@xenova/transformers':
         specifier: ^2.17.2
         version: 2.17.2
@@ -73,7 +73,7 @@ importers:
         version: 25.0.1
       langchain:
         specifier: ^0.3.27
-        version: 0.3.27(@langchain/aws@0.1.10(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23))))(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))(axios@1.9.0)(cheerio@1.0.0)(openai@4.103.0(ws@8.18.2)(zod@3.25.23))(ws@8.18.2)
+        version: 0.3.27(@langchain/aws@0.1.10(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28))))(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))(axios@1.9.0)(cheerio@1.0.0)(openai@4.103.0(ws@8.18.2)(zod@3.25.28))(ws@8.18.2)
       neo4j-driver:
         specifier: ^5.28.1
         version: 5.28.1
@@ -134,19 +134,19 @@ importers:
     dependencies:
       '@langchain/aws':
         specifier: ^0.1.10
-        version: 0.1.10(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))
+        version: 0.1.10(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))
       '@langchain/community':
         specifier: ^0.3.44
-        version: 0.3.44(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-bedrock-agent-runtime@3.816.0)(@aws-sdk/client-bedrock-runtime@3.816.0)(@aws-sdk/client-kendra@3.816.0)(@aws-sdk/credential-provider-node@3.816.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.51.1)(deepmerge@4.3.1)(dotenv@16.5.0)(openai@4.103.0(ws@8.18.2)(zod@3.25.23))(zod@3.25.23))(@huggingface/transformers@3.5.1)(@ibm-cloud/watsonx-ai@1.6.4(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23))))(@langchain/aws@0.1.10(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23))))(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))(@smithy/util-utf8@2.3.0)(axios@1.9.0)(cheerio@1.0.0)(fast-xml-parser@4.4.1)(html-to-text@9.0.5)(ibm-cloud-sdk-core@5.3.2)(ignore@5.3.2)(jsdom@25.0.1)(jsonwebtoken@9.0.2)(neo4j-driver@5.28.1)(openai@4.103.0(ws@8.18.2)(zod@3.25.23))(playwright@1.51.1)(weaviate-client@3.5.5)(ws@8.18.2)
+        version: 0.3.44(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-bedrock-agent-runtime@3.817.0)(@aws-sdk/client-bedrock-runtime@3.817.0)(@aws-sdk/client-kendra@3.817.0)(@aws-sdk/credential-provider-node@3.817.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.51.1)(deepmerge@4.3.1)(dotenv@16.5.0)(openai@4.103.0(ws@8.18.2)(zod@3.25.28))(zod@3.25.28))(@huggingface/transformers@3.5.1)(@ibm-cloud/watsonx-ai@1.6.4(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28))))(@langchain/aws@0.1.10(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28))))(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))(@smithy/util-utf8@2.3.0)(axios@1.9.0)(cheerio@1.0.0)(fast-xml-parser@4.4.1)(html-to-text@9.0.5)(ibm-cloud-sdk-core@5.3.2)(ignore@5.3.2)(jsdom@25.0.1)(jsonwebtoken@9.0.2)(neo4j-driver@5.28.1)(openai@4.103.0(ws@8.18.2)(zod@3.25.28))(playwright@1.51.1)(weaviate-client@3.5.5)(ws@8.18.2)
       '@langchain/core':
         specifier: ^0.3.57
-        version: 0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23))
+        version: 0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28))
       '@langchain/langgraph':
         specifier: ^0.2.73
-        version: 0.2.73(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))(zod-to-json-schema@3.24.5(zod@3.25.23))
+        version: 0.2.73(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))(zod-to-json-schema@3.24.5(zod@3.25.28))
       '@langchain/openai':
         specifier: ^0.3.17
-        version: 0.3.17(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))(ws@8.18.2)
+        version: 0.3.17(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))(ws@8.18.2)
       '@neo4j-cypher/language-support':
         specifier: 2.0.0-next.6
         version: 2.0.0-next.6
@@ -170,7 +170,7 @@ importers:
         version: 25.0.1
       langchain:
         specifier: ^0.3.27
-        version: 0.3.27(@langchain/aws@0.1.10(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23))))(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))(axios@1.9.0)(cheerio@1.0.0)(openai@4.103.0(ws@8.18.2)(zod@3.25.23))(ws@8.18.2)
+        version: 0.3.27(@langchain/aws@0.1.10(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28))))(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))(axios@1.9.0)(cheerio@1.0.0)(openai@4.103.0(ws@8.18.2)(zod@3.25.28))(ws@8.18.2)
       neo4j-driver:
         specifier: ^5.28.1
         version: 5.28.1
@@ -246,20 +246,20 @@ packages:
   '@aws-crypto/util@5.2.0':
     resolution: {integrity: sha512-4RkU9EsI6ZpBve5fseQlGNUWKMa1RLPQ1dnjnQoe07ldfIzcsGb5hC5W0Dm7u423KWzawlrpbjXBrXCEv9zazQ==}
 
-  '@aws-sdk/client-bedrock-agent-runtime@3.816.0':
-    resolution: {integrity: sha512-Qw6ApThyeJFHLNtBW5rFQU8z6cvwPX7mT/bqbjXruKDVCjxiC0E3eIVF9u6sW+8UuUjveLA6N1joBHnpyhRrhA==}
+  '@aws-sdk/client-bedrock-agent-runtime@3.817.0':
+    resolution: {integrity: sha512-2dG+QoRJk9wN87ryp0l38Wz33T1T09SWC5M6/Pk4/SHCVCAQ//1J/z9kPfgrLUofbl35XRx7yDgDVuhqBxPb7g==}
     engines: {node: '>=18.0.0'}
 
-  '@aws-sdk/client-bedrock-runtime@3.816.0':
-    resolution: {integrity: sha512-HCen8ADPFsqDa6AOIM2/fdj+p+VbJxqGIPHUU/fmpwlWhakxQMIXFbKWXSDC2eCuUirjiXktmpQNTYtvDxuYzg==}
+  '@aws-sdk/client-bedrock-runtime@3.817.0':
+    resolution: {integrity: sha512-fG3QAjIEq7P0a134E2P8r4qw/V6rL0X5voUPIcXte1oNKUXUjNXJb21N/NGmcDLCUVWvYXb24dD0YXyQ2kwZdA==}
     engines: {node: '>=18.0.0'}
 
-  '@aws-sdk/client-kendra@3.816.0':
-    resolution: {integrity: sha512-emNTjTqwY0ABVZoyAmQIQ5ff6P4Ft3c8xG7l2fFHRY/Drp7foDOlBGlyQ/rjNAws5RjhUrHEbrJv2nXNV45DTw==}
+  '@aws-sdk/client-kendra@3.817.0':
+    resolution: {integrity: sha512-sfVMfQYsgdGyCLOOQMUnppWn/47L3kR+nSBo5Jtf1buECRYJ3bddAmdIvD3C9ayEe6gV2SfIoyziPjeRjOi/Mg==}
     engines: {node: '>=18.0.0'}
 
-  '@aws-sdk/client-sso@3.816.0':
-    resolution: {integrity: sha512-2D2bc6wVDgGxwHjqSyxGYXUHa3ni0R21Isiq0OzJk6nBc8Vi6HpYoimok6UaUfPJsG6OEWfQ9vubcR30BCBmqQ==}
+  '@aws-sdk/client-sso@3.817.0':
+    resolution: {integrity: sha512-fCh5rUHmWmWDvw70NNoWpE5+BRdtNi45kDnIoeoszqVg7UKF79SlG+qYooUT52HKCgDNHqgbWaXxMOSqd2I/OQ==}
     engines: {node: '>=18.0.0'}
 
   '@aws-sdk/core@3.816.0':
@@ -274,24 +274,24 @@ packages:
     resolution: {integrity: sha512-gcWGzMQ7yRIF+ljTkR8Vzp7727UY6cmeaPrFQrvcFB8PhOqWpf7g0JsgOf5BSaP8CkkSQcTQHc0C5ZYAzUFwPg==}
     engines: {node: '>=18.0.0'}
 
-  '@aws-sdk/credential-provider-ini@3.816.0':
-    resolution: {integrity: sha512-60FiF4PFgrnIQ7vizAMN4imrjFzlXPEvXKk05cs47W7qtA54MudRvTITN9Gji4vD5j6CDp9fOb0HS0+N83YEAA==}
+  '@aws-sdk/credential-provider-ini@3.817.0':
+    resolution: {integrity: sha512-kyEwbQyuXE+phWVzloMdkFv6qM6NOon+asMXY5W0fhDKwBz9zQLObDRWBrvQX9lmqq8BbDL1sCfZjOh82Y+RFw==}
     engines: {node: '>=18.0.0'}
 
-  '@aws-sdk/credential-provider-node@3.816.0':
-    resolution: {integrity: sha512-NsjMzCHWXpFXNdJYliY4GM2vtsmP8w9OyjrNcHq4mmdp7lAzM3BvRKavVuhBXrSHQFzLkGWaTGd+fkkTZtYHXQ==}
+  '@aws-sdk/credential-provider-node@3.817.0':
+    resolution: {integrity: sha512-b5mz7av0Lhavs1Bz3Zb+jrs0Pki93+8XNctnVO0drBW98x1fM4AR38cWvGbM/w9F9Q0/WEH3TinkmrMPrP4T/w==}
     engines: {node: '>=18.0.0'}
 
   '@aws-sdk/credential-provider-process@3.816.0':
     resolution: {integrity: sha512-9Tm+AxMoV2Izvl5b9tyMQRbBwaex8JP06HN7ZeCXgC5sAsSN+o8dsThnEhf8jKN+uBpT6CLWKN1TXuUMrAmW1A==}
     engines: {node: '>=18.0.0'}
 
-  '@aws-sdk/credential-provider-sso@3.816.0':
-    resolution: {integrity: sha512-wxNqvPrRpKwkNQ41uGE/y3Y95TsWnJnMpcTIMhGEub0Jq5ifnUEev3gJ60857uaut133mwpGfupE2fk8V68e6A==}
+  '@aws-sdk/credential-provider-sso@3.817.0':
+    resolution: {integrity: sha512-gFUAW3VmGvdnueK1bh6TOcRX+j99Xm0men1+gz3cA4RE+rZGNy1Qjj8YHlv0hPwI9OnTPZquvPzA5fkviGREWg==}
     engines: {node: '>=18.0.0'}
 
-  '@aws-sdk/credential-provider-web-identity@3.816.0':
-    resolution: {integrity: sha512-guKv76eRTMQkGOHsv9tY8XP9y1TZ0U4w6RD5kHQYNuzoBf5HOpZcib9OGmWJA2n+BC+byCOOftl6mMmYtRfcpQ==}
+  '@aws-sdk/credential-provider-web-identity@3.817.0':
+    resolution: {integrity: sha512-A2kgkS9g6NY0OMT2f2EdXHpL17Ym81NhbGnQ8bRXPqESIi7TFypFD2U6osB2VnsFv+MhwM+Ke4PKXSmLun22/A==}
     engines: {node: '>=18.0.0'}
 
   '@aws-sdk/eventstream-handler-node@3.804.0':
@@ -318,16 +318,16 @@ packages:
     resolution: {integrity: sha512-bHRSlWZ0xDsFR8E2FwDb//0Ff6wMkVx4O+UKsfyNlAbtqCiiHRt5ANNfKPafr95cN2CCxLxiPvFTFVblQM5TsQ==}
     engines: {node: '>=18.0.0'}
 
-  '@aws-sdk/nested-clients@3.816.0':
-    resolution: {integrity: sha512-N1jSEa53QHLvIH37Rrm8cD9MlC6ucTEpDhbO+fN9UHBimRnpt9kqk0iiBCu5FK7GEKWYM5kiawfUtbB3PN65CQ==}
+  '@aws-sdk/nested-clients@3.817.0':
+    resolution: {integrity: sha512-vQ2E06A48STJFssueJQgxYD8lh1iGJoLJnHdshRDWOQb8gy1wVQR+a7MkPGhGR6lGoS0SCnF/Qp6CZhnwLsqsQ==}
     engines: {node: '>=18.0.0'}
 
   '@aws-sdk/region-config-resolver@3.808.0':
     resolution: {integrity: sha512-9x2QWfphkARZY5OGkl9dJxZlSlYM2l5inFeo2bKntGuwg4A4YUe5h7d5yJ6sZbam9h43eBrkOdumx03DAkQF9A==}
     engines: {node: '>=18.0.0'}
 
-  '@aws-sdk/token-providers@3.816.0':
-    resolution: {integrity: sha512-OFeeq7j3JsI5OrUW4vw/Lckwq8I+HNffi7IXenfqzE83vhgXQF9BfCg+TGHDfxiDt6NUaS6F0QzhfkW6/AORlA==}
+  '@aws-sdk/token-providers@3.817.0':
+    resolution: {integrity: sha512-CYN4/UO0VaqyHf46ogZzNrVX7jI3/CfiuktwKlwtpKA6hjf2+ivfgHSKzPpgPBcSEfiibA/26EeLuMnB6cpSrQ==}
     engines: {node: '>=18.0.0'}
 
   '@aws-sdk/types@3.804.0':
@@ -2074,8 +2074,8 @@ packages:
   console-control-strings@1.1.0:
     resolution: {integrity: sha512-ty/fTekppD2fIwRvnZAVdeOiGd1c7YXEixbgJTNzqcxJWKQnjJ/V1bNEEE6hygpM3WjwHFUVK6HTjWSzV4a8sQ==}
 
-  console-table-printer@2.12.1:
-    resolution: {integrity: sha512-wKGOQRRvdnd89pCeH96e2Fn4wkbenSP6LMHfjfyNLMbGuHEFbMqQNuxXqd0oXG9caIOQ1FTvc5Uijp9/4jujnQ==}
+  console-table-printer@2.13.0:
+    resolution: {integrity: sha512-Wl1rFO1NLonYBBjrdF2SMCnfNrKr8PPooPSnQBRX3LTJsnyGjBzLcwffo8wSKuJ0kr/rgC2Ltxb3Bpb072VA9w==}
 
   cookie@0.7.2:
     resolution: {integrity: sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==}
@@ -4076,8 +4076,8 @@ packages:
     peerDependencies:
       zod: ^3.24.1
 
-  zod@3.25.23:
-    resolution: {integrity: sha512-Od2bdMosahjSrSgJtakrwjMDb1zM1A3VIHCPGveZt/3/wlrTWBya2lmEh2OYe4OIu8mPTmmr0gnLHIWQXdtWBg==}
+  zod@3.25.28:
+    resolution: {integrity: sha512-/nt/67WYKnr5by3YS7LroZJbtcCBurDKKPBPWWzaxvVCGuG/NOsiKkrjoOhI8mJ+SQUXEbUzeB3S+6XDUEEj7Q==}
 
 snapshots:
 
@@ -4133,12 +4133,12 @@ snapshots:
       '@smithy/util-utf8': 2.3.0
       tslib: 2.8.1
 
-  '@aws-sdk/client-bedrock-agent-runtime@3.816.0':
+  '@aws-sdk/client-bedrock-agent-runtime@3.817.0':
     dependencies:
       '@aws-crypto/sha256-browser': 5.2.0
       '@aws-crypto/sha256-js': 5.2.0
       '@aws-sdk/core': 3.816.0
-      '@aws-sdk/credential-provider-node': 3.816.0
+      '@aws-sdk/credential-provider-node': 3.817.0
       '@aws-sdk/middleware-host-header': 3.804.0
       '@aws-sdk/middleware-logger': 3.804.0
       '@aws-sdk/middleware-recursion-detection': 3.804.0
@@ -4180,12 +4180,12 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
-  '@aws-sdk/client-bedrock-runtime@3.816.0':
+  '@aws-sdk/client-bedrock-runtime@3.817.0':
     dependencies:
       '@aws-crypto/sha256-browser': 5.2.0
       '@aws-crypto/sha256-js': 5.2.0
       '@aws-sdk/core': 3.816.0
-      '@aws-sdk/credential-provider-node': 3.816.0
+      '@aws-sdk/credential-provider-node': 3.817.0
       '@aws-sdk/eventstream-handler-node': 3.804.0
       '@aws-sdk/middleware-eventstream': 3.804.0
       '@aws-sdk/middleware-host-header': 3.804.0
@@ -4232,12 +4232,12 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
-  '@aws-sdk/client-kendra@3.816.0':
+  '@aws-sdk/client-kendra@3.817.0':
     dependencies:
       '@aws-crypto/sha256-browser': 5.2.0
       '@aws-crypto/sha256-js': 5.2.0
       '@aws-sdk/core': 3.816.0
-      '@aws-sdk/credential-provider-node': 3.816.0
+      '@aws-sdk/credential-provider-node': 3.817.0
       '@aws-sdk/middleware-host-header': 3.804.0
       '@aws-sdk/middleware-logger': 3.804.0
       '@aws-sdk/middleware-recursion-detection': 3.804.0
@@ -4278,7 +4278,7 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
-  '@aws-sdk/client-sso@3.816.0':
+  '@aws-sdk/client-sso@3.817.0':
     dependencies:
       '@aws-crypto/sha256-browser': 5.2.0
       '@aws-crypto/sha256-js': 5.2.0
@@ -4356,15 +4356,15 @@ snapshots:
       '@smithy/util-stream': 4.2.1
       tslib: 2.8.1
 
-  '@aws-sdk/credential-provider-ini@3.816.0':
+  '@aws-sdk/credential-provider-ini@3.817.0':
     dependencies:
       '@aws-sdk/core': 3.816.0
       '@aws-sdk/credential-provider-env': 3.816.0
       '@aws-sdk/credential-provider-http': 3.816.0
       '@aws-sdk/credential-provider-process': 3.816.0
-      '@aws-sdk/credential-provider-sso': 3.816.0
-      '@aws-sdk/credential-provider-web-identity': 3.816.0
-      '@aws-sdk/nested-clients': 3.816.0
+      '@aws-sdk/credential-provider-sso': 3.817.0
+      '@aws-sdk/credential-provider-web-identity': 3.817.0
+      '@aws-sdk/nested-clients': 3.817.0
       '@aws-sdk/types': 3.804.0
       '@smithy/credential-provider-imds': 4.0.5
       '@smithy/property-provider': 4.0.3
@@ -4374,14 +4374,14 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
-  '@aws-sdk/credential-provider-node@3.816.0':
+  '@aws-sdk/credential-provider-node@3.817.0':
     dependencies:
       '@aws-sdk/credential-provider-env': 3.816.0
       '@aws-sdk/credential-provider-http': 3.816.0
-      '@aws-sdk/credential-provider-ini': 3.816.0
+      '@aws-sdk/credential-provider-ini': 3.817.0
       '@aws-sdk/credential-provider-process': 3.816.0
-      '@aws-sdk/credential-provider-sso': 3.816.0
-      '@aws-sdk/credential-provider-web-identity': 3.816.0
+      '@aws-sdk/credential-provider-sso': 3.817.0
+      '@aws-sdk/credential-provider-web-identity': 3.817.0
       '@aws-sdk/types': 3.804.0
       '@smithy/credential-provider-imds': 4.0.5
       '@smithy/property-provider': 4.0.3
@@ -4400,11 +4400,11 @@ snapshots:
       '@smithy/types': 4.3.0
       tslib: 2.8.1
 
-  '@aws-sdk/credential-provider-sso@3.816.0':
+  '@aws-sdk/credential-provider-sso@3.817.0':
     dependencies:
-      '@aws-sdk/client-sso': 3.816.0
+      '@aws-sdk/client-sso': 3.817.0
       '@aws-sdk/core': 3.816.0
-      '@aws-sdk/token-providers': 3.816.0
+      '@aws-sdk/token-providers': 3.817.0
       '@aws-sdk/types': 3.804.0
       '@smithy/property-provider': 4.0.3
       '@smithy/shared-ini-file-loader': 4.0.3
@@ -4413,10 +4413,10 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
-  '@aws-sdk/credential-provider-web-identity@3.816.0':
+  '@aws-sdk/credential-provider-web-identity@3.817.0':
     dependencies:
       '@aws-sdk/core': 3.816.0
-      '@aws-sdk/nested-clients': 3.816.0
+      '@aws-sdk/nested-clients': 3.817.0
       '@aws-sdk/types': 3.804.0
       '@smithy/property-provider': 4.0.3
       '@smithy/types': 4.3.0
@@ -4468,7 +4468,7 @@ snapshots:
       '@smithy/types': 4.3.0
       tslib: 2.8.1
 
-  '@aws-sdk/nested-clients@3.816.0':
+  '@aws-sdk/nested-clients@3.817.0':
     dependencies:
       '@aws-crypto/sha256-browser': 5.2.0
       '@aws-crypto/sha256-js': 5.2.0
@@ -4520,10 +4520,10 @@ snapshots:
       '@smithy/util-middleware': 4.0.3
       tslib: 2.8.1
 
-  '@aws-sdk/token-providers@3.816.0':
+  '@aws-sdk/token-providers@3.817.0':
     dependencies:
       '@aws-sdk/core': 3.816.0
-      '@aws-sdk/nested-clients': 3.816.0
+      '@aws-sdk/nested-clients': 3.817.0
       '@aws-sdk/types': 3.804.0
       '@smithy/property-provider': 4.0.3
       '@smithy/shared-ini-file-loader': 4.0.3
@@ -4575,17 +4575,17 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@browserbasehq/stagehand@1.14.0(@playwright/test@1.51.1)(deepmerge@4.3.1)(dotenv@16.5.0)(openai@4.103.0(ws@8.18.2)(zod@3.25.23))(zod@3.25.23)':
+  '@browserbasehq/stagehand@1.14.0(@playwright/test@1.51.1)(deepmerge@4.3.1)(dotenv@16.5.0)(openai@4.103.0(ws@8.18.2)(zod@3.25.28))(zod@3.25.28)':
     dependencies:
       '@anthropic-ai/sdk': 0.27.3
       '@browserbasehq/sdk': 2.6.0
       '@playwright/test': 1.51.1
       deepmerge: 4.3.1
       dotenv: 16.5.0
-      openai: 4.103.0(ws@8.18.2)(zod@3.25.23)
+      openai: 4.103.0(ws@8.18.2)(zod@3.25.28)
       ws: 8.18.2
-      zod: 3.25.23
-      zod-to-json-schema: 3.24.5(zod@3.25.23)
+      zod: 3.25.28
+      zod-to-json-schema: 3.24.5(zod@3.25.28)
     transitivePeerDependencies:
       - bufferutil
       - encoding
@@ -4715,9 +4715,9 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.3': {}
 
-  '@ibm-cloud/watsonx-ai@1.6.4(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))':
+  '@ibm-cloud/watsonx-ai@1.6.4(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))':
     dependencies:
-      '@langchain/textsplitters': 0.1.0(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))
+      '@langchain/textsplitters': 0.1.0(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))
       '@types/node': 18.19.103
       extend: 3.0.2
       ibm-cloud-sdk-core: 5.3.2
@@ -4829,42 +4829,42 @@ snapshots:
 
   '@kwsites/promise-deferred@1.1.1': {}
 
-  '@langchain/aws@0.1.10(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))':
+  '@langchain/aws@0.1.10(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))':
     dependencies:
-      '@aws-sdk/client-bedrock-agent-runtime': 3.816.0
-      '@aws-sdk/client-bedrock-runtime': 3.816.0
-      '@aws-sdk/client-kendra': 3.816.0
-      '@aws-sdk/credential-provider-node': 3.816.0
-      '@langchain/core': 0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23))
-      zod: 3.25.23
-      zod-to-json-schema: 3.24.5(zod@3.25.23)
+      '@aws-sdk/client-bedrock-agent-runtime': 3.817.0
+      '@aws-sdk/client-bedrock-runtime': 3.817.0
+      '@aws-sdk/client-kendra': 3.817.0
+      '@aws-sdk/credential-provider-node': 3.817.0
+      '@langchain/core': 0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28))
+      zod: 3.25.28
+      zod-to-json-schema: 3.24.5(zod@3.25.28)
     transitivePeerDependencies:
       - aws-crt
 
-  '@langchain/community@0.3.44(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-bedrock-agent-runtime@3.816.0)(@aws-sdk/client-bedrock-runtime@3.816.0)(@aws-sdk/client-kendra@3.816.0)(@aws-sdk/credential-provider-node@3.816.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.51.1)(deepmerge@4.3.1)(dotenv@16.5.0)(openai@4.103.0(ws@8.18.2)(zod@3.25.23))(zod@3.25.23))(@huggingface/transformers@3.5.1)(@ibm-cloud/watsonx-ai@1.6.4(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23))))(@langchain/aws@0.1.10(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23))))(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))(@smithy/util-utf8@2.3.0)(axios@1.9.0)(cheerio@1.0.0)(fast-xml-parser@4.4.1)(html-to-text@9.0.5)(ibm-cloud-sdk-core@5.3.2)(ignore@5.3.2)(jsdom@25.0.1)(jsonwebtoken@9.0.2)(neo4j-driver@5.28.1)(openai@4.103.0(ws@8.18.2)(zod@3.25.23))(playwright@1.51.1)(weaviate-client@3.5.5)(ws@8.18.2)':
+  '@langchain/community@0.3.44(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-bedrock-agent-runtime@3.817.0)(@aws-sdk/client-bedrock-runtime@3.817.0)(@aws-sdk/client-kendra@3.817.0)(@aws-sdk/credential-provider-node@3.817.0)(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.51.1)(deepmerge@4.3.1)(dotenv@16.5.0)(openai@4.103.0(ws@8.18.2)(zod@3.25.28))(zod@3.25.28))(@huggingface/transformers@3.5.1)(@ibm-cloud/watsonx-ai@1.6.4(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28))))(@langchain/aws@0.1.10(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28))))(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))(@smithy/util-utf8@2.3.0)(axios@1.9.0)(cheerio@1.0.0)(fast-xml-parser@4.4.1)(html-to-text@9.0.5)(ibm-cloud-sdk-core@5.3.2)(ignore@5.3.2)(jsdom@25.0.1)(jsonwebtoken@9.0.2)(neo4j-driver@5.28.1)(openai@4.103.0(ws@8.18.2)(zod@3.25.28))(playwright@1.51.1)(weaviate-client@3.5.5)(ws@8.18.2)':
     dependencies:
-      '@browserbasehq/stagehand': 1.14.0(@playwright/test@1.51.1)(deepmerge@4.3.1)(dotenv@16.5.0)(openai@4.103.0(ws@8.18.2)(zod@3.25.23))(zod@3.25.23)
-      '@ibm-cloud/watsonx-ai': 1.6.4(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))
-      '@langchain/core': 0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23))
-      '@langchain/openai': 0.5.11(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))(ws@8.18.2)
-      '@langchain/weaviate': 0.2.0(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))
+      '@browserbasehq/stagehand': 1.14.0(@playwright/test@1.51.1)(deepmerge@4.3.1)(dotenv@16.5.0)(openai@4.103.0(ws@8.18.2)(zod@3.25.28))(zod@3.25.28)
+      '@ibm-cloud/watsonx-ai': 1.6.4(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))
+      '@langchain/core': 0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28))
+      '@langchain/openai': 0.5.11(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))(ws@8.18.2)
+      '@langchain/weaviate': 0.2.0(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))
       binary-extensions: 2.3.0
       expr-eval: 2.0.2
       flat: 5.0.2
       ibm-cloud-sdk-core: 5.3.2
       js-yaml: 4.1.0
-      langchain: 0.3.27(@langchain/aws@0.1.10(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23))))(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))(axios@1.9.0)(cheerio@1.0.0)(openai@4.103.0(ws@8.18.2)(zod@3.25.23))(ws@8.18.2)
-      langsmith: 0.3.29(openai@4.103.0(ws@8.18.2)(zod@3.25.23))
-      openai: 4.103.0(ws@8.18.2)(zod@3.25.23)
+      langchain: 0.3.27(@langchain/aws@0.1.10(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28))))(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))(axios@1.9.0)(cheerio@1.0.0)(openai@4.103.0(ws@8.18.2)(zod@3.25.28))(ws@8.18.2)
+      langsmith: 0.3.29(openai@4.103.0(ws@8.18.2)(zod@3.25.28))
+      openai: 4.103.0(ws@8.18.2)(zod@3.25.28)
       uuid: 10.0.0
-      zod: 3.25.23
-      zod-to-json-schema: 3.24.5(zod@3.25.23)
+      zod: 3.25.28
+      zod-to-json-schema: 3.24.5(zod@3.25.28)
     optionalDependencies:
       '@aws-crypto/sha256-js': 5.2.0
-      '@aws-sdk/client-bedrock-agent-runtime': 3.816.0
-      '@aws-sdk/client-bedrock-runtime': 3.816.0
-      '@aws-sdk/client-kendra': 3.816.0
-      '@aws-sdk/credential-provider-node': 3.816.0
+      '@aws-sdk/client-bedrock-agent-runtime': 3.817.0
+      '@aws-sdk/client-bedrock-runtime': 3.817.0
+      '@aws-sdk/client-kendra': 3.817.0
+      '@aws-sdk/credential-provider-node': 3.817.0
       '@browserbasehq/sdk': 2.6.0
       '@huggingface/transformers': 3.5.1
       '@smithy/util-utf8': 2.3.0
@@ -4896,79 +4896,79 @@ snapshots:
       - handlebars
       - peggy
 
-  '@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23))':
+  '@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28))':
     dependencies:
       '@cfworker/json-schema': 4.1.1
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.20
-      langsmith: 0.3.29(openai@4.103.0(ws@8.18.2)(zod@3.25.23))
+      langsmith: 0.3.29(openai@4.103.0(ws@8.18.2)(zod@3.25.28))
       mustache: 4.2.0
       p-queue: 6.6.2
       p-retry: 4.6.2
       uuid: 10.0.0
-      zod: 3.25.23
-      zod-to-json-schema: 3.24.5(zod@3.25.23)
+      zod: 3.25.28
+      zod-to-json-schema: 3.24.5(zod@3.25.28)
     transitivePeerDependencies:
       - openai
 
-  '@langchain/langgraph-checkpoint@0.0.17(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))':
+  '@langchain/langgraph-checkpoint@0.0.17(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))':
     dependencies:
-      '@langchain/core': 0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23))
+      '@langchain/core': 0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28))
       uuid: 10.0.0
 
-  '@langchain/langgraph-sdk@0.0.78(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))':
+  '@langchain/langgraph-sdk@0.0.78(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))':
     dependencies:
       '@types/json-schema': 7.0.15
       p-queue: 6.6.2
       p-retry: 4.6.2
       uuid: 9.0.1
     optionalDependencies:
-      '@langchain/core': 0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23))
+      '@langchain/core': 0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28))
 
-  '@langchain/langgraph@0.2.73(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))(zod-to-json-schema@3.24.5(zod@3.25.23))':
+  '@langchain/langgraph@0.2.73(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))(zod-to-json-schema@3.24.5(zod@3.25.28))':
     dependencies:
-      '@langchain/core': 0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23))
-      '@langchain/langgraph-checkpoint': 0.0.17(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))
-      '@langchain/langgraph-sdk': 0.0.78(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))
+      '@langchain/core': 0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28))
+      '@langchain/langgraph-checkpoint': 0.0.17(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))
+      '@langchain/langgraph-sdk': 0.0.78(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))
       uuid: 10.0.0
-      zod: 3.25.23
+      zod: 3.25.28
     optionalDependencies:
-      zod-to-json-schema: 3.24.5(zod@3.25.23)
+      zod-to-json-schema: 3.24.5(zod@3.25.28)
     transitivePeerDependencies:
       - react
 
-  '@langchain/openai@0.3.17(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))(ws@8.18.2)':
+  '@langchain/openai@0.3.17(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))(ws@8.18.2)':
     dependencies:
-      '@langchain/core': 0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23))
+      '@langchain/core': 0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28))
       js-tiktoken: 1.0.20
-      openai: 4.103.0(ws@8.18.2)(zod@3.25.23)
-      zod: 3.25.23
-      zod-to-json-schema: 3.24.5(zod@3.25.23)
+      openai: 4.103.0(ws@8.18.2)(zod@3.25.28)
+      zod: 3.25.28
+      zod-to-json-schema: 3.24.5(zod@3.25.28)
     transitivePeerDependencies:
       - encoding
       - ws
 
-  '@langchain/openai@0.5.11(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))(ws@8.18.2)':
+  '@langchain/openai@0.5.11(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))(ws@8.18.2)':
     dependencies:
-      '@langchain/core': 0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23))
+      '@langchain/core': 0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28))
       js-tiktoken: 1.0.20
-      openai: 4.103.0(ws@8.18.2)(zod@3.25.23)
-      zod: 3.25.23
-      zod-to-json-schema: 3.24.5(zod@3.25.23)
+      openai: 4.103.0(ws@8.18.2)(zod@3.25.28)
+      zod: 3.25.28
+      zod-to-json-schema: 3.24.5(zod@3.25.28)
     transitivePeerDependencies:
       - encoding
       - ws
 
-  '@langchain/textsplitters@0.1.0(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))':
+  '@langchain/textsplitters@0.1.0(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))':
     dependencies:
-      '@langchain/core': 0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23))
+      '@langchain/core': 0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28))
       js-tiktoken: 1.0.20
 
-  '@langchain/weaviate@0.2.0(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))':
+  '@langchain/weaviate@0.2.0(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))':
     dependencies:
-      '@langchain/core': 0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23))
+      '@langchain/core': 0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28))
       uuid: 10.0.0
       weaviate-client: 3.5.5
     transitivePeerDependencies:
@@ -6098,7 +6098,7 @@ snapshots:
 
   console-control-strings@1.1.0: {}
 
-  console-table-printer@2.12.1:
+  console-table-printer@2.13.0:
     dependencies:
       simple-wcswidth: 1.0.1
 
@@ -7086,23 +7086,23 @@ snapshots:
     dependencies:
       json-buffer: 3.0.1
 
-  langchain@0.3.27(@langchain/aws@0.1.10(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23))))(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))(axios@1.9.0)(cheerio@1.0.0)(openai@4.103.0(ws@8.18.2)(zod@3.25.23))(ws@8.18.2):
+  langchain@0.3.27(@langchain/aws@0.1.10(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28))))(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))(axios@1.9.0)(cheerio@1.0.0)(openai@4.103.0(ws@8.18.2)(zod@3.25.28))(ws@8.18.2):
     dependencies:
-      '@langchain/core': 0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23))
-      '@langchain/openai': 0.5.11(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))(ws@8.18.2)
-      '@langchain/textsplitters': 0.1.0(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))
+      '@langchain/core': 0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28))
+      '@langchain/openai': 0.5.11(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))(ws@8.18.2)
+      '@langchain/textsplitters': 0.1.0(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))
       js-tiktoken: 1.0.20
       js-yaml: 4.1.0
       jsonpointer: 5.0.1
-      langsmith: 0.3.29(openai@4.103.0(ws@8.18.2)(zod@3.25.23))
+      langsmith: 0.3.29(openai@4.103.0(ws@8.18.2)(zod@3.25.28))
       openapi-types: 12.1.3
       p-retry: 4.6.2
       uuid: 10.0.0
       yaml: 2.8.0
-      zod: 3.25.23
-      zod-to-json-schema: 3.24.5(zod@3.25.23)
+      zod: 3.25.28
+      zod-to-json-schema: 3.24.5(zod@3.25.28)
     optionalDependencies:
-      '@langchain/aws': 0.1.10(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.23)))
+      '@langchain/aws': 0.1.10(@langchain/core@0.3.57(openai@4.103.0(ws@8.18.2)(zod@3.25.28)))
       axios: 1.9.0(debug@4.4.1)
       cheerio: 1.0.0
     transitivePeerDependencies:
@@ -7110,17 +7110,17 @@ snapshots:
       - openai
       - ws
 
-  langsmith@0.3.29(openai@4.103.0(ws@8.18.2)(zod@3.25.23)):
+  langsmith@0.3.29(openai@4.103.0(ws@8.18.2)(zod@3.25.28)):
     dependencies:
       '@types/uuid': 10.0.0
       chalk: 4.1.2
-      console-table-printer: 2.12.1
+      console-table-printer: 2.13.0
       p-queue: 6.6.2
       p-retry: 4.6.2
       semver: 7.7.2
       uuid: 10.0.0
     optionalDependencies:
-      openai: 4.103.0(ws@8.18.2)(zod@3.25.23)
+      openai: 4.103.0(ws@8.18.2)(zod@3.25.28)
 
   leac@0.6.0: {}
 
@@ -7455,7 +7455,7 @@ snapshots:
       platform: 1.3.6
       protobufjs: 7.4.0
 
-  openai@4.103.0(ws@8.18.2)(zod@3.25.23):
+  openai@4.103.0(ws@8.18.2)(zod@3.25.28):
     dependencies:
       '@types/node': 18.19.103
       '@types/node-fetch': 2.6.12
@@ -7466,7 +7466,7 @@ snapshots:
       node-fetch: 2.7.0
     optionalDependencies:
       ws: 8.18.2
-      zod: 3.25.23
+      zod: 3.25.28
     transitivePeerDependencies:
       - encoding
 
@@ -8411,8 +8411,8 @@ snapshots:
 
   yoctocolors@2.1.1: {}
 
-  zod-to-json-schema@3.24.5(zod@3.25.23):
+  zod-to-json-schema@3.24.5(zod@3.25.28):
     dependencies:
-      zod: 3.25.23
+      zod: 3.25.28
 
-  zod@3.25.23: {}
+  zod@3.25.28: {}
