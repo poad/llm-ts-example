@@ -13,22 +13,21 @@ updates:
 
   - package-ecosystem: npm
     directories:
-      - '/basic/'
+      - '/'
+      - '/agent-mastra/'
       - '/basic/cdk/'
       - '/basic/app/'
-      - '/rag/'
-      - '/rag/cdk/'
-      - '/rag/batch/'
-      - '/rag/app/'
-      - '/agent-mastra/'
-      - '/node-llama-cpp/'
-      - '/webllm/'
-      - '/mpc/clients/mcp-client-typescript/'
       - '/mpc/clients/langgraph-mpc-client/'
-      - '/mpc/servers/weather/'
-      - '/mpc/clients/mcp-client-http/'
-      - '/mpc/servers/weather-http/'
       - '/mpc/clients/mastra-mcp-client/'
+      - '/mpc/clients/mcp-client-http/'
+      - '/mpc/clients/mcp-client-typescript/'
+      - '/mpc/servers/weather/'
+      - '/mpc/servers/weather-http/'
+      - '/node-llama-cpp/'
+      - '/rag/app/'
+      - '/rag/batch/'
+      - '/rag/cdk/'
+      - '/webllm/'
     schedule:
       interval: daily
       timezone: Asia/Tokyo
