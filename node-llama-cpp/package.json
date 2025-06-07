@@ -14,20 +14,20 @@
   "license": "ISC",
   "devDependencies": {
     "@eslint/js": "^9.28.0",
-    "@stylistic/eslint-plugin": "^4.4.0",
-    "@stylistic/eslint-plugin-js": "^4.4.0",
-    "@stylistic/eslint-plugin-plus": "^4.4.0",
-    "@stylistic/eslint-plugin-ts": "^4.4.0",
+    "@stylistic/eslint-plugin": "^4.4.1",
+    "@stylistic/eslint-plugin-js": "^4.4.1",
+    "@stylistic/eslint-plugin-plus": "^4.4.1",
+    "@stylistic/eslint-plugin-ts": "^4.4.1",
     "@types/async-retry": "^1.4.9",
     "@types/html-to-text": "^9.0.4",
-    "@types/node": "^22.15.29",
+    "@types/node": "^22.15.30",
     "@types/uuid": "^10.0.0",
     "eslint": "^9.28.0",
-    "eslint-import-resolver-typescript": "^4.4.2",
+    "eslint-import-resolver-typescript": "^4.4.3",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-promise": "^7.2.1",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.33.0"
+    "typescript-eslint": "^8.33.1"
   },
   "dependencies": {
     "@langchain/community": "^0.3.45",
@@ -37,7 +37,7 @@
     "html-to-text": "^9.0.5",
     "jsdom": "^26.1.0",
     "langchain": "^0.3.27",
-    "node-llama-cpp": "^3.8.1",
+    "node-llama-cpp": "^3.9.0",
     "uuid": "^11.1.0"
   }
 }
