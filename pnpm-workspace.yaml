@@ -9,6 +9,7 @@ packages:
   - ./webllm
   - ./node-llama-cpp
   - ./agent-mastra
+  - './mpc/servers/postgresql-http'
   - './mpc/servers/weather'
   - './mpc/servers/weather-http'
   - './mpc/clients/mcp-client-typescript'

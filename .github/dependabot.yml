@@ -21,6 +21,7 @@ updates:
       - '/mpc/clients/mastra-mcp-client/'
       - '/mpc/clients/mcp-client-http/'
       - '/mpc/clients/mcp-client-typescript/'
+      - '/mpc/servers/postgresql-http/'
       - '/mpc/servers/weather/'
       - '/mpc/servers/weather-http/'
       - '/node-llama-cpp/'
