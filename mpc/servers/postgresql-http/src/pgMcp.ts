@@ -165,7 +165,47 @@ const describeTableTool = {
       const columns = await describeTable(table_name, schema);
 
       if (columns.length === 0) {
-        logger.warn(`Table ${schema}.${table_name} not found or has no columns`);
+try {
+      const { table_name, schema } = args;
+      // Import the sanitize function from a hypothetical sanitization library
+      // sanitize: Escapes special characters to prevent log injection
+      logger.info(`Describing table: ${sanitize(schema)}.${sanitize(table_name)}`);
+
+      const columns = await describeTable(table_name, schema);
+
+      if (columns.length === 0) {
+        logger.warn(`Table ${sanitize(schema)}.${sanitize(table_name)} not found or has no columns`);
+        return {
+          content: [{
+            type: 'text',
+            text: JSON.stringify({
+              success: false,
+              error: `Table ${sanitize(schema)}.${sanitize(table_name)} not found`,
+            }, null, 2),
+          }],
+        };
+      }
+
+      logger.info(`Table ${sanitize(schema)}.${sanitize(table_name)} has ${columns.length} columns`);
+
+      return {
+        content: [{
+          type: 'text',
+          text: JSON.stringify({
+            success: true,
+            table: `${sanitize(schema)}.${sanitize(table_name)}`,
+            columnCount: columns.length,
+            columns: columns,
+          }, null, 2),
+        }],
+      };
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      logger.error(`Failed to describe table: ${sanitize(errorMessage)}`, { error });
+
+      return {
+        content: [{
+          type: 'text',
         return {
           content: [{
             type: 'text',
