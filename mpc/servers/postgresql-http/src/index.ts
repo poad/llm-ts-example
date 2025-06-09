@@ -3,6 +3,10 @@ import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
 import { Logger } from '@aws-lambda-powertools/logger';
 import { pgMcp } from './pgMcp';
+// Import csrf from 'csurf' for CSRF protection
+// This middleware adds CSRF protection to the DELETE route
+import csrf from 'csurf';
+const csrfProtection = csrf({ cookie: true });
 
 const logger = new Logger();
 
@@ -61,7 +65,7 @@ app.get('/mcp', async (req: Request, res: Response) => {
   }));
 });
 
-app.delete('/mcp', async (req: Request, res: Response) => {
+app.delete('/mcp', csrfProtection, async (req: Request, res: Response) => {
   logger.info('Received DELETE MCP request');
   res.writeHead(405).end(JSON.stringify({
     jsonrpc: '2.0',
