@@ -29,7 +29,7 @@
     "eslint-plugin-promise": "^7.2.1",
     "eslint-plugin-solid": "^0.14.5",
     "jsdom": "^25.0.1",
-    "pnpm": "^10.11.1",
+    "pnpm": "^10.12.1",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.33.1",
     "vite": "^6.3.5",
