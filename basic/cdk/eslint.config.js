@@ -2,7 +2,6 @@
 
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
-import stylisticTs from '@stylistic/eslint-plugin-ts';
 import tseslint from 'typescript-eslint';
 // @ts-expect-error ignore type errors
 import eslintImport from "eslint-plugin-import";
@@ -30,7 +29,7 @@ const config = tseslint.config(
     ...eslintImport.flatConfigs.typescript,
     plugins: {
       '@stylistic': stylistic,
-      '@stylistic/ts': stylisticTs,
+      '@stylistic/ts': stylistic,
     },
     settings: {
       'import/internal-regex': '^~/',
