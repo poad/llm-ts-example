@@ -35,7 +35,7 @@
     "typescript-eslint": "^8.33.1",
     "vite": "^6.3.5",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^3.2.2"
+    "vitest": "^3.2.3"
   },
   "dependencies": {
     "@aws-sdk/client-bedrock-runtime": "^3.826.0",
