@@ -2,10 +2,10 @@
 import { Mastra } from '@mastra/core/mastra';
 import { ConsoleLogger } from '@mastra/core/logger';
 import { LangfuseExporter } from 'langfuse-vercel';
-import { weatherAgent } from './agents';
+import { agent } from './agents';
 
 export const mastra = new Mastra({
-  agents: { weatherAgent },
+  agents: { agent },
   logger: new ConsoleLogger({
     name: 'Mastra',
     level: 'info',

@@ -14,8 +14,8 @@
     "test": "vitest run --passWithNoTests",
     "lint": "eslint",
     "lint-fix": "eslint --fix",
-    "dev": "tsx watch src/index.ts",
-    "start": "node -r source-map-support/register build/index.js"
+    "dev": "tsx watch src/server.ts",
+    "start": "node -r source-map-support/register build/server.js"
   },
   "devDependencies": {
     "@eslint/compat": "^1.3.1",
@@ -26,7 +26,6 @@
     "@stylistic/eslint-plugin-ts": "^4.4.1",
     "@types/aws-lambda": "^8.10.150",
     "@types/csurf": "^1.11.5",
-    "@types/express": "^5.0.3",
     "@types/node": "^22.15.33",
     "@types/pg": "^8.15.4",
     "@types/source-map-support": "^0.5.10",
@@ -47,10 +46,11 @@
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.22.0",
+    "@hono/node-server": "^1.14.4",
     "@modelcontextprotocol/sdk": "^1.13.2",
-    "csurf": "^1.11.0",
-    "express": "^5.1.0",
-    "pg": "^8.16.2",
+    "@vercel/mcp-adapter": "^0.11.1",
+    "hono": "^4.8.3",
+    "pg": "^8.16.3",
     "zod": "^3.25.67"
   }
 }

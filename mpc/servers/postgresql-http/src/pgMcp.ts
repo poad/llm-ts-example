@@ -81,7 +81,7 @@ const queryTool = {
 
 // List tables tool
 const listTablesTool = {
-  name: 'list-tables',
+  name: 'list_tables',
   description: 'List all tables in the specified database schema',
   annotations: {
     title: 'List Database Tables',
@@ -138,7 +138,7 @@ const listTablesTool = {
 
 // Describe table tool
 const describeTableTool = {
-  name: 'describe-table',
+  name: 'describe_table',
   description: 'Get detailed column information and structure for a specific table',
   annotations: {
     title: 'Describe Table Structure',
@@ -209,7 +209,7 @@ const describeTableTool = {
 
 // Execute stored procedure tool
 const callProcedureTool = {
-  name: 'call-procedure',
+  name: 'call_procedure',
   description: 'Execute a stored procedure or function with parameters',
   annotations: {
     title: 'Call Stored Procedure',
@@ -278,7 +278,7 @@ const callProcedureTool = {
 
 // Database export tool
 const exportSchemaTool = {
-  name: 'export-schema',
+  name: 'export_schema',
   description: 'Export database schema information in a structured format',
   annotations: {
     title: 'Export Database Schema',
