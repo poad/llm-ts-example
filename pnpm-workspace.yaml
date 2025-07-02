@@ -8,7 +8,7 @@ packages:
   - ./rag/cdk/function
   - ./webllm
   - ./node-llama-cpp
-  - ./agent-mastra
+  - ./agents/agent-mastra
   - './mpc/servers/postgresql-http'
   - './mpc/servers/weather'
   - './mpc/servers/weather-http'

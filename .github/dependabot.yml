@@ -14,7 +14,7 @@ updates:
   - package-ecosystem: npm
     directories:
       - '/'
-      - '/agent-mastra/'
+      - '/agents/agent-mastra/'
       - '/basic/cdk/'
       - '/basic/app/'
       - '/mpc/clients/langgraph-mpc-client/'
