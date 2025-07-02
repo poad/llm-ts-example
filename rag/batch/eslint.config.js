@@ -3,7 +3,6 @@
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import tseslint from 'typescript-eslint';
-// @ts-expect-error ignore type errors
 import eslintImport from "eslint-plugin-import";
 
 import { includeIgnoreFile } from '@eslint/compat';

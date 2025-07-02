@@ -37,17 +37,8 @@ importers:
         specifier: ^9.30.1
         version: 9.30.1
       '@stylistic/eslint-plugin':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
-      '@stylistic/eslint-plugin-js':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-plus':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-ts':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
+        specifier: ^5.1.0
+        version: 5.1.0(eslint@9.30.1(jiti@1.21.7))
       '@types/node':
         specifier: ^22.16.0
         version: 22.16.0
@@ -101,20 +92,8 @@ importers:
         specifier: ^0.15.3
         version: 0.15.3(solid-js@1.9.7)
       '@stylistic/eslint-plugin':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
-      '@stylistic/eslint-plugin-js':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-jsx':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-plus':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-ts':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
+        specifier: ^5.1.0
+        version: 5.1.0(eslint@9.30.1(jiti@1.21.7))
       '@types/crypto-js':
         specifier: ^4.2.2
         version: 4.2.2
@@ -210,17 +189,8 @@ importers:
         specifier: ^9.30.1
         version: 9.30.1
       '@stylistic/eslint-plugin':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
-      '@stylistic/eslint-plugin-js':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-plus':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-ts':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
+        specifier: ^5.1.0
+        version: 5.1.0(eslint@9.30.1(jiti@1.21.7))
       '@types/aws-lambda':
         specifier: ^8.10.150
         version: 8.10.150
@@ -334,17 +304,8 @@ importers:
         specifier: ^9.30.1
         version: 9.30.1
       '@stylistic/eslint-plugin':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
-      '@stylistic/eslint-plugin-js':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-plus':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-ts':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
+        specifier: ^5.1.0
+        version: 5.1.0(eslint@9.30.1(jiti@1.21.7))
       '@types/aws-lambda':
         specifier: ^8.10.150
         version: 8.10.150
@@ -419,17 +380,8 @@ importers:
         specifier: ^9.30.1
         version: 9.30.1
       '@stylistic/eslint-plugin':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
-      '@stylistic/eslint-plugin-js':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-plus':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-ts':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
+        specifier: ^5.1.0
+        version: 5.1.0(eslint@9.30.1(jiti@1.21.7))
       '@types/node':
         specifier: ^22.16.0
         version: 22.16.0
@@ -483,17 +435,8 @@ importers:
         specifier: ^9.30.1
         version: 9.30.1
       '@stylistic/eslint-plugin':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
-      '@stylistic/eslint-plugin-js':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-plus':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-ts':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
+        specifier: ^5.1.0
+        version: 5.1.0(eslint@9.30.1(jiti@1.21.7))
       '@types/node':
         specifier: ^22.16.0
         version: 22.16.0
@@ -544,17 +487,8 @@ importers:
         specifier: ^9.30.1
         version: 9.30.1
       '@stylistic/eslint-plugin':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
-      '@stylistic/eslint-plugin-js':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-plus':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-ts':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
+        specifier: ^5.1.0
+        version: 5.1.0(eslint@9.30.1(jiti@1.21.7))
       '@types/node':
         specifier: ^22.16.0
         version: 22.16.0
@@ -608,17 +542,8 @@ importers:
         specifier: ^9.30.1
         version: 9.30.1
       '@stylistic/eslint-plugin':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
-      '@stylistic/eslint-plugin-js':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-plus':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-ts':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
+        specifier: ^5.1.0
+        version: 5.1.0(eslint@9.30.1(jiti@1.21.7))
       '@types/aws-lambda':
         specifier: ^8.10.150
         version: 8.10.150
@@ -693,17 +618,8 @@ importers:
         specifier: ^9.30.1
         version: 9.30.1
       '@stylistic/eslint-plugin':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
-      '@stylistic/eslint-plugin-js':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-plus':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-ts':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
+        specifier: ^5.1.0
+        version: 5.1.0(eslint@9.30.1(jiti@1.21.7))
       '@types/node':
         specifier: ^22.16.0
         version: 22.16.0
@@ -748,17 +664,8 @@ importers:
         specifier: ^9.30.1
         version: 9.30.1
       '@stylistic/eslint-plugin':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
-      '@stylistic/eslint-plugin-js':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-plus':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-ts':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
+        specifier: ^5.1.0
+        version: 5.1.0(eslint@9.30.1(jiti@1.21.7))
       '@types/express':
         specifier: ^5.0.3
         version: 5.0.3
@@ -821,17 +728,8 @@ importers:
         specifier: ^9.30.1
         version: 9.30.1
       '@stylistic/eslint-plugin':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
-      '@stylistic/eslint-plugin-js':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-plus':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-ts':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
+        specifier: ^5.1.0
+        version: 5.1.0(eslint@9.30.1(jiti@1.21.7))
       '@types/async-retry':
         specifier: ^1.4.9
         version: 1.4.9
@@ -891,14 +789,8 @@ importers:
         specifier: ^0.8.10
         version: 0.8.10(@solidjs/router@0.15.3(solid-js@1.9.7))(solid-js@1.9.7)
       '@stylistic/eslint-plugin':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
-      '@stylistic/eslint-plugin-jsx':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-plus':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
+        specifier: ^5.1.0
+        version: 5.1.0(eslint@9.30.1(jiti@1.21.7))
       '@types/crypto-js':
         specifier: ^4.2.2
         version: 4.2.2
@@ -994,11 +886,8 @@ importers:
         specifier: ^9.30.1
         version: 9.30.1
       '@stylistic/eslint-plugin':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
-      '@stylistic/eslint-plugin-plus':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
+        specifier: ^5.1.0
+        version: 5.1.0(eslint@9.30.1(jiti@1.21.7))
       '@types/html-to-text':
         specifier: ^9.0.4
         version: 9.0.4
@@ -1085,11 +974,8 @@ importers:
         specifier: ^9.30.1
         version: 9.30.1
       '@stylistic/eslint-plugin':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
-      '@stylistic/eslint-plugin-plus':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
+        specifier: ^5.1.0
+        version: 5.1.0(eslint@9.30.1(jiti@1.21.7))
       '@types/aws-lambda':
         specifier: ^8.10.150
         version: 8.10.150
@@ -1188,20 +1074,8 @@ importers:
         specifier: ^0.8.10
         version: 0.8.10(@solidjs/router@0.15.3(solid-js@1.9.7))(solid-js@1.9.7)
       '@stylistic/eslint-plugin':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
-      '@stylistic/eslint-plugin-js':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-jsx':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-plus':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))
-      '@stylistic/eslint-plugin-ts':
-        specifier: ^4.4.1
-        version: 4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
+        specifier: ^5.1.0
+        version: 5.1.0(eslint@9.30.1(jiti@1.21.7))
       '@testing-library/jest-dom':
         specifier: ^6.6.3
         version: 6.6.3
@@ -4226,31 +4100,8 @@ packages:
       '@solidjs/router':
         optional: true
 
-  '@stylistic/eslint-plugin-js@4.4.1':
-    resolution: {integrity: sha512-eLisyHvx7Sel8vcFZOEwDEBGmYsYM1SqDn81BWgmbqEXfXRf8oe6Rwp+ryM/8odNjlxtaaxp0Ihmt86CnLAxKg==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-    peerDependencies:
-      eslint: '>=9.0.0'
-
-  '@stylistic/eslint-plugin-jsx@4.4.1':
-    resolution: {integrity: sha512-83SInq4u7z71vWwGG+6ViOtlOmZ6tSrDkMPhrvdBBTGMLA0gs22WSdhQ4vZP3oJ5Xg4ythvqeUiFSedvVxzhyA==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-    peerDependencies:
-      eslint: '>=9.0.0'
-
-  '@stylistic/eslint-plugin-plus@4.4.1':
-    resolution: {integrity: sha512-4w2Ktg7OuJrn0QwJPdTWmrweJ91UoIUEiSPLUVTurAR+Qx9rLHGnycAocUcoRMtPRmCNmw1BP61JKsl7Jug38g==}
-    peerDependencies:
-      eslint: '>=9.0.0'
-
-  '@stylistic/eslint-plugin-ts@4.4.1':
-    resolution: {integrity: sha512-2r6cLcmdF6til66lx8esBYvBvsn7xCmLT50gw/n1rGGlTq/OxeNjBIh4c3VEaDGMa/5TybrZTia6sQUHdIWx1w==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-    peerDependencies:
-      eslint: '>=9.0.0'
-
-  '@stylistic/eslint-plugin@4.4.1':
-    resolution: {integrity: sha512-CEigAk7eOLyHvdgmpZsKFwtiqS2wFwI1fn4j09IU9GmD4euFM4jEBAViWeCqaNLlbX2k2+A/Fq9cje4HQBXuJQ==}
+  '@stylistic/eslint-plugin@5.1.0':
+    resolution: {integrity: sha512-TJRJul4u/lmry5N/kyCU+7RWWOk0wyXN+BncRlDYBqpLFnzXkd7QGVfN7KewarFIXv0IX0jSF/Ksu7aHWEDeuw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: '>=9.0.0'
@@ -12473,47 +12324,15 @@ snapshots:
     optionalDependencies:
       '@solidjs/router': 0.15.3(solid-js@1.9.7)
 
-  '@stylistic/eslint-plugin-js@4.4.1(eslint@9.30.1(jiti@1.21.7))':
+  '@stylistic/eslint-plugin@5.1.0(eslint@9.30.1(jiti@1.21.7))':
     dependencies:
-      eslint: 9.30.1(jiti@1.21.7)
-      eslint-visitor-keys: 4.2.1
-      espree: 10.4.0
-
-  '@stylistic/eslint-plugin-jsx@4.4.1(eslint@9.30.1(jiti@1.21.7))':
-    dependencies:
+      '@eslint-community/eslint-utils': 4.7.0(eslint@9.30.1(jiti@1.21.7))
+      '@typescript-eslint/types': 8.35.1
       eslint: 9.30.1(jiti@1.21.7)
       eslint-visitor-keys: 4.2.1
       espree: 10.4.0
       estraverse: 5.3.0
       picomatch: 4.0.2
-
-  '@stylistic/eslint-plugin-plus@4.4.1(eslint@9.30.1(jiti@1.21.7))':
-    dependencies:
-      eslint: 9.30.1(jiti@1.21.7)
-      eslint-visitor-keys: 4.2.1
-      espree: 10.4.0
-
-  '@stylistic/eslint-plugin-ts@4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)':
-    dependencies:
-      '@typescript-eslint/utils': 8.35.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
-      eslint: 9.30.1(jiti@1.21.7)
-      eslint-visitor-keys: 4.2.1
-      espree: 10.4.0
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
-
-  '@stylistic/eslint-plugin@4.4.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)':
-    dependencies:
-      '@typescript-eslint/utils': 8.35.1(eslint@9.30.1(jiti@1.21.7))(typescript@5.8.3)
-      eslint: 9.30.1(jiti@1.21.7)
-      eslint-visitor-keys: 4.2.1
-      espree: 10.4.0
-      estraverse: 5.3.0
-      picomatch: 4.0.2
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
 
   '@testing-library/dom@10.4.0':
     dependencies:
