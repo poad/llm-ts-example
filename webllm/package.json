@@ -33,12 +33,12 @@
     "vitest": "^3.2.4"
   },
   "dependencies": {
-    "@langchain/community": "^0.3.47",
-    "@langchain/core": "^0.3.61",
+    "@langchain/community": "^0.3.48",
+    "@langchain/core": "^0.3.62",
     "@mlc-ai/web-llm": "^0.2.79",
     "autoprefixer": "^10.4.21",
     "langchain": "^0.3.29",
-    "langfuse-langchain": "^3.38.0",
+    "langfuse-langchain": "^3.38.2",
     "postcss": "^8.5.6",
     "solid-js": "^1.9.7",
     "tailwindcss": "^3.4.17",

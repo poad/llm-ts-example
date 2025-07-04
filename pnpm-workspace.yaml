@@ -12,6 +12,7 @@ packages:
   - './mpc/servers/postgresql-http'
   - './mpc/servers/weather'
   - './mpc/servers/weather-http'
+  - './mpc/servers/resource-mcp-server'
   - './mpc/clients/mcp-client-typescript'
   - './mpc/clients/mcp-client-http'
   - './mpc/clients/langgraph-mpc-client'

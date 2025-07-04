@@ -24,6 +24,7 @@ updates:
       - '/mpc/servers/postgresql-http/'
       - '/mpc/servers/weather/'
       - '/mpc/servers/weather-http/'
+      - '/mpc/servers/resource-mcp-server/'
       - '/node-llama-cpp/'
       - '/rag/app/'
       - '/rag/batch/'
