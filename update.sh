@@ -43,7 +43,7 @@ if [ $result -ne 0 ]; then
   exit $result
 fi
 
-cd "${CURRENT}/agent-mastra" || exit
+cd "${CURRENT}/agents/agent-mastra" || exit
 result=$?
 if [ $result -ne 0 ]; then
   cd "${CUR}" || exit
