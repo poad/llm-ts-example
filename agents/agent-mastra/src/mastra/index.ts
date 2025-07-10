@@ -1,6 +1,7 @@
 
 import { Mastra } from '@mastra/core/mastra';
 import { ConsoleLogger } from '@mastra/core/logger';
+import { LibSQLStore } from '@mastra/libsql';
 import { weatherAgent } from './agents';
 import { LangfuseExporter } from 'langfuse-vercel';
 
@@ -9,6 +10,10 @@ export const mastra = new Mastra({
   logger: new ConsoleLogger({
     name: 'Mastra',
     level: 'info',
+  }),
+  storage: new LibSQLStore({
+    // stores telemetry, evals, ... into memory storage, if it needs to persist, change to file:../mastra.db
+    url: ':memory:',
   }),
   telemetry: {
     serviceName: 'ai', // 必須: LangfuseがAI SDKトレースと認識するため
