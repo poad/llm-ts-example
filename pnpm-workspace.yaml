@@ -10,14 +10,20 @@ packages:
   - ./node-llama-cpp
   - ./agents/agent-mastra
   - ./agents/agent-voltagent
-  - './mpc/servers/postgresql-http'
-  - './mpc/servers/weather'
-  - './mpc/servers/weather-http'
-  - './mpc/servers/resource-mcp-server'
-  - './mpc/clients/mcp-client-typescript'
-  - './mpc/clients/mcp-client-http'
-  - './mpc/clients/langgraph-mpc-client'
-  - './mpc/clients/mastra-mcp-client'
+  - ./mpc/servers/postgresql-http
+  - ./mpc/servers/weather
+  - ./mpc/servers/weather-http
+  - ./mpc/servers/resource-mcp-server
+  - ./mpc/clients/mcp-client-typescript
+  - ./mpc/clients/mcp-client-http
+  - ./mpc/clients/langgraph-mpc-client
+  - ./mpc/clients/mastra-mcp-client
+
+auto-install-peers: true
+
+enable-pre-post-scripts: true
+
+legacy-peer-deps: true
 
 onlyBuiltDependencies:
   - esbuild
@@ -25,7 +31,9 @@ onlyBuiltDependencies:
   - protobufjs
   - sharp
 
-enable-pre-post-scripts: true
-legacy-peer-deps: true
-auto-install-peers: true
+overrides:
+  axios@=1.10.0: '>=1.11.0'
+  form-data@>=4.0.0 <4.0.4: '>=4.0.4'
+  got@<11.8.5: '>=11.8.5'
+
 strict-peer-dependencies: false

@@ -16,15 +16,15 @@
     "volt": "volt"
   },
   "dependencies": {
-    "@ai-sdk/amazon-bedrock": "^2.2.11",
+    "@ai-sdk/amazon-bedrock": "^2.2.12",
     "@voltagent/cli": "^0.1.9",
-    "@voltagent/core": "^0.1.58",
-    "@voltagent/vercel-ai": "^0.1.13",
+    "@voltagent/core": "^0.1.72",
+    "@voltagent/vercel-ai": "^0.1.16",
     "zod": "3.24.2"
   },
   "devDependencies": {
-    "@types/node": "^22.16.3",
+    "@types/node": "^22.17.0",
     "tsx": "^4.20.3",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   }
 }

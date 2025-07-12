@@ -10,12 +10,12 @@ import pluginPromise from 'eslint-plugin-promise'
 import solid from 'eslint-plugin-solid';
 
 import { includeIgnoreFile } from '@eslint/compat';
-import path from "node:path";
-import { fileURLToPath } from "node:url";
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const gitignorePath = path.resolve(__dirname, "./.gitignore");
+const gitignorePath = path.resolve(__dirname, './.gitignore');
 
 export default tseslint.config(
   includeIgnoreFile(gitignorePath),
@@ -61,12 +61,10 @@ export default tseslint.config(
       },
     },
     rules: {
-      '@stylistic/semi': 'error',
-      '@stylistic/ts/indent': ['error', 2],
-      '@stylistic/jsx/jsx-indent': ['error', 2],
-      "comma-dangle": ["error", "always-multiline"],
-      quotes: ["error", "single"],
-      semi: ["error", "always"],
+      '@stylistic/semi': ['error', 'always'],
+      // '@stylistic/indent': ['error', 2],
+      '@stylistic/comma-dangle': ['error', 'always-multiline'],
+      '@stylistic/quotes': ['error', 'single'],
     }
   },
 );
