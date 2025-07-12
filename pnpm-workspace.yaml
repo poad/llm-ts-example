@@ -29,3 +29,6 @@ enable-pre-post-scripts: true
 legacy-peer-deps: true
 auto-install-peers: true
 strict-peer-dependencies: false
+
+overrides:
+  'rollup': '4.44.2'
