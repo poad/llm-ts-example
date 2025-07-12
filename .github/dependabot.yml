@@ -15,6 +15,7 @@ updates:
     directories:
       - '/'
       - '/agents/agent-mastra/'
+      - '/agents/agent-voltagent/'
       - '/basic/cdk/'
       - '/basic/app/'
       - '/mpc/clients/langgraph-mpc-client/'
