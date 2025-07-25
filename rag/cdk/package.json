@@ -43,7 +43,7 @@
     "@langchain/pinecone": "^0.2.0",
     "@pinecone-database/pinecone": "^6.1.2",
     "@smithy/eventstream-codec": "^4.0.4",
-    "aws-cdk-lib": "^2.206.0",
+    "aws-cdk-lib": "^2.207.0",
     "constructs": "^10.4.2",
     "langchain": "^0.3.30",
     "langfuse": "^3.38.4",

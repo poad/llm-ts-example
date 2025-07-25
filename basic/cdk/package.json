@@ -42,7 +42,7 @@
     "@langchain/langgraph": "^0.2.74",
     "@langchain/openai": "^0.5.18",
     "@smithy/eventstream-codec": "^4.0.4",
-    "aws-cdk-lib": "^2.206.0",
+    "aws-cdk-lib": "^2.207.0",
     "constructs": "^10.4.2",
     "langfuse": "^3.38.4",
     "langfuse-langchain": "^3.38.4",
