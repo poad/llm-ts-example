@@ -35,9 +35,9 @@
     "vitest": "^3.2.4"
   },
   "dependencies": {
-    "@aws-sdk/client-bedrock-runtime": "^3.858.0",
+    "@aws-sdk/client-bedrock-runtime": "^3.859.0",
     "@inquirer/prompts": "^7.8.0",
-    "@langchain/aws": "^0.1.12",
+    "@langchain/aws": "^0.1.13",
     "@langchain/core": "^0.3.66",
     "@langchain/langgraph": "^0.2.74",
     "@langchain/mcp-adapters": "^0.5.4",
