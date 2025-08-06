@@ -17,9 +17,9 @@
   },
   "dependencies": {
     "@ai-sdk/amazon-bedrock": "^2.2.12",
-    "@voltagent/cli": "^0.1.9",
-    "@voltagent/core": "^0.1.72",
-    "@voltagent/vercel-ai": "^0.1.16",
+    "@voltagent/cli": "^0.1.10",
+    "@voltagent/core": "^0.1.75",
+    "@voltagent/vercel-ai": "^0.1.17",
     "zod": "3.24.2"
   },
   "devDependencies": {

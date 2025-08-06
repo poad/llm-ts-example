@@ -10,13 +10,13 @@ export function selectLlm(modelType?: string): {
 } {
   const bedrockRegion = process.env.BEDROCK_AWS_REGION;
   switch (modelType) {
-    case 'cohere':
-      logger.debug('use: cohere.command-r-plus-v1:0 on AWS Bedrock');
+    case 'gpt-oss-20b':
+      logger.debug('use: oopenai.gpt-oss-20b-1:0 on Amazon Bedrock');
       return {
         platform: 'aws',
-        modelName: 'cohere.command-r-v1:0',
+        modelName: 'openai.gpt-oss-20b-1:0',
         model: new ChatBedrockConverse({
-          model: 'cohere.command-r-v1:0',
+          model: 'openai.gpt-oss-20b-1:0',
           temperature: 0,
           streaming: true,
           metadata: {
@@ -25,43 +25,13 @@ export function selectLlm(modelType?: string): {
           region: bedrockRegion,
         }),
       };
-    case 'llama32-1b':
-      logger.debug('use: Meta LLama 3.2 1B Instruct');
+    case 'gpt-oss-120b':
+      logger.debug('use: openai.gpt-oss-120b-1:0 on Amazon Bedrock');
       return {
         platform: 'aws',
-        modelName: 'us.meta.llama3-2-1b-instruct-v1:0',
+        modelName: 'openai.gpt-oss-120b-1:0',
         model: new ChatBedrockConverse({
-          model: 'us.meta.llama3-2-1b-instruct-v1:0',
-          temperature: 0,
-          streaming: true,
-          metadata: {
-            tag: 'chat',
-          },
-          region: bedrockRegion,
-        }),
-      };
-    case 'llama32-3b':
-      logger.debug('use: Meta LLama 3.2 3B Instruct');
-      return {
-        platform: 'aws',
-        modelName: 'us.meta.llama3-2-3b-instruct-v1:0',
-        model: new ChatBedrockConverse({
-          model: 'us.meta.llama3-2-3b-instruct-v1:0',
-          temperature: 0,
-          streaming: true,
-          metadata: {
-            tag: 'chat',
-          },
-          region: bedrockRegion,
-        }),
-      };
-    case 'nova-lite':
-      logger.debug('use: amazon.nova-lite-v1:0 on AWS Bedrock');
-      return {
-        platform: 'aws',
-        modelName: 'us.amazon.nova-lite-v1:0',
-        model: new ChatBedrockConverse({
-          model: 'us.amazon.nova-lite-v1:0',
+          model: 'openai.gpt-oss-120b-1:0',
           temperature: 0,
           streaming: true,
           metadata: {
@@ -71,7 +41,7 @@ export function selectLlm(modelType?: string): {
         }),
       };
     case 'nova-micro':
-      logger.debug('use: amazon.nova-micro-v1:0 on AWS Bedrock');
+      logger.debug('use: amazon.nova-micro-v1:0 on Amazon Bedrock');
       return {
         platform: 'aws',
         modelName: 'us.amazon.nova-micro-v1:0',
@@ -85,8 +55,23 @@ export function selectLlm(modelType?: string): {
           region: bedrockRegion,
         }),
       };
+    case 'nova-lite':
+      logger.debug('use: amazon.nova-lite-v1:0 on Amazon Bedrock');
+      return {
+        platform: 'aws',
+        modelName: 'us.amazon.nova-lite-v1:0',
+        model: new ChatBedrockConverse({
+          model: 'us.amazon.nova-lite-v1:0',
+          temperature: 0,
+          streaming: true,
+          metadata: {
+            tag: 'chat',
+          },
+          region: bedrockRegion,
+        }),
+      };
     case 'nova-pro':
-      logger.debug('use: amazon.nova-pro-v1:0 on AWS Bedrock');
+      logger.debug('use: amazon.nova-pro-v1:0 on Amazon Bedrock');
       return {
         platform: 'aws',
         modelName: 'us.amazon.nova-pro-v1:0',
@@ -101,7 +86,7 @@ export function selectLlm(modelType?: string): {
         }),
       };
     case 'nova-premier':
-      logger.debug('use: amazon.nova-premier-v1:0 on AWS Bedrock');
+      logger.debug('use: amazon.nova-premier-v1:0 on Amazon Bedrock');
       return {
         platform: 'aws',
         modelName: 'us.amazon.nova-premier-v1:0',

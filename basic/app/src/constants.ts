@@ -1,37 +1,47 @@
 export const models = [
   {
     id: 'nova-micro',
-    name: 'Amazon Nove Micro (AWS Bedrock)',
+    name: 'Amazon Nove Micro (Amazon Bedrock)',
     selected: true,
   },
   {
     id: 'nova-lite',
-    name: 'Amazon Nove Lite (AWS Bedrock)',
+    name: 'Amazon Nove Lite (Amazon Bedrock)',
     selected: false,
   },
   {
     id: 'nova-pro',
-    name: 'Amazon Nove Pro (AWS Bedrock)',
+    name: 'Amazon Nove Pro (Amazon Bedrock)',
     selected: false,
   },
   {
     id: 'nova-premier',
-    name: 'Amazon Nove Premier (AWS Bedrock)',
+    name: 'Amazon Nove Premier (Amazon Bedrock)',
     selected: false,
   },
   {
-    id: 'llama32-3b',
-    name: 'Meta LLama 3.2 3B Instruct (AWS Bedrock)',
+    id: 'gpt-oss-120b',
+    name: 'OpenAI gpt-oss-120b (Amazon Bedrock)',
     selected: false,
   },
   {
-    id: 'llama32-1b',
-    name: 'Meta LLama 3.2 1B Instruct (AWS Bedrock)',
+    id: 'gpt-oss-20b',
+    name: 'OpenAI gpt-oss-20b (Amazon Bedrock)',
     selected: false,
   },
   {
-    id: 'llama33-70b',
-    name: 'Meta LLama 3.3 70B Instruct (AWS Bedrock)',
+    id: 'gpt-3.5-turbo-16k',
+    name: 'GPT-3.5 Turbo 16k',
+    selected: false,
+  },
+  {
+    id: 'gpt-4',
+    name: 'GPT-4',
+    selected: false,
+  },
+  {
+    id: 'gpt-4-32k',
+    name: 'GPT-4 32k',
     selected: false,
   },
   {
@@ -59,21 +69,6 @@ export const models = [
     name: 'GPT-4.1-nano',
     selected: false,
   },
-  // {
-  //   id: 'claude-3.7-sonnet-v1',
-  //   name: 'Claude 3.7 Sonnet v1 (AWS Bedrock)',
-  //   selected: false,
-  // },
-  // {
-  //   id: 'claude-3.5-sonnet-v2',
-  //   name: 'Claude 3.5 Sonnet v2 (AWS Bedrock)',
-  //   selected: false,
-  // },
-  // {
-  //   id: 'claude-3.5-sonnet-v1',
-  //   name: 'Claude 3.5 Sonnet v1 (AWS Bedrock)',
-  //   selected: false,
-  // },
   {
     id: 'o1-mini',
     name: 'o1 mini',
@@ -92,11 +87,6 @@ export const models = [
   {
     id: 'o1',
     name: 'GPT-o1',
-    selected: false,
-  },
-  {
-    id: 'cohere',
-    name: 'Cohere Command R+ v1 (AWS Bedrock)',
     selected: false,
   },
 ];
