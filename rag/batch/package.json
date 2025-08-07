@@ -15,8 +15,8 @@
   },
   "dependencies": {
     "@langchain/aws": "^0.1.13",
-    "@langchain/community": "^0.3.49",
-    "@langchain/core": "^0.3.66",
+    "@langchain/community": "^0.3.50",
+    "@langchain/core": "^0.3.67",
     "@langchain/langgraph": "^0.2.74",
     "@langchain/openai": "^0.5.18",
     "@langchain/pinecone": "^0.2.0",
