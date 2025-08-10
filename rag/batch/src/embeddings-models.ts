@@ -9,7 +9,7 @@ interface EmbeddingsModel {
 }
 
 function listEmbeddings(): EmbeddingsModel[] {
-  console.log(JSON.stringify(process.env.AZURE_OPENAI_API_KEY ?? '', null, 2));
+  // Do not log sensitive information such as API keys.
   return [
     {
       type: 'titan', model: new BedrockEmbeddings({
