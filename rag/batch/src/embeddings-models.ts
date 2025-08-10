@@ -9,7 +9,7 @@ interface EmbeddingsModel {
 }
 
 function listEmbeddings(): EmbeddingsModel[] {
-  console.log(process.env.AZURE_OPENAI_API_KEY);
+  console.log(JSON.stringify(process.env.AZURE_OPENAI_API_KEY ?? '', null, 2));
   return [
     {
       type: 'titan', model: new BedrockEmbeddings({

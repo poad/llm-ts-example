@@ -18,18 +18,18 @@
     "start": "node -r source-map-support/register build/server.js"
   },
   "devDependencies": {
-    "@eslint/compat": "^1.3.1",
-    "@eslint/js": "^9.32.0",
-    "@stylistic/eslint-plugin": "^5.2.2",
+    "@eslint/compat": "^1.3.2",
+    "@eslint/js": "^9.33.0",
+    "@stylistic/eslint-plugin": "^5.2.3",
     "@types/aws-lambda": "^8.10.152",
     "@types/csurf": "^1.11.5",
-    "@types/node": "^22.17.0",
+    "@types/node": "^22.17.1",
     "@types/pg": "^8.15.5",
     "@types/source-map-support": "^0.5.10",
     "@types/uuid": "^10.0.0",
     "@vitest/eslint-plugin": "^1.3.4",
     "dotenv": "^16.6.1",
-    "eslint": "^9.32.0",
+    "eslint": "^9.33.0",
     "eslint-import-resolver-typescript": "^3.10.1",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-promise": "^7.2.1",
@@ -44,9 +44,9 @@
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.24.1",
     "@hono/node-server": "^1.18.1",
-    "@modelcontextprotocol/sdk": "^1.17.1",
+    "@modelcontextprotocol/sdk": "^1.17.2",
     "@vercel/mcp-adapter": "^0.11.2",
-    "hono": "^4.8.12",
+    "hono": "^4.9.0",
     "pg": "^8.16.3",
     "zod": "^3.25.76"
   }

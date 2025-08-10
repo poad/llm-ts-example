@@ -18,7 +18,7 @@ export function selectLlm(modelType?: string): {
         model: new ChatBedrockConverse({
           model: 'openai.gpt-oss-20b-1:0',
           temperature: 0,
-          streaming: true,
+          streaming: false,
           metadata: {
             tag: 'chat',
           },
@@ -33,7 +33,7 @@ export function selectLlm(modelType?: string): {
         model: new ChatBedrockConverse({
           model: 'openai.gpt-oss-120b-1:0',
           temperature: 0,
-          streaming: true,
+          streaming: false,
           metadata: {
             tag: 'chat',
           },
@@ -149,6 +149,48 @@ export function selectLlm(modelType?: string): {
         modelName: 'gpt-4.1-nano',
         model: new AzureChatOpenAI({
           azureOpenAIApiDeploymentName: 'gpt-4.1-nano',
+          temperature: 0,
+          streaming: true,
+          metadata: {
+            tag: 'chat',
+          },
+        }),
+      };
+    case 'gpt-5-chat':
+      logger.debug('use: GPT-5 Chat on Azure OpenAI Service');
+      return {
+        platform: 'azure',
+        modelName: 'gpt-5-chat',
+        model: new AzureChatOpenAI({
+          azureOpenAIApiDeploymentName: 'gpt-5-chat',
+          temperature: 0,
+          streaming: true,
+          metadata: {
+            tag: 'chat',
+          },
+        }),
+      };
+    case 'gpt-5-mini':
+      logger.debug('use: GPT-5-mini on Azure OpenAI Service');
+      return {
+        platform: 'azure',
+        modelName: 'gpt-5-mini',
+        model: new AzureChatOpenAI({
+          azureOpenAIApiDeploymentName: 'gpt-5-mini',
+          temperature: 0,
+          streaming: true,
+          metadata: {
+            tag: 'chat',
+          },
+        }),
+      };
+    case 'gpt-5-nano':
+      logger.debug('use: GPT-5-nano on Azure OpenAI Service');
+      return {
+        platform: 'azure',
+        modelName: 'gpt-5-nano',
+        model: new AzureChatOpenAI({
+          azureOpenAIApiDeploymentName: 'gpt-5-nano',
           temperature: 0,
           streaming: true,
           metadata: {

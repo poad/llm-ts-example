@@ -70,6 +70,21 @@ export const models = [
     selected: false,
   },
   {
+    id: 'gpt-5-chat',
+    name: 'GPT-5 Chat',
+    selected: false,
+  },
+  {
+    id: 'gpt-5-mini',
+    name: 'GPT-5-mini',
+    selected: false,
+  },
+  {
+    id: 'gpt-5-nano',
+    name: 'GPT-5-nano',
+    selected: false,
+  },
+  {
     id: 'o1-mini',
     name: 'o1 mini',
     selected: false,
