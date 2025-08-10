@@ -20,31 +20,6 @@ export const models = [
     selected: false,
   },
   {
-    id: 'gpt-oss-120b',
-    name: 'OpenAI gpt-oss-120b (Amazon Bedrock)',
-    selected: false,
-  },
-  {
-    id: 'gpt-oss-20b',
-    name: 'OpenAI gpt-oss-20b (Amazon Bedrock)',
-    selected: false,
-  },
-  {
-    id: 'gpt-3.5-turbo-16k',
-    name: 'GPT-3.5 Turbo 16k',
-    selected: false,
-  },
-  {
-    id: 'gpt-4',
-    name: 'GPT-4',
-    selected: false,
-  },
-  {
-    id: 'gpt-4-32k',
-    name: 'GPT-4 32k',
-    selected: false,
-  },
-  {
     id: 'gpt-4o',
     name: 'GPT-4o',
     selected: false,

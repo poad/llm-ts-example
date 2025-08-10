@@ -10,36 +10,6 @@ export function selectLlm(modelType?: string): {
 } {
   const region = process.env.BEDROCK_AWS_REGION;
   switch (modelType) {
-    case 'gpt-oss-20b':
-      logger.debug('use: oopenai.gpt-oss-20b-1:0 on Amazon Bedrock');
-      return {
-        platform: 'aws',
-        modelName: 'openai.gpt-oss-20b-1:0',
-        model: new ChatBedrockConverse({
-          model: 'openai.gpt-oss-20b-1:0',
-          temperature: 0,
-          streaming: false,
-          metadata: {
-            tag: 'chat',
-          },
-          region,
-        }),
-      };
-    case 'gpt-oss-120b':
-      logger.debug('use: openai.gpt-oss-120b-1:0 on Amazon Bedrock');
-      return {
-        platform: 'aws',
-        modelName: 'openai.gpt-oss-120b-1:0',
-        model: new ChatBedrockConverse({
-          model: 'openai.gpt-oss-120b-1:0',
-          temperature: 0,
-          streaming: false,
-          metadata: {
-            tag: 'chat',
-          },
-          region,
-        }),
-      };
     case 'nova-micro':
       logger.debug('use: amazon.nova-micro-v1:0 on Amazon Bedrock');
       return {
