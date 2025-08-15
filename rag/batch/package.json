@@ -16,7 +16,7 @@
   "dependencies": {
     "@langchain/aws": "^0.1.13",
     "@langchain/community": "^0.3.50",
-    "@langchain/core": "^0.3.68",
+    "@langchain/core": "^0.3.70",
     "@langchain/langgraph": "^0.2.74",
     "@langchain/openai": "^0.5.18",
     "@langchain/pinecone": "^0.2.0",
@@ -41,6 +41,6 @@
     "eslint-plugin-promise": "^7.2.1",
     "rimraf": "^6.0.1",
     "typescript": "^5.9.2",
-    "typescript-eslint": "^8.39.0"
+    "typescript-eslint": "^8.39.1"
   }
 }
