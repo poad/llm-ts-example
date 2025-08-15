@@ -17,7 +17,7 @@ packages:
   - ./mpc/clients/mcp-client-typescript
   - ./mpc/clients/mcp-client-http
   - ./mpc/clients/langgraph-mpc-client
-  - ./mpc/clients/mastra-mcp-client
+  - '!./mpc/clients/mastra-mcp-client'
 
 auto-install-peers: true
 
