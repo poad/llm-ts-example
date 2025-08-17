@@ -1,10 +1,34 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 import * as dotenv from 'dotenv';
+import { resolve } from 'path';
 
 export default defineConfig({
+    // モノレポ用の共通設定
+  resolve: {
+    alias: {
+      // パッケージ間の直接参照
+      '@llm-ts-example/common-core': resolve(__dirname, 'packages/common-core/src'),
+      '@llm-ts-example/utils': resolve(__dirname, 'packages/utils/src')
+    }
+  },
+  server: {
+    fs: {
+      // モノレポ内のファイルアクセスを許可
+      allow: ['..']
+    }
+  },
+  build: {
+    target: 'esnext',
+    rollupOptions: {
+      // ESModuleとして出力
+      output: {
+        format: 'es'
+      }
+    }
+  },
   root: '.',
   test: {
     environment: 'node',
@@ -12,9 +36,6 @@ export default defineConfig({
     isolate: true,
     env: dotenv.config({ path: '.env.test' }).parsed,
     testTimeout: 30000,
-  },
-  build: {
-    target: 'esnext',
   },
   // resolve: {
   //   conditions: ['development'],

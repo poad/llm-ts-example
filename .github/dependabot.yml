@@ -14,6 +14,8 @@ updates:
   - package-ecosystem: npm
     directories:
       - '/'
+      - '/common/core/'
+      - '/common/backend/'
       - '/agents/agent-mastra/'
       - '/agents/agent-voltagent/'
       - '/basic/cdk/'

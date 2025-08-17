@@ -1,10 +1,7 @@
-'use strict';
-
 import { createRetrievalChain } from 'langchain/chains/retrieval';
 import { createStuffDocumentsChain } from 'langchain/chains/combine_documents';
 import { createHistoryAwareRetriever } from 'langchain/chains/history_aware_retriever';
 import { ChatPromptTemplate, MessagesPlaceholder } from '@langchain/core/prompts';
-
 import {
   StateGraph,
   START,
@@ -13,11 +10,12 @@ import {
   messagesStateReducer,
   Annotation,
 } from '@langchain/langgraph';
-
-import { selectLlm } from './llm';
 import { selectEmbeddings } from './embeddings-models';
 import { createVectorStore } from './vector-store';
 import { AIMessage, BaseMessage, HumanMessage } from '@langchain/core/messages';
+
+ 
+import { selectLlm } from '@llm-ts-example/common-backend';
 
 // Define the State interface
 const GraphAnnotation = Annotation.Root({

@@ -1,0 +1,10 @@
+src/**/*.js
+src/**/*.d.ts
+node_modules
+
+!dist/**/*.d.ts
+!dist/**/*.js
+
+!types/*.d.ts
+!*.config.js
+.env*

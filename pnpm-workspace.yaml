@@ -1,4 +1,6 @@
 packages:
+  - ./common/core
+  - ./common/backend
   - ./basic/cdk
   - ./basic/app
   - ./basic/cdk/function
@@ -30,6 +32,7 @@ onlyBuiltDependencies:
   - node-llama-cpp
   - protobufjs
   - sharp
+  - unrs-resolver
 
 overrides:
   axios@=1.10.0: '>=1.11.0'
