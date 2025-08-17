@@ -5,6 +5,7 @@ export function ModelSelector(props: {
     id: string;
     name: string;
     selected: boolean;
+    disabled?: boolean;
   }[],
   onChange: (model: string) => void
   class?: string;
@@ -12,7 +13,7 @@ export function ModelSelector(props: {
 }) {
   return (<>
     <select onChange={(e) => props.onChange(e.target.value)} id={props.id} class={props.class}>
-      <For each={props.models}>
+      <For each={props.models.filter((it) => !it.disabled)}>
         {(item) => (
           <option value={item.id} selected={item.selected}>{item.name}</option>
         )}
