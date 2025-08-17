@@ -19,10 +19,6 @@ const gitignorePath = path.resolve(__dirname, './.gitignore');
 
 export default tseslint.config(
   includeIgnoreFile(gitignorePath),
-  eslint.configs.recommended,
-  ...tseslint.configs.strict,
-  ...tseslint.configs.stylistic,
-  pluginPromise.configs['flat/recommended'],
   {
     ignores: [
       '**/*.d.ts',
@@ -34,14 +30,20 @@ export default tseslint.config(
       'dist',
     ],
   },
+  eslint.configs.recommended,
+  ...tseslint.configs.strict,
+  ...tseslint.configs.stylistic,
+  pluginPromise.configs['flat/recommended'],
   {
     files: ['src/**/*.{ts,tsx}'],
-    ...importPlugin.flatConfigs.recommended,
-    ...importPlugin.flatConfigs.typescript,
     languageOptions: {
       parser: tseslint.parser,
       ecmaVersion: 'latest',
       sourceType: 'module',
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: __dirname,
+      },
     },
     plugins: {
       '@stylistic': stylistic,
@@ -49,20 +51,10 @@ export default tseslint.config(
       '@stylistic/jsx': stylistic,
       solid,
     },
-    settings: {
-      'import/parsers': {
-        espree: ['.js', '.cjs', '.mjs'],
-        '@typescript-eslint/parser': ['.ts'],
-      },
-      'import/internal-regex': '^~/',
-      'import/resolver': {
-        node: true,
-        typescript: true,
-      },
-    },
+    extends: [importPlugin.flatConfigs.recommended, importPlugin.flatConfigs.typescript],
     rules: {
       '@stylistic/semi': ['error', 'always'],
-      // '@stylistic/indent': ['error', 2],
+      '@stylistic/indent': ['error', 2],
       '@stylistic/comma-dangle': ['error', 'always-multiline'],
       '@stylistic/quotes': ['error', 'single'],
     }

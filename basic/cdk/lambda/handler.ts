@@ -1,10 +1,8 @@
-'use strict';
-
 import { ChatPromptTemplate } from '@langchain/core/prompts';
 import { StringOutputParser } from '@langchain/core/output_parsers';
 import { CallbackHandler } from 'langfuse-langchain';
-import { selectLlm } from './llm';
-import { logger } from './logger';
+ 
+import { selectLlm, logger } from '@llm-ts-example/common-backend';
 
 export async function handle(
   sessionId: string,

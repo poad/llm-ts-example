@@ -31,25 +31,22 @@ const config = tseslint.config(
   eslint.configs.recommended,
   ...tseslint.configs.strict,
   ...tseslint.configs.stylistic,
-  eslintImport.flatConfigs.recommended,
-  eslintImport.flatConfigs.typescript,
   {
     files: ['{bin,lib,lambda}/**/*.{ts,tsx}'],
+    languageOptions: {
+      parser: tseslint.parser,
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: __dirname,
+      },
+    },
     plugins: {
       '@stylistic': stylistic,
       '@stylistic/ts': stylistic,
     },
-    settings: {
-      'import/internal-regex': '^~/',
-      'import/resolver': {
-        node: {
-          extensions: ['.ts', '.tsx'],
-        },
-        typescript: {
-          alwaysTryTypes: true,
-        },
-      },
-    },
+    extends: [eslintImport.flatConfigs.recommended, eslintImport.flatConfigs.typescript],
     rules: {
       '@stylistic/semi': ['error', 'always'],
       '@stylistic/indent': ['error', 2],

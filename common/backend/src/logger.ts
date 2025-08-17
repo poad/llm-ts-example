@@ -25,4 +25,4 @@ const logger = new Logger({
   logFormatter: new LocalLogFormatter(),
 });
 
-export { logger };
+export default logger;

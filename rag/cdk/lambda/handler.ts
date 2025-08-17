@@ -1,10 +1,9 @@
-'use strict';
-
 import { v7 as uuidv7 } from 'uuid';
 
 import { CallbackHandler } from 'langfuse-langchain';
-import { logger } from './logger';
 import { createGraph } from './graph';
+ 
+import { logger } from '@llm-ts-example/common-backend';
 
 export async function handle(
   sessionId: string,

@@ -7,18 +7,22 @@ import importPlugin from 'eslint-plugin-import';
 
 import pluginPromise from 'eslint-plugin-promise'
 
-import solid from 'eslint-plugin-solid';
-
 import { includeIgnoreFile } from '@eslint/compat';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const gitignorePath = path.resolve(__dirname, '.gitignore');
+const gitignorePath = path.resolve(__dirname, ".gitignore");
 
 export default tseslint.config(
   includeIgnoreFile(gitignorePath),
+  eslint.configs.recommended,
+  ...tseslint.configs.strict,
+  ...tseslint.configs.stylistic,
+  importPlugin.flatConfigs.recommended,
+  importPlugin.flatConfigs.typescript,
+  pluginPromise.configs['flat/recommended'],
   {
     ignores: [
       '**/*.d.ts',
@@ -27,15 +31,13 @@ export default tseslint.config(
       'src/stories',
       '**/*.css',
       'node_modules/**/*',
+      'out',
+      'cdk.out',
       'dist',
     ],
   },
-  eslint.configs.recommended,
-  ...tseslint.configs.strict,
-  ...tseslint.configs.stylistic,
-  pluginPromise.configs['flat/recommended'],
   {
-    files: ['src/**/*.{ts,tsx}'],
+    files: ['src/**/*.ts'],
     languageOptions: {
       parser: tseslint.parser,
       ecmaVersion: 'latest',
@@ -48,15 +50,14 @@ export default tseslint.config(
     plugins: {
       '@stylistic': stylistic,
       '@stylistic/ts': stylistic,
-      '@stylistic/jsx': stylistic,
-      solid,
     },
     extends: [importPlugin.flatConfigs.recommended, importPlugin.flatConfigs.typescript],
     rules: {
       '@stylistic/semi': ['error', 'always'],
       '@stylistic/indent': ['error', 2],
       '@stylistic/comma-dangle': ['error', 'always-multiline'],
+      '@stylistic/arrow-parens': ['error', 'always'],
       '@stylistic/quotes': ['error', 'single'],
-    }
+    },
   },
 );

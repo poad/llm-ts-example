@@ -8,7 +8,7 @@ import * as nodejs from 'aws-cdk-lib/aws-lambda-nodejs';
 import * as awslogs from 'aws-cdk-lib/aws-logs';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as deployment from 'aws-cdk-lib/aws-s3-deployment';
-import { buildFrontend } from './process/setup';
+import { buildCommon, buildFrontend } from './process/setup';
 import assert from 'node:assert';
 
 export interface Config extends cdk.StackProps {
@@ -66,6 +66,8 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
     } = props;
 
     assert(pinecone.apiKey);
+
+    buildCommon();
 
     buildFrontend();
 

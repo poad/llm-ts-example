@@ -21,5 +21,3 @@ export function ModelSelector(props: {
 
   </>);
 }
-
-export default ModelSelector;
