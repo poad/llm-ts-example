@@ -20,8 +20,8 @@
     "build": "tsc --build --clean && tsc",
     "clean": "tsc --build --clean",
     "watch": "tsc -w",
-    "lint": "eslint",
-    "lint-fix": "eslint --fix"
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix"
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.25.1",

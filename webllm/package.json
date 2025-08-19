@@ -9,8 +9,8 @@
     "build": "vite build",
     "serve": "vite preview",
     "test": "vitest",
-    "lint": "eslint",
-    "lint-fix": "eslint --fix"
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix"
   },
   "license": "MIT",
   "devDependencies": {

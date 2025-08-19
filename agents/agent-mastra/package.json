@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "mastra dev",
     "build": "mastra build",
-    "lint": "eslint",
-    "lint-fix": "eslint --fix"
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix"
   },
   "keywords": [],
   "author": "",
