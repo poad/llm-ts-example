@@ -52,5 +52,22 @@ export default tseslint.config(
       '@stylistic/ts': stylistic,
     },
     extends: [importPlugin.flatConfigs.recommended, importPlugin.flatConfigs.typescript],
+    languageOptions: {
+      parser: tseslint.parser,
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: __dirname,
+      },
+    },
+    settings: {
+      'import/resolver': {
+        // You will also need to install and configure the TypeScript resolver
+        // See also https://github.com/import-js/eslint-import-resolver-typescript#configuration
+        'typescript': true,
+        'node': true,
+      },
+    },
   },
 );

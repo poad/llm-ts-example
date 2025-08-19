@@ -10,7 +10,7 @@ packages:
   - ./rag/cdk/function
   - ./webllm
   - ./node-llama-cpp
-  - '!./agents/agent-mastra'
+  - './agents/agent-mastra'
   - ./agents/agent-voltagent
   - ./agents/langgraph-deep-agent
   - ./mpc/servers/postgresql-http
@@ -20,7 +20,7 @@ packages:
   - ./mpc/clients/mcp-client-typescript
   - ./mpc/clients/mcp-client-http
   - ./mpc/clients/langgraph-mpc-client
-  - '!./mpc/clients/mastra-mcp-client'
+  - './mpc/clients/mastra-mcp-client'
 
 auto-install-peers: true
 

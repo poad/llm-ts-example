@@ -1,12 +1,12 @@
 
 import { Mastra } from '@mastra/core/mastra';
-import { ConsoleLogger } from '@mastra/core/logger';
+import { PinoLogger } from '@mastra/loggers';
 import { LangfuseExporter } from 'langfuse-vercel';
 import { agent } from './agents';
 
 export const mastra = new Mastra({
   agents: { agent },
-  logger: new ConsoleLogger({
+  logger: new PinoLogger({
     name: 'Mastra',
     level: 'info',
   }),
