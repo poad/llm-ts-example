@@ -6,28 +6,28 @@ import * as dotenv from 'dotenv';
 import { resolve } from 'path';
 
 export default defineConfig({
-    // モノレポ用の共通設定
+  // モノレポ用の共通設定
   resolve: {
     alias: {
       // パッケージ間の直接参照
       '@llm-ts-example/common-core': resolve(__dirname, 'packages/common-core/src'),
-      '@llm-ts-example/utils': resolve(__dirname, 'packages/utils/src')
-    }
+      '@llm-ts-example/utils': resolve(__dirname, 'packages/utils/src'),
+    },
   },
   server: {
     fs: {
       // モノレポ内のファイルアクセスを許可
-      allow: ['..']
-    }
+      allow: ['..'],
+    },
   },
   build: {
     target: 'esnext',
     rollupOptions: {
       // ESModuleとして出力
       output: {
-        format: 'es'
-      }
-    }
+        format: 'es',
+      },
+    },
   },
   root: '.',
   test: {

@@ -18,6 +18,7 @@ updates:
       - '/common/backend/'
       - '/agents/agent-mastra/'
       - '/agents/agent-voltagent/'
+      - '/agents//langgraph-deep-agent/'
       - '/basic/cdk/'
       - '/basic/app/'
       - '/mpc/clients/langgraph-mpc-client/'

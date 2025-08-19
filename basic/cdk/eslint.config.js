@@ -32,26 +32,27 @@ const config = tseslint.config(
   ...tseslint.configs.strict,
   ...tseslint.configs.stylistic,
   {
-    files: ['{bin,lib,lambda}/**/*.{ts,tsx}'],
-    languageOptions: {
-      parser: tseslint.parser,
-      ecmaVersion: 'latest',
-      sourceType: 'module',
-      parserOptions: {
-        projectService: true,
-        tsconfigRootDir: __dirname,
-      },
-    },
     plugins: {
       '@stylistic': stylistic,
-      '@stylistic/ts': stylistic,
     },
-    extends: [eslintImport.flatConfigs.recommended, eslintImport.flatConfigs.typescript],
     rules: {
       '@stylistic/semi': ['error', 'always'],
       '@stylistic/indent': ['error', 2],
       '@stylistic/comma-dangle': ['error', 'always-multiline'],
       '@stylistic/quotes': ['error', 'single'],
+    },
+  },
+  {
+    files: ['{bin,lib,lambda}/**/*.{ts,tsx}'],
+    plugins: {
+      '@stylistic/ts': stylistic,
+    },
+    extends: [eslintImport.flatConfigs.recommended, eslintImport.flatConfigs.typescript],
+  },
+  {
+    files: ['*.js'],
+    plugins: {
+      '@stylistic/js': stylistic,
     },
   },
   {
