@@ -20,6 +20,8 @@ export default tseslint.config(
   {
     ignores: [
       'node_modules',
+      'src/**/*.d.ts',
+      'src/**/*.js',
       'out',
       'dist',
     ],
