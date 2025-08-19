@@ -3,9 +3,9 @@
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import tseslint from 'typescript-eslint';
-import eslintImport from 'eslint-plugin-import';
+import importPlugin from 'eslint-plugin-import';
 
-import vitest from '@vitest/eslint-plugin';
+import pluginPromise from 'eslint-plugin-promise';
 
 import { includeIgnoreFile } from '@eslint/compat';
 import path from 'node:path';
@@ -15,22 +15,21 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const gitignorePath = path.resolve(__dirname, '.gitignore');
 
-const config = tseslint.config(
+export default tseslint.config(
   includeIgnoreFile(gitignorePath),
   {
     ignores: [
-      '**/*.d.ts',
-      '**/*.js',
-      'node_modules/**/*',
+      'node_modules',
+      'src/**/*.d.ts',
+      'src/**/*.js',
       'out',
       'dist',
-      'cdk.out',
-      '.output',
     ],
   },
   eslint.configs.recommended,
   ...tseslint.configs.strict,
   ...tseslint.configs.stylistic,
+  pluginPromise.configs['flat/recommended'],
   {
     plugins: {
       '@stylistic': stylistic,
@@ -39,15 +38,9 @@ const config = tseslint.config(
       '@stylistic/semi': ['error', 'always'],
       '@stylistic/indent': ['error', 2],
       '@stylistic/comma-dangle': ['error', 'always-multiline'],
+      '@stylistic/arrow-parens': ['error', 'always'],
       '@stylistic/quotes': ['error', 'single'],
     },
-  },
-  {
-    files: ['{bin,lib,lambda}/**/*.{ts,tsx}'],
-    plugins: {
-      '@stylistic/ts': stylistic,
-    },
-    extends: [eslintImport.flatConfigs.recommended, eslintImport.flatConfigs.typescript],
   },
   {
     files: ['*.js'],
@@ -56,15 +49,27 @@ const config = tseslint.config(
     },
   },
   {
-    files: ['test/**'], // or any other pattern
+    files: ['src/**/*.ts'],
     plugins: {
-      vitest
+      '@stylistic/ts': stylistic,
     },
-    rules: {
-      ...vitest.configs.recommended.rules, // you can also use vitest.configs.all.rules to enable all rules
-      'vitest/max-nested-describe': ['error', { 'max': 3 }] // you can also modify rules' behavior using option like this
+    extends: [importPlugin.flatConfigs.recommended, importPlugin.flatConfigs.typescript],
+    languageOptions: {
+      parser: tseslint.parser,
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: __dirname,
+      },
+    },
+    settings: {
+      'import/resolver': {
+        // You will also need to install and configure the TypeScript resolver
+        // See also https://github.com/import-js/eslint-import-resolver-typescript#configuration
+        'typescript': true,
+        'node': true,
+      },
     },
   },
 );
-
-export default config;

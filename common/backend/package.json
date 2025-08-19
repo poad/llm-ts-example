@@ -20,13 +20,13 @@
     "build": "tsc --build --clean && tsc",
     "clean": "tsc --build --clean",
     "watch": "tsc -w",
-    "lint": "eslint",
-    "lint-fix": "eslint --fix"
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix"
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.25.1",
-    "@langchain/aws": "^0.1.13",
-    "@langchain/core": "^0.3.71",
+    "@langchain/aws": "^0.1.14",
+    "@langchain/core": "^0.3.72",
     "@langchain/openai": "^0.5.18",
     "@llm-ts-example/common-core": "workspace:*"
   },
@@ -41,6 +41,6 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-promise": "^7.2.1",
     "typescript": "^5.9.2",
-    "typescript-eslint": "^8.39.1"
+    "typescript-eslint": "^8.40.0"
   }
 }

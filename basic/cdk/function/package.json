@@ -5,8 +5,8 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "lint": "eslint",
-    "lint-fix": "eslint --fix"
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix"
   },
   "devDependencies": {
     "eslint": "^9.33.0",

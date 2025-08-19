@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "lint": "eslint",
-    "lint-fix": "eslint --fix",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
     "dev": "tsx src/index.ts",
     "start": "node build/index.js"
   },
@@ -27,7 +27,7 @@
     "eslint-plugin-promise": "^7.2.1",
     "tsx": "^4.20.4",
     "typescript": "^5.9.2",
-    "typescript-eslint": "^8.39.1"
+    "typescript-eslint": "^8.40.0"
   },
   "files": [
     "build"
