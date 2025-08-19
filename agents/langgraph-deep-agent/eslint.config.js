@@ -52,5 +52,14 @@ export default tseslint.config(
       '@stylistic/ts': stylistic,
     },
     extends: [importPlugin.flatConfigs.recommended, importPlugin.flatConfigs.typescript],
+    languageOptions: {
+      parser: tseslint.parser,
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: __dirname,
+      },
+    },
   },
 );

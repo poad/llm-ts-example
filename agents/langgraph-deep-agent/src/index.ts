@@ -1,5 +1,3 @@
-// index.ts
-
 import { MultiServerMCPClient } from '@langchain/mcp-adapters';
 import { createDeepAgent } from 'deepagents';
 import { ChatBedrockConverse } from '@langchain/aws';
