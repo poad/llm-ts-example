@@ -18,13 +18,13 @@
   "dependencies": {
     "@ai-sdk/amazon-bedrock": "^2.2.12",
     "@voltagent/cli": "^0.1.10",
-    "@voltagent/core": "^0.1.84",
+    "@voltagent/core": "^0.1.85",
     "@voltagent/vercel-ai": "^0.1.18",
     "zod": "3.24.2"
   },
   "devDependencies": {
-    "@types/node": "^22.17.2",
-    "tsx": "^4.20.4",
+    "@types/node": "^22.18.0",
+    "tsx": "^4.20.5",
     "typescript": "^5.9.2"
   }
 }
