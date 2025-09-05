@@ -35,10 +35,10 @@
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.25.2",
-    "@aws-sdk/credential-provider-node": "^3.879.0",
+    "@aws-sdk/credential-provider-node": "^3.882.0",
     "@langchain/anthropic": "^0.3.26",
     "@langchain/aws": "^0.1.15",
-    "@langchain/core": "^0.3.73",
+    "@langchain/core": "^0.3.74",
     "@langchain/langgraph": "^0.2.74",
     "@langchain/openai": "^0.5.18",
     "@llm-ts-example/common-backend": "workspace:*",

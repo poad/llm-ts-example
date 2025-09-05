@@ -29,12 +29,12 @@
   },
   "dependencies": {
     "@langchain/community": "^0.3.54",
-    "@langchain/core": "^0.3.73",
+    "@langchain/core": "^0.3.74",
     "@langchain/langgraph": "^0.2.74",
     "@xenova/transformers": "^2.17.2",
     "html-to-text": "^9.0.5",
     "jsdom": "^26.1.0",
-    "langchain": "^0.3.32",
+    "langchain": "^0.3.33",
     "node-llama-cpp": "^3.12.4",
     "uuid": "^11.1.0"
   }
