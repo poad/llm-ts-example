@@ -76,12 +76,12 @@ export default function ChatWindow(props: {
       <div class="flex w-full flex-col">
         <div class="flex w-full mt-4">
           <input
-            class="grow mr-8 p-4 rounded border"
+            class="grow mr-8 p-4 rounded-sm border"
             value={input()}
             placeholder={placeholder ?? 'What\'s it like to be a pirate?'}
             on:change={(e) => setInput(() => e.target.value)}
           />
-          <button type="submit" on:click={handleSubmit} class="shrink-0 px-8 py-4 bg-sky-600 rounded w-28">
+          <button type="submit" on:click={handleSubmit} class="shrink-0 px-8 py-4 bg-sky-600 rounded-sm w-28">
             <Show when={!isLoading()} fallback={
               <div role="status" class='flex justify-center'>
                 <svg aria-hidden="true" class="w-6 h-6 text-white animate-spin dark:text-white fill-sky-800" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -9,6 +9,12 @@ import pluginPromise from 'eslint-plugin-promise'
 
 import solid from 'eslint-plugin-solid';
 
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 export default tseslint.config(
   {
     ignores: [
@@ -27,12 +33,18 @@ export default tseslint.config(
   pluginPromise.configs['flat/recommended'],
   {
     files: ['src/**/*.{ts,tsx}'],
-    ...importPlugin.flatConfigs.recommended,
-    ...importPlugin.flatConfigs.typescript,
+    extends: [
+      importPlugin.flatConfigs.recommended,
+      importPlugin.flatConfigs.typescript,
+    ],
     languageOptions: {
       parser: tseslint.parser,
       ecmaVersion: 'latest',
       sourceType: 'module',
+      parserOptions: {
+        project: true,
+        tsconfigRootDir: __dirname,
+      },
     },
     plugins: {
       '@stylistic': stylistic,

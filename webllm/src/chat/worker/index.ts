@@ -3,7 +3,7 @@
 import { ChatWebLLM } from '@langchain/community/chat_models/webllm';
 import { ChatPromptTemplate } from '@langchain/core/prompts';
 import { StringOutputParser } from '@langchain/core/output_parsers';
-import CallbackHandler from 'langfuse-langchain';
+import { CallbackHandler } from 'langfuse-langchain';
 
 // Initialize the ChatWebLLM model with the model record and chat options.
 // Note that if the appConfig field is set, the list of model records

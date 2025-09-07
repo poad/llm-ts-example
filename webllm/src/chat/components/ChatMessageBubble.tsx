@@ -14,7 +14,7 @@ export default function ChatMessageBubble(props: {
 
   return (
     <div
-      class={`${alignmentclass} ${colorclass} rounded px-4 py-2 max-w-[80%] mb-8 flex flex-col`}
+      class={`${alignmentclass} ${colorclass} rounded-sm px-4 py-2 max-w-[80%] mb-8 flex flex-col`}
     >
       <div class="flex hover:group group">
         <div class="mr-2">
