@@ -35,7 +35,7 @@
     "html-to-text": "^9.0.5",
     "jsdom": "^26.1.0",
     "langchain": "^0.3.33",
-    "node-llama-cpp": "^3.12.4",
+    "node-llama-cpp": "^3.13.0",
     "uuid": "^11.1.0"
   }
 }
