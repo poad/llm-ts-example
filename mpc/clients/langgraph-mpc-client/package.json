@@ -35,14 +35,14 @@
     "vitest": "^3.2.4"
   },
   "dependencies": {
-    "@aws-sdk/client-bedrock-runtime": "^3.886.0",
+    "@aws-sdk/client-bedrock-runtime": "^3.887.0",
     "@inquirer/prompts": "^7.8.4",
     "@langchain/aws": "^0.1.15",
     "@langchain/core": "^0.3.75",
     "@langchain/langgraph": "^0.4.9",
     "@langchain/mcp-adapters": "^0.6.0",
     "@langchain/openai": "^0.6.11",
-    "@modelcontextprotocol/sdk": "^1.17.5",
+    "@modelcontextprotocol/sdk": "^1.18.0",
     "@smithy/eventstream-codec": "^4.1.1",
     "dotenv": "^16.6.1",
     "langchain": "^0.3.33",
