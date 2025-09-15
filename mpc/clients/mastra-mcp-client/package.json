@@ -17,7 +17,7 @@
     "node": ">=20.9.0"
   },
   "dependencies": {
-    "@ai-sdk/amazon-bedrock": "^3.0.20",
+    "@ai-sdk/amazon-bedrock": "^3.0.21",
     "@ai-sdk/azure": "^2.0.30",
     "@mastra/core": "^0.16.3",
     "@mastra/loggers": "^0.10.11",
