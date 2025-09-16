@@ -18,23 +18,23 @@
     "@stylistic/eslint-plugin": "^5.3.1",
     "@types/async-retry": "^1.4.9",
     "@types/html-to-text": "^9.0.4",
-    "@types/node": "^22.18.3",
+    "@types/node": "^22.18.4",
     "@types/uuid": "^10.0.0",
     "eslint": "^9.35.0",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-promise": "^7.2.1",
     "typescript": "^5.9.2",
-    "typescript-eslint": "^8.43.0"
+    "typescript-eslint": "^8.44.0"
   },
   "dependencies": {
-    "@langchain/community": "^0.3.55",
-    "@langchain/core": "^0.3.75",
+    "@langchain/community": "^0.3.56",
+    "@langchain/core": "^0.3.76",
     "@langchain/langgraph": "^0.2.74",
     "@xenova/transformers": "^2.17.2",
     "html-to-text": "^9.0.5",
     "jsdom": "^26.1.0",
-    "langchain": "^0.3.33",
+    "langchain": "^0.3.34",
     "node-llama-cpp": "^3.13.0",
     "uuid": "^11.1.0"
   }
