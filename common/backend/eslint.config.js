@@ -1,8 +1,9 @@
 // @ts-check
 
+import {defineConfig} from 'eslint/config';
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
-import tseslint from 'typescript-eslint';
+import {configs, parser} from 'typescript-eslint';
 import importPlugin from 'eslint-plugin-import';
 
 import pluginPromise from 'eslint-plugin-promise'
@@ -15,14 +16,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const gitignorePath = path.resolve(__dirname, ".gitignore");
 
-export default tseslint.config(
+export default defineConfig(
   includeIgnoreFile(gitignorePath),
-  eslint.configs.recommended,
-  ...tseslint.configs.strict,
-  ...tseslint.configs.stylistic,
-  importPlugin.flatConfigs.recommended,
-  importPlugin.flatConfigs.typescript,
-  pluginPromise.configs['flat/recommended'],
   {
     ignores: [
       '**/*.d.ts',
@@ -36,20 +31,23 @@ export default tseslint.config(
       'dist',
     ],
   },
+  eslint.configs.recommended,
+  ...configs.strict,
+  ...configs.stylistic,
+  pluginPromise.configs['flat/recommended'],
   {
     files: ['src/**/*.ts'],
     languageOptions: {
-      parser: tseslint.parser,
+      parser,
       ecmaVersion: 'latest',
       sourceType: 'module',
       parserOptions: {
-        projectService: true,
         tsconfigRootDir: __dirname,
+        project: ['./tsconfig.json'],
       },
     },
     plugins: {
       '@stylistic': stylistic,
-      '@stylistic/ts': stylistic,
     },
     extends: [importPlugin.flatConfigs.recommended, importPlugin.flatConfigs.typescript],
     rules: {
