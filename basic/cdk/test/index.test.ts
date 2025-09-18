@@ -12,8 +12,8 @@ function sleep(time: number) {
 }
 
 const model = process.env.USE_MODEL ?? '';
-const isDefiendModel = model.length > 0;
-test.runIf(isDefiendModel)('test', { retry: 0 }, async () => {
+const isDefinedModel = model.length > 0;
+test.runIf(isDefinedModel)('test', { retry: 0 }, async () => {
 
   const sessionId = process.env.FIXED_SESSION_ID && process.env.FIXED_SESSION_ID.length > 0 ? process.env.FIXED_SESSION_ID : new Date().getTime().toString();
   const output = process.env.DISABLE_STDOUT === 'true' ? new PassThrough() : stdout;
