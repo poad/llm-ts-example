@@ -42,7 +42,7 @@
     "@langchain/langgraph": "^0.4.9",
     "@langchain/mcp-adapters": "^0.6.0",
     "@langchain/openai": "^0.6.13",
-    "@modelcontextprotocol/sdk": "^1.18.0",
+    "@modelcontextprotocol/sdk": "^1.18.1",
     "@smithy/eventstream-codec": "^4.1.1",
     "dotenv": "^16.6.1",
     "langchain": "^0.3.34",
