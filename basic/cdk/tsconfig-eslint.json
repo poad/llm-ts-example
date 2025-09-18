@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "eslint.config.*s",
+    "vite.config.ts",
+    "bin/**/*.ts",
+    "lib/**/*.ts",
+    "lambda/**/*.ts",
+    "test/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "cdk.out"
+  ]
+}

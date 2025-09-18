@@ -10,8 +10,8 @@ export default defineConfig({
   resolve: {
     alias: {
       // パッケージ間の直接参照
-      '@llm-ts-example/common-core': resolve(__dirname, 'packages/common-core/src'),
-      '@llm-ts-example/utils': resolve(__dirname, 'packages/utils/src'),
+      '@llm-ts-example/common-core': resolve(__dirname, '../../common/core/src'),
+      '@llm-ts-example/common-backend': resolve(__dirname, '../../common/backend/src'),
     },
   },
   server: {

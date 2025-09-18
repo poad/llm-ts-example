@@ -12,10 +12,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.16.1",
+  "packageManager": "pnpm@10.17.0",
   "devDependencies": {
     "@llm-ts-example/common-backend": "workspace:*",
     "@llm-ts-example/common-core": "workspace:*",
-    "pnpm": "^10.16.1"
+    "pnpm": "^10.17.0",
+    "vitest": "^3.2.4"
   }
 }

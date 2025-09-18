@@ -1,7 +1,8 @@
+import './instrumentation';
 import { ChatPromptTemplate } from '@langchain/core/prompts';
 import { StringOutputParser } from '@langchain/core/output_parsers';
 import { CallbackHandler } from 'langfuse-langchain';
- 
+
 import { selectLlm, logger } from '@llm-ts-example/common-backend';
 
 export async function handle(

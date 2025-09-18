@@ -1,4 +1,4 @@
-import { it } from 'vitest';
+import { test } from 'vitest';
 import { handle } from '../lambda/handler';
 import { stdout } from 'node:process';
 import { PassThrough } from 'node:stream';
@@ -11,14 +11,14 @@ function sleep(time: number) {
   });
 }
 
-// eslint-disable-next-line vitest/expect-expect
-it('test', { retry: 0 }, async () => {
+const model = process.env.USE_MODEL ?? '';
+const isDefinedModel = model.length > 0;
+test.runIf(isDefinedModel)('test', { retry: 0 }, async () => {
 
   const sessionId = process.env.FIXED_SESSION_ID && process.env.FIXED_SESSION_ID.length > 0 ? process.env.FIXED_SESSION_ID : new Date().getTime().toString();
-  const model = process.env.USE_MODEL;
   const output = process.env.DISABLE_STDOUT === 'true' ? new PassThrough() : stdout;
-  const question = process.env.QUESTION && process.env.QUESTION.length > 0 ? process.env.QUESTION : 'あなたは誰？';
+  const question = process.env.QUESTION && process.env.QUESTION.length > 0 ? process.env.QUESTION : 'あなたは誰？質問と同じ言語で答えてください。';
 
   await handle(`local-${sessionId}`, {question, model}, output);
-  await sleep(1000);
+  await sleep(2000);
 });
