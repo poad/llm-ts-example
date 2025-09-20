@@ -29,7 +29,7 @@
     "vitest": "^3.2.4"
   },
   "dependencies": {
-    "@aws-sdk/credential-provider-node": "^3.891.0",
+    "@aws-sdk/credential-provider-node": "^3.893.0",
     "@langchain/anthropic": "^0.3.28",
     "@langchain/aws": "^0.1.15",
     "@langchain/community": "^0.3.56",
