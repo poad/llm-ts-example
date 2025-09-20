@@ -13,10 +13,6 @@ inputs:
     description: "Share the opencode session (defaults to true for public repos)"
     required: false
 
-  prompt:
-    description: "Prompt to run"
-    required: false
-
 runs:
   using: "composite"
   steps:
@@ -27,7 +23,7 @@ runs:
     - name: Run opencode
       shell: bash
       id: run_opencode
-      run: opencode run -p "${{ inputs.prompt }}" || true
+      run: opencode github run --print-logs true --log-level DEBUG
       env:
         MODEL: ${{ inputs.model }}
         SHARE: ${{ inputs.share }}
