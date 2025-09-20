@@ -4,6 +4,17 @@ on:
   issue_comment:
     types: [created]
 
+  pull_request:
+
+  pull_request_comment:
+    types: [created]
+
+  pull_request_review:
+    types: [submitted]
+
+  pull_request_review_comment:
+    types: [created]
+
 jobs:
   opencode:
     if: |
@@ -21,7 +32,17 @@ jobs:
 
       - name: Run opencode
         uses: sst/opencode/github@latest
+        if: github.event_name != 'pull_request'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           model: github-copilot/gpt-4.1
+
+      - name: Run opencode (for pull request)
+        uses: ./github/actions/opencode
+        if: github.event_name == 'pull_request'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          model: github-copilot/gpt-4.1
+          prompt: ${{ github.event.comment.body }}
