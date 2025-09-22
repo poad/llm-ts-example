@@ -29,7 +29,7 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Run opencode
-        uses: sst/opencode/github@v0.10.3
+        uses: sst/opencode/github@v0.11.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
