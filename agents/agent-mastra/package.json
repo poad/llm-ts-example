@@ -15,12 +15,12 @@
   "type": "module",
   "dependencies": {
     "@ai-sdk/amazon-bedrock": "^3.0.22",
-    "@ai-sdk/azure": "^2.0.32",
-    "@mastra/core": "^0.17.1",
-    "@mastra/libsql": "^0.14.2",
-    "@mastra/loggers": "^0.10.12",
-    "@mastra/mcp": "^0.13.0",
-    "@mastra/memory": "^0.15.2",
+    "@ai-sdk/azure": "^2.0.33",
+    "@mastra/core": "^0.18.0",
+    "@mastra/libsql": "^0.14.3",
+    "@mastra/loggers": "^0.10.13",
+    "@mastra/mcp": "^0.13.1",
+    "@mastra/memory": "^0.15.3",
     "langfuse-vercel": "^3.38.5",
     "zod": "^3.25.76"
   },
@@ -33,7 +33,7 @@
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-promise": "^7.2.1",
-    "mastra": "^0.13.1",
+    "mastra": "^0.13.2",
     "pnpm": "^10.17.1",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.44.1"
