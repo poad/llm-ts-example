@@ -5,10 +5,9 @@ import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import { configs, parser } from 'typescript-eslint';
 import importPlugin from 'eslint-plugin-import';
-
 import pluginPromise from 'eslint-plugin-promise'
 
-import solid from 'eslint-plugin-solid';
+import solid from "eslint-plugin-solid/configs/typescript";
 
 import { includeIgnoreFile } from '@eslint/compat';
 import path from 'node:path';
@@ -34,9 +33,11 @@ export default defineConfig(
   eslint.configs.recommended,
   ...configs.strict,
   ...configs.stylistic,
+  // @ts-expect-error ignore type error
   pluginPromise.configs['flat/recommended'],
   {
     files: ['src/**/*.{ts,tsx}'],
+    ...solid,
     languageOptions: {
       parser,
       ecmaVersion: 'latest',
@@ -48,7 +49,6 @@ export default defineConfig(
     },
     plugins: {
       '@stylistic': stylistic,
-      solid,
     },
     extends: [importPlugin.flatConfigs.recommended, importPlugin.flatConfigs.typescript],
     rules: {
