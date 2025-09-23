@@ -18,7 +18,7 @@
     "start": "node -r source-map-support/register build/server.js"
   },
   "devDependencies": {
-    "@eslint/compat": "^1.3.2",
+    "@eslint/compat": "^1.4.0",
     "@eslint/js": "^9.36.0",
     "@stylistic/eslint-plugin": "^5.4.0",
     "@types/aws-lambda": "^8.10.152",
@@ -36,14 +36,14 @@
     "source-map-support": "^0.5.21",
     "tsx": "^4.20.5",
     "typescript": "^5.9.2",
-    "typescript-eslint": "^8.44.0",
+    "typescript-eslint": "^8.44.1",
     "vite": "^6.3.6",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.4"
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.26.1",
-    "@hono/node-server": "^1.19.3",
+    "@hono/node-server": "^1.19.4",
     "@modelcontextprotocol/sdk": "^1.18.1",
     "@vercel/mcp-adapter": "^1.0.0",
     "hono": "^4.9.8",
