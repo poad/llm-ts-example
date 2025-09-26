@@ -36,7 +36,7 @@ This project uses VoltAgent, a framework for building AI agents with the followi
 
 ## Project Structure
 
-```
+```text
 .
 ├── src/
 │   └── index.ts       # Main application entry point with agent definition
@@ -48,4 +48,4 @@ This project uses VoltAgent, a framework for building AI agents with the followi
 
 ## License
 
-MIT 
+MIT
