@@ -10,6 +10,12 @@ updates:
     rebase-strategy: auto
     assignees:
       - poad
+    cooldown:
+      default-days: 3
+    groups:
+      actions:
+        patterns:
+          - '*'
 
   - package-ecosystem: npm
     directories:
@@ -21,14 +27,14 @@ updates:
       - '/agents//langgraph-deep-agent/'
       - '/basic/cdk/'
       - '/basic/app/'
-      - '/mpc/clients/langgraph-mpc-client/'
-      - '/mpc/clients/mastra-mcp-client/'
-      - '/mpc/clients/mcp-client-http/'
-      - '/mpc/clients/mcp-client-typescript/'
-      - '/mpc/servers/postgresql-http/'
-      - '/mpc/servers/weather/'
-      - '/mpc/servers/weather-http/'
-      - '/mpc/servers/resource-mcp-server/'
+      - '/mcp/clients/langgraph-mcp-client/'
+      - '/mcp/clients/mastra-mcp-client/'
+      - '/mcp/clients/mcp-client-http/'
+      - '/mcp/clients/mcp-client-typescript/'
+      - '/mcp/servers/postgresql-http/'
+      - '/mcp/servers/weather/'
+      - '/mcp/servers/weather-http/'
+      - '/mcp/servers/resource-mcp-server/'
       - '/node-llama-cpp/'
       - '/rag/app/'
       - '/rag/batch/'
@@ -37,6 +43,10 @@ updates:
     schedule:
       interval: daily
       timezone: Asia/Tokyo
+    cooldown:
+      default-days: 3
+      exclude:
+        - 'pnpm'
     allow:
       - dependency-type: all
     rebase-strategy: auto

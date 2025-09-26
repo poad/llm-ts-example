@@ -42,7 +42,7 @@
     "vitest": "^3.2.4"
   },
   "dependencies": {
-    "@aws-lambda-powertools/logger": "^2.26.1",
+    "@aws-lambda-powertools/logger": "^2.27.0",
     "@hono/node-server": "^1.19.4",
     "@modelcontextprotocol/sdk": "^1.18.1",
     "@vercel/mcp-adapter": "^1.0.0",

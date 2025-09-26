@@ -10,17 +10,17 @@ packages:
   - ./rag/cdk/function
   - ./webllm
   - ./node-llama-cpp
-  - './agents/agent-mastra'
+  - ./agents/agent-mastra
   - ./agents/agent-voltagent
   - ./agents/langgraph-deep-agent
-  - ./mpc/servers/postgresql-http
-  - ./mpc/servers/weather
-  - ./mpc/servers/weather-http
-  - ./mpc/servers/resource-mcp-server
-  - ./mpc/clients/mcp-client-typescript
-  - ./mpc/clients/mcp-client-http
-  - ./mpc/clients/langgraph-mpc-client
-  - './mpc/clients/mastra-mcp-client'
+  - ./mcp/servers/postgresql-http
+  - ./mcp/servers/weather
+  - ./mcp/servers/weather-http
+  - ./mcp/servers/resource-mcp-server
+  - ./mcp/clients/mcp-client-typescript
+  - ./mcp/clients/mcp-client-http
+  - ./mcp/clients/langgraph-mcp-client
+  - ./mcp/clients/mastra-mcp-client
 
 auto-install-peers: true
 
@@ -44,3 +44,8 @@ overrides:
   jsondiffpatch@<0.7.2: '>=0.7.2'
 
 strict-peer-dependencies: false
+
+# one day
+minimumReleaseAge: 1440
+minimumReleaseAgeExclude:
+ - pnpm
