@@ -44,13 +44,6 @@ export const models = [
     platform: 'aws',
   },
   {
-    id: 'gpt-5-chat',
-    name: 'GPT-5 Chat',
-    modelId: 'gpt-5-chat',
-    selected: false,
-    platform: 'azure',
-  },
-  {
     id: 'gpt-5-mini',
     name: 'GPT-5-mini',
     modelId: 'gpt-5-mini',
