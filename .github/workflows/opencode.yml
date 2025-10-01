@@ -14,12 +14,12 @@ on:
 
 jobs:
   opencode:
-    if: |
-      github.event_name == 'pull_request' ||
-      contains(github.event.comment.body, ' /oc') ||
-      startsWith(github.event.comment.body, '/oc') ||
-      contains(github.event.comment.body, ' /opencode') ||
-      startsWith(github.event.comment.body, '/opencode')
+    # if: |
+    #   github.event_name == 'pull_request' ||
+    #   contains(github.event.comment.body, ' /oc') ||
+    #   startsWith(github.event.comment.body, '/oc') ||
+    #   contains(github.event.comment.body, ' /opencode') ||
+    #   startsWith(github.event.comment.body, '/opencode')
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -29,7 +29,7 @@ jobs:
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
       - name: Run opencode
-        uses: sst/opencode/github@5199141369bfd9264f824d1f20a8a906107a6ab5 # v0.11.3
+        uses: sst/opencode/github@5345c828cac894a15f6347da681462bddfa8acf6 # v0.13.5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
