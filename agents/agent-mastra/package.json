@@ -14,10 +14,10 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@ai-sdk/amazon-bedrock": "^2.2.12",
+    "@ai-sdk/amazon-bedrock": "^3.0.30",
     "@ai-sdk/azure": "^2.0.42",
-    "@mastra/core": "^0.18.0",
-    "@mastra/libsql": "^0.14.3",
+    "@mastra/core": "^0.20.0",
+    "@mastra/libsql": "^0.15.1",
     "@mastra/loggers": "^0.10.15",
     "@mastra/mcp": "^0.13.3",
     "@mastra/memory": "^0.15.5",
@@ -33,7 +33,7 @@
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-promise": "^7.2.1",
-    "mastra": "^0.13.4",
+    "mastra": "^0.14.1",
     "pnpm": "^10.18.1",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.45.0"
