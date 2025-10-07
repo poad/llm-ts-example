@@ -15,27 +15,27 @@
   "type": "module",
   "dependencies": {
     "@ai-sdk/amazon-bedrock": "^2.2.12",
-    "@ai-sdk/azure": "^2.0.40",
+    "@ai-sdk/azure": "^2.0.42",
     "@mastra/core": "^0.18.0",
     "@mastra/libsql": "^0.14.3",
-    "@mastra/loggers": "^0.10.13",
-    "@mastra/mcp": "^0.13.1",
-    "@mastra/memory": "^0.15.3",
+    "@mastra/loggers": "^0.10.15",
+    "@mastra/mcp": "^0.13.3",
+    "@mastra/memory": "^0.15.5",
     "langfuse-vercel": "^3.38.5",
     "zod": "^3.25.76"
   },
   "devDependencies": {
     "@eslint/compat": "^1.4.0",
-    "@eslint/js": "^9.36.0",
+    "@eslint/js": "^9.37.0",
     "@stylistic/eslint-plugin": "^5.4.0",
-    "@types/node": "^22.18.7",
-    "eslint": "^9.36.0",
+    "@types/node": "^22.18.8",
+    "eslint": "^9.37.0",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-promise": "^7.2.1",
-    "mastra": "^0.13.2",
-    "pnpm": "^10.17.1",
-    "typescript": "^5.9.2",
+    "mastra": "^0.13.4",
+    "pnpm": "^10.18.1",
+    "typescript": "^5.9.3",
     "typescript-eslint": "^8.45.0"
   }
 }
