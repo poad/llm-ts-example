@@ -24,7 +24,7 @@
     "@solidjs/router": "^0.15.3",
     "@stylistic/eslint-plugin": "^5.4.0",
     "@types/crypto-js": "^4.2.2",
-    "@types/node": "^22.18.8",
+    "@types/node": "^22.18.10",
     "@types/uuid": "^10.0.0",
     "crypto-js": "^4.2.0",
     "eslint": "^9.37.0",
@@ -35,7 +35,7 @@
     "jsdom": "^25.0.1",
     "solid-refresh": "^0.7.5",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.46.0",
+    "typescript-eslint": "^8.46.1",
     "vite": "^6.3.6",
     "vite-plugin-solid": "^2.11.9"
   }
