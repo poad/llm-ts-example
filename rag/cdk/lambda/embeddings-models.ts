@@ -1,6 +1,5 @@
 import { BedrockEmbeddings } from '@langchain/aws';
 import { Embeddings } from '@langchain/core/embeddings';
-// import { AzureOpenAIEmbeddings } from '@langchain/openai';
 
 interface EmbeddingsModel {
   indexName: string
@@ -13,14 +12,6 @@ function selectEmbeddings(
     dataSource,
   }: { type: string, dataSource: string },
 ): EmbeddingsModel {
-  // if (type === 'openai') {
-  //   return {
-  //     indexName: `openai-${dataSource}`,
-  //     model: new AzureOpenAIEmbeddings({
-  //       maxRetries: 1,
-  //     }),
-  //   };
-  // }
   return {
     indexName: `titan-${dataSource}`,
     model: new BedrockEmbeddings({
