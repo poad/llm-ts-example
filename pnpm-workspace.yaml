@@ -44,7 +44,7 @@ overrides:
 
 strict-peer-dependencies: false
 
-# one day
-minimumReleaseAge: 1440
-minimumReleaseAgeExclude:
- - pnpm
+# # one day
+# minimumReleaseAge: 1440
+# minimumReleaseAgeExclude:
+#  - pnpm
