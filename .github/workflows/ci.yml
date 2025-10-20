@@ -28,18 +28,12 @@ jobs:
       with:
         run_install: |
           - recursive: true
-            args: [--no-frozen-lockfile]
-          - args: [--global, esbuild]
+            args: [--frozen-lockfile]
 
-    - name: build (common)
-      run: |
-        pnpm pnpm --filter @llm-ts-example/common-core build && \
-        pnpm pnpm --filter @llm-ts-example/common-backend build
-
-    - name: build
-      run: |
-        pnpm install -r
-        pnpm build
+    # または、依存関係を考慮して全てビルド
+    - name: Build all packages
+      run: pnpm -r --workspace-concurrency=1 build
 
     - name: lint
       run: pnpm lint
+

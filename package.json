@@ -4,7 +4,7 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "build": "pnpm -r --if-present --paralell build",
+    "build": "pnpm -r --if-present build",
     "clean": "pnpm -r --if-present --paralell clean",
     "lint": "pnpm -r --if-present --paralell lint",
     "lint-fix": "pnpm -r --if-present --paralell lint-fix"

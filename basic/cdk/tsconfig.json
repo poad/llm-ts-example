@@ -35,6 +35,7 @@
     "types": [
       "node"
     ],
+    "composite": true
   },
   "exclude": [
     "node_modules",

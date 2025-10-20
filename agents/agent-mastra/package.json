@@ -15,7 +15,7 @@
   "type": "module",
   "dependencies": {
     "@ai-sdk/amazon-bedrock": "^3.0.43",
-    "@ai-sdk/azure": "^2.0.53",
+    "@ai-sdk/azure": "^2.0.54",
     "@mastra/core": "^0.20.2",
     "@mastra/libsql": "^0.15.2",
     "@mastra/loggers": "^0.10.16",
