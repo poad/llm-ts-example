@@ -25,7 +25,6 @@
     "eslint-plugin-promise": "^7.2.1",
     "eslint-plugin-solid": "^0.14.5",
     "jsdom": "^25.0.1",
-    "pnpm": "^10.18.3",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.46.1",
     "vite": "^6.4.0",
@@ -33,16 +32,15 @@
     "vitest": "^3.2.4"
   },
   "dependencies": {
-    "@langchain/community": "^0.3.57",
-    "@langchain/core": "^0.3.78",
+    "@langchain/community": "^1.0.0",
+    "@langchain/core": "^1.0.1",
     "@mlc-ai/web-llm": "^0.2.79",
     "@tailwindcss/postcss": "^4.1.14",
-    "langchain": "^0.3.36",
+    "langchain": "^1.0.1",
     "langfuse-langchain": "^3.38.6",
     "postcss": "^8.5.6",
     "solid-js": "^1.9.9",
     "tailwindcss": "^4.1.14",
-    "uuid": "^10.0.0"
-  },
-  "packageManager": "pnpm@10.8.1"
+    "uuid": "^13.0.0"
+  }
 }
