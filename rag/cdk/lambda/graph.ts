@@ -1,6 +1,6 @@
-import { createRetrievalChain } from 'langchain/chains/retrieval';
-import { createStuffDocumentsChain } from 'langchain/chains/combine_documents';
-import { createHistoryAwareRetriever } from 'langchain/chains/history_aware_retriever';
+import { createRetrievalChain } from '@langchain/classic/chains/retrieval';
+import { createStuffDocumentsChain } from '@langchain/classic/chains/combine_documents';
+import { createHistoryAwareRetriever } from '@langchain/classic/chains/history_aware_retriever';
 import { ChatPromptTemplate, MessagesPlaceholder } from '@langchain/core/prompts';
 import {
   StateGraph,
@@ -14,7 +14,7 @@ import { selectEmbeddings } from './embeddings-models';
 import { createVectorStore } from './vector-store';
 import { AIMessage, BaseMessage, HumanMessage } from '@langchain/core/messages';
 
- 
+
 import { selectLlm } from '@llm-ts-example/common-backend';
 
 // Define the State interface

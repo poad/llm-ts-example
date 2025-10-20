@@ -12,7 +12,6 @@ packages:
   - ./node-llama-cpp
   - ./agents/agent-mastra
   - ./agents/agent-voltagent
-  - ./agents/langgraph-deep-agent
   - ./mcp/servers/postgresql-http
   - ./mcp/servers/weather
   - ./mcp/servers/weather-http
