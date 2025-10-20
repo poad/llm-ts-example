@@ -329,6 +329,9 @@ importers:
       dotenv:
         specifier: ^16.6.1
         version: 16.6.1
+      esbuild:
+        specifier: ^0.25.11
+        version: 0.25.11
       eslint:
         specifier: ^9.38.0
         version: 9.38.0(jiti@2.6.1)
@@ -976,7 +979,7 @@ importers:
         version: 26.1.0
       langchain:
         specifier: ^0.3.36
-        version: 0.3.36(28843c24698405391cbe1729153daa1e)
+        version: 0.3.36(53876fa90fa0919f9a34c74d54e6062a)
       node-llama-cpp:
         specifier: ^3.14.0
         version: 3.14.0(typescript@5.9.3)
@@ -11625,7 +11628,7 @@ snapshots:
       flat: 5.0.2
       ibm-cloud-sdk-core: 5.3.2
       js-yaml: 4.1.0
-      langchain: 0.3.36(28843c24698405391cbe1729153daa1e)
+      langchain: 0.3.36(53876fa90fa0919f9a34c74d54e6062a)
       langsmith: 0.3.74(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.205.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.1.0(@opentelemetry/api@1.9.0))(openai@6.5.0(ws@8.18.3)(zod@3.25.76))
       openai: 6.5.0(ws@8.18.3)(zod@3.25.76)
       uuid: 10.0.0
@@ -17215,7 +17218,7 @@ snapshots:
 
   known-css-properties@0.30.0: {}
 
-  langchain@0.3.36(28843c24698405391cbe1729153daa1e):
+  langchain@0.3.36(53876fa90fa0919f9a34c74d54e6062a):
     dependencies:
       '@langchain/core': 0.3.78(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.205.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.1.0(@opentelemetry/api@1.9.0))(openai@6.5.0(ws@8.18.3)(zod@3.25.76))
       '@langchain/openai': 0.6.16(@langchain/core@0.3.78(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.205.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.1.0(@opentelemetry/api@1.9.0))(openai@6.5.0(ws@8.18.3)(zod@3.25.76)))(ws@8.18.3)
