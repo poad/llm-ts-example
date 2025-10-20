@@ -28,18 +28,20 @@ jobs:
       with:
         run_install: |
           - recursive: true
-            args: [--no-frozen-lockfile]
-          - args: [--global, esbuild]
 
-    - name: build (common)
+    - name: Build
       run: |
-        pnpm pnpm --filter @llm-ts-example/common-core build && \
-        pnpm pnpm --filter @llm-ts-example/common-backend build
+        pnpm --filter @llm-ts-example/common-core build
+        pnpm --filter @llm-ts-example/common-backend build
 
-    - name: build
+    - name: Debug workspace links
       run: |
-        pnpm install -r
-        pnpm build
+        pnpm list -r --depth 0
+        pnpm why @llm-ts-example/common-backend
+
+    - name: Build all packages
+      run: pnpm build
 
     - name: lint
       run: pnpm lint
+

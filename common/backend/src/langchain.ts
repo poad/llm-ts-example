@@ -1,10 +1,9 @@
 import { AzureChatOpenAI } from '@langchain/openai';
 import { ChatBedrockConverse } from '@langchain/aws';
 import { BaseChatModel } from '@langchain/core/dist/language_models/chat_models';
-import logger from '../logger';
+import logger from './logger.js';
 
 import { models } from '@llm-ts-example/common-core';
-// import { AIMessageChunk } from '@langchain/core/messages';
 
 function selectLlm(modelType?: string): {
   platform: 'aws' | 'azure';

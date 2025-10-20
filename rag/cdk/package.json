@@ -1,5 +1,5 @@
 {
-  "name": "@rag-example/cdk",
+  "name": "@rag-example/rag-cdk",
   "version": "0.1.0",
   "bin": "bin/cdk.js",
   "type": "module",
@@ -17,7 +17,7 @@
     "@eslint/js": "^9.38.0",
     "@stylistic/eslint-plugin": "^5.5.0",
     "@types/aws-lambda": "^8.10.156",
-    "@types/node": "^22.18.11",
+    "@types/node": "^22.18.12",
     "@types/uuid": "^10.0.0",
     "@vitest/eslint-plugin": "^1.3.23",
     "aws-cdk": "^2.1030.0",
@@ -29,13 +29,13 @@
     "eslint-plugin-promise": "^7.2.1",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.46.1",
+    "typescript-eslint": "^8.46.2",
     "vite": "^7.1.11",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.4"
   },
   "dependencies": {
-    "@aws-lambda-powertools/logger": "^2.27.0",
+    "@aws-lambda-powertools/logger": "^2.28.0",
     "@aws-sdk/credential-provider-node": "^3.913.0",
     "@langchain/aws": "^1.0.0",
     "@langchain/classic": "^1.0.0",

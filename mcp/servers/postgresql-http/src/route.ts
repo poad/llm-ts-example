@@ -1,7 +1,11 @@
-import { createMcpHandler } from '@vercel/mcp-adapter';
+import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { pgMcp } from './pgMcp';
 
-export const handler = createMcpHandler((server) => {
+export const createMcpServer = () => {
+  const server = new McpServer({
+    name: 'postgresql',
+    version: '1.0.0',
+  });
   const resouces = [pgMcp.resources.schema, pgMcp.resources.status];
   resouces.forEach((resource) => {
     server.resource(
@@ -73,9 +77,6 @@ export const handler = createMcpHandler((server) => {
         ...resp,
       };
     });
-}, {
-  serverInfo: {
-    name: 'postgresql',
-    version: '1.0.0',
-  },
-});
+
+  return server;
+};

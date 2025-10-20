@@ -35,6 +35,10 @@
     "types": [
       "node"
     ],
+    "composite": true,
+    "paths": {
+      "@llm-ts-example/common-backend": ["../../common/backend"],
+    }
   },
   "exclude": [
     "node_modules",

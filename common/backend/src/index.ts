@@ -1,5 +1,5 @@
-import logger from './logger';
-import selectLlm from './langchain';
+import logger from './logger.js';
+import selectLlm from './langchain.js';
 
 export default { logger, selectLlm };
 export { logger, selectLlm };

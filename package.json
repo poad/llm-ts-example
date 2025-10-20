@@ -4,7 +4,7 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "build": "pnpm -r --if-present --paralell build",
+    "build": "pnpm --filter @llm-ts-example/common-core build && pnpm --filter @llm-ts-example/common-backend build && pnpm -r --filter '!@llm-ts-example/common-*' build",
     "clean": "pnpm -r --if-present --paralell clean",
     "lint": "pnpm -r --if-present --paralell lint",
     "lint-fix": "pnpm -r --if-present --paralell lint-fix"
@@ -12,11 +12,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.18.3",
+  "packageManager": "pnpm@10.19.0",
   "devDependencies": {
     "@llm-ts-example/common-backend": "workspace:*",
     "@llm-ts-example/common-core": "workspace:*",
-    "pnpm": "^10.18.3",
+    "pnpm": "^10.19.0",
     "vitest": "^3.2.4"
   }
 }

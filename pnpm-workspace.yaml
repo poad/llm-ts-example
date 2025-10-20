@@ -34,15 +34,11 @@ onlyBuiltDependencies:
 
 overrides:
   axios@=1.10.0: '>=1.11.0'
+  chalk@5.6.2: '>=5.6.2'
   form-data@>=4.0.0 <4.0.4: '>=4.0.4'
   got@<11.8.5: '>=11.8.5'
-  tmp@<=0.2.3: '>=0.2.4'
-  chalk@5.6.2: '>=5.6.2'
   jsondiffpatch@<0.7.2: '>=0.7.2'
+  playwright@<1.55.1: '>=1.55.1'
+  tmp@<=0.2.3: '>=0.2.4'
 
 strict-peer-dependencies: false
-
-# # one day
-# minimumReleaseAge: 1440
-# minimumReleaseAgeExclude:
-#  - pnpm
