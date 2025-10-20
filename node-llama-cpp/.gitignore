@@ -1,5 +1,0 @@
-node_modules
-models/**/*.*
-!models/.gitkeep
-*.js
-!eslint.config.js

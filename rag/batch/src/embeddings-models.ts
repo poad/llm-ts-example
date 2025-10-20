@@ -1,6 +1,5 @@
 import { BedrockEmbeddings } from '@langchain/aws';
 import { Embeddings } from '@langchain/core/embeddings';
-// import { AzureOpenAIEmbeddings } from '@langchain/openai';
 
 interface EmbeddingsModel {
   type: 'titan' | 'openai'

@@ -1,5 +1,5 @@
 import { CheerioWebBaseLoader } from '@langchain/community/document_loaders/web/cheerio';
-import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter';
+import { RecursiveCharacterTextSplitter } from '@langchain/classic/text_splitter';
 import { Pinecone as PineconeClient } from '@pinecone-database/pinecone';
 import { PineconeStore } from '@langchain/pinecone';
 import { listEmbeddings } from './embeddings-models.js';

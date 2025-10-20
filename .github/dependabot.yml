@@ -34,11 +34,9 @@ updates:
       - '/mcp/servers/weather/'
       - '/mcp/servers/weather-http/'
       - '/mcp/servers/resource-mcp-server/'
-      - '/node-llama-cpp/'
       - '/rag/app/'
       - '/rag/batch/'
       - '/rag/cdk/'
-      - '/webllm/'
     schedule:
       interval: daily
       timezone: Asia/Tokyo

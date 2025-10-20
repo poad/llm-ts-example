@@ -8,8 +8,6 @@ packages:
   - ./rag/app
   - ./rag/cdk
   - ./rag/cdk/function
-  - ./webllm
-  - ./node-llama-cpp
   - ./agents/agent-mastra
   - ./agents/agent-voltagent
   - ./mcp/servers/postgresql-http
