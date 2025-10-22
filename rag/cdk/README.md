@@ -3,6 +3,6 @@
 ## deploy
 
 ```sh
-yarn install && \
+pnpm install && \
 cdk deploy
 ```

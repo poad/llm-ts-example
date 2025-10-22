@@ -1,11 +1,11 @@
-// @ts-check
-
+import { defineConfig } from 'eslint/config';
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
-import tseslint from 'typescript-eslint';
-import eslintImport from 'eslint-plugin-import';
+import { configs, parser } from 'typescript-eslint';
+import importPlugin from 'eslint-plugin-import';
 
-import vitest from '@vitest/eslint-plugin';
+// @ts-expect-error 型エラーの不具合が修正されるまで
+import pluginPromise from 'eslint-plugin-promise'
 
 import { includeIgnoreFile } from '@eslint/compat';
 import path from 'node:path';
@@ -13,9 +13,9 @@ import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const gitignorePath = path.resolve(__dirname, './.gitignore');
+const gitignorePath = path.resolve(__dirname, ".gitignore");
 
-export default tseslint.config(
+export default defineConfig(
   includeIgnoreFile(gitignorePath),
   {
     ignores: [
@@ -25,48 +25,36 @@ export default tseslint.config(
       'src/stories',
       '**/*.css',
       'node_modules/**/*',
-      './.next/*',
       'out',
-      '.storybook',
+      'cdk.out',
       'dist',
-      '.vinxi',
-      '.output',
     ],
   },
   eslint.configs.recommended,
-  ...tseslint.configs.strict,
-  ...tseslint.configs.stylistic,
+  ...configs.strict,
+  ...configs.stylistic,
+  pluginPromise.configs['flat/recommended'],
   {
-    files: ['{bin,lib,lambda}/**/*.{ts,tsx}'],
+    files: ['src/**/*.ts'],
     languageOptions: {
-      parser: tseslint.parser,
+      parser,
       ecmaVersion: 'latest',
       sourceType: 'module',
       parserOptions: {
-        projectService: true,
         tsconfigRootDir: __dirname,
+        project: ['./tsconfig-eslint.json'],
       },
     },
     plugins: {
       '@stylistic': stylistic,
-      '@stylistic/ts': stylistic,
     },
-    extends: [eslintImport.flatConfigs.recommended, eslintImport.flatConfigs.typescript],
+    extends: [importPlugin.flatConfigs.recommended, importPlugin.flatConfigs.typescript],
     rules: {
       '@stylistic/semi': ['error', 'always'],
       '@stylistic/indent': ['error', 2],
       '@stylistic/comma-dangle': ['error', 'always-multiline'],
+      '@stylistic/arrow-parens': ['error', 'always'],
       '@stylistic/quotes': ['error', 'single'],
-    },
-  },
-  {
-    files: ['test/**'], // or any other pattern
-    plugins: {
-      vitest
-    },
-    rules: {
-      ...vitest.configs?.recommended.rules, // you can also use vitest.configs.all.rules to enable all rules
-      'vitest/max-nested-describe': ['error', { 'max': 3 }] // you can also modify rules' behavior using option like this
     },
   },
 );

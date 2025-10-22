@@ -1,7 +1,7 @@
 import { AzureChatOpenAI } from '@langchain/openai';
 import { ChatBedrockConverse } from '@langchain/aws';
 import { BaseChatModel } from '@langchain/core/dist/language_models/chat_models';
-import logger from './logger.js';
+import logger from './logger';
 
 import { models } from '@llm-ts-example/common-core';
 
@@ -26,7 +26,7 @@ function selectLlm(modelType?: string): {
       modelName: modelId,
       model: new ChatBedrockConverse({
         model: modelId,
-        temperature: 0,
+        ...(model.temperatureSupport ? {temperature: 0} : {}),
         streaming: true,
         metadata: {
           tag: 'chat',
@@ -42,7 +42,7 @@ function selectLlm(modelType?: string): {
     modelName: model.modelId,
     model: new AzureChatOpenAI({
       azureOpenAIApiDeploymentName: model.modelId,
-      temperature: 0,
+      ...(model.temperatureSupport ? {temperature: 0} : {}),
       streaming: true,
       metadata: {
         tag: 'chat',

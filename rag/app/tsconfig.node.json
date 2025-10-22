@@ -6,8 +6,5 @@
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
     "strict": true
-  },
-  "include": [
-    "farm.config.ts"
-  ]
+  }
 }

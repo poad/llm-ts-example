@@ -15,10 +15,10 @@
   },
   "dependencies": {
     "@langchain/aws": "^1.0.0",
-    "@langchain/classic": "^1.0.0",
+    "@langchain/classic": "^1.0.1",
     "@langchain/community": "^1.0.0",
-    "@langchain/core": "^1.0.1",
-    "@langchain/langgraph": "^1.0.0",
+    "@langchain/core": "^1.0.2",
+    "@langchain/langgraph": "^1.0.1",
     "@langchain/openai": "^1.0.0",
     "@langchain/pinecone": "^1.0.0",
     "@pinecone-database/pinecone": "^6.1.2",
@@ -27,7 +27,7 @@
     "dotenv": "^17.2.3",
     "html-to-text": "^9.0.5",
     "jsdom": "^27.0.1",
-    "langchain": "^1.0.1",
+    "langchain": "^1.0.2",
     "source-map-support": "^0.5.21"
   },
   "devDependencies": {

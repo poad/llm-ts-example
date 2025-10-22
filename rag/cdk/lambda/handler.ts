@@ -1,15 +1,19 @@
+import { CallbackHandler } from 'langfuse-langchain';
+import { APIGatewayProxyEvent, APIGatewayProxyEventV2 } from 'aws-lambda';
 import { v7 as uuidv7 } from 'uuid';
 
-import { CallbackHandler } from 'langfuse-langchain';
-import { createGraph } from './graph';
- 
+import { createGraph } from './graph.js';
+
 import { logger } from '@llm-ts-example/common-backend';
 
 export async function handle(
-  sessionId: string,
-  { question, model: modelType, embeddingType }: { question: string, model?: string, embeddingType?: string },
+  event: APIGatewayProxyEvent | APIGatewayProxyEventV2,
   output: NodeJS.WritableStream,
 ) {
+  logger.info('event', {event});
+  const { question, model, embeddingType, sessionId } = event.body ? JSON.parse(event.body) : { question: undefined, model: undefined, sessionId: uuidv7() };
+
+  const modelType = model || 'gpt-5-nano';
 
   const langfuse = {
     publicKey: process.env.LANGFUSE_PUBLIC_KEY,
@@ -35,9 +39,7 @@ export async function handle(
     const threadId = uuidv7();
 
     const stream = await app.streamEvents(
-      {
-        input: question,
-      },
+      {input: question},
       {
         version: 'v2',
         configurable: {

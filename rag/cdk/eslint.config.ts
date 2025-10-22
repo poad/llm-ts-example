@@ -1,11 +1,8 @@
 import { defineConfig } from 'eslint/config';
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
-import { configs, parser } from 'typescript-eslint';
-import importPlugin from 'eslint-plugin-import';
-
-// @ts-expect-error 型エラーの不具合が修正されるまで
-import pluginPromise from 'eslint-plugin-promise'
+import tseslint from 'typescript-eslint';
+import eslintImport from 'eslint-plugin-import';
 
 import { includeIgnoreFile } from '@eslint/compat';
 import path from 'node:path';
@@ -13,7 +10,7 @@ import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const gitignorePath = path.resolve(__dirname, ".gitignore");
+const gitignorePath = path.resolve(__dirname, './.gitignore');
 
 export default defineConfig(
   includeIgnoreFile(gitignorePath),
@@ -25,36 +22,39 @@ export default defineConfig(
       'src/stories',
       '**/*.css',
       'node_modules/**/*',
+      './.next/*',
       'out',
-      'cdk.out',
+      '.storybook',
       'dist',
+      '.vinxi',
+      '.output',
     ],
   },
   eslint.configs.recommended,
-  ...configs.strict,
-  ...configs.stylistic,
-  pluginPromise.configs['flat/recommended'],
+  ...tseslint.configs.strict,
+  ...tseslint.configs.stylistic,
   {
-    files: ['src/**/*.ts'],
+    files: ['{bin,lib,lambda}/**/*.{ts,tsx}'],
     languageOptions: {
-      parser,
+      parser: tseslint.parser,
       ecmaVersion: 'latest',
       sourceType: 'module',
       parserOptions: {
+        projectService: true,
         tsconfigRootDir: __dirname,
-        project: ['./tsconfig-eslint.json'],
       },
     },
     plugins: {
       '@stylistic': stylistic,
+      '@stylistic/ts': stylistic,
     },
-    extends: [importPlugin.flatConfigs.recommended, importPlugin.flatConfigs.typescript],
+    extends: [eslintImport.flatConfigs.recommended, eslintImport.flatConfigs.typescript],
     rules: {
       '@stylistic/semi': ['error', 'always'],
       '@stylistic/indent': ['error', 2],
       '@stylistic/comma-dangle': ['error', 'always-multiline'],
-      '@stylistic/arrow-parens': ['error', 'always'],
       '@stylistic/quotes': ['error', 'single'],
+      'import/no-unresolved': 'off',
     },
-  },
+  }
 );

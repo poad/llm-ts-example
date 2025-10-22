@@ -5,6 +5,7 @@ export const models = [
     modelId: 'us.amazon.nova-micro-v1:0',
     selected: true,
     platform: 'aws',
+    temperatureSupport: true,
   },
   {
     id: 'nova-lite',
@@ -12,6 +13,7 @@ export const models = [
     modelId: 'us.amazon.nova-lite-v1:0',
     selected: false,
     platform: 'aws',
+    temperatureSupport: true,
   },
   {
     id: 'nova-pro',
@@ -19,6 +21,7 @@ export const models = [
     modelId: 'us.amazon.nova-pro-v1:0',
     selected: false,
     platform: 'aws',
+    temperatureSupport: true,
   },
   {
     id: 'nova-premier',
@@ -26,6 +29,7 @@ export const models = [
     modelId: 'us.amazon.nova-premier-v1:0',
     selected: false,
     platform: 'aws',
+    temperatureSupport: true,
   },
   {
     id: 'gpt-oss-20b',
@@ -34,6 +38,7 @@ export const models = [
     disabled: true,
     selected: false,
     platform: 'aws',
+    temperatureSupport: true,
   },
   {
     id: 'gpt-oss-120b',
@@ -42,6 +47,7 @@ export const models = [
     disabled: true,
     selected: false,
     platform: 'aws',
+    temperatureSupport: true,
   },
   {
     id: 'gpt-5-mini',
@@ -49,6 +55,7 @@ export const models = [
     modelId: 'gpt-5-mini',
     selected: false,
     platform: 'azure',
+    temperatureSupport: false,
   },
   {
     id: 'gpt-5-nano',
@@ -56,5 +63,6 @@ export const models = [
     modelId: 'gpt-5-nano',
     selected: false,
     platform: 'azure',
+    temperatureSupport: false,
   },
 ];

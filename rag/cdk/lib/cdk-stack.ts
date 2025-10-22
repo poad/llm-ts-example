@@ -79,15 +79,15 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
     });
 
     const devOptions = {
-      // environment: {
-      //   NODE_OPTIONS: '--enable-source-maps',
-      // },
-      // bundling: {
-      //   sourceMap: true,
-      //   sourceMapMode: nodejs.SourceMapMode.BOTH,
-      //   sourcesContent: true,
-      //   keepNames: true,
-      // },
+      environment: {
+        NODE_OPTIONS: '--enable-source-maps',
+      },
+      bundling: {
+        sourceMap: true,
+        sourceMapMode: nodejs.SourceMapMode.BOTH,
+        sourcesContent: true,
+        keepNames: true,
+      },
       applicationLogLevelV2: lambda.ApplicationLogLevel.TRACE,
     };
 
@@ -115,7 +115,7 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
       functionName,
       retryAttempts: 0,
       environment: {
-        // ...devOptions.environment,
+        ...devOptions.environment,
         API_ROOT_PATH: apiRootPath,
         AZURE_OPENAI_API_INSTANCE_NAME: instanceName,
         ...(endpoint ? {AZURE_OPENAI_API_ENDPOINT: endpoint} : {}),
@@ -132,7 +132,7 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
         minify: true,
         format: nodejs.OutputFormat.ESM,
         banner: 'import { createRequire } from \'module\';const require = createRequire(import.meta.url);',
-        // ...devOptions.bundling,
+        ...devOptions.bundling,
       },
       memorySize: 256,
       timeout: cdk.Duration.minutes(1),
@@ -284,9 +284,14 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
     );
 
     // Add permission Lambda Function URLs
-    fn.addPermission('AllowCloudFrontServicePrincipal', {
+    fn.addPermission('AllowCloudFrontServicePrincipalFunctionUrl', {
       principal: new iam.ServicePrincipal('cloudfront.amazonaws.com'),
       action: 'lambda:InvokeFunctionUrl',
+      sourceArn: `arn:aws:cloudfront::${cdk.Stack.of(this).account}:distribution/${cf.distributionId}`,
+    });
+    fn.addPermission('AllowCloudFrontServicePrincipal', {
+      principal: new iam.ServicePrincipal('cloudfront.amazonaws.com'),
+      action: 'lambda:InvokeFunction',
       sourceArn: `arn:aws:cloudfront::${cdk.Stack.of(this).account}:distribution/${cf.distributionId}`,
     });
 

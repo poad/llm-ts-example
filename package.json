@@ -4,7 +4,7 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "build": "pnpm --filter @llm-ts-example/common-core build && pnpm --filter @llm-ts-example/common-backend build && pnpm -r --filter '!@llm-ts-example/common-*' build",
+    "build": "pnpm --filter @llm-ts-example/common-core build && pnpm --filter @llm-ts-example/common-backend build && pnpm -r build",
     "clean": "pnpm -r --if-present --paralell clean",
     "lint": "pnpm -r --if-present --paralell lint",
     "lint-fix": "pnpm -r --if-present --paralell lint-fix"

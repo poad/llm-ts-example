@@ -10,12 +10,11 @@ import {
   messagesStateReducer,
   Annotation,
 } from '@langchain/langgraph';
-import { selectEmbeddings } from './embeddings-models';
-import { createVectorStore } from './vector-store';
+import { selectEmbeddings } from './embeddings-models.js';
+import { createVectorStore } from './vector-store.js';
 import { AIMessage, BaseMessage, HumanMessage } from '@langchain/core/messages';
 
-
-import { selectLlm } from '@llm-ts-example/common-backend';
+import { selectLlm, logger } from '@llm-ts-example/common-backend';
 
 // Define the State interface
 const GraphAnnotation = Annotation.Root({
@@ -41,6 +40,7 @@ export async function createGraph({
 
   const vectorStore = await createVectorStore({ embeddings, indexName });
 
+  logger.info('modelType', { modelType });
   const { platform, model, modelName } = selectLlm(modelType);
 
   const systemPrompt = `You are an assistant for question-answering tasks.
@@ -52,7 +52,7 @@ Use three sentences maximum and keep the answer concise.
   const qaPrompt = ChatPromptTemplate.fromMessages([
     ['system', systemPrompt],
     new MessagesPlaceholder('chat_history'),
-    ['human', '{input}'],
+    ['user', '{input}'],
   ]);
 
   const documentChain = await createStuffDocumentsChain({
@@ -62,9 +62,9 @@ Use three sentences maximum and keep the answer concise.
 
   const historyAwarePrompt = ChatPromptTemplate.fromMessages([
     new MessagesPlaceholder('chat_history'),
-    ['human', '{input}'],
+    ['user', '{input}'],
     [
-      'system',
+      'user',
       'Given a chat history and the latest user question which might reference context in the chat history, formulate a standalone question which can be understood without the chat history. Do NOT answer the question, just reformulate it if needed and otherwise return it as is.',
     ],
   ]);
@@ -77,7 +77,7 @@ Use three sentences maximum and keep the answer concise.
 
   const retrievalChain = await createRetrievalChain({
     combineDocsChain: documentChain,
-    retriever: historyAwareRetrieverChain,
+    retriever: vectorStore.asRetriever(),
   });
 
   // Define the call_model function
@@ -107,6 +107,3 @@ Use three sentences maximum and keep the answer concise.
     graph: workflow.compile({ checkpointer: memory }),
   };
 }
-
-const { graph } = await createGraph({});
-export default graph;
