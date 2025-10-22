@@ -12,6 +12,8 @@
     "allowJs": true,
     "esModuleInterop": true,
     "outDir": "./dist",
+    "rootDir": "./src",
+    "sourceRoot": "./src",
     "isolatedModules": true,
     "declaration": true,
     "declarationMap": true,
@@ -41,7 +43,7 @@
   "exclude": [
     "node_modules",
     "cdk.out",
-    "eslint.config.js",
+    "eslint.config.*",
     "vite.config.ts",
     "dist"
   ]

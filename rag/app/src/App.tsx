@@ -1,4 +1,5 @@
 import './App.css';
+// eslint-disable-next-line import/no-unresolved
 import { v7 as uuidv7 } from 'uuid';
 import { Chat } from './features/chat';
 import { models } from '@llm-ts-example/common-core';

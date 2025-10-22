@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDirs": [
+      "./",
+      "./src"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "cdk.out",
+    "eslint.config.js",
+    "vite.config.ts",
+    "dist"
+  ]
+}

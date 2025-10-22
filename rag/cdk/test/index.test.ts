@@ -11,7 +11,6 @@ function sleep(time: number) {
   });
 }
 
-// eslint-disable-next-line vitest/expect-expect
 it('test', { retry: 0 }, async () => {
 
   const sessionId = process.env.FIXED_SESSION_ID && process.env.FIXED_SESSION_ID.length > 0 ? process.env.FIXED_SESSION_ID : new Date().getTime().toString()

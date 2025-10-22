@@ -14,3 +14,4 @@ cdk.out
 !*.config.js
 .env*
 vite.config.js
+eslint.config.js

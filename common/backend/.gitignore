@@ -6,3 +6,5 @@ node_modules
 !dist/**/*.js
 .env*
 vite.config.js
+eslint.config.d.*
+eslint.config.js

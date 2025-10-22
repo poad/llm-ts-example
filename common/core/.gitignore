@@ -8,3 +8,5 @@ node_modules
 !types/*.d.ts
 !*.config.js
 .env*
+eslint.config.d.*
+eslint.config.js
