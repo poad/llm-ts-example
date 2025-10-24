@@ -12,14 +12,14 @@
     "start": "node build/index.js"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.20.1",
+    "@modelcontextprotocol/sdk": "^1.20.2",
     "zod": "^3.25.76"
   },
   "devDependencies": {
     "@eslint/compat": "^1.4.0",
     "@eslint/js": "^9.38.0",
     "@stylistic/eslint-plugin": "^5.5.0",
-    "@types/express": "^5.0.3",
+    "@types/express": "^5.0.4",
     "@types/node": "^22.18.12",
     "eslint": "^9.38.0",
     "eslint-import-resolver-typescript": "^4.4.4",
