@@ -10,12 +10,11 @@ import {
   messagesStateReducer,
   Annotation,
 } from '@langchain/langgraph';
-import { selectEmbeddings } from './embeddings-models';
-import { createVectorStore } from './vector-store';
+import { selectEmbeddings } from './embeddings-models.js';
+import { createVectorStore } from './vector-store.js';
 import { AIMessage, BaseMessage, HumanMessage } from '@langchain/core/messages';
 
-
-import { selectLlm } from '@llm-ts-example/common-backend';
+import { selectLlm, logger } from '@llm-ts-example/common-backend';
 
 // Define the State interface
 const GraphAnnotation = Annotation.Root({
@@ -41,6 +40,7 @@ export async function createGraph({
 
   const vectorStore = await createVectorStore({ embeddings, indexName });
 
+  logger.info('modelType', { modelType });
   const { platform, model, modelName } = selectLlm(modelType);
 
   const systemPrompt = `You are an assistant for question-answering tasks.
@@ -107,6 +107,3 @@ Use three sentences maximum and keep the answer concise.
     graph: workflow.compile({ checkpointer: memory }),
   };
 }
-
-const { graph } = await createGraph({});
-export default graph;

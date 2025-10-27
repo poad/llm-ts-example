@@ -1,15 +1,15 @@
 'use strict';
 
-import { APIGatewayProxyEvent } from 'aws-lambda';
-import { handle } from './handler';
-import { v7 as uuidv7 } from 'uuid';
+import { APIGatewayProxyEvent, APIGatewayProxyEventV2 } from 'aws-lambda';
+import { handle } from './handler.js';
+import { logger } from '@llm-ts-example/common-backend';
 
 export const handler = awslambda.streamifyResponse(
   async (
-    event: APIGatewayProxyEvent, responseStream: NodeJS.WritableStream,
+    event: APIGatewayProxyEvent | APIGatewayProxyEventV2, responseStream: NodeJS.WritableStream,
   ) => {
-    const { question, model, sessionId } = event.body ? JSON.parse(event.body) : { question: 'あなたは誰？', model: 'gpt', sessionId: uuidv7() };
-    await handle(sessionId, { question, model }, responseStream);
+    logger.info('event', {event});
+    await handle(event, responseStream);
     responseStream.end();
   });
 
