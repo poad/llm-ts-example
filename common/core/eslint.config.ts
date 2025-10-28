@@ -3,6 +3,7 @@ import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import { configs, parser } from 'typescript-eslint';
 import importPlugin from 'eslint-plugin-import';
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
 
 // @ts-expect-error 型エラーの不具合が修正されるまで
 import pluginPromise from 'eslint-plugin-promise'
@@ -42,13 +43,28 @@ export default defineConfig(
       sourceType: 'module',
       parserOptions: {
         tsconfigRootDir: __dirname,
-        project: ['./tsconfig-eslint.json'],
+        project: ['./tsconfig.json', './tsconfig-eslint.json'],
       },
     },
     plugins: {
       '@stylistic': stylistic,
     },
     extends: [importPlugin.flatConfigs.recommended, importPlugin.flatConfigs.typescript],
+    settings: {
+      'import/resolver': {
+        // You will also need to install and configure the TypeScript resolver
+        // See also https://github.com/import-js/eslint-import-resolver-typescript#configuration
+        'typescript': {
+          alwaysTryTypes: true,
+        },
+        'node': true,
+      },
+      'import-x/resolver-next': [
+        createTypeScriptImportResolver({
+          alwaysTryTypes: true,
+        }),
+      ],
+    },
     rules: {
       '@stylistic/semi': ['error', 'always'],
       '@stylistic/indent': ['error', 2],

@@ -7,7 +7,6 @@
       "dom"
     ],
     "moduleResolution": "bundler",
-    "moduleDetection": "force",
     "resolveJsonModule": true,
     "allowJs": true,
     "esModuleInterop": true,
@@ -37,8 +36,7 @@
     ],
     "types": [
       "node"
-    ],
-    "composite": true
+    ]
   },
   "exclude": [
     "node_modules",

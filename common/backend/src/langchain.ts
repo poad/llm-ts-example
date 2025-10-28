@@ -1,14 +1,17 @@
 import { AzureChatOpenAI } from '@langchain/openai';
 import { ChatBedrockConverse } from '@langchain/aws';
-import { BaseChatModel } from '@langchain/core/dist/language_models/chat_models';
-import logger from './logger';
+import { logger } from './logger';
+// eslint-disable-next-line import/no-unresolved
+import { LanguageModelLike } from '@langchain/core/language_models/base';
+// eslint-disable-next-line import/no-unresolved
+import { BaseChatModel } from '@langchain/core/language_models/chat_models';
 
 import { models } from '@llm-ts-example/common-core';
 
-function selectLlm(modelType?: string): {
+export function selectLlm(modelType?: string): {
   platform: 'aws' | 'azure';
   modelName: string;
-  model: BaseChatModel;
+  model: LanguageModelLike & BaseChatModel;
 } {
   const model = models.find((model) => model.id === modelType);
   if (!model) {

@@ -8,8 +8,8 @@ import * as nodejs from 'aws-cdk-lib/aws-lambda-nodejs';
 import * as awslogs from 'aws-cdk-lib/aws-logs';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as deployment from 'aws-cdk-lib/aws-s3-deployment';
-import { buildCommon, buildFrontend } from './process/setup';
 import assert from 'node:assert';
+import { buildCommon, buildFrontend } from './process/setup.js';
 
 export interface Config extends cdk.StackProps {
   bucketName: string;

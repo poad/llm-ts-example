@@ -9,7 +9,7 @@
   "exclude": [
     "node_modules",
     "cdk.out",
-    "eslint.config.js",
+    "eslint.config.*",
     "vite.config.ts",
     "dist"
   ]

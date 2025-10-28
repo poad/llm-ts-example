@@ -1,6 +1,6 @@
 import { APIGatewayProxyEvent } from 'aws-lambda';
-import { handle } from './handler';
 import { v7 as uuidv7 } from 'uuid';
+import { handle } from './handler.js';
 
 import { logger } from '@llm-ts-example/common-backend';
 
