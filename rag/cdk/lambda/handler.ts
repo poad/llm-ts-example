@@ -7,6 +7,7 @@ import { selectEmbeddings } from './embeddings-models.js';
 import { createTool } from './tool.js';
 import { createVectorStore } from './vector-store.js';
 import { createAgent } from 'langchain';
+import { MemorySaver } from '@langchain/langgraph';
 
 export async function handle(
   event: APIGatewayProxyEvent | APIGatewayProxyEventV2,
@@ -40,10 +41,13 @@ export async function handle(
       tags: [modelName],
     }) : undefined;
 
+    const checkpointer = new MemorySaver();
+
     const agent = createAgent({
       model,
       tools: [tool],
       systemPrompt,
+      checkpointer,
     });
 
     logger.debug(`Langfuse: ${langfuseHandler ? 'enable' : 'disable'}`);
