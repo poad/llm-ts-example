@@ -32,9 +32,6 @@ export async function handle(
       'あなたは文書からコンテキストを取得する専門家です。ツールを使用してユーザーの質問に答える手助けをしてください。必ずユーザーの質問と同じ言語で答えてください。';
 
     const { platform, model, modelName } = selectLlm(modelType);
-
-    const agent = createAgent({ model, tools: [tool], systemPrompt });
-
     // Initialize Langfuse callback handler
     const langfuseHandler = langfuse.publicKey && langfuse.secretKey ? new CallbackHandler({
       sessionId,
@@ -42,6 +39,12 @@ export async function handle(
       flushAt: 1,
       tags: [modelName],
     }) : undefined;
+
+    const agent = createAgent({
+      model,
+      tools: [tool],
+      systemPrompt,
+    });
 
     logger.debug(`Langfuse: ${langfuseHandler ? 'enable' : 'disable'}`);
 
@@ -54,8 +57,9 @@ export async function handle(
         configurable: {
           sessionId,
           thread_id: threadId,
-          callbacks: langfuseHandler ? [langfuseHandler] : [],
         },
+        //@ts-expect-error LangChain.js の型定義誤り？
+        callbacks: langfuseHandler ? [langfuseHandler] : [],
       },
     );
     for await (const sEvent of stream) {
