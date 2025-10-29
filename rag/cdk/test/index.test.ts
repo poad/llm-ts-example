@@ -1,8 +1,8 @@
 import { it } from 'vitest';
-import { handle } from '../lambda/handler';
 import { stdout } from 'node:process';
 import { PassThrough } from 'node:stream';
 import { APIGatewayProxyEvent } from 'aws-lambda';
+import { handle } from '../lambda/handler.js';
 
 function sleep(time: number) {
   return new Promise<void>((resolve) => {
@@ -17,7 +17,7 @@ it('test', { retry: 0 }, async () => {
   const sessionId = process.env.FIXED_SESSION_ID && process.env.FIXED_SESSION_ID.length > 0 ? process.env.FIXED_SESSION_ID : new Date().getTime().toString()
   const model = process.env.USE_MODEL;
   const output = process.env.DISABLE_STDOUT === 'true' ? new PassThrough() : stdout;
-  const question = process.env.QUESTION && process.env.QUESTION.length > 0 ? process.env.QUESTION : '何のドキュメント？';
+  const question = process.env.QUESTION && process.env.QUESTION.length > 0 ? process.env.QUESTION : '何のドキュメントですか？';
 
   await handle({
     body: JSON.stringify({ sessionId: `local-${sessionId}`, question, model }),

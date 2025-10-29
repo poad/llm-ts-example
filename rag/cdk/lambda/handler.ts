@@ -2,15 +2,17 @@ import { CallbackHandler } from 'langfuse-langchain';
 import { APIGatewayProxyEvent, APIGatewayProxyEventV2 } from 'aws-lambda';
 import { v7 as uuidv7 } from 'uuid';
 
-import { createGraph } from './graph.js';
-
-import { logger } from '@llm-ts-example/common-backend';
+import { logger, selectLlm } from '@llm-ts-example/common-backend';
+import { selectEmbeddings } from './embeddings-models.js';
+import { createTool } from './tool.js';
+import { createVectorStore } from './vector-store.js';
+import { createAgent } from 'langchain';
 
 export async function handle(
   event: APIGatewayProxyEvent | APIGatewayProxyEventV2,
   output: NodeJS.WritableStream,
 ) {
-  logger.info('event', {event});
+  logger.info('event', { event });
   const { question, model, embeddingType, sessionId } = event.body ? JSON.parse(event.body) : { question: undefined, model: undefined, sessionId: uuidv7() };
 
   const modelType = model || 'gpt-5-nano';
@@ -21,10 +23,17 @@ export async function handle(
   };
 
   try {
-    const { platform, modelName, graph: app } = await createGraph({
-      embeddingType,
-      modelType,
+    const { indexName, model: embeddings } = selectEmbeddings({
+      type: embeddingType ?? 'titan', dataSource: process.env.PINECONE_INDEX ?? '',
     });
+    const vectorStore = await createVectorStore({ embeddings, indexName });
+    const tool = createTool(vectorStore);
+    const systemPrompt =
+      'あなたは文書からコンテキストを取得する専門家です。ツールを使用してユーザーの質問に答える手助けをしてください。必ずユーザーの質問と同じ言語で答えてください。';
+
+    const { platform, model, modelName } = selectLlm(modelType);
+
+    const agent = createAgent({ model, tools: [tool], systemPrompt });
 
     // Initialize Langfuse callback handler
     const langfuseHandler = langfuse.publicKey && langfuse.secretKey ? new CallbackHandler({
@@ -38,15 +47,15 @@ export async function handle(
 
     const threadId = uuidv7();
 
-    const stream = await app.streamEvents(
-      {input: question},
+    const stream = await agent.streamEvents(
+      { messages: [{ role: 'user', content: question }] },
       {
         version: 'v2',
         configurable: {
           sessionId,
           thread_id: threadId,
+          callbacks: langfuseHandler ? [langfuseHandler] : [],
         },
-        callbacks: langfuseHandler ? [langfuseHandler] : [],
       },
     );
     for await (const sEvent of stream) {

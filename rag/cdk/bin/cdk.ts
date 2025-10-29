@@ -4,7 +4,7 @@ import * as cdk from 'aws-cdk-lib';
 import {
   CloudfrontCdnTemplateStack,
   Config,
-} from '../lib/cdk-stack';
+} from '../lib/cdk-stack.js';
 
 const app = new cdk.App();
 

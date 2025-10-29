@@ -21,7 +21,7 @@ class LocalLogFormatter extends LogFormatter {
   }
 }
 
-const logger = new Logger({
+export const logger = new Logger({
   logFormatter: new LocalLogFormatter(),
 });
 

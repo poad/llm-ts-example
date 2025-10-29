@@ -1,8 +1,8 @@
 'use strict';
 
 import { APIGatewayProxyEvent, APIGatewayProxyEventV2 } from 'aws-lambda';
-import { handle } from './handler.js';
 import { logger } from '@llm-ts-example/common-backend';
+import { handle } from './handler.js';
 
 export const handler = awslambda.streamifyResponse(
   async (

@@ -46,7 +46,6 @@ export default defineConfig(
     },
     plugins: {
       '@stylistic': stylistic,
-      '@stylistic/ts': stylistic,
     },
     extends: [eslintImport.flatConfigs.recommended, eslintImport.flatConfigs.typescript],
     rules: {
