@@ -1,9 +1,7 @@
 import { AzureChatOpenAI } from '@langchain/openai';
 import { ChatBedrockConverse } from '@langchain/aws';
 import { logger } from './logger';
-// eslint-disable-next-line import/no-unresolved
 import { LanguageModelLike } from '@langchain/core/language_models/base';
-// eslint-disable-next-line import/no-unresolved
 import { BaseChatModel } from '@langchain/core/language_models/chat_models';
 
 import { models } from '@llm-ts-example/common-core';

@@ -1,5 +1,4 @@
 import { defineConfig } from 'eslint/config';
-import { ConfigObject } from '@eslint/core';
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import { configs, parser } from 'typescript-eslint';
@@ -13,7 +12,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const gitignorePath = path.resolve(__dirname, '.gitignore');
 
-const config: ConfigObject[] = defineConfig(
+export default defineConfig(
   includeIgnoreFile(gitignorePath),
   {
     ignores: [
@@ -63,5 +62,3 @@ const config: ConfigObject[] = defineConfig(
     },
   },
 );
-
-export default config;
