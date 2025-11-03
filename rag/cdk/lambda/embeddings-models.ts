@@ -6,11 +6,16 @@ interface EmbeddingsModel {
   model: Embeddings
 }
 
+interface SelectEmbeddingsProps {
+  type: string
+  dataSource: string
+}
+
 function selectEmbeddings(
   {
     // type,
     dataSource,
-  }: { type: string, dataSource: string },
+  }: SelectEmbeddingsProps,
 ): EmbeddingsModel {
   return {
     indexName: `titan-${dataSource}`,

@@ -5,9 +5,11 @@ import { CallbackHandler } from 'langfuse-langchain';
 
 import { selectLlm, logger } from '@llm-ts-example/common-backend';
 
+interface HandleProps { question: string, model?: string }
+
 export async function handle(
   sessionId: string,
-  { question, model: modelType }: { question: string, model?: string },
+  { question, model: modelType }: HandleProps,
   output: NodeJS.WritableStream,
 ) {
 

@@ -1,23 +1,28 @@
 import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
 
-interface GeocodingResponse {
-  results: {
-    latitude: number;
-    longitude: number;
-    name: string;
-  }[];
+interface GeocodingResponseResult {
+  latitude: number;
+  longitude: number;
+  name: string;
 }
+
+interface GeocodingResponse {
+  results: GeocodingResponseResult[];
+}
+
+interface WeatherResponseCurrent {
+  time: string;
+  temperature_2m: number;
+  apparent_temperature: number;
+  relative_humidity_2m: number;
+  wind_speed_10m: number;
+  wind_gusts_10m: number;
+  weather_code: number;
+}
+
 interface WeatherResponse {
-  current: {
-    time: string;
-    temperature_2m: number;
-    apparent_temperature: number;
-    relative_humidity_2m: number;
-    wind_speed_10m: number;
-    wind_gusts_10m: number;
-    weather_code: number;
-  };
+  current: WeatherResponseCurrent;
 }
 
 export const weatherTool = createTool({

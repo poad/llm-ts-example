@@ -11,12 +11,31 @@ import * as deployment from 'aws-cdk-lib/aws-s3-deployment';
 import assert from 'node:assert';
 import { buildCommon, buildFrontend } from './process/setup.js';
 
+interface CloudFrontProps {
+  comment: string;
+}
+
+interface LangFuseProps {
+  sk: string;
+  pk: string;
+  endpoint: string;
+}
+
+interface LangSmithProps {
+  apiKey: string;
+  project: string;
+  endpoint: string;
+}
+
+interface PineconeProps {
+  index: string;
+  apiKey?: string;
+}
+
 export interface Config extends cdk.StackProps {
   bucketName: string;
   appName: string;
-  cloudfront: {
-    comment: string;
-  };
+  cloudfront: CloudFrontProps;
 }
 
 interface CloudfrontCdnTemplateStackProps extends Config {
@@ -26,20 +45,9 @@ interface CloudfrontCdnTemplateStackProps extends Config {
   apiKey: string;
   embeddingsDeployName: string;
   apiVersion: string;
-  langfuse?: {
-    sk: string;
-    pk: string;
-    endpoint: string;
-  };
-  pinecone: {
-    index: string;
-    apiKey?: string;
-  },
-  langsmith?: {
-    apiKey: string;
-    project: string;
-    endpoint: string;
-  };
+  langfuse?: LangFuseProps;
+  pinecone: PineconeProps,
+  langsmith?: LangSmithProps;
 }
 
 export class CloudfrontCdnTemplateStack extends cdk.Stack {
@@ -118,7 +126,7 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
         ...devOptions.environment,
         API_ROOT_PATH: apiRootPath,
         AZURE_OPENAI_API_INSTANCE_NAME: instanceName,
-        ...(endpoint ? {AZURE_OPENAI_API_ENDPOINT: endpoint} : {}),
+        ...(endpoint ? { AZURE_OPENAI_API_ENDPOINT: endpoint } : {}),
         AZURE_OPENAI_API_EMBEDDINGS_DEPLOYMENT_NAME: embeddingsDeployName,
         AZURE_OPENAI_API_KEY: apiKey,
         AZURE_OPENAI_API_VERSION: apiVersion,

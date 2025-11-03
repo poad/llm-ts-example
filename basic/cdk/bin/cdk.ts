@@ -8,8 +8,10 @@ import {
 
 const app = new cdk.App();
 
+interface ConfigProps { stackName: string }
+
 const env = app.node.tryGetContext('env');
-const config: Config & { stackName: string } = env
+const config: Config & ConfigProps = env
   ? app.node.tryGetContext(env)
   : app.node.tryGetContext('default');
 

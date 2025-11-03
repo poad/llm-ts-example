@@ -20,26 +20,32 @@ const server = new McpServer({
 //   }[];
 // }
 
+interface Geometry {
+  coordinates: number[],
+  type: string
+}
+
+interface GeocodingProperties {
+  addressCode: string,
+  title: string,
+  dataSource?: string,
+}
+
 interface Geocoding {
-  geometry: {
-    coordinates: number[],
-    type: string
-  },
+  geometry: Geometry,
   type: string,
-  properties: {
-    addressCode: string,
-    title: string,
-    dataSource?: string,
-  }
+  properties: GeocodingProperties
+}
+
+interface GetGeocodingResult {
+  longitude: number,
+  latitude: number,
+  name?: string
 }
 
 type GeocodingResponse = Geocoding[];
 
-async function getGeocoding(location: string): Promise<{
-  longitude: number,
-  latitude: number,
-  name?: string
-} | null> {
+async function getGeocoding(location: string): Promise<GetGeocodingResult | null> {
   // Get grid point data
   const pointsUrl = `https://msearch.gsi.go.jp/address-search/AddressSearch?q=${encodeURIComponent(location)}`;
   const geocodingData = await makeNWSRequest<GeocodingResponse>(pointsUrl);
@@ -183,16 +189,18 @@ async function makeNWSRequest<T>(url: string): Promise<T | null> {
   }
 }
 
+interface WeatherResponseCurrent {
+  time: string;
+  temperature_2m: number;
+  apparent_temperature: number;
+  relative_humidity_2m: number;
+  wind_speed_10m: number;
+  wind_gusts_10m: number;
+  weather_code: number;
+}
+
 interface WeatherResponse {
-  current: {
-    time: string;
-    temperature_2m: number;
-    apparent_temperature: number;
-    relative_humidity_2m: number;
-    wind_speed_10m: number;
-    wind_gusts_10m: number;
-    weather_code: number;
-  };
+  current: WeatherResponseCurrent;
 }
 
 async function main() {

@@ -6,11 +6,13 @@ import { BaseChatModel } from '@langchain/core/language_models/chat_models';
 
 import { models } from '@llm-ts-example/common-core';
 
-export function selectLlm(modelType?: string): {
+interface SelectLlmResult {
   platform: 'aws' | 'azure';
   modelName: string;
   model: LanguageModelLike & BaseChatModel;
-} {
+}
+
+export function selectLlm(modelType?: string): SelectLlmResult {
   const model = models.find((model) => model.id === modelType);
   if (!model) {
     logger.error(`Model type "${modelType}" is not supported.`);

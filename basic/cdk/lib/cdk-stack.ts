@@ -10,12 +10,26 @@ import * as iam from 'aws-cdk-lib/aws-iam';
 import * as deployment from 'aws-cdk-lib/aws-s3-deployment';
 import { buildCommon, buildFrontend } from './process/setup.js';
 
+interface CloudFrontProps {
+  comment: string;
+}
+
 export interface Config extends cdk.StackProps {
   bucketName: string;
   appName: string;
-  cloudfront: {
-    comment: string;
-  };
+  cloudfront: CloudFrontProps;
+}
+
+interface LangFuseProps {
+  sk: string;
+  pk: string;
+  endpoint: string;
+}
+
+interface LangSmithProps {
+  apiKey: string;
+  project: string;
+  endpoint: string;
 }
 
 interface CloudfrontCdnTemplateStackProps extends Config {
@@ -24,18 +38,10 @@ interface CloudfrontCdnTemplateStackProps extends Config {
   instanceName: string;
   apiKey: string;
   apiVersion: string;
-  langfuse?: {
-    sk: string;
-    pk: string;
-    endpoint: string;
-  };
+  langfuse?: LangFuseProps;
   anthoropicApiKey: string;
   claudeModel: string;
-  langsmith?: {
-    apiKey: string;
-    project: string;
-    endpoint: string;
-  };
+  langsmith?: LangSmithProps;
 }
 
 export class CloudfrontCdnTemplateStack extends cdk.Stack {
@@ -110,7 +116,7 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
       environment: {
         // ...devOptions.environment,
         API_ROOT_PATH: apiRootPath,
-        ...(endpoint ? {AZURE_OPENAI_API_ENDPOINT: endpoint} : {}),
+        ...(endpoint ? { AZURE_OPENAI_API_ENDPOINT: endpoint } : {}),
         AZURE_OPENAI_API_INSTANCE_NAME: instanceName,
         AZURE_OPENAI_API_KEY: apiKey,
         AZURE_OPENAI_API_VERSION: apiVersion,
