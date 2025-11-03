@@ -10,20 +10,6 @@ const pool = new pg.Pool({
   connectionString,
 });
 
-interface QueryExecuteProps {
-  sql: string;
-  params?: string[];
-}
-
-interface TextContent {
-  type: 'text';
-  text: string;
-}
-
-interface TextContentResult {
-  content: TextContent[];
-}
-
 const queryTool = {
   name: 'query',
   description: 'Execute a SQL query against the PostgreSQL database with optional parameter binding',
@@ -39,7 +25,15 @@ const queryTool = {
     params: z.array(z.any()).optional().describe('Optional parameters for parameterized queries'),
   }),
   timeoutMs: 30000, // 30 second timeout for long queries
-  execute: async (args: QueryExecuteProps): Promise<TextContentResult> => {
+  execute: async (args: {
+    sql: string;
+    params?: string[];
+  }): Promise<{
+    content: {
+      type: 'text';
+      text: string;
+    }[];
+  }> => {
     try {
       const { sql, params = [] } = args;
 
@@ -85,10 +79,6 @@ const queryTool = {
   },
 };
 
-interface ListTablesExecuteProps {
-  schema: string;
-}
-
 // List tables tool
 const listTablesTool = {
   name: 'list_tables',
@@ -101,7 +91,14 @@ const listTablesTool = {
   parameters: z.object({
     schema: z.string().default('public').describe('Schema to filter tables (defaults to public)'),
   }),
-  execute: async (args: ListTablesExecuteProps): Promise<TextContentResult> => {
+  execute: async (args: {
+    schema: string;
+  }): Promise<{
+    content: {
+      type: 'text';
+      text: string;
+    }[];
+  }> => {
     try {
       const { schema } = args;
       logger.info(`Listing tables in schema: ${schema}`);
@@ -139,11 +136,6 @@ const listTablesTool = {
   },
 };
 
-interface DescribeTableExecuteProps {
-  table_name: string;
-  schema: string;
-}
-
 // Describe table tool
 const describeTableTool = {
   name: 'describe_table',
@@ -157,7 +149,15 @@ const describeTableTool = {
     table_name: z.string().describe('Name of the table to describe'),
     schema: z.string().default('public').describe('Schema of the table (defaults to public)'),
   }),
-  execute: async (args: DescribeTableExecuteProps): Promise<TextContentResult> => {
+  execute: async (args: {
+    table_name: string;
+    schema: string;
+  }): Promise<{
+    content: {
+      type: 'text';
+      text: string;
+    }[];
+  }> => {
     try {
       const { table_name, schema } = args;
       logger.info(`Describing table: ${schema}.${table_name}`);
@@ -207,12 +207,6 @@ const describeTableTool = {
   },
 };
 
-interface CallProcedureProps {
-  procedure_name: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  params: any[];
-  schema: string;
-}
 // Execute stored procedure tool
 const callProcedureTool = {
   name: 'call_procedure',
@@ -229,7 +223,17 @@ const callProcedureTool = {
     schema: z.string().default('public').describe('Schema of the procedure (defaults to public)'),
   }),
   timeoutMs: 60000, // 60 second timeout for procedures
-  execute: async (args: CallProcedureProps): Promise<TextContentResult> => {
+  execute: async (args: {
+    procedure_name: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    params: any[];
+    schema: string;
+  }): Promise<{
+    content: {
+      type: 'text';
+      text: string;
+    }[];
+  }> => {
     try {
       const { procedure_name, params, schema } = args;
 
@@ -272,28 +276,6 @@ const callProcedureTool = {
   },
 };
 
-interface ExportSchemaExecuteProps {
-  schemas: string[];
-  include_data: boolean;
-}
-
-interface ExportDataTableProps {
-  type: string;
-  columns: string[];
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  sampleData?: any[];
-  sampleDataError?: string;
-}
-
-interface ExportDataValueProps {
-  tables: Record<string, ExportDataTableProps>
-}
-
-interface ExportDataProps {
-  schemas: Record<string,
-    ExportDataValueProps>;
-}
-
 // Database export tool
 const exportSchemaTool = {
   name: 'export_schema',
@@ -308,7 +290,15 @@ const exportSchemaTool = {
     schemas: z.array(z.string()).default(['public']).describe('List of schemas to export'),
     include_data: z.boolean().default(false).describe('Include sample data (first 5 rows per table)'),
   }),
-  execute: async (args: ExportSchemaExecuteProps): Promise<TextContentResult> => {
+  execute: async (args: {
+    schemas: string[];
+    include_data: boolean;
+  }): Promise<{
+    content: {
+      type: 'text';
+      text: string;
+    }[];
+  }> => {
     try {
       const { schemas, include_data } = args;
 
@@ -317,7 +307,14 @@ const exportSchemaTool = {
       //   text: 'Starting schema export...\n',
       // });
 
-      const exportData: ExportDataProps= { schemas: {} };
+      const exportData: {
+        schemas: Record<string,
+          {
+            tables: Record<string,
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              { type: string; columns: string[]; sampleData?: any[]; sampleDataError?: string }>
+          }>;
+      } = { schemas: {} };
 
       for (const schema of schemas) {
         // await context.streamContent({
