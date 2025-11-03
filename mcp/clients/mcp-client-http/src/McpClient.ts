@@ -23,12 +23,14 @@ async function createClient(baseUrl: URL) {
   }
 }
 
-function createConverseClient(params: {
+interface CreateConverseClientProps {
   tools: Tool[];
   bedrock: BedrockRuntimeClient;
   mcp: Client;
   modelId: string;
-}) {
+}
+
+function createConverseClient(params:CreateConverseClientProps) {
   const converse = async (conversation: Message[]) => {
     const { tools, bedrock, mcp, modelId } = params;
     const input: ConverseCommandInput = {
@@ -98,9 +100,11 @@ async function questionPrompt(conversation: Message[]): Promise<boolean> {
   }
 }
 
-async function chat(client: {
+interface ChatProps {
   converse: (conversation: Message[]) => Promise<void>;
-}) {
+}
+
+async function chat(client: ChatProps) {
   const conversation: Message[] = [];
   try {
     console.log('\nMCP Client Started!');
@@ -126,11 +130,13 @@ interface McpClient {
   chat: () => Promise<void>;
 }
 
-async function createMcpClient({ region, url, modelId }: {
+interface CreateMcpClientProps {
   region: string
   url: string
   modelId: string
-}): Promise<McpClient> {
+}
+
+async function createMcpClient({ region, url, modelId }: CreateMcpClientProps): Promise<McpClient> {
   const baseUrl = new URL(url);
   const bedrock = new BedrockRuntimeClient({ region });
 

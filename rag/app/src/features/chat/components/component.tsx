@@ -12,14 +12,18 @@ interface ChatMessage {
   streaming?: boolean;
 }
 
-export function Chat(props: {
+interface Model {
+  id: string;
+  name: string;
+  selected: boolean;
+}
+
+interface ChatProps {
   sessionId: string;
-  models: {
-    id: string;
-    name: string;
-    selected: boolean;
-  }[]
-}) {
+  models: Model[]
+}
+
+export function Chat(props: ChatProps) {
   // 履歴を管理するstore
   const [history, setHistory] = createStore<ChatMessage[]>([]);
 

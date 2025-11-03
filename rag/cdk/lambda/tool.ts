@@ -4,8 +4,10 @@ import { PineconeStore } from '@langchain/pinecone';
 
 const retrieveSchema = z.object({ query: z.string() });
 
+interface RetrieveToolExecuteProps { query: string }
+
 const retrieveTool = (vectorStore: PineconeStore) => {
-  return async ({ query }: { query: string }) => {
+  return async ({ query }: RetrieveToolExecuteProps) => {
     const retrievedDocs = await vectorStore.similaritySearch(query, 2);
     const serialized = retrievedDocs
       .map(
@@ -15,7 +17,6 @@ const retrieveTool = (vectorStore: PineconeStore) => {
     return [serialized, retrievedDocs];
   };
 };
-
 
 export const createTool = (vectorStore: PineconeStore): StructuredTool => {
   const retrieve = tool<z.ZodObject<{
