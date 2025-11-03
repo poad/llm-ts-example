@@ -20,9 +20,10 @@ packages:
   - ./mcp/clients/mastra-mcp-client
 
 autoInstallPeers: true
+
 enablePrePostScripts: true
+
 legacyPeerDeps: true
-strictPeerDependencies: false
 
 onlyBuiltDependencies:
   - esbuild
@@ -32,7 +33,11 @@ onlyBuiltDependencies:
   - unrs-resolver
 
 overrides:
+  ai@<5.0.52: '>=5.0.52'
+  axios@<0.30.0: '>=0.30.0'
+  axios@<0.30.2: '>=0.30.2'
   axios@=1.10.0: '>=1.11.0'
+  axios@>=0.8.1 <0.28.0: '>=0.28.0'
   chalk@5.6.2: '>=5.6.2'
   form-data@>=4.0.0 <4.0.4: '>=4.0.4'
   got@<11.8.5: '>=11.8.5'
@@ -40,5 +45,5 @@ overrides:
   jsondiffpatch@<0.7.2: '>=0.7.2'
   playwright@<1.55.1: '>=1.55.1'
   tmp@<=0.2.3: '>=0.2.4'
-  eslint@=9.39.0: 9.38.0
-  '@eslint/js@=9.39.0': 9.38.0
+
+strictPeerDependencies: false
