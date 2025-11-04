@@ -102,19 +102,19 @@ importers:
         version: 3.0.51(zod@4.1.12)
       '@voltagent/cli':
         specifier: ^0.1.14
-        version: 0.1.14(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@types/node@24.10.0)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(@voltagent/scorers@1.0.0(@voltagent/core@1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(ai@5.0.87(zod@4.1.12))(ws@8.18.3)(zod@4.1.12))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)
+        version: 0.1.14(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@types/node@24.10.0)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(@voltagent/scorers@1.0.0(@voltagent/core@1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(ai@5.0.87(zod@4.1.12))(ws@8.18.3)(zod@4.1.12))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)
       '@voltagent/core':
-        specifier: ^1.1.39
-        version: 1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)
+        specifier: ^1.2.0
+        version: 1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)
       '@voltagent/libsql':
         specifier: ^1.0.10
-        version: 1.0.10(@voltagent/core@1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))
+        version: 1.0.10(@voltagent/core@1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))
       '@voltagent/logger':
         specifier: ^1.0.4
         version: 1.0.4(@opentelemetry/api@1.9.0)
       '@voltagent/server-hono':
         specifier: ^1.2.2
-        version: 1.2.2(@cfworker/json-schema@4.1.1)(@voltagent/core@1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(zod@4.1.12)
+        version: 1.2.2(@cfworker/json-schema@4.1.1)(@voltagent/core@1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(zod@4.1.12)
       ai:
         specifier: ^5.0.87
         version: 5.0.87(zod@4.1.12)
@@ -4955,8 +4955,8 @@ packages:
     engines: {node: '>=20'}
     hasBin: true
 
-  '@voltagent/core@1.1.39':
-    resolution: {integrity: sha512-00aowz3no34coN7yxzRjECsZi7q8WdppII6NOlF1JHJ0ksXKaRFT4n66FCDYzklEDiIZKDF0jlHf6D+feX+bpQ==}
+  '@voltagent/core@1.2.0':
+    resolution: {integrity: sha512-gFqtw5paQ+Tj/c5l4JIZGqIy4dtd4G0g7lL1S3MWcK9jT+mlYYbMGVGSFvFLsKYweiVxkJdPAQ69ZmI7nu2s1g==}
     peerDependencies:
       '@ai-sdk/provider-utils': 3.x
       '@voltagent/logger': 1.x
@@ -13972,18 +13972,18 @@ snapshots:
       '@vitest/pretty-format': 4.0.6
       tinyrainbow: 3.0.3
 
-  '@voltagent/a2a-server@1.0.2(@voltagent/core@1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))':
+  '@voltagent/a2a-server@1.0.2(@voltagent/core@1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))':
     dependencies:
       '@a2a-js/sdk': 0.2.5
-      '@voltagent/core': 1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)
+      '@voltagent/core': 1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)
       '@voltagent/internal': 0.0.12
       zod: 3.25.76
     transitivePeerDependencies:
       - supports-color
 
-  '@voltagent/cli@0.1.14(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@types/node@24.10.0)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(@voltagent/scorers@1.0.0(@voltagent/core@1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(ai@5.0.87(zod@4.1.12))(ws@8.18.3)(zod@4.1.12))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)':
+  '@voltagent/cli@0.1.14(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@types/node@24.10.0)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(@voltagent/scorers@1.0.0(@voltagent/core@1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(ai@5.0.87(zod@4.1.12))(ws@8.18.3)(zod@4.1.12))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)':
     dependencies:
-      '@voltagent/evals': 1.0.3(@voltagent/scorers@1.0.0(@voltagent/core@1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(ai@5.0.87(zod@4.1.12))(ws@8.18.3)(zod@4.1.12))(@voltagent/sdk@1.0.1(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))
+      '@voltagent/evals': 1.0.3(@voltagent/scorers@1.0.0(@voltagent/core@1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(ai@5.0.87(zod@4.1.12))(ws@8.18.3)(zod@4.1.12))(@voltagent/sdk@1.0.1(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))
       '@voltagent/internal': 0.0.12
       '@voltagent/sdk': 1.0.1(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)
       boxen: 5.1.2
@@ -14012,7 +14012,7 @@ snapshots:
       - supports-color
       - zod
 
-  '@voltagent/core@1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)':
+  '@voltagent/core@1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)':
     dependencies:
       '@ai-sdk/provider-utils': 3.0.16(zod@4.1.12)
       '@modelcontextprotocol/sdk': 1.21.0(@cfworker/json-schema@4.1.1)
@@ -14041,10 +14041,10 @@ snapshots:
       - '@cfworker/json-schema'
       - supports-color
 
-  '@voltagent/evals@1.0.3(@voltagent/scorers@1.0.0(@voltagent/core@1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(ai@5.0.87(zod@4.1.12))(ws@8.18.3)(zod@4.1.12))(@voltagent/sdk@1.0.1(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))':
+  '@voltagent/evals@1.0.3(@voltagent/scorers@1.0.0(@voltagent/core@1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(ai@5.0.87(zod@4.1.12))(ws@8.18.3)(zod@4.1.12))(@voltagent/sdk@1.0.1(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))':
     dependencies:
       '@voltagent/internal': 0.0.12
-      '@voltagent/scorers': 1.0.0(@voltagent/core@1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(ai@5.0.87(zod@4.1.12))(ws@8.18.3)(zod@4.1.12)
+      '@voltagent/scorers': 1.0.0(@voltagent/core@1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(ai@5.0.87(zod@4.1.12))(ws@8.18.3)(zod@4.1.12)
       '@voltagent/sdk': 1.0.1(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)
 
   '@voltagent/internal@0.0.11':
@@ -14055,10 +14055,10 @@ snapshots:
     dependencies:
       type-fest: 4.41.0
 
-  '@voltagent/libsql@1.0.10(@voltagent/core@1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))':
+  '@voltagent/libsql@1.0.10(@voltagent/core@1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))':
     dependencies:
       '@libsql/client': 0.15.15
-      '@voltagent/core': 1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)
+      '@voltagent/core': 1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)
       '@voltagent/internal': 0.0.12
       '@voltagent/logger': 1.0.4(@opentelemetry/api@1.9.0)
       ai: 5.0.87(zod@4.1.12)
@@ -14079,19 +14079,19 @@ snapshots:
       - '@opentelemetry/api'
       - supports-color
 
-  '@voltagent/mcp-server@1.0.3(@cfworker/json-schema@4.1.1)(@voltagent/core@1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(zod@4.1.12)':
+  '@voltagent/mcp-server@1.0.3(@cfworker/json-schema@4.1.1)(@voltagent/core@1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(zod@4.1.12)':
     dependencies:
       '@modelcontextprotocol/sdk': 1.21.0(@cfworker/json-schema@4.1.1)
-      '@voltagent/core': 1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)
+      '@voltagent/core': 1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)
       '@voltagent/internal': 0.0.12
       zod: 4.1.12
     transitivePeerDependencies:
       - '@cfworker/json-schema'
       - supports-color
 
-  '@voltagent/scorers@1.0.0(@voltagent/core@1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(ai@5.0.87(zod@4.1.12))(ws@8.18.3)(zod@4.1.12)':
+  '@voltagent/scorers@1.0.0(@voltagent/core@1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(ai@5.0.87(zod@4.1.12))(ws@8.18.3)(zod@4.1.12)':
     dependencies:
-      '@voltagent/core': 1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)
+      '@voltagent/core': 1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)
       '@voltagent/internal': 0.0.11
       autoevals: 0.0.131(ws@8.18.3)
       zod: 4.1.12
@@ -14103,7 +14103,7 @@ snapshots:
 
   '@voltagent/sdk@1.0.1(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)':
     dependencies:
-      '@voltagent/core': 1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)
+      '@voltagent/core': 1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)
       '@voltagent/internal': 0.0.12
     transitivePeerDependencies:
       - '@ai-sdk/provider-utils'
@@ -14113,10 +14113,10 @@ snapshots:
       - supports-color
       - zod
 
-  '@voltagent/server-core@1.0.20(@cfworker/json-schema@4.1.1)(@voltagent/core@1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(zod@4.1.12)':
+  '@voltagent/server-core@1.0.20(@cfworker/json-schema@4.1.1)(@voltagent/core@1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(zod@4.1.12)':
     dependencies:
       '@modelcontextprotocol/sdk': 1.21.0(@cfworker/json-schema@4.1.1)
-      '@voltagent/core': 1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)
+      '@voltagent/core': 1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)
       '@voltagent/internal': 0.0.12
       ai: 5.0.87(zod@4.1.12)
       jsonwebtoken: 9.0.2
@@ -14130,15 +14130,15 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@voltagent/server-hono@1.2.2(@cfworker/json-schema@4.1.1)(@voltagent/core@1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(zod@4.1.12)':
+  '@voltagent/server-hono@1.2.2(@cfworker/json-schema@4.1.1)(@voltagent/core@1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(zod@4.1.12)':
     dependencies:
       '@hono/node-server': 1.19.6(hono@4.10.4)
       '@hono/swagger-ui': 0.5.2(hono@4.10.4)
-      '@voltagent/a2a-server': 1.0.2(@voltagent/core@1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))
-      '@voltagent/core': 1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)
+      '@voltagent/a2a-server': 1.0.2(@voltagent/core@1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))
+      '@voltagent/core': 1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12)
       '@voltagent/internal': 0.0.12
-      '@voltagent/mcp-server': 1.0.3(@cfworker/json-schema@4.1.1)(@voltagent/core@1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(zod@4.1.12)
-      '@voltagent/server-core': 1.0.20(@cfworker/json-schema@4.1.1)(@voltagent/core@1.1.39(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(zod@4.1.12)
+      '@voltagent/mcp-server': 1.0.3(@cfworker/json-schema@4.1.1)(@voltagent/core@1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(zod@4.1.12)
+      '@voltagent/server-core': 1.0.20(@cfworker/json-schema@4.1.1)(@voltagent/core@1.2.0(@ai-sdk/provider-utils@3.0.16(zod@4.1.12))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.87(zod@4.1.12))(zod@4.1.12))(zod@4.1.12)
       fetch-to-node: 2.1.0
       hono: 4.10.4
       openapi3-ts: 4.5.0
