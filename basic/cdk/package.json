@@ -33,7 +33,7 @@
     "typescript-eslint": "^8.46.3",
     "vite": "^7.1.12",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^4.0.6"
+    "vitest": "^4.0.7"
   },
   "dependencies": {
     "@arizeai/openinference-instrumentation-bedrock": "^0.4.2",
@@ -56,7 +56,7 @@
     "@opentelemetry/sdk-trace-node": "^2.2.0",
     "@opentelemetry/semantic-conventions": "^1.37.0",
     "@smithy/eventstream-codec": "^4.2.4",
-    "aws-cdk-lib": "^2.221.1",
+    "aws-cdk-lib": "^2.222.0",
     "constructs": "^10.4.2",
     "langfuse": "^3.38.6",
     "langfuse-langchain": "^3.38.6",
