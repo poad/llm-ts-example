@@ -5,7 +5,10 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
+  axios@<0.30.0: '>=0.30.0'
+  axios@<0.30.2: '>=0.30.2'
   axios@=1.10.0: '>=1.11.0'
+  axios@>=0.8.1 <0.28.0: '>=0.28.0'
   chalk@5.6.2: '>=5.6.2'
   form-data@>=4.0.0 <4.0.4: '>=4.0.4'
   got@<11.8.5: '>=11.8.5'
@@ -5240,9 +5243,6 @@ packages:
   aws4fetch@1.0.20:
     resolution: {integrity: sha512-/djoAN709iY65ETD6LKCtyyEI04XIBP5xVvfmNxsEP0uJB5tyaGBztSryRr4HqMStr9R06PisQE7m9zDTXKu6g==}
 
-  axios@0.21.4:
-    resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
-
   axios@1.13.2:
     resolution: {integrity: sha512-VPk9ebNqPcy5lRGuSlKx752IlDatOjT9paPlm8A7yOuW2Fbvp4X3JznJtT4f0GzGLLiWE9W8onz51SqLYwzGaA==}
 
@@ -8228,7 +8228,7 @@ packages:
     resolution: {integrity: sha512-pOLi+Gdll3JekwuFjXO3fTq+L9lzMQGcSq7M5gIjExcl3Gu1hd4XXuf5o3+LuSBsaULQH7DiNbsqPd1chVpQGQ==}
     engines: {node: '>=10.7.0'}
     peerDependencies:
-      axios: '>=1.11.0'
+      axios: '>=0.28.0'
 
   retry@0.12.0:
     resolution: {integrity: sha512-9LkiTwjUh6rT555DtE9rTX+BKByPfrMzEAtnlEtdEwr3Nkffwiihqe2bWADg+OQRjt9gl6ICdmB/ZFDCGAtSow==}
@@ -14424,9 +14424,11 @@ snapshots:
 
   aws4fetch@1.0.20: {}
 
-  axios@0.21.4(debug@4.3.2):
+  axios@1.13.2(debug@4.3.2):
     dependencies:
       follow-redirects: 1.15.11(debug@4.3.2)
+      form-data: 4.0.4
+      proxy-from-env: 1.1.0
     transitivePeerDependencies:
       - debug
 
@@ -16617,7 +16619,7 @@ snapshots:
 
   localtunnel@2.0.2:
     dependencies:
-      axios: 0.21.4(debug@4.3.2)
+      axios: 1.13.2(debug@4.3.2)
       debug: 4.3.2
       openurl: 1.1.1
       yargs: 17.1.1
