@@ -24,6 +24,7 @@ updates:
       - '/common/backend/'
       - '/agents/agent-mastra/'
       - '/agents/agent-voltagent/'
+      - '/agents/agent-sdk/'
       - '/basic/cdk/'
       - '/basic/app/'
       - '/mcp/clients/langgraph-mcp-client/'
