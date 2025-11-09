@@ -6,11 +6,14 @@ import { z } from 'zod';
 const server = new McpServer({
   name: 'weather',
   version: '1.0.0',
-  capabilities: {
-    resources: {},
-    tools: {},
+},
+  {
+    capabilities: {
+      resources: {},
+      tools: {},
+    },
   },
-});
+);
 
 // interface GeocodingResponse {
 //   results: {
@@ -72,73 +75,72 @@ async function getGeocoding(location: string): Promise<GetGeocodingResult | null
   };
 }
 
-server.tool(
-  'get-forecast',
-  'Get weather forecast for a location',
-  {
+server.registerTool('get-forecast', {
+  description: 'Get weather forecast for a location',
+  inputSchema: {
     location: z.string().describe('City name'),
   },
-  async ({ location }) => {
-    // Get grid point data
-    const geocoding = await getGeocoding(location);
+}, async ({ location }) => {
+  // Get grid point data
+  const geocoding = await getGeocoding(location);
 
-    if (!geocoding) {
-      return {
-        content: [
-          {
-            type: 'text',
-            text: `Failed to retrieve grid point data for coordinates: ${location}. This location may not be supported by the NWS API (only US locations are supported).`,
-          },
-        ],
-      };
-    }
-
-    const { longitude, latitude, name } = geocoding;
-
-    const forecastUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m,wind_gusts_10m,weather_code`;
-    if (!forecastUrl) {
-      return {
-        content: [
-          {
-            type: 'text',
-            text: 'Failed to get forecast URL from grid point data',
-          },
-        ],
-      };
-    }
-
-    // Get forecast data
-    const data = await makeNWSRequest<WeatherResponse>(forecastUrl);
-    if (!data) {
-      return {
-        content: [
-          {
-            type: 'text',
-            text: 'Failed to retrieve forecast data',
-          },
-        ],
-      };
-    }
-
-    // Format forecast periods
-    const formattedForecast = [
-      `${name ?? 'Unknown'}: Temperature: ${data.current.temperature_2m ?? 'Unknown'}°C`,
-      `Wind: ${data.current.wind_speed_10m ?? 'Unknown'} ${data.current.wind_gusts_10m ?? ''}`,
-      `${getWeatherCondition(data.current.weather_code) ?? 'No forecast available'}`,
-      '---',
-    ].join('\n');
-
-    const forecastText = `Forecast for ${latitude}, ${longitude}:\n\n${formattedForecast}`;
-
+  if (!geocoding) {
     return {
       content: [
         {
           type: 'text',
-          text: forecastText,
+          text: `Failed to retrieve grid point data for coordinates: ${location}. This location may not be supported by the NWS API (only US locations are supported).`,
         },
       ],
     };
-  },
+  }
+
+  const { longitude, latitude, name } = geocoding;
+
+  const forecastUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m,wind_gusts_10m,weather_code`;
+  if (!forecastUrl) {
+    return {
+      content: [
+        {
+          type: 'text',
+          text: 'Failed to get forecast URL from grid point data',
+        },
+      ],
+    };
+  }
+
+  // Get forecast data
+  const data = await makeNWSRequest<WeatherResponse>(forecastUrl);
+  if (!data) {
+    return {
+      content: [
+        {
+          type: 'text',
+          text: 'Failed to retrieve forecast data',
+        },
+      ],
+    };
+  }
+
+  // Format forecast periods
+  const formattedForecast = [
+    `${name ?? 'Unknown'}: Temperature: ${data.current.temperature_2m ?? 'Unknown'}°C`,
+    `Wind: ${data.current.wind_speed_10m ?? 'Unknown'} ${data.current.wind_gusts_10m ?? ''}`,
+    `${getWeatherCondition(data.current.weather_code) ?? 'No forecast available'}`,
+    '---',
+  ].join('\n');
+
+  const forecastText = `Forecast for ${latitude}, ${longitude}:\n\n${formattedForecast}`;
+
+  return {
+    content: [
+      {
+        type: 'text',
+        text: forecastText,
+      },
+    ],
+  };
+},
 );
 
 function getWeatherCondition(code: number): string {

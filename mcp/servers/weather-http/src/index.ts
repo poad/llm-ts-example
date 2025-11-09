@@ -10,6 +10,7 @@ app.use(express.json());
 const server = new McpServer({
   name: 'weather',
   version: '1.0.0',
+}, {
   capabilities: {
     resources: {},
     tools: {},
@@ -123,11 +124,13 @@ async function getGeocoding(location: string): Promise<GetGeocodingResult | null
   };
 }
 
-server.tool(
+server.registerTool(
   'get_forecast',
-  '場所の天気予報を取得します',
   {
-    location: z.string().describe('街名'),
+    description: '指定した場所の天気予報を取得します',
+    inputSchema: {
+      location: z.string().describe('街名'),
+    },
   },
   async ({ location }) => {
     // Get grid point data
