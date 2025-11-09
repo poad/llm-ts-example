@@ -33,6 +33,7 @@ onlyBuiltDependencies:
   - unrs-resolver
 
 overrides:
+  ai@<5.0.52: '>=5.0.52'
   axios@<0.30.0: '>=0.30.0'
   axios@<0.30.2: '>=0.30.2'
   axios@=1.10.0: '>=1.11.0'
