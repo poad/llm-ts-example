@@ -19,7 +19,7 @@
     "@stylistic/eslint-plugin": "^5.5.0",
     "@types/node": "^22.19.0",
     "@types/uuid": "^10.0.0",
-    "@vitest/eslint-plugin": "^1.4.1",
+    "@vitest/eslint-plugin": "^1.4.2",
     "dotenv": "^16.6.1",
     "esbuild": "^0.25.12",
     "eslint": "^9.39.1",

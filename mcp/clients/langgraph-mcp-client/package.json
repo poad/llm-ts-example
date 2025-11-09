@@ -20,7 +20,7 @@
     "@types/aws-lambda": "^8.10.157",
     "@types/node": "^24.10.0",
     "@types/source-map-support": "^0.5.10",
-    "@vitest/eslint-plugin": "^1.4.1",
+    "@vitest/eslint-plugin": "^1.4.2",
     "dotenv": "^17",
     "eslint": "^9.39.1",
     "eslint-import-resolver-typescript": "^4.4.4",

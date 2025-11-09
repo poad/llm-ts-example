@@ -19,7 +19,7 @@
     "@types/aws-lambda": "^8.10.157",
     "@types/node": "^22.19.0",
     "@types/uuid": "^10.0.0",
-    "@vitest/eslint-plugin": "^1.4.1",
+    "@vitest/eslint-plugin": "^1.4.2",
     "aws-cdk": "^2.1031.2",
     "dotenv": "^16.6.1",
     "esbuild": "^0.25.12",
