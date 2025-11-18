@@ -18,14 +18,14 @@
     "start": "node -r source-map-support/register build/server.js"
   },
   "devDependencies": {
-    "@eslint/compat": "^1.4.1",
+    "@eslint/compat": "^2.0.0",
     "@eslint/js": "^9.39.1",
     "@stylistic/eslint-plugin": "^5.5.0",
     "@types/aws-lambda": "^8.10.158",
     "@types/node": "^24.10.1",
     "@types/pg": "^8.15.6",
     "@types/source-map-support": "^0.5.10",
-    "@vitest/eslint-plugin": "^1.4.2",
+    "@vitest/eslint-plugin": "^1.4.3",
     "dotenv": "^17.2.3",
     "eslint": "^9.39.1",
     "eslint-import-resolver-typescript": "^4.4.4",
@@ -34,17 +34,17 @@
     "source-map-support": "^0.5.21",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.46.4",
+    "typescript-eslint": "^8.47.0",
     "vite": "^7.2.2",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^4.0.9"
+    "vitest": "^4.0.10"
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.28.1",
     "@hono/mcp": "^0.1.5",
     "@hono/node-server": "^1.19.6",
     "@modelcontextprotocol/sdk": "^1.22.0",
-    "hono": "^4.10.5",
+    "hono": "^4.10.6",
     "pg": "^8.16.3",
     "uuid": "^13.0.0",
     "zod": "^3.25.76"

@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import { createMcpClient } from './McpClient';
+import { createMcpClient } from './McpClient.js';
 
 dotenv.config();
 
