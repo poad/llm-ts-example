@@ -51,7 +51,7 @@ export const models = [
   },
   {
     id: 'gpt-5-mini',
-    name: 'GPT-5-mini',
+    name: 'gpt-5-mini',
     modelId: 'gpt-5-mini',
     selected: false,
     platform: 'azure',
@@ -59,8 +59,16 @@ export const models = [
   },
   {
     id: 'gpt-5-nano',
-    name: 'GPT-5-nano',
+    name: 'gpt-5-nano',
     modelId: 'gpt-5-nano',
+    selected: false,
+    platform: 'azure',
+    temperatureSupport: false,
+  },
+  {
+    id: 'gpt-5.1-chat',
+    name: 'gpt-5.1-chat',
+    modelId: 'gpt-5.1-chat',
     selected: false,
     platform: 'azure',
     temperatureSupport: false,
