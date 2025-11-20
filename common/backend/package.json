@@ -26,14 +26,14 @@
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.28.1",
     "@langchain/aws": "^1.0.2",
-    "@langchain/core": "^1.0.5",
+    "@langchain/core": "^1.0.6",
     "@langchain/openai": "^1.1.2",
     "@llm-ts-example/common-core": "workspace:*"
   },
   "devDependencies": {
     "@eslint/compat": "^2.0.0",
     "@eslint/js": "^9.39.1",
-    "@stylistic/eslint-plugin": "^5.5.0",
+    "@stylistic/eslint-plugin": "^5.6.1",
     "@types/node": "^24.10.1",
     "@vitest/eslint-plugin": "^1.4.3",
     "eslint": "^9.39.1",
