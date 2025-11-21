@@ -18,11 +18,11 @@
   "dependencies": {
     "@ai-sdk/amazon-bedrock": "^3.0.56",
     "@voltagent/cli": "^0.1.16",
-    "@voltagent/core": "^1.2.6",
+    "@voltagent/core": "^1.2.7",
     "@voltagent/libsql": "^1.0.12",
     "@voltagent/logger": "^1.0.4",
     "@voltagent/server-hono": "^1.2.4",
-    "ai": "^5.0.97",
+    "ai": "^5.0.98",
     "dotenv": "^16.6.1",
     "hono": "^4.10.6",
     "zod": "^4.1.12"

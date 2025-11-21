@@ -15,3 +15,4 @@ cdk.out
 .env*
 vite.config.js
 eslint.config.js
+tsconfig.tsbuildinfo

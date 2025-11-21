@@ -1,11 +1,8 @@
 {
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "noEmit": true
-  },
+  "extends": "./tsconfig-test.json",
   "include": [
     "eslint.config.*s",
-    "vite.config.ts",
+    "vitest.config.ts",
     "bin/**/*.ts",
     "lib/**/*.ts",
     "lambda/**/*.ts",
