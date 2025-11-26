@@ -16,8 +16,8 @@
     "build"
   ],
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.22.0",
-    "zod": "^3.25.76"
+    "@modelcontextprotocol/sdk": "^1.23.0",
+    "zod": "^4.1.13"
   },
   "devDependencies": {
     "@eslint/compat": "^2.0.0",
