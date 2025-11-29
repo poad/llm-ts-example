@@ -177,19 +177,19 @@ importers:
         version: 3.0.62(zod@4.1.13)
       '@voltagent/cli':
         specifier: ^0.1.16
-        version: 0.1.16(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@types/node@24.10.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(@voltagent/scorers@1.0.0(@voltagent/core@1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(ai@5.0.104(zod@4.1.13))(ws@8.18.3)(zod@4.1.13))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)
+        version: 0.1.16(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@types/node@24.10.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(@voltagent/scorers@1.0.0(@voltagent/core@1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(ai@5.0.104(zod@4.1.13))(ws@8.18.3)(zod@4.1.13))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)
       '@voltagent/core':
-        specifier: ^1.2.11
-        version: 1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)
+        specifier: ^1.2.12
+        version: 1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)
       '@voltagent/libsql':
         specifier: ^1.0.13
-        version: 1.0.13(@voltagent/core@1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))
+        version: 1.0.13(@voltagent/core@1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))
       '@voltagent/logger':
         specifier: ^1.0.4
         version: 1.0.4(@opentelemetry/api@1.9.0)
       '@voltagent/server-hono':
         specifier: ^1.2.5
-        version: 1.2.5(@cfworker/json-schema@4.1.1)(@voltagent/core@1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(zod@4.1.13)
+        version: 1.2.5(@cfworker/json-schema@4.1.1)(@voltagent/core@1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(zod@4.1.13)
       ai:
         specifier: ^5.0.104
         version: 5.0.104(zod@4.1.13)
@@ -219,8 +219,8 @@ importers:
         specifier: ^1.9.10
         version: 1.9.10
       solid-markdown:
-        specifier: ^2.0.14
-        version: 2.0.14(solid-js@1.9.10)
+        specifier: ^2.1.0
+        version: 2.1.0(solid-js@1.9.10)
       uuid:
         specifier: ^11.1.0
         version: 11.1.0
@@ -229,8 +229,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0(eslint@9.39.1(jiti@2.6.1))
       '@eslint/eslintrc':
-        specifier: ^3.3.1
-        version: 3.3.1
+        specifier: ^3.3.3
+        version: 3.3.3
       '@eslint/js':
         specifier: ^9.39.1
         version: 9.39.1
@@ -1022,8 +1022,8 @@ importers:
         specifier: ^1.9.10
         version: 1.9.10
       solid-markdown:
-        specifier: ^2.0.14
-        version: 2.0.14(solid-js@1.9.10)
+        specifier: ^2.1.0
+        version: 2.1.0(solid-js@1.9.10)
       uuid:
         specifier: ^13.0.0
         version: 13.0.0
@@ -1032,8 +1032,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0(eslint@9.39.1(jiti@2.6.1))
       '@eslint/eslintrc':
-        specifier: ^3.3.1
-        version: 3.3.1
+        specifier: ^3.3.3
+        version: 3.3.3
       '@eslint/js':
         specifier: ^9.39.1
         version: 9.39.1
@@ -2328,8 +2328,8 @@ packages:
     resolution: {integrity: sha512-PRfWP+8FOldvbApr6xL7mNCw4cJcSTq4GA7tYbgq15mRb0kWKO/wEB2jr+uwjFH3sZvEZneZyCUGTxsv4Sahyw==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
 
-  '@eslint/eslintrc@3.3.1':
-    resolution: {integrity: sha512-gtF186CXhIl1p4pJNGZw8Yc6RlshoePRvE0X91oPGb3vZ8pM3qOS9W9NGPat9LziaBV7XrJWGylNQXkGcnM3IQ==}
+  '@eslint/eslintrc@3.3.3':
+    resolution: {integrity: sha512-Kr+LPIUVKz2qkx1HAMH8q1q6azbqBAsXJUxBl/ODDuVPX45Z9DfwB8tPjTi6nNZ8BuM3nbJxC5zCAg5elnBUTQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/js@9.39.1':
@@ -5380,8 +5380,8 @@ packages:
     engines: {node: '>=20'}
     hasBin: true
 
-  '@voltagent/core@1.2.11':
-    resolution: {integrity: sha512-ZSmzi8lk6weqNPj0wmkoh17UZ+Iq7s1k7C7SmODJ4qU1djM8ErJv8EkUZAQvqvdyDSvQ0pjsuECB+Di1HnzOrg==}
+  '@voltagent/core@1.2.12':
+    resolution: {integrity: sha512-cQCyO2EMQZJTpUoLa/t5IDOCjum8o0bHH/NzTQifuu9oA2fNEb3QZpfmPlYlkYIwzREIptHGFCiUa6QAscIsbA==}
     peerDependencies:
       '@ai-sdk/provider-utils': 3.x
       '@voltagent/logger': 1.x
@@ -5432,8 +5432,8 @@ packages:
   '@voltagent/sdk@1.0.2':
     resolution: {integrity: sha512-2jeKVIvU+q3IsR+7qI1eoV7oltwOnYtkBuP83iWzMjCfDAFuzIsRB9fT8ml6PYZOAqcS1Fxu7i4TsP7DLhLPXg==}
 
-  '@voltagent/server-core@1.0.27':
-    resolution: {integrity: sha512-YTtIu/BzBuIi4j8kQ2h/2Hc0RGfxqSOCROfRiobvJxByDq1Ai1BPdEMTfuk45k4nk62Fbwt7YaxrsxAIYRfBLQ==}
+  '@voltagent/server-core@1.0.28':
+    resolution: {integrity: sha512-lNGdqFwYAkSJV5+2Zoht58tKW35MQCDFniJLdeStjc2UYB6ZE3M4Et6Ut0RlBJ9eH5sHKG4QNo599w+Mga7z3A==}
     peerDependencies:
       '@voltagent/core': ^1.0.0
       zod: ^3.25.0 || ^4.0.0
@@ -5728,8 +5728,8 @@ packages:
   base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
 
-  baseline-browser-mapping@2.8.31:
-    resolution: {integrity: sha512-a28v2eWrrRWPpJSzxc+mKwm0ZtVx/G8SepdQZDArnXYU/XS+IF6mp8aB/4E+hH1tyGCoDo3KlUCdlSxGDsRkAw==}
+  baseline-browser-mapping@2.8.32:
+    resolution: {integrity: sha512-OPz5aBThlyLFgxyhdwf/s2+8ab3OvT7AdTNvKHBwpXomIYeXqpUUuT8LrdtxZSsWJ4R4CU1un4XGh5Ez3nlTpw==}
     hasBin: true
 
   before-after-hook@4.0.0:
@@ -5765,8 +5765,8 @@ packages:
   bottleneck@2.19.5:
     resolution: {integrity: sha512-VHiNCbI1lKdl44tGrhNfU3lup0Tj/ZBMJB5/2ZbNXRCPuRCO7ed2mgcK4r17y+KB2EfuYuRaVlwNbAeaWGSpbw==}
 
-  bowser@2.13.0:
-    resolution: {integrity: sha512-yHAbSRuT6LTeKi6k2aS40csueHqgAsFEgmrOsfRyFpJnFv5O2hl9FYmWEUZ97gZ/dG17U4IQQcTx4YAFYPuWRQ==}
+  bowser@2.13.1:
+    resolution: {integrity: sha512-OHawaAbjwx6rqICCKgSG0SAnT05bzd7ppyKLVUITZpANBaaMFBAsaNkto3LoQ31tyFP5kNujE8Cdx85G9VzOkw==}
 
   boxen@5.1.2:
     resolution: {integrity: sha512-9gYgQKXx+1nP8mP7CzFyaUARhg7D3n1dF/FnErWmu9l6JvGpNUN278h0aSb+QjoiKSWG+iZ3uHrcqk0qrY9RQQ==}
@@ -8000,8 +8000,8 @@ packages:
     resolution: {integrity: sha512-/bRZty2mXUIFY/xU5HLvveNHlswNJej+RnxBjOMkidWfwZzgTbPG1E3K5TOxRLOR+5hX7bSofy8yf1hZevMS8A==}
     engines: {node: ^18 || ^20 || >= 21}
 
-  node-api-headers@1.6.0:
-    resolution: {integrity: sha512-81T99+mWLZnxX0LlZPYuafyFlxVVaWKQ0BDAbSrOqLO+v+gzCzu0GTAVNeVK8lucqjqo9L/1UcK9cpkem8Py4Q==}
+  node-api-headers@1.7.0:
+    resolution: {integrity: sha512-uJMGdkhVwu9+I3UsVvI3KW6ICAy/yDfsu5Br9rSnTtY3WpoaComXvKloiV5wtx0Md2rn0B9n29Ys2WMNwWxj9A==}
 
   node-domexception@1.0.0:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
@@ -8412,8 +8412,8 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  prettier@3.7.1:
-    resolution: {integrity: sha512-RWKXE4qB3u5Z6yz7omJkjWwmTfLdcbv44jUVHC5NpfXwFGzvpQM798FGv/6WNK879tc+Cn0AAyherCl1KjbyZQ==}
+  prettier@3.7.2:
+    resolution: {integrity: sha512-n3HV2J6QhItCXndGa3oMWvWFAgN1ibnS7R9mt6iokScBOC0Ul9/iZORmU2IWUMcyAQaMPjTlY3uT34TqocUxMA==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -8856,9 +8856,9 @@ packages:
   solid-js@1.9.10:
     resolution: {integrity: sha512-Coz956cos/EPDlhs6+jsdTxKuJDPT7B5SVIWgABwROyxjY7Xbr8wkzD68Et+NxnV7DLJ3nJdAC2r9InuV/4Jew==}
 
-  solid-markdown@2.0.14:
-    resolution: {integrity: sha512-Ln8R4TsNWySXvKkS80OHV+CSR/mwjk5XfGvC5UjZo/y/rAbbkBoxt6FXoWsfCkTW6GH9yxYvahSMXsUJU/ov4Q==}
-    engines: {node: '>=18', pnpm: '>=8.6.0'}
+  solid-markdown@2.1.0:
+    resolution: {integrity: sha512-SCGs9QXb9qIFhxu4OdUIyJKJhp/+7jgfwDA993gZHF4iG8McXnJtnAcPGqPYWkynxa7U3DxrMsIWxC2xKP/WYg==}
+    engines: {node: '>=18', pnpm: '>=9.15.9'}
     peerDependencies:
       solid-js: ^1.6.0
 
@@ -10765,7 +10765,7 @@ snapshots:
     dependencies:
       '@aws-sdk/types': 3.914.0
       '@smithy/types': 4.9.0
-      bowser: 2.13.0
+      bowser: 2.13.1
       tslib: 2.8.1
     optional: true
 
@@ -10773,7 +10773,7 @@ snapshots:
     dependencies:
       '@aws-sdk/types': 3.936.0
       '@smithy/types': 4.9.0
-      bowser: 2.13.0
+      bowser: 2.13.1
       tslib: 2.8.1
 
   '@aws-sdk/util-user-agent-node@3.916.0':
@@ -11276,7 +11276,7 @@ snapshots:
     dependencies:
       '@types/json-schema': 7.0.15
 
-  '@eslint/eslintrc@3.3.1':
+  '@eslint/eslintrc@3.3.3':
     dependencies:
       ajv: 6.12.6
       debug: 4.4.3
@@ -14486,18 +14486,18 @@ snapshots:
       '@vitest/pretty-format': 4.0.14
       tinyrainbow: 3.0.3
 
-  '@voltagent/a2a-server@1.0.2(@voltagent/core@1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))':
+  '@voltagent/a2a-server@1.0.2(@voltagent/core@1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))':
     dependencies:
       '@a2a-js/sdk': 0.2.5
-      '@voltagent/core': 1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)
+      '@voltagent/core': 1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)
       '@voltagent/internal': 0.0.12
       zod: 3.25.76
     transitivePeerDependencies:
       - supports-color
 
-  '@voltagent/cli@0.1.16(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@types/node@24.10.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(@voltagent/scorers@1.0.0(@voltagent/core@1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(ai@5.0.104(zod@4.1.13))(ws@8.18.3)(zod@4.1.13))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)':
+  '@voltagent/cli@0.1.16(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@types/node@24.10.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(@voltagent/scorers@1.0.0(@voltagent/core@1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(ai@5.0.104(zod@4.1.13))(ws@8.18.3)(zod@4.1.13))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)':
     dependencies:
-      '@voltagent/evals': 1.0.4(@voltagent/scorers@1.0.0(@voltagent/core@1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(ai@5.0.104(zod@4.1.13))(ws@8.18.3)(zod@4.1.13))(@voltagent/sdk@1.0.2(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))
+      '@voltagent/evals': 1.0.4(@voltagent/scorers@1.0.0(@voltagent/core@1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(ai@5.0.104(zod@4.1.13))(ws@8.18.3)(zod@4.1.13))(@voltagent/sdk@1.0.2(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))
       '@voltagent/internal': 0.0.12
       '@voltagent/sdk': 1.0.2(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)
       boxen: 5.1.2
@@ -14529,7 +14529,7 @@ snapshots:
       - supports-color
       - zod
 
-  '@voltagent/core@1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)':
+  '@voltagent/core@1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)':
     dependencies:
       '@ai-sdk/provider-utils': 3.0.18(zod@4.1.13)
       '@modelcontextprotocol/sdk': 1.23.0(@cfworker/json-schema@4.1.1)(zod@4.1.13)
@@ -14559,10 +14559,10 @@ snapshots:
       - '@cfworker/json-schema'
       - supports-color
 
-  '@voltagent/evals@1.0.4(@voltagent/scorers@1.0.0(@voltagent/core@1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(ai@5.0.104(zod@4.1.13))(ws@8.18.3)(zod@4.1.13))(@voltagent/sdk@1.0.2(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))':
+  '@voltagent/evals@1.0.4(@voltagent/scorers@1.0.0(@voltagent/core@1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(ai@5.0.104(zod@4.1.13))(ws@8.18.3)(zod@4.1.13))(@voltagent/sdk@1.0.2(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))':
     dependencies:
       '@voltagent/internal': 0.0.12
-      '@voltagent/scorers': 1.0.0(@voltagent/core@1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(ai@5.0.104(zod@4.1.13))(ws@8.18.3)(zod@4.1.13)
+      '@voltagent/scorers': 1.0.0(@voltagent/core@1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(ai@5.0.104(zod@4.1.13))(ws@8.18.3)(zod@4.1.13)
       '@voltagent/sdk': 1.0.2(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)
 
   '@voltagent/internal@0.0.11':
@@ -14573,10 +14573,10 @@ snapshots:
     dependencies:
       type-fest: 4.41.0
 
-  '@voltagent/libsql@1.0.13(@voltagent/core@1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))':
+  '@voltagent/libsql@1.0.13(@voltagent/core@1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))':
     dependencies:
       '@libsql/client': 0.15.15
-      '@voltagent/core': 1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)
+      '@voltagent/core': 1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)
       '@voltagent/internal': 0.0.12
       '@voltagent/logger': 1.0.4(@opentelemetry/api@1.9.0)
       ai: 5.0.104(zod@4.1.13)
@@ -14597,19 +14597,19 @@ snapshots:
       - '@opentelemetry/api'
       - supports-color
 
-  '@voltagent/mcp-server@1.0.3(@cfworker/json-schema@4.1.1)(@voltagent/core@1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(zod@4.1.13)':
+  '@voltagent/mcp-server@1.0.3(@cfworker/json-schema@4.1.1)(@voltagent/core@1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(zod@4.1.13)':
     dependencies:
       '@modelcontextprotocol/sdk': 1.23.0(@cfworker/json-schema@4.1.1)(zod@4.1.13)
-      '@voltagent/core': 1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)
+      '@voltagent/core': 1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)
       '@voltagent/internal': 0.0.12
       zod: 4.1.13
     transitivePeerDependencies:
       - '@cfworker/json-schema'
       - supports-color
 
-  '@voltagent/scorers@1.0.0(@voltagent/core@1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(ai@5.0.104(zod@4.1.13))(ws@8.18.3)(zod@4.1.13)':
+  '@voltagent/scorers@1.0.0(@voltagent/core@1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(ai@5.0.104(zod@4.1.13))(ws@8.18.3)(zod@4.1.13)':
     dependencies:
-      '@voltagent/core': 1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)
+      '@voltagent/core': 1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)
       '@voltagent/internal': 0.0.11
       autoevals: 0.0.131(ws@8.18.3)
       zod: 4.1.13
@@ -14621,7 +14621,7 @@ snapshots:
 
   '@voltagent/sdk@1.0.2(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)':
     dependencies:
-      '@voltagent/core': 1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)
+      '@voltagent/core': 1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)
       '@voltagent/internal': 0.0.12
     transitivePeerDependencies:
       - '@ai-sdk/provider-utils'
@@ -14631,10 +14631,10 @@ snapshots:
       - supports-color
       - zod
 
-  '@voltagent/server-core@1.0.27(@cfworker/json-schema@4.1.1)(@voltagent/core@1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(zod@4.1.13)':
+  '@voltagent/server-core@1.0.28(@cfworker/json-schema@4.1.1)(@voltagent/core@1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(zod@4.1.13)':
     dependencies:
       '@modelcontextprotocol/sdk': 1.23.0(@cfworker/json-schema@4.1.1)(zod@4.1.13)
-      '@voltagent/core': 1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)
+      '@voltagent/core': 1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)
       '@voltagent/internal': 0.0.12
       ai: 5.0.104(zod@4.1.13)
       jsonwebtoken: 9.0.2
@@ -14648,15 +14648,15 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@voltagent/server-hono@1.2.5(@cfworker/json-schema@4.1.1)(@voltagent/core@1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(zod@4.1.13)':
+  '@voltagent/server-hono@1.2.5(@cfworker/json-schema@4.1.1)(@voltagent/core@1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(zod@4.1.13)':
     dependencies:
       '@hono/node-server': 1.19.6(hono@4.10.7)
       '@hono/swagger-ui': 0.5.2(hono@4.10.7)
-      '@voltagent/a2a-server': 1.0.2(@voltagent/core@1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))
-      '@voltagent/core': 1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)
+      '@voltagent/a2a-server': 1.0.2(@voltagent/core@1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))
+      '@voltagent/core': 1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13)
       '@voltagent/internal': 0.0.12
-      '@voltagent/mcp-server': 1.0.3(@cfworker/json-schema@4.1.1)(@voltagent/core@1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(zod@4.1.13)
-      '@voltagent/server-core': 1.0.27(@cfworker/json-schema@4.1.1)(@voltagent/core@1.2.11(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(zod@4.1.13)
+      '@voltagent/mcp-server': 1.0.3(@cfworker/json-schema@4.1.1)(@voltagent/core@1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(zod@4.1.13)
+      '@voltagent/server-core': 1.0.28(@cfworker/json-schema@4.1.1)(@voltagent/core@1.2.12(@ai-sdk/provider-utils@3.0.18(zod@4.1.13))(@cfworker/json-schema@4.1.1)(@voltagent/logger@1.0.4(@opentelemetry/api@1.9.0))(ai@5.0.104(zod@4.1.13))(zod@4.1.13))(zod@4.1.13)
       fetch-to-node: 2.1.0
       hono: 4.10.7
       openapi3-ts: 4.5.0
@@ -14981,7 +14981,7 @@ snapshots:
 
   base64-js@1.5.1: {}
 
-  baseline-browser-mapping@2.8.31: {}
+  baseline-browser-mapping@2.8.32: {}
 
   before-after-hook@4.0.0:
     optional: true
@@ -15038,7 +15038,7 @@ snapshots:
   bottleneck@2.19.5:
     optional: true
 
-  bowser@2.13.0: {}
+  bowser@2.13.1: {}
 
   boxen@5.1.2:
     dependencies:
@@ -15066,7 +15066,7 @@ snapshots:
 
   browserslist@4.28.0:
     dependencies:
-      baseline-browser-mapping: 2.8.31
+      baseline-browser-mapping: 2.8.32
       caniuse-lite: 1.0.30001757
       electron-to-chromium: 1.5.262
       node-releases: 2.0.27
@@ -15233,7 +15233,7 @@ snapshots:
       debug: 4.4.3
       fs-extra: 11.3.2
       memory-stream: 1.0.0
-      node-api-headers: 1.6.0
+      node-api-headers: 1.7.0
       npmlog: 6.0.2
       rc: 1.2.8
       semver: 7.7.3
@@ -15865,7 +15865,7 @@ snapshots:
       '@eslint/config-array': 0.21.1
       '@eslint/config-helpers': 0.4.2
       '@eslint/core': 0.17.0
-      '@eslint/eslintrc': 3.3.1
+      '@eslint/eslintrc': 3.3.3
       '@eslint/js': 9.39.1
       '@eslint/plugin-kit': 0.4.1
       '@humanfs/node': 0.16.7
@@ -17216,7 +17216,7 @@ snapshots:
       open: 10.2.0
       picocolors: 1.1.1
       posthog-node: 4.18.0
-      prettier: 3.7.1
+      prettier: 3.7.2
       shell-quote: 1.8.3
       strip-json-comments: 5.0.3
       tcp-port-used: 1.0.2
@@ -17572,7 +17572,7 @@ snapshots:
   node-addon-api@8.5.0:
     optional: true
 
-  node-api-headers@1.6.0:
+  node-api-headers@1.7.0:
     optional: true
 
   node-domexception@1.0.0: {}
@@ -18070,7 +18070,7 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier@3.7.1: {}
+  prettier@3.7.2: {}
 
   pretty-bytes@6.1.1:
     optional: true
@@ -18671,7 +18671,7 @@ snapshots:
       seroval: 1.3.2
       seroval-plugins: 1.3.3(seroval@1.3.2)
 
-  solid-markdown@2.0.14(solid-js@1.9.10):
+  solid-markdown@2.1.0(solid-js@1.9.10):
     dependencies:
       comma-separated-tokens: 2.0.3
       property-information: 6.5.0
