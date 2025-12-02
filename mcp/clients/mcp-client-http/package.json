@@ -20,7 +20,7 @@
     "@anthropic-ai/sdk": "^0.69.0",
     "@aws-sdk/client-bedrock-runtime": "^3.941.0",
     "@inquirer/prompts": "^8.0.1",
-    "@modelcontextprotocol/sdk": "^1.23.0",
+    "@modelcontextprotocol/sdk": "^1.24.0",
     "dotenv": "^17.2.3"
   },
   "devDependencies": {
@@ -32,8 +32,8 @@
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-promise": "^7.2.1",
-    "tsx": "^4.20.6",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.48.0"
+    "typescript-eslint": "^8.48.1"
   }
 }
