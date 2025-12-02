@@ -32,6 +32,14 @@ export const models = [
     temperatureSupport: true,
   },
   {
+    id: 'nova2-lite',
+    name: 'Amazon Nove 2 Lite (Amazon Bedrock)',
+    modelId: 'global.amazon.nova-2-lite-v1:0',
+    selected: false,
+    platform: 'aws',
+    temperatureSupport: true,
+  },
+  {
     id: 'gpt-oss-20b',
     name: 'OpenAI gpt-oss-20b (Amazon Bedrock)',
     modelId: 'openai.gpt-oss-20b-1:0',

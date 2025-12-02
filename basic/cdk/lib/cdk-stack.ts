@@ -78,15 +78,6 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
     });
 
     const devOptions = {
-      // environment: {
-      //   NODE_OPTIONS: '--enable-source-maps',
-      // },
-      // bundling: {
-      //   sourceMap: true,
-      //   sourceMapMode: nodejs.SourceMapMode.BOTH,
-      //   sourcesContent: true,
-      //   keepNames: true,
-      // },
       applicationLogLevelV2: lambda.ApplicationLogLevel.TRACE,
     };
 
