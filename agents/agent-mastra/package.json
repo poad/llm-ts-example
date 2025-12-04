@@ -14,8 +14,8 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@ai-sdk/amazon-bedrock": "^3.0.65",
-    "@ai-sdk/azure": "^2.0.78",
+    "@ai-sdk/amazon-bedrock": "^3.0.66",
+    "@ai-sdk/azure": "^2.0.79",
     "@mastra/core": "^0.24.6",
     "@mastra/libsql": "^0.16.3",
     "@mastra/loggers": "^0.10.19",
