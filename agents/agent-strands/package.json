@@ -1,15 +1,11 @@
 {
-  "name": "agent-sdk",
-  "version": "1.0.0",
-  "description": "Claude Agent SDK sample implementation for TypeScript",
-  "main": "dist/index.js",
+  "name": "agent-strands",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "build": "tsc --build --clean && tsc",
-    "clean": "tsc --build --clean",
+    "build": "tsc",
     "watch": "tsc -w",
     "test": "vitest run --passWithNoTests",
-    "dev": "tsx src/index.ts",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix"
   },
@@ -17,10 +13,12 @@
     "@eslint/compat": "^2.0.0",
     "@eslint/js": "^9.39.1",
     "@stylistic/eslint-plugin": "^5.6.1",
-    "@types/node": "^24.10.1",
+    "@types/aws-lambda": "^8.10.159",
+    "@types/node": "24.10.1",
     "@vitest/eslint-plugin": "^1.5.1",
+    "aws-cdk": "^2.1033.0",
     "dotenv": "^17.2.3",
-    "esbuild": "^0.27.1",
+    "esbuild": "^0.25.12",
     "eslint": "^9.39.1",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
@@ -34,9 +32,12 @@
     "vitest": "^4.0.15"
   },
   "dependencies": {
-    "@anthropic-ai/claude-agent-sdk": "^0.1.60",
-    "source-map-support": "^0.5.21",
-    "uuid": "^13.0.0",
-    "zod": "^4.1.13"
+    "@aws-lambda-powertools/logger": "^2.29.0",
+    "@aws-sdk/credential-provider-node": "^3.946.0",
+    "@llm-ts-example/common-backend": "workspace:*",
+    "@strands-agents/sdk": "^0.1.2",
+    "aws-cdk-lib": "^2.232.1",
+    "constructs": "^10.4.3",
+    "uuid": "^13.0.0"
   }
 }

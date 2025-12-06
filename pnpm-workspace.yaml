@@ -10,6 +10,7 @@ packages:
   - ./rag/cdk/function
   - ./agents/agent-mastra
   - ./agents/agent-sdk
+  - ./agents/agent-strands
   - ./agents/agent-voltagent
   - ./mcp/servers/postgresql-http
   - ./mcp/servers/weather
