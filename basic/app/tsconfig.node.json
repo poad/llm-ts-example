@@ -5,9 +5,9 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
-    "strict": true
-  },
-  "include": [
-    "farm.config.ts"
-  ]
+    "strict": true,
+    "paths": {
+      "@llm-ts-example/common-core": ["../../common/core"]
+    }
+  }
 }

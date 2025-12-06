@@ -11,7 +11,6 @@
     "allowJs": true,
     "esModuleInterop": true,
     "outDir": "./dist",
-    "rootDir": "./src",
     "isolatedModules": true,
     "declaration": true,
     "strict": true,

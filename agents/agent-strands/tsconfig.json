@@ -1,20 +1,12 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "lib": [
-      "esnext",
-      "dom"
+      "es2022"
     ],
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "allowJs": true,
-    "esModuleInterop": true,
-    "outDir": "./dist",
-    "sourceRoot": "./src",
-    "isolatedModules": true,
     "declaration": true,
-    "declarationMap": true,
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
@@ -31,17 +23,19 @@
     "skipLibCheck": true,
     "typeRoots": [
       "./node_modules",
-      "./node_modules/@types"
+      "./node_modules/@types",
+      "./lambda"
     ],
     "types": [
       "node"
-    ]
+    ],
+    "composite": true,
+    "paths": {
+      "@llm-ts-example/common-backend": ["../../common/backend"],
+      "@llm-ts-example/common-core": ["../../common/core"]
+    }
   },
   "exclude": [
-    "node_modules",
-    "cdk.out",
-    "eslint.config.*",
-    "vite.config.ts",
-    "dist"
+    "node_modules"
   ]
 }
