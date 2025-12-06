@@ -103,3 +103,6 @@ typings/
 # TernJS port file
 .tern-port
 .DS_Store
+
+eslint.config.js
+eslint.config.d.ts
