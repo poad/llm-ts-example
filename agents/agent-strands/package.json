@@ -5,6 +5,7 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
+    "clean": "tsc --build --clean",
     "test": "vitest run --passWithNoTests",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix"

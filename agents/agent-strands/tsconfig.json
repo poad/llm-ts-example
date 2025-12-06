@@ -22,8 +22,18 @@
     "strictPropertyInitialization": false,
     "skipLibCheck": true,
     "typeRoots": [
-      "./node_modules/@types"
-    ]
+      "./node_modules",
+      "./node_modules/@types",
+      "./lambda"
+    ],
+    "types": [
+      "node"
+    ],
+    "composite": true,
+    "paths": {
+      "@llm-ts-example/common-backend": ["../../common/backend"],
+      "@llm-ts-example/common-core": ["../../common/core"]
+    }
   },
   "exclude": [
     "node_modules"

@@ -27,6 +27,7 @@ const eslintConfig: Config[] = defineConfig(
       'cdk.out',
       'dist',
       'app',
+      '**/*.js',
     ],
   },
   eslint.configs.recommended,

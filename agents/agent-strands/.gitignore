@@ -106,3 +106,7 @@ typings/
 
 eslint.config.js
 eslint.config.d.ts
+**/*.d.ts
+**/*.js
+cdk.out
+!**/awslambda.d.ts

@@ -9,7 +9,6 @@
     "skipLibCheck": true,
     "noEmit": true,
     "outDir": "dist",
-    "rootDir": "./src/mastra"
   },
   "include": [
     "src/**/*"
