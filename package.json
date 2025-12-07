@@ -16,7 +16,6 @@
   "devDependencies": {
     "@llm-ts-example/common-backend": "workspace:*",
     "@llm-ts-example/common-core": "workspace:*",
-    "pnpm": "^10.24.0",
-    "vitest": "^4.0.15"
+    "pnpm": "^10.24.0"
   }
 }
