@@ -18,7 +18,6 @@ packages:
   - ./mcp/servers/resource-mcp-server
   - ./mcp/clients/mcp-client-typescript
   - ./mcp/clients/mcp-client-http
-  - ./mcp/clients/langgraph-mcp-client
   - ./mcp/clients/mastra-mcp-client
 
 autoInstallPeers: true

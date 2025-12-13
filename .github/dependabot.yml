@@ -28,7 +28,6 @@ updates:
       - '/agents/agent-strands/'
       - '/basic/cdk/'
       - '/basic/app/'
-      - '/mcp/clients/langgraph-mcp-client/'
       - '/mcp/clients/mastra-mcp-client/'
       - '/mcp/clients/mcp-client-http/'
       - '/mcp/clients/mcp-client-typescript/'

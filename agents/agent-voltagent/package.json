@@ -16,19 +16,19 @@
     "volt": "volt"
   },
   "dependencies": {
-    "@ai-sdk/amazon-bedrock": "^3.0.67",
-    "@voltagent/cli": "^0.1.16",
-    "@voltagent/core": "^1.2.15",
-    "@voltagent/libsql": "^1.0.13",
+    "@ai-sdk/amazon-bedrock": "^3.0.70",
+    "@voltagent/cli": "^0.1.17",
+    "@voltagent/core": "^1.2.21",
+    "@voltagent/libsql": "^1.0.14",
     "@voltagent/logger": "^1.0.4",
-    "@voltagent/server-hono": "^1.2.5",
-    "ai": "^5.0.108",
+    "@voltagent/server-hono": "^1.2.8",
+    "ai": "^5.0.113",
     "dotenv": "^16.6.1",
-    "hono": "^4.10.7",
+    "hono": "^4.10.8",
     "zod": "^4.1.13"
   },
   "devDependencies": {
-    "@types/node": "^24.10.1",
+    "@types/node": "^24.10.3",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }
