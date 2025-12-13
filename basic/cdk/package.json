@@ -35,7 +35,7 @@
     "vitest": "^4.0.15"
   },
   "dependencies": {
-    "@arizeai/openinference-instrumentation-bedrock": "^0.4.3",
+    "@arizeai/openinference-instrumentation-bedrock": "^0.4.8",
     "@arizeai/openinference-instrumentation-langchain": "^3.4.6",
     "@aws-lambda-powertools/logger": "^2.30.0",
     "@aws-sdk/credential-provider-node": "^3.948.0",
