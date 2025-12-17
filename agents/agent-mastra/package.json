@@ -15,14 +15,14 @@
   "type": "module",
   "dependencies": {
     "@ai-sdk/amazon-bedrock": "^3.0.70",
-    "@ai-sdk/azure": "^2.0.88",
+    "@ai-sdk/azure": "^2.0.90",
     "@mastra/core": "^0.24.8",
     "@mastra/libsql": "^0.16.4",
     "@mastra/loggers": "^0.10.19",
     "@mastra/mcp": "^0.14.5",
     "@mastra/memory": "^0.15.13",
     "langfuse-vercel": "^3.38.6",
-    "zod": "^4.2.0"
+    "zod": "^4.2.1"
   },
   "devDependencies": {
     "@eslint/compat": "^2.0.0",
