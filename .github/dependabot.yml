@@ -26,7 +26,7 @@ updates:
       - '/agents/agent-voltagent/'
       - '/agents/agent-sdk/'
       - '/agents/agent-strands/'
-      - './agents/agents-langchain/'
+      - '/agents/agents-langchain/'
       - '/basic/cdk/'
       - '/basic/app/'
       - '/mcp/clients/mastra-mcp-client/'
@@ -53,5 +53,21 @@ updates:
       - poad
     groups:
       npm:
+        patterns:
+          - '*'
+
+  - package-ecosystem: gradle
+    directories:
+      - '/agents/agent-koog/'
+    schedule:
+      interval: daily
+      timezone: Asia/Tokyo
+    allow:
+      - dependency-type: all
+    rebase-strategy: auto
+    assignees:
+      - poad
+    groups:
+      gradle:
         patterns:
           - '*'

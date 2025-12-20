@@ -132,3 +132,5 @@ dist
 .env
 !.env.local.template
 **/tsconfig.tsbuildinfo
+
+.DS_Store
