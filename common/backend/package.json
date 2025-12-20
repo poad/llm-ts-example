@@ -26,7 +26,7 @@
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.30.0",
     "@langchain/aws": "^1.1.0",
-    "@langchain/core": "^1.1.6",
+    "@langchain/core": "^1.1.7",
     "@langchain/openai": "^1.2.0",
     "@llm-ts-example/common-core": "workspace:*"
   },
@@ -35,7 +35,7 @@
     "@eslint/js": "^9.39.2",
     "@stylistic/eslint-plugin": "^5.6.1",
     "@types/node": "^24.10.4",
-    "@vitest/eslint-plugin": "^1.5.2",
+    "@vitest/eslint-plugin": "^1.5.4",
     "eslint": "^9.39.2",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
