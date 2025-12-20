@@ -8,7 +8,7 @@ plugins {
     alias(libs.plugins.composeCompiler)
 
     // Add Kotlin serialization plugin for Koog API support
-    kotlin("plugin.serialization") version "2.2.0"
+    kotlin("plugin.serialization") version "2.3.0"
 }
 
 kotlin {
