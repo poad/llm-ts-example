@@ -7,3 +7,13 @@ plugins {
     alias(libs.plugins.composeCompiler) apply false
     alias(libs.plugins.kotlinMultiplatform) apply false
 }
+
+repositories {
+    google()
+    // Use Maven Central for resolving dependencies.
+    mavenCentral()
+    // Add JetBrains repository for Koog framework
+    maven {
+        url = uri("https://packages.jetbrains.team/maven/p/grazi/grazie-platform-public")
+    }
+}
