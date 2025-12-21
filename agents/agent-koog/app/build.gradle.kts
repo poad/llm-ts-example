@@ -5,7 +5,7 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
 
     // Add Kotlin serialization plugin for Koog API support
-    kotlin("plugin.serialization") version "2.3.0"
+    kotlin("plugin.serialization") version libs.versions.kotlin.get()
 }
 
 android {
@@ -46,10 +46,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21
-    }
-
-    buildFeatures {
-        buildConfig = true
     }
 }
 

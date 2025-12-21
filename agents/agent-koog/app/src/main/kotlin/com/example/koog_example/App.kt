@@ -285,5 +285,5 @@ class ChatActivity : ComponentActivity() {
 @Preview
 @Composable
 fun AppAndroidPreview() {
-  ChatActivity()
+  ChatScreen()
 }
