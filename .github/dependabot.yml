@@ -55,19 +55,3 @@ updates:
       npm:
         patterns:
           - '*'
-
-  - package-ecosystem: gradle
-    directories:
-      - '/agents/agent-koog/'
-    schedule:
-      interval: daily
-      timezone: Asia/Tokyo
-    allow:
-      - dependency-type: all
-    rebase-strategy: auto
-    assignees:
-      - poad
-    groups:
-      gradle:
-        patterns:
-          - '*'
