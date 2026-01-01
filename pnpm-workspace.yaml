@@ -20,6 +20,7 @@ packages:
   - ./mcp/clients/mcp-client-typescript
   - ./mcp/clients/mcp-client-http
   - ./mcp/clients/mastra-mcp-client
+  - ./chat-app
 
 autoInstallPeers: true
 
@@ -29,8 +30,9 @@ legacyPeerDeps: true
 
 onlyBuiltDependencies:
   - esbuild
-  - node-llama-cpp
   - protobufjs
+
+ignoredBuiltDependencies:
   - sharp
   - unrs-resolver
 

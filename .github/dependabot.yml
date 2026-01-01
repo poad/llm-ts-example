@@ -39,6 +39,7 @@ updates:
       - '/rag/app/'
       - '/rag/batch/'
       - '/rag/cdk/'
+      - '/chat-app/'
     schedule:
       interval: daily
       timezone: Asia/Tokyo

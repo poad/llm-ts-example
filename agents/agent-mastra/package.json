@@ -22,7 +22,7 @@
     "@mastra/mcp": "^0.14.5",
     "@mastra/memory": "^0.15.13",
     "langfuse-vercel": "^3.38.6",
-    "zod": "^4.3.2"
+    "zod": "^4.3.4"
   },
   "devDependencies": {
     "@eslint/compat": "^2.0.0",
