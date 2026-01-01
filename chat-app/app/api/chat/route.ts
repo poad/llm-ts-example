@@ -1,5 +1,5 @@
 import { streamText, UIMessage, convertToModelMessages } from 'ai';
-import { bedrock } from "@ai-sdk/amazon-bedrock";
+import { bedrock } from '@ai-sdk/amazon-bedrock';
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
