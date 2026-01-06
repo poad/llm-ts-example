@@ -62,7 +62,6 @@ export async function handle(
           sessionId,
           thread_id: threadId,
         },
-        //@ts-expect-error LangChain.js の型定義誤り？
         callbacks: langfuseHandler ? [langfuseHandler] : [],
       },
     );

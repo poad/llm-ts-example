@@ -22,7 +22,7 @@
     "@mastra/mcp": "^0.14.5",
     "@mastra/memory": "^0.15.13",
     "langfuse-vercel": "^3.38.6",
-    "zod": "^4.3.4"
+    "zod": "^4.3.5"
   },
   "devDependencies": {
     "@eslint/compat": "^2.0.0",
@@ -35,6 +35,6 @@
     "eslint-plugin-promise": "^7.2.1",
     "mastra": "^0.18.9",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.51.0"
+    "typescript-eslint": "^8.52.0"
   }
 }

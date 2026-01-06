@@ -22,10 +22,10 @@
     "@voltagent/libsql": "^1.1.0",
     "@voltagent/logger": "^1.0.4",
     "@voltagent/server-hono": "^1.2.11",
-    "ai": "^5.0.117",
+    "ai": "^5.0.118",
     "dotenv": "^16.6.1",
     "hono": "^4.11.3",
-    "zod": "^4.3.4"
+    "zod": "^4.3.5"
   },
   "devDependencies": {
     "@types/node": "^24.10.4",
