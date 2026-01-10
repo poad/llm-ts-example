@@ -16,7 +16,7 @@
     "uuid": "^13.0.0"
   },
   "devDependencies": {
-    "@eslint/compat": "^2.0.0",
+    "@eslint/compat": "^2.0.1",
     "@eslint/eslintrc": "^3.3.3",
     "@eslint/js": "^9.39.2",
     "@llm-ts-example/common-core": "workspace:*",
@@ -24,7 +24,7 @@
     "@solidjs/testing-library": "^0.8.10",
     "@stylistic/eslint-plugin": "^5.7.0",
     "@types/crypto-js": "^4.2.2",
-    "@types/node": "^22.19.3",
+    "@types/node": "^22.19.5",
     "crypto-js": "^4.2.0",
     "eslint": "^9.39.2",
     "eslint-import-resolver-typescript": "^4.4.4",

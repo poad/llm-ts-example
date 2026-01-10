@@ -11,7 +11,7 @@
     "lint-fix": "eslint . --fix"
   },
   "devDependencies": {
-    "@eslint/compat": "^2.0.0",
+    "@eslint/compat": "^2.0.1",
     "@eslint/js": "^9.39.2",
     "@stylistic/eslint-plugin": "^5.7.0",
     "@types/aws-lambda": "^8.10.159",
@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.30.1",
-    "@aws-sdk/credential-provider-node": "^3.965.0",
+    "@aws-sdk/credential-provider-node": "^3.966.0",
     "@llm-ts-example/common-backend": "workspace:*",
     "@strands-agents/sdk": "^0.1.4",
     "aws-cdk-lib": "^2.234.1",

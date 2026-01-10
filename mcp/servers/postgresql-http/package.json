@@ -18,11 +18,11 @@
     "start": "node -r source-map-support/register build/server.js"
   },
   "devDependencies": {
-    "@eslint/compat": "^2.0.0",
+    "@eslint/compat": "^2.0.1",
     "@eslint/js": "^9.39.2",
     "@stylistic/eslint-plugin": "^5.7.0",
     "@types/aws-lambda": "^8.10.159",
-    "@types/node": "^24.10.4",
+    "@types/node": "^24.10.6",
     "@types/pg": "^8.16.0",
     "@types/source-map-support": "^0.5.10",
     "@vitest/eslint-plugin": "^1.6.6",
