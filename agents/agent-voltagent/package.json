@@ -17,18 +17,18 @@
   },
   "dependencies": {
     "@ai-sdk/amazon-bedrock": "^3.0.73",
-    "@voltagent/cli": "^0.1.20",
+    "@voltagent/cli": "^0.1.21",
     "@voltagent/core": "^1.5.2",
     "@voltagent/libsql": "^1.1.0",
     "@voltagent/logger": "^1.0.4",
     "@voltagent/server-hono": "^1.2.11",
-    "ai": "^5.0.118",
+    "ai": "^5.0.121",
     "dotenv": "^16.6.1",
-    "hono": "^4.11.3",
+    "hono": "^4.11.4",
     "zod": "^4.3.5"
   },
   "devDependencies": {
-    "@types/node": "^24.10.6",
+    "@types/node": "^24.10.8",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }

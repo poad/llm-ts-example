@@ -18,8 +18,8 @@
   "license": "ISC",
   "dependencies": {
     "@anthropic-ai/sdk": "^0.69.0",
-    "@aws-sdk/client-bedrock-runtime": "^3.966.0",
-    "@inquirer/prompts": "^8.1.0",
+    "@aws-sdk/client-bedrock-runtime": "^3.967.0",
+    "@inquirer/prompts": "^8.2.0",
     "@modelcontextprotocol/sdk": "^1.25.2",
     "dotenv": "^17.2.3"
   },
@@ -27,13 +27,13 @@
     "@eslint/compat": "^2.0.1",
     "@eslint/js": "^9.39.2",
     "@stylistic/eslint-plugin": "^5.7.0",
-    "@types/node": "^24.10.6",
+    "@types/node": "^24.10.8",
     "eslint": "^9.39.2",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-promise": "^7.2.1",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.52.0"
+    "typescript-eslint": "^8.53.0"
   }
 }
