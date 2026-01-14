@@ -1,13 +1,13 @@
 import { CallbackHandler } from 'langfuse-langchain';
 import { APIGatewayProxyEvent, APIGatewayProxyEventV2 } from 'aws-lambda';
 import { v7 as uuidv7 } from 'uuid';
-
 import { logger, selectLlm } from '@llm-ts-example/common-backend';
-import { selectEmbeddings } from './embeddings-models.js';
-import { createTool } from './tool.js';
-import { createVectorStore } from './vector-store.js';
 import { createAgent } from 'langchain';
 import { MemorySaver } from '@langchain/langgraph';
+import './instrumentation.js';
+import { selectEmbeddings } from './embeddings-models.js';
+import { createTool } from './tool.js';
+import { createRetriever } from './retriever.js';
 
 export async function handle(
   event: APIGatewayProxyEvent | APIGatewayProxyEventV2,
@@ -27,8 +27,8 @@ export async function handle(
     const { indexName, model: embeddings } = selectEmbeddings({
       type: embeddingType ?? 'titan', dataSource: process.env.PINECONE_INDEX ?? '',
     });
-    const vectorStore = await createVectorStore({ embeddings, indexName });
-    const tool = createTool(vectorStore);
+    const retriever = await createRetriever({ embeddings, indexName });
+    const tool = createTool(retriever);
     const systemPrompt =
       'あなたは文書からコンテキストを取得する専門家です。ツールを使用してユーザーの質問に答える手助けをしてください。必ずユーザーの質問と同じ言語で答えてください。';
 

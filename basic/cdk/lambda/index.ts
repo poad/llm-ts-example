@@ -9,7 +9,7 @@ export const handler = awslambda.streamifyResponse(
     event: APIGatewayProxyEvent, responseStream: NodeJS.WritableStream,
   ) => {
     logger.debug('event', {event});
-    const { question, model, sessionId } = event.body ? JSON.parse(event.body) : { question: 'あなたは誰？', model: 'gpt', sessionId: uuidv7() };
+    const { question, model, sessionId } = event.body ? JSON.parse(event.body) : { question: 'あなたは誰？', model: 'nova-micro', sessionId: uuidv7() };
     await handle(sessionId, { question, model }, responseStream);
     responseStream.end();
   });
