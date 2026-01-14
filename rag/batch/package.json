@@ -17,7 +17,7 @@
     "@langchain/aws": "^1.2.0",
     "@langchain/classic": "^1.0.9",
     "@langchain/community": "^1.1.4",
-    "@langchain/core": "^1.1.13",
+    "@langchain/core": "^1.1.15",
     "@langchain/langgraph": "^1.0.15",
     "@langchain/openai": "^1.2.2",
     "@langchain/pinecone": "^1.0.1",
@@ -27,7 +27,7 @@
     "dotenv": "^17.2.3",
     "html-to-text": "^9.0.5",
     "jsdom": "^27.4.0",
-    "langchain": "^1.2.8",
+    "langchain": "^1.2.10",
     "source-map-support": "^0.5.21"
   },
   "devDependencies": {
