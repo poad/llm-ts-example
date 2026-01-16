@@ -38,7 +38,7 @@ if (process.env.ENABLED_OPENINFERENCE_TELEMETRY === 'true') {
 
           span.attributes['output.value'] = JSON.stringify(parsed);
         }
-      } catch (e) {
+      } catch {
         // パースエラーは無視
       }
 

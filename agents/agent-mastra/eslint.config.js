@@ -59,8 +59,9 @@ export default defineConfig(
       ecmaVersion: 'latest',
       sourceType: 'module',
       parserOptions: {
-        projectService: true,
+        project: ['./tsconfig.json'],
         tsconfigRootDir: __dirname,
+        projectService: false,
       },
     },
     settings: {

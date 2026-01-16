@@ -1,11 +1,10 @@
-// @ts-check
-
 import { defineConfig } from 'eslint/config';
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import { configs, parser } from 'typescript-eslint';
 import importPlugin from 'eslint-plugin-import';
-import pluginPromise from 'eslint-plugin-promise'
+  // @ts-expect-error ignore type error
+import pluginPromise from 'eslint-plugin-promise';
 
 import solid from "eslint-plugin-solid/configs/typescript";
 
@@ -33,7 +32,6 @@ export default defineConfig(
   eslint.configs.recommended,
   ...configs.strict,
   ...configs.stylistic,
-  // @ts-expect-error ignore type error
   pluginPromise.configs['flat/recommended'],
   {
     files: ['src/**/*.{ts,tsx}'],
@@ -43,8 +41,7 @@ export default defineConfig(
       ecmaVersion: 'latest',
       sourceType: 'module',
       parserOptions: {
-        tsconfigRootDir: __dirname,
-        project: ['./tsconfig.json'],
+        projectService: true,
       },
     },
     plugins: {

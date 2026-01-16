@@ -9,8 +9,5 @@
     "skipLibCheck": true,
     "noEmit": true,
     "outDir": "dist",
-  },
-  "include": [
-    "src/**/*"
-  ]
+  }
 }

@@ -10,6 +10,5 @@
     "forceConsistentCasingInFileNames": true,
     "inlineSourceMap": true
   },
-  "include": ["src/**/*"],
   "exclude": ["node_modules", "build"]
 }

@@ -1,5 +1,6 @@
 // @ts-check
 
+import { defineConfig } from 'eslint/config';
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import tseslint from 'typescript-eslint';
@@ -13,7 +14,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const gitignorePath = path.resolve(__dirname, '../.gitignore');
 
-export default tseslint.config(
+export default defineConfig(
   includeIgnoreFile(gitignorePath),
   eslint.configs.recommended,
   ...tseslint.configs.strict,
@@ -33,15 +34,14 @@ export default tseslint.config(
       '.vinxi',
       '.output',
     ],
-  },
-  {
     files: ['src/**/*.ts'],
-    ...eslintImport.flatConfigs.recommended,
-    ...eslintImport.flatConfigs.typescript,
     plugins: {
       '@stylistic': stylistic,
-      '@stylistic/ts': stylistic,
     },
+    extends: [
+      eslintImport.flatConfigs.recommended,
+      eslintImport.flatConfigs.typescript,
+    ],
     settings: {
       'import/internal-regex': '^~/',
       'import/resolver': {
@@ -55,7 +55,7 @@ export default tseslint.config(
     },
     rules: {
       '@stylistic/semi': ['error', 'always'],
-      // '@stylistic/indent': ['error', 2],
+      '@stylistic/indent': ['error', 2],
       '@stylistic/comma-dangle': ['error', 'always-multiline'],
       '@stylistic/quotes': ['error', 'single'],
     },
