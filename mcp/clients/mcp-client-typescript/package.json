@@ -13,10 +13,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.69.0",
+    "@anthropic-ai/sdk": "^0.71.2",
     "@aws-sdk/client-bedrock-runtime": "^3.971.0",
     "@inquirer/prompts": "^8.2.0",
-    "@modelcontextprotocol/sdk": "^1.25.2",
+    "@modelcontextprotocol/sdk": "^1.25.3",
     "dotenv": "^17.2.3"
   },
   "devDependencies": {
