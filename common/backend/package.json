@@ -25,9 +25,9 @@
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.30.2",
-    "@langchain/aws": "^1.2.0",
-    "@langchain/core": "^1.1.15",
-    "@langchain/openai": "^1.2.2",
+    "@langchain/aws": "^1.2.1",
+    "@langchain/core": "^1.1.16",
+    "@langchain/openai": "^1.2.3",
     "@llm-ts-example/common-core": "workspace:*"
   },
   "devDependencies": {
