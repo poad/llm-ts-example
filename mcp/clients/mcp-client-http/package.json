@@ -18,7 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.2",
-    "@aws-sdk/client-bedrock-runtime": "^3.972.0",
+    "@aws-sdk/client-bedrock-runtime": "^3.975.0",
     "@inquirer/prompts": "^8.2.0",
     "@modelcontextprotocol/sdk": "^1.25.3",
     "dotenv": "^17.2.3"
@@ -26,7 +26,7 @@
   "devDependencies": {
     "@eslint/compat": "^2.0.1",
     "@eslint/js": "^9.39.2",
-    "@stylistic/eslint-plugin": "^5.7.0",
+    "@stylistic/eslint-plugin": "^5.7.1",
     "@types/node": "^24.10.9",
     "eslint": "^9.39.2",
     "eslint-import-resolver-typescript": "^4.4.4",

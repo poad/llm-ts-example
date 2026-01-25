@@ -17,6 +17,6 @@
     "@llm-ts-example/common-backend": "workspace:*",
     "@llm-ts-example/common-core": "workspace:*",
     "pnpm": "^10.28.1",
-    "vitest": "^4.0.17"
+    "vitest": "^4.0.18"
   }
 }

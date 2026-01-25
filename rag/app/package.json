@@ -11,7 +11,7 @@
     "lint-fix": "eslint . --fix"
   },
   "dependencies": {
-    "solid-js": "^1.9.10",
+    "solid-js": "^1.9.11",
     "solid-markdown": "^2.1.1",
     "uuid": "^13.0.0"
   },
@@ -22,7 +22,7 @@
     "@llm-ts-example/common-core": "workspace:*",
     "@solidjs/router": "^0.15.4",
     "@solidjs/testing-library": "^0.8.10",
-    "@stylistic/eslint-plugin": "^5.7.0",
+    "@stylistic/eslint-plugin": "^5.7.1",
     "@types/crypto-js": "^4.2.2",
     "@types/node": "^22.19.7",
     "crypto-js": "^4.2.0",
