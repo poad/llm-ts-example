@@ -1,1 +1,35 @@
-# Weather MPC HTTP Server for Japan by TypeScript
+# Weather HTTP MCP Server
+
+HTTP経由でアクセス可能な天気予報MCP (Model Context Protocol) サーバーです。
+
+## セットアップ
+
+依存関係をインストールします:
+
+```bash
+pnpm install
+```
+
+## ビルド
+
+```bash
+pnpm build
+```
+
+## 実行
+
+```bash
+node build/index.js
+```
+
+## 機能
+
+- HTTPエンドポイント経由で天気予報情報を提供
+- MCPプロトコルに準拠したサーバー実装
+- 日本の天気予報データに対応
+
+## 技術スタック
+
+- **TypeScript** - プログラミング言語
+- **MCP SDK** - Model Context Protocol SDK
+- **Zod** - データバリデーション

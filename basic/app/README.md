@@ -1,39 +1,55 @@
-# solid-frame-poku-example
+# Basic Chatbot App
 
-## Farm + Solid
+LangChain.jsを使用した基本的なチャットボットアプリケーションです。
 
-This template should help you start developing using Solid and TypeScript in Farm.
+## セットアップ
 
-### Setup
-
-Install the dependencies:
+依存関係をインストールします:
 
 ```bash
 pnpm install
 ```
 
-### Get Started
-
-Start the dev server:
+## 開発サーバーの起動
 
 ```bash
 pnpm start
 ```
 
-Build the app for production:
+## ビルド
 
 ```bash
 pnpm build
 ```
 
-Preview the Production build product:
+## プレビュー
 
 ```bash
 pnpm preview
 ```
 
-Clear persistent cache local files
+## テスト
 
 ```bash
-pnpm clean
+pnpm test
 ```
+
+## リント
+
+```bash
+pnpm lint
+pnpm lint-fix
+```
+
+## 機能
+
+- 基本的なチャットインターフェース
+- LangChain.jsを使用したLLM統合
+- Solid.jsによるリアクティブUI
+
+## 技術スタック
+
+- **Solid.js** - リアクティブUIフレームワーク
+- **TypeScript** - プログラミング言語
+- **Vite** - ビルドツール
+- **LangChain.js** - LLMアプリケーションフレームワーク

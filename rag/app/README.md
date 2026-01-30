@@ -1,39 +1,50 @@
-# solid-frame-poku-example
+# RAG Chatbot App
 
-## Farm + Solid
+RAG (Retrieval Augmented Generation) を使用したチャットボットアプリケーションです。
 
-This template should help you start developing using Solid and TypeScript in Farm.
+## セットアップ
 
-### Setup
-
-Install the dependencies:
+依存関係をインストールします:
 
 ```bash
 pnpm install
 ```
 
-### Get Started
-
-Start the dev server:
+## 開発サーバーの起動
 
 ```bash
 pnpm start
 ```
 
-Build the app for production:
+## ビルド
 
 ```bash
 pnpm build
 ```
 
-Preview the Production build product:
+## プレビュー
 
 ```bash
 pnpm preview
 ```
 
-Clear persistent cache local files
+## リント
 
 ```bash
-pnpm clean
+pnpm lint
+pnpm lint-fix
 ```
+
+## 機能
+
+- RAGによる検索拡張生成
+- LangChain.jsを使用したLLM統合
+- Solid.jsによるリアクティブUI
+- ドキュメントの検索と回答生成
+
+## 技術スタック
+
+- **Solid.js** - リアクティブUIフレームワーク
+- **TypeScript** - プログラミング言語
+- **Vite** - ビルドツール
+- **LangChain.js** - LLMアプリケーションフレームワーク
