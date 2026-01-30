@@ -5,6 +5,7 @@ import { configs, parser } from 'typescript-eslint';
 import importPlugin from 'eslint-plugin-import';
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
 
+// @ts-expect-error 型エラーの不具合が修正されるまで
 import pluginPromise from 'eslint-plugin-promise'
 
 import { includeIgnoreFile } from '@eslint/compat';
@@ -33,7 +34,6 @@ export default defineConfig(
   eslint.configs.recommended,
   ...configs.strict,
   ...configs.stylistic,
-  // @ts-expect-error 型エラーの不具合が修正されるまで
   pluginPromise.configs['flat/recommended'],
   {
     files: ['src/**/*.ts'],

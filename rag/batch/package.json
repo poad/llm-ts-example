@@ -15,8 +15,8 @@
   },
   "dependencies": {
     "@langchain/aws": "^1.2.1",
-    "@langchain/classic": "^1.0.10",
-    "@langchain/community": "^1.1.7",
+    "@langchain/classic": "^1.0.12",
+    "@langchain/community": "^1.1.9",
     "@langchain/core": "^1.1.17",
     "@langchain/langgraph": "^1.1.2",
     "@langchain/openai": "^1.2.3",
@@ -27,7 +27,7 @@
     "dotenv": "^17.2.3",
     "html-to-text": "^9.0.5",
     "jsdom": "^27.4.0",
-    "langchain": "^1.2.13",
+    "langchain": "^1.2.15",
     "source-map-support": "^0.5.21"
   },
   "devDependencies": {
@@ -41,6 +41,6 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-promise": "^7.2.1",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.53.1"
+    "typescript-eslint": "^8.54.0"
   }
 }

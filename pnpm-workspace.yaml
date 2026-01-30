@@ -12,6 +12,7 @@ packages:
   - ./agents/agent-sdk
   - ./agents/agent-strands
   - ./agents/agent-langchain
+  - ./agents/agent-langchain-nextjs
   - ./mcp/servers/postgresql-http
   - ./mcp/servers/weather
   - ./mcp/servers/weather-http

@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig-test.json",
+  "include": [
+    "eslint.config.*s",
+    "vitest.config.ts",
+    "next.config.*s",
+    "postcss.config.*js",
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "components/**/*.tsx",
+    "lib/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "cdk.out"
+  ]
+}

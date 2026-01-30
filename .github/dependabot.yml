@@ -26,6 +26,7 @@ updates:
       - '/agents/agent-sdk/'
       - '/agents/agent-strands/'
       - '/agents/agents-langchain/'
+      - '/agents/agents-langchain-nextjs/'
       - '/basic/cdk/'
       - '/basic/app/'
       - '/mcp/clients/mastra-mcp-client/'
