@@ -25,13 +25,13 @@
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.30.2",
-    "@langchain/aws": "^1.2.1",
-    "@langchain/core": "^1.1.17",
-    "@langchain/openai": "^1.2.3",
+    "@langchain/aws": "^1.2.2",
+    "@langchain/core": "^1.1.18",
+    "@langchain/openai": "^1.2.4",
     "@llm-ts-example/common-core": "workspace:*"
   },
   "devDependencies": {
-    "@eslint/compat": "^2.0.1",
+    "@eslint/compat": "^2.0.2",
     "@eslint/js": "^9.39.2",
     "@stylistic/eslint-plugin": "^5.7.1",
     "@types/node": "^24.10.9",

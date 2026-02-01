@@ -18,7 +18,7 @@
     "start": "node -r source-map-support/register build/server.js"
   },
   "devDependencies": {
-    "@eslint/compat": "^2.0.1",
+    "@eslint/compat": "^2.0.2",
     "@eslint/js": "^9.39.2",
     "@stylistic/eslint-plugin": "^5.7.1",
     "@types/aws-lambda": "^8.10.160",
@@ -45,7 +45,7 @@
     "@hono/node-server": "^1.19.9",
     "@modelcontextprotocol/sdk": "^1.25.3",
     "hono": "^4.11.7",
-    "pg": "^8.17.2",
+    "pg": "^8.18.0",
     "uuid": "^13.0.0",
     "zod": "^4.3.6"
   }
