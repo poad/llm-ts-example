@@ -14,7 +14,7 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@ai-sdk/amazon-bedrock": "^4.0.46",
+    "@ai-sdk/amazon-bedrock": "^4.0.48",
     "@ai-sdk/azure": "^3.0.26",
     "@mastra/core": "^0.24.9",
     "@mastra/libsql": "^0.16.4",
@@ -28,7 +28,7 @@
     "@eslint/compat": "^2.0.2",
     "@eslint/js": "^9.39.2",
     "@stylistic/eslint-plugin": "^5.7.1",
-    "@types/node": "^24.10.9",
+    "@types/node": "^24.10.10",
     "eslint": "^9.39.2",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",

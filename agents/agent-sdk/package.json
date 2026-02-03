@@ -17,7 +17,7 @@
     "@eslint/compat": "^2.0.2",
     "@eslint/js": "^9.39.2",
     "@stylistic/eslint-plugin": "^5.7.1",
-    "@types/node": "^24.10.9",
+    "@types/node": "^24.10.10",
     "@vitest/eslint-plugin": "^1.6.6",
     "dotenv": "^17.2.3",
     "esbuild": "^0.27.2",
@@ -34,7 +34,7 @@
     "vitest": "^4.0.18"
   },
   "dependencies": {
-    "@anthropic-ai/claude-agent-sdk": "^0.2.29",
+    "@anthropic-ai/claude-agent-sdk": "^0.2.30",
     "source-map-support": "^0.5.21",
     "uuid": "^13.0.0",
     "zod": "^4.3.6"
