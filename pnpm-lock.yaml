@@ -69,7 +69,7 @@ importers:
         version: 1.1.3(@langchain/core@1.1.18(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.210.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.0(@opentelemetry/api@1.9.0))(openai@6.17.0(ws@8.19.0)(zod@4.3.6)))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod-to-json-schema@3.25.1(zod@4.3.6))(zod@4.3.6)
       '@langchain/mcp-adapters':
         specifier: ^1.1.2
-        version: 1.1.2(@cfworker/json-schema@4.1.1)(@langchain/core@1.1.18(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.210.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.0(@opentelemetry/api@1.9.0))(openai@6.17.0(ws@8.19.0)(zod@4.3.6)))(@langchain/langgraph@1.1.3(@langchain/core@1.1.18(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.210.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.0(@opentelemetry/api@1.9.0))(openai@6.17.0(ws@8.19.0)(zod@4.3.6)))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod-to-json-schema@3.25.1(zod@4.3.6))(zod@4.3.6))
+        version: 1.1.2(@cfworker/json-schema@4.1.1)(@langchain/core@1.1.18(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.210.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.0(@opentelemetry/api@1.9.0))(openai@6.17.0(ws@8.19.0)(zod@4.3.6)))(@langchain/langgraph@1.1.3(@langchain/core@1.1.18(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.210.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.0(@opentelemetry/api@1.9.0))(openai@6.17.0(ws@8.19.0)(zod@4.3.6)))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod-to-json-schema@3.25.1(zod@4.3.6))(zod@4.3.6))(hono@4.11.7)
       '@langchain/openai':
         specifier: ^1.2.4
         version: 1.2.4(@langchain/core@1.1.18(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.210.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.0(@opentelemetry/api@1.9.0))(openai@6.17.0(ws@8.19.0)(zod@4.3.6)))(ws@8.19.0)
@@ -208,7 +208,7 @@ importers:
         version: 1.1.3(@langchain/core@1.1.18(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.211.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.0(@opentelemetry/api@1.9.0))(openai@6.17.0(ws@8.19.0)(zod@4.3.6)))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(zod-to-json-schema@3.25.1(zod@4.3.6))(zod@4.3.6)
       '@langchain/mcp-adapters':
         specifier: ^1.1.2
-        version: 1.1.2(@cfworker/json-schema@4.1.1)(@langchain/core@1.1.18(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.211.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.0(@opentelemetry/api@1.9.0))(openai@6.17.0(ws@8.19.0)(zod@4.3.6)))(@langchain/langgraph@1.1.3(@langchain/core@1.1.18(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.211.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.0(@opentelemetry/api@1.9.0))(openai@6.17.0(ws@8.19.0)(zod@4.3.6)))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(zod-to-json-schema@3.25.1(zod@4.3.6))(zod@4.3.6))
+        version: 1.1.2(@cfworker/json-schema@4.1.1)(@langchain/core@1.1.18(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.211.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.0(@opentelemetry/api@1.9.0))(openai@6.17.0(ws@8.19.0)(zod@4.3.6)))(@langchain/langgraph@1.1.3(@langchain/core@1.1.18(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.211.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.0(@opentelemetry/api@1.9.0))(openai@6.17.0(ws@8.19.0)(zod@4.3.6)))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(zod-to-json-schema@3.25.1(zod@4.3.6))(zod@4.3.6))(hono@4.11.7)
       '@opentelemetry/api':
         specifier: ^1.9.0
         version: 1.9.0
@@ -586,7 +586,7 @@ importers:
         version: link:../../common/backend
       '@strands-agents/sdk':
         specifier: ^0.1.6
-        version: 0.1.6(@cfworker/json-schema@4.1.1)(ws@8.19.0)
+        version: 0.1.6(@cfworker/json-schema@4.1.1)(hono@4.11.7)(ws@8.19.0)
       aws-cdk-lib:
         specifier: ^2.237.1
         version: 2.237.1(constructs@10.4.5)
@@ -1203,8 +1203,8 @@ importers:
         specifier: ^8.2.0
         version: 8.2.0(@types/node@24.10.10)
       '@modelcontextprotocol/sdk':
-        specifier: ^1.25.3
-        version: 1.25.3(@cfworker/json-schema@4.1.1)(hono@4.11.7)(zod@4.3.6)
+        specifier: ^1.26.0
+        version: 1.26.0(@cfworker/json-schema@4.1.1)(zod@4.3.6)
       dotenv:
         specifier: ^17.2.3
         version: 17.2.3
@@ -1255,8 +1255,8 @@ importers:
         specifier: ^8.2.0
         version: 8.2.0(@types/node@24.10.10)
       '@modelcontextprotocol/sdk':
-        specifier: ^1.25.3
-        version: 1.25.3(@cfworker/json-schema@4.1.1)(hono@4.11.7)(zod@4.3.6)
+        specifier: ^1.26.0
+        version: 1.26.0(@cfworker/json-schema@4.1.1)(zod@4.3.6)
       dotenv:
         specifier: ^17.2.3
         version: 17.2.3
@@ -1299,13 +1299,13 @@ importers:
         version: 2.30.2
       '@hono/mcp':
         specifier: ^0.2.3
-        version: 0.2.3(@modelcontextprotocol/sdk@1.25.3(@cfworker/json-schema@4.1.1)(hono@4.11.7)(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.11.7))(hono@4.11.7)(zod@4.3.6)
+        version: 0.2.3(@modelcontextprotocol/sdk@1.26.0(@cfworker/json-schema@4.1.1)(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.11.7))(hono@4.11.7)(zod@4.3.6)
       '@hono/node-server':
         specifier: ^1.19.9
         version: 1.19.9(hono@4.11.7)
       '@modelcontextprotocol/sdk':
-        specifier: ^1.25.3
-        version: 1.25.3(@cfworker/json-schema@4.1.1)(hono@4.11.7)(zod@4.3.6)
+        specifier: ^1.26.0
+        version: 1.26.0(@cfworker/json-schema@4.1.1)(zod@4.3.6)
       hono:
         specifier: ^4.11.7
         version: 4.11.7
@@ -1383,8 +1383,8 @@ importers:
   mcp/servers/resource-mcp-server:
     dependencies:
       '@modelcontextprotocol/sdk':
-        specifier: ^1.25.3
-        version: 1.25.3(@cfworker/json-schema@4.1.1)(hono@4.11.7)(zod@4.3.6)
+        specifier: ^1.26.0
+        version: 1.26.0(@cfworker/json-schema@4.1.1)(zod@4.3.6)
       zod:
         specifier: ^4.3.6
         version: 4.3.6
@@ -1429,8 +1429,8 @@ importers:
   mcp/servers/weather:
     dependencies:
       '@modelcontextprotocol/sdk':
-        specifier: ^1.25.3
-        version: 1.25.3(@cfworker/json-schema@4.1.1)(hono@4.11.7)(zod@4.3.6)
+        specifier: ^1.26.0
+        version: 1.26.0(@cfworker/json-schema@4.1.1)(zod@4.3.6)
       zod:
         specifier: ^4.3.6
         version: 4.3.6
@@ -1472,8 +1472,8 @@ importers:
   mcp/servers/weather-http:
     dependencies:
       '@modelcontextprotocol/sdk':
-        specifier: ^1.25.3
-        version: 1.25.3(@cfworker/json-schema@4.1.1)(hono@4.11.7)(zod@4.3.6)
+        specifier: ^1.26.0
+        version: 1.26.0(@cfworker/json-schema@4.1.1)(zod@4.3.6)
       express:
         specifier: ^5.2.1
         version: 5.2.1
@@ -3892,6 +3892,16 @@ packages:
 
   '@modelcontextprotocol/sdk@1.25.3':
     resolution: {integrity: sha512-vsAMBMERybvYgKbg/l4L1rhS7VXV1c0CtyJg72vwxONVX0l4ZfKVAnZEWTQixJGTzKnELjQ59e4NbdFDALRiAQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@cfworker/json-schema': ^4.1.1
+      zod: ^3.25 || ^4.0
+    peerDependenciesMeta:
+      '@cfworker/json-schema':
+        optional: true
+
+  '@modelcontextprotocol/sdk@1.26.0':
+    resolution: {integrity: sha512-Y5RmPncpiDtTXDbLKswIJzTqu2hyBKxTNsgKqKclDbhIgg1wgtf1fRuvxgTnRfcnxtvvgbIEcqUOzZrJ6iSReg==}
     engines: {node: '>=18'}
     peerDependencies:
       '@cfworker/json-schema': ^4.1.1
@@ -7868,6 +7878,12 @@ packages:
     peerDependencies:
       express: '>= 4.11'
 
+  express-rate-limit@8.2.1:
+    resolution: {integrity: sha512-PCZEIEIxqwhzw4KF0n7QF4QqruVTcF73O5kFKUnGOyjbCCgizBBiFaYpd/fnBLUMPw/BWw9OsiN7GgrNYr7j6g==}
+    engines: {node: '>= 16'}
+    peerDependencies:
+      express: '>= 4.11'
+
   express@4.22.1:
     resolution: {integrity: sha512-F2X8g9P1X7uCPZMA3MVf9wcTqlyNp7IhH5qPCI0izhaOIYXaW9L535tGA3qmjRzpH+bZczqq7hVKxTR4NWnu+g==}
     engines: {node: '>= 0.10.0'}
@@ -8434,6 +8450,10 @@ packages:
   internmap@2.0.3:
     resolution: {integrity: sha512-5Hh7Y1wQbvY5ooGgPbDaL5iYLAPzMTUrjMulskHLH6wnv/A+1q5rgEaiuqEjB+oxGXIVZs1FF+R/KPN3ZSQYYg==}
     engines: {node: '>=12'}
+
+  ip-address@10.0.1:
+    resolution: {integrity: sha512-NWv9YLW4PoW2B7xtzaS3NCot75m6nK7Icdv0o3lfMceJVRfSoQwqD4wEH5rLwoKJwUiZ/rfpiVBhnaF0FK4HoA==}
+    engines: {node: '>= 12'}
 
   ip-regex@4.3.0:
     resolution: {integrity: sha512-B9ZWJxHHOHUhUjCPrMpLD4xEq35bUTClHM1S6CBU5ixQnkZmwipwgc96vAd7AAGM9TGHvJR+Uss+/Ak6UphK+Q==}
@@ -12484,9 +12504,9 @@ snapshots:
       protobufjs: 7.5.4
       yargs: 17.7.2
 
-  '@hono/mcp@0.2.3(@modelcontextprotocol/sdk@1.25.3(@cfworker/json-schema@4.1.1)(hono@4.11.7)(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.11.7))(hono@4.11.7)(zod@4.3.6)':
+  '@hono/mcp@0.2.3(@modelcontextprotocol/sdk@1.26.0(@cfworker/json-schema@4.1.1)(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.11.7))(hono@4.11.7)(zod@4.3.6)':
     dependencies:
-      '@modelcontextprotocol/sdk': 1.25.3(@cfworker/json-schema@4.1.1)(hono@4.11.7)(zod@4.3.6)
+      '@modelcontextprotocol/sdk': 1.26.0(@cfworker/json-schema@4.1.1)(zod@4.3.6)
       hono: 4.11.7
       hono-rate-limiter: 0.4.2(hono@4.11.7)
       pkce-challenge: 5.0.1
@@ -13055,7 +13075,7 @@ snapshots:
       - react
       - react-dom
 
-  '@langchain/mcp-adapters@1.1.2(@cfworker/json-schema@4.1.1)(@langchain/core@1.1.18(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.210.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.0(@opentelemetry/api@1.9.0))(openai@6.17.0(ws@8.19.0)(zod@4.3.6)))(@langchain/langgraph@1.1.3(@langchain/core@1.1.18(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.210.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.0(@opentelemetry/api@1.9.0))(openai@6.17.0(ws@8.19.0)(zod@4.3.6)))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod-to-json-schema@3.25.1(zod@4.3.6))(zod@4.3.6))':
+  '@langchain/mcp-adapters@1.1.2(@cfworker/json-schema@4.1.1)(@langchain/core@1.1.18(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.210.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.0(@opentelemetry/api@1.9.0))(openai@6.17.0(ws@8.19.0)(zod@4.3.6)))(@langchain/langgraph@1.1.3(@langchain/core@1.1.18(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.210.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.0(@opentelemetry/api@1.9.0))(openai@6.17.0(ws@8.19.0)(zod@4.3.6)))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod-to-json-schema@3.25.1(zod@4.3.6))(zod@4.3.6))(hono@4.11.7)':
     dependencies:
       '@langchain/core': 1.1.18(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.210.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.0(@opentelemetry/api@1.9.0))(openai@6.17.0(ws@8.19.0)(zod@4.3.6))
       '@langchain/langgraph': 1.1.3(@langchain/core@1.1.18(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.210.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.0(@opentelemetry/api@1.9.0))(openai@6.17.0(ws@8.19.0)(zod@4.3.6)))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod-to-json-schema@3.25.1(zod@4.3.6))(zod@4.3.6)
@@ -13069,7 +13089,7 @@ snapshots:
       - hono
       - supports-color
 
-  '@langchain/mcp-adapters@1.1.2(@cfworker/json-schema@4.1.1)(@langchain/core@1.1.18(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.211.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.0(@opentelemetry/api@1.9.0))(openai@6.17.0(ws@8.19.0)(zod@4.3.6)))(@langchain/langgraph@1.1.3(@langchain/core@1.1.18(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.211.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.0(@opentelemetry/api@1.9.0))(openai@6.17.0(ws@8.19.0)(zod@4.3.6)))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(zod-to-json-schema@3.25.1(zod@4.3.6))(zod@4.3.6))':
+  '@langchain/mcp-adapters@1.1.2(@cfworker/json-schema@4.1.1)(@langchain/core@1.1.18(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.211.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.0(@opentelemetry/api@1.9.0))(openai@6.17.0(ws@8.19.0)(zod@4.3.6)))(@langchain/langgraph@1.1.3(@langchain/core@1.1.18(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.211.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.0(@opentelemetry/api@1.9.0))(openai@6.17.0(ws@8.19.0)(zod@4.3.6)))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(zod-to-json-schema@3.25.1(zod@4.3.6))(zod@4.3.6))(hono@4.11.7)':
     dependencies:
       '@langchain/core': 1.1.18(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.211.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.0(@opentelemetry/api@1.9.0))(openai@6.17.0(ws@8.19.0)(zod@4.3.6))
       '@langchain/langgraph': 1.1.3(@langchain/core@1.1.18(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.211.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.0(@opentelemetry/api@1.9.0))(openai@6.17.0(ws@8.19.0)(zod@4.3.6)))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(zod-to-json-schema@3.25.1(zod@4.3.6))(zod@4.3.6)
@@ -13383,6 +13403,30 @@ snapshots:
       '@cfworker/json-schema': 4.1.1
     transitivePeerDependencies:
       - hono
+      - supports-color
+
+  '@modelcontextprotocol/sdk@1.26.0(@cfworker/json-schema@4.1.1)(zod@4.3.6)':
+    dependencies:
+      '@hono/node-server': 1.19.9(hono@4.11.7)
+      ajv: 8.17.1
+      ajv-formats: 3.0.1(ajv@8.17.1)
+      content-type: 1.0.5
+      cors: 2.8.6
+      cross-spawn: 7.0.6
+      eventsource: 3.0.7
+      eventsource-parser: 3.0.6
+      express: 5.2.1
+      express-rate-limit: 8.2.1(express@5.2.1)
+      hono: 4.11.7
+      jose: 6.1.3
+      json-schema-typed: 8.0.2
+      pkce-challenge: 5.0.1
+      raw-body: 3.0.2
+      zod: 4.3.6
+      zod-to-json-schema: 3.25.1(zod@4.3.6)
+    optionalDependencies:
+      '@cfworker/json-schema': 4.1.1
+    transitivePeerDependencies:
       - supports-color
 
   '@napi-rs/wasm-runtime@0.2.12':
@@ -16148,7 +16192,7 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@strands-agents/sdk@0.1.6(@cfworker/json-schema@4.1.1)(ws@8.19.0)':
+  '@strands-agents/sdk@0.1.6(@cfworker/json-schema@4.1.1)(hono@4.11.7)(ws@8.19.0)':
     dependencies:
       '@aws-sdk/client-bedrock-runtime': 3.982.0
       '@modelcontextprotocol/sdk': 1.25.3(@cfworker/json-schema@4.1.1)(hono@4.11.7)(zod@4.3.6)
@@ -18478,6 +18522,11 @@ snapshots:
     dependencies:
       express: 5.2.1
 
+  express-rate-limit@8.2.1(express@5.2.1):
+    dependencies:
+      express: 5.2.1
+      ip-address: 10.0.1
+
   express@4.22.1:
     dependencies:
       accepts: 1.3.8
@@ -19150,7 +19199,7 @@ snapshots:
       isstream: 0.1.2
       jsonwebtoken: 9.0.3
       mime-types: 2.1.35
-      retry-axios: 2.6.0(axios@1.13.4)
+      retry-axios: 2.6.0(axios@1.13.4(debug@4.4.3))
       tough-cookie: 4.1.4
     transitivePeerDependencies:
       - supports-color
@@ -19218,6 +19267,8 @@ snapshots:
   internmap@1.0.1: {}
 
   internmap@2.0.3: {}
+
+  ip-address@10.0.1: {}
 
   ip-regex@4.3.0: {}
 
@@ -21240,7 +21291,7 @@ snapshots:
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
 
-  retry-axios@2.6.0(axios@1.13.4):
+  retry-axios@2.6.0(axios@1.13.4(debug@4.4.3)):
     dependencies:
       axios: 1.13.4(debug@4.4.3)
 
