@@ -36,14 +36,12 @@ export default tseslint.config(
   eslint.configs.recommended,
   ...tseslint.configs.strict,
   ...tseslint.configs.stylistic,
-  eslintImport.flatConfigs.recommended,
-  eslintImport.flatConfigs.typescript,
   {
     files: ['src/**/*.ts'],
     plugins: {
       '@stylistic': stylistic,
-      '@stylistic/ts': stylistic,
     },
+    extends: [eslintImport.flatConfigs.recommended, eslintImport.flatConfigs.typescript],
     settings: {
       'import/internal-regex': '^~/',
       'import/resolver': {
@@ -57,7 +55,7 @@ export default tseslint.config(
     },
     rules: {
       '@stylistic/semi': ['error', 'always'],
-      // '@stylistic/indent': ['error', 2],
+      '@stylistic/indent': ['error', 2],
       '@stylistic/comma-dangle': ['error', 'always-multiline'],
       '@stylistic/quotes': ['error', 'single'],
     },

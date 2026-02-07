@@ -7,8 +7,8 @@ interface EmbeddingsModel {
 }
 
 interface SelectEmbeddingsProps {
-  type: string
-  dataSource: string
+  readonly type: string
+  readonly dataSource: string
 }
 
 function selectEmbeddings(

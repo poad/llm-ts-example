@@ -4,11 +4,11 @@ import * as cdk from 'aws-cdk-lib';
 import {
   CloudfrontCdnTemplateStack,
   Config,
-} from '../lib/cdk-stack.js';
+} from '../lib/cdk-stack';
 
 const app = new cdk.App();
 
-interface ConfigProps { stackName: string }
+interface ConfigProps { readonly stackName: string }
 
 const env = app.node.tryGetContext('env');
 const config: Config & ConfigProps = env

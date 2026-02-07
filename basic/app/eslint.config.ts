@@ -41,7 +41,7 @@ export default defineConfig(
       ecmaVersion: 'latest',
       sourceType: 'module',
       parserOptions: {
-        projectService: true,
+        tsconfigRootDir: __dirname,
       },
     },
     plugins: {

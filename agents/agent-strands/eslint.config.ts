@@ -47,7 +47,6 @@ const eslintConfig: Config[] = defineConfig(
         tsconfigRootDir: __dirname,
         project: ['./tsconfig.json'],
         allowDefaultProject: ['./eslint.config.ts'],
-        projectService: false,
       },
     },
     extends: [

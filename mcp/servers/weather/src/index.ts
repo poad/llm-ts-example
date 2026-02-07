@@ -7,12 +7,12 @@ const server = new McpServer({
   name: 'weather',
   version: '1.0.0',
 },
-  {
-    capabilities: {
-      resources: {},
-      tools: {},
-    },
+{
+  capabilities: {
+    resources: {},
+    tools: {},
   },
+},
 );
 
 // interface GeocodingResponse {

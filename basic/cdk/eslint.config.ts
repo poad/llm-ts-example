@@ -3,6 +3,7 @@ import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import { configs, parser } from 'typescript-eslint';
 import eslintImport from 'eslint-plugin-import';
+import cdkPlugin from "eslint-plugin-awscdk";
 
 import { includeIgnoreFile } from '@eslint/compat';
 import path from 'node:path';
@@ -39,11 +40,12 @@ export default defineConfig(
       parser,
       parserOptions: {
         tsconfigRootDir: __dirname,
-        project: ['./tsconfig-eslint.json'],
-        projectService: false,
+        allowDefaultProject: ['*.ts'],
       },
     },
     extends: [
+      //@ts-expect-error ignore type errors
+      cdkPlugin.configs.recommended,
       eslintImport.flatConfigs.recommended,
       eslintImport.flatConfigs.typescript,
     ],
@@ -60,6 +62,7 @@ export default defineConfig(
       '@stylistic/indent': ['error', 2],
       '@stylistic/comma-dangle': ['error', 'always-multiline'],
       '@stylistic/quotes': ['error', 'single'],
+      'awscdk/require-jsdoc': 'off',
     },
   },
 );

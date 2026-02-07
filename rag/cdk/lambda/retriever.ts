@@ -4,8 +4,8 @@ import { PineconeStore } from '@langchain/pinecone';
 import { VectorStoreRetriever } from '@langchain/core/vectorstores';
 
 interface CreateVectorStoreProps {
-  embeddings: Embeddings
-  indexName: string
+  readonly embeddings: Embeddings
+  readonly indexName: string
 }
 
 async function createRetriever({embeddings, indexName}: CreateVectorStoreProps): Promise<VectorStoreRetriever<PineconeStore>> {

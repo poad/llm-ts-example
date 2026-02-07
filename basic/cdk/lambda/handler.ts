@@ -4,7 +4,7 @@ import { CallbackHandler } from 'langfuse-langchain';
 import { selectLlm, logger } from '@llm-ts-example/common-backend';
 import { createApp } from './app.js';
 
-interface HandleProps { question: string, model?: string }
+interface HandleProps { readonly question: string, readonly model?: string }
 
 export async function handle(
   sessionId: string,

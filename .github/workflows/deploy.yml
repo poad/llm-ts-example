@@ -69,13 +69,17 @@ jobs:
           -c oai-instance-name=${{ secrets.AZURE_OPENAI_API_INSTANCE_NAME }} \
           -c oai-api-key=${{ secrets.AZURE_OPENAI_API_KEY }} \
           -c oai-api-version=${{ vars.AZURE_OPENAI_API_VERSION }} \
+          -c anthropic-api-key=${{ secrets.ANTHROPIC_API_KEY }} \
+          -c claude-model=${{ vars.CLAUDE_MODEL }} \
+          -c enabled-openinference-telemetry=${{ vars.ENABLED_OPENINFERENCE_TELEMETRY }} \
           -c langfuse-endpoint=${{ secrets.LANGFUSE_ENDPOINT }} \
           -c langfuse-public-key=${{ secrets.LANGFUSE_PUBLIC_KEY }} \
           -c langfuse-secret-key=${{ secrets.LANGFUSE_SECRET_KEY }} \
           -c langsmith-api-key=${{ secrets.LANGCHAIN_API_KEY }} \
           -c langsmith-project=${{ secrets.LANGCHAIN_PROJECT }} \
-          -c anthropic-api-key=${{ secrets.ANTHROPIC_API_KEY }} \
-          -c claude-model=${{ vars.CLAUDE_MODEL }}
+          -c phoenix-api-key=${{ secrets.PHOENIX_API_KEY }} \
+          -c phoenix-space-id=${{ vars.PHOENIX_SPACE_ID }} \
+          -c otel-traces-endpoint=${{ vars.OTEL_EXPORTER_OTLP_TRACE_ENDPOINT }}
 
   deploy-rag:
     # 同時実行すると CREATE_IN_PROGRESS や UPDATE_IN_PROGRESS 状態で cdk deploy を行う可能性があるため抑止する

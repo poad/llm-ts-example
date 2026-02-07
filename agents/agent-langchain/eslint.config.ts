@@ -40,7 +40,6 @@ export default defineConfig(
       parserOptions: {
         tsconfigRootDir: __dirname,
         project: ['./tsconfig-eslint.json'],
-        projectService: false,
       },
     },
     extends: [

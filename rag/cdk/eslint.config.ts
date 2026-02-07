@@ -1,8 +1,9 @@
 import { defineConfig } from 'eslint/config';
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
-import tseslint from 'typescript-eslint';
+import {configs, parser} from 'typescript-eslint';
 import eslintImport from 'eslint-plugin-import';
+import cdkPlugin from "eslint-plugin-awscdk";
 
 import { includeIgnoreFile } from '@eslint/compat';
 import path from 'node:path';
@@ -31,32 +32,34 @@ export default defineConfig(
     ],
   },
   eslint.configs.recommended,
-  ...tseslint.configs.strict,
-  ...tseslint.configs.stylistic,
+  ...configs.strict,
+  ...configs.stylistic,
   {
-    files: ['{bin,lib,lambda}/**/*.{ts,tsx}'],
+    files: ['{bin,lib,lambda}/**/*.ts'],
     languageOptions: {
-      parser: tseslint.parser,
+      parser,
       ecmaVersion: 'latest',
       sourceType: 'module',
       parserOptions: {
         tsconfigRootDir: __dirname,
-        project: [
-          './tsconfig.json',
-          './tsconfig-eslint.json',
-        ],
+        allowDefaultProject: ['*.ts'],
       },
     },
     plugins: {
       '@stylistic': stylistic,
     },
-    extends: [eslintImport.flatConfigs.recommended, eslintImport.flatConfigs.typescript],
+    extends: [
+      //@ts-expect-error ignore type errors
+      cdkPlugin.configs.recommended,
+      eslintImport.flatConfigs.recommended,
+      eslintImport.flatConfigs.typescript,
+    ],
     rules: {
       '@stylistic/semi': ['error', 'always'],
       '@stylistic/indent': ['error', 2],
       '@stylistic/comma-dangle': ['error', 'always-multiline'],
       '@stylistic/quotes': ['error', 'single'],
-      'import/no-unresolved': 'off',
+      'awscdk/require-jsdoc': 'off',
     },
   }
 );

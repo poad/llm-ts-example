@@ -11,7 +11,7 @@ import * as deployment from 'aws-cdk-lib/aws-s3-deployment';
 import { buildCommon, buildFrontend } from './process/setup.js';
 
 interface CloudFrontProps {
-  comment: string;
+  readonly comment: string;
 }
 
 export interface Config extends cdk.StackProps {
@@ -20,28 +20,14 @@ export interface Config extends cdk.StackProps {
   cloudfront: CloudFrontProps;
 }
 
-interface LangFuseProps {
-  sk: string;
-  pk: string;
-  endpoint: string;
-}
-
-interface LangSmithProps {
-  apiKey: string;
-  project: string;
-  endpoint: string;
-}
-
 interface CloudfrontCdnTemplateStackProps extends Config {
-  environment?: string;
-  endpoint?: string;
-  instanceName: string;
-  apiKey: string;
-  apiVersion: string;
-  langfuse?: LangFuseProps;
-  anthoropicApiKey: string;
-  claudeModel: string;
-  langsmith?: LangSmithProps;
+  readonly environment?: string;
+  readonly endpoint?: string;
+  readonly instanceName: string;
+  readonly apiKey: string;
+  readonly apiVersion: string;
+  readonly anthoropicApiKey: string;
+  readonly claudeModel: string;
 }
 
 export class CloudfrontCdnTemplateStack extends cdk.Stack {
@@ -61,10 +47,8 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
       instanceName,
       apiKey,
       apiVersion,
-      langfuse,
       anthoropicApiKey,
       claudeModel,
-      langsmith,
     } = props;
 
     buildCommon();
@@ -83,19 +67,39 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
 
     const apiRootPath = '/api/';
 
-    const langfuseEnv = langfuse ? {
-      LANGFUSE_SECRET_KEY: langfuse.sk,
-      LANGFUSE_PUBLIC_KEY: langfuse.pk,
-      ...(langfuse.endpoint ? {
-        LANGFUSE_BASEURL: langfuse.endpoint,
+    const enableTelemetry = this.node.tryGetContext('enabled-openinference-telemetry') ?? 'false';
+
+    const langfusePk: string | undefined = this.node.tryGetContext('langfuse-public-key');
+    const langfuseSk: string | undefined = this.node.tryGetContext('langfuse-secret-key');
+    const langfuseEndpoint: string = this.node.tryGetContext('langfuse-endpoint') ?? 'https://us.cloud.langfuse.com';
+
+    const langfuseEnv = langfuseSk && langfusePk ? {
+      LANGFUSE_SECRET_KEY: langfuseSk,
+      LANGFUSE_PUBLIC_KEY: langfusePk,
+      ...(langfuseEndpoint ? {
+        LANGFUSE_BASEURL: langfuseEndpoint,
       } : {}),
     } : {};
 
-    const langsmithEnv: Record<string, string> = langsmith ? {
+    const langsmithApiKey: string | undefined = this.node.tryGetContext('langsmith-api-key');
+    const langsmithProject: string | undefined = this.node.tryGetContext('langsmith-project');
+    const langsmithEndpoint: string = this.node.tryGetContext('langsmith-endpoint') ?? 'https://api.smith.langchain.com';
+
+    const langsmithEnv: Record<string, string> = langsmithApiKey && langsmithProject ? {
       LANGCHAIN_TRACING_V2: 'true',
-      LANGCHAIN_ENDPOINT: langsmith.endpoint,
-      LANGCHAIN_API_KEY: langsmith.apiKey,
-      LANGCHAIN_PROJECT: langsmith.project,
+      LANGCHAIN_ENDPOINT: langsmithEndpoint,
+      LANGCHAIN_API_KEY: langsmithApiKey,
+      LANGCHAIN_PROJECT: langsmithProject,
+    } : {};
+
+    const phoenixApiKey: string | undefined = this.node.tryGetContext('phoenix-api-key');
+    const phoenixSpaceId: string | undefined = this.node.tryGetContext('phoenix-space-id');
+    const otelTracesEndpoint: string = this.node.tryGetContext('otel-traces-endpoint');
+
+    const phoenixCloudEnv: Record<string, string> = phoenixApiKey && phoenixSpaceId && otelTracesEndpoint ? {
+      PHOENIX_API_KEY: phoenixApiKey,
+      PHOENIX_SPACE_ID: phoenixSpaceId,
+      OTEL_EXPORTER_OTLP_TRACE_ENDPOINT: otelTracesEndpoint,
     } : {};
 
     const fn = new nodejs.NodejsFunction(this, 'Lambda', {
@@ -113,8 +117,10 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
         AZURE_OPENAI_API_VERSION: apiVersion,
         ANTHROPIC_API_KEY: anthoropicApiKey,
         CLAUDE_MODEL: claudeModel,
+        ENABLED_OPENINFERENCE_TELEMETRY: enableTelemetry,
         ...langfuseEnv,
         ...langsmithEnv,
+        ...phoenixCloudEnv,
       },
       bundling: {
         target: 'node22',

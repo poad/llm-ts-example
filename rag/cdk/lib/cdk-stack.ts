@@ -9,27 +9,27 @@ import * as awslogs from 'aws-cdk-lib/aws-logs';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as deployment from 'aws-cdk-lib/aws-s3-deployment';
 import assert from 'node:assert';
-import { buildCommon, buildFrontend } from './process/setup.js';
+import { buildCommon, buildFrontend } from './process/setup';
 
 interface CloudFrontProps {
-  comment: string;
+  readonly comment: string;
 }
 
 interface LangFuseProps {
-  sk: string;
-  pk: string;
-  endpoint: string;
+  readonly sk: string;
+  readonly pk: string;
+  readonly endpoint: string;
 }
 
 interface LangSmithProps {
-  apiKey: string;
-  project: string;
-  endpoint: string;
+  readonly apiKey: string;
+  readonly project: string;
+  readonly endpoint: string;
 }
 
 interface PineconeProps {
-  index: string;
-  apiKey?: string;
+  readonly index: string;
+  readonly apiKey?: string;
 }
 
 export interface Config extends cdk.StackProps {
@@ -39,15 +39,15 @@ export interface Config extends cdk.StackProps {
 }
 
 interface CloudfrontCdnTemplateStackProps extends Config {
-  environment?: string;
-  endpoint?: string;
-  instanceName: string;
-  apiKey: string;
-  embeddingsDeployName: string;
-  apiVersion: string;
-  langfuse?: LangFuseProps;
-  pinecone: PineconeProps,
-  langsmith?: LangSmithProps;
+  readonly environment?: string;
+  readonly endpoint?: string;
+  readonly instanceName: string;
+  readonly apiKey: string;
+  readonly embeddingsDeployName: string;
+  readonly apiVersion: string;
+  readonly langfuse?: LangFuseProps;
+  readonly pinecone: PineconeProps,
+  readonly langsmith?: LangSmithProps;
 }
 
 export class CloudfrontCdnTemplateStack extends cdk.Stack {

@@ -41,9 +41,6 @@ export default defineConfig(
       parser: tseslint.parser,
       ecmaVersion: 'latest',
       sourceType: 'module',
-      parserOptions: {
-        projectService: true,
-      },
     },
     plugins: {
       '@stylistic': stylistic,

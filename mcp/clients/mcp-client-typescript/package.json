@@ -14,10 +14,10 @@
   "license": "ISC",
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.2",
-    "@aws-sdk/client-bedrock-runtime": "^3.983.0",
+    "@aws-sdk/client-bedrock-runtime": "^3.985.0",
     "@inquirer/prompts": "^8.2.0",
     "@modelcontextprotocol/sdk": "^1.26.0",
-    "dotenv": "^17.2.3"
+    "dotenv": "^17.2.4"
   },
   "devDependencies": {
     "@eslint/compat": "^2.0.2",

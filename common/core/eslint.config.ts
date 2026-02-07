@@ -44,7 +44,6 @@ export default defineConfig(
       parserOptions: {
         tsconfigRootDir: __dirname,
         project: ['./tsconfig.json', './tsconfig-eslint.json'],
-        projectService: false,
       },
     },
     plugins: {

@@ -1,20 +1,20 @@
 import { CallbackHandler } from 'langfuse-langchain';
-import { APIGatewayProxyEvent, APIGatewayProxyEventV2 } from 'aws-lambda';
+// eslint-disable-next-line import/no-unresolved
 import { v7 as uuidv7 } from 'uuid';
 import { logger, selectLlm } from '@llm-ts-example/common-backend';
 import { createAgent } from 'langchain';
 import { MemorySaver } from '@langchain/langgraph';
-import './instrumentation.js';
-import { selectEmbeddings } from './embeddings-models.js';
-import { createTool } from './tool.js';
-import { createRetriever } from './retriever.js';
+import { selectEmbeddings } from './embeddings-models';
+import { createTool } from './tool';
+import { createRetriever } from './retriever';
+import './instrumentation';
 
 export async function handle(
-  event: APIGatewayProxyEvent | APIGatewayProxyEventV2,
+  { body }: { body: string | null | undefined },
   output: NodeJS.WritableStream,
 ) {
-  logger.info('event', { event });
-  const { question, model, embeddingType, sessionId } = event.body ? JSON.parse(event.body) : { question: undefined, model: undefined, sessionId: uuidv7() };
+  logger.info('event.body', { event: { body } });
+  const { question, model, embeddingType, sessionId } = body ? JSON.parse(body) : { question: undefined, model: undefined, sessionId: uuidv7() };
 
   const modelType = model || 'gpt-5-nano';
 
