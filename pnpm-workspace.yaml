@@ -1,6 +1,7 @@
 packages:
   - ./common/core
-  - ./common/backend
+  - ./common/backend/core
+  - ./common/backend/langchain
   - ./basic/cdk
   - ./basic/app
   - ./basic/cdk/function
@@ -8,11 +9,12 @@ packages:
   - ./rag/app
   - ./rag/cdk
   - ./rag/cdk/function
-  - ./agents/agent-mastra
+  - ./agents/agent-ai-sdk
   - ./agents/agent-claude-agent-sdk
-  - ./agents/agent-strands
   - ./agents/agent-langchain
   - ./agents/agent-langchain-nextjs
+  - ./agents/agent-mastra
+  - ./agents/agent-strands
   - ./mcp/servers/postgresql-http
   - ./mcp/servers/weather
   - ./mcp/servers/weather-http

@@ -1,9 +1,9 @@
 import { AzureChatOpenAI } from '@langchain/openai';
 import { ChatBedrockConverse } from '@langchain/aws';
-import { logger } from './logger';
 import { LanguageModelLike } from '@langchain/core/language_models/base';
 import { BaseChatModel } from '@langchain/core/language_models/chat_models';
 
+import { logger } from '@llm-ts-example/common-backend-core';
 import { models } from '@llm-ts-example/common-core';
 
 interface SelectLlmResult {

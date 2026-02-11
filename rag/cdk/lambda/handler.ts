@@ -1,7 +1,8 @@
 import { CallbackHandler } from 'langfuse-langchain';
 // eslint-disable-next-line import/no-unresolved
 import { v7 as uuidv7 } from 'uuid';
-import { logger, selectLlm } from '@llm-ts-example/common-backend';
+import { logger } from '@llm-ts-example/common-backend-core';
+import { selectLlm } from '@llm-ts-example/common-backend-langchain';
 import { createAgent } from 'langchain';
 import { MemorySaver } from '@langchain/langgraph';
 import { selectEmbeddings } from './embeddings-models';
