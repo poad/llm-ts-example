@@ -38,7 +38,8 @@
     ],
     "composite": true,
     "paths": {
-      "@llm-ts-example/common-backend": ["../../common/backend"],
+      "@llm-ts-example/common-backend-core": ["../../common/backend/core"],
+      "@llm-ts-example/common-backend-langchain": ["../../common/backend/langchain"],
     }
   },
   "exclude": [

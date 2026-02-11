@@ -24,7 +24,11 @@
     "skipLibCheck": true,
     "typeRoots": [
       "./node_modules/@types"
-    ]
+    ],
+    "composite": true,
+    "paths": {
+      "@llm-ts-example/common-backend-core": ["../../common/backend/core"],
+    }
   },
   "exclude": [
     "node_modules",
