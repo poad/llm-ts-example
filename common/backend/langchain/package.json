@@ -1,5 +1,5 @@
 {
-  "name": "@llm-ts-example/common-backend",
+  "name": "@llm-ts-example/common-backend-langchain",
   "version": "1.0.0",
   "description": "",
   "type": "module",
@@ -24,10 +24,10 @@
     "lint-fix": "eslint . --fix"
   },
   "dependencies": {
-    "@aws-lambda-powertools/logger": "^2.31.0",
     "@langchain/aws": "^1.2.2",
     "@langchain/core": "^1.1.22",
     "@langchain/openai": "^1.2.7",
+    "@llm-ts-example/common-backend-core": "workspace:*",
     "@llm-ts-example/common-core": "workspace:*"
   },
   "devDependencies": {

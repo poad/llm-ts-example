@@ -5,22 +5,28 @@ LLM (Large Language Model) の実装例を集めたTypeScriptプロジェクト�
 ## プロジェクト一覧
 
 ### Basic Chat
+
 - [Basic Chat](./basic/) - LangChain.jsとLangGraph.jsを使用した基本的なチャットボット
 
 ### RAG (Retrieval Augmented Generation)
+
 - [RAG](./rag/) - LangChain.jsとLangGraph.jsを使用したRAG実装例
 
 ### Chat App
+
 - [Chat App](./chat-app/) - Next.jsとAI SDKを使用したチャットアプリケーション
 
 ### Agents
-- [Mastra](./agents/agent-mastra/) - Mastraフレームワークによるエージェント実装
+
+- [AI SDK](./agents/agent-ai-sdk/) - Vercel AI SDKとAWS Lambdaによるエージェント実装（Amazon Bedrock/Azure OpenAI対応）
+- [Claude Agent SDK](./agents/agent-claude-agent-sdk/) - Claude Agent SDKによるエージェント実装
 - [LangChain.js Agent](./agents/agent-langchain/) - LangChain.jsによるエージェント実装
 - [LangChain.js Agent (Next.js)](./agents/agent-langchain-nextjs/) - Next.jsとLangChain.jsによるエージェント実装
-- [Claude Agent SDK](./agents/agent-sdk/) - Claude Agent SDKによるエージェント実装
+- [Mastra](./agents/agent-mastra/) - Mastraフレームワークによるエージェント実装
 - [Strands TypeScript SDK](./agents/agent-strands/) - Strands TypeScript SDKによるエージェント実装
 
 ### MCP (Model Context Protocol)
+
 - [MCP Servers](./mcp/servers/) - MCPサーバーの実装例
   - [Weather](./mcp/servers/weather/) - 天気予報MCPサーバー
   - [Weather HTTP](./mcp/servers/weather-http/) - HTTP経由の天気予報MCPサーバー
@@ -29,6 +35,7 @@ LLM (Large Language Model) の実装例を集めたTypeScriptプロジェクト�
   - [HTTP Client](./mcp/clients/mcp-client-http/) - HTTP経由のMCPクライアント
 
 ### Common
+
 - [Common](./common/) - 共通ユーティリティとコンポーネント
 
 ## 技術スタック

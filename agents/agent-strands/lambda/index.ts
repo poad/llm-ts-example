@@ -1,4 +1,4 @@
-import { logger } from '@llm-ts-example/common-backend';
+import { logger } from '@llm-ts-example/common-backend-core';
 import { APIGatewayProxyEvent } from 'aws-lambda';
 import { createAgent } from './agent.js';
 

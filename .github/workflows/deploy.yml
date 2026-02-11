@@ -127,3 +127,41 @@ jobs:
           -c langsmith-project=${{ secrets.LANGCHAIN_PROJECT }} \
           -c pinecone-index=${{ vars.PINECONE_INDEX }} \
           -c pinecone-api-key=${{ secrets.PINECONE_API_KEY }}
+
+  deploy-aisdk-api:
+    # 同時実行すると CREATE_IN_PROGRESS や UPDATE_IN_PROGRESS 状態で cdk deploy を行う可能性があるため抑止する
+    concurrency:
+      group: "aisdk-api-examle-cloudformation"
+      cancel-in-progress: false
+
+    runs-on: ubuntu-latest
+    steps:
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@8df5847569e6427dd6c4fb1cf565c83acfa8afa7 # v6.0.0
+      with:
+        role-to-assume: ${{ env.OIDC_IAM_ROLE_ARN }}
+        role-session-name: GitHubActions
+        aws-region: ${{ env.AWS_REGION }}
+
+    - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+    - name: Use Node.js
+      uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+      with:
+        node-version: 'lts/*'
+        check-latest: true
+        package-manager-cache: false
+
+    - uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4.2.0
+      name: Install pnpm
+      with:
+        run_install: |
+          - recursive: true
+            args: [--no-frozen-lockfile]
+          - args: [--global, aws-cdk, esbuild]
+
+    - name: deploy
+      working-directory: ./agents/agent-ai-sdk
+      run: |
+        pnpm dlx aws-cdk@latest deploy \
+          --require-approval=never

@@ -2,7 +2,7 @@ import { APIGatewayProxyEvent } from 'aws-lambda';
 import { v7 as uuidv7 } from 'uuid';
 import { handle } from './handler.js';
 
-import { logger } from '@llm-ts-example/common-backend';
+import { logger } from '@llm-ts-example/common-backend-core';
 
 export const handler = awslambda.streamifyResponse(
   async (

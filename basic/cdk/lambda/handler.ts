@@ -1,7 +1,8 @@
 import './instrumentation';
 import { CallbackHandler } from 'langfuse-langchain';
 
-import { selectLlm, logger } from '@llm-ts-example/common-backend';
+import { logger } from '@llm-ts-example/common-backend-core';
+import { selectLlm } from '@llm-ts-example/common-backend-langchain';
 import { createApp } from './app.js';
 
 interface HandleProps { readonly question: string, readonly model?: string }
