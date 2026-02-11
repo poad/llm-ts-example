@@ -23,7 +23,7 @@ updates:
       - '/common/core/'
       - '/common/backend/'
       - '/agents/agent-mastra/'
-      - '/agents/agent-sdk/'
+      - '/agents/agent-claude-agent-sdk/'
       - '/agents/agent-strands/'
       - '/agents/agents-langchain/'
       - '/agents/agents-langchain-nextjs/'

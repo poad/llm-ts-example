@@ -22,9 +22,9 @@
     "@llm-ts-example/common-core": "workspace:*",
     "@solidjs/router": "^0.15.4",
     "@solidjs/testing-library": "^0.8.10",
-    "@stylistic/eslint-plugin": "^5.7.1",
+    "@stylistic/eslint-plugin": "^5.8.0",
     "@types/crypto-js": "^4.2.2",
-    "@types/node": "^22.19.10",
+    "@types/node": "^22.19.11",
     "crypto-js": "^4.2.0",
     "eslint": "^9.39.2",
     "eslint-import-resolver-typescript": "^4.4.4",
@@ -34,7 +34,7 @@
     "jiti": "^2.6.1",
     "solid-refresh": "^0.7.5",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.54.0",
+    "typescript-eslint": "^8.55.0",
     "vite": "^7.3.1",
     "vite-plugin-solid": "^2.11.10"
   }

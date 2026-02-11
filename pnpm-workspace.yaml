@@ -9,7 +9,7 @@ packages:
   - ./rag/cdk
   - ./rag/cdk/function
   - ./agents/agent-mastra
-  - ./agents/agent-sdk
+  - ./agents/agent-claude-agent-sdk
   - ./agents/agent-strands
   - ./agents/agent-langchain
   - ./agents/agent-langchain-nextjs
