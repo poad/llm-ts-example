@@ -18,7 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.2",
-    "@aws-sdk/client-bedrock-runtime": "^3.987.0",
+    "@aws-sdk/client-bedrock-runtime": "^3.988.0",
     "@inquirer/prompts": "^8.2.0",
     "@modelcontextprotocol/sdk": "^1.26.0",
     "dotenv": "^17.2.4"

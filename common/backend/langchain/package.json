@@ -24,8 +24,8 @@
     "lint-fix": "eslint . --fix"
   },
   "dependencies": {
-    "@langchain/aws": "^1.2.2",
-    "@langchain/core": "^1.1.22",
+    "@langchain/aws": "^1.2.3",
+    "@langchain/core": "^1.1.24",
     "@langchain/openai": "^1.2.7",
     "@llm-ts-example/common-backend-core": "workspace:*",
     "@llm-ts-example/common-core": "workspace:*"
