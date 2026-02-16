@@ -53,8 +53,8 @@ overrides:
   playwright@<1.55.1: '>=1.55.1'
   seroval@<=1.4.0: '>=1.4.1'
   tmp@<=0.2.3: '>=0.2.4'
-  # eslint: ">=10.0.0"
   # '@eslint/js': ">=10.0.0"
+  # eslint: ">=10.0.0"
   '@stylistic/eslint-plugin': '>=5.0.0'
 
 strictPeerDependencies: false
