@@ -2,6 +2,7 @@ import './instrumentation';
 import { CallbackHandler } from 'langfuse-langchain';
 
 import { logger } from '@llm-ts-example/common-backend-core';
+// eslint-disable-next-line import/no-unresolved
 import { selectLlm } from '@llm-ts-example/common-backend-langchain';
 import { createApp } from './app.js';
 

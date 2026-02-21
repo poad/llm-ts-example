@@ -1,4 +1,4 @@
-import { bedrock } from "@ai-sdk/amazon-bedrock";
+import { bedrock } from '@ai-sdk/amazon-bedrock';
 import { azure } from '@ai-sdk/azure';
 import { logger } from '@llm-ts-example/common-backend-core';
 import { models } from '@llm-ts-example/common-core';
@@ -6,7 +6,7 @@ import { ToolLoopAgent, smoothStream, ModelMessage } from 'ai';
 import { Readable, PassThrough } from 'node:stream';
 
 const createModel = (id?: string) => {
-  const modelInfo = models.find(m => m.id === id);
+  const modelInfo = models.find((m) => m.id === id);
   if (modelInfo) {
     if (modelInfo.platform === 'aws') {
       return bedrock(modelInfo.modelId);
@@ -16,7 +16,7 @@ const createModel = (id?: string) => {
     }
   }
   return null;
-}
+};
 
 const messages: ModelMessage[] = [];
 
@@ -27,15 +27,15 @@ export async function handle(
   try {
     const { prompt, modelId, session, id } = JSON.parse(body);
     if (!prompt) {
-      logger.error("No prompt in request");
-      output.write("error");
+      logger.error('No prompt in request');
+      output.write('error');
       return;
     }
 
     const model = createModel(modelId);
     if (!model) {
-      logger.error("No model in request");
-      output.write("error");
+      logger.error('No model in request');
+      output.write('error');
       return;
     }
 
@@ -54,7 +54,7 @@ export async function handle(
           model: modelId,
           thread_id: session,
           query_id: id,
-        }
+        },
       },
     });
 
@@ -69,7 +69,7 @@ export async function handle(
           inputTokens: usage.inputTokens,
           outputTokens: usage.outputTokens,
           finishReason,
-          toolsUsed: toolCalls?.map(tc => tc.toolName),
+          toolsUsed: toolCalls?.map((tc) => tc.toolName),
         });
       },
     });

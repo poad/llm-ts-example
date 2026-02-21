@@ -8,22 +8,22 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "test": "jest",
-    "cdk": "cdk"
+    "lint": "eslint",
+    "lint-fix": "eslint --fix"
   },
   "devDependencies": {
     "@eslint/compat": "^2.0.2",
     "@eslint/core": "^1.1.0",
     "@eslint/js": "^10.0.1",
-    "@stylistic/eslint-plugin": "^5.8.0",
+    "@stylistic/eslint-plugin": "^5.9.0",
     "@types/aws-lambda": "^8.10.160",
     "@types/node": "^24.10.13",
     "@vitest/eslint-plugin": "^1.6.9",
     "aws-cdk": "2.1105.0",
     "esbuild": "^0.27.3",
-    "eslint": "^9.39.2",
+    "eslint": "^9.39.3",
     "eslint-import-resolver-typescript": "^4.4.4",
-    "eslint-plugin-awscdk": "^4.2.0",
+    "eslint-plugin-awscdk": "^4.2.1",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-promise": "^7.2.1",
     "jiti": "^2.6.1",
@@ -35,14 +35,14 @@
     "vitest": "^4.0.18"
   },
   "dependencies": {
-    "@ai-sdk/amazon-bedrock": "^4.0.61",
-    "@ai-sdk/azure": "^3.0.30",
+    "@ai-sdk/amazon-bedrock": "^4.0.63",
+    "@ai-sdk/azure": "^3.0.31",
     "@llm-ts-example/common-backend-core": "workspace:*",
     "@llm-ts-example/common-core": "workspace:*",
     "@smithy/eventstream-codec": "^4.2.8",
-    "ai": "^6.0.90",
-    "aws-cdk-lib": "^2.238.0",
-    "constructs": "^10.5.0",
+    "ai": "^6.0.97",
+    "aws-cdk-lib": "^2.239.0",
+    "constructs": "^10.5.1",
     "dotenv": "^17.3.1",
     "zod": "^4.3.6"
   }

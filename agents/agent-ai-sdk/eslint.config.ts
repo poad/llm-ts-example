@@ -48,7 +48,6 @@ export default defineConfig(
       },
     },
     extends: [
-      //@ts-expect-error ignore type errors
       awscdkConfigs.recommended,
       importPlugin.flatConfigs.recommended,
       importPlugin.flatConfigs.typescript,

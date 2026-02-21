@@ -2,6 +2,7 @@ import { CallbackHandler } from 'langfuse-langchain';
 // eslint-disable-next-line import/no-unresolved
 import { v7 as uuidv7 } from 'uuid';
 import { logger } from '@llm-ts-example/common-backend-core';
+// eslint-disable-next-line import/no-unresolved
 import { selectLlm } from '@llm-ts-example/common-backend-langchain';
 import { createAgent } from 'langchain';
 import { MemorySaver } from '@langchain/langgraph';

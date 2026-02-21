@@ -13,14 +13,14 @@
   "devDependencies": {
     "@eslint/compat": "^2.0.2",
     "@eslint/js": "^10.0.1",
-    "@stylistic/eslint-plugin": "^5.8.0",
+    "@stylistic/eslint-plugin": "^5.9.0",
     "@types/aws-lambda": "^8.10.160",
     "@types/node": "24.10.1",
     "@vitest/eslint-plugin": "^1.6.9",
-    "aws-cdk": "^2.1106.0",
+    "aws-cdk": "^2.1106.1",
     "dotenv": "^17.3.1",
     "esbuild": "^0.25.12",
-    "eslint": "^9.39.2",
+    "eslint": "^9.39.3",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-promise": "^7.2.1",
@@ -34,11 +34,11 @@
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.31.0",
-    "@aws-sdk/credential-provider-node": "^3.972.9",
+    "@aws-sdk/credential-provider-node": "^3.972.10",
     "@llm-ts-example/common-backend-core": "workspace:*",
     "@strands-agents/sdk": "^0.1.6",
-    "aws-cdk-lib": "^2.238.0",
-    "constructs": "^10.5.0",
+    "aws-cdk-lib": "^2.239.0",
+    "constructs": "^10.5.1",
     "uuid": "^13.0.0"
   }
 }

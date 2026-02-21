@@ -24,19 +24,19 @@
     "lint-fix": "eslint . --fix"
   },
   "dependencies": {
-    "@langchain/aws": "^1.2.3",
-    "@langchain/core": "^1.1.26",
-    "@langchain/openai": "^1.2.8",
+    "@langchain/aws": "^1.2.4",
+    "@langchain/core": "^1.1.27",
+    "@langchain/openai": "^1.2.9",
     "@llm-ts-example/common-backend-core": "workspace:*",
     "@llm-ts-example/common-core": "workspace:*"
   },
   "devDependencies": {
     "@eslint/compat": "^2.0.2",
     "@eslint/js": "^10.0.1",
-    "@stylistic/eslint-plugin": "^5.8.0",
+    "@stylistic/eslint-plugin": "^5.9.0",
     "@types/node": "^24.10.13",
     "@vitest/eslint-plugin": "^1.6.9",
-    "eslint": "^9.39.2",
+    "eslint": "^9.39.3",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-promise": "^7.2.1",
