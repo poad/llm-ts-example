@@ -15,7 +15,7 @@
   "type": "module",
   "dependencies": {
     "@ai-sdk/amazon-bedrock": "^4.0.63",
-    "@ai-sdk/azure": "^3.0.31",
+    "@ai-sdk/azure": "^3.0.32",
     "@mastra/core": "^0.24.9",
     "@mastra/libsql": "^0.16.4",
     "@mastra/loggers": "^0.10.19",
@@ -35,6 +35,6 @@
     "eslint-plugin-promise": "^7.2.1",
     "mastra": "^0.18.9",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.56.0"
+    "typescript-eslint": "^8.56.1"
   }
 }

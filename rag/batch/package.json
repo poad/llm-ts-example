@@ -14,9 +14,9 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "@langchain/aws": "^1.2.4",
+    "@langchain/aws": "^1.2.5",
     "@langchain/classic": "^1.0.19",
-    "@langchain/community": "^1.1.17",
+    "@langchain/community": "^1.1.18",
     "@langchain/core": "^1.1.27",
     "@langchain/langgraph": "^1.1.5",
     "@langchain/openai": "^1.2.9",
@@ -27,7 +27,7 @@
     "dotenv": "^17.3.1",
     "html-to-text": "^9.0.5",
     "jsdom": "^27.4.0",
-    "langchain": "^1.2.25",
+    "langchain": "^1.2.26",
     "source-map-support": "^0.5.21"
   },
   "devDependencies": {
@@ -41,6 +41,6 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-promise": "^7.2.1",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.56.0"
+    "typescript-eslint": "^8.56.1"
   }
 }

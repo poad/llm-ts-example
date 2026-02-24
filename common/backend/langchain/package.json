@@ -24,7 +24,7 @@
     "lint-fix": "eslint . --fix"
   },
   "dependencies": {
-    "@langchain/aws": "^1.2.4",
+    "@langchain/aws": "^1.2.5",
     "@langchain/core": "^1.1.27",
     "@langchain/openai": "^1.2.9",
     "@llm-ts-example/common-backend-core": "workspace:*",
@@ -41,6 +41,6 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-promise": "^7.2.1",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.56.0"
+    "typescript-eslint": "^8.56.1"
   }
 }

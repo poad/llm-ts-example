@@ -28,13 +28,13 @@
     "jiti": "^2.6.1",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.56.0",
+    "typescript-eslint": "^8.56.1",
     "vite": "^7.3.1",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^4.0.18"
   },
   "dependencies": {
-    "@anthropic-ai/claude-agent-sdk": "^0.2.50",
+    "@anthropic-ai/claude-agent-sdk": "^0.2.52",
     "source-map-support": "^0.5.21",
     "uuid": "^13.0.0",
     "zod": "^4.3.6"
