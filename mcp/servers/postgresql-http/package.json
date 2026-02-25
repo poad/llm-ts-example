@@ -43,9 +43,9 @@
     "@aws-lambda-powertools/logger": "^2.31.0",
     "@hono/mcp": "^0.2.3",
     "@hono/node-server": "^1.19.9",
-    "@modelcontextprotocol/sdk": "^1.27.0",
+    "@modelcontextprotocol/sdk": "^1.27.1",
     "hono": "^4.12.2",
-    "pg": "^8.18.0",
+    "pg": "^8.19.0",
     "uuid": "^13.0.0",
     "zod": "^4.3.6"
   }

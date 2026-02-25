@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.31.0",
-    "@aws-sdk/credential-provider-node": "^3.972.11",
+    "@aws-sdk/credential-provider-node": "^3.972.13",
     "@llm-ts-example/common-backend-core": "workspace:*",
     "@strands-agents/sdk": "^0.1.6",
     "aws-cdk-lib": "^2.240.0",
