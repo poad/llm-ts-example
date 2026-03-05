@@ -15,7 +15,7 @@ export async function POST(req: Request) {
   } = await req.json();
   const result = streamText({
     model: webSearch ? 'perplexity/sonar' : bedrock(model),
-    messages: convertToModelMessages(messages),
+    messages: await convertToModelMessages(messages),
     system:
       'You are a helpful assistant that can answer questions and help with tasks',
   });

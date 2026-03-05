@@ -40,5 +40,6 @@ onlyBuiltDependencies:
 
 overrides:
   rollup@>=4.0.0 <4.59.0: '>=4.59.0'
+  jsondiffpatch: '>=0.7.2'
 
 strictPeerDependencies: false
