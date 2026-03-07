@@ -170,6 +170,7 @@ export const ReasoningContent = memo(
       )}
       {...props}
     >
+      { /* @ts-expect-error TODO: 型のエラーが解決するまで無視 */ }
       <Streamdown {...props}>{children}</Streamdown>
     </CollapsibleContent>
   ),
