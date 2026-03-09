@@ -67,7 +67,7 @@
     "langchain": "^1.2.30",
     "lucide-react": "^0.563.0",
     "media-chrome": "^4.18.0",
-    "motion": "^12.35.1",
+    "motion": "^12.35.2",
     "nanoid": "^5.1.6",
     "next": "^16.1.6",
     "react": "19.2.3",
