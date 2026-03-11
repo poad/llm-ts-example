@@ -1472,16 +1472,16 @@ importers:
         version: 2.31.0
       '@hono/mcp':
         specifier: ^0.2.4
-        version: 0.2.4(@modelcontextprotocol/sdk@1.27.1(@cfworker/json-schema@4.1.1)(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.12.6))(hono@4.12.6)(zod@4.3.6)
+        version: 0.2.4(@modelcontextprotocol/sdk@1.27.1(@cfworker/json-schema@4.1.1)(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.12.7))(hono@4.12.7)(zod@4.3.6)
       '@hono/node-server':
         specifier: ^1.19.11
-        version: 1.19.11(hono@4.12.6)
+        version: 1.19.11(hono@4.12.7)
       '@modelcontextprotocol/sdk':
         specifier: ^1.27.1
         version: 1.27.1(@cfworker/json-schema@4.1.1)(zod@4.3.6)
       hono:
-        specifier: ^4.12.6
-        version: 4.12.6
+        specifier: ^4.12.7
+        version: 4.12.7
       pg:
         specifier: ^8.20.0
         version: 8.20.0
@@ -8856,6 +8856,10 @@ packages:
     resolution: {integrity: sha512-KljEp+MeEEEIOT75qBo1UjqqB29fRMtlDEwCxcexOzdkUq6LR/vRvHk5pdROcxyOYyW1niq7Gb5pFVGy5R1eBw==}
     engines: {node: '>=16.9.0'}
 
+  hono@4.12.7:
+    resolution: {integrity: sha512-jq9l1DM0zVIvsm3lv9Nw9nlJnMNPOcAtsbsgiUhWcFzPE99Gvo6yRTlszSLLYacMeQ6quHD6hMfId8crVHvexw==}
+    engines: {node: '>=16.9.0'}
+
   html-encoding-sniffer@6.0.0:
     resolution: {integrity: sha512-CV9TW3Y3f8/wT0BRFc1/KAVQ3TUHiXmaAb6VW9vtiMFf7SLoMd1PdAc4W3KFOFETBJUb90KatHqlsZMWV+R9Gg==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
@@ -12994,17 +12998,21 @@ snapshots:
       protobufjs: 7.5.4
       yargs: 17.7.2
 
-  '@hono/mcp@0.2.4(@modelcontextprotocol/sdk@1.27.1(@cfworker/json-schema@4.1.1)(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.12.6))(hono@4.12.6)(zod@4.3.6)':
+  '@hono/mcp@0.2.4(@modelcontextprotocol/sdk@1.27.1(@cfworker/json-schema@4.1.1)(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.12.7))(hono@4.12.7)(zod@4.3.6)':
     dependencies:
       '@modelcontextprotocol/sdk': 1.27.1(@cfworker/json-schema@4.1.1)(zod@4.3.6)
-      hono: 4.12.6
-      hono-rate-limiter: 0.4.2(hono@4.12.6)
+      hono: 4.12.7
+      hono-rate-limiter: 0.4.2(hono@4.12.7)
       pkce-challenge: 5.0.1
       zod: 4.3.6
 
   '@hono/node-server@1.19.11(hono@4.12.6)':
     dependencies:
       hono: 4.12.6
+
+  '@hono/node-server@1.19.11(hono@4.12.7)':
+    dependencies:
+      hono: 4.12.7
 
   '@huggingface/jinja@0.2.2': {}
 
@@ -13727,7 +13735,7 @@ snapshots:
       esbuild: 0.25.12
       find-workspaces: 0.3.1
       fs-extra: 11.3.4
-      hono: 4.12.6
+      hono: 4.12.7
       local-pkg: 1.1.2
       resolve-from: 5.0.0
       resolve.exports: 2.0.3
@@ -20248,11 +20256,13 @@ snapshots:
       hono: 4.12.6
       zod: 4.3.6
 
-  hono-rate-limiter@0.4.2(hono@4.12.6):
+  hono-rate-limiter@0.4.2(hono@4.12.7):
     dependencies:
-      hono: 4.12.6
+      hono: 4.12.7
 
   hono@4.12.6: {}
+
+  hono@4.12.7: {}
 
   html-encoding-sniffer@6.0.0:
     dependencies:
