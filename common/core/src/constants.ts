@@ -24,14 +24,6 @@ export const models = [
     temperatureSupport: true,
   },
   {
-    id: 'nova-premier',
-    name: 'Amazon Nove Premier (Amazon Bedrock)',
-    modelId: 'us.amazon.nova-premier-v1:0',
-    selected: false,
-    platform: 'aws',
-    temperatureSupport: true,
-  },
-  {
     id: 'nova2-lite',
     name: 'Amazon Nove 2 Lite (Amazon Bedrock)',
     modelId: 'global.amazon.nova-2-lite-v1:0',
