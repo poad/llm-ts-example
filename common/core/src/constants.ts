@@ -57,4 +57,12 @@ export const models = [
     platform: 'azure',
     temperatureSupport: false,
   },
+  {
+    id: 'gpt-5.3-chat',
+    name: 'gpt-5.3-chat',
+    modelId: 'gpt-5.3ß-chat',
+    selected: false,
+    platform: 'azure',
+    temperatureSupport: false,
+  },
 ];
