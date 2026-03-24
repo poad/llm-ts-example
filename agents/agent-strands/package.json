@@ -17,7 +17,7 @@
     "@types/aws-lambda": "^8.10.161",
     "@types/node": "24.10.1",
     "@vitest/eslint-plugin": "^1.6.13",
-    "aws-cdk": "^2.1112.0",
+    "aws-cdk": "^2.1113.0",
     "dotenv": "^17.3.1",
     "esbuild": "^0.25.12",
     "eslint": "^9.39.4",
@@ -27,14 +27,14 @@
     "jiti": "^2.6.1",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.57.1",
+    "typescript-eslint": "^8.57.2",
     "vite": "^7.3.1",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^4.1.0"
+    "vitest": "^4.1.1"
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.32.0",
-    "@aws-sdk/credential-provider-node": "^3.972.24",
+    "@aws-sdk/credential-provider-node": "^3.972.25",
     "@llm-ts-example/common-backend-core": "workspace:*",
     "@strands-agents/sdk": "^0.1.6",
     "aws-cdk-lib": "^2.244.0",
