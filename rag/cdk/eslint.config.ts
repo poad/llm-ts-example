@@ -2,7 +2,7 @@ import { defineConfig } from 'eslint/config';
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import {configs, parser} from 'typescript-eslint';
-import eslintImport from 'eslint-plugin-import';
+import eslintImport from 'eslint-plugin-import-x';
 import cdkPlugin from "eslint-plugin-awscdk";
 
 import { includeIgnoreFile } from '@eslint/compat';

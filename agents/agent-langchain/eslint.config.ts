@@ -2,7 +2,7 @@ import { defineConfig } from 'eslint/config';
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import { configs, parser } from 'typescript-eslint';
-import eslintImport from 'eslint-plugin-import';
+import eslintImport from 'eslint-plugin-import-x';
 
 import { includeIgnoreFile } from '@eslint/compat';
 import path from 'node:path';
@@ -47,7 +47,7 @@ export default defineConfig(
       eslintImport.flatConfigs.typescript,
     ],
     settings: {
-      'import/resolver': {
+      'import-x/resolver': {
         // You will also need to install and configure the TypeScript resolver
         // See also https://github.com/import-js/eslint-import-resolver-typescript#configuration
         'typescript': true,

@@ -2,7 +2,7 @@ import { defineConfig } from 'eslint/config';
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import tseslint from 'typescript-eslint';
-import eslintImport from 'eslint-plugin-import';
+import eslintImport from 'eslint-plugin-import-x';
 
 import { includeIgnoreFile } from '@eslint/compat';
 import path from 'node:path';
@@ -56,7 +56,7 @@ export default defineConfig(
       '@stylistic/indent': ['error', 2],
       '@stylistic/comma-dangle': ['error', 'always-multiline'],
       '@stylistic/quotes': ['error', 'single'],
-      'import/no-unresolved': 'off',
+      'import-x/no-unresolved': 'off',
     },
   }
 );

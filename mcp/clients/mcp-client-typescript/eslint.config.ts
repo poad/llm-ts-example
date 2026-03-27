@@ -1,7 +1,7 @@
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import tseslint from 'typescript-eslint';
-import importPlugin from 'eslint-plugin-import';
+import importPlugin from 'eslint-plugin-import-x';
 
 // @ts-expect-error TODO: 型のエラーが解決するまで無視
 import pluginPromise from 'eslint-plugin-promise';
@@ -42,7 +42,7 @@ export default tseslint.config(
       sourceType: 'module',
     },
     settings: {
-      'import/resolver': {
+      'import-x/resolver': {
         typescript: true,
         node: true,
       },

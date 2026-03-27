@@ -1,12 +1,8 @@
 import { defineConfig, globalIgnores } from 'eslint/config';
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
-import react from 'eslint-plugin-react';
-import reactHooks from 'eslint-plugin-react-hooks';
 // @ts-expect-error ignore plugin type
 import pluginPromise from 'eslint-plugin-promise';
-// @ts-expect-error ignore type error
-import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
 import nextVitals from 'eslint-config-next/core-web-vitals';
 import nextTs from 'eslint-config-next/typescript';
 import globals from 'globals';
@@ -49,15 +45,9 @@ const eslintConfig = defineConfig([
   ...configs.strict,
   ...configs.stylistic,
   pluginPromise.configs['flat/recommended'],
-  reactHooks.configs.flat.recommended,
   {
     files: ['**/*.ts', '**/*.tsx'],
-    ...react.configs.flat.recommended,
-    ...react.configs.flat['jsx-runtime'],
-    ...jsxA11yPlugin.flatConfigs.recommended,
     languageOptions: {
-      ...react.configs.flat.recommended.languageOptions,
-      ...jsxA11yPlugin.flatConfigs.recommended.languageOptions,
       parser,
       globals: {
         ...globals.serviceworker,

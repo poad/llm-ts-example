@@ -2,7 +2,7 @@ import { Config, defineConfig } from 'eslint/config';
 import eslint from '@eslint/js';
 import { configs, parser } from 'typescript-eslint';
 import stylistic from '@stylistic/eslint-plugin';
-import importPlugin from 'eslint-plugin-import';
+import importPlugin from 'eslint-plugin-import-x';
 // @ts-expect-error ignore type errors
 import pluginPromise from 'eslint-plugin-promise';
 
@@ -54,7 +54,7 @@ const eslintConfig: Config[] = defineConfig(
       importPlugin.flatConfigs.typescript,
     ],
     settings: {
-      'import/resolver': {
+      'import-x/resolver': {
         // You will also need to install and configure the TypeScript resolver
         // See also https://github.com/import-js/eslint-import-resolver-typescript#configuration
         'typescript': true,

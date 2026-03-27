@@ -3,7 +3,7 @@
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import tseslint from 'typescript-eslint';
-import eslintImport from 'eslint-plugin-import';
+import eslintImport from 'eslint-plugin-import-x';
 
 import vitest from '@vitest/eslint-plugin';
 
@@ -43,8 +43,8 @@ export default tseslint.config(
     },
     extends: [eslintImport.flatConfigs.recommended, eslintImport.flatConfigs.typescript],
     settings: {
-      'import/internal-regex': '^~/',
-      'import/resolver': {
+      'import-x/internal-regex': '^~/',
+      'import-x/resolver': {
         node: {
           extensions: ['.ts', '.tsx'],
         },

@@ -1,14 +1,13 @@
 import { CallbackHandler } from 'langfuse-langchain';
-// eslint-disable-next-line import/no-unresolved
 import { v7 as uuidv7 } from 'uuid';
 import { logger } from '@llm-ts-example/common-backend-core';
- 
+
 import { selectLlm } from '@llm-ts-example/common-backend-langchain';
 import { createAgent } from 'langchain';
 import { MemorySaver } from '@langchain/langgraph';
-import { selectEmbeddings } from './embeddings-models';
-import { createTool } from './tool';
-import { createRetriever } from './retriever';
+import { selectEmbeddings } from './embeddings-models.js';
+import { createTool } from './tool.js';
+import { createRetriever } from './retriever.js';
 import './instrumentation';
 
 export async function handle(

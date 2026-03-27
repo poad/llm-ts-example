@@ -1,9 +1,8 @@
 'use strict';
 
-// eslint-disable-next-line import/no-unresolved
 import { APIGatewayProxyEvent, APIGatewayProxyEventV2 } from 'aws-lambda';
 import { logger } from '@llm-ts-example/common-backend-core';
-import { handle } from './handler';
+import { handle } from './handler.js';
 
 export const handler = awslambda.streamifyResponse(
   async (
