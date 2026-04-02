@@ -19,9 +19,9 @@
     "@types/aws-lambda": "^8.10.161",
     "@types/node": "^24.12.0",
     "@vitest/eslint-plugin": "^1.6.13",
-    "aws-cdk": "2.1105.0",
+    "aws-cdk": "^2.1113.0",
     "esbuild": "^0.27.4",
-    "eslint": "^9.39.4",
+    "eslint": "^10.1.0",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-awscdk": "^4.3.0",
     "eslint-plugin-import-x": "^4.16.2",
@@ -30,9 +30,8 @@
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.57.2",
-    "vite": "^7.3.1",
-    "vite-tsconfig-paths": "^6.1.1",
-    "vitest": "^4.1.2"
+    "vite": "^8.0.3",
+    "vitest": "^4.1.1"
   },
   "dependencies": {
     "@ai-sdk/amazon-bedrock": "^4.0.83",
@@ -40,8 +39,8 @@
     "@llm-ts-example/common-backend-core": "workspace:*",
     "@llm-ts-example/common-core": "workspace:*",
     "@smithy/eventstream-codec": "^4.2.12",
-    "ai": "^6.0.143",
-    "aws-cdk-lib": "^2.245.0",
+    "ai": "^6.0.138",
+    "aws-cdk-lib": "^2.244.0",
     "constructs": "^10.6.0",
     "dotenv": "^17.3.1",
     "zod": "^4.3.6"

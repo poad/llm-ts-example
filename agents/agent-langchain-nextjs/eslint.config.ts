@@ -34,6 +34,11 @@ const eslintConfig = defineConfig([
         project: ['./tsconfig-eslint.json'],
       },
     },
+    settings: {
+      react: {
+        version: '19.2',
+      },
+    },
     rules: {
       '@stylistic/semi': ['error', 'always'],
       '@stylistic/indent': ['error', 2],

@@ -35,6 +35,7 @@ export function Chat(props: ChatProps) {
   const [isLoading, setIsLoading] = createSignal(false);
 
   // スクロール用の参照
+  // eslint-disable-next-line no-unassigned-vars
   let messagesContainerRef: HTMLDivElement | undefined;
 
   // スクロールを最下部に固定する関数

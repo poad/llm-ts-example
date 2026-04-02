@@ -24,23 +24,36 @@ packages:
   - ./mcp/clients/mastra-mcp-client
   - ./chat-app
 
-autoInstallPeers: true
-
-enablePrePostScripts: true
-
 ignoredBuiltDependencies:
   - sharp
   - unrs-resolver
-
-legacyPeerDeps: true
+minimumReleaseAge: 10080 # 7 days in minutes
+minimumReleaseAgeExclude:
+  - '@aws-sdk/*'
+  - '@smithy/*'
+  - '@modelcontextprotocol/sdk'
+  - '@anthropic-ai/claude-agent-sdk'
+  - handlebars
+  - lodash-es
+  - path-to-regexp
 
 onlyBuiltDependencies:
   - esbuild
   - protobufjs
 
 overrides:
+  brace-expansion@<1.1.13: '>=1.1.13'
+  eslint-import-resolver-typescript: '>=4'
   file-type@>=13.0.0 <21.3.1: '>=21.3.1'
+  handlebars@>=4.0.0 <4.7.9: '>=4.7.9'
+  handlebars@>=4.0.0 <=4.7.8: '>=4.7.9'
+  handlebars@>=4.6.0 <=4.7.8: '>=4.7.9'
+  lodash-es@<=4.17.23: '>=4.18.0'
+  lodash-es@>=4.0.0 <=4.17.23: '>=4.18.0'
   rollup@>=4.0.0 <4.59.0: '>=4.59.0'
-  typescipt: ^6
+  semver: '>=7'
+  typescipt: '>=6'
 
 strictPeerDependencies: false
+
+trustPolicy: no-downgrade

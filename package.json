@@ -15,8 +15,6 @@
   "packageManager": "pnpm@10.33.0",
   "devDependencies": {
     "@llm-ts-example/common-backend-core": "workspace:*",
-    "@llm-ts-example/common-core": "workspace:*",
-    "pnpm": "^10.33.0",
-    "vitest": "^4.1.2"
+    "@llm-ts-example/common-core": "workspace:*"
   }
 }
