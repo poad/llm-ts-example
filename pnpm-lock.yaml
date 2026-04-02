@@ -44,8 +44,8 @@ importers:
         specifier: ^4.2.12
         version: 4.2.12
       ai:
-        specifier: ^6.0.141
-        version: 6.0.141(zod@4.3.6)
+        specifier: ^6.0.142
+        version: 6.0.142(zod@4.3.6)
       aws-cdk-lib:
         specifier: ^2.245.0
         version: 2.245.0(constructs@10.6.0)
@@ -473,8 +473,8 @@ importers:
         specifier: ^12.10.2
         version: 12.10.2(@types/react@19.2.14)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       ai:
-        specifier: ^6.0.141
-        version: 6.0.141(zod@4.3.6)
+        specifier: ^6.0.142
+        version: 6.0.142(zod@4.3.6)
       ansi-to-react:
         specifier: ^6.2.6
         version: 6.2.6(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -616,7 +616,7 @@ importers:
         version: 0.15.13(@mastra/core@0.24.9(@sinclair/typebox@0.34.48)(openapi-types@12.1.3)(react@19.2.4)(zod@4.3.6))(react@19.2.4)(zod@4.3.6)
       langfuse-vercel:
         specifier: ^3.38.6
-        version: 3.38.6(ai@6.0.141(zod@4.3.6))
+        version: 3.38.6(ai@6.0.142(zod@4.3.6))
       zod:
         specifier: ^4.3.6
         version: 4.3.6
@@ -1048,8 +1048,8 @@ importers:
         specifier: ^12.10.2
         version: 12.10.2(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       ai:
-        specifier: ^6.0.141
-        version: 6.0.141(zod@4.3.6)
+        specifier: ^6.0.142
+        version: 6.0.142(zod@4.3.6)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -1301,7 +1301,7 @@ importers:
         version: 0.14.5(@cfworker/json-schema@4.1.1)(@mastra/core@0.24.9(@sinclair/typebox@0.34.48)(openapi-types@12.1.3)(react@19.2.4)(zod@4.3.6))(@types/json-schema@7.0.15)(zod@4.3.6)
       langfuse-vercel:
         specifier: ^3.38.6
-        version: 3.38.6(ai@6.0.141(zod@4.3.6))
+        version: 3.38.6(ai@6.0.142(zod@4.3.6))
       zod:
         specifier: ^4.3.6
         version: 4.3.6
@@ -2059,6 +2059,12 @@ packages:
 
   '@ai-sdk/gateway@3.0.83':
     resolution: {integrity: sha512-LvlWujbSdEkTBXBLFtF7GS6riXdHhH0O+DpDrCaNQvXeHmSF2jKsOg7JWXiCgygAHM5cWFAO3JYmZp83DjiuBQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.25.76 || ^4.1.8
+
+  '@ai-sdk/gateway@3.0.84':
+    resolution: {integrity: sha512-RnUw6UNvkaw9MEaJU9cIjA+WBP+ZR5+M/9nfbfJHcGKtTbcWXijJuYKx9nYRnm+qU+iiakb0XvQA/vvho6lTsw==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
@@ -7245,6 +7251,12 @@ packages:
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
 
+  ai@6.0.142:
+    resolution: {integrity: sha512-ZoxAsnTL/dFg5WdcwC8QNhKVlLtqwwT3I7p/4i8IJJP+6ZwqF1ljuwMsAsPYYvppZ+RzUxjxxFGb1cbEhNH3dg==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.25.76 || ^4.1.8
+
   ajv-formats@3.0.1:
     resolution: {integrity: sha512-8iUql50EUR+uUcdRQ3HDqa6EVyo3docL8g5WJ3FNcWmu62IbkGUue/pEyLBW8VGKKucTPgqeks4fIU1DA4yowQ==}
     peerDependencies:
@@ -11761,6 +11773,13 @@ snapshots:
       zod: 4.3.6
 
   '@ai-sdk/gateway@3.0.83(zod@4.3.6)':
+    dependencies:
+      '@ai-sdk/provider': 3.0.8
+      '@ai-sdk/provider-utils': 4.0.21(zod@4.3.6)
+      '@vercel/oidc': 3.1.0
+      zod: 4.3.6
+
+  '@ai-sdk/gateway@3.0.84(zod@4.3.6)':
     dependencies:
       '@ai-sdk/provider': 3.0.8
       '@ai-sdk/provider-utils': 4.0.21(zod@4.3.6)
@@ -18440,6 +18459,14 @@ snapshots:
       '@opentelemetry/api': 1.9.0
       zod: 4.3.6
 
+  ai@6.0.142(zod@4.3.6):
+    dependencies:
+      '@ai-sdk/gateway': 3.0.84(zod@4.3.6)
+      '@ai-sdk/provider': 3.0.8
+      '@ai-sdk/provider-utils': 4.0.21(zod@4.3.6)
+      '@opentelemetry/api': 1.9.0
+      zod: 4.3.6
+
   ajv-formats@3.0.1(ajv@8.18.0):
     optionalDependencies:
       ajv: 8.18.0
@@ -20650,7 +20677,7 @@ snapshots:
       isstream: 0.1.2
       jsonwebtoken: 9.0.3
       mime-types: 2.1.35
-      retry-axios: 2.6.0(axios@1.14.0(debug@4.4.3))
+      retry-axios: 2.6.0(axios@1.14.0)
       tough-cookie: 4.1.4
     transitivePeerDependencies:
       - supports-color
@@ -21131,9 +21158,9 @@ snapshots:
       langfuse: 3.38.6
       langfuse-core: 3.38.6
 
-  langfuse-vercel@3.38.6(ai@6.0.141(zod@4.3.6)):
+  langfuse-vercel@3.38.6(ai@6.0.142(zod@4.3.6)):
     dependencies:
-      ai: 6.0.141(zod@4.3.6)
+      ai: 6.0.142(zod@4.3.6)
       langfuse: 3.38.6
       langfuse-core: 3.38.6
 
@@ -22752,7 +22779,7 @@ snapshots:
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
 
-  retry-axios@2.6.0(axios@1.14.0(debug@4.4.3)):
+  retry-axios@2.6.0(axios@1.14.0):
     dependencies:
       axios: 1.14.0(debug@4.4.3)
 
