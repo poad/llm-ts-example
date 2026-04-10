@@ -1,6 +1,6 @@
+import { createAgent } from './agent.js';
 import { logger } from '@llm-ts-example/common-backend-core';
 import { APIGatewayProxyEvent } from 'aws-lambda';
-import { createAgent } from './agent.js';
 
 export const handle = async ({ message: message = 'こんにちは！', model: model = 'us.amazon.nova-micro-v1:0' }: { message: string, model: string }, output: NodeJS.WritableStream) => {
   const agent = createAgent({ model });

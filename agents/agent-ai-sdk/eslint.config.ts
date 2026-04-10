@@ -2,7 +2,8 @@ import { defineConfig } from 'eslint/config';
 import eslint from '@eslint/js';
 import { configs, parser } from 'typescript-eslint';
 import stylistic from '@stylistic/eslint-plugin';
-import importPlugin from 'eslint-plugin-import-x';
+import { importX, createNodeResolver } from 'eslint-plugin-import-x';
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
 // @ts-expect-error ignore type errors
 import pluginPromise from 'eslint-plugin-promise';
 import { configs as awscdkConfigs } from 'eslint-plugin-awscdk';
@@ -36,6 +37,7 @@ export default defineConfig(
   {
     files: ['**/*.ts', '*.js'],
     plugins: {
+      'import-x': importX,
       '@stylistic': stylistic,
     },
     languageOptions: {
@@ -43,20 +45,23 @@ export default defineConfig(
       sourceType: 'module',
       parser,
       parserOptions: {
-        projectService: true,
+        projectService: {
+          allowDefaultProject: ['eslint.config.ts'],
+        },
         tsconfigRootDir: __dirname,
       },
     },
     extends: [
+      'import-x/flat/recommended',
       awscdkConfigs.recommended,
-      importPlugin.flatConfigs.recommended,
-      importPlugin.flatConfigs.typescript,
     ],
     settings: {
-      'import-x/resolver': {
-        'typescript': true,
-        'node': true,
-      },
+      'import-x/resolver-next': [
+        createTypeScriptImportResolver({
+          alwaysTryTypes: true,
+        }),
+        createNodeResolver(),
+      ],
     },
     rules: {
       '@stylistic/semi': ['error', 'always'],

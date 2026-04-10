@@ -1,7 +1,7 @@
-import { test } from 'vitest';
 import { stdout } from 'node:process';
 import { PassThrough } from 'node:stream';
 import { handle } from '../lambda/index.js';
+import { test } from 'vitest';
 
 function sleep(time: number) {
   return new Promise<void>((resolve) => {

@@ -1,7 +1,7 @@
-import dotenv from 'dotenv';
+import {config} from 'dotenv';
 import { createMcpClient } from './McpClient.js';
 
-dotenv.config();
+config();
 
 const region = process.env.AWS_REGION ?? 'us-west-2';
 const url = process.env.URL ?? 'http://localhost:3000/mcp';
