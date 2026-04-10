@@ -24,6 +24,7 @@ packages:
 ignoredBuiltDependencies:
   - sharp
   - unrs-resolver
+
 minimumReleaseAge: 10080 # 7 days in minutes
 minimumReleaseAgeExclude:
   - '@aws-sdk/*'
