@@ -38,28 +38,36 @@ minimumReleaseAgeExclude:
   - rolldown@1.0.0-rc.13
   - '@rolldown/*'
   - '@hono/node-server@1.19.13'
-  - hono@4.12.12
+  - hono@4.12.14
   - axios@1.15.0
   - '@next/*'
   - next@16.2.3
-  - langsmith@0.5.18
+  - langsmith@0.5.19
+  - dompurify@3.4.0
+  - follow-redirects@1.16.0
 
 overrides:
   '@anthropic-ai/sdk@>=0.79.0 <0.81.0': '>=0.81.0'
   '@hono/node-server@<1.19.13': '>=1.19.13'
   axios@<1.15.0: '>=1.15.0'
   brace-expansion@<1.1.13: '>=1.1.13'
+  dompurify@<=3.3.3: '>=3.4.0'
   eslint-import-resolver-typescript: '>=4'
   file-type@>=13.0.0 <21.3.1: '>=21.3.1'
+  follow-redirects@<=1.15.11: '>=1.16.0'
   handlebars@>=4.0.0 <4.7.9: '>=4.7.9'
   handlebars@>=4.0.0 <=4.7.8: '>=4.7.9'
   handlebars@>=4.6.0 <=4.7.8: '>=4.7.9'
   hono@<4.12.12: '>=4.12.12'
+  hono@<4.12.14: '>=4.12.14'
   hono@>=4.0.0 <=4.12.11: '>=4.12.12'
   langsmith@<=0.5.17: '>=0.5.18'
+  langsmith@<=0.5.18: '>=0.5.19'
   lodash-es@<=4.17.23: '>=4.18.0'
   lodash-es@>=4.0.0 <=4.17.23: '>=4.18.0'
   next@>=16.0.0-beta.0 <16.2.3: '>=16.2.3'
+  protobufjs@<7.5.5: '>=7.5.5'
+  protobufjs@>=8.0.0 <8.0.1: '>=8.0.1'
   rollup@>=4.0.0 <4.59.0: '>=4.59.0'
   semver: '>=7'
   typescipt: '>=6'
