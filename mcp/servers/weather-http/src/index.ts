@@ -1,10 +1,10 @@
-import express, { Request, Response } from 'express';
+import express, { json, Request, Response } from 'express';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
 import { z } from 'zod';
 
 const app = express();
-app.use(express.json());
+app.use(json());
 
 // Create server instance
 const server = new McpServer({
