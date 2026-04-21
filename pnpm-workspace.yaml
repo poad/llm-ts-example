@@ -11,6 +11,7 @@ packages:
   - ./rag/cdk/function
   - ./agents/agent-ai-sdk
   - ./agents/agent-claude-agent-sdk
+  - ./agents/agent-deepagents
   - ./agents/agent-langchain
   - ./agents/agent-langchain-nextjs
   - ./agents/agent-strands

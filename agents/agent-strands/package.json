@@ -18,7 +18,7 @@
     "@types/node": "24.10.1",
     "@vitest/eslint-plugin": "^1.6.15",
     "aws-cdk": "^2.1118.0",
-    "dotenv": "^17.4.1",
+    "dotenv": "^17.4.2",
     "esbuild": "^0.27.7",
     "eslint": "^10.2.0",
     "eslint-import-resolver-typescript": "^4.4.4",
@@ -27,16 +27,16 @@
     "jiti": "^2.6.1",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.58.1",
+    "typescript-eslint": "^8.58.2",
     "vite": "^8.0.8",
     "vitest": "^4.1.4"
   },
   "dependencies": {
-    "@aws-lambda-powertools/logger": "^2.32.0",
-    "@aws-sdk/credential-provider-node": "^3.972.31",
+    "@aws-lambda-powertools/logger": "^2.33.0",
+    "@aws-sdk/credential-provider-node": "^3.972.33",
     "@llm-ts-example/common-backend-core": "workspace:*",
     "@strands-agents/sdk": "^0.1.6",
-    "aws-cdk-lib": "^2.248.0",
+    "aws-cdk-lib": "^2.249.0",
     "constructs": "^10.6.0",
     "uuid": "^13.0.0"
   }
