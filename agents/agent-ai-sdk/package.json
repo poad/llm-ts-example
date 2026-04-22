@@ -35,12 +35,12 @@
   },
   "dependencies": {
     "@ai-sdk/amazon-bedrock": "^4.0.93",
-    "@ai-sdk/azure": "^3.0.53",
+    "@ai-sdk/azure": "^3.0.54",
     "@llm-ts-example/common-backend-core": "workspace:*",
     "@llm-ts-example/common-core": "workspace:*",
     "@smithy/eventstream-codec": "^4.2.14",
-    "ai": "^6.0.159",
-    "aws-cdk-lib": "^2.249.0",
+    "ai": "^6.0.161",
+    "aws-cdk-lib": "^2.250.0",
     "constructs": "^10.6.0",
     "dotenv": "^17.4.2",
     "zod": "^4.3.6"
