@@ -16,8 +16,8 @@
     "@stylistic/eslint-plugin": "^5.10.0",
     "@types/aws-lambda": "^8.10.161",
     "@types/node": "24.10.1",
-    "@vitest/eslint-plugin": "^1.6.15",
-    "aws-cdk": "^2.1118.0",
+    "@vitest/eslint-plugin": "^1.6.16",
+    "aws-cdk": "^2.1118.2",
     "dotenv": "^17.4.2",
     "esbuild": "^0.27.7",
     "eslint": "^10.2.0",
@@ -33,11 +33,11 @@
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.33.0",
-    "@aws-sdk/credential-provider-node": "^3.972.33",
+    "@aws-sdk/credential-provider-node": "^3.972.36",
     "@llm-ts-example/common-backend-core": "workspace:*",
     "@strands-agents/sdk": "^0.1.6",
     "aws-cdk-lib": "^2.250.0",
     "constructs": "^10.6.0",
-    "uuid": "^13.0.0"
+    "uuid": "^14.0.0"
   }
 }

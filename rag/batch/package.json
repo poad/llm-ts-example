@@ -18,7 +18,7 @@
     "@langchain/classic": "^1.0.31",
     "@langchain/community": "^1.1.27",
     "@langchain/core": "^1.1.40",
-    "@langchain/langgraph": "^1.2.8",
+    "@langchain/langgraph": "^1.2.9",
     "@langchain/openai": "^1.4.4",
     "@langchain/pinecone": "^1.0.1",
     "@pinecone-database/pinecone": "^6.1.4",

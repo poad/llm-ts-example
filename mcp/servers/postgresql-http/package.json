@@ -25,7 +25,7 @@
     "@types/node": "^24.12.2",
     "@types/pg": "^8.20.0",
     "@types/source-map-support": "^0.5.10",
-    "@vitest/eslint-plugin": "^1.6.15",
+    "@vitest/eslint-plugin": "^1.6.16",
     "dotenv": "^17.4.2",
     "eslint": "^10.2.0",
     "eslint-import-resolver-typescript": "^4.4.4",
@@ -45,7 +45,7 @@
     "@modelcontextprotocol/sdk": "^1.29.0",
     "hono": "^4.12.14",
     "pg": "^8.20.0",
-    "uuid": "^13.0.0",
+    "uuid": "^14.0.0",
     "zod": "^4.3.6"
   }
 }

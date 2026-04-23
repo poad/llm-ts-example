@@ -10,7 +10,7 @@
   "keywords": [],
   "author": "",
   "dependencies": {
-    "@aws-sdk/credential-provider-node": "^3.972.33",
+    "@aws-sdk/credential-provider-node": "^3.972.36",
     "@langchain/anthropic": "^1.3.26",
     "@langchain/aws": "^1.3.5",
     "@langchain/core": "^1.1.40",
