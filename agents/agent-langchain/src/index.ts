@@ -1,5 +1,14 @@
 import { MultiServerMCPClient } from "@langchain/mcp-adapters";
 import { createAgent } from "langchain";
+import dotenv from '@dotenvx/dotenvx';
+
+dotenv.config({ path: ['.env', '.env.test'], override: true });
+
+import { initialize } from './instrumentation.js';
+
+const exporters = process.env.ENABLED_OPENINFERENCE_TELEMETRY === 'true' ? await initialize() : { flush: async () => {
+  // pass
+ } };
 
 const client = new MultiServerMCPClient({
   'aws-knowledge-mcp-server': {
@@ -16,7 +25,7 @@ const client = new MultiServerMCPClient({
 const tools = await client.getTools();
 
 const agent = createAgent({
-  model: "bedrock:global.amazon.nova-2-lite-v1:0",
+  model: "bedrock:us.amazon.nova-lite-v1:0",
   systemPrompt: `
       You are an assistant that helps architects design systems using Amazon Web Services (AWS). Your primary function is to answer user questions based on AWS knowledge and propose system architectures. When responding, follow these guidelines:
 
@@ -37,6 +46,7 @@ const stream = await agent.stream({
 
 }, { streamMode: "values" });
 for await (const chunk of stream) {
-  console.log('Agent', chunk.messages);
+  console.info('Agent', { messages: chunk.messages });
 }
+await exporters.flush()
 process.exit(0);

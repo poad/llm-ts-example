@@ -1,8 +1,8 @@
-import './instrumentation';
+import './instrumentation.js';
 import { CallbackHandler } from 'langfuse-langchain';
 
 import { logger } from '@llm-ts-example/common-backend-core';
- 
+
 import { selectLlm } from '@llm-ts-example/common-backend-langchain';
 import { createApp } from './app.js';
 
