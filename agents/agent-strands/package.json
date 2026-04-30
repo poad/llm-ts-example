@@ -35,7 +35,7 @@
     "@aws-lambda-powertools/logger": "^2.33.0",
     "@aws-sdk/credential-provider-node": "^3.972.36",
     "@llm-ts-example/common-backend-core": "workspace:*",
-    "@strands-agents/sdk": "^0.1.6",
+    "@strands-agents/sdk": "^1.0.0",
     "aws-cdk-lib": "^2.250.0",
     "constructs": "^10.6.0",
     "uuid": "^14.0.0"

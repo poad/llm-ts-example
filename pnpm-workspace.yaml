@@ -30,13 +30,9 @@ allowBuilds:
 
 minimumReleaseAge: 10080 # 7 days in minutes
 minimumReleaseAgeExclude:
-  - fast-xml-parser@5.7.1
-  - fast-xml-builder@1.1.5
-  - uuid@14.0.0
-
   - '@typescript/native-preview@7.0.0-dev.20260418.1'
   - '@typescript/*'
-  - postcss@8.5.10
+  - '@strands-agents/sdk@1.0.0'
   - '@anthropic-ai/sdk@0.91.1'
 
 overrides:

@@ -6,9 +6,12 @@ export const handle = async ({ message: message = 'こんにちは！', model: m
   const agent = createAgent({ model });
   for await (const event of agent.stream(message)) {
     // console.log('[Event]', event.type);
-    if (event.type === 'modelContentBlockDeltaEvent') {
-      if (event.delta.type === 'textDelta') {
-        output.write(event.delta.text);
+    if (event.type === 'modelStreamUpdateEvent') {
+      if (event.event.type === 'modelContentBlockDeltaEvent' &&
+        event.event.delta.type === 'textDelta') {
+        if (event.event.delta.type === 'textDelta') {
+          output.write(event.event.delta.text);
+        }
       }
     }
   }

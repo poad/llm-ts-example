@@ -721,8 +721,8 @@ importers:
         specifier: workspace:*
         version: link:../../common/backend/core
       '@strands-agents/sdk':
-        specifier: ^0.1.6
-        version: 0.1.6(@cfworker/json-schema@4.1.1)(ws@8.20.0)
+        specifier: ^1.0.0
+        version: 1.0.0(@ai-sdk/provider@3.0.8)(@anthropic-ai/sdk@0.91.1(zod@4.3.6))(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.3.6))(@opentelemetry/api@1.9.1)(@opentelemetry/exporter-metrics-otlp-http@0.214.0(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-http@0.214.0(@opentelemetry/api@1.9.1))(@opentelemetry/resources@2.7.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-metrics@2.7.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-trace-base@2.7.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-trace-node@2.7.0(@opentelemetry/api@1.9.1))(express@5.2.1)(openai@6.34.0(ws@8.20.0)(zod@4.3.6))(zod@4.3.6)
       aws-cdk-lib:
         specifier: ^2.250.0
         version: 2.250.0(constructs@10.6.0)
@@ -5581,9 +5581,53 @@ packages:
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
-  '@strands-agents/sdk@0.1.6':
-    resolution: {integrity: sha512-nQl1WlCSGYjcpo/dkZU5v/0gaLaAwNW4oPJm2N6gqvTXsaUO33COYqQb80fgdF57xw38K+a6OYmdmA4CGXqrdw==}
+  '@strands-agents/sdk@1.0.0':
+    resolution: {integrity: sha512-8kKtChKhlg0Xb4NIoPu1e8bMdqYuMagynhdTvcpNqYXubALyg6W2xag82ns6ehvYzUl/mDr4DnpZCQRycn+e+w==}
     engines: {node: '>=20.0.0'}
+    peerDependencies:
+      '@a2a-js/sdk': ^0.3.10
+      '@ai-sdk/provider': ^3.0.0
+      '@anthropic-ai/sdk': ^0.91.1
+      '@aws-sdk/client-s3': ^3.943.0
+      '@google/genai': ^1.40.0
+      '@modelcontextprotocol/sdk': ^1.25.2
+      '@opentelemetry/api': ^1.9.0
+      '@opentelemetry/exporter-metrics-otlp-http': ^0.214.0
+      '@opentelemetry/exporter-trace-otlp-http': ^0.214.0
+      '@opentelemetry/resources': ^2.6.1
+      '@opentelemetry/sdk-metrics': ^2.6.1
+      '@opentelemetry/sdk-trace-base': ^2.6.1
+      '@opentelemetry/sdk-trace-node': ^2.6.1
+      express: ^5.1.0
+      openai: ^6.7.0
+      zod: ^4.1.12
+    peerDependenciesMeta:
+      '@a2a-js/sdk':
+        optional: true
+      '@ai-sdk/provider':
+        optional: true
+      '@anthropic-ai/sdk':
+        optional: true
+      '@aws-sdk/client-s3':
+        optional: true
+      '@google/genai':
+        optional: true
+      '@opentelemetry/exporter-metrics-otlp-http':
+        optional: true
+      '@opentelemetry/exporter-trace-otlp-http':
+        optional: true
+      '@opentelemetry/resources':
+        optional: true
+      '@opentelemetry/sdk-metrics':
+        optional: true
+      '@opentelemetry/sdk-trace-base':
+        optional: true
+      '@opentelemetry/sdk-trace-node':
+        optional: true
+      express:
+        optional: true
+      openai:
+        optional: true
 
   '@streamdown/cjk@1.0.3':
     resolution: {integrity: sha512-WRg8HR/gHbBoTgsMd91OKFUClIoDcEFVofJvluvEAyjx3KpU0aGgD9tGDqHkHj14ShoMSkX0IYetWGegTcwIJw==}
@@ -15084,18 +15128,28 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@strands-agents/sdk@0.1.6(@cfworker/json-schema@4.1.1)(ws@8.20.0)':
+  '@strands-agents/sdk@1.0.0(@ai-sdk/provider@3.0.8)(@anthropic-ai/sdk@0.91.1(zod@4.3.6))(@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.3.6))(@opentelemetry/api@1.9.1)(@opentelemetry/exporter-metrics-otlp-http@0.214.0(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-http@0.214.0(@opentelemetry/api@1.9.1))(@opentelemetry/resources@2.7.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-metrics@2.7.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-trace-base@2.7.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-trace-node@2.7.0(@opentelemetry/api@1.9.1))(express@5.2.1)(openai@6.34.0(ws@8.20.0)(zod@4.3.6))(zod@4.3.6)':
     dependencies:
       '@aws-sdk/client-bedrock-runtime': 3.1036.0
       '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@4.3.6)
+      '@opentelemetry/api': 1.9.1
+      '@types/json-schema': 7.0.15
+      uuid: 14.0.0
+      yaml: 2.8.3
       zod: 4.3.6
     optionalDependencies:
+      '@ai-sdk/provider': 3.0.8
+      '@anthropic-ai/sdk': 0.91.1(zod@4.3.6)
+      '@opentelemetry/exporter-metrics-otlp-http': 0.214.0(@opentelemetry/api@1.9.1)
+      '@opentelemetry/exporter-trace-otlp-http': 0.214.0(@opentelemetry/api@1.9.1)
+      '@opentelemetry/resources': 2.7.0(@opentelemetry/api@1.9.1)
+      '@opentelemetry/sdk-metrics': 2.7.0(@opentelemetry/api@1.9.1)
+      '@opentelemetry/sdk-trace-base': 2.7.0(@opentelemetry/api@1.9.1)
+      '@opentelemetry/sdk-trace-node': 2.7.0(@opentelemetry/api@1.9.1)
+      express: 5.2.1
       openai: 6.34.0(ws@8.20.0)(zod@4.3.6)
     transitivePeerDependencies:
-      - '@cfworker/json-schema'
       - aws-crt
-      - supports-color
-      - ws
 
   '@streamdown/cjk@1.0.3(@types/mdast@4.0.4)(micromark-util-types@2.0.2)(micromark@4.0.2)(react@19.2.3)(unified@11.0.5)':
     dependencies:
