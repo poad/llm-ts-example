@@ -5,14 +5,14 @@
   "type": "module",
   "scripts": {
     "build": "pnpm --filter @llm-ts-example/common-core build && pnpm --filter @llm-ts-example/common-backend build && pnpm -r build",
-    "clean": "pnpm -r --if-present --paralell clean",
-    "lint": "pnpm -r --if-present --paralell lint",
-    "lint-fix": "pnpm -r --if-present --paralell lint-fix"
+    "clean": "pnpm -r --if-present clean",
+    "lint": "pnpm -r --if-present lint",
+    "lint-fix": "pnpm -r --if-present lint-fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@11.0.0",
+  "packageManager": "pnpm@11.0.3",
   "devDependencies": {
     "@llm-ts-example/common-backend-core": "workspace:*",
     "@llm-ts-example/common-core": "workspace:*"
