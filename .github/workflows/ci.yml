@@ -30,12 +30,6 @@ jobs:
           - recursive: true
           - args: [--no-frozen-lockfile]
 
-    - name: Build
-      run: |
-        pnpm --filter @llm-ts-example/common-core build
-        pnpm --filter @llm-ts-example/common-backend-core build
-        pnpm --filter @llm-ts-example/common-backend-langchain build
-
     - name: Build all packages
       run: pnpm build
 
