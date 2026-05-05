@@ -25,11 +25,11 @@
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-awscdk": "^4.3.2",
     "eslint-plugin-import-x": "^4.16.2",
-    "eslint-plugin-promise": "^7.2.1",
+    "eslint-plugin-promise": "^7.3.0",
     "jiti": "^2.6.1",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.59.0",
+    "typescript-eslint": "^8.59.1",
     "vite": "^8.0.10",
     "vitest": "^4.1.5"
   },
@@ -40,7 +40,7 @@
     "@llm-ts-example/common-core": "workspace:*",
     "@smithy/eventstream-codec": "^4.2.14",
     "ai": "^6.0.168",
-    "aws-cdk-lib": "^2.250.0",
+    "aws-cdk-lib": "^2.251.0",
     "constructs": "^10.6.0",
     "dotenv": "^17.4.2",
     "zod": "^4.3.6"
