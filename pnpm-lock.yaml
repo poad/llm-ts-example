@@ -126,9 +126,6 @@ importers:
       '@anthropic-ai/claude-agent-sdk':
         specifier: ^0.2.124
         version: 0.2.124(@cfworker/json-schema@4.1.1)(zod@4.4.1)
-      source-map-support:
-        specifier: ^0.5.21
-        version: 0.5.21
       uuid:
         specifier: ^14.0.0
         version: 14.0.0
@@ -18253,7 +18250,7 @@ snapshots:
       jsonwebtoken: 9.0.3
       load-esm: 1.0.3
       mime-types: 2.1.35
-      retry-axios: 2.6.0(axios@1.15.2(debug@4.4.3))
+      retry-axios: 2.6.0(axios@1.15.2)
       tough-cookie: 4.1.4
     transitivePeerDependencies:
       - supports-color
@@ -20063,7 +20060,7 @@ snapshots:
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
 
-  retry-axios@2.6.0(axios@1.15.2(debug@4.4.3)):
+  retry-axios@2.6.0(axios@1.15.2):
     dependencies:
       axios: 1.15.2(debug@4.4.3)
 

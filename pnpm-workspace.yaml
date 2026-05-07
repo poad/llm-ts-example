@@ -28,6 +28,8 @@ allowBuilds:
   sharp: false
   unrs-resolver: false
 
+blockExoticSubdeps: true
+
 minimumReleaseAge: 10080 # 7 days in minutes
 minimumReleaseAgeExclude:
   - '@typescript/native-preview@7.0.0-dev.20260418.1'
