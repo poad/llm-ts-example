@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@langchain/aws": "^1.3.5",
-    "@langchain/core": "^1.1.42",
+    "@langchain/core": "^1.1.44",
     "@langchain/openai": "^1.4.5",
     "@llm-ts-example/common-backend-core": "workspace:*",
     "@llm-ts-example/common-core": "workspace:*"
@@ -36,7 +36,7 @@
     "@stylistic/eslint-plugin": "^5.10.0",
     "@types/node": "^24.12.2",
     "@vitest/eslint-plugin": "^1.6.16",
-    "eslint": "^10.2.1",
+    "eslint": "^10.3.0",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import-x": "^4.16.2",
     "eslint-plugin-promise": "^7.3.0",
