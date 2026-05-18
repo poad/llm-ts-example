@@ -18,14 +18,14 @@
     "start": "node -r source-map-support/register build/server.js"
   },
   "devDependencies": {
-    "@eslint/compat": "^2.0.5",
+    "@eslint/compat": "^2.1.0",
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
     "@types/aws-lambda": "^8.10.161",
-    "@types/node": "^24.12.2",
+    "@types/node": "^24.12.4",
     "@types/pg": "^8.20.0",
     "@types/source-map-support": "^0.5.10",
-    "@vitest/eslint-plugin": "^1.6.16",
+    "@vitest/eslint-plugin": "^1.6.17",
     "dotenv": "^17.4.2",
     "eslint": "^10.3.0",
     "eslint-import-resolver-typescript": "^4.4.4",
@@ -34,9 +34,9 @@
     "source-map-support": "^0.5.21",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.59.2",
-    "vite": "^8.0.11",
-    "vitest": "^4.1.5"
+    "typescript-eslint": "^8.59.3",
+    "vite": "^8.0.12",
+    "vitest": "^4.1.6"
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.33.0",
