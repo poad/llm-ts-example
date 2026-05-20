@@ -25,7 +25,7 @@
     "@opentelemetry/sdk-trace-node": "^2.7.1",
     "@opentelemetry/semantic-conventions": "^1.41.1",
     "@traceloop/node-server-sdk": "^0.25.0",
-    "deepagents": "^1.10.1",
+    "deepagents": "^1.10.2",
     "dotenv": "^17.4.2",
     "zod": "^4.4.3"
   },
