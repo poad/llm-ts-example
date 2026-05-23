@@ -50,6 +50,7 @@ minimumReleaseAgeExclude:
   - '@opentelemetry/*'
   - protobufjs@8.0.2
   - ws@8.20.1
+  - qs@6.15.2
 
 overrides:
   '@anthropic-ai/sdk@>=0.79.0 <0.91.1': ^0.91.1
@@ -69,6 +70,7 @@ overrides:
   protobufjs@<7.5.5: '>=7.5.5'
   protobufjs@>=8.0.0 <8.0.1: '>=8.0.1'
   protobufjs@>=8.0.0 <=8.0.1: ^8.0.2
+  qs@>=6.11.1 <=6.15.1: ^6.15.2
   semver: '>=7'
   uuid@<14.0.0: '>=14.0.0'
   ws@>=8.0.0 <8.20.1: ^8.20.1

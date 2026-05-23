@@ -27,7 +27,7 @@
     "@types/source-map-support": "^0.5.10",
     "@vitest/eslint-plugin": "^1.6.17",
     "dotenv": "^17.4.2",
-    "eslint": "^10.3.0",
+    "eslint": "^10.4.0",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import-x": "^4.16.2",
     "eslint-plugin-promise": "^7.3.0",
