@@ -10,10 +10,10 @@
   "keywords": [],
   "author": "",
   "dependencies": {
-    "@aws-sdk/credential-provider-node": "^3.972.42",
-    "@langchain/anthropic": "^1.3.29",
-    "@langchain/aws": "^1.3.7",
-    "@langchain/core": "^1.1.46",
+    "@aws-sdk/credential-provider-node": "^3.972.43",
+    "@langchain/anthropic": "^1.4.0",
+    "@langchain/aws": "^1.3.8",
+    "@langchain/core": "^1.1.47",
     "@langchain/mcp-adapters": "^1.1.3",
     "@opentelemetry/api": "^1.9.1",
     "@opentelemetry/exporter-trace-otlp-http": "^0.214.0",
@@ -38,11 +38,11 @@
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import-x": "^4.16.2",
     "eslint-plugin-promise": "^7.3.0",
-    "langchain": "^1.4.0",
-    "tsx": "^4.22.2",
+    "langchain": "^1.4.1",
+    "tsx": "^4.22.3",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.59.3",
+    "typescript-eslint": "^8.59.4",
     "vite": "^8.0.13",
-    "vitest": "^4.1.6"
+    "vitest": "^4.1.7"
   }
 }
