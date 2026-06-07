@@ -1,5 +1,6 @@
-import { CheerioWebBaseLoader } from '@langchain/community/document_loaders/web/cheerio';
-import { RecursiveCharacterTextSplitter } from '@langchain/classic/text_splitter';
+import * as cheerio from 'cheerio';
+import { RecursiveCharacterTextSplitter } from '@langchain/textsplitters';
+import { Document } from '@langchain/core/documents';
 import { Pinecone as PineconeClient } from '@pinecone-database/pinecone';
 import { PineconeStore } from '@langchain/pinecone';
 import { listEmbeddings } from './embeddings-models.js';
@@ -8,9 +9,14 @@ import 'source-map-support/register.js';
 
 console.info('Loading HTMLs');
 
-const loader = new CheerioWebBaseLoader('https://qiita.com/terms');
-
-const docs = await loader.load();
+const url = 'https://qiita.com/terms';
+const response = await fetch(url);
+const html = await response.text();
+const dom = cheerio.load(html, {}, true);
+const doc = new Document({
+  pageContent: dom('body').text(),
+  metadata: { source: url },
+});
 
 console.info('Split chunks');
 
@@ -19,7 +25,7 @@ const splitter = new RecursiveCharacterTextSplitter({
   chunkOverlap: 50,
 });
 
-const splitDocs = await splitter.splitDocuments(docs);
+const splitDocs = await splitter.splitDocuments([doc]);
 
 console.info('Add documents');
 
