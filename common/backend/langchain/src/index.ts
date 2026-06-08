@@ -1,3 +1,3 @@
-import { selectLlm } from './langchain';
+import { selectLlm } from './langchain.js';
 
 export { selectLlm };

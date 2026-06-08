@@ -32,7 +32,7 @@ export async function handle(
 
     logger.debug(`Langfuse: ${langfuseHandler ? 'enable' : 'disable'}`);
 
-    const chain = createApp({model, modelName});
+    const chain = await createApp({ model, modelName });
 
     const stream = await chain.streamEvents(
       { messages: [{ role: 'user', content: question }] },

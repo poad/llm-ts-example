@@ -6,7 +6,7 @@ import { v7 as uuidv7 } from 'uuid';
 import { logger } from '@llm-ts-example/common-backend-core';
 
 import { selectLlm } from '@llm-ts-example/common-backend-langchain';
-import { createAgent } from 'langchain';
+import { createAgent, initChatModel } from 'langchain';
 import { MemorySaver } from '@langchain/langgraph';
 import './instrumentation';
 
@@ -45,7 +45,7 @@ export async function handle(
     const checkpointer = new MemorySaver();
 
     const agent = createAgent({
-      model,
+      model: await initChatModel(model.model, model.options),
       tools: [tool],
       systemPrompt,
       checkpointer,

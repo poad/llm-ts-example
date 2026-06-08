@@ -1,5 +1,5 @@
-import { promises as fs } from 'fs';
-import { fileURLToPath } from 'url';
+import { promises as fs } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 

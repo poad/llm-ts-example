@@ -5,7 +5,6 @@ import { Pinecone as PineconeClient } from '@pinecone-database/pinecone';
 import { PineconeStore } from '@langchain/pinecone';
 import { listEmbeddings } from './embeddings-models.js';
 import 'dotenv/config';
-import 'source-map-support/register.js';
 
 console.info('Loading HTMLs');
 

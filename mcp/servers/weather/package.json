@@ -20,7 +20,6 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@eslint/compat": "^2.1.0",
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
     "@types/node": "^24.12.4",
@@ -30,7 +29,7 @@
     "eslint-plugin-promise": "^7.3.0",
     "jiti": "^2.7.0",
     "tsx": "^4.22.4",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.60.0"
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.60.1"
   }
 }

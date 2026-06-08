@@ -16,7 +16,6 @@
     "uuid": "^14.0.0"
   },
   "devDependencies": {
-    "@eslint/compat": "^2.1.0",
     "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^10.0.1",
     "@llm-ts-example/common-core": "workspace:*",
@@ -33,8 +32,8 @@
     "eslint-plugin-solid": "^0.14.5",
     "jiti": "^2.7.0",
     "solid-refresh": "^0.7.8",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.60.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.60.1",
     "vite": "^8.0.16",
     "vite-plugin-solid": "^2.11.12"
   }

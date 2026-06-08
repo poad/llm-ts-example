@@ -5,17 +5,18 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./src/index.ts",
+      "import": "./src/index.ts"
     },
     "./*": "./*"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
   "files": [
+    "src",
     "dist"
   ],
-  "types": "./dist/index.d.ts",
+  "types": "./src/index.ts",
   "scripts": {
     "build": "tsc --build --clean && tsc",
     "clean": "tsc --build --clean",
@@ -28,7 +29,6 @@
     "@llm-ts-example/common-core": "workspace:*"
   },
   "devDependencies": {
-    "@eslint/compat": "^2.1.0",
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
     "@types/node": "^24.12.4",
@@ -37,7 +37,7 @@
     "eslint-import-resolver-typescript": "^4.4.5",
     "eslint-plugin-import-x": "^4.16.2",
     "eslint-plugin-promise": "^7.3.0",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.60.0"
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.60.1"
   }
 }
