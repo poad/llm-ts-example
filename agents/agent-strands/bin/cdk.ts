@@ -6,7 +6,7 @@ import * as cdk from 'aws-cdk-lib';
 
 const app = new cdk.App();
 
-new CloudfrontCdnTemplateStack(app, 'agent-strands-lambda-example', {
+new CloudfrontCdnTemplateStack(app, 'AgentStrandsLambdaExample', {
   appName: 'agent-strands-lambda-example',
   env: {
     account: app.account,

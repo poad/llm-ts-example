@@ -8,7 +8,8 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "inlineSourceMap": true
+    "inlineSourceMap": true,
+    "rootDir": "src"
   },
-  "exclude": ["node_modules", "build"]
+  "exclude": ["node_modules", "build", "eslint.config.ts"]
 }

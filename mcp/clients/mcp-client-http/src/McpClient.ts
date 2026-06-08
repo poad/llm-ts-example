@@ -1,26 +1,17 @@
 import { BedrockRuntimeClient, ConverseCommand, ConverseCommandInput, Message, Tool, ToolInputSchema } from '@aws-sdk/client-bedrock-runtime';
 import { input } from '@inquirer/prompts';
-import { Client } from '@modelcontextprotocol/sdk/client/index.js';
-import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';
-import { SSEClientTransport } from '@modelcontextprotocol/sdk/client/sse.js';
+import { Client } from '@modelcontextprotocol/sdk/client';
+import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp';
 
 async function createClient(baseUrl: URL) {
-  try {
-    const client = new Client({ name: 'mcp-client-cli', version: '1.0.0' });
-    // Initialize transport and connect to server
-    const transport = new StreamableHTTPClientTransport(
-      baseUrl,
-    );
-    await client.connect(transport);
-    console.log('Connected using Streamable HTTP transport');
-    return client;
-  } catch {
-    const client = new Client({ name: 'mcp-client-cli', version: '1.0.0' });
-    const sseTransport = new SSEClientTransport(baseUrl);
-    await client.connect(sseTransport);
-    console.log('Connected using SSE transport');
-    return client;
-  }
+  const client = new Client({ name: 'mcp-client-cli', version: '1.0.0' });
+  // Initialize transport and connect to server
+  const transport = new StreamableHTTPClientTransport(
+    baseUrl,
+  );
+  await client.connect(transport);
+  console.log('Connected using Streamable HTTP transport');
+  return client;
 }
 
 interface CreateConverseClientProps {

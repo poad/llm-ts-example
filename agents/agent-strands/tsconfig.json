@@ -30,6 +30,7 @@
       "node"
     ],
     "composite": true,
+    "noEmit": true,
     "paths": {
       "@llm-ts-example/common-backend": ["../../common/backend"],
       "@llm-ts-example/common-core": ["../../common/core"]

@@ -2,7 +2,7 @@ import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 
 interface CloudfrontCdnTemplateStackProps extends cdk.StackProps {
-  appName: string
+  readonly appName: string
 }
 
 export class CloudfrontCdnTemplateStack extends cdk.Stack {

@@ -1,14 +1,16 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "rootDir": "src",
     "outDir": "./build",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "inlineSourceMap": true
+    "inlineSourceMap": true,
+    "types": ["node"]
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "build", "eslint.config.ts"]
 }

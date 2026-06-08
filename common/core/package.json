@@ -5,14 +5,15 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./src/index.ts",
+      "import": "./src/index.ts"
     }
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
   "files": [
+    "src",
     "dist"
   ],
   "scripts": {
@@ -23,16 +24,15 @@
     "lint-fix": "eslint . --fix"
   },
   "devDependencies": {
-    "@eslint/compat": "^2.1.0",
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
-    "@types/node": "^24.12.4",
-    "@vitest/eslint-plugin": "^1.6.18",
+    "@types/node": "^24.13.1",
+    "@vitest/eslint-plugin": "^1.6.19",
     "eslint": "^10.4.1",
-    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-import-resolver-typescript": "^4.4.5",
     "eslint-plugin-import-x": "^4.16.2",
     "eslint-plugin-promise": "^7.3.0",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.60.0"
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.60.1"
   }
 }

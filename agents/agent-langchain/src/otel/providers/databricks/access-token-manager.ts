@@ -1,7 +1,7 @@
 import { logger } from '../../../logging.js';
-import dotenv from '@dotenvx/dotenvx';
+import { config as dotenvXConfig } from '@dotenvx/dotenvx';
 
-dotenv.config({ path: ['.env', '.env.test'], override: true });
+dotenvXConfig({ path: ['.env', '.env.test'], override: true });
 
 /**
  * OAuthアクセストークンのキャッシュを表現するインターフェース。

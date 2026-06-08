@@ -1,3 +1,4 @@
+import { buildCommon, buildFrontend } from './process/setup.js';
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import * as s3 from 'aws-cdk-lib/aws-s3';
@@ -8,7 +9,6 @@ import * as nodejs from 'aws-cdk-lib/aws-lambda-nodejs';
 import * as awslogs from 'aws-cdk-lib/aws-logs';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as deployment from 'aws-cdk-lib/aws-s3-deployment';
-import { buildCommon, buildFrontend } from './process/setup.js';
 
 interface CloudFrontProps {
   readonly comment: string;

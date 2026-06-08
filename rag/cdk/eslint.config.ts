@@ -1,13 +1,12 @@
-import { defineConfig } from 'eslint/config';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { defineConfig, includeIgnoreFile } from 'eslint/config';
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import {configs, parser} from 'typescript-eslint';
-import eslintImport from 'eslint-plugin-import-x';
-import cdkPlugin from "eslint-plugin-awscdk";
-
-import { includeIgnoreFile } from '@eslint/compat';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { importX, createNodeResolver } from 'eslint-plugin-import-x';
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
+import { configs as cdkPluginConfigs } from 'eslint-plugin-awscdk';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -34,32 +33,63 @@ export default defineConfig(
   eslint.configs.recommended,
   ...configs.strict,
   ...configs.stylistic,
+  importX.flatConfigs.recommended,
+  importX.flatConfigs.typescript,
   {
-    files: ['{bin,lib,lambda}/**/*.ts'],
+    files: [
+      'bin/**/*.ts',
+      'lib/**/*.ts',
+      'lambda/**/*.ts',
+      'eslint.config.ts',
+      'vitest.config.ts',
+    ],
     languageOptions: {
       parser,
       ecmaVersion: 'latest',
       sourceType: 'module',
       parserOptions: {
         tsconfigRootDir: __dirname,
-        allowDefaultProject: ['*.ts'],
+        projectService: {
+          allowDefaultProject: ['eslint.config.ts', 'vitest.config.ts'],
+        },
       },
     },
     plugins: {
       '@stylistic': stylistic,
     },
+    settings: {
+      'import-x/resolver-next': [
+        createTypeScriptImportResolver({
+          alwaysTryTypes: true,
+        }),
+        createNodeResolver(),
+      ],
+    },
     extends: [
-      //@ts-expect-error ignore type errors
-      cdkPlugin.configs.recommended,
-      eslintImport.flatConfigs.recommended,
-      eslintImport.flatConfigs.typescript,
+      cdkPluginConfigs.recommended,
     ],
     rules: {
       '@stylistic/semi': ['error', 'always'],
       '@stylistic/indent': ['error', 2],
       '@stylistic/comma-dangle': ['error', 'always-multiline'],
       '@stylistic/quotes': ['error', 'single'],
-      'awscdk/require-jsdoc': 'off',
+
+      'import-x/order': [
+        'error',
+        {
+          'groups': [
+            // Imports of builtins are first
+            'builtin',
+            // Then sibling and parent imports. They can be mingled together
+            ['sibling', 'parent'],
+            // Then index file imports
+            'index',
+            // Then any arcane TypeScript imports
+            'object',
+            // Then the omitted imports: internal, external, type, unknown
+          ],
+        },
+      ],
     },
-  }
+  },
 );

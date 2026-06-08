@@ -1,10 +1,10 @@
 import './instrumentation.js';
+import { createApp } from './app.js';
 import { CallbackHandler } from 'langfuse-langchain';
 
 import { logger } from '@llm-ts-example/common-backend-core';
 
 import { selectLlm } from '@llm-ts-example/common-backend-langchain';
-import { createApp } from './app.js';
 
 interface HandleProps { readonly question: string, readonly model?: string }
 
@@ -32,7 +32,7 @@ export async function handle(
 
     logger.debug(`Langfuse: ${langfuseHandler ? 'enable' : 'disable'}`);
 
-    const chain = createApp({model, modelName});
+    const chain = await createApp({ model, modelName });
 
     const stream = await chain.streamEvents(
       { messages: [{ role: 'user', content: question }] },

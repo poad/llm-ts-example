@@ -35,7 +35,7 @@
     "types": [
       "node"
     ],
-    "composite": true,
+    "noEmit": true,
     "paths": {
       "@llm-ts-example/common-backend-core": ["../../common/backend/core"],
       "@llm-ts-example/common-backend-langchain": ["../../common/backend/langchain"],
@@ -44,7 +44,7 @@
   "exclude": [
     "node_modules",
     "cdk.out",
-    "eslint.config.*",
+    "eslint.config.ts",
     "vitest.config.ts"
   ]
 }

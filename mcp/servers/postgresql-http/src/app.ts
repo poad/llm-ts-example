@@ -1,6 +1,6 @@
+import { createMcpServer } from './route.js';
 import { Logger } from '@aws-lambda-powertools/logger';
 import { StreamableHTTPTransport } from '@hono/mcp';
-import { createMcpServer } from './route';
 import { Context, Hono } from 'hono';
 import { BlankEnv, BlankInput } from 'hono/types';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';

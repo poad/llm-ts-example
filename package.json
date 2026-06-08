@@ -5,16 +5,23 @@
   "type": "module",
   "scripts": {
     "build": "pnpm --filter @llm-ts-example/common-core build && pnpm --filter @llm-ts-example/common-backend build && pnpm -r build",
-    "clean": "pnpm -r --if-present clean",
     "lint": "pnpm -r --if-present lint",
     "lint-fix": "pnpm -r --if-present lint-fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@11.5.2",
+  "packageManager": "pnpm@11.6.0",
   "devDependencies": {
     "@llm-ts-example/common-backend-core": "workspace:*",
     "@llm-ts-example/common-core": "workspace:*"
-  }
+  },
+  "engines": {
+    "runtime": {
+      "name": "node",
+      "version": "^24.16.0",
+      "onFail": "download"
+    }
+  },
+  "dependencies": {}
 }

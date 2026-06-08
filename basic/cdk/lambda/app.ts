@@ -1,10 +1,11 @@
-import { LanguageModelLike } from '@langchain/core/language_models/base';
-import { BaseChatModel } from '@langchain/core/language_models/chat_models';
-import { createAgent } from 'langchain';
+import { createAgent, initChatModel } from 'langchain';
 
-export const createApp = ({ model }: { model: LanguageModelLike & BaseChatModel, modelName: string }) => {
+export const createApp = async ({ model: { model, options} }: { model: {
+  model: string;
+  options: Record<string, string | number | boolean | Record<string, string> | undefined>;
+}, modelName: string }) => {
   const agent = createAgent({
-    model,
+    model: await initChatModel(model, options),
     tools: [],
     systemPrompt: `Answer the user's question to the best of your ability.
     However, please keep your answers brief and in the same language as the question.

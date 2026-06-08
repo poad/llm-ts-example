@@ -1,15 +1,13 @@
-import { AzureChatOpenAI } from '@langchain/openai';
-import { ChatBedrockConverse } from '@langchain/aws';
-import { LanguageModelLike } from '@langchain/core/language_models/base';
-import { BaseChatModel } from '@langchain/core/language_models/chat_models';
-
 import { logger } from '@llm-ts-example/common-backend-core';
 import { models } from '@llm-ts-example/common-core';
 
 interface SelectLlmResult {
   platform: 'aws' | 'azure';
   modelName: string;
-  model: LanguageModelLike & BaseChatModel;
+  model: {
+    model: string,
+    options: Record<string, string | number | boolean | Record<string, string> | undefined>
+  };
 }
 
 export function selectLlm(modelType?: string): SelectLlmResult {
@@ -24,18 +22,21 @@ export function selectLlm(modelType?: string): SelectLlmResult {
     const region = process.env.BEDROCK_AWS_REGION;
     logger.debug(`use: ${model.modelId} on Amazon Bedrock`);
     const modelId = model.modelId;
+
     return {
       platform: 'aws',
       modelName: modelId,
-      model: new ChatBedrockConverse({
-        model: modelId,
-        ...(model.temperatureSupport ? {temperature: 0} : {}),
-        streaming: true,
-        metadata: {
-          tag: 'chat',
-        },
-        region,
-      }),
+      model: {
+        model: `bedrock:${modelId}`,
+        options: {
+          ...(model.temperatureSupport ? { temperature: 0 } : {}),
+          streaming: true,
+          metadata: {
+            tag: 'chat',
+          },
+          region,
+        }
+      },
     };
   }
 
@@ -43,14 +44,16 @@ export function selectLlm(modelType?: string): SelectLlmResult {
   return {
     platform: 'azure',
     modelName: model.modelId,
-    model: new AzureChatOpenAI({
-      azureOpenAIApiDeploymentName: model.modelId,
-      ...(model.temperatureSupport ? {temperature: 0} : {}),
-      streaming: true,
-      metadata: {
-        tag: 'chat',
-      },
-    }),
+    model: {
+      model: `azure_openai:${model.modelId}`,
+      options: {
+        ...(model.temperatureSupport ? { temperature: 0 } : {}),
+        streaming: true,
+        metadata: {
+          tag: 'chat',
+        },
+      }
+    },
   };
 }
 

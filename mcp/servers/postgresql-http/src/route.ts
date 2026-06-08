@@ -1,5 +1,5 @@
+import { pgMcp } from './pgMcp.js';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { pgMcp } from './pgMcp';
 
 export const createMcpServer = () => {
   const server = new McpServer({

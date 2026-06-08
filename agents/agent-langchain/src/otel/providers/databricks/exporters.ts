@@ -1,20 +1,20 @@
 import { Metadata } from '@grpc/grpc-js';
 
-import grpcTraceing from '@opentelemetry/exporter-trace-otlp-grpc';
-import grpcLogs from '@opentelemetry/exporter-logs-otlp-grpc';
-import grpcMetrics from '@opentelemetry/exporter-metrics-otlp-grpc';
+import * as grpcTraceing from '@opentelemetry/exporter-trace-otlp-grpc';
+import * as grpcLogs from '@opentelemetry/exporter-logs-otlp-grpc';
+import * as grpcMetrics from '@opentelemetry/exporter-metrics-otlp-grpc';
 
-import httpTraceing from '@opentelemetry/exporter-trace-otlp-proto';
-import httpLogs from '@opentelemetry/exporter-logs-otlp-proto';
-import httpMetrics from '@opentelemetry/exporter-metrics-otlp-proto';
+import * as httpTraceing from '@opentelemetry/exporter-trace-otlp-proto';
+import * as httpLogs from '@opentelemetry/exporter-logs-otlp-proto';
+import * as httpMetrics from '@opentelemetry/exporter-metrics-otlp-proto';
 
 import { getAccessToken } from './access-token-manager.js';
 
 import { Exporters } from '../../otel-exporters.js';
 import { logger } from '../../../logging.js';
-import dotenv from '@dotenvx/dotenvx';
+import { config as dotenvXConfig } from '@dotenvx/dotenvx';
 
-dotenv.config({ path: ['.env', '.env.test'], override: true });
+dotenvXConfig({ path: ['.env', '.env.test'], override: true });
 
 export const init = async ({ useGrpc }: { useGrpc: boolean }): Promise<Exporters> => {
   const token = await getAccessToken();
