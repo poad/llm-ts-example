@@ -6,11 +6,10 @@ import stylistic from '@stylistic/eslint-plugin';
 import {configs, parser} from 'typescript-eslint';
 import { importX, createNodeResolver } from 'eslint-plugin-import-x';
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
-import { configs as cdkPluginConfigs } from 'eslint-plugin-awscdk';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const gitignorePath = path.resolve(__dirname, './.gitignore');
+const gitignorePath = path.resolve(__dirname, '../.gitignore');
 
 export default defineConfig(
   includeIgnoreFile(gitignorePath),
@@ -41,6 +40,7 @@ export default defineConfig(
       'lib/**/*.ts',
       'lambda/**/*.ts',
       'eslint.config.ts',
+      'vitest.config.ts',
     ],
     languageOptions: {
       parser,
@@ -64,9 +64,6 @@ export default defineConfig(
         createNodeResolver(),
       ],
     },
-    extends: [
-      cdkPluginConfigs.recommended,
-    ],
     rules: {
       '@stylistic/semi': ['error', 'always'],
       '@stylistic/indent': ['error', 2],

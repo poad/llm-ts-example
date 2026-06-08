@@ -24,6 +24,7 @@
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
     "skipLibCheck": true,
+    "rootDir": "src",
     "typeRoots": [
       "./node_modules",
       "./node_modules/@types"
@@ -34,7 +35,7 @@
   },
   "exclude": [
     "node_modules",
-    "eslint.config.js",
+    "eslint.config.ts",
     "vite.config.ts",
     "dist"
   ]

@@ -54,7 +54,7 @@ const queryTool = {
             success: true,
             rowCount: result.rowCount,
             rows: result.rows,
-            fields: result.fields.map(f => ({
+            fields: result.fields.map((f) => ({
               name: f.name,
               type: f.dataTypeID,
               size: f.dataTypeSize,
@@ -106,7 +106,7 @@ const listTablesTool = {
       const tables = await listTables(schema);
 
       logger.info(`Found ${tables.length} tables in schema ${schema}`);
-      logger.info(`Tables ${tables.map(t => t.table_name).join(', ')}`);
+      logger.info(`Tables ${tables.map((t) => t.table_name).join(', ')}`);
 
       return {
         content: [{

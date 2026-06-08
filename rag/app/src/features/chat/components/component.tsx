@@ -1,8 +1,8 @@
+import { ModelSelector } from '../../Models';
 import { createSignal, For, onMount } from 'solid-js';
 import { createStore } from 'solid-js/store';
 import { SolidMarkdown } from 'solid-markdown';
 import sha256 from 'crypto-js/sha256';
-import { ModelSelector } from '../../Models';
 
 interface ChatMessage {
   id: number;

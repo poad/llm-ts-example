@@ -30,9 +30,9 @@ import {
 
 import type { Exporters } from './otel/otel-exporters.js';
 import { Provider, createExporters } from './otel/otel-exporters.js';
-import dotenv from '@dotenvx/dotenvx';
+import { config as dotenvXConfig } from '@dotenvx/dotenvx';
 
-dotenv.config({ path: ['.env', '.env.test'], override: true });
+dotenvXConfig({ path: ['.env', '.env.test'], override: true });
 
 const initialize = async (): Promise<Exporters & { flush?: () => Promise<void> }> => {
 

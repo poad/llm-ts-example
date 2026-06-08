@@ -1,58 +1,61 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { defineConfig } from 'eslint/config';
+import { defineConfig, includeIgnoreFile } from 'eslint/config';
 import eslint from '@eslint/js';
-import { configs, parser } from 'typescript-eslint';
 import stylistic from '@stylistic/eslint-plugin';
+import {configs, parser} from 'typescript-eslint';
 import { importX, createNodeResolver } from 'eslint-plugin-import-x';
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
-// @ts-expect-error ignore type errors
-import pluginPromise from 'eslint-plugin-promise';
-
-import { includeIgnoreFile } from '@eslint/compat';
+import { configs as cdkPluginConfigs } from 'eslint-plugin-awscdk';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const gitignorePath = path.resolve(__dirname, '.gitignore');
+const gitignorePath = path.resolve(__dirname, './.gitignore');
 
 export default defineConfig(
+  includeIgnoreFile(gitignorePath),
   {
     ignores: [
-      ...(includeIgnoreFile(gitignorePath).ignores || []),
       '**/*.d.ts',
+      '*.{js,jsx}',
       'src/tsconfig.json',
       'src/stories',
       '**/*.css',
       'node_modules/**/*',
+      './.next/*',
       'out',
-      'cdk.out',
+      '.storybook',
       'dist',
+      '.vinxi',
+      '.output',
     ],
   },
   eslint.configs.recommended,
-  configs.strict,
-  configs.stylistic,
-  pluginPromise.configs['flat/recommended'],
+  ...configs.strict,
+  ...configs.stylistic,
+  importX.flatConfigs.recommended,
+  importX.flatConfigs.typescript,
   {
-    files: ['**/*.ts', '*.js'],
+    files: [
+      'bin/**/*.ts',
+      'lib/**/*.ts',
+      'lambda/**/*.ts',
+      'eslint.config.ts',
+    ],
     languageOptions: {
+      parser,
       ecmaVersion: 'latest',
       sourceType: 'module',
-      parser,
       parserOptions: {
+        tsconfigRootDir: __dirname,
         projectService: {
           allowDefaultProject: ['eslint.config.ts'],
         },
-        tsconfigRootDir: __dirname,
       },
     },
     plugins: {
-      'import-x': importX,
       '@stylistic': stylistic,
     },
-    extends: [
-      'import-x/flat/recommended',
-    ],
     settings: {
       'import-x/resolver-next': [
         createTypeScriptImportResolver({
@@ -61,11 +64,13 @@ export default defineConfig(
         createNodeResolver(),
       ],
     },
+    extends: [
+      cdkPluginConfigs.recommended,
+    ],
     rules: {
       '@stylistic/semi': ['error', 'always'],
       '@stylistic/indent': ['error', 2],
       '@stylistic/comma-dangle': ['error', 'always-multiline'],
-      '@stylistic/arrow-parens': ['error', 'always'],
       '@stylistic/quotes': ['error', 'single'],
 
       'import-x/order': [

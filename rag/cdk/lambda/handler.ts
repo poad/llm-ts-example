@@ -1,3 +1,6 @@
+import { selectEmbeddings } from './embeddings-models.js';
+import { createTool } from './tool.js';
+import { createRetriever } from './retriever.js';
 import { CallbackHandler } from 'langfuse-langchain';
 import { v7 as uuidv7 } from 'uuid';
 import { logger } from '@llm-ts-example/common-backend-core';
@@ -5,9 +8,6 @@ import { logger } from '@llm-ts-example/common-backend-core';
 import { selectLlm } from '@llm-ts-example/common-backend-langchain';
 import { createAgent } from 'langchain';
 import { MemorySaver } from '@langchain/langgraph';
-import { selectEmbeddings } from './embeddings-models.js';
-import { createTool } from './tool.js';
-import { createRetriever } from './retriever.js';
 import './instrumentation';
 
 export async function handle(

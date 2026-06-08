@@ -1,8 +1,8 @@
 import { MultiServerMCPClient } from "@langchain/mcp-adapters";
 import { createAgent } from "langchain";
-import dotenv from '@dotenvx/dotenvx';
+import { config as dotenvXConfig } from '@dotenvx/dotenvx';
 
-dotenv.config({ path: ['.env', '.env.test'], override: true });
+dotenvXConfig({ path: ['.env', '.env.test'], override: true });
 
 import { initialize } from './instrumentation.js';
 
