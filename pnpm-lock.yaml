@@ -9,7 +9,7 @@ overrides:
   '@opentelemetry/sdk-node@<0.217.0': ^0.218.0
   esbuild@>=0.17.0 <0.28.1: ^0.28.1
   esbuild@>=0.27.3 <0.28.1: ^0.28.1
-  eslint-import-resolver-typescript: ^4.4.4
+  eslint-import-resolver-typescript: ^4.4.5
   postcss@<8.5.10: ^8.5.10
   protobufjs: ^8
   semver: '>=7'
