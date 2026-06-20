@@ -17,5 +17,6 @@
     "inlineSources": false,
     "experimentalDecorators": true,
     "strictPropertyInitialization": false
-  }
+  },
+  "exclude": ["eslint.config.ts"]
 }
