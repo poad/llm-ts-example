@@ -10,8 +10,8 @@
     "lint-fix": "eslint --fix"
   },
   "dependencies": {
-    "@ai-sdk/langchain": "^2.0.211",
-    "@ai-sdk/react": "^3.0.206",
+    "@ai-sdk/langchain": "^2.0.212",
+    "@ai-sdk/react": "^3.0.207",
     "@arizeai/openinference-instrumentation-bedrock": "^0.4.14",
     "@arizeai/openinference-instrumentation-langchain": "^4.0.12",
     "@aws-lambda-powertools/logger": "^2.33.1",
@@ -58,7 +58,7 @@
     "@streamdown/math": "^1.0.2",
     "@streamdown/mermaid": "^1.0.2",
     "@xyflow/react": "^12.11.0",
-    "ai": "^6.0.204",
+    "ai": "^6.0.205",
     "ansi-to-react": "^6.2.6",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -96,6 +96,6 @@
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.61.0",
     "vite": "^8.0.16",
-    "vitest": "^4.1.8"
+    "vitest": "^4.1.9"
   }
 }
