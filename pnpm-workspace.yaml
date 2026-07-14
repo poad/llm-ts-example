@@ -37,7 +37,7 @@ blockExoticSubdeps: true
 
 minimumReleaseAge: 10080 # 7 days in minutes
 minimumReleaseAgeExclude:
-  - pnpm@11.10.0
+  - pnpm@11.13.0
   - typescript@7.0.2
   - '@typescript/typescript-aix-ppc64@7.0.2'
   - '@typescript/typescript-darwin-arm64@7.0.2'
