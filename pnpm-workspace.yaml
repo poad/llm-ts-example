@@ -38,27 +38,6 @@ blockExoticSubdeps: true
 minimumReleaseAge: 10080 # 7 days in minutes
 minimumReleaseAgeExclude:
   - pnpm@11.13.0
-  - typescript@7.0.2
-  - '@typescript/typescript-aix-ppc64@7.0.2'
-  - '@typescript/typescript-darwin-arm64@7.0.2'
-  - '@typescript/typescript-darwin-x64@7.0.2'
-  - '@typescript/typescript-freebsd-arm64@7.0.2'
-  - '@typescript/typescript-freebsd-x64@7.0.2'
-  - '@typescript/typescript-linux-arm64@7.0.2'
-  - '@typescript/typescript-linux-arm@7.0.2'
-  - '@typescript/typescript-linux-loong64@7.0.2'
-  - '@typescript/typescript-linux-mips64el@7.0.2'
-  - '@typescript/typescript-linux-ppc64@7.0.2'
-  - '@typescript/typescript-linux-riscv64@7.0.2'
-  - '@typescript/typescript-linux-s390x@7.0.2'
-  - '@typescript/typescript-linux-x64@7.0.2'
-  - '@typescript/typescript-netbsd-arm64@7.0.2'
-  - '@typescript/typescript-netbsd-x64@7.0.2'
-  - '@typescript/typescript-openbsd-arm64@7.0.2'
-  - '@typescript/typescript-openbsd-x64@7.0.2'
-  - '@typescript/typescript-sunos-x64@7.0.2'
-  - '@typescript/typescript-win32-arm64@7.0.2'
-  - '@typescript/typescript-win32-x64@7.0.2'
   - postcss@8.5.10
   - '@opentelemetry/sdk-node@0.217.0'
   - '@opentelemetry/exporter-prometheus@0.217.0'
