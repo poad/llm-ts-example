@@ -37,11 +37,8 @@ blockExoticSubdeps: true
 
 minimumReleaseAge: 10080 # 7 days in minutes
 minimumReleaseAgeExclude:
-  - pnpm@11.13.0
+  - pnpm@11.14.0
   - postcss@8.5.10
-  - '@opentelemetry/sdk-node@0.217.0'
-  - '@opentelemetry/exporter-prometheus@0.217.0'
-  - '@opentelemetry/core@2.8.0'
   - linkify-it@5.0.1
 
 overrides:
