@@ -14,10 +14,10 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "@langchain/aws": "^1.4.2",
+    "@langchain/aws": "^1.4.3",
     "@langchain/classic": "^1.0.40",
-    "@langchain/core": "^1.2.2",
-    "@langchain/langgraph": "^1.4.7",
+    "@langchain/core": "^1.2.3",
+    "@langchain/langgraph": "^1.4.8",
     "@langchain/openai": "^1.5.5",
     "@langchain/pinecone": "^1.0.3",
     "@langchain/textsplitters": "^1.0.1",
@@ -40,6 +40,6 @@
     "eslint-plugin-promise": "^7.3.0",
     "jiti": "^2.7.0",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.63.0"
+    "typescript-eslint": "^8.65.0"
   }
 }
