@@ -9,12 +9,12 @@ packages:
   - ./rag/app
   - ./rag/cdk
   - ./rag/cdk/function
-  - ./agents/agent-ai-sdk
+  - ./agents/aws-lambda/agent-ai-sdk
   - ./agents/agent-claude-agent-sdk
   - ./agents/agent-deepagents
   - ./agents/agent-langchain
   - ./agents/agent-langchain-nextjs
-  - ./agents/agent-strands
+  - ./agents/aws-lambda/agent-strands
   - ./mcp/mcp-client-http
   - ./mcp/servers/postgresql-http
   - ./mcp/servers/weather
