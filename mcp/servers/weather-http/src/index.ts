@@ -1,6 +1,6 @@
 import express, { json, Request, Response } from 'express';
-import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
+import { NodeStreamableHTTPServerTransport } from '@modelcontextprotocol/node';
+import { McpServer } from '@modelcontextprotocol/server';
 import { z } from 'zod';
 
 const app = express();
@@ -23,7 +23,7 @@ app.post('/mcp', async (req: Request, res: Response) => {
   // when multiple clients connect concurrently.
 
   try {
-    const transport: StreamableHTTPServerTransport = new StreamableHTTPServerTransport({
+    const transport: NodeStreamableHTTPServerTransport = new NodeStreamableHTTPServerTransport({
       sessionIdGenerator: undefined,
     });
     await server.connect(transport);
@@ -128,9 +128,9 @@ server.registerTool(
   'get_forecast',
   {
     description: '指定した場所の天気予報を取得します',
-    inputSchema: {
+    inputSchema: z.object({
       location: z.string().describe('街名'),
-    },
+    }),
   },
   async ({ location }) => {
     // Get grid point data

@@ -33,7 +33,6 @@ updates:
       - '/basic/cdk/'
       - '/basic/app/'
       - '/mcp/clients/mcp-client-http/'
-      - '/mcp/clients/mcp-client-typescript/'
       - '/mcp/servers/postgresql-http/'
       - '/mcp/servers/weather/'
       - '/mcp/servers/weather-http/'

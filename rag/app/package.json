@@ -25,7 +25,7 @@
     "@types/crypto-js": "^4.2.2",
     "@types/node": "^24.13.3",
     "crypto-js": "^4.2.0",
-    "eslint": "^10.7.0",
+    "eslint": "^10.8.0",
     "eslint-import-resolver-typescript": "^4.4.5",
     "eslint-plugin-import-x": "^4.17.1",
     "eslint-plugin-promise": "^7.3.0",

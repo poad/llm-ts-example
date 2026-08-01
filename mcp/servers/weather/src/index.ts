@@ -1,5 +1,5 @@
-import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
+import { StdioServerTransport } from '@modelcontextprotocol/server/stdio';
+import { McpServer } from '@modelcontextprotocol/server';
 import { z } from 'zod';
 
 // Create server instance
@@ -77,9 +77,9 @@ async function getGeocoding(location: string): Promise<GetGeocodingResult | null
 
 server.registerTool('get-forecast', {
   description: 'Get weather forecast for a location',
-  inputSchema: {
+  inputSchema: z.object({
     location: z.string().describe('City name'),
-  },
+  }),
 }, async ({ location }) => {
   // Get grid point data
   const geocoding = await getGeocoding(location);

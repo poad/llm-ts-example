@@ -1,7 +1,7 @@
 import { BedrockRuntimeClient, ConverseCommand, ConverseCommandInput, Message, Tool, ToolInputSchema } from '@aws-sdk/client-bedrock-runtime';
 import { input } from '@inquirer/prompts';
-import { Client } from '@modelcontextprotocol/sdk/client';
-import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp';
+import { StreamableHTTPClientTransport } from "@modelcontextprotocol/client";
+import { Client } from '@modelcontextprotocol/client';
 
 async function createClient(baseUrl: URL) {
   const client = new Client({ name: 'mcp-client-cli', version: '1.0.0' });

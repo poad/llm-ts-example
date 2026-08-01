@@ -1,7 +1,8 @@
 import { promises as fs } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
+import { StdioServerTransport } from '@modelcontextprotocol/server/stdio';
+import { McpServer } from '@modelcontextprotocol/server';
+import { z } from 'zod';
 
 // サーバの準備
 const server = new McpServer({
@@ -48,7 +49,7 @@ server.registerPrompt(
   {
     title: '買い物リスト提示プロンプト',
     description: 'あらかじめ用意した買い物リストを返します',
-    argsSchema: {},
+    argsSchema: z.object({}),
   },
   async () => {
     try {
