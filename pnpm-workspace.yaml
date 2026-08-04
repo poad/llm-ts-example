@@ -37,14 +37,18 @@ blockExoticSubdeps: true
 
 minimumReleaseAge: 10080 # 7 days in minutes
 minimumReleaseAgeExclude:
-  - pnpm@11.19.0
+  - pnpm@11.20.0
+
+  - next@16.3.0
+  - eslint-config-next@16.3.0
+  - '@next/eslint-plugin-next@16.3.0'
 
   - postcss@8.5.10
   - linkify-it@5.0.1
-  - brace-expansion@1.1.16 || 5.0.8
+  - brace-expansion@1.1.16 || 5.0.8 || 5.0.9
   - '@hono/node-server@2.0.5'
   - '@opentelemetry/propagator-jaeger@2.9.0'
-  - fast-uri@3.1.4
+  - fast-uri@3.1.4 || 3.1.5
   - sharp@0.35.0
   - js-yaml@5.2.2
 
@@ -54,6 +58,8 @@ minimumReleaseAgeExclude:
   - '@modelcontextprotocol/hono@2.0.0'
   - '@modelcontextprotocol/node@2.0.0'
   - '@modelcontextprotocol/server@2.0.0'
+  - ip-address@10.2.1 || 10.2.2 || 10.3.1
+  - hono@4.12.34
 
 overrides:
   '@hono/node-server@<2.0.5': ^2.0.5
@@ -63,8 +69,14 @@ overrides:
   '@opentelemetry/sdk-node@<0.217.0': ^0.217.0
   brace-expansion@<1.1.16: ^1.1.16
   brace-expansion@<=5.0.7: ^5.0.8
+  brace-expansion@>=4.0.0 <5.0.9: ^5.0.9
   eslint-import-resolver-typescript: '^4.4.5'
+  fast-uri@>=3.0.0 <3.1.5: ^3.1.5
   fast-uri@>=3.0.0 <=3.1.3: ^3.1.4
+  hono@<4.12.34: ^4.12.34
+  ip-address@<=10.3.0: ^10.3.1
+  ip-address@>=10.1.1 <=10.2.0: ^10.2.1
+  ip-address@>=10.1.1 <=10.2.1: ^10.2.2
   js-yaml@>=5.0.0 <=5.2.1: ^5.2.2
   linkify-it@<=5.0.0: ^5.0.1
   postcss@<8.5.10: ^8.5.10
