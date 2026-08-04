@@ -126,7 +126,6 @@ jobs:
     - name: Install global dependencies
       run: pnpm add -g aws-cdk esbuild
 
-
     - name: Build (common)
       run: |
         pnpm --filter @llm-ts-example/common-core build

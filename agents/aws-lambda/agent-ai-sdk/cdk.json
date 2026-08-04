@@ -1,5 +1,5 @@
 {
-  "app": "npx tsx bin/agent-ai-sdk.ts",
+  "app": "pnx tsx bin/agent-ai-sdk.ts",
   "watch": {
     "include": [
       "**"
