@@ -38,7 +38,7 @@
     "@arizeai/openinference-instrumentation-langchain": "^4.0.14",
     "@arizeai/phoenix-otel": "^0.4.3",
     "@aws-lambda-powertools/logger": "^2.34.0",
-    "@aws-sdk/credential-provider-node": "^3.972.73",
+    "@aws-sdk/credential-provider-node": "^3.972.74",
     "@langchain/aws": "^1.4.3",
     "@langchain/classic": "^1.0.40",
     "@langchain/core": "^1.2.3",
