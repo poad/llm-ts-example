@@ -32,7 +32,7 @@ jobs:
         fetch-depth: 1
 
     - name: Install pnpm
-      uses: pnpm/setup@c9883cc79df532ad1a7b81bf9ab944ceb090d65c # v2.0.0
+      uses: pnpm/setup@4700d737c3d7a2e7199f3d42a920f0bf7f34e411 # v2.0.1
 
     - name: Install global dependencies
       run: pnpm add -g aws-cdk esbuild
@@ -80,7 +80,7 @@ jobs:
         fetch-depth: 1
 
     - name: Install pnpm
-      uses: pnpm/setup@c9883cc79df532ad1a7b81bf9ab944ceb090d65c # v2.0.0
+      uses: pnpm/setup@4700d737c3d7a2e7199f3d42a920f0bf7f34e411 # v2.0.1
 
     - name: Install global dependencies
       run: pnpm add -g aws-cdk esbuild
@@ -121,7 +121,7 @@ jobs:
         fetch-depth: 1
 
     - name: Install pnpm
-      uses: pnpm/setup@c9883cc79df532ad1a7b81bf9ab944ceb090d65c # v2.0.0
+      uses: pnpm/setup@4700d737c3d7a2e7199f3d42a920f0bf7f34e411 # v2.0.1
 
     - name: Install global dependencies
       run: pnpm add -g aws-cdk esbuild
@@ -165,7 +165,7 @@ jobs:
         fetch-depth: 1
 
     - name: Install pnpm
-      uses: pnpm/setup@c9883cc79df532ad1a7b81bf9ab944ceb090d65c # v2.0.0
+      uses: pnpm/setup@4700d737c3d7a2e7199f3d42a920f0bf7f34e411 # v2.0.1
 
     - name: Install global dependencies
       run: pnpm add -g aws-cdk esbuild
