@@ -1,5 +1,5 @@
 {
-  "app": "npx tsx bin/cdk.ts",
+  "app": "pnx tsx bin/cdk.ts",
   "watch": {
     "include": [
       "**"
@@ -22,7 +22,7 @@
   "pathMetadata": false,
   "context": {
     "default": {
-      "stackName": "rag-example",
+      "stackName": "RAGExample",
       "bucketName": "rag-example-786553742110",
       "cloudfront": {
         "comment": "RAG example"

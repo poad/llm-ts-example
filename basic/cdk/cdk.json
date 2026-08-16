@@ -1,5 +1,5 @@
 {
-  "app": "npx tsx bin/cdk.ts",
+  "app": "pnx tsx bin/cdk.ts",
   "watch": {
     "include": [
       "**"
@@ -22,10 +22,10 @@
   "pathMetadata": false,
   "context": {
     "default": {
-      "stackName": "llm-ts-example",
+      "stackName": "BasicChatBotAgent",
       "bucketName": "llm-ts-example",
       "cloudfront": {
-        "comment": "Example LLM Lambda"
+        "comment": "Example LLM Lambda (Basic Chatbot)"
       }
     }
   }
