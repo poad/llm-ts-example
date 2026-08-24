@@ -33,6 +33,11 @@ jobs:
 
     - name: Install pnpm
       uses: pnpm/setup@84cb39b217b10273981911c288cd62326dc7c6d2 # v2.0.2
+      with:
+        install: false
+
+    - name: Install dependencies
+      run: pnpm install --no-frozen-lockfile
 
     - name: Install global dependencies
       run: pnpm add -g aws-cdk esbuild
@@ -81,6 +86,11 @@ jobs:
 
     - name: Install pnpm
       uses: pnpm/setup@84cb39b217b10273981911c288cd62326dc7c6d2 # v2.0.2
+      with:
+        install: false
+
+    - name: Install dependencies
+      run: pnpm install --no-frozen-lockfile
 
     - name: Install global dependencies
       run: pnpm add -g aws-cdk esbuild

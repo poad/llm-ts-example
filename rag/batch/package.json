@@ -14,11 +14,11 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "@langchain/aws": "^1.4.3",
-    "@langchain/classic": "^1.0.41",
-    "@langchain/core": "^1.2.5",
-    "@langchain/langgraph": "^1.4.9",
-    "@langchain/openai": "^1.5.6",
+    "@langchain/aws": "^1.4.4",
+    "@langchain/classic": "^1.0.43",
+    "@langchain/core": "^1.2.8",
+    "@langchain/langgraph": "^1.4.10",
+    "@langchain/openai": "^1.5.8",
     "@langchain/pinecone": "^1.0.3",
     "@langchain/textsplitters": "^1.0.1",
     "@pinecone-database/pinecone": "^6.1.4",
@@ -27,7 +27,7 @@
     "dotenv": "^17.4.2",
     "html-to-text": "^9.0.5",
     "jsdom": "^27.4.0",
-    "langchain": "^1.5.5"
+    "langchain": "^1.5.9"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -40,6 +40,6 @@
     "eslint-plugin-promise": "^7.3.0",
     "jiti": "^2.7.0",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.66.0"
+    "typescript-eslint": "^8.67.0"
   }
 }
