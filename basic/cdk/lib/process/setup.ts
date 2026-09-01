@@ -2,7 +2,7 @@ import * as childProcess from 'child_process';
 import * as fs from 'fs';
 
 export const buildCommon = () => {
-  ['../../common/core', '../../common/backend'].forEach((f) => {
+  ['../../common/core', '../../common/backend/core', '../../common/backend/langchain'].forEach((f) => {
     fs.readdirSync(`${process.cwd()}/${f}`, {
       withFileTypes: true,
     })
