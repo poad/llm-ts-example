@@ -19,7 +19,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@llm-ts-example/common-core": "workspace:*",
-    "@solidjs/router": "^0.15.4",
+    "@solidjs/router": "^1.0.0",
     "@stylistic/eslint-plugin": "^5.10.0",
     "@types/crypto-js": "^4.2.2",
     "@types/node": "^24.13.3",
@@ -28,7 +28,7 @@
     "eslint-import-resolver-typescript": "^4.4.5",
     "eslint-plugin-import-x": "^4.17.1",
     "eslint-plugin-promise": "^7.3.0",
-    "eslint-plugin-solid": "^0.14.5",
+    "eslint-plugin-solid": "^0.16.0",
     "jiti": "^2.7.0",
     "jsdom": "^27.4.0",
     "solid-refresh": "^0.7.8",
