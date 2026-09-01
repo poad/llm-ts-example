@@ -1,27 +1,27 @@
 packages:
-  - ./common/core
-  - ./common/backend/core
-  - ./common/backend/langchain
-  - ./basic/cdk
-  - ./basic/app
-  - ./basic/cdk/function
-  - ./rag/batch
-  - ./rag/app
-  - ./rag/cdk
-  - ./rag/cdk/function
-  - ./agents/aws-lambda/agent-ai-sdk
-  - ./agents/aws-lambda/agent-strands
-  - ./agents/agent-claude-agent-sdk
-  - ./agents/agent-deepagents
-  - ./agents/agent-langchain
-  - ./agents/agent-langchain-nextjs
-  - ./agents/agent-strands
-  - ./mcp/mcp-client-http
-  - ./mcp/servers/postgresql-http
-  - ./mcp/servers/weather
-  - ./mcp/servers/weather-http
-  - ./mcp/servers/resource-mcp-server
-  - ./chat-app
+  - common/core
+  - common/backend/core
+  - common/backend/langchain
+  - basic/cdk
+  - basic/app
+  - basic/cdk/function
+  - rag/batch
+  - rag/app
+  - rag/cdk
+  - rag/cdk/function
+  - agents/aws-lambda/agent-ai-sdk
+  - agents/aws-lambda/agent-strands
+  - agents/agent-claude-agent-sdk
+  - agents/agent-deepagents
+  - agents/agent-langchain
+  - agents/agent-langchain-nextjs
+  - agents/agent-strands
+  - mcp/mcp-client-http
+  - mcp/servers/postgresql-http
+  - mcp/servers/weather
+  - mcp/servers/weather-http
+  - mcp/servers/resource-mcp-server
+  - chat-app
 
 allowBuilds:
   '@google/genai': false
@@ -37,7 +37,7 @@ blockExoticSubdeps: true
 
 minimumReleaseAge: 10080 # 7 days in minutes
 minimumReleaseAgeExclude:
-  - pnpm@11.24.0 || 12.0.0
+  - pnpm@12.2.1
 
 overrides:
   eslint-import-resolver-typescript: '^4.4.5'
