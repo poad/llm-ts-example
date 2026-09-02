@@ -1,5 +1,5 @@
 {
-  "app": "pnx tsx bin/agent-ai-sdk.ts",
+  "app": "pnx --allow-build=esbuild tsx bin/agent-ai-sdk.ts",
   "watch": {
     "include": [
       "**"
