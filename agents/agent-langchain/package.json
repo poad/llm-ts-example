@@ -31,8 +31,8 @@
     "vitest": "^4.1.11"
   },
   "dependencies": {
-    "@arizeai/openinference-instrumentation-bedrock": "^0.4.24",
-    "@arizeai/openinference-instrumentation-langchain": "^4.0.19",
+    "@arizeai/openinference-instrumentation-bedrock": "^0.4.25",
+    "@arizeai/openinference-instrumentation-langchain": "^4.0.20",
     "@aws-lambda-powertools/logger": "^2.35.0",
     "@aws-sdk/credential-provider-node": "^3.972.81",
     "@dotenvx/dotenvx": "^1.75.1",
@@ -40,7 +40,7 @@
     "@langchain/aws": "^1.4.4",
     "@langchain/classic": "^1.0.45",
     "@langchain/core": "^1.2.9",
-    "@langchain/langgraph": "^1.4.12",
+    "@langchain/langgraph": "^1.4.13",
     "@langchain/mcp-adapters": "^1.1.4",
     "@langchain/openai": "^1.5.10",
     "@opentelemetry/api": "^1.9.1",

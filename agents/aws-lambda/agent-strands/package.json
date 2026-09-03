@@ -16,7 +16,7 @@
     "@types/aws-lambda": "^8.10.162",
     "@types/node": "24.10.1",
     "@vitest/eslint-plugin": "^1.6.27",
-    "aws-cdk": "^2.1138.0",
+    "aws-cdk": "^2.1139.0",
     "dotenv": "^17.4.2",
     "esbuild": "^0.28.2",
     "eslint": "^10.9.1",
