@@ -64,7 +64,7 @@
     "@opentelemetry/sdk-trace-node": "^2.10.0",
     "@opentelemetry/semantic-conventions": "^1.43.0",
     "@smithy/eventstream-codec": "^4.5.2",
-    "aws-cdk-lib": "^2.266.0",
+    "aws-cdk-lib": "^2.267.0",
     "constructs": "^10.8.1",
     "langchain": "^1.5.10",
     "langfuse": "^3.38.20",
