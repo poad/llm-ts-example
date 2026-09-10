@@ -14,33 +14,33 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
-    "@types/aws-lambda": "^8.10.162",
+    "@types/aws-lambda": "^8.10.163",
     "@types/node": "^24.13.3",
     "@vitest/eslint-plugin": "^1.6.27",
     "aws-cdk": "^2.1139.0",
     "esbuild": "^0.28.2",
     "eslint": "^10.9.1",
     "eslint-import-resolver-typescript": "^4.4.5",
-    "eslint-plugin-awscdk": "^4.4.0",
+    "eslint-plugin-awscdk": "^4.4.1",
     "eslint-plugin-import-x": "^4.17.1",
     "eslint-plugin-promise": "^7.3.0",
     "jiti": "^2.7.0",
-    "tsx": "^4.23.12",
+    "tsx": "^4.23.13",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.68.0",
+    "typescript-eslint": "^8.69.0",
     "vite": "^8.2.2",
     "vitest": "^4.1.11"
   },
   "dependencies": {
-    "@ai-sdk/amazon-bedrock": "^4.0.165",
-    "@ai-sdk/azure": "^3.0.111",
+    "@ai-sdk/amazon-bedrock": "^4.0.169",
+    "@ai-sdk/azure": "^3.0.113",
     "@llm-ts-example/common-backend-core": "workspace:*",
     "@llm-ts-example/common-core": "workspace:*",
     "@smithy/eventstream-codec": "^4.5.2",
-    "ai": "^6.0.271",
-    "aws-cdk-lib": "^2.267.0",
+    "ai": "^6.0.275",
+    "aws-cdk-lib": "^2.268.0",
     "constructs": "^10.8.1",
     "dotenv": "^17.4.2",
-    "zod": "^4.4.3"
+    "zod": "^4.5.4"
   }
 }

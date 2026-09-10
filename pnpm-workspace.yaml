@@ -26,10 +26,17 @@ packages:
 allowBuilds:
   '@google/genai': false
   '@mongodb-js/zstd': false
+  better-sqlite3: false
   esbuild: false
   node-liblzma: false
+  node-llama-cpp: false
   protobufjs: false
   sharp: false
+  tree-sitter-go: false
+  tree-sitter-javascript: false
+  tree-sitter-python: false
+  tree-sitter-rust: false
+  tree-sitter-typescript: false
   unrs-resolver: false
   workerd: false
 
@@ -37,7 +44,7 @@ blockExoticSubdeps: true
 
 minimumReleaseAge: 10080 # 7 days in minutes
 minimumReleaseAgeExclude:
-  - pnpm@12.3.3
+  - pnpm@12.4.0
   - qs@6.16.0
   - fastq@1.20.3
 
