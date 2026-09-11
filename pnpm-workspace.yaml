@@ -44,7 +44,7 @@ blockExoticSubdeps: true
 
 minimumReleaseAge: 10080 # 7 days in minutes
 minimumReleaseAgeExclude:
-  - pnpm@12.4.0
+  - pnpm@12.3.4
   - qs@6.16.0
   - fastq@1.20.3
 

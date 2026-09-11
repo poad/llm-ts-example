@@ -35,8 +35,8 @@
     "vitest": "^4.1.11"
   },
   "dependencies": {
-    "@arizeai/openinference-instrumentation-bedrock": "^0.4.27",
-    "@arizeai/openinference-instrumentation-langchain": "^4.0.22",
+    "@arizeai/openinference-instrumentation-bedrock": "^0.4.28",
+    "@arizeai/openinference-instrumentation-langchain": "^4.0.23",
     "@arizeai/phoenix-otel": "^0.4.3",
     "@aws-lambda-powertools/logger": "^2.35.0",
     "@aws-sdk/credential-provider-node": "^3.972.82",
