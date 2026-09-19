@@ -13,13 +13,13 @@
   },
   "dependencies": {
     "@modelcontextprotocol/server": "^2.0.0",
-    "zod": "^4.5.4"
+    "zod": "^4.6.2"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
     "@types/express": "^5.0.6",
-    "@types/node": "^24.13.3",
+    "@types/node": "^24.13.4",
     "eslint": "^10.10.0",
     "eslint-import-resolver-typescript": "^4.4.5",
     "eslint-plugin-import-x": "^4.17.1",

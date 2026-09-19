@@ -15,10 +15,10 @@
   },
   "dependencies": {
     "@langchain/aws": "^1.4.5",
-    "@langchain/classic": "^1.0.46",
-    "@langchain/core": "^1.2.9",
-    "@langchain/langgraph": "^1.4.14",
-    "@langchain/openai": "^1.5.11",
+    "@langchain/classic": "^1.0.48",
+    "@langchain/core": "^1.2.11",
+    "@langchain/langgraph": "^1.4.15",
+    "@langchain/openai": "^1.5.13",
     "@langchain/pinecone": "^1.0.3",
     "@langchain/textsplitters": "^1.0.1",
     "@pinecone-database/pinecone": "^6.1.4",
@@ -27,13 +27,13 @@
     "dotenv": "^17.4.2",
     "html-to-text": "^9.0.5",
     "jsdom": "^27.4.0",
-    "langchain": "^1.5.10"
+    "langchain": "^1.5.11"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
     "@types/html-to-text": "^9.0.4",
-    "@types/node": "^24.13.3",
+    "@types/node": "^24.13.4",
     "eslint": "^10.10.0",
     "eslint-import-resolver-typescript": "^4.4.5",
     "eslint-plugin-import-x": "^4.17.1",
