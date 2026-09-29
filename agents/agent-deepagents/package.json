@@ -11,9 +11,9 @@
   "author": "",
   "dependencies": {
     "@aws-sdk/credential-provider-node": "^3.972.83",
-    "@langchain/anthropic": "^1.5.10",
+    "@langchain/anthropic": "^1.5.11",
     "@langchain/aws": "^1.4.5",
-    "@langchain/core": "^1.2.11",
+    "@langchain/core": "^1.2.12",
     "@langchain/mcp-adapters": "^1.1.4",
     "@opentelemetry/api": "^1.9.1",
     "@opentelemetry/exporter-trace-otlp-http": "^0.214.0",
@@ -25,22 +25,22 @@
     "@opentelemetry/sdk-trace-node": "^2.11.0",
     "@opentelemetry/semantic-conventions": "^1.43.0",
     "@traceloop/node-server-sdk": "^0.25.0",
-    "deepagents": "^1.13.4",
+    "deepagents": "^1.14.0",
     "dotenv": "^17.4.2",
-    "zod": "^4.6.2"
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
-    "@types/node": "^24.13.4",
-    "eslint": "^10.10.0",
+    "@types/node": "^24.13.6",
+    "eslint": "^10.11.0",
     "eslint-import-resolver-typescript": "^4.4.5",
     "eslint-plugin-import-x": "^4.17.1",
     "eslint-plugin-promise": "^7.3.0",
-    "langchain": "^1.5.11",
-    "tsx": "^4.23.13",
+    "langchain": "^1.5.12",
+    "tsx": "^4.23.15",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.70.0",
+    "typescript-eslint": "^8.70.1",
     "vite": "^8.3.0",
     "vitest": "^4.1.11"
   }
