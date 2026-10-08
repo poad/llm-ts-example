@@ -44,32 +44,41 @@ blockExoticSubdeps: true
 
 minimumReleaseAge: 10080 # 7 days in minutes
 minimumReleaseAgeExclude:
-  - pnpm@12.9.0
+  - pnpm@12.10.1
 
-  - '@next/bundle-analyzer@16.3.7'
-  - '@next/env@16.3.7'
-  - '@next/swc-darwin-arm64@16.3.7'
-  - '@next/swc-darwin-x64@16.3.7'
-  - '@next/swc-linux-arm64-gnu@16.3.7'
-  - '@next/swc-linux-arm64-musl@16.3.7'
-  - '@next/swc-linux-x64-gnu@16.3.7'
-  - '@next/swc-linux-x64-musl@16.3.7'
-  - '@next/swc-win32-arm64-msvc@16.3.7'
-  - '@next/swc-win32-x64-msvc@16.3.7'
-  - next@16.3.7
+  - '@next/bundle-analyzer@16.4.0'
+  - '@next/env@16.4.0'
+  - '@next/swc-darwin-arm64@16.4.0'
+  - '@next/swc-darwin-x64@16.4.0'
+  - '@next/swc-linux-arm64-gnu@16.4.0'
+  - '@next/swc-linux-arm64-musl@16.4.0'
+  - '@next/swc-linux-x64-gnu@16.4.0'
+  - '@next/swc-linux-x64-musl@16.4.0'
+  - '@next/swc-win32-arm64-msvc@16.4.0'
+  - '@next/swc-win32-x64-msvc@16.4.0'
+  - next@16.4.0
 
 overrides:
-  eslint-import-resolver-typescript: '^4.4.5'
   protobufjs: ^7
   semver: '>=7'
   uuid@<11.1.1: ^14
   undici: ^6
   '@opentelemetry/core@<2.8.0': ^2.8.0
   '@opentelemetry/exporter-prometheus@<0.217.0': ^0.217.0
+  '@opentelemetry/instrumentation-cassandra-driver@<0.66.0': ^0.66.0
+  '@opentelemetry/instrumentation-knex@<0.65.0': ^0.65.0
+  '@opentelemetry/instrumentation-mongoose@<0.67.0': ^0.67.0
+  '@opentelemetry/instrumentation-mysql2@<0.67.0': ^0.67.0
+  '@opentelemetry/instrumentation-mysql@<0.67.0': ^0.67.0
+  '@opentelemetry/instrumentation-oracledb@<0.46.0': ^0.46.0
+  '@opentelemetry/instrumentation-pg@<0.73.0': ^0.73.0
+  '@opentelemetry/instrumentation-tedious@<0.40.0': ^0.40.0
   '@opentelemetry/propagator-jaeger@<2.9.0': ^2.9.0
   '@opentelemetry/sdk-node@<0.217.0': ^0.217.0
+  katex@>=0.11.0 <0.18.2: ^0.18.2
   linkify-it@<=5.0.1: ^5.0.2
-  sharp@<0.35.4: ^0.35.4
+  seroval@<=1.6.2: ^1.6.3
+  sharp@<0.35.5: ^0.35.5
 
 strictPeerDependencies: false
 
