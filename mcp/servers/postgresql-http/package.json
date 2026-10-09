@@ -21,7 +21,7 @@
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
     "@types/aws-lambda": "^8.10.164",
-    "@types/node": "^24.19.0",
+    "@types/node": "^24.19.1",
     "@types/pg": "^8.23.1",
     "@vitest/eslint-plugin": "^1.6.27",
     "dotenv": "^17.4.2",

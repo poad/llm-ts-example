@@ -22,7 +22,7 @@
     "@solidjs/router": "^1.0.0",
     "@stylistic/eslint-plugin": "^5.10.0",
     "@types/crypto-js": "^4.2.2",
-    "@types/node": "^24.19.0",
+    "@types/node": "^24.19.1",
     "crypto-js": "^4.2.0",
     "eslint": "^10.11.0",
     "eslint-import-resolver-typescript": "^4.4.5",

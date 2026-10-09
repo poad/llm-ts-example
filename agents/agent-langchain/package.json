@@ -17,7 +17,7 @@
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
     "@types/aws-lambda": "^8.10.164",
-    "@types/node": "^24.19.0",
+    "@types/node": "^24.19.1",
     "@vitest/eslint-plugin": "^1.6.27",
     "eslint": "^10.11.0",
     "eslint-import-resolver-typescript": "^4.4.5",
@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@arizeai/openinference-instrumentation-bedrock": "^0.4.31",
-    "@arizeai/openinference-instrumentation-langchain": "^4.1.2",
+    "@arizeai/openinference-instrumentation-langchain": "^4.1.4",
     "@aws-lambda-powertools/logger": "^2.35.0",
     "@aws-sdk/credential-provider-node": "^3.972.84",
     "@dotenvx/dotenvx": "^1.75.1",

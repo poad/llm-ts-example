@@ -44,7 +44,7 @@ blockExoticSubdeps: true
 
 minimumReleaseAge: 10080 # 7 days in minutes
 minimumReleaseAgeExclude:
-  - pnpm@12.10.1
+  - pnpm@12.11.1
 
   - '@next/bundle-analyzer@16.4.0'
   - '@next/env@16.4.0'
@@ -57,6 +57,7 @@ minimumReleaseAgeExclude:
   - '@next/swc-win32-arm64-msvc@16.4.0'
   - '@next/swc-win32-x64-msvc@16.4.0'
   - next@16.4.0
+  - handlebars@4.7.10
 
 overrides:
   protobufjs: ^7
@@ -79,6 +80,7 @@ overrides:
   linkify-it@<=5.0.1: ^5.0.2
   seroval@<=1.6.2: ^1.6.3
   sharp@<0.35.5: ^0.35.5
+  handlebars@>=4.0.0 <=4.7.9: ^4.7.10
 
 strictPeerDependencies: false
 
