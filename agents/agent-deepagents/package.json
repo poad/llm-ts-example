@@ -25,7 +25,7 @@
     "@opentelemetry/sdk-trace-node": "^2.11.0",
     "@opentelemetry/semantic-conventions": "^1.43.0",
     "@traceloop/node-server-sdk": "^0.25.0",
-    "deepagents": "^1.14.1",
+    "deepagents": "^1.14.2",
     "dotenv": "^17.4.2",
     "zod": "^4.6.5"
   },
@@ -40,7 +40,7 @@
     "langchain": "^1.5.15",
     "tsx": "^4.23.15",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.71.0",
+    "typescript-eslint": "^8.71.1",
     "vite": "^8.3.2",
     "vitest": "^4.1.11"
   }
