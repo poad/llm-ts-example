@@ -12,7 +12,7 @@
     "test": "poku --parallel ."
   },
   "dependencies": {
-    "solid-js": "^1.9.15",
+    "solid-js": "^1.9.17",
     "solid-markdown": "^2.1.1",
     "uuid": "^14.0.2"
   },
@@ -34,7 +34,7 @@
     "solid-refresh": "^0.7.8",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.71.1",
-    "vite": "^8.3.2",
+    "vite": "^8.3.3",
     "vite-plugin-solid": "^2.11.14"
   }
 }

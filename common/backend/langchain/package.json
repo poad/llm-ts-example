@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@langchain/aws": "^1.4.6",
-    "@langchain/core": "^1.2.14",
+    "@langchain/core": "^1.2.17",
     "@langchain/openai": "^1.6.2",
     "@llm-ts-example/common-backend-core": "workspace:*",
     "@llm-ts-example/common-core": "workspace:*"

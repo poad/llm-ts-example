@@ -28,11 +28,11 @@
     "tsx": "^4.23.15",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.71.1",
-    "vite": "^8.3.2",
+    "vite": "^8.3.3",
     "vitest": "^4.1.11"
   },
   "dependencies": {
-    "@aws-lambda-powertools/logger": "^2.35.0",
+    "@aws-lambda-powertools/logger": "^2.36.0",
     "@aws-sdk/credential-provider-node": "^3.972.84",
     "@llm-ts-example/common-backend-core": "workspace:*",
     "@strands-agents/sdk": "^1.19.0",
