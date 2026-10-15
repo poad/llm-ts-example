@@ -1,0 +1,44 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "import", "oxc", "nextjs", "react"],
+  "categories": {
+    "correctness": "error"
+  },
+  "env": {
+    "node": true,
+    "es2026": true
+  },
+  "ignorePatterns": [
+    "**/*.d.ts",
+    "*.{js,jsx}",
+    "src/tsconfig.json",
+    "src/stories/**",
+    "**/*.css",
+    "node_modules/**",
+    "./.next/**",
+    "out/**",
+    ".storybook/**",
+    "dist/**",
+    ".vinxi/**",
+    ".output/**",
+    ".agentcore-staging/**"
+  ],
+  "rules": {},
+  "overrides": [
+    {
+      "files": ["components/ai-elements/**"],
+      "rules": {
+        "eslint/no-unused-vars": "off",
+        "typescript/no-empty-function": "off",
+        "typescript/no-explicit-any": "off",
+        "react/refs": "off",
+        "react/static-components": "off",
+        "react/set-state-in-effect": "off",
+        "react/purity": "off",
+        "react/immutability": "off",
+        "react-hooks/exhaustive-deps": "off",
+        "nextjs/no-img-element": "off"
+      }
+    }
+  ]
+}

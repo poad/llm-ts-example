@@ -1,0 +1,27 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "import", "oxc"],
+  "categories": {
+    "correctness": "error"
+  },
+  "env": {
+    "node": true,
+    "es2026": true
+  },
+  "ignorePatterns": [
+    "**/*.d.ts",
+    "*.{js,jsx}",
+    "src/tsconfig.json",
+    "src/stories/**",
+    "**/*.css",
+    "node_modules/**",
+    "./.next/**",
+    "out/**",
+    ".storybook/**",
+    "dist/**",
+    ".vinxi/**",
+    ".output/**",
+    ".agentcore-staging/**"
+  ],
+  "rules": {},
+}
