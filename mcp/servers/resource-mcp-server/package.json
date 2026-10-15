@@ -2,12 +2,15 @@
   "name": "resource-mcp-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "files": [
+    "build"
+  ],
   "type": "module",
+  "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "lint": "eslint .",
-    "lint-fix": "eslint . --fix",
+    "lint": "oxlint . && oxfmt --check .",
+    "lint-fix": "oxlint . --fix && oxfmt --write .",
     "dev": "tsx src/index.ts",
     "start": "node build/index.js"
   },
@@ -16,20 +19,11 @@
     "zod": "^4.6.5"
   },
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "@stylistic/eslint-plugin": "^5.10.0",
     "@types/express": "^5.0.6",
-    "@types/node": "^24.19.1",
-    "eslint": "^10.12.0",
-    "eslint-import-resolver-typescript": "^4.4.5",
-    "eslint-plugin-import-x": "^4.17.1",
-    "eslint-plugin-promise": "^7.3.0",
-    "jiti": "^2.7.0",
+    "@types/node": "^26.6.4",
+    "oxfmt": "^0.72.0",
+    "oxlint": "^1.87.0",
     "tsx": "^4.23.15",
-    "typescript": "^6.0.3",
-    "typescript-eslint": "^8.71.1"
-  },
-  "files": [
-    "build"
-  ]
+    "typescript": "^7.0.2"
+  }
 }

@@ -1,9 +1,9 @@
-import * as cdk from 'aws-cdk-lib/core';
-import { Construct } from 'constructs';
-import * as logs from 'aws-cdk-lib/aws-logs';
+import * as iam from 'aws-cdk-lib/aws-iam';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as nodejs from 'aws-cdk-lib/aws-lambda-nodejs';
-import * as iam from 'aws-cdk-lib/aws-iam';
+import * as logs from 'aws-cdk-lib/aws-logs';
+import * as cdk from 'aws-cdk-lib/core';
+import { Construct } from 'constructs';
 
 export class AgentAiSdkStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -45,10 +45,7 @@ export class AgentAiSdkStack extends cdk.Stack {
             statements: [
               new iam.PolicyStatement({
                 effect: iam.Effect.ALLOW,
-                actions: [
-                  'bedrock:InvokeModel*',
-                  'logs:PutLogEvents',
-                ],
+                actions: ['bedrock:InvokeModel*', 'logs:PutLogEvents'],
                 resources: ['*'],
               }),
             ],

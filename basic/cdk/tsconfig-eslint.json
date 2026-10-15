@@ -8,8 +8,5 @@
     "lambda/**/*.ts",
     "test/**/*.ts"
   ],
-  "exclude": [
-    "node_modules",
-    "cdk.out"
-  ]
+  "exclude": ["node_modules", "cdk.out"]
 }

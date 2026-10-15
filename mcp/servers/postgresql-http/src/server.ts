@@ -1,10 +1,10 @@
 import { app } from './app.js';
+
 import { serve } from '@hono/node-server';
 
-const server = serve(
-  { ...app, port: 3000 }, (info) => {
-    console.log(`Server is running on http://localhost:${info.port}`);
-  });
+const server = serve({ ...app, port: 3000 }, (info) => {
+  console.log(`Server is running on http://localhost:${info.port}`);
+});
 
 // graceful shutdown
 process.on('SIGINT', () => {

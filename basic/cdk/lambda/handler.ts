@@ -1,19 +1,20 @@
 import './instrumentation.js';
 import { createApp } from './app.js';
-import { CallbackHandler } from 'langfuse-langchain';
 
 import { logger } from '@llm-ts-example/common-backend-core';
-
 import { selectLlm } from '@llm-ts-example/common-backend-langchain';
+import { CallbackHandler } from 'langfuse-langchain';
 
-interface HandleProps { readonly question: string, readonly model?: string }
+interface HandleProps {
+  readonly question: string;
+  readonly model?: string;
+}
 
 export async function handle(
   sessionId: string,
   { question, model: modelType }: HandleProps,
   output: NodeJS.WritableStream,
 ) {
-
   const langfuse = {
     publicKey: process.env.LANGFUSE_PUBLIC_KEY,
     secretKey: process.env.LANGFUSE_SECRET_KEY,
@@ -23,12 +24,15 @@ export async function handle(
 
   try {
     // Initialize Langfuse callback handler
-    const langfuseHandler = langfuse.publicKey && langfuse.secretKey ? new CallbackHandler({
-      sessionId,
-      flushInterval: 0,
-      flushAt: 1,
-      tags: [modelName],
-    }) : undefined;
+    const langfuseHandler =
+      langfuse.publicKey && langfuse.secretKey
+        ? new CallbackHandler({
+            sessionId,
+            flushInterval: 0,
+            flushAt: 1,
+            tags: [modelName],
+          })
+        : undefined;
 
     logger.debug(`Langfuse: ${langfuseHandler ? 'enable' : 'disable'}`);
 

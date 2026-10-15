@@ -1,14 +1,19 @@
-import { BedrockRuntimeClient, ConverseCommand, ConverseCommandInput, Message, Tool, ToolInputSchema } from '@aws-sdk/client-bedrock-runtime';
+import {
+  BedrockRuntimeClient,
+  ConverseCommand,
+  ConverseCommandInput,
+  Message,
+  Tool,
+  ToolInputSchema,
+} from '@aws-sdk/client-bedrock-runtime';
 import { input } from '@inquirer/prompts';
-import { StreamableHTTPClientTransport } from "@modelcontextprotocol/client";
+import { StreamableHTTPClientTransport } from '@modelcontextprotocol/client';
 import { Client } from '@modelcontextprotocol/client';
 
 async function createClient(baseUrl: URL) {
   const client = new Client({ name: 'mcp-client-cli', version: '1.0.0' });
   // Initialize transport and connect to server
-  const transport = new StreamableHTTPClientTransport(
-    baseUrl,
-  );
+  const transport = new StreamableHTTPClientTransport(baseUrl);
   await client.connect(transport);
   console.log('Connected using Streamable HTTP transport');
   return client;
@@ -21,7 +26,7 @@ interface CreateConverseClientProps {
   modelId: string;
 }
 
-function createConverseClient(params:CreateConverseClientProps) {
+function createConverseClient(params: CreateConverseClientProps) {
   const converse = async (conversation: Message[]) => {
     const { tools, bedrock, mcp, modelId } = params;
     const input: ConverseCommandInput = {
@@ -33,9 +38,7 @@ function createConverseClient(params:CreateConverseClientProps) {
         tools,
       };
     }
-    const response = await bedrock.send(
-      new ConverseCommand(input),
-    );
+    const response = await bedrock.send(new ConverseCommand(input));
 
     if (response.stopReason === 'tool_use') {
       if (response.output?.message?.content) {
@@ -52,22 +55,25 @@ function createConverseClient(params:CreateConverseClientProps) {
             });
             const message: Message = {
               role: 'user',
-              content: [{
-                toolResult: {
-                  toolUseId: contentBlock.toolUse.toolUseId,
-                  content: [{
-                    text: JSON.stringify(response),
-                  }],
+              content: [
+                {
+                  toolResult: {
+                    toolUseId: contentBlock.toolUse.toolUseId,
+                    content: [
+                      {
+                        text: JSON.stringify(response),
+                      },
+                    ],
+                  },
                 },
-              }],
+              ],
             };
             conversation.push(message);
             await converse(conversation);
           }
         }
       }
-    }
-    else if (response.output?.message) {
+    } else if (response.output?.message) {
       const message = response.output.message;
       console.log(message.content?.[0].text);
       conversation.push(message);
@@ -85,8 +91,7 @@ async function questionPrompt(conversation: Message[]): Promise<boolean> {
     };
     conversation.push(question);
     return true;
-  }
-  else {
+  } else {
     return false;
   }
 }
@@ -99,12 +104,14 @@ async function chat(client: ChatProps) {
   const conversation: Message[] = [];
   try {
     console.log('\nMCP Client Started!');
-    console.log('Type your queries or \'quit\' to exit.');
+    console.log("Type your queries or 'quit' to exit.");
 
     if (await questionPrompt(conversation)) {
       while (true) {
         await client.converse(conversation);
-        if (!await questionPrompt(conversation)) { break; }
+        if (!(await questionPrompt(conversation))) {
+          break;
+        }
       }
     }
   } catch (error) {
@@ -122,9 +129,9 @@ interface McpClient {
 }
 
 interface CreateMcpClientProps {
-  region: string
-  url: string
-  modelId: string
+  region: string;
+  url: string;
+  modelId: string;
 }
 
 async function createMcpClient({ region, url, modelId }: CreateMcpClientProps): Promise<McpClient> {
@@ -157,13 +164,11 @@ async function createMcpClient({ region, url, modelId }: CreateMcpClientProps): 
   });
 
   return {
-    chat: async () => chat({
-      converse,
-    }),
+    chat: async () =>
+      chat({
+        converse,
+      }),
   };
 }
 
-export {
-  McpClient,
-  createMcpClient,
-};
+export { McpClient, createMcpClient };

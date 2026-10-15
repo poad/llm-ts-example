@@ -24,7 +24,7 @@
     "types": ["vite/client", "node"],
 
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
+    "esModuleInterop": true
   },
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,47 +1,39 @@
 if (process.env.ENABLED_OPENINFERENCE_TELEMETRY === 'true') {
   const opentelemetry = await import('@opentelemetry/api');
   const { registerInstrumentations } = await import('@opentelemetry/instrumentation');
-  const {
-    NodeTracerProvider,
-    SimpleSpanProcessor,
-  } = await import('@opentelemetry/sdk-trace-node');
+  const { NodeTracerProvider, SimpleSpanProcessor } = await import('@opentelemetry/sdk-trace-node');
   const { OTLPTraceExporter } = await import('@opentelemetry/exporter-trace-otlp-proto');
   const { OTLPMetricExporter } = await import('@opentelemetry/exporter-metrics-otlp-proto');
   const { OTLPLogExporter } = await import('@opentelemetry/exporter-logs-otlp-proto');
-  const {
-    ATTR_SERVICE_NAME,
-    ATTR_SERVICE_VERSION,
-  } = await import('@opentelemetry/semantic-conventions');
+  const { ATTR_SERVICE_NAME, ATTR_SERVICE_VERSION } =
+    await import('@opentelemetry/semantic-conventions');
   const { diag, DiagConsoleLogger, DiagLogLevel } = await import('@opentelemetry/api');
-  const { LangChainInstrumentation } = await import('@arizeai/openinference-instrumentation-langchain');
+  const { LangChainInstrumentation } =
+    await import('@arizeai/openinference-instrumentation-langchain');
   const lcCallbackManager = await import('@langchain/core/callbacks/manager');
-  const {
-    defaultResource,
-    resourceFromAttributes,
-  } = await import('@opentelemetry/resources');
+  const { defaultResource, resourceFromAttributes } = await import('@opentelemetry/resources');
   const { getNodeAutoInstrumentations } = await import('@opentelemetry/auto-instrumentations-node');
-  const {
-    MeterProvider,
-    PeriodicExportingMetricReader,
-  } = await import('@opentelemetry/sdk-metrics');
+  const { MeterProvider, PeriodicExportingMetricReader } =
+    await import('@opentelemetry/sdk-metrics');
 
   const { logs } = await import('@opentelemetry/api-logs');
-  const {
-    LoggerProvider,
-    SimpleLogRecordProcessor,
-  } = await import('@opentelemetry/sdk-logs');
+  const { LoggerProvider, SimpleLogRecordProcessor } = await import('@opentelemetry/sdk-logs');
 
   // For troubleshooting, set the log level to DiagLogLevel.DEBUG
   diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.DEBUG);
 
   const headers = {
-    ...(process.env.OTEL_EXPORTER_OTLP_API_KEY ? {
-      'x-api-key': process.env.OTEL_EXPORTER_OTLP_API_KEY ?? '',
-    } : {}),
-    ...(process.env.PHOENIX_API_KEY && process.env.PHOENIX_SPACE_ID ? {
-      'space_id': process.env.PHOENIX_SPACE_ID,
-      'api_key': process.env.PHOENIX_API_KEY,
-    } : {}),
+    ...(process.env.OTEL_EXPORTER_OTLP_API_KEY
+      ? {
+          'x-api-key': process.env.OTEL_EXPORTER_OTLP_API_KEY ?? '',
+        }
+      : {}),
+    ...(process.env.PHOENIX_API_KEY && process.env.PHOENIX_SPACE_ID
+      ? {
+          space_id: process.env.PHOENIX_SPACE_ID,
+          api_key: process.env.PHOENIX_API_KEY,
+        }
+      : {}),
   };
   const resource = defaultResource().merge(
     resourceFromAttributes({
@@ -53,12 +45,13 @@ if (process.env.ENABLED_OPENINFERENCE_TELEMETRY === 'true') {
 
   if (process.env.OTEL_EXPORTER_OTLP_TRACE_ENDPOINT) {
     const provider = new NodeTracerProvider({
-      spanProcessors: [new SimpleSpanProcessor(
-        new OTLPTraceExporter({
-          url: process.env.OTEL_EXPORTER_OTLP_TRACE_ENDPOINT,
-          headers,
-        }),
-      ),
+      spanProcessors: [
+        new SimpleSpanProcessor(
+          new OTLPTraceExporter({
+            url: process.env.OTEL_EXPORTER_OTLP_TRACE_ENDPOINT,
+            headers,
+          }),
+        ),
       ],
       resource,
     });
@@ -70,7 +63,6 @@ if (process.env.ENABLED_OPENINFERENCE_TELEMETRY === 'true') {
     // LangChain must be manually instrumented as it doesn't have a traditional module structure
     const lcInstrumentation = new LangChainInstrumentation();
     lcInstrumentation.manuallyInstrument(lcCallbackManager);
-
 
     registerInstrumentations({
       instrumentations: [
@@ -106,12 +98,12 @@ if (process.env.ENABLED_OPENINFERENCE_TELEMETRY === 'true') {
   if (process.env.OTEL_EXPORTER_OTLP_LOGS_ENDPOINT) {
     const loggerProvider = new LoggerProvider({
       processors: [
-        new SimpleLogRecordProcessor(
-          new OTLPLogExporter({
+        new SimpleLogRecordProcessor({
+          exporter: new OTLPLogExporter({
             url: process.env.OTEL_EXPORTER_OTLP_LOGS_ENDPOINT ?? 'http://localhost:6006/v1/logs',
             headers,
           }),
-        ),
+        }),
       ],
     });
 

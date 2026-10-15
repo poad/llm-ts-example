@@ -1,8 +1,8 @@
-import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-proto';
+import type { Exporters } from '../../otel-exporters.js';
+
 import { OTLPLogExporter } from '@opentelemetry/exporter-logs-otlp-proto';
 import { OTLPMetricExporter } from '@opentelemetry/exporter-metrics-otlp-proto';
-
-import type { Exporters } from '../../otel-exporters.js';
+import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-proto';
 
 export const init = (): Exporters => {
   const experimentId = process.env.MLFLOW_EXPERIMENT_ID ?? '0';
@@ -21,28 +21,34 @@ export const init = (): Exporters => {
   const traceHeaders = {
     ...commonHeaders,
   };
-  const traceExporter = enableTracing ? new OTLPTraceExporter({
-    url: traceEndpoint,
-    headers: traceHeaders,
-  }) : undefined;
+  const traceExporter = enableTracing
+    ? new OTLPTraceExporter({
+        url: traceEndpoint,
+        headers: traceHeaders,
+      })
+    : undefined;
 
   const logsEndpoint = `${url}/v1/logs`;
   const logsHeaders = {
     ...commonHeaders,
   };
-  const logsExporter = enableLogs ? new OTLPLogExporter({
-    url: logsEndpoint,
-    headers: logsHeaders,
-  }) : undefined;
+  const logsExporter = enableLogs
+    ? new OTLPLogExporter({
+        url: logsEndpoint,
+        headers: logsHeaders,
+      })
+    : undefined;
 
   const metricsEndpoint = `${url}/v1/metrics`;
   const metricsHeaders = {
     ...commonHeaders,
   };
-  const metricExporter = enableMetrics ? new OTLPMetricExporter({
-    url: metricsEndpoint,
-    headers: metricsHeaders,
-  }) : undefined;
+  const metricExporter = enableMetrics
+    ? new OTLPMetricExporter({
+        url: metricsEndpoint,
+        headers: metricsHeaders,
+      })
+    : undefined;
 
   return {
     trace: traceExporter,
@@ -54,4 +60,4 @@ export const init = (): Exporters => {
       await metricExporter?.forceFlush();
     },
   };
-}
+};

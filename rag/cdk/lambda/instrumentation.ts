@@ -1,28 +1,26 @@
-
-import { registerInstrumentations } from '@opentelemetry/instrumentation';
-import {
-  NodeTracerProvider,
-  SimpleSpanProcessor,
-  Span,
-} from '@opentelemetry/sdk-trace-node';
-import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-proto';
-import { ATTR_SERVICE_NAME } from '@opentelemetry/semantic-conventions';
-import { diag, DiagConsoleLogger, DiagLogLevel } from '@opentelemetry/api';
 import { LangChainInstrumentation } from '@arizeai/openinference-instrumentation-langchain';
 import * as lcCallbackManager from '@langchain/core/callbacks/manager';
+import { diag, DiagConsoleLogger, DiagLogLevel } from '@opentelemetry/api';
+import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-proto';
+import { registerInstrumentations } from '@opentelemetry/instrumentation';
 import { resourceFromAttributes } from '@opentelemetry/resources';
+import { NodeTracerProvider, SimpleSpanProcessor, Span } from '@opentelemetry/sdk-trace-node';
+import { ATTR_SERVICE_NAME } from '@opentelemetry/semantic-conventions';
 
 if (process.env.ENABLED_OPENINFERENCE_TELEMETRY === 'true') {
   // For troubleshooting, set the log level to DiagLogLevel.DEBUG
   diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.INFO);
-
 
   class FilteringSpanProcessor extends SimpleSpanProcessor {
     onEnd(span: Span) {
       const outputValue = span.attributes['output.value'];
 
       // 文字列チェックと簡易フィルタ
-      if (!outputValue || typeof outputValue !== 'string' || !outputValue.includes('HumanMessage')) {
+      if (
+        !outputValue ||
+        typeof outputValue !== 'string' ||
+        !outputValue.includes('HumanMessage')
+      ) {
         return super.onEnd(span);
       }
 
@@ -47,15 +45,16 @@ if (process.env.ENABLED_OPENINFERENCE_TELEMETRY === 'true') {
   }
 
   const provider = new NodeTracerProvider({
-    spanProcessors: [new FilteringSpanProcessor(
-      new OTLPTraceExporter({
-        url: process.env.OTEL_EXPORTER_OTLP_ENDPOINT ?? 'http://localhost:6006/v1/traces',
-        headers: {
-          'x-api-key': process.env.OTEL_EXPORTER_OTLP_API_KEY ?? '',
-          'Langsmith-Project': 'default',
-        },
-      }),
-    ),
+    spanProcessors: [
+      new FilteringSpanProcessor(
+        new OTLPTraceExporter({
+          url: process.env.OTEL_EXPORTER_OTLP_ENDPOINT ?? 'http://localhost:6006/v1/traces',
+          headers: {
+            'x-api-key': process.env.OTEL_EXPORTER_OTLP_API_KEY ?? '',
+            'Langsmith-Project': 'default',
+          },
+        }),
+      ),
     ],
     resource: resourceFromAttributes({
       [ATTR_SERVICE_NAME]: 'chat-service',

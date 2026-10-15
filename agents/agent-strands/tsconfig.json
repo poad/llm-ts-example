@@ -3,9 +3,7 @@
     "target": "esnext",
     "module": "nodenext",
     "moduleResolution": "nodenext",
-    "lib": [
-      "esnext"
-    ],
+    "lib": ["esnext"],
     "declaration": false,
     "strict": true,
     "noImplicitAny": true,
@@ -23,18 +21,8 @@
     "skipLibCheck": true,
     "rootDir": "./src",
     "outDir": "./dist",
-    "typeRoots": [
-      "./node_modules",
-      "./node_modules/@types"
-    ],
-    "types": [
-      "node"
-    ]
+    "typeRoots": ["./node_modules", "./node_modules/@types"],
+    "types": ["node"]
   },
-  "exclude": [
-    "node_modules",
-    "eslint.config.ts",
-    "dist",
-    "vite.config.ts"
-  ]
+  "exclude": ["node_modules", "dist", "vite.config.ts"]
 }

@@ -1,14 +1,15 @@
-import { createDeepAgent } from "deepagents";
-import * as traceloop from "@traceloop/node-server-sdk";
+import { tools } from './tools.js';
+
 import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-proto';
-import { tools } from "./tools.js";
+import * as traceloop from '@traceloop/node-server-sdk';
+import { createDeepAgent } from 'deepagents';
 
 traceloop.initialize({
-  appName: "my-deep-agent",
+  appName: 'my-deep-agent',
   exporter: new OTLPTraceExporter({
-    url: "http://127.0.0.1:5000/v1/traces",
+    url: 'http://127.0.0.1:5000/v1/traces',
     headers: {
-      "x-mlflow-experiment-id": "0",
+      'x-mlflow-experiment-id': '0',
     },
   }),
 });
@@ -28,13 +29,13 @@ const researchInstructions = `
 `;
 
 const agent = createDeepAgent({
-  model: "bedrock:global.amazon.nova-2-lite-v1:0",
+  model: 'bedrock:global.amazon.nova-2-lite-v1:0',
   tools,
   systemPrompt: researchInstructions,
 });
 
 const result = await agent.invoke({
-  messages: [{ role: "user", content: "MCPサーバーをサーバーレスで構築するには？" }],
+  messages: [{ role: 'user', content: 'MCPサーバーをサーバーレスで構築するには？' }],
 });
 
 // Print the agent's response

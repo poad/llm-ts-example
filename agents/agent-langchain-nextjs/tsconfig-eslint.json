@@ -10,8 +10,5 @@
     "components/**/*.tsx",
     "lib/**/*.ts"
   ],
-  "exclude": [
-    "node_modules",
-    "cdk.out"
-  ]
+  "exclude": ["node_modules", "cdk.out"]
 }

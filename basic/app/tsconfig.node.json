@@ -9,8 +9,6 @@
     "paths": {
       "@llm-ts-example/common-core": ["../../common/core"]
     },
-    "typeRoots": [
-      "./node_modules/@types"
-    ]
+    "typeRoots": ["./node_modules/@types"]
   }
 }

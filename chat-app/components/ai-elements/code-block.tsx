@@ -1,7 +1,5 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
 import { CheckIcon, CopyIcon } from 'lucide-react';
 import {
   type ComponentProps,
@@ -13,6 +11,9 @@ import {
   useState,
 } from 'react';
 import { type BundledLanguage, codeToHtml, type ShikiTransformer } from 'shiki';
+
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 type CodeBlockProps = HTMLAttributes<HTMLDivElement> & {
   code: string;
@@ -54,9 +55,7 @@ export async function highlightCode(
   language: BundledLanguage,
   showLineNumbers = false,
 ) {
-  const transformers: ShikiTransformer[] = showLineNumbers
-    ? [lineNumberTransformer]
-    : [];
+  const transformers: ShikiTransformer[] = showLineNumbers ? [lineNumberTransformer] : [];
 
   return await Promise.all([
     codeToHtml(code, {
@@ -119,9 +118,7 @@ export const CodeBlock = ({
             dangerouslySetInnerHTML={{ __html: darkHtml }}
           />
           {children && (
-            <div className="absolute top-2 right-2 flex items-center gap-2">
-              {children}
-            </div>
+            <div className="absolute top-2 right-2 flex items-center gap-2">{children}</div>
           )}
         </div>
       </div>

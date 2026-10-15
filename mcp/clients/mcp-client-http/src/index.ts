@@ -1,5 +1,6 @@
-import {config} from 'dotenv';
 import { createMcpClient } from './McpClient.js';
+
+import { config } from 'dotenv';
 
 config();
 

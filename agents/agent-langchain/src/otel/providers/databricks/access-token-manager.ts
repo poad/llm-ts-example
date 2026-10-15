@@ -1,4 +1,5 @@
 import { logger } from '../../../logging.js';
+
 import { config as dotenvXConfig } from '@dotenvx/dotenvx';
 
 dotenvXConfig({ path: ['.env', '.env.test'], override: true });
@@ -57,8 +58,8 @@ async function fetchAccessToken(): Promise<string | null> {
     logger.warn('OAuth設定が不完全です', {
       config: {
         ...config,
-        clientSecret: config.clientSecret ? '***' : '<undefined>'
-      }
+        clientSecret: config.clientSecret ? '***' : '<undefined>',
+      },
     });
     return null;
   }
@@ -69,7 +70,7 @@ async function fetchAccessToken(): Promise<string | null> {
     const response = await fetch(config.endpoint, {
       method: 'POST',
       headers: {
-        'Authorization': `Basic ${credentials}`,
+        Authorization: `Basic ${credentials}`,
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: 'grant_type=client_credentials&scope=all-apis',
@@ -82,7 +83,7 @@ async function fetchAccessToken(): Promise<string | null> {
       throw new Error();
     }
 
-    const data = await response.json() as { access_token: string; expires_in: number };
+    const data = (await response.json()) as { access_token: string; expires_in: number };
     const expiresAt = Date.now() + data.expires_in * 1000;
 
     tokenCache = {

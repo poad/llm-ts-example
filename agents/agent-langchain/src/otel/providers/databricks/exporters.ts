@@ -1,18 +1,15 @@
-import { Metadata } from '@grpc/grpc-js';
-
-import * as grpcTraceing from '@opentelemetry/exporter-trace-otlp-grpc';
-import * as grpcLogs from '@opentelemetry/exporter-logs-otlp-grpc';
-import * as grpcMetrics from '@opentelemetry/exporter-metrics-otlp-grpc';
-
-import * as httpTraceing from '@opentelemetry/exporter-trace-otlp-proto';
-import * as httpLogs from '@opentelemetry/exporter-logs-otlp-proto';
-import * as httpMetrics from '@opentelemetry/exporter-metrics-otlp-proto';
-
+import { logger } from '../../../logging.js';
+import { Exporters } from '../../otel-exporters.js';
 import { getAccessToken } from './access-token-manager.js';
 
-import { Exporters } from '../../otel-exporters.js';
-import { logger } from '../../../logging.js';
 import { config as dotenvXConfig } from '@dotenvx/dotenvx';
+import { Metadata } from '@grpc/grpc-js';
+import * as grpcLogs from '@opentelemetry/exporter-logs-otlp-grpc';
+import * as httpLogs from '@opentelemetry/exporter-logs-otlp-proto';
+import * as grpcMetrics from '@opentelemetry/exporter-metrics-otlp-grpc';
+import * as httpMetrics from '@opentelemetry/exporter-metrics-otlp-proto';
+import * as grpcTraceing from '@opentelemetry/exporter-trace-otlp-grpc';
+import * as httpTraceing from '@opentelemetry/exporter-trace-otlp-proto';
 
 dotenvXConfig({ path: ['.env', '.env.test'], override: true });
 
@@ -23,7 +20,7 @@ export const init = async ({ useGrpc }: { useGrpc: boolean }): Promise<Exporters
     return {
       flush: async () => {
         logger.trace('skip');
-       }
+      },
     };
   }
   const ucSchema = process.env.DATABRICKS_UC_SCHEMA_NAME;
@@ -32,7 +29,7 @@ export const init = async ({ useGrpc }: { useGrpc: boolean }): Promise<Exporters
     return {
       flush: async () => {
         logger.trace('skip');
-       }
+      },
     };
   }
 
@@ -46,7 +43,7 @@ export const init = async ({ useGrpc }: { useGrpc: boolean }): Promise<Exporters
     return {
       flush: async () => {
         logger.trace('skip');
-       },
+      },
     };
   }
   const traceTableName = `${ucSchema}.${tablePrefix}_otel_spans`;
@@ -59,10 +56,12 @@ export const init = async ({ useGrpc }: { useGrpc: boolean }): Promise<Exporters
     const traceMetadata = new Metadata({});
     traceMetadata.set('x-databricks-zerobus-table-name', traceTableName);
     traceMetadata.set('Authorization', `Bearer ${token}`);
-    const traceExporter = enableTracing ? new grpcTraceing.OTLPTraceExporter({
-      url,
-      metadata: traceMetadata,
-    }) : undefined;
+    const traceExporter = enableTracing
+      ? new grpcTraceing.OTLPTraceExporter({
+          url,
+          metadata: traceMetadata,
+        })
+      : undefined;
 
     const logsMetadata = new Metadata({});
     logsMetadata.set('x-databricks-zerobus-table-name', logsTableName);
@@ -104,30 +103,36 @@ export const init = async ({ useGrpc }: { useGrpc: boolean }): Promise<Exporters
     ...commonHeaders,
     'X-Databricks-UC-Table-Name': traceTableName,
   };
-  const traceExporter = enableTracing ? new httpTraceing.OTLPTraceExporter({
-    url: traceEndpoint,
-    headers: traceHeaders,
-  }) : undefined;
+  const traceExporter = enableTracing
+    ? new httpTraceing.OTLPTraceExporter({
+        url: traceEndpoint,
+        headers: traceHeaders,
+      })
+    : undefined;
 
   const logsEndpoint = `${url}/api/2.0/otel/v1/logs`;
   const logsHeaders = {
     ...commonHeaders,
     'X-Databricks-UC-Table-Name': logsTableName,
   };
-  const logsExporter = enableLogs ? new httpLogs.OTLPLogExporter({
-    url: logsEndpoint,
-    headers: logsHeaders,
-  }) : undefined;
+  const logsExporter = enableLogs
+    ? new httpLogs.OTLPLogExporter({
+        url: logsEndpoint,
+        headers: logsHeaders,
+      })
+    : undefined;
 
   const metricsEndpoint = `${url}/api/2.0/otel/v1/metrics`;
   const metricsHeaders = {
     ...commonHeaders,
     'X-Databricks-UC-Table-Name': `${tablePrefix}_otel_metrics`,
   };
-  const metricExporter = enableMetrics ? new httpMetrics.OTLPMetricExporter({
-    url: metricsEndpoint,
-    headers: metricsHeaders,
-  }) : undefined;
+  const metricExporter = enableMetrics
+    ? new httpMetrics.OTLPMetricExporter({
+        url: metricsEndpoint,
+        headers: metricsHeaders,
+      })
+    : undefined;
 
   return {
     trace: traceExporter,
@@ -139,4 +144,4 @@ export const init = async ({ useGrpc }: { useGrpc: boolean }): Promise<Exporters
       await metricExporter?.forceFlush();
     },
   };
-}
+};

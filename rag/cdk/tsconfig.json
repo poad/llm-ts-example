@@ -2,10 +2,7 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "nodenext",
-    "lib": [
-      "esnext",
-      "dom"
-    ],
+    "lib": ["esnext", "dom"],
     "moduleResolution": "nodenext",
     "moduleDetection": "force",
     "resolveJsonModule": true,
@@ -27,24 +24,13 @@
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
     "skipLibCheck": true,
-    "typeRoots": [
-      "./node_modules",
-      "./node_modules/@types",
-      "./lambda"
-    ],
-    "types": [
-      "node"
-    ],
+    "typeRoots": ["./node_modules", "./node_modules/@types", "./lambda"],
+    "types": ["node"],
     "noEmit": true,
     "paths": {
       "@llm-ts-example/common-backend-core": ["../../common/backend/core"],
-      "@llm-ts-example/common-backend-langchain": ["../../common/backend/langchain"],
+      "@llm-ts-example/common-backend-langchain": ["../../common/backend/langchain"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "cdk.out",
-    "eslint.config.ts",
-    "vitest.config.ts"
-  ]
+  "exclude": ["node_modules", "cdk.out", "eslint.config.ts", "vitest.config.ts"]
 }

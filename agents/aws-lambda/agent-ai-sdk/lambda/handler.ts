@@ -1,4 +1,5 @@
 import { Readable, PassThrough } from 'node:stream';
+
 import { bedrock } from '@ai-sdk/amazon-bedrock';
 import { azure } from '@ai-sdk/azure';
 import { logger } from '@llm-ts-example/common-backend-core';
@@ -20,10 +21,7 @@ const createModel = (id?: string) => {
 
 const messages: ModelMessage[] = [];
 
-export async function handle(
-  { body }: { body: string },
-  output: NodeJS.WritableStream,
-) {
+export async function handle({ body }: { body: string }, output: NodeJS.WritableStream) {
   try {
     const { prompt, modelId, session, id } = JSON.parse(body);
     if (!prompt) {
@@ -48,12 +46,18 @@ export async function handle(
       tools: {
         // Your tools here
       },
-      experimental_telemetry: {
+      runtimeContext: {
+        model: modelId,
+        thread_id: session,
+        query_id: id,
+      },
+      telemetry: {
         isEnabled: true,
-        metadata: {
-          model: modelId,
-          thread_id: session,
-          query_id: id,
+        functionId: 'agent-ai-sdk',
+        includeRuntimeContext: {
+          model: true,
+          thread_id: true,
+          query_id: true,
         },
       },
     });
@@ -76,7 +80,7 @@ export async function handle(
     Readable.fromWeb(stream.textStream).pipe(result).pipe(output);
     messages.push({ role: 'assistant', content: (await result.toArray()).join('') });
   } catch (e) {
-    logger.error('', {error: e});
+    logger.error('', { error: e });
     output.write(JSON.stringify(e));
   }
 }

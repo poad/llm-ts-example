@@ -1,15 +1,17 @@
 import assert from 'node:assert';
+
 import { buildCommon, buildFrontend } from './process/setup';
+
 import * as cdk from 'aws-cdk-lib';
-import { Construct } from 'constructs';
-import * as s3 from 'aws-cdk-lib/aws-s3';
 import * as cloudfront from 'aws-cdk-lib/aws-cloudfront';
 import * as origins from 'aws-cdk-lib/aws-cloudfront-origins';
+import * as iam from 'aws-cdk-lib/aws-iam';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as nodejs from 'aws-cdk-lib/aws-lambda-nodejs';
 import * as awslogs from 'aws-cdk-lib/aws-logs';
-import * as iam from 'aws-cdk-lib/aws-iam';
+import * as s3 from 'aws-cdk-lib/aws-s3';
 import * as deployment from 'aws-cdk-lib/aws-s3-deployment';
+import { Construct } from 'constructs';
 
 interface CloudFrontProps {
   readonly comment: string;
@@ -46,16 +48,12 @@ interface CloudfrontCdnTemplateStackProps extends Config {
   readonly embeddingsDeployName: string;
   readonly apiVersion: string;
   readonly langfuse?: LangFuseProps;
-  readonly pinecone: PineconeProps,
+  readonly pinecone: PineconeProps;
   readonly langsmith?: LangSmithProps;
 }
 
 export class CloudfrontCdnTemplateStack extends cdk.Stack {
-  constructor(
-    scope: Construct,
-    id: string,
-    props: CloudfrontCdnTemplateStackProps,
-  ) {
+  constructor(scope: Construct, id: string, props: CloudfrontCdnTemplateStackProps) {
     super(scope, id, props);
 
     const {
@@ -101,20 +99,26 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
 
     const apiRootPath = '/api/';
 
-    const langfuseEnv = langfuse ? {
-      LANGFUSE_SECRET_KEY: langfuse.sk,
-      LANGFUSE_PUBLIC_KEY: langfuse.pk,
-      ...(langfuse.endpoint ? {
-        LANGFUSE_BASEURL: langfuse.endpoint,
-      } : {}),
-    } : {};
+    const langfuseEnv = langfuse
+      ? {
+          LANGFUSE_SECRET_KEY: langfuse.sk,
+          LANGFUSE_PUBLIC_KEY: langfuse.pk,
+          ...(langfuse.endpoint
+            ? {
+                LANGFUSE_BASEURL: langfuse.endpoint,
+              }
+            : {}),
+        }
+      : {};
 
-    const langsmithEnv: Record<string, string> = langsmith ? {
-      LANGCHAIN_TRACING_V2: 'true',
-      LANGCHAIN_ENDPOINT: langsmith.endpoint,
-      LANGCHAIN_API_KEY: langsmith.apiKey,
-      LANGCHAIN_PROJECT: langsmith.project,
-    } : {};
+    const langsmithEnv: Record<string, string> = langsmith
+      ? {
+          LANGCHAIN_TRACING_V2: 'true',
+          LANGCHAIN_ENDPOINT: langsmith.endpoint,
+          LANGCHAIN_API_KEY: langsmith.apiKey,
+          LANGCHAIN_PROJECT: langsmith.project,
+        }
+      : {};
 
     const fn = new nodejs.NodejsFunction(this, 'Lambda', {
       runtime: lambda.Runtime.NODEJS_24_X,
@@ -139,7 +143,8 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
         target: 'node22',
         minify: true,
         format: nodejs.OutputFormat.ESM,
-        banner: 'import { createRequire } from \'module\';const require = createRequire(import.meta.url);',
+        banner:
+          "import { createRequire } from 'module';const require = createRequire(import.meta.url);",
         ...devOptions.bundling,
       },
       memorySize: 256,
@@ -155,10 +160,7 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
             statements: [
               new iam.PolicyStatement({
                 effect: iam.Effect.ALLOW,
-                actions: [
-                  'bedrock:InvokeModel*',
-                  'logs:PutLogEvents',
-                ],
+                actions: ['bedrock:InvokeModel*', 'logs:PutLogEvents'],
                 resources: ['*'],
               }),
             ],
@@ -177,13 +179,17 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
       encryption: s3.BucketEncryption.S3_MANAGED,
     });
 
-    const websiteIndexPageForwardFunction = new cloudfront.Function(this, 'WebsiteIndexPageForwardFunction', {
-      functionName: `${appName}-api-index-forword`,
-      code: cloudfront.FunctionCode.fromFile({
-        filePath: 'function/index.js',
-      }),
-      runtime: cloudfront.FunctionRuntime.JS_2_0,
-    });
+    const websiteIndexPageForwardFunction = new cloudfront.Function(
+      this,
+      'WebsiteIndexPageForwardFunction',
+      {
+        functionName: `${appName}-api-index-forword`,
+        code: cloudfront.FunctionCode.fromFile({
+          filePath: 'function/index.js',
+        }),
+        runtime: cloudfront.FunctionRuntime.JS_2_0,
+      },
+    );
     const functionAssociations = [
       {
         eventType: cloudfront.FunctionEventType.VIEWER_REQUEST,
@@ -209,14 +215,16 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
       },
       additionalBehaviors: {
         [`${apiRootPath}*`]: {
-          origin: new origins.FunctionUrlOrigin(fn.addFunctionUrl({
-            authType: cdk.aws_lambda.FunctionUrlAuthType.AWS_IAM,
-            invokeMode: cdk.aws_lambda.InvokeMode.RESPONSE_STREAM,
-          }),
-          {
-            originId: 'lambda',
-            readTimeout: cdk.Duration.minutes(1),
-          }),
+          origin: new origins.FunctionUrlOrigin(
+            fn.addFunctionUrl({
+              authType: cdk.aws_lambda.FunctionUrlAuthType.AWS_IAM,
+              invokeMode: cdk.aws_lambda.InvokeMode.RESPONSE_STREAM,
+            }),
+            {
+              originId: 'lambda',
+              readTimeout: cdk.Duration.minutes(1),
+            },
+          ),
           viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
           cachePolicy: cloudfront.CachePolicy.CACHING_DISABLED,
           allowedMethods: cloudfront.AllowedMethods.ALLOW_ALL,
@@ -226,10 +234,7 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
             'ResponseHeadersPolicy',
             {
               corsBehavior: {
-                accessControlAllowOrigins: [
-                  'http://localhost:4173',
-                  'http://localhost:5173',
-                ],
+                accessControlAllowOrigins: ['http://localhost:4173', 'http://localhost:5173'],
                 accessControlAllowHeaders: ['*'],
                 accessControlAllowMethods: ['ALL'],
                 accessControlAllowCredentials: false,
@@ -269,19 +274,18 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
     });
 
     // OAC for Lambda
-    const cfnOriginAccessControl =
-      new cdk.aws_cloudfront.CfnOriginAccessControl(
-        this,
-        'OriginAccessControl',
-        {
-          originAccessControlConfig: {
-            name: `OAC for Lambda Functions URL (${functionName})`,
-            originAccessControlOriginType: 'lambda',
-            signingBehavior: 'always',
-            signingProtocol: 'sigv4',
-          },
+    const cfnOriginAccessControl = new cdk.aws_cloudfront.CfnOriginAccessControl(
+      this,
+      'OriginAccessControl',
+      {
+        originAccessControlConfig: {
+          name: `OAC for Lambda Functions URL (${functionName})`,
+          originAccessControlOriginType: 'lambda',
+          signingBehavior: 'always',
+          signingProtocol: 'sigv4',
         },
-      );
+      },
+    );
 
     const cfnDistribution = cf.node.defaultChild as cdk.aws_cloudfront.CfnDistribution;
 

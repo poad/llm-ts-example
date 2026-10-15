@@ -1,9 +1,8 @@
-
-import { MultiServerMCPClient } from "@langchain/mcp-adapters";
+import { MultiServerMCPClient } from '@langchain/mcp-adapters';
 
 const client = new MultiServerMCPClient({
   'aws-knowledge-mcp-server': {
-    transport: "http",
+    transport: 'http',
     url: 'https://knowledge-mcp.global.api.aws',
   },
 });

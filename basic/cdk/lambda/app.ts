@@ -1,9 +1,14 @@
 import { createAgent, initChatModel } from 'langchain';
 
-export const createApp = async ({ model: { model, options} }: { model: {
-  model: string;
-  options: Record<string, string | number | boolean | Record<string, string> | undefined>;
-}, modelName: string }) => {
+export const createApp = async ({
+  model: { model, options },
+}: {
+  model: {
+    model: string;
+    options: Record<string, string | number | boolean | Record<string, string> | undefined>;
+  };
+  modelName: string;
+}) => {
   const agent = createAgent({
     model: await initChatModel(model, options),
     tools: [],

@@ -1,21 +1,24 @@
-import express, { json, Request, Response } from 'express';
 import { NodeStreamableHTTPServerTransport } from '@modelcontextprotocol/node';
 import { McpServer } from '@modelcontextprotocol/server';
+import express, { json, Request, Response } from 'express';
 import { z } from 'zod';
 
 const app = express();
 app.use(json());
 
 // Create server instance
-const server = new McpServer({
-  name: 'weather',
-  version: '1.0.0',
-}, {
-  capabilities: {
-    resources: {},
-    tools: {},
+const server = new McpServer(
+  {
+    name: 'weather',
+    version: '1.0.0',
   },
-});
+  {
+    capabilities: {
+      resources: {},
+      tools: {},
+    },
+  },
+);
 
 app.post('/mcp', async (req: Request, res: Response) => {
   // In stateless mode, create a new instance of transport and server for each request
@@ -52,28 +55,31 @@ app.post('/mcp', async (req: Request, res: Response) => {
 
 app.get('/mcp', async (req: Request, res: Response) => {
   console.log('Received GET MCP request');
-  res.writeHead(405).end(JSON.stringify({
-    jsonrpc: '2.0',
-    error: {
-      code: -32000,
-      message: 'Method not allowed.',
-    },
-    id: null,
-  }));
+  res.writeHead(405).end(
+    JSON.stringify({
+      jsonrpc: '2.0',
+      error: {
+        code: -32000,
+        message: 'Method not allowed.',
+      },
+      id: null,
+    }),
+  );
 });
 
 app.delete('/mcp', async (req: Request, res: Response) => {
   console.log('Received DELETE MCP request');
-  res.writeHead(405).end(JSON.stringify({
-    jsonrpc: '2.0',
-    error: {
-      code: -32000,
-      message: 'Method not allowed.',
-    },
-    id: null,
-  }));
+  res.writeHead(405).end(
+    JSON.stringify({
+      jsonrpc: '2.0',
+      error: {
+        code: -32000,
+        message: 'Method not allowed.',
+      },
+      id: null,
+    }),
+  );
 });
-
 
 // Start the server
 const PORT = 3000;
@@ -82,28 +88,28 @@ app.listen(PORT, () => {
 });
 
 interface Geometry {
-  coordinates: number[],
-  type: string
+  coordinates: number[];
+  type: string;
 }
 
 interface GeocodingProperties {
-  addressCode: string,
-  title: string,
-  dataSource?: string,
+  addressCode: string;
+  title: string;
+  dataSource?: string;
 }
 
 interface Geocoding {
-  geometry: Geometry,
-  type: string,
-  properties: GeocodingProperties
+  geometry: Geometry;
+  type: string;
+  properties: GeocodingProperties;
 }
 
 type GeocodingResponse = Geocoding[];
 
 interface GetGeocodingResult {
-  longitude: number,
-  latitude: number,
-  name?: string
+  longitude: number;
+  latitude: number;
+  name?: string;
 }
 
 async function getGeocoding(location: string): Promise<GetGeocodingResult | null> {
@@ -115,7 +121,12 @@ async function getGeocoding(location: string): Promise<GetGeocodingResult | null
     return null;
   }
 
-  const { geometry: { coordinates: [longitude, latitude] }, properties: { title: name } } = geocodingData[0];
+  const {
+    geometry: {
+      coordinates: [longitude, latitude],
+    },
+    properties: { title: name },
+  } = geocodingData[0];
 
   return {
     longitude,

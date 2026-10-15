@@ -1,28 +1,28 @@
-"use client";
+'use client';
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
-import { cn } from "@/lib/utils";
-import { CheckIcon, CopyIcon, EyeIcon, EyeOffIcon } from "lucide-react";
+import { CheckIcon, CopyIcon, EyeIcon, EyeOffIcon } from 'lucide-react';
 import {
   type ComponentProps,
   createContext,
   type HTMLAttributes,
   useContext,
   useState,
-} from "react";
+} from 'react';
+
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Switch } from '@/components/ui/switch';
+import { cn } from '@/lib/utils';
 
 interface EnvironmentVariablesContextType {
   showValues: boolean;
   setShowValues: (show: boolean) => void;
 }
 
-const EnvironmentVariablesContext =
-  createContext<EnvironmentVariablesContextType>({
-    showValues: false,
-    setShowValues: () => undefined,
-  });
+const EnvironmentVariablesContext = createContext<EnvironmentVariablesContextType>({
+  showValues: false,
+  setShowValues: () => undefined,
+});
 
 export type EnvironmentVariablesProps = HTMLAttributes<HTMLDivElement> & {
   showValues?: boolean;
@@ -38,8 +38,7 @@ export const EnvironmentVariables = ({
   children,
   ...props
 }: EnvironmentVariablesProps) => {
-  const [internalShowValues, setInternalShowValues] =
-    useState(defaultShowValues);
+  const [internalShowValues, setInternalShowValues] = useState(defaultShowValues);
   const showValues = controlledShowValues ?? internalShowValues;
 
   const setShowValues = (show: boolean) => {
@@ -49,10 +48,7 @@ export const EnvironmentVariables = ({
 
   return (
     <EnvironmentVariablesContext.Provider value={{ showValues, setShowValues }}>
-      <div
-        className={cn("rounded-lg border bg-background", className)}
-        {...props}
-      >
+      <div className={cn('rounded-lg border bg-background', className)} {...props}>
         {children}
       </div>
     </EnvironmentVariablesContext.Provider>
@@ -66,13 +62,7 @@ export const EnvironmentVariablesHeader = ({
   children,
   ...props
 }: EnvironmentVariablesHeaderProps) => (
-  <div
-    className={cn(
-      "flex items-center justify-between border-b px-4 py-3",
-      className
-    )}
-    {...props}
-  >
+  <div className={cn('flex items-center justify-between border-b px-4 py-3', className)} {...props}>
     {children}
   </div>
 );
@@ -84,8 +74,8 @@ export const EnvironmentVariablesTitle = ({
   children,
   ...props
 }: EnvironmentVariablesTitleProps) => (
-  <h3 className={cn("font-medium text-sm", className)} {...props}>
-    {children ?? "Environment Variables"}
+  <h3 className={cn('font-medium text-sm', className)} {...props}>
+    {children ?? 'Environment Variables'}
   </h3>
 );
 
@@ -98,7 +88,7 @@ export const EnvironmentVariablesToggle = ({
   const { showValues, setShowValues } = useContext(EnvironmentVariablesContext);
 
   return (
-    <div className={cn("flex items-center gap-2", className)}>
+    <div className={cn('flex items-center gap-2', className)}>
       <span className="text-muted-foreground text-xs">
         {showValues ? <EyeIcon size={14} /> : <EyeOffIcon size={14} />}
       </span>
@@ -119,7 +109,7 @@ export const EnvironmentVariablesContent = ({
   children,
   ...props
 }: EnvironmentVariablesContentProps) => (
-  <div className={cn("divide-y", className)} {...props}>
+  <div className={cn('divide-y', className)} {...props}>
     {children}
   </div>
 );
@@ -129,11 +119,10 @@ interface EnvironmentVariableContextType {
   value: string;
 }
 
-const EnvironmentVariableContext =
-  createContext<EnvironmentVariableContextType>({
-    name: "",
-    value: "",
-  });
+const EnvironmentVariableContext = createContext<EnvironmentVariableContextType>({
+  name: '',
+  value: '',
+});
 
 export type EnvironmentVariableProps = HTMLAttributes<HTMLDivElement> & {
   name: string;
@@ -148,13 +137,7 @@ export const EnvironmentVariable = ({
   ...props
 }: EnvironmentVariableProps) => (
   <EnvironmentVariableContext.Provider value={{ name, value }}>
-    <div
-      className={cn(
-        "flex items-center justify-between gap-4 px-4 py-3",
-        className
-      )}
-      {...props}
-    >
+    <div className={cn('flex items-center justify-between gap-4 px-4 py-3', className)} {...props}>
       {children ?? (
         <>
           <div className="flex items-center gap-2">
@@ -174,7 +157,7 @@ export const EnvironmentVariableGroup = ({
   children,
   ...props
 }: EnvironmentVariableGroupProps) => (
-  <div className={cn("flex items-center gap-2", className)} {...props}>
+  <div className={cn('flex items-center gap-2', className)} {...props}>
     {children}
   </div>
 );
@@ -189,7 +172,7 @@ export const EnvironmentVariableName = ({
   const { name } = useContext(EnvironmentVariableContext);
 
   return (
-    <span className={cn("font-mono text-sm", className)} {...props}>
+    <span className={cn('font-mono text-sm', className)} {...props}>
       {children ?? name}
     </span>
   );
@@ -205,16 +188,14 @@ export const EnvironmentVariableValue = ({
   const { value } = useContext(EnvironmentVariableContext);
   const { showValues } = useContext(EnvironmentVariablesContext);
 
-  const displayValue = showValues
-    ? value
-    : "•".repeat(Math.min(value.length, 20));
+  const displayValue = showValues ? value : '•'.repeat(Math.min(value.length, 20));
 
   return (
     <span
       className={cn(
-        "font-mono text-muted-foreground text-sm",
-        !showValues && "select-none",
-        className
+        'font-mono text-muted-foreground text-sm',
+        !showValues && 'select-none',
+        className,
       )}
       {...props}
     >
@@ -223,20 +204,18 @@ export const EnvironmentVariableValue = ({
   );
 };
 
-export type EnvironmentVariableCopyButtonProps = ComponentProps<
-  typeof Button
-> & {
+export type EnvironmentVariableCopyButtonProps = ComponentProps<typeof Button> & {
   onCopy?: () => void;
   onError?: (error: Error) => void;
   timeout?: number;
-  copyFormat?: "name" | "value" | "export";
+  copyFormat?: 'name' | 'value' | 'export';
 };
 
 export const EnvironmentVariableCopyButton = ({
   onCopy,
   onError,
   timeout = 2000,
-  copyFormat = "value",
+  copyFormat = 'value',
   children,
   className,
   ...props
@@ -245,15 +224,15 @@ export const EnvironmentVariableCopyButton = ({
   const { name, value } = useContext(EnvironmentVariableContext);
 
   const copyToClipboard = async () => {
-    if (typeof window === "undefined" || !navigator?.clipboard?.writeText) {
-      onError?.(new Error("Clipboard API not available"));
+    if (typeof window === 'undefined' || !navigator?.clipboard?.writeText) {
+      onError?.(new Error('Clipboard API not available'));
       return;
     }
 
     let textToCopy = value;
-    if (copyFormat === "name") {
+    if (copyFormat === 'name') {
       textToCopy = name;
-    } else if (copyFormat === "export") {
+    } else if (copyFormat === 'export') {
       textToCopy = `export ${name}="${value}"`;
     }
 
@@ -271,7 +250,7 @@ export const EnvironmentVariableCopyButton = ({
 
   return (
     <Button
-      className={cn("size-6 shrink-0", className)}
+      className={cn('size-6 shrink-0', className)}
       onClick={copyToClipboard}
       size="icon"
       variant="ghost"
@@ -289,7 +268,7 @@ export const EnvironmentVariableRequired = ({
   children,
   ...props
 }: EnvironmentVariableRequiredProps) => (
-  <Badge className={cn("text-xs", className)} variant="secondary" {...props}>
-    {children ?? "Required"}
+  <Badge className={cn('text-xs', className)} variant="secondary" {...props}>
+    {children ?? 'Required'}
   </Badge>
 );

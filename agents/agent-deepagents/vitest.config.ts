@@ -1,9 +1,10 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 
-import { defineConfig } from 'vitest/config';
-import * as dotenv from 'dotenv';
 import { resolve } from 'path';
+
+import * as dotenv from 'dotenv';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   // モノレポ用の共通設定

@@ -5,8 +5,8 @@ interface SelectLlmResult {
   platform: 'aws' | 'azure';
   modelName: string;
   model: {
-    model: string,
-    options: Record<string, string | number | boolean | Record<string, string> | undefined>
+    model: string;
+    options: Record<string, string | number | boolean | Record<string, string> | undefined>;
   };
 }
 
@@ -35,7 +35,7 @@ export function selectLlm(modelType?: string): SelectLlmResult {
             tag: 'chat',
           },
           region,
-        }
+        },
       },
     };
   }
@@ -52,7 +52,7 @@ export function selectLlm(modelType?: string): SelectLlmResult {
         metadata: {
           tag: 'chat',
         },
-      }
+      },
     },
   };
 }

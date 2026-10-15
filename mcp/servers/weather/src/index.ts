@@ -1,18 +1,19 @@
-import { StdioServerTransport } from '@modelcontextprotocol/server/stdio';
 import { McpServer } from '@modelcontextprotocol/server';
+import { StdioServerTransport } from '@modelcontextprotocol/server/stdio';
 import { z } from 'zod';
 
 // Create server instance
-const server = new McpServer({
-  name: 'weather',
-  version: '1.0.0',
-},
-{
-  capabilities: {
-    resources: {},
-    tools: {},
+const server = new McpServer(
+  {
+    name: 'weather',
+    version: '1.0.0',
   },
-},
+  {
+    capabilities: {
+      resources: {},
+      tools: {},
+    },
+  },
 );
 
 // interface GeocodingResponse {
@@ -24,26 +25,26 @@ const server = new McpServer({
 // }
 
 interface Geometry {
-  coordinates: number[],
-  type: string
+  coordinates: number[];
+  type: string;
 }
 
 interface GeocodingProperties {
-  addressCode: string,
-  title: string,
-  dataSource?: string,
+  addressCode: string;
+  title: string;
+  dataSource?: string;
 }
 
 interface Geocoding {
-  geometry: Geometry,
-  type: string,
-  properties: GeocodingProperties
+  geometry: Geometry;
+  type: string;
+  properties: GeocodingProperties;
 }
 
 interface GetGeocodingResult {
-  longitude: number,
-  latitude: number,
-  name?: string
+  longitude: number;
+  latitude: number;
+  name?: string;
 }
 
 type GeocodingResponse = Geocoding[];
@@ -57,7 +58,12 @@ async function getGeocoding(location: string): Promise<GetGeocodingResult | null
     return null;
   }
 
-  const { geometry: { coordinates: [longitude, latitude] }, properties: { title: name } } = geocodingData[0];
+  const {
+    geometry: {
+      coordinates: [longitude, latitude],
+    },
+    properties: { title: name },
+  } = geocodingData[0];
 
   // const pointsUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(location)}&count=1`;
   // const geocodingData = await makeNWSRequest<GeocodingResponse>(pointsUrl);
@@ -75,72 +81,75 @@ async function getGeocoding(location: string): Promise<GetGeocodingResult | null
   };
 }
 
-server.registerTool('get-forecast', {
-  description: 'Get weather forecast for a location',
-  inputSchema: z.object({
-    location: z.string().describe('City name'),
-  }),
-}, async ({ location }) => {
-  // Get grid point data
-  const geocoding = await getGeocoding(location);
+server.registerTool(
+  'get-forecast',
+  {
+    description: 'Get weather forecast for a location',
+    inputSchema: z.object({
+      location: z.string().describe('City name'),
+    }),
+  },
+  async ({ location }) => {
+    // Get grid point data
+    const geocoding = await getGeocoding(location);
 
-  if (!geocoding) {
+    if (!geocoding) {
+      return {
+        content: [
+          {
+            type: 'text',
+            text: `Failed to retrieve grid point data for coordinates: ${location}. This location may not be supported by the NWS API (only US locations are supported).`,
+          },
+        ],
+      };
+    }
+
+    const { longitude, latitude, name } = geocoding;
+
+    const forecastUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m,wind_gusts_10m,weather_code`;
+    if (!forecastUrl) {
+      return {
+        content: [
+          {
+            type: 'text',
+            text: 'Failed to get forecast URL from grid point data',
+          },
+        ],
+      };
+    }
+
+    // Get forecast data
+    const data = await makeNWSRequest<WeatherResponse>(forecastUrl);
+    if (!data) {
+      return {
+        content: [
+          {
+            type: 'text',
+            text: 'Failed to retrieve forecast data',
+          },
+        ],
+      };
+    }
+
+    // Format forecast periods
+    const formattedForecast = [
+      `${name ?? 'Unknown'}: Temperature: ${data.current.temperature_2m ?? 'Unknown'}°C`,
+      `Wind: ${data.current.wind_speed_10m ?? 'Unknown'} ${data.current.wind_gusts_10m ?? ''}`,
+      `${getWeatherCondition(data.current.weather_code) ?? 'No forecast available'}`,
+      '---',
+    ].join('\n');
+
+    const forecastText = `Forecast for ${latitude}, ${longitude}:\n\n${formattedForecast}`;
+
     return {
       content: [
         {
           type: 'text',
-          text: `Failed to retrieve grid point data for coordinates: ${location}. This location may not be supported by the NWS API (only US locations are supported).`,
+          text: forecastText,
         },
       ],
     };
-  }
-
-  const { longitude, latitude, name } = geocoding;
-
-  const forecastUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m,wind_gusts_10m,weather_code`;
-  if (!forecastUrl) {
-    return {
-      content: [
-        {
-          type: 'text',
-          text: 'Failed to get forecast URL from grid point data',
-        },
-      ],
-    };
-  }
-
-  // Get forecast data
-  const data = await makeNWSRequest<WeatherResponse>(forecastUrl);
-  if (!data) {
-    return {
-      content: [
-        {
-          type: 'text',
-          text: 'Failed to retrieve forecast data',
-        },
-      ],
-    };
-  }
-
-  // Format forecast periods
-  const formattedForecast = [
-    `${name ?? 'Unknown'}: Temperature: ${data.current.temperature_2m ?? 'Unknown'}°C`,
-    `Wind: ${data.current.wind_speed_10m ?? 'Unknown'} ${data.current.wind_gusts_10m ?? ''}`,
-    `${getWeatherCondition(data.current.weather_code) ?? 'No forecast available'}`,
-    '---',
-  ].join('\n');
-
-  const forecastText = `Forecast for ${latitude}, ${longitude}:\n\n${formattedForecast}`;
-
-  return {
-    content: [
-      {
-        type: 'text',
-        text: forecastText,
-      },
-    ],
-  };
-},
+  },
 );
 
 function getWeatherCondition(code: number): string {

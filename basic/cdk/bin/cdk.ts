@@ -1,14 +1,12 @@
 #!/usr/bin/env node
-import {
-  CloudfrontCdnTemplateStack,
-  Config,
-} from '../lib/cdk-stack.js';
+import { CloudfrontCdnTemplateStack, Config } from '../lib/cdk-stack.js';
+
 import * as cdk from 'aws-cdk-lib';
 
 const app = new cdk.App();
 
 interface ConfigProps {
-  readonly stackName: string
+  readonly stackName: string;
 }
 
 const env = app.node.tryGetContext('env');
@@ -22,7 +20,7 @@ const apiKey = app.node.tryGetContext('oai-api-key');
 const apiVersion = app.node.tryGetContext('oai-api-version');
 
 const anthoropicApiKey = app.node.tryGetContext('anthropic-api-key');
-const claudeModel  = app.node.tryGetContext('claude-model');
+const claudeModel = app.node.tryGetContext('claude-model');
 
 new CloudfrontCdnTemplateStack(app, config.stackName, {
   appName: 'llm-ts-example',

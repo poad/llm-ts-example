@@ -1,4 +1,5 @@
 import { pgMcp } from './pgMcp.js';
+
 import { McpServer } from '@modelcontextprotocol/server';
 
 export const createMcpServer = () => {
@@ -50,7 +51,8 @@ export const createMcpServer = () => {
       return {
         ...resp,
       };
-    });
+    },
+  );
 
   server.registerTool(
     pgMcp.tools['describe-table'].name,
@@ -64,7 +66,8 @@ export const createMcpServer = () => {
       return {
         ...resp,
       };
-    });
+    },
+  );
 
   server.registerTool(
     pgMcp.tools['call-procedure'].name,
@@ -78,7 +81,8 @@ export const createMcpServer = () => {
       return {
         ...resp,
       };
-    });
+    },
+  );
 
   server.registerTool(
     pgMcp.tools['export-schema'].name,
@@ -92,7 +96,8 @@ export const createMcpServer = () => {
       return {
         ...resp,
       };
-    });
+    },
+  );
 
   return server;
 };

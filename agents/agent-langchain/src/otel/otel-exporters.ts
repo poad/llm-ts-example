@@ -1,23 +1,36 @@
-import type { SpanExporter } from '@opentelemetry/sdk-trace-base';
-import type { LogRecordExporter } from '@opentelemetry/sdk-logs';
-import type { PushMetricExporter } from '@opentelemetry/sdk-metrics';
+import * as apiKey from './providers/api-key/exporters.js';
 import * as databricks from './providers/databricks/exporters.js';
 import * as mlflow from './providers/mlflow/exporters.js';
 import * as phoenix from './providers/phoenix/exporters.js';
-import * as apiKey from './providers/api-key/exporters.js';
 
-export interface Exporters { trace?: SpanExporter, logs?: LogRecordExporter, metric?: PushMetricExporter, flush: () => Promise<void> }
+import type { LogRecordExporter } from '@opentelemetry/sdk-logs';
+import type { PushMetricExporter } from '@opentelemetry/sdk-metrics';
+import type { SpanExporter } from '@opentelemetry/sdk-trace-base';
+
+export interface Exporters {
+  trace?: SpanExporter;
+  logs?: LogRecordExporter;
+  metric?: PushMetricExporter;
+  flush: () => Promise<void>;
+}
 
 export const Provider = {
   PROVIDER_PHOENIX: 'phoenix',
   PROVIDER_DATABRICS: 'databrics',
   PROVIDER_MLFLOW: 'mlflow',
   PROVIDER_AUTH_API_KEY: 'api-key',
-}
+};
 
-type PROVIDER_TYPE = typeof Provider.PROVIDER_PHOENIX | typeof Provider.PROVIDER_DATABRICS | typeof Provider.PROVIDER_MLFLOW | typeof Provider.PROVIDER_AUTH_API_KEY;
+type PROVIDER_TYPE =
+  | typeof Provider.PROVIDER_PHOENIX
+  | typeof Provider.PROVIDER_DATABRICS
+  | typeof Provider.PROVIDER_MLFLOW
+  | typeof Provider.PROVIDER_AUTH_API_KEY;
 
-const createExporters = async (auth: PROVIDER_TYPE, options: { useGrpc: boolean }): Promise<Exporters> => {
+const createExporters = async (
+  auth: PROVIDER_TYPE,
+  options: { useGrpc: boolean },
+): Promise<Exporters> => {
   if (auth === Provider.PROVIDER_DATABRICS) {
     return await databricks.init(options);
   }
@@ -37,6 +50,6 @@ const createExporters = async (auth: PROVIDER_TYPE, options: { useGrpc: boolean 
     return await apiKey.init(options);
   }
   throw new Error('Unsupported PROVIDER');
-}
+};
 
 export { createExporters };

@@ -8,21 +8,24 @@ interface Model {
 }
 
 interface ModelSelectorProps {
-  models: Model[],
-  onChange: (model: string) => void
+  models: Model[];
+  onChange: (model: string) => void;
   class?: string;
   id?: string;
 }
 
 export function ModelSelector(props: ModelSelectorProps) {
-  return (<>
-    <select onChange={(e) => props.onChange(e.target.value)} id={props.id} class={props.class}>
-      <For each={props.models.filter((it) => !it.disabled)}>
-        {(item) => (
-          <option value={item.id} selected={item.selected}>{item.name}</option>
-        )}
-      </For>
-    </select>
-
-  </>);
+  return (
+    <>
+      <select onChange={(e) => props.onChange(e.target.value)} id={props.id} class={props.class}>
+        <For each={props.models.filter((it) => !it.disabled)}>
+          {(item) => (
+            <option value={item.id} selected={item.selected}>
+              {item.name}
+            </option>
+          )}
+        </For>
+      </select>
+    </>
+  );
 }

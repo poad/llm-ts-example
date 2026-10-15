@@ -6,8 +6,8 @@
   "main": "build/index.js",
   "scripts": {
     "build": "tsc && chmod 755 build/index.js",
-    "lint": "eslint .",
-    "lint-fix": "eslint . --fix",
+    "lint": "oxlint . && oxfmt --check .",
+    "lint-fix": "oxlint . --fix && oxfmt --write .",
     "start": "tsx src/index.ts"
   },
   "files": [
@@ -24,16 +24,10 @@
     "dotenv": "^17.4.0"
   },
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "@stylistic/eslint-plugin": "^5.10.0",
     "@types/node": "^24.12.2",
-    "eslint": "^10.1.0",
-    "eslint-import-resolver-typescript": "^4.4.4",
-    "eslint-plugin-import-x": "^4.16.2",
-    "eslint-plugin-promise": "^7.2.1",
-    "jiti": "^2.7.0",
+    "oxfmt": "^0.72.0",
+    "oxlint": "^1.87.0",
     "tsx": "^4.21.0",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.58.0"
+    "typescript": "^5.9.3"
   }
 }

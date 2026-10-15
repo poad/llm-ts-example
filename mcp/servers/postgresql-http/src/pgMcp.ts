@@ -1,10 +1,11 @@
+import { Logger } from '@aws-lambda-powertools/logger';
 import pg, { QueryResult } from 'pg';
 import { z } from 'zod';
-import { Logger } from '@aws-lambda-powertools/logger';
 
 const logger = new Logger();
 
-const connectionString = process.env.POSTGRESQL_URL ?? 'postgres://postgres:postgres@localhost:15432/postgres';
+const connectionString =
+  process.env.POSTGRESQL_URL ?? 'postgres://postgres:postgres@localhost:15432/postgres';
 
 const pool = new pg.Pool({
   connectionString,
@@ -12,7 +13,8 @@ const pool = new pg.Pool({
 
 const queryTool = {
   name: 'query',
-  description: 'Execute a SQL query against the PostgreSQL database with optional parameter binding',
+  description:
+    'Execute a SQL query against the PostgreSQL database with optional parameter binding',
   annotations: {
     title: 'SQL Query Execution',
     openWorldHint: true,
@@ -48,32 +50,44 @@ const queryTool = {
       logger.info(`Query executed successfully. Rows returned: ${result.rowCount}`);
 
       return {
-        content: [{
-          type: 'text',
-          text: JSON.stringify({
-            success: true,
-            rowCount: result.rowCount,
-            rows: result.rows,
-            fields: result.fields.map((f) => ({
-              name: f.name,
-              type: f.dataTypeID,
-              size: f.dataTypeSize,
-            })),
-          }, null, 2),
-        }],
+        content: [
+          {
+            type: 'text',
+            text: JSON.stringify(
+              {
+                success: true,
+                rowCount: result.rowCount,
+                rows: result.rows,
+                fields: result.fields.map((f) => ({
+                  name: f.name,
+                  type: f.dataTypeID,
+                  size: f.dataTypeSize,
+                })),
+              },
+              null,
+              2,
+            ),
+          },
+        ],
       };
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
       logger.error(`Query execution failed: ${errorMessage}`, { error });
 
       return {
-        content: [{
-          type: 'text',
-          text: JSON.stringify({
-            success: false,
-            error: errorMessage,
-          }, null, 2),
-        }],
+        content: [
+          {
+            type: 'text',
+            text: JSON.stringify(
+              {
+                success: false,
+                error: errorMessage,
+              },
+              null,
+              2,
+            ),
+          },
+        ],
       };
     }
   },
@@ -109,28 +123,40 @@ const listTablesTool = {
       logger.info(`Tables ${tables.map((t) => t.table_name).join(', ')}`);
 
       return {
-        content: [{
-          type: 'text',
-          text: JSON.stringify({
-            success: true,
-            schema: schema,
-            tableCount: tables.length,
-            tables,
-          }, null, 2),
-        }],
+        content: [
+          {
+            type: 'text',
+            text: JSON.stringify(
+              {
+                success: true,
+                schema: schema,
+                tableCount: tables.length,
+                tables,
+              },
+              null,
+              2,
+            ),
+          },
+        ],
       };
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
       logger.error(`Failed to list tables: ${errorMessage} db: ${connectionString}`, { error });
 
       return {
-        content: [{
-          type: 'text',
-          text: JSON.stringify({
-            success: false,
-            error: errorMessage,
-          }, null, 2),
-        }],
+        content: [
+          {
+            type: 'text',
+            text: JSON.stringify(
+              {
+                success: false,
+                error: errorMessage,
+              },
+              null,
+              2,
+            ),
+          },
+        ],
       };
     }
   },
@@ -167,41 +193,59 @@ const describeTableTool = {
       if (columns.length === 0) {
         logger.warn(`Table ${schema}.${table_name} not found or has no columns`);
         return {
-          content: [{
-            type: 'text',
-            text: JSON.stringify({
-              success: false,
-              error: `Table ${schema}.${table_name} not found`,
-            }, null, 2),
-          }],
+          content: [
+            {
+              type: 'text',
+              text: JSON.stringify(
+                {
+                  success: false,
+                  error: `Table ${schema}.${table_name} not found`,
+                },
+                null,
+                2,
+              ),
+            },
+          ],
         };
       }
 
       logger.info(`Table ${schema}.${table_name} has ${columns.length} columns`);
 
       return {
-        content: [{
-          type: 'text',
-          text: JSON.stringify({
-            success: true,
-            table: `${schema}.${table_name}`,
-            columnCount: columns.length,
-            columns: columns,
-          }, null, 2),
-        }],
+        content: [
+          {
+            type: 'text',
+            text: JSON.stringify(
+              {
+                success: true,
+                table: `${schema}.${table_name}`,
+                columnCount: columns.length,
+                columns: columns,
+              },
+              null,
+              2,
+            ),
+          },
+        ],
       };
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
       logger.error(`Failed to describe table: ${errorMessage}`, { error });
 
       return {
-        content: [{
-          type: 'text',
-          text: JSON.stringify({
-            success: false,
-            error: errorMessage,
-          }, null, 2),
-        }],
+        content: [
+          {
+            type: 'text',
+            text: JSON.stringify(
+              {
+                success: false,
+                error: errorMessage,
+              },
+              null,
+              2,
+            ),
+          },
+        ],
       };
     }
   },
@@ -225,7 +269,7 @@ const callProcedureTool = {
   timeoutMs: 60000, // 60 second timeout for procedures
   execute: async (args: {
     procedure_name: string;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // oxlint-disable-next-line @typescript-eslint/no-explicit-any
     params: any[];
     schema: string;
   }): Promise<{
@@ -250,27 +294,39 @@ const callProcedureTool = {
       logger.info('Procedure executed successfully');
 
       return {
-        content: [{
-          type: 'text',
-          text: JSON.stringify({
-            success: true,
-            procedure: `${schema}.${procedure_name}`,
-            result: result.rows,
-          }, null, 2),
-        }],
+        content: [
+          {
+            type: 'text',
+            text: JSON.stringify(
+              {
+                success: true,
+                procedure: `${schema}.${procedure_name}`,
+                result: result.rows,
+              },
+              null,
+              2,
+            ),
+          },
+        ],
       };
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
       logger.error(`Failed to call procedure: ${errorMessage}`, { error });
 
       return {
-        content: [{
-          type: 'text',
-          text: JSON.stringify({
-            success: false,
-            error: errorMessage,
-          }, null, 2),
-        }],
+        content: [
+          {
+            type: 'text',
+            text: JSON.stringify(
+              {
+                success: false,
+                error: errorMessage,
+              },
+              null,
+              2,
+            ),
+          },
+        ],
       };
     }
   },
@@ -288,7 +344,10 @@ const exportSchemaTool = {
   },
   parameters: z.object({
     schemas: z.array(z.string()).default(['public']).describe('List of schemas to export'),
-    include_data: z.boolean().default(false).describe('Include sample data (first 5 rows per table)'),
+    include_data: z
+      .boolean()
+      .default(false)
+      .describe('Include sample data (first 5 rows per table)'),
   }),
   execute: async (args: {
     schemas: string[];
@@ -308,12 +367,16 @@ const exportSchemaTool = {
       // });
 
       const exportData: {
-        schemas: Record<string,
+        schemas: Record<
+          string,
           {
-            tables: Record<string,
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              { type: string; columns: string[]; sampleData?: any[]; sampleDataError?: string }>
-          }>;
+            tables: Record<
+              string,
+              // oxlint-disable-next-line @typescript-eslint/no-explicit-any
+              { type: string; columns: string[]; sampleData?: any[]; sampleDataError?: string }
+            >;
+          }
+        >;
       } = { schemas: {} };
 
       for (const schema of schemas) {
@@ -358,10 +421,12 @@ const exportSchemaTool = {
       // });
 
       return {
-        content: [{
-          type: 'text',
-          text: JSON.stringify(exportData, null, 2),
-        }],
+        content: [
+          {
+            type: 'text',
+            text: JSON.stringify(exportData, null, 2),
+          },
+        ],
       };
     } catch (error) {
       logger.error(`Export failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
@@ -372,13 +437,19 @@ const exportSchemaTool = {
       // });
 
       return {
-        content: [{
-          type: 'text',
-          text: JSON.stringify({
-            success: false,
-            error: errorMessage,
-          }, null, 2),
-        }],
+        content: [
+          {
+            type: 'text',
+            text: JSON.stringify(
+              {
+                success: false,
+                error: errorMessage,
+              },
+              null,
+              2,
+            ),
+          },
+        ],
       };
     }
   },
@@ -407,19 +478,29 @@ const schemaResource = {
       }
 
       return {
-        text: JSON.stringify({
-          generated_at: new Date().toISOString(),
-          table_count: tables.length,
-          schema: schema,
-        }, null, 2),
+        text: JSON.stringify(
+          {
+            generated_at: new Date().toISOString(),
+            table_count: tables.length,
+            schema: schema,
+          },
+          null,
+          2,
+        ),
       };
     } catch (error) {
-      logger.error(`Failed to load schema: ${error instanceof Error ? error.message : 'Unknown error'}`);
+      logger.error(
+        `Failed to load schema: ${error instanceof Error ? error.message : 'Unknown error'}`,
+      );
       return {
-        text: JSON.stringify({
-          error: error instanceof Error ? error.message : 'Unknown error',
-          generated_at: new Date().toISOString(),
-        }, null, 2),
+        text: JSON.stringify(
+          {
+            error: error instanceof Error ? error.message : 'Unknown error',
+            generated_at: new Date().toISOString(),
+          },
+          null,
+          2,
+        ),
       };
     }
   },
@@ -445,31 +526,41 @@ const connectionStatusResource = {
       client.release();
 
       return {
-        text: JSON.stringify({
-          connected: true,
-          timestamp: new Date().toISOString(),
-          database_info: {
-            version: result.rows[0].version,
-            database: result.rows[0].database,
-            user: result.rows[0].user,
-            server_time: result.rows[0].timestamp,
-            size_bytes: result.rows[0].database_size_bytes,
+        text: JSON.stringify(
+          {
+            connected: true,
+            timestamp: new Date().toISOString(),
+            database_info: {
+              version: result.rows[0].version,
+              database: result.rows[0].database,
+              user: result.rows[0].user,
+              server_time: result.rows[0].timestamp,
+              size_bytes: result.rows[0].database_size_bytes,
+            },
+            connection_pool: {
+              total_count: pool.totalCount,
+              idle_count: pool.idleCount,
+              waiting_count: pool.waitingCount,
+            },
           },
-          connection_pool: {
-            total_count: pool.totalCount,
-            idle_count: pool.idleCount,
-            waiting_count: pool.waitingCount,
-          },
-        }, null, 2),
+          null,
+          2,
+        ),
       };
     } catch (error) {
-      logger.error(`Failed to get connection status: ${error instanceof Error ? error.message : 'Unknown error'}`);
+      logger.error(
+        `Failed to get connection status: ${error instanceof Error ? error.message : 'Unknown error'}`,
+      );
       return {
-        text: JSON.stringify({
-          connected: false,
-          timestamp: new Date().toISOString(),
-          error: error instanceof Error ? error.message : 'Unknown error',
-        }, null, 2),
+        text: JSON.stringify(
+          {
+            connected: false,
+            timestamp: new Date().toISOString(),
+            error: error instanceof Error ? error.message : 'Unknown error',
+          },
+          null,
+          2,
+        ),
       };
     }
   },
@@ -502,7 +593,7 @@ async function listTables(schema = 'public'): Promise<Record<string, string>[]> 
   return result.rows;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// oxlint-disable-next-line @typescript-eslint/no-explicit-any
 async function describeTable(tableName: string, schema = 'public'): Promise<any[]> {
   const sql = `
       SELECT

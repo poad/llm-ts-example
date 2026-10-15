@@ -1,9 +1,10 @@
 import { createMcpServer } from './route.js';
+
 import { Logger } from '@aws-lambda-powertools/logger';
 import { StreamableHTTPTransport } from '@hono/mcp';
+import { McpServer } from '@modelcontextprotocol/server';
 import { Context, Hono } from 'hono';
 import { BlankEnv, BlankInput } from 'hono/types';
-import { McpServer } from '@modelcontextprotocol/server';
 
 const logger = new Logger();
 
@@ -14,9 +15,10 @@ const handleError = (
   reason: unknown,
   logMessage: string,
 ) => {
-  const errorDetails = reason instanceof Error
-    ? { message: reason.message, stack: reason.stack, name: reason.name }
-    : { reason };
+  const errorDetails =
+    reason instanceof Error
+      ? { message: reason.message, stack: reason.stack, name: reason.name }
+      : { reason };
   logger.error(logMessage, errorDetails);
   return c.json(
     {
@@ -33,24 +35,19 @@ const handleError = (
 
 const closeResources = async (server: McpServer, transport: StreamableHTTPTransport) => {
   // 両方のクローズを確実に実行（片方が失敗してももう片方を実行）
-  const closeResults = await Promise.allSettled([
-    transport.close(),
-    server.close(),
-  ]);
+  const closeResults = await Promise.allSettled([transport.close(), server.close()]);
 
   // クローズエラーをログ出力
   closeResults.forEach((result, index) => {
     if (result.status === 'rejected') {
       const resourceName = index === 0 ? 'transport' : 'server';
       const error = result.reason;
-      const errorDetails = error instanceof Error
-        ? { message: error.message, stack: error.stack }
-        : error;
+      const errorDetails =
+        error instanceof Error ? { message: error.message, stack: error.stack } : error;
       logger.error(`Error closing ${resourceName}:`, { error: errorDetails });
     }
   });
 };
-
 
 app.post('/mcp', async (c) => {
   // In stateless mode, create a new instance of transport and server for each request
@@ -83,9 +80,10 @@ app.post('/mcp', async (c) => {
     try {
       await transport.close();
     } catch (closeError) {
-      const errorDetails = closeError instanceof Error
-        ? { message: closeError.message, stack: closeError.stack }
-        : closeError;
+      const errorDetails =
+        closeError instanceof Error
+          ? { message: closeError.message, stack: closeError.stack }
+          : closeError;
       logger.error('Transport close failed after connection error:', { closeError: errorDetails });
     }
     return handleError(c, error, 'MCP 接続中のエラー:');

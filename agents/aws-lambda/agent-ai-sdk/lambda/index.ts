@@ -1,10 +1,12 @@
 import { handle } from './handler.js';
-import { APIGatewayProxyEvent, APIGatewayProxyEventV2 } from 'aws-lambda';
+
 import { logger } from '@llm-ts-example/common-backend-core';
+import { APIGatewayProxyEvent, APIGatewayProxyEventV2 } from 'aws-lambda';
 
 export const handler = awslambda.streamifyResponse(
   async (
-    event: APIGatewayProxyEvent | APIGatewayProxyEventV2, responseStream: NodeJS.WritableStream,
+    event: APIGatewayProxyEvent | APIGatewayProxyEventV2,
+    responseStream: NodeJS.WritableStream,
   ) => {
     logger.info('event', { event });
     const body = event.body;
@@ -15,7 +17,7 @@ export const handler = awslambda.streamifyResponse(
       await handle({ body }, responseStream);
     }
     responseStream.end();
-  });
-
+  },
+);
 
 export default handler;

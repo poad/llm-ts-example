@@ -1,22 +1,20 @@
-import { Metadata } from '@grpc/grpc-js';
-
-import * as grpcTraceing from '@opentelemetry/exporter-trace-otlp-grpc';
-import * as grpcLogs from '@opentelemetry/exporter-logs-otlp-grpc';
-import * as grpcMetrics from '@opentelemetry/exporter-metrics-otlp-grpc';
-
-import * as httpTraceing from '@opentelemetry/exporter-trace-otlp-proto';
-import * as httpLogs from '@opentelemetry/exporter-logs-otlp-proto';
-import * as httpMetrics from '@opentelemetry/exporter-metrics-otlp-proto';
-
 import { Exporters } from '../../otel-exporters.js';
+
+import { Metadata } from '@grpc/grpc-js';
+import * as grpcLogs from '@opentelemetry/exporter-logs-otlp-grpc';
+import * as httpLogs from '@opentelemetry/exporter-logs-otlp-proto';
+import * as grpcMetrics from '@opentelemetry/exporter-metrics-otlp-grpc';
+import * as httpMetrics from '@opentelemetry/exporter-metrics-otlp-proto';
+import * as grpcTraceing from '@opentelemetry/exporter-trace-otlp-grpc';
+import * as httpTraceing from '@opentelemetry/exporter-trace-otlp-proto';
 
 export const init = async ({ useGrpc }: { useGrpc: boolean }): Promise<Exporters> => {
   const apiKey = process.env.OTEL_EXPORTER_OTLP_API_KEY;
   if (!apiKey) {
     return {
       flush: async () => {
-          // pass
-      }
+        // pass
+      },
     };
   }
 
@@ -29,10 +27,12 @@ export const init = async ({ useGrpc }: { useGrpc: boolean }): Promise<Exporters
     const metadata = new Metadata({});
     metadata.set('x-api-key', apiKey);
 
-    const traceExporter = enableTracing ? new grpcTraceing.OTLPTraceExporter({
-      url,
-      metadata,
-    }) : undefined;
+    const traceExporter = enableTracing
+      ? new grpcTraceing.OTLPTraceExporter({
+          url,
+          metadata,
+        })
+      : undefined;
     const logsExporter = new grpcLogs.OTLPLogExporter({
       url,
       metadata,
@@ -51,7 +51,6 @@ export const init = async ({ useGrpc }: { useGrpc: boolean }): Promise<Exporters
         await logsExporter?.forceFlush();
         await metricExporter?.forceFlush();
       },
-
     };
   }
 
@@ -63,28 +62,34 @@ export const init = async ({ useGrpc }: { useGrpc: boolean }): Promise<Exporters
   const traceHeaders = {
     ...commonHeaders,
   };
-  const traceExporter = enableTracing ? new httpTraceing.OTLPTraceExporter({
-    url: traceEndpoint,
-    headers: traceHeaders,
-  }) : undefined;
+  const traceExporter = enableTracing
+    ? new httpTraceing.OTLPTraceExporter({
+        url: traceEndpoint,
+        headers: traceHeaders,
+      })
+    : undefined;
 
   const logsEndpoint = `${url}/v1/logs`;
   const logsHeaders = {
     ...commonHeaders,
   };
-  const logsExporter = enableLogs ? new httpLogs.OTLPLogExporter({
-    url: logsEndpoint,
-    headers: logsHeaders,
-  }) : undefined;
+  const logsExporter = enableLogs
+    ? new httpLogs.OTLPLogExporter({
+        url: logsEndpoint,
+        headers: logsHeaders,
+      })
+    : undefined;
 
   const metricsEndpoint = `${url}/v1/metrics`;
   const metricsHeaders = {
     ...commonHeaders,
   };
-  const metricExporter = enableMetrics ? new httpMetrics.OTLPMetricExporter({
-    url: metricsEndpoint,
-    headers: metricsHeaders,
-  }) : undefined;
+  const metricExporter = enableMetrics
+    ? new httpMetrics.OTLPMetricExporter({
+        url: metricsEndpoint,
+        headers: metricsHeaders,
+      })
+    : undefined;
 
   return {
     trace: traceExporter,
@@ -96,4 +101,4 @@ export const init = async ({ useGrpc }: { useGrpc: boolean }): Promise<Exporters
       await metricExporter?.forceFlush();
     },
   };
-}
+};

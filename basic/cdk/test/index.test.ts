@@ -1,7 +1,9 @@
-import { test } from 'vitest';
 import { stdout } from 'node:process';
 import { PassThrough } from 'node:stream';
+
 import { handle } from '../lambda/handler.js';
+
+import { test } from 'vitest';
 
 function sleep(time: number) {
   return new Promise<void>((resolve) => {
@@ -14,11 +16,16 @@ function sleep(time: number) {
 const model = process.env.USE_MODEL ?? '';
 const isDefinedModel = model.length > 0;
 test.runIf(isDefinedModel)('test', { retry: 0 }, async () => {
-
-  const sessionId = process.env.FIXED_SESSION_ID && process.env.FIXED_SESSION_ID.length > 0 ? process.env.FIXED_SESSION_ID : new Date().getTime().toString();
+  const sessionId =
+    process.env.FIXED_SESSION_ID && process.env.FIXED_SESSION_ID.length > 0
+      ? process.env.FIXED_SESSION_ID
+      : new Date().getTime().toString();
   const output = process.env.DISABLE_STDOUT === 'true' ? new PassThrough() : stdout;
-  const question = process.env.QUESTION && process.env.QUESTION.length > 0 ? process.env.QUESTION : 'あなたは誰？質問と同じ言語で答えてください。';
+  const question =
+    process.env.QUESTION && process.env.QUESTION.length > 0
+      ? process.env.QUESTION
+      : 'あなたは誰？質問と同じ言語で答えてください。';
 
-  await handle(`local-${sessionId}`, {question, model}, output);
+  await handle(`local-${sessionId}`, { question, model }, output);
   await sleep(2000);
 });

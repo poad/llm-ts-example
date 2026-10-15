@@ -14,14 +14,14 @@
 
 agent/
 ├── src/
-│   ├── index.ts                          # AgentCore Runtime のエントリポイント（リクエスト受付・ストリーミング応答）
-│   ├── agent.ts                          # Strands Agent の生成・OTel トレーサーの初期化
-│   ├── logger.ts                         # AWS Lambda Powertools ベースのロガー
-│   ├── tools/
-│   │   └── aws-tool.ts                   # aws-knowledge-mcp-server への MCP クライアント／ツール一覧取得
-│   └── observability/
-│       ├── exporters.ts                  # OTel の Trace/Logs/Metrics エクスポーター初期化（Databricks 送信）
-│       └── access-token-manager.ts       # Databricks OAuth M2M アクセストークンのメモリキャッシュ管理
+│ ├── index.ts # AgentCore Runtime のエントリポイント（リクエスト受付・ストリーミング応答）
+│ ├── agent.ts # Strands Agent の生成・OTel トレーサーの初期化
+│ ├── logger.ts # AWS Lambda Powertools ベースのロガー
+│ ├── tools/
+│ │ └── aws-tool.ts # aws-knowledge-mcp-server への MCP クライアント／ツール一覧取得
+│ └── observability/
+│ ├── exporters.ts # OTel の Trace/Logs/Metrics エクスポーター初期化（Databricks 送信）
+│ └── access-token-manager.ts # Databricks OAuth M2M アクセストークンのメモリキャッシュ管理
 ├── package.json
 ├── tsconfig.json
 └── vite.config.ts
@@ -30,10 +30,10 @@ agent/
 
 `POST` で送信されたペイロードは以下のスキーマで検証されます。
 
-| フィールド | 型 | デフォルト | 説明 |
-| --- | --- | --- | --- |
-| `message` | string | `"こんにちは！"` | ユーザーからの入力メッセージ |
-| `model` | string | `"us.amazon.nova-micro-v1:0"` | 使用する Bedrock モデル ID |
+| フィールド | 型     | デフォルト                    | 説明                         |
+| ---------- | ------ | ----------------------------- | ---------------------------- |
+| `message`  | string | `"こんにちは！"`              | ユーザーからの入力メッセージ |
+| `model`    | string | `"us.amazon.nova-micro-v1:0"` | 使用する Bedrock モデル ID   |
 
 応答は SSE イベント（`event: message`、`data: { text: string }`）としてストリーミングされます。
 
@@ -43,13 +43,13 @@ agent/
 
 必要な環境変数：
 
-| 環境変数 | 説明 |
-| --- | --- |
-| `DATABRICKS_WORKSPACE_URL` | Databricks ワークスペースの URL |
-| `DATABRICKS_OAUTH_CLIENT_ID` | サービスプリンシパルのクライアント ID |
-| `DATABRICKS_OAUTH_CLIENT_SECRET` | サービスプリンシパルのシークレット |
-| `DATABRICKS_UC_SCHEMA_NAME` | Unity Catalog のスキーマ名 |
-| `DATABRICKS_UC_TABLE_PREFIX` | 送信先テーブル名のプレフィックス（例：`{prefix}_otel_spans`） |
+| 環境変数                         | 説明                                                          |
+| -------------------------------- | ------------------------------------------------------------- |
+| `DATABRICKS_WORKSPACE_URL`       | Databricks ワークスペースの URL                               |
+| `DATABRICKS_OAUTH_CLIENT_ID`     | サービスプリンシパルのクライアント ID                         |
+| `DATABRICKS_OAUTH_CLIENT_SECRET` | サービスプリンシパルのシークレット                            |
+| `DATABRICKS_UC_SCHEMA_NAME`      | Unity Catalog のスキーマ名                                    |
+| `DATABRICKS_UC_TABLE_PREFIX`     | 送信先テーブル名のプレフィックス（例：`{prefix}_otel_spans`） |
 
 Databricks 側の設定が不足している場合は Observability 機能をスキップし、通常どおりエージェントは動作します。
 

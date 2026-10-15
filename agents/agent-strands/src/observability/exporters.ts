@@ -1,15 +1,18 @@
 import { logger } from '../logger.js';
 
-import { SpanExporter } from '@opentelemetry/sdk-trace-base';
-
-import * as httpTraceing from '@opentelemetry/exporter-trace-otlp-proto';
 import * as httpLogs from '@opentelemetry/exporter-logs-otlp-proto';
 import * as httpMetrics from '@opentelemetry/exporter-metrics-otlp-proto';
-
+import * as httpTraceing from '@opentelemetry/exporter-trace-otlp-proto';
 import { LogRecordExporter } from '@opentelemetry/sdk-logs';
 import { PushMetricExporter } from '@opentelemetry/sdk-metrics';
+import { SpanExporter } from '@opentelemetry/sdk-trace-base';
 
-export interface Exporters { trace?: SpanExporter, logs?: LogRecordExporter, metric?: PushMetricExporter, flush: () => Promise<void> }
+export interface Exporters {
+  trace?: SpanExporter;
+  logs?: LogRecordExporter;
+  metric?: PushMetricExporter;
+  flush: () => Promise<void>;
+}
 
 export const init = async (token?: string): Promise<Exporters> => {
   if (!token) {
@@ -59,10 +62,12 @@ export const init = async (token?: string): Promise<Exporters> => {
     ...commonHeaders,
     'X-Databricks-UC-Table-Name': traceTableName,
   };
-  const traceExporter = enableTracing ? new httpTraceing.OTLPTraceExporter({
-    url: traceEndpoint,
-    headers: traceHeaders,
-  }) : undefined;
+  const traceExporter = enableTracing
+    ? new httpTraceing.OTLPTraceExporter({
+        url: traceEndpoint,
+        headers: traceHeaders,
+      })
+    : undefined;
   logger.info(`trace exporter is ${enableTracing ? 'enabled' : 'disabled'}`);
 
   const logsEndpoint = `${url}/api/2.0/otel/v1/logs`;
@@ -70,10 +75,12 @@ export const init = async (token?: string): Promise<Exporters> => {
     ...commonHeaders,
     'X-Databricks-UC-Table-Name': logsTableName,
   };
-  const logsExporter = enableLogs ? new httpLogs.OTLPLogExporter({
-    url: logsEndpoint,
-    headers: logsHeaders,
-  }) : undefined;
+  const logsExporter = enableLogs
+    ? new httpLogs.OTLPLogExporter({
+        url: logsEndpoint,
+        headers: logsHeaders,
+      })
+    : undefined;
   logger.info(`logs exporter is ${enableLogs ? 'enabled' : 'disabled'}`);
 
   const metricsEndpoint = `${url}/api/2.0/otel/v1/metrics`;
@@ -81,10 +88,12 @@ export const init = async (token?: string): Promise<Exporters> => {
     ...commonHeaders,
     'X-Databricks-UC-Table-Name': metricTableName,
   };
-  const metricExporter = enableMetrics ? new httpMetrics.OTLPMetricExporter({
-    url: metricsEndpoint,
-    headers: metricsHeaders,
-  }) : undefined;
+  const metricExporter = enableMetrics
+    ? new httpMetrics.OTLPMetricExporter({
+        url: metricsEndpoint,
+        headers: metricsHeaders,
+      })
+    : undefined;
   logger.info(`metric exporter is ${enableMetrics ? 'enabled' : 'disabled'}`);
 
   return {

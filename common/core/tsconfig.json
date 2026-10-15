@@ -2,10 +2,7 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "nodenext",
-    "lib": [
-      "esnext",
-      "dom"
-    ],
+    "lib": ["esnext", "dom"],
     "moduleResolution": "nodenext",
     "resolveJsonModule": true,
     "allowJs": true,
@@ -28,19 +25,8 @@
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
     "skipLibCheck": true,
-    "typeRoots": [
-      "./node_modules",
-      "./node_modules/@types"
-    ],
-    "types": [
-      "node"
-    ]
+    "typeRoots": ["./node_modules", "./node_modules/@types"],
+    "types": ["node"]
   },
-  "exclude": [
-    "node_modules",
-    "cdk.out",
-    "eslint.config.ts",
-    "vite.config.ts",
-    "dist"
-  ]
+  "exclude": ["node_modules", "cdk.out", "eslint.config.ts", "vite.config.ts", "dist"]
 }

@@ -2,21 +2,19 @@ import { BedrockEmbeddings } from '@langchain/aws';
 import { Embeddings } from '@langchain/core/embeddings';
 
 interface EmbeddingsModel {
-  indexName: string
-  model: Embeddings
+  indexName: string;
+  model: Embeddings;
 }
 
 interface SelectEmbeddingsProps {
-  readonly type: string
-  readonly dataSource: string
+  readonly type: string;
+  readonly dataSource: string;
 }
 
-function selectEmbeddings(
-  {
-    // type,
-    dataSource,
-  }: SelectEmbeddingsProps,
-): EmbeddingsModel {
+function selectEmbeddings({
+  // type,
+  dataSource,
+}: SelectEmbeddingsProps): EmbeddingsModel {
   return {
     indexName: `titan-${dataSource}`,
     model: new BedrockEmbeddings({

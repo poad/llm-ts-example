@@ -1,8 +1,9 @@
 import { initialize } from './instrumentation';
+
 import { toBaseMessages, toUIMessageStream } from '@ai-sdk/langchain';
-import { createAgent } from 'langchain';
-import { createUIMessageStreamResponse, UIMessage } from 'ai';
 import { ChatBedrockConverse } from '@langchain/aws';
+import { createUIMessageStreamResponse, UIMessage } from 'ai';
+import { createAgent } from 'langchain';
 
 export const maxDuration = 30;
 
@@ -17,7 +18,9 @@ export async function POST(req: Request) {
 
   await initialize();
 
-  const model = new ChatBedrockConverse({ model: modelId === 'nova-lite' ? 'us.amazon.nova-lite-v1:0' : 'us.amazon.nova-micro-v1:0' });
+  const model = new ChatBedrockConverse({
+    model: modelId === 'nova-lite' ? 'us.amazon.nova-lite-v1:0' : 'us.amazon.nova-micro-v1:0',
+  });
   const agent = createAgent({
     model,
     // model: 'bedrock_converse:us.amazon.nova-micro-v1:0',
@@ -33,4 +36,4 @@ export async function POST(req: Request) {
   return createUIMessageStreamResponse({
     stream: toUIMessageStream(stream),
   });
-};
+}

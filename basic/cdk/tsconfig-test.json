@@ -3,11 +3,6 @@
   "compilerOptions": {
     "noEmit": true
   },
-  "include": [
-    "vitest.config.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "cdk.out"
-  ]
+  "include": ["vitest.config.ts"],
+  "exclude": ["node_modules", "cdk.out"]
 }

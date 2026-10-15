@@ -1,7 +1,8 @@
 'use strict';
 
+import { Stream } from 'stream';
+
 import { APIGatewayProxyEvent, APIGatewayProxyEvent, Context, Callback } from 'aws-lambda';
-import { Stream } from 'stream'
 
 export type Event = APIGatewayProxyEvent | APIGatewayProxyEventV2;
 
@@ -18,7 +19,7 @@ export type RequestHandler = (
 
 declare global {
   namespace awslambda {
-      function streamifyResponse(handler: RequestHandler, option?: any): RequestHandler;
-      let HttpResponseStream: HttpResponseStream;
+    function streamifyResponse(handler: RequestHandler, option?: any): RequestHandler;
+    let HttpResponseStream: HttpResponseStream;
   }
 }

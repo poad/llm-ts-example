@@ -1,13 +1,13 @@
 #!/usr/bin/env node
-import {
-  CloudfrontCdnTemplateStack,
-  Config,
-} from '../lib/cdk-stack';
+import { CloudfrontCdnTemplateStack, Config } from '../lib/cdk-stack';
+
 import * as cdk from 'aws-cdk-lib';
 
 const app = new cdk.App();
 
-interface ConfigProps { readonly stackName: string }
+interface ConfigProps {
+  readonly stackName: string;
+}
 
 const env = app.node.tryGetContext('env');
 const config: Config & ConfigProps = env
@@ -25,23 +25,31 @@ const pineconeApiKey = app.node.tryGetContext('pinecone-api-key');
 
 const langfusePk: string | undefined = app.node.tryGetContext('langfuse-public-key');
 const langfuseSk: string | undefined = app.node.tryGetContext('langfuse-secret-key');
-const langfuseEndpoint: string = app.node.tryGetContext('langfuse-endpoint') ?? 'https://us.cloud.langfuse.com';
+const langfuseEndpoint: string =
+  app.node.tryGetContext('langfuse-endpoint') ?? 'https://us.cloud.langfuse.com';
 
 const langsmithApiKey: string | undefined = app.node.tryGetContext('langsmith-api-key');
 const langfuseProject: string | undefined = app.node.tryGetContext('langsmith-project');
-const langsmithEndpoint: string = app.node.tryGetContext('langsmith-endpoint') ?? 'https://api.smith.langchain.com';
+const langsmithEndpoint: string =
+  app.node.tryGetContext('langsmith-endpoint') ?? 'https://api.smith.langchain.com';
 
-const langfuse = langfuseSk && langfusePk ? {
-  sk: langfuseSk,
-  pk: langfusePk,
-  endpoint: langfuseEndpoint,
-} : undefined;
+const langfuse =
+  langfuseSk && langfusePk
+    ? {
+        sk: langfuseSk,
+        pk: langfusePk,
+        endpoint: langfuseEndpoint,
+      }
+    : undefined;
 
-const langsmith = langsmithApiKey && langfuseProject ? {
-  apiKey: langsmithApiKey,
-  project: langfuseProject,
-  endpoint: langsmithEndpoint,
-} : undefined;
+const langsmith =
+  langsmithApiKey && langfuseProject
+    ? {
+        apiKey: langsmithApiKey,
+        project: langfuseProject,
+        endpoint: langsmithEndpoint,
+      }
+    : undefined;
 
 const pinecone = {
   index: pineconeIndex ?? '',

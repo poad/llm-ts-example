@@ -1,13 +1,13 @@
 import { selectEmbeddings } from './embeddings-models.js';
-import { createTool } from './tool.js';
 import { createRetriever } from './retriever.js';
-import { CallbackHandler } from 'langfuse-langchain';
-import { v7 as uuidv7 } from 'uuid';
-import { logger } from '@llm-ts-example/common-backend-core';
+import { createTool } from './tool.js';
 
+import { MemorySaver } from '@langchain/langgraph';
+import { logger } from '@llm-ts-example/common-backend-core';
 import { selectLlm } from '@llm-ts-example/common-backend-langchain';
 import { createAgent, initChatModel } from 'langchain';
-import { MemorySaver } from '@langchain/langgraph';
+import { CallbackHandler } from 'langfuse-langchain';
+import { v7 as uuidv7 } from 'uuid';
 import './instrumentation';
 
 export async function handle(
@@ -15,7 +15,9 @@ export async function handle(
   output: NodeJS.WritableStream,
 ) {
   logger.info('event.body', { event: { body } });
-  const { question, model, embeddingType, sessionId } = body ? JSON.parse(body) : { question: undefined, model: undefined, sessionId: uuidv7() };
+  const { question, model, embeddingType, sessionId } = body
+    ? JSON.parse(body)
+    : { question: undefined, model: undefined, sessionId: uuidv7() };
 
   const modelType = model || 'gpt-5-nano';
 
@@ -26,7 +28,8 @@ export async function handle(
 
   try {
     const { indexName, model: embeddings } = selectEmbeddings({
-      type: embeddingType ?? 'titan', dataSource: process.env.PINECONE_INDEX ?? '',
+      type: embeddingType ?? 'titan',
+      dataSource: process.env.PINECONE_INDEX ?? '',
     });
     const retriever = await createRetriever({ embeddings, indexName });
     const tool = createTool(retriever);
@@ -35,12 +38,15 @@ export async function handle(
 
     const { platform, model, modelName } = selectLlm(modelType);
     // Initialize Langfuse callback handler
-    const langfuseHandler = langfuse.publicKey && langfuse.secretKey ? new CallbackHandler({
-      sessionId,
-      flushInterval: 0,
-      flushAt: 1,
-      tags: [modelName],
-    }) : undefined;
+    const langfuseHandler =
+      langfuse.publicKey && langfuse.secretKey
+        ? new CallbackHandler({
+            sessionId,
+            flushInterval: 0,
+            flushAt: 1,
+            tags: [modelName],
+          })
+        : undefined;
 
     const checkpointer = new MemorySaver();
 

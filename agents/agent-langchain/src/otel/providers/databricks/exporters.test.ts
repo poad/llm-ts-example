@@ -1,5 +1,6 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { init } from './exporters.js';
+
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 
 vi.mock('./access-token-manager.js', () => ({
   getAccessToken: vi.fn(),

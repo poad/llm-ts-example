@@ -1,8 +1,5 @@
 import { LogFormatter, LogItem, Logger } from '@aws-lambda-powertools/logger';
-import type {
-  LogAttributes,
-  UnformattedAttributes,
-} from '@aws-lambda-powertools/logger/types';
+import type { LogAttributes, UnformattedAttributes } from '@aws-lambda-powertools/logger/types';
 
 class LocalLogFormatter extends LogFormatter {
   public formatAttributes(

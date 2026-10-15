@@ -1,9 +1,10 @@
-import * as cheerio from 'cheerio';
-import { RecursiveCharacterTextSplitter } from '@langchain/textsplitters';
-import { Document } from '@langchain/core/documents';
-import { Pinecone as PineconeClient } from '@pinecone-database/pinecone';
-import { PineconeStore } from '@langchain/pinecone';
 import { listEmbeddings } from './embeddings-models.js';
+
+import { Document } from '@langchain/core/documents';
+import { PineconeStore } from '@langchain/pinecone';
+import { RecursiveCharacterTextSplitter } from '@langchain/textsplitters';
+import { Pinecone as PineconeClient } from '@pinecone-database/pinecone';
+import * as cheerio from 'cheerio';
 import 'dotenv/config';
 
 console.info('Loading HTMLs');

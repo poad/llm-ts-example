@@ -1,18 +1,18 @@
 import { handle } from './handler.js';
+
+import { logger } from '@llm-ts-example/common-backend-core';
 import { APIGatewayProxyEvent } from 'aws-lambda';
 import { v7 as uuidv7 } from 'uuid';
 
-import { logger } from '@llm-ts-example/common-backend-core';
-
 export const handler = awslambda.streamifyResponse(
-  async (
-    event: APIGatewayProxyEvent, responseStream: NodeJS.WritableStream,
-  ) => {
-    logger.debug('event', {event});
-    const { question, model, sessionId } = event.body ? JSON.parse(event.body) : { question: 'あなたは誰？', model: 'nova-micro', sessionId: uuidv7() };
+  async (event: APIGatewayProxyEvent, responseStream: NodeJS.WritableStream) => {
+    logger.debug('event', { event });
+    const { question, model, sessionId } = event.body
+      ? JSON.parse(event.body)
+      : { question: 'あなたは誰？', model: 'nova-micro', sessionId: uuidv7() };
     await handle(sessionId, { question, model }, responseStream);
     responseStream.end();
-  });
-
+  },
+);
 
 export default handler;

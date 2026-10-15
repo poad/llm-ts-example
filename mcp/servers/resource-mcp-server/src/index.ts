@@ -1,7 +1,8 @@
 import { promises as fs } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { StdioServerTransport } from '@modelcontextprotocol/server/stdio';
+
 import { McpServer } from '@modelcontextprotocol/server';
+import { StdioServerTransport } from '@modelcontextprotocol/server/stdio';
 import { z } from 'zod';
 
 // サーバの準備
@@ -20,29 +21,24 @@ const metadata = {
 };
 
 // 買い物リストをリソースとして追加
-server.registerResource(
-  'shopping.txt',
-  filePath,
-  metadata,
-  async (uri: URL) => {
-    try {
-      const localPath = fileURLToPath(uri).replace('file://', '');
-      const text = await fs.readFile(localPath, 'utf-8');
-      return {
-        contents: [
-          {
-            uri: uri.href,
-            mimeType: 'text/plain',
-            text,
-          },
-        ],
-      };
-    } catch (err) {
-      console.error(`リソースの読み込みに失敗しました。: ${err}`);
-      process.exit(1);
-    }
-  },
-);
+server.registerResource('shopping.txt', filePath, metadata, async (uri: URL) => {
+  try {
+    const localPath = fileURLToPath(uri).replace('file://', '');
+    const text = await fs.readFile(localPath, 'utf-8');
+    return {
+      contents: [
+        {
+          uri: uri.href,
+          mimeType: 'text/plain',
+          text,
+        },
+      ],
+    };
+  } catch (err) {
+    console.error(`リソースの読み込みに失敗しました。: ${err}`);
+    process.exit(1);
+  }
+});
 
 server.registerPrompt(
   'shopping-list-prompt',

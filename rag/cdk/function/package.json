@@ -5,11 +5,13 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "lint": "eslint",
-    "fix": "eslint --fix"
+    "lint": "oxlint . && oxfmt --check .",
+    "lint-fix": "oxlint . --fix && oxfmt --write .",
+    "fix": "oxlint . --fix && oxfmt --write ."
   },
   "devDependencies": {
-    "eslint": "^10.12.0",
-    "typescript": "^6.0.3"
+    "oxfmt": "^0.72.0",
+    "oxlint": "^1.87.0",
+    "typescript": "^7.0.2"
   }
 }

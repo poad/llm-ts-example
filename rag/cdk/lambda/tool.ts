@@ -1,5 +1,5 @@
-import * as z from 'zod';
 import { BaseRetriever } from '@langchain/core/retrievers';
+import * as z from 'zod';
 
 export const createTool = (retriever: BaseRetriever) => {
   return retriever.asTool({

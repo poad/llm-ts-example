@@ -65,12 +65,12 @@ curl -X POST <Function URL> \
 
 ### リクエストパラメータ
 
-| パラメータ | 型 | 必須 | 説明 |
-| --------- | ---- | ---- | ---- |
-| `prompt` | string | 是 | ユーザーの入力プロンプト |
-| `modelId` | string | 是 | 使用するモデルID |
-| `session` | string | 任意 | セッション識別子 |
-| `id` | string | 任意 | クエリ識別子 |
+| パラメータ | 型     | 必須 | 説明                     |
+| ---------- | ------ | ---- | ------------------------ |
+| `prompt`   | string | 是   | ユーザーの入力プロンプト |
+| `modelId`  | string | 是   | 使用するモデルID         |
+| `session`  | string | 任意 | セッション識別子         |
+| `id`       | string | 任意 | クエリ識別子             |
 
 ## プロジェクト構造
 
@@ -90,14 +90,14 @@ curl -X POST <Function URL> \
 
 ## 開発コマンド
 
-| コマンド | 説明 |
-| ------- | ---- |
-| `pnpm run build` | TypeScriptコンパイル |
-| `pnpm run watch` | 変更監視モード |
-| `pnpm run test` | テスト実行 |
-| `npx cdk deploy` | スタックデプロイ |
-| `npx cdk diff` | 差分確認 |
-| `npx cdk synth` | CloudFormationテンプレート生成 |
+| コマンド         | 説明                           |
+| ---------------- | ------------------------------ |
+| `pnpm run build` | TypeScriptコンパイル           |
+| `pnpm run watch` | 変更監視モード                 |
+| `pnpm run test`  | テスト実行                     |
+| `npx cdk deploy` | スタックデプロイ               |
+| `npx cdk diff`   | 差分確認                       |
+| `npx cdk synth`  | CloudFormationテンプレート生成 |
 
 ## Agents
 
@@ -107,18 +107,20 @@ curl -X POST <Function URL> \
 
 ```typescript
 const agent = new ToolLoopAgent({
-  model,                              // LLMモデルインスタンス
-  instructions: 'You are a helpful assistant.',  // システムプロンプト
-  tools: {                            // ツール定義（オプション）
+  model, // LLMモデルインスタンス
+  instructions: 'You are a helpful assistant.', // システムプロンプト
+  tools: {
+    // ツール定義（オプション）
     // カスタムツールをここに追加
   },
-  experimental_telemetry: {           // テレメトリ設定（オプション）
+  experimental_telemetry: {
+    // テレメトリ設定（オプション）
     isEnabled: true,
     metadata: {
       model: modelId,
       thread_id: session,
       query_id: id,
-    }
+    },
   },
 });
 ```
@@ -158,8 +160,8 @@ const agent = new ToolLoopAgent({
 const stream = await agent.stream({
   messages,
   experimental_transform: smoothStream({
-    delayInMs: 20,      // チャンク間の遅延（デフォルト: 10ms）
-    chunking: 'line',   // チャンク分割方法: 'word' | 'line'（デフォルト: 'word'）
+    delayInMs: 20, // チャンク間の遅延（デフォルト: 10ms）
+    chunking: 'line', // チャンク分割方法: 'word' | 'line'（デフォルト: 'word'）
   }),
 });
 ```
@@ -176,8 +178,8 @@ const stream = await agent.stream({
     logger.info('Step completed:', {
       inputTokens: usage.inputTokens,
       outputTokens: usage.outputTokens,
-      finishReason,           // 'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'other'
-      toolsUsed: toolCalls?.map(tc => tc.toolName),
+      finishReason, // 'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'other'
+      toolsUsed: toolCalls?.map((tc) => tc.toolName),
     });
   },
 });

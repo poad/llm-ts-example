@@ -1,15 +1,10 @@
-"use client";
+'use client';
 
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { LoaderIcon, MicIcon, SquareIcon } from "lucide-react";
-import {
-  type ComponentProps,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { LoaderIcon, MicIcon, SquareIcon } from 'lucide-react';
+import { type ComponentProps, useCallback, useEffect, useRef, useState } from 'react';
+
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 interface SpeechRecognition extends EventTarget {
   continuous: boolean;
@@ -19,12 +14,8 @@ interface SpeechRecognition extends EventTarget {
   stop(): void;
   onstart: ((this: SpeechRecognition, ev: Event) => void) | null;
   onend: ((this: SpeechRecognition, ev: Event) => void) | null;
-  onresult:
-    | ((this: SpeechRecognition, ev: SpeechRecognitionEvent) => void)
-    | null;
-  onerror:
-    | ((this: SpeechRecognition, ev: SpeechRecognitionErrorEvent) => void)
-    | null;
+  onresult: ((this: SpeechRecognition, ev: SpeechRecognitionEvent) => void) | null;
+  onerror: ((this: SpeechRecognition, ev: SpeechRecognitionErrorEvent) => void) | null;
 }
 
 interface SpeechRecognitionEvent extends Event {
@@ -65,7 +56,7 @@ declare global {
   }
 }
 
-type SpeechInputMode = "speech-recognition" | "media-recorder" | "none";
+type SpeechInputMode = 'speech-recognition' | 'media-recorder' | 'none';
 
 export type SpeechInputProps = ComponentProps<typeof Button> & {
   onTranscriptionChange?: (text: string) => void;
@@ -80,34 +71,32 @@ export type SpeechInputProps = ComponentProps<typeof Button> & {
 };
 
 const detectSpeechInputMode = (): SpeechInputMode => {
-  if (typeof window === "undefined") {
-    return "none";
+  if (typeof window === 'undefined') {
+    return 'none';
   }
 
-  if ("SpeechRecognition" in window || "webkitSpeechRecognition" in window) {
-    return "speech-recognition";
+  if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+    return 'speech-recognition';
   }
 
-  if ("MediaRecorder" in window && "mediaDevices" in navigator) {
-    return "media-recorder";
+  if ('MediaRecorder' in window && 'mediaDevices' in navigator) {
+    return 'media-recorder';
   }
 
-  return "none";
+  return 'none';
 };
 
 export const SpeechInput = ({
   className,
   onTranscriptionChange,
   onAudioRecorded,
-  lang = "en-US",
+  lang = 'en-US',
   ...props
 }: SpeechInputProps) => {
   const [isListening, setIsListening] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
-  const [mode, setMode] = useState<SpeechInputMode>("none");
-  const [recognition, setRecognition] = useState<SpeechRecognition | null>(
-    null
-  );
+  const [mode, setMode] = useState<SpeechInputMode>('none');
+  const [recognition, setRecognition] = useState<SpeechRecognition | null>(null);
   const recognitionRef = useRef<SpeechRecognition | null>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
@@ -119,12 +108,11 @@ export const SpeechInput = ({
 
   // Initialize Speech Recognition when mode is speech-recognition
   useEffect(() => {
-    if (mode !== "speech-recognition") {
+    if (mode !== 'speech-recognition') {
       return;
     }
 
-    const SpeechRecognition =
-      window.SpeechRecognition || window.webkitSpeechRecognition;
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const speechRecognition = new SpeechRecognition();
 
     speechRecognition.continuous = true;
@@ -140,12 +128,12 @@ export const SpeechInput = ({
     };
 
     speechRecognition.onresult = (event) => {
-      let finalTranscript = "";
+      let finalTranscript = '';
 
       for (let i = event.resultIndex; i < event.results.length; i++) {
         const result = event.results[i];
         if (result.isFinal) {
-          finalTranscript += result[0]?.transcript ?? "";
+          finalTranscript += result[0]?.transcript ?? '';
         }
       }
 
@@ -155,7 +143,7 @@ export const SpeechInput = ({
     };
 
     speechRecognition.onerror = (event) => {
-      console.error("Speech recognition error:", event.error);
+      console.error('Speech recognition error:', event.error);
       setIsListening(false);
     };
 
@@ -172,9 +160,7 @@ export const SpeechInput = ({
   // Start MediaRecorder recording
   const startMediaRecorder = useCallback(async () => {
     if (!onAudioRecorded) {
-      console.warn(
-        "SpeechInput: onAudioRecorded callback is required for MediaRecorder fallback"
-      );
+      console.warn('SpeechInput: onAudioRecorded callback is required for MediaRecorder fallback');
       return;
     }
 
@@ -196,7 +182,7 @@ export const SpeechInput = ({
         }
 
         const audioBlob = new Blob(audioChunksRef.current, {
-          type: "audio/webm",
+          type: 'audio/webm',
         });
 
         if (audioBlob.size > 0) {
@@ -207,7 +193,7 @@ export const SpeechInput = ({
               onTranscriptionChange?.(transcript);
             }
           } catch (error) {
-            console.error("Transcription error:", error);
+            console.error('Transcription error:', error);
           } finally {
             setIsProcessing(false);
           }
@@ -215,7 +201,7 @@ export const SpeechInput = ({
       };
 
       mediaRecorder.onerror = (event) => {
-        console.error("MediaRecorder error:", event);
+        console.error('MediaRecorder error:', event);
         setIsListening(false);
         // Stop all tracks on error
         for (const track of stream.getTracks()) {
@@ -227,27 +213,27 @@ export const SpeechInput = ({
       mediaRecorder.start();
       setIsListening(true);
     } catch (error) {
-      console.error("Failed to start MediaRecorder:", error);
+      console.error('Failed to start MediaRecorder:', error);
       setIsListening(false);
     }
   }, [onAudioRecorded, onTranscriptionChange]);
 
   // Stop MediaRecorder recording
   const stopMediaRecorder = useCallback(() => {
-    if (mediaRecorderRef.current?.state === "recording") {
+    if (mediaRecorderRef.current?.state === 'recording') {
       mediaRecorderRef.current.stop();
     }
     setIsListening(false);
   }, []);
 
   const toggleListening = useCallback(() => {
-    if (mode === "speech-recognition" && recognition) {
+    if (mode === 'speech-recognition' && recognition) {
       if (isListening) {
         recognition.stop();
       } else {
         recognition.start();
       }
-    } else if (mode === "media-recorder") {
+    } else if (mode === 'media-recorder') {
       if (isListening) {
         stopMediaRecorder();
       } else {
@@ -258,9 +244,9 @@ export const SpeechInput = ({
 
   // Determine if button should be disabled
   const isDisabled =
-    mode === "none" ||
-    (mode === "speech-recognition" && !recognition) ||
-    (mode === "media-recorder" && !onAudioRecorded) ||
+    mode === 'none' ||
+    (mode === 'speech-recognition' && !recognition) ||
+    (mode === 'media-recorder' && !onAudioRecorded) ||
     isProcessing;
 
   return (
@@ -273,7 +259,7 @@ export const SpeechInput = ({
             key={index}
             style={{
               animationDelay: `${index * 0.3}s`,
-              animationDuration: "2s",
+              animationDuration: '2s',
             }}
           />
         ))}
@@ -281,11 +267,11 @@ export const SpeechInput = ({
       {/* Main record button */}
       <Button
         className={cn(
-          "relative z-10 rounded-full transition-all duration-300",
+          'relative z-10 rounded-full transition-all duration-300',
           isListening
-            ? "bg-destructive text-white hover:bg-destructive/80 hover:text-white"
-            : "bg-primary text-primary-foreground hover:bg-primary/80 hover:text-primary-foreground",
-          className
+            ? 'bg-destructive text-white hover:bg-destructive/80 hover:text-white'
+            : 'bg-primary text-primary-foreground hover:bg-primary/80 hover:text-primary-foreground',
+          className,
         )}
         disabled={isDisabled}
         onClick={toggleListening}

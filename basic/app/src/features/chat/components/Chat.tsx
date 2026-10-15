@@ -1,8 +1,9 @@
 import { ModelSelector } from '../../Models/components/ModelSelector';
+
+import sha256 from 'crypto-js/sha256';
 import { createSignal, For, onMount } from 'solid-js';
 import { createStore } from 'solid-js/store';
 import { SolidMarkdown } from 'solid-markdown';
-import sha256 from 'crypto-js/sha256';
 
 interface ChatMessage {
   id: number;
@@ -20,7 +21,7 @@ interface Model {
 
 interface ChatProps {
   sessionId: string;
-  models: Model[]
+  models: Model[];
 }
 
 export function Chat(props: ChatProps) {
@@ -30,12 +31,14 @@ export function Chat(props: ChatProps) {
   // 現在の表示テキストと入力
   const [input, setInput] = createSignal('');
 
-  const [model, setModel] = createSignal<string>(props.models.find((it) => it.selected)?.id ?? 'nova-micro');
+  const [model, setModel] = createSignal<string>(
+    props.models.find((it) => it.selected)?.id ?? 'nova-micro',
+  );
 
   const [isLoading, setIsLoading] = createSignal(false);
 
   // スクロール用の参照
-  // eslint-disable-next-line no-unassigned-vars
+  // oxlint-disable-next-line no-unassigned-vars
   let messagesContainerRef: HTMLDivElement | undefined;
 
   // スクロールを最下部に固定する関数
@@ -43,13 +46,10 @@ export function Chat(props: ChatProps) {
     if (messagesContainerRef) {
       messagesContainerRef.scrollTop = messagesContainerRef.scrollHeight;
     }
-  };
+  }
 
   function addMessageAndScroll(message: ChatMessage) {
-    setHistory((prev) => [
-      ...prev,
-      message,
-    ]);
+    setHistory((prev) => [...prev, message]);
     scrollToBottom();
   }
 
@@ -60,34 +60,33 @@ export function Chat(props: ChatProps) {
     id: number,
     decoder: TextDecoder,
   ) {
-
     const { done, value } = await reader.read();
     if (done) {
-      setHistory(prev =>
-        prev.map(msg =>
+      setHistory((prev) =>
+        prev.map((msg) =>
           msg.id === id
             ? {
-              ...msg,
-              streaming: false,
-            }
+                ...msg,
+                streaming: false,
+              }
             : msg,
         ),
       );
       scrollToBottom();
       return;
-    };
+    }
 
     const chunk = decoder.decode(value, { stream: true });
 
     // リアルタイムでメッセージを更新
-    setHistory(prev =>
-      prev.map(msg =>
+    setHistory((prev) =>
+      prev.map((msg) =>
         msg.id === id
           ? {
-            ...msg,
-            message: msg.message + chunk,
-            streaming: true,
-          }
+              ...msg,
+              message: msg.message + chunk,
+              streaming: true,
+            }
           : msg,
       ),
     );
@@ -100,17 +99,14 @@ export function Chat(props: ChatProps) {
     const body = JSON.stringify({ question: input, model, sessionId: props.sessionId });
     const hash = sha256(body);
     const endpoint = import.meta.env.VITE_API_URL ?? '';
-    const response = await fetch(
-      `${endpoint}/api/`,
-      {
-        method: 'post',
-        body,
-        headers: {
-          'Content-Type': 'application/json',
-          'x-amz-content-sha256': hash.toString(),
-        },
+    const response = await fetch(`${endpoint}/api/`, {
+      method: 'post',
+      body,
+      headers: {
+        'Content-Type': 'application/json',
+        'x-amz-content-sha256': hash.toString(),
       },
-    );
+    });
 
     if (!response.body) {
       throw new Error('ストリーミングに失敗');
@@ -121,10 +117,7 @@ export function Chat(props: ChatProps) {
     const reader = response.body.getReader();
     const decoder = new TextDecoder();
 
-    const lastAssistantMessageId = Math.max(
-      ...history.map(m => m.id),
-      0,
-    );
+    const lastAssistantMessageId = Math.max(...history.map((m) => m.id), 0);
 
     const assistantMessageId = lastAssistantMessageId + 1;
 
@@ -138,7 +131,7 @@ export function Chat(props: ChatProps) {
     });
 
     await pipeStream(reader, assistantMessageId, decoder);
-  };
+  }
 
   async function handleSubmit() {
     const question = input().trim();
@@ -147,9 +140,7 @@ export function Chat(props: ChatProps) {
     // 入力欄をクリア
     setInput('');
 
-    const newMessageId = history.length > 0
-      ? Math.max(...history.map(m => m.id)) + 1
-      : 1;
+    const newMessageId = history.length > 0 ? Math.max(...history.map((m) => m.id)) + 1 : 1;
 
     addMessageAndScroll({
       id: newMessageId,
@@ -166,39 +157,43 @@ export function Chat(props: ChatProps) {
   }
 
   return (
-    <div id='container'>
+    <div id="container">
       {/* 履歴リスト */}
-      <div class="mt-4" id='history-container' ref={messagesContainerRef}>
+      <div class="mt-4" id="history-container" ref={messagesContainerRef}>
         <For each={history}>
           {(item) => (
             <div class={`history history-${item.type}`}>
-              <div class='role'>{item.type === 'user' ? 'あなた' : props.models.find((it) => it.id === item.model)?.name ?? item.model}</div>
-              <div class='message'><SolidMarkdown children={item.message} /></div>
+              <div class="role">
+                {item.type === 'user'
+                  ? 'あなた'
+                  : (props.models.find((it) => it.id === item.model)?.name ?? item.model)}
+              </div>
+              <div class="message">
+                <SolidMarkdown children={item.message} />
+              </div>
             </div>
           )}
         </For>
-        <div class='loading'>
-          {isLoading() ? '考え中...' : ''}
-        </div>
+        <div class="loading">{isLoading() ? '考え中...' : ''}</div>
       </div>
 
-      <div id='input-bar'>
+      <div id="input-bar">
         <input
-          id='input-box'
+          id="input-box"
           type="text"
           value={input()}
           onInput={(e) => setInput(e.target.value)}
           placeholder="質問を入力..."
         />
-        <ModelSelector id='model-selector' onChange={(value) => setModel(() => value)} models={props.models} />
-        <button
-          onClick={handleSubmit}
-          disabled={isLoading()}
-          id='send-button'
-        >
+        <ModelSelector
+          id="model-selector"
+          onChange={(value) => setModel(() => value)}
+          models={props.models}
+        />
+        <button onClick={handleSubmit} disabled={isLoading()} id="send-button">
           送信
         </button>
       </div>
     </div>
   );
-};
+}

@@ -1,14 +1,15 @@
 import { buildCommon, buildFrontend } from './process/setup.js';
+
 import * as cdk from 'aws-cdk-lib';
-import { Construct } from 'constructs';
-import * as s3 from 'aws-cdk-lib/aws-s3';
 import * as cloudfront from 'aws-cdk-lib/aws-cloudfront';
 import * as origins from 'aws-cdk-lib/aws-cloudfront-origins';
+import * as iam from 'aws-cdk-lib/aws-iam';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as nodejs from 'aws-cdk-lib/aws-lambda-nodejs';
 import * as awslogs from 'aws-cdk-lib/aws-logs';
-import * as iam from 'aws-cdk-lib/aws-iam';
+import * as s3 from 'aws-cdk-lib/aws-s3';
 import * as deployment from 'aws-cdk-lib/aws-s3-deployment';
+import { Construct } from 'constructs';
 
 interface CloudFrontProps {
   readonly comment: string;
@@ -31,11 +32,7 @@ interface CloudfrontCdnTemplateStackProps extends Config {
 }
 
 export class CloudfrontCdnTemplateStack extends cdk.Stack {
-  constructor(
-    scope: Construct,
-    id: string,
-    props: CloudfrontCdnTemplateStackProps,
-  ) {
+  constructor(scope: Construct, id: string, props: CloudfrontCdnTemplateStackProps) {
     super(scope, id, props);
 
     const {
@@ -71,36 +68,49 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
 
     const langfusePk: string | undefined = this.node.tryGetContext('langfuse-public-key');
     const langfuseSk: string | undefined = this.node.tryGetContext('langfuse-secret-key');
-    const langfuseEndpoint: string = this.node.tryGetContext('langfuse-endpoint') ?? 'https://us.cloud.langfuse.com';
+    const langfuseEndpoint: string =
+      this.node.tryGetContext('langfuse-endpoint') ?? 'https://us.cloud.langfuse.com';
 
-    const langfuseEnv = langfuseSk && langfusePk ? {
-      LANGFUSE_SECRET_KEY: langfuseSk,
-      LANGFUSE_PUBLIC_KEY: langfusePk,
-      ...(langfuseEndpoint ? {
-        LANGFUSE_BASEURL: langfuseEndpoint,
-      } : {}),
-    } : {};
+    const langfuseEnv =
+      langfuseSk && langfusePk
+        ? {
+            LANGFUSE_SECRET_KEY: langfuseSk,
+            LANGFUSE_PUBLIC_KEY: langfusePk,
+            ...(langfuseEndpoint
+              ? {
+                  LANGFUSE_BASEURL: langfuseEndpoint,
+                }
+              : {}),
+          }
+        : {};
 
     const langsmithApiKey: string | undefined = this.node.tryGetContext('langsmith-api-key');
     const langsmithProject: string | undefined = this.node.tryGetContext('langsmith-project');
-    const langsmithEndpoint: string = this.node.tryGetContext('langsmith-endpoint') ?? 'https://api.smith.langchain.com';
+    const langsmithEndpoint: string =
+      this.node.tryGetContext('langsmith-endpoint') ?? 'https://api.smith.langchain.com';
 
-    const langsmithEnv: Record<string, string> = langsmithApiKey && langsmithProject ? {
-      LANGCHAIN_TRACING_V2: 'true',
-      LANGCHAIN_ENDPOINT: langsmithEndpoint,
-      LANGCHAIN_API_KEY: langsmithApiKey,
-      LANGCHAIN_PROJECT: langsmithProject,
-    } : {};
+    const langsmithEnv: Record<string, string> =
+      langsmithApiKey && langsmithProject
+        ? {
+            LANGCHAIN_TRACING_V2: 'true',
+            LANGCHAIN_ENDPOINT: langsmithEndpoint,
+            LANGCHAIN_API_KEY: langsmithApiKey,
+            LANGCHAIN_PROJECT: langsmithProject,
+          }
+        : {};
 
     const phoenixApiKey: string | undefined = this.node.tryGetContext('phoenix-api-key');
     const phoenixSpaceId: string | undefined = this.node.tryGetContext('phoenix-space-id');
     const otelTracesEndpoint: string = this.node.tryGetContext('otel-traces-endpoint');
 
-    const phoenixCloudEnv: Record<string, string> = phoenixApiKey && phoenixSpaceId && otelTracesEndpoint ? {
-      PHOENIX_API_KEY: phoenixApiKey,
-      PHOENIX_SPACE_ID: phoenixSpaceId,
-      OTEL_EXPORTER_OTLP_TRACE_ENDPOINT: otelTracesEndpoint,
-    } : {};
+    const phoenixCloudEnv: Record<string, string> =
+      phoenixApiKey && phoenixSpaceId && otelTracesEndpoint
+        ? {
+            PHOENIX_API_KEY: phoenixApiKey,
+            PHOENIX_SPACE_ID: phoenixSpaceId,
+            OTEL_EXPORTER_OTLP_TRACE_ENDPOINT: otelTracesEndpoint,
+          }
+        : {};
 
     const fn = new nodejs.NodejsFunction(this, 'Lambda', {
       runtime: lambda.Runtime.NODEJS_24_X,
@@ -126,7 +136,8 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
         target: 'node22',
         minify: true,
         format: nodejs.OutputFormat.ESM,
-        banner: 'import { createRequire } from \'module\';const require = createRequire(import.meta.url);',
+        banner:
+          "import { createRequire } from 'module';const require = createRequire(import.meta.url);",
         // ...devOptions.bundling,
       },
       memorySize: 256,
@@ -142,10 +153,7 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
             statements: [
               new iam.PolicyStatement({
                 effect: iam.Effect.ALLOW,
-                actions: [
-                  'bedrock:InvokeModel*',
-                  'logs:PutLogEvents',
-                ],
+                actions: ['bedrock:InvokeModel*', 'logs:PutLogEvents'],
                 resources: ['*'],
               }),
             ],
@@ -164,13 +172,17 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
       encryption: s3.BucketEncryption.S3_MANAGED,
     });
 
-    const websiteIndexPageForwardFunction = new cloudfront.Function(this, 'WebsiteIndexPageForwardFunction', {
-      functionName: 'llm-ts-example-api-index-forword',
-      code: cloudfront.FunctionCode.fromFile({
-        filePath: 'function/index.js',
-      }),
-      runtime: cloudfront.FunctionRuntime.JS_2_0,
-    });
+    const websiteIndexPageForwardFunction = new cloudfront.Function(
+      this,
+      'WebsiteIndexPageForwardFunction',
+      {
+        functionName: 'llm-ts-example-api-index-forword',
+        code: cloudfront.FunctionCode.fromFile({
+          filePath: 'function/index.js',
+        }),
+        runtime: cloudfront.FunctionRuntime.JS_2_0,
+      },
+    );
     const functionAssociations = [
       {
         eventType: cloudfront.FunctionEventType.VIEWER_REQUEST,
@@ -193,18 +205,19 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
         cachePolicy: cloudfront.CachePolicy.CACHING_DISABLED,
         viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
         functionAssociations,
-
       },
       additionalBehaviors: {
         [`${apiRootPath}*`]: {
-          origin: new origins.FunctionUrlOrigin(fn.addFunctionUrl({
-            authType: cdk.aws_lambda.FunctionUrlAuthType.AWS_IAM,
-            invokeMode: cdk.aws_lambda.InvokeMode.RESPONSE_STREAM,
-          }),
-          {
-            originId: 'lambda',
-            readTimeout: cdk.Duration.minutes(1),
-          }),
+          origin: new origins.FunctionUrlOrigin(
+            fn.addFunctionUrl({
+              authType: cdk.aws_lambda.FunctionUrlAuthType.AWS_IAM,
+              invokeMode: cdk.aws_lambda.InvokeMode.RESPONSE_STREAM,
+            }),
+            {
+              originId: 'lambda',
+              readTimeout: cdk.Duration.minutes(1),
+            },
+          ),
           viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
           cachePolicy: cloudfront.CachePolicy.CACHING_DISABLED,
           allowedMethods: cloudfront.AllowedMethods.ALLOW_ALL,
@@ -214,10 +227,7 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
             'ResponseHeadersPolicy',
             {
               corsBehavior: {
-                accessControlAllowOrigins: [
-                  'http://localhost:4173',
-                  'http://localhost:5173',
-                ],
+                accessControlAllowOrigins: ['http://localhost:4173', 'http://localhost:5173'],
                 accessControlAllowHeaders: ['*'],
                 accessControlAllowMethods: ['ALL'],
                 accessControlAllowCredentials: false,
@@ -257,19 +267,18 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
     });
 
     // OAC for Lambda
-    const cfnOriginAccessControl =
-      new cdk.aws_cloudfront.CfnOriginAccessControl(
-        this,
-        'OriginAccessControl',
-        {
-          originAccessControlConfig: {
-            name: `OAC for Lambda Functions URL (${functionName})`,
-            originAccessControlOriginType: 'lambda',
-            signingBehavior: 'always',
-            signingProtocol: 'sigv4',
-          },
+    const cfnOriginAccessControl = new cdk.aws_cloudfront.CfnOriginAccessControl(
+      this,
+      'OriginAccessControl',
+      {
+        originAccessControlConfig: {
+          name: `OAC for Lambda Functions URL (${functionName})`,
+          originAccessControlOriginType: 'lambda',
+          signingBehavior: 'always',
+          signingProtocol: 'sigv4',
         },
-      );
+      },
+    );
 
     const cfnDistribution = cf.node.defaultChild as cdk.aws_cloudfront.CfnDistribution;
 

@@ -1,24 +1,10 @@
-"use client";
+'use client';
 
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
-import { cn } from "@/lib/utils";
-import {
-  ChevronRightIcon,
-  FileIcon,
-  FolderIcon,
-  FolderOpenIcon,
-} from "lucide-react";
-import {
-  createContext,
-  type HTMLAttributes,
-  type ReactNode,
-  useContext,
-  useState,
-} from "react";
+import { ChevronRightIcon, FileIcon, FolderIcon, FolderOpenIcon } from 'lucide-react';
+import { createContext, type HTMLAttributes, type ReactNode, useContext, useState } from 'react';
+
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+import { cn } from '@/lib/utils';
 
 interface FileTreeContextType {
   expandedPaths: Set<string>;
@@ -65,14 +51,9 @@ export const FileTree = ({
   };
 
   return (
-    <FileTreeContext.Provider
-      value={{ expandedPaths, togglePath, selectedPath, onSelect }}
-    >
+    <FileTreeContext.Provider value={{ expandedPaths, togglePath, selectedPath, onSelect }}>
       <div
-        className={cn(
-          "rounded-lg border bg-background font-mono text-sm",
-          className
-        )}
+        className={cn('rounded-lg border bg-background font-mono text-sm', className)}
         role="tree"
         {...props}
       >
@@ -89,8 +70,8 @@ interface FileTreeFolderContextType {
 }
 
 const FileTreeFolderContext = createContext<FileTreeFolderContextType>({
-  path: "",
-  name: "",
+  path: '',
+  name: '',
   isExpanded: false,
 });
 
@@ -106,8 +87,7 @@ export const FileTreeFolder = ({
   children,
   ...props
 }: FileTreeFolderProps) => {
-  const { expandedPaths, togglePath, selectedPath, onSelect } =
-    useContext(FileTreeContext);
+  const { expandedPaths, togglePath, selectedPath, onSelect } = useContext(FileTreeContext);
   const isExpanded = expandedPaths.has(path);
   const isSelected = selectedPath === path;
 
@@ -115,8 +95,8 @@ export const FileTreeFolder = ({
     <FileTreeFolderContext.Provider value={{ path, name, isExpanded }}>
       <Collapsible onOpenChange={() => togglePath(path)} open={isExpanded}>
         <div
-          className={cn("", className)}
-          // eslint-disable-next-line jsx-a11y/role-has-required-aria-props
+          className={cn('', className)}
+          // oxlint-disable-next-line jsx-a11y/role-has-required-aria-props
           role="treeitem"
           tabIndex={0}
           {...props}
@@ -124,16 +104,16 @@ export const FileTreeFolder = ({
           <CollapsibleTrigger asChild>
             <button
               className={cn(
-                "flex w-full items-center gap-1 rounded px-2 py-1 text-left transition-colors hover:bg-muted/50",
-                isSelected && "bg-muted"
+                'flex w-full items-center gap-1 rounded px-2 py-1 text-left transition-colors hover:bg-muted/50',
+                isSelected && 'bg-muted',
               )}
               onClick={() => onSelect?.(path)}
               type="button"
             >
               <ChevronRightIcon
                 className={cn(
-                  "size-4 shrink-0 text-muted-foreground transition-transform",
-                  isExpanded && "rotate-90"
+                  'size-4 shrink-0 text-muted-foreground transition-transform',
+                  isExpanded && 'rotate-90',
                 )}
               />
               <FileTreeIcon>
@@ -161,8 +141,8 @@ interface FileTreeFileContextType {
 }
 
 const FileTreeFileContext = createContext<FileTreeFileContextType>({
-  path: "",
-  name: "",
+  path: '',
+  name: '',
 });
 
 export type FileTreeFileProps = HTMLAttributes<HTMLDivElement> & {
@@ -186,17 +166,17 @@ export const FileTreeFile = ({
     <FileTreeFileContext.Provider value={{ path, name }}>
       <div
         className={cn(
-          "flex cursor-pointer items-center gap-1 rounded px-2 py-1 transition-colors hover:bg-muted/50",
-          isSelected && "bg-muted",
-          className
+          'flex cursor-pointer items-center gap-1 rounded px-2 py-1 transition-colors hover:bg-muted/50',
+          isSelected && 'bg-muted',
+          className,
         )}
         onClick={() => onSelect?.(path)}
         onKeyDown={(e) => {
-          if (e.key === "Enter" || e.key === " ") {
+          if (e.key === 'Enter' || e.key === ' ') {
             onSelect?.(path);
           }
         }}
-        // eslint-disable-next-line jsx-a11y/role-has-required-aria-props
+        // oxlint-disable-next-line jsx-a11y/role-has-required-aria-props
         role="treeitem"
         tabIndex={0}
         {...props}
@@ -217,39 +197,27 @@ export const FileTreeFile = ({
 
 export type FileTreeIconProps = HTMLAttributes<HTMLSpanElement>;
 
-export const FileTreeIcon = ({
-  className,
-  children,
-  ...props
-}: FileTreeIconProps) => (
-  <span className={cn("shrink-0", className)} {...props}>
+export const FileTreeIcon = ({ className, children, ...props }: FileTreeIconProps) => (
+  <span className={cn('shrink-0', className)} {...props}>
     {children}
   </span>
 );
 
 export type FileTreeNameProps = HTMLAttributes<HTMLSpanElement>;
 
-export const FileTreeName = ({
-  className,
-  children,
-  ...props
-}: FileTreeNameProps) => (
-  <span className={cn("truncate", className)} {...props}>
+export const FileTreeName = ({ className, children, ...props }: FileTreeNameProps) => (
+  <span className={cn('truncate', className)} {...props}>
     {children}
   </span>
 );
 
 export type FileTreeActionsProps = HTMLAttributes<HTMLDivElement>;
 
-export const FileTreeActions = ({
-  className,
-  children,
-  ...props
-}: FileTreeActionsProps) => (
+export const FileTreeActions = ({ className, children, ...props }: FileTreeActionsProps) => (
   // biome-ignore lint/a11y/noNoninteractiveElementInteractions: stopPropagation required for nested interactions
   // biome-ignore lint/a11y/useSemanticElements: fieldset doesn't fit this UI pattern
   <div
-    className={cn("ml-auto flex items-center gap-1", className)}
+    className={cn('ml-auto flex items-center gap-1', className)}
     onClick={(e) => e.stopPropagation()}
     onKeyDown={(e) => e.stopPropagation()}
     role="group"
