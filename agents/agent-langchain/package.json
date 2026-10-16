@@ -18,7 +18,7 @@
     "@arizeai/openinference-instrumentation-langchain": "^4.1.4",
     "@aws-lambda-powertools/logger": "^2.36.0",
     "@aws-sdk/credential-provider-node": "^3.972.84",
-    "@dotenvx/dotenvx": "^2.33.0",
+    "@dotenvx/dotenvx": "^2.34.1",
     "@grpc/grpc-js": "^1.14.6",
     "@langchain/aws": "^1.4.6",
     "@langchain/classic": "^1.0.52",
