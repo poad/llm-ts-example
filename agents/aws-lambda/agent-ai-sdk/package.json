@@ -12,28 +12,28 @@
     "lint-fix": "oxlint . --fix && oxfmt --write ."
   },
   "dependencies": {
-    "@ai-sdk/amazon-bedrock": "^5.0.113",
-    "@ai-sdk/azure": "^4.0.99",
+    "@ai-sdk/amazon-bedrock": "^5.0.126",
+    "@ai-sdk/azure": "^4.0.112",
     "@llm-ts-example/common-backend-core": "workspace:*",
     "@llm-ts-example/common-core": "workspace:*",
     "@smithy/eventstream-codec": "^4.5.2",
-    "ai": "^7.0.136",
-    "aws-cdk-lib": "^2.273.0",
+    "ai": "^7.0.155",
+    "aws-cdk-lib": "^2.275.0",
     "constructs": "^10.8.1",
-    "dotenv": "^18.0.6",
-    "zod": "^4.6.5"
+    "dotenv": "^18.0.9",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.164",
-    "@types/node": "^26.6.4",
-    "aws-cdk": "^2.1145.0",
+    "@types/node": "^26.6.5",
+    "aws-cdk": "^2.1146.1",
     "esbuild": "^0.28.2",
     "oxfmt": "^0.72.0",
-    "oxlint": "^1.87.0",
-    "oxlint-plugin-awscdk": "^1.0.3",
+    "oxlint": "^1.90.0",
+    "oxlint-plugin-awscdk": "^1.0.4",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2",
-    "vite": "^8.3.4",
-    "vitest": "^5.0.3"
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
   }
 }

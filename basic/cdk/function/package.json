@@ -9,10 +9,10 @@
     "lint-fix": "oxlint . --fix && oxfmt --write ."
   },
   "devDependencies": {
-    "@types/node": "^26.6.4",
+    "@types/node": "^26.6.5",
     "oxfmt": "^0.72.0",
-    "oxlint": "^1.87.0",
-    "oxlint-plugin-awscdk": "^1.0.3",
+    "oxlint": "^1.90.0",
+    "oxlint-plugin-awscdk": "^1.0.4",
     "typescript": "^7.0.2"
   }
 }

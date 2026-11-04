@@ -44,19 +44,19 @@ blockExoticSubdeps: true
 
 minimumReleaseAge: 10080 # 7 days in minutes
 minimumReleaseAgeExclude:
-  - pnpm@12.14.0
+  - pnpm@12.17.0
 
-  - '@next/bundle-analyzer@16.4.2'
-  - '@next/env@16.4.2'
-  - '@next/swc-darwin-arm64@16.4.2'
-  - '@next/swc-darwin-x64@16.4.2'
-  - '@next/swc-linux-arm64-gnu@16.4.2'
-  - '@next/swc-linux-arm64-musl@16.4.2'
-  - '@next/swc-linux-x64-gnu@16.4.2'
-  - '@next/swc-linux-x64-musl@16.4.2'
-  - '@next/swc-win32-arm64-msvc@16.4.2'
-  - '@next/swc-win32-x64-msvc@16.4.2'
-  - next@16.4.2
+  - '@next/bundle-analyzer@16.4.5'
+  - '@next/env@16.4.5'
+  - '@next/swc-darwin-arm64@16.4.5'
+  - '@next/swc-darwin-x64@16.4.5'
+  - '@next/swc-linux-arm64-gnu@16.4.5'
+  - '@next/swc-linux-arm64-musl@16.4.5'
+  - '@next/swc-linux-x64-gnu@16.4.5'
+  - '@next/swc-linux-x64-musl@16.4.5'
+  - '@next/swc-win32-arm64-msvc@16.4.5'
+  - '@next/swc-win32-x64-msvc@16.4.5'
+  - next@16.4.5
 
   - handlebars@4.7.10
 
@@ -81,6 +81,8 @@ overrides:
   linkify-it@<=5.0.1: ^5.0.2
   seroval@<=1.6.2: ^1.6.3
   sharp@<0.35.5: ^0.35.5
+  glob@>=9.0.0 <=14.0.1: ^14.0.2
+  minimatch@<11.0.1: ^11.0.1
 
 strictPeerDependencies: false
 

@@ -16,13 +16,13 @@
     "lint-fix": "oxlint . --fix && oxfmt --write ."
   },
   "dependencies": {
-    "@modelcontextprotocol/server": "^2.3.1",
-    "zod": "^4.6.5"
+    "@modelcontextprotocol/server": "^2.4.0",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
-    "@types/node": "^26.6.4",
+    "@types/node": "^26.6.5",
     "oxfmt": "^0.72.0",
-    "oxlint": "^1.87.0",
+    "oxlint": "^1.90.0",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
   }
