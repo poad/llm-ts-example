@@ -21,7 +21,7 @@
     "@solidjs/router": "^1.0.0",
     "@solidjs/testing-library": "^0.8.10",
     "@types/crypto-js": "^4.2.2",
-    "@types/node": "^26.6.5",
+    "@types/node": "^26.6.6",
     "crypto-js": "^4.2.0",
     "eslint-plugin-solid": "^0.18.1",
     "oxfmt": "^0.72.0",

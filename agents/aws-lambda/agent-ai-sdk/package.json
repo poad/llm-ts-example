@@ -12,12 +12,12 @@
     "lint-fix": "oxlint . --fix && oxfmt --write ."
   },
   "dependencies": {
-    "@ai-sdk/amazon-bedrock": "^5.0.126",
+    "@ai-sdk/amazon-bedrock": "^5.0.127",
     "@ai-sdk/azure": "^4.0.112",
     "@llm-ts-example/common-backend-core": "workspace:*",
     "@llm-ts-example/common-core": "workspace:*",
     "@smithy/eventstream-codec": "^4.5.2",
-    "ai": "^7.0.155",
+    "ai": "^7.0.156",
     "aws-cdk-lib": "^2.275.0",
     "constructs": "^10.8.1",
     "dotenv": "^18.0.9",
@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.164",
-    "@types/node": "^26.6.5",
+    "@types/node": "^26.6.6",
     "aws-cdk": "^2.1146.1",
     "esbuild": "^0.28.2",
     "oxfmt": "^0.72.0",
