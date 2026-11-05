@@ -1,6 +1,5 @@
 import { ModelSelector } from '../../Models/components/ModelSelector';
 
-import sha256 from 'crypto-js/sha256';
 import { createSignal, For, onMount } from 'solid-js';
 import { createStore } from 'solid-js/store';
 import { SolidMarkdown } from 'solid-markdown';
@@ -22,6 +21,20 @@ interface Model {
 interface ChatProps {
   sessionId: string;
   models: Model[];
+}
+
+function toHex(buf: ArrayBuffer) {
+  const bytes = new Uint8Array(buf);
+  let s = '';
+  for (const b of bytes) {
+    s += b.toString(16).padStart(2, '0'); // 1桁の値も必ず2桁に（0f など）
+  }
+  return s;
+}
+async function sha256(text: string) {
+  const data = new TextEncoder().encode(text); // 文字列 → UTF-8 バイト列
+  const buf = await crypto.subtle.digest('SHA-256', data); // ArrayBuffer が返る
+  return toHex(buf);
 }
 
 export function Chat(props: ChatProps) {
@@ -97,7 +110,7 @@ export function Chat(props: ChatProps) {
   // ストリーミングフェッチ関数
   async function fetchStreamingContent(input: string, model: string) {
     const body = JSON.stringify({ question: input, model, sessionId: props.sessionId });
-    const hash = sha256(body);
+    const hash = await sha256(body);
     const endpoint = import.meta.env.VITE_API_URL ?? '';
     const response = await fetch(`${endpoint}/api/`, {
       method: 'post',
