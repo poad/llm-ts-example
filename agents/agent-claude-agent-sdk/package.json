@@ -14,7 +14,7 @@
     "lint-fix": "oxlint . --fix && oxfmt --write ."
   },
   "dependencies": {
-    "@anthropic-ai/claude-agent-sdk": "^0.3.312",
+    "@anthropic-ai/claude-agent-sdk": "^0.3.318",
     "uuid": "^14.0.3",
     "zod": "^4.6.7"
   },
@@ -23,10 +23,10 @@
     "dotenv": "^18.0.9",
     "esbuild": "^0.28.2",
     "oxfmt": "^0.72.0",
-    "oxlint": "^1.90.0",
+    "oxlint": "^1.91.0",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2",
     "vite": "^8.3.5",
-    "vitest": "^5.0.5"
+    "vitest": "^5.1.0"
   }
 }

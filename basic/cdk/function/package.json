@@ -11,7 +11,7 @@
   "devDependencies": {
     "@types/node": "^26.6.6",
     "oxfmt": "^0.72.0",
-    "oxlint": "^1.90.0",
+    "oxlint": "^1.91.0",
     "oxlint-plugin-awscdk": "^1.0.4",
     "typescript": "^7.0.2"
   }

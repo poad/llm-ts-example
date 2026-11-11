@@ -11,24 +11,24 @@
     "lint-fix": "oxlint . --fix && oxfmt --write ."
   },
   "dependencies": {
-    "solid-js": "^1.9.17",
+    "solid-js": "^1.9.18",
     "solid-markdown": "^2.1.1",
     "uuid": "^14.0.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.7",
     "@llm-ts-example/common-core": "workspace:*",
-    "@solidjs/router": "^1.0.0",
+    "@solidjs/router": "^1.0.1",
     "@solidjs/testing-library": "^0.8.10",
     "@types/crypto-js": "^4.2.2",
     "@types/node": "^26.6.6",
     "crypto-js": "^4.2.0",
     "eslint-plugin-solid": "^0.18.1",
     "oxfmt": "^0.72.0",
-    "oxlint": "^1.90.0",
+    "oxlint": "^1.91.0",
     "solid-refresh": "^0.7.8",
     "typescript": "^7.0.2",
     "vite": "^8.3.5",
-    "vite-plugin-solid": "^2.11.14"
+    "vite-plugin-solid": "^2.11.15"
   }
 }
