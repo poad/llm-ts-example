@@ -89,6 +89,7 @@ overrides:
   minimatch@>=7.0.0 <11.0.1: ^11.0.1
   protobufjs@<=7.6.2: ^7.6.3
   sharp@<0.35.5: ^0.35.5
+  protobufjs@>=8.0.0 <=8.6.5: ^8.6.6
 
 permissions:
   solid-js:
