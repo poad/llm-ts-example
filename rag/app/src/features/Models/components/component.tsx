@@ -1,4 +1,4 @@
-import { For } from 'solid-js/web';
+import { For } from '@solidjs/web';
 
 interface Model {
   id: string;

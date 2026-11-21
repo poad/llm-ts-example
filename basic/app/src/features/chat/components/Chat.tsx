@@ -1,8 +1,6 @@
-import { ModelSelector } from '../../Models/components/ModelSelector';
+import { ModelSelector } from '../../Models/components/ModelSelector.jsx';
 
-import { createSignal, For, onMount } from 'solid-js';
-import { createStore } from 'solid-js/store';
-import { SolidMarkdown } from 'solid-markdown';
+import { createSignal, For, onSettled } from 'solid-js';
 
 interface ChatMessage {
   id: number;
@@ -39,7 +37,7 @@ async function sha256(text: string) {
 
 export function Chat(props: ChatProps) {
   // 履歴を管理するstore
-  const [history, setHistory] = createStore<ChatMessage[]>([]);
+  const [history, setHistory] = createSignal<ChatMessage[]>([]);
 
   // 現在の表示テキストと入力
   const [input, setInput] = createSignal('');
@@ -66,7 +64,7 @@ export function Chat(props: ChatProps) {
     scrollToBottom();
   }
 
-  onMount(scrollToBottom);
+  onSettled(scrollToBottom);
 
   async function pipeStream(
     reader: ReadableStreamDefaultReader<Uint8Array<ArrayBufferLike>>,
@@ -111,7 +109,7 @@ export function Chat(props: ChatProps) {
   async function fetchStreamingContent(input: string, model: string) {
     const body = JSON.stringify({ question: input, model, sessionId: props.sessionId });
     const hash = await sha256(body);
-    const endpoint = import.meta.env.VITE_API_URL ?? '';
+    const endpoint = process.env.VITE_API_URL ?? '';
     const response = await fetch(`${endpoint}/api/`, {
       method: 'post',
       body,
@@ -130,7 +128,7 @@ export function Chat(props: ChatProps) {
     const reader = response.body.getReader();
     const decoder = new TextDecoder();
 
-    const lastAssistantMessageId = Math.max(...history.map((m) => m.id), 0);
+    const lastAssistantMessageId = Math.max(...history().map((m) => m.id), 0);
 
     const assistantMessageId = lastAssistantMessageId + 1;
 
@@ -153,7 +151,7 @@ export function Chat(props: ChatProps) {
     // 入力欄をクリア
     setInput('');
 
-    const newMessageId = history.length > 0 ? Math.max(...history.map((m) => m.id)) + 1 : 1;
+    const newMessageId = history.length > 0 ? Math.max(...history().map((m) => m.id)) + 1 : 1;
 
     addMessageAndScroll({
       id: newMessageId,
@@ -173,7 +171,7 @@ export function Chat(props: ChatProps) {
     <div id="container">
       {/* 履歴リスト */}
       <div class="mt-4" id="history-container" ref={messagesContainerRef}>
-        <For each={history}>
+        <For each={history()}>
           {(item) => (
             <div class={`history history-${item.type}`}>
               <div class="role">
@@ -182,7 +180,7 @@ export function Chat(props: ChatProps) {
                   : (props.models.find((it) => it.id === item.model)?.name ?? item.model)}
               </div>
               <div class="message">
-                <SolidMarkdown children={item.message} />
+                <div>{item.message}</div>
               </div>
             </div>
           )}

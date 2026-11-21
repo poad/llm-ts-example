@@ -1,5 +1,5 @@
 import './App.css';
-import { Chat } from './features/chat';
+import { Chat } from './features/chat/index.js';
 
 import { models } from '@llm-ts-example/common-core';
 import { v7 as uuidv7 } from 'uuid';

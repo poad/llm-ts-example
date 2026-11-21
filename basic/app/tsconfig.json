@@ -2,18 +2,18 @@
   "compilerOptions": {
     "target": "ESNext",
     "useDefineForClassFields": true,
-    "module": "ESNext",
+    "module": "nodenext",
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "nodenext",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
-    "jsxImportSource": "solid-js",
+    "jsxImportSource": "@solidjs/web",
 
     /* Linting */
     "strict": true,
@@ -21,10 +21,13 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    "types": ["vite/client", "node"],
+    "types": ["node"],
 
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
-  },
-  "references": [{ "path": "./tsconfig.node.json" }]
+    "esModuleInterop": true,
+    "paths": {
+      "@llm-ts-example/common-core": ["../../common/core"]
+    },
+    "typeRoots": ["./node_modules/@types"]
+  }
 }
