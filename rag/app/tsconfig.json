@@ -13,7 +13,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
-    "jsxImportSource": "solid-js",
+    "jsxImportSource": "@solidjs/web",
 
     /* Linting */
     "strict": true,
@@ -25,6 +25,5 @@
 
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
-  },
-  "references": [{ "path": "./tsconfig.node.json" }]
+  }
 }

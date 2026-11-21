@@ -1,9 +1,7 @@
-/// <reference types="vite/client" />
-
 import { resolve } from 'path';
 
+import solidPlugin from '@solidjs/vite-plugin';
 import { defineConfig } from 'vite';
-import solidPlugin from 'vite-plugin-solid';
 
 export default defineConfig({
   plugins: [solidPlugin()],
@@ -13,8 +11,8 @@ export default defineConfig({
     // モノレポ用の共通設定
     alias: {
       // パッケージ間の直接参照
-      '@llm-ts-example/common-core': resolve(__dirname, '../../common/core/src'),
-      '@llm-ts-example/common-backend': resolve(__dirname, '../../common/backend/src'),
+      '@llm-ts-example/common-core': resolve(import.meta.dirname, '../../common/core/src'),
+      '@llm-ts-example/common-backend': resolve(import.meta.dirname, '../../common/backend/src'),
     },
   },
   server: {

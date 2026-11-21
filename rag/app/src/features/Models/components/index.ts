@@ -1,4 +1,4 @@
-export * from './component';
+export * from './component.jsx';
 
-import { ModelSelector } from './component';
+import { ModelSelector } from './component.jsx';
 export default ModelSelector;

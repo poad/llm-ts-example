@@ -1,7 +1,7 @@
 import './App.css';
-import { Chat } from './features/chat/components/Chat';
+import { Chat } from './features/chat/components/Chat.jsx';
 
-import { models } from '@llm-ts-example/common-core';
+import { models } from '@llm-ts-example/common-core/';
 import { v7 as uuidv7 } from 'uuid';
 
 function App() {
