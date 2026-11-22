@@ -23,7 +23,7 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
     };
 
     const fn = new cdk.aws_lambda_nodejs.NodejsFunction(this, 'Lambda', {
-      runtime: cdk.aws_lambda.Runtime.NODEJS_24_X,
+      runtime: cdk.aws_lambda.Runtime.NODEJS_26_X,
       architecture: cdk.aws_lambda.Architecture.ARM_64,
       entry: './lambda/index.ts',
       functionName,

@@ -19,7 +19,7 @@ export class AgentAiSdkStack extends cdk.Stack {
     const fn = new nodejs.NodejsFunction(this, 'Lambda', {
       functionName,
       architecture: lambda.Architecture.ARM_64,
-      runtime: lambda.Runtime.NODEJS_24_X,
+      runtime: lambda.Runtime.NODEJS_26_X,
       entry: './lambda/index.ts',
       retryAttempts: 0,
       logGroup,
